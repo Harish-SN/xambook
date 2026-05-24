@@ -1,0 +1,440 @@
+.testPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+}
+
+.testMain {
+  flex: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2.5rem 2rem;
+}
+
+/* Progress */
+.testProgressHeader {
+  margin-bottom: 2rem;
+}
+
+.testProgressMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.testProgressLabel {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.testProgressCourse {
+  font-size: 12px;
+  color: #94a3b8;
+  text-transform: capitalize;
+  margin-bottom: 6px;
+}
+
+.testProgressBar {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.testProgressFill {
+  height: 100%;
+  background: #4f46e5;
+  border-radius: 6px;
+  transition: width 0.3s;
+}
+
+/* Question */
+.testQuestionCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.testQuestionNum {
+  font-size: 11px;
+  font-weight: 700;
+  color: #4f46e5;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.testQuestionText {
+  font-size: 17px;
+  color: #0f172a;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* Options */
+.testOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.testOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  color: #0f172a;
+  text-align: left;
+  transition: all 0.15s;
+  width: 100%;
+  font-family: inherit;
+}
+
+.testOption:hover {
+  border-color: #a5b4fc;
+  background: #f8f7ff;
+}
+
+.testOption--selected {
+  border-color: #4f46e5;
+  background: #ede9fe;
+  color: #3730a3;
+}
+
+.testOptionLabel {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.testOptionLabel--selected {
+  background: #4f46e5;
+  color: #fff;
+}
+
+/* Navigation */
+.testNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testPrevBtn {
+  padding: 10px 22px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fff;
+  color: #475569;
+  border: 1.5px solid #e2e8f0;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+.testPrevBtn:hover:not(:disabled) {
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+.testPrevBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.testNextBtn {
+  padding: 10px 26px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+
+.testNextBtn:hover {
+  background: #3730a3;
+}
+
+.testSubmitBtn {
+  padding: 10px 26px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #10b981;
+  color: #fff;
+  border: none;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+
+.testSubmitBtn:hover {
+  background: #059669;
+}
+
+/* Result */
+.testResultMain {
+  flex: 1;
+  max-width: 600px;
+  margin: 4rem auto;
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.testResultEmoji {
+  font-size: 56px;
+  margin-bottom: 1rem;
+}
+
+.testResultTitle {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.testResultSub {
+  color: #64748b;
+  margin-bottom: 2.5rem;
+}
+
+.testResultCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.testResultScore {
+  font-size: 60px;
+  font-weight: 800;
+  color: #4f46e5;
+  margin-bottom: 4px;
+}
+
+.testResultScoreLabel {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-bottom: 1.5rem;
+}
+
+.testResultGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.testResultStat {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 10px;
+}
+
+.testResultStatIcon {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.testResultStatVal {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.testResultStatLabel {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.testResultBtns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.testRetryBtn {
+  padding: 11px 24px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+
+.testRetryBtn:hover {
+  background: #3730a3;
+}
+
+.testBackBtn {
+  padding: 11px 24px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fff;
+  color: #475569;
+  border: 1.5px solid #e2e8f0;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+.testBackBtn:hover {
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+/* Test picker */
+.testPickerHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.testPickerSubject {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4f46e5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.testPickerTitle {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.testPickerSub {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.testPickerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.testPickerCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.testPickerCard:hover {
+  border-color: #a5b4fc;
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.08);
+  transform: translateY(-2px);
+}
+
+.testPickerCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.testPickerCardNum {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.testPickerBadgePremium {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.testPickerBadgeLocked {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.testPickerMeta {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.testPickerStartBtn {
+  padding: 10px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+
+.testPickerStartBtn:hover {
+  background: #3730a3;
+}
+
+.testPickerLockedBtn {
+  padding: 10px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+.testPickerLockedBtn:hover {
+  background: #ede9fe;
+  color: #4f46e5;
+  border-color: #c7d2fe;
+}

@@ -1,0 +1,155 @@
+.aboutPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutHero {
+  background: linear-gradient(135deg, #f8f7ff 0%, #f0fdf4 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.aboutBadge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: #ede9fe;
+  border: 1px solid #c7d2fe;
+  font-size: 11px;
+  font-weight: 700;
+  color: #4f46e5;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+.aboutTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.aboutSub {
+  font-size: 17px;
+  color: #475569;
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.aboutMain {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 4rem 2rem;
+}
+
+.aboutCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 3rem;
+}
+
+.aboutCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: all 0.2s;
+}
+
+.aboutCard:hover {
+  border-color: #a5b4fc;
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.08);
+  transform: translateY(-2px);
+}
+
+.aboutCardIcon {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.aboutCardTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.aboutCardDesc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.aboutTechSection {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.aboutTechTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.aboutTechTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.aboutTechTag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: #ede9fe;
+  border: 1px solid #c7d2fe;
+  color: #4f46e5;
+}
+
+.aboutCta {
+  background: #4f46e5;
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.aboutCtaTitle {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.aboutCtaSub {
+  color: #c7d2fe;
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.aboutCtaBtn {
+  display: inline-block;
+  padding: 11px 28px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  background: #fff;
+  color: #4f46e5;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.aboutCtaBtn:hover {
+  background: #ede9fe;
+}
