@@ -25,16 +25,13 @@ const TESTS = [
 const OPTION_KEYS = ['option_a', 'option_b', 'option_c', 'option_d'] as const
 
 export default function Test() {
-  const { subject, testNumber } = useParams()
+  const { subject } = useParams()
   const navigate = useNavigate()
 
-  // Replace with real auth later
   const isPremium = true
   const isFree = subject === 'free'
 
-  const [selectedTest, setSelectedTest] = useState<number | null>(
-    isFree ? 1 : null
-  )
+  const [selectedTest, setSelectedTest] = useState<number | null>(isFree ? 1 : null)
   const [questions, setQuestions] = useState<Question[]>([])
   const [answers, setAnswers] = useState<Record<number, number>>({})
   const [visited, setVisited] = useState<Set<number>>(new Set())
@@ -42,6 +39,7 @@ export default function Test() {
   const [timeLeft, setTimeLeft] = useState(0)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [ready, setReady] = useState(false)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const totalMins = subject === 'mock' ? 200 : 60
@@ -51,34 +49,44 @@ export default function Test() {
   useEffect(() => {
     if (selectedTest === null) return
     setLoading(true)
+    setReady(false)
+    setQuestions([])
+
     fetch(`http://localhost:8080/api/tests/${subject}/${selectedTest}/questions`)
       .then(r => r.json())
       .then(data => {
-        setQuestions(data || [])
+        console.log('Questions:', data)
+        setQuestions(Array.isArray(data) ? data : [])
         setAnswers({})
         setVisited(new Set())
         setCurrent(0)
         setTimeLeft(totalMins * 60)
         setSubmitted(false)
         setLoading(false)
+        setReady(true)
+      })
+      .catch(err => {
+        console.error('Fetch error:', err)
+        setLoading(false)
       })
   }, [selectedTest])
 
-  // Timer
+  // Timer — only starts when ready
   useEffect(() => {
-    if (selectedTest === null || submitted || loading) return
+    if (!ready || submitted) return
+    clearInterval(timerRef.current!)
     timerRef.current = setInterval(() => {
       setTimeLeft(t => {
         if (t <= 1) {
           clearInterval(timerRef.current!)
-          handleSubmit()
+          setSubmitted(true)
           return 0
         }
         return t - 1
       })
     }, 1000)
     return () => clearInterval(timerRef.current!)
-  }, [selectedTest, submitted, loading])
+  }, [ready, submitted])
 
   function formatTime(secs: number) {
     const h = Math.floor(secs / 3600)
@@ -109,11 +117,10 @@ export default function Test() {
     return 'unattempted'
   }
 
-  // Result calculation
   const correct = questions.filter((q, i) => answers[i] === q.correct_option).length
   const wrong = questions.filter((q, i) => answers[i] !== undefined && answers[i] !== q.correct_option).length
   const skipped = questions.length - correct - wrong
-  const marks = correct * 4 - wrong * 1
+  const marks = correct * 4 - wrong
   const percentage = questions.length > 0 ? Math.round((marks / totalMarks) * 100) : 0
 
   const subjectName = subject
@@ -127,32 +134,25 @@ export default function Test() {
         <Navbar />
         <main className="testResultPage">
 
-          {/* Score card */}
           <div className="testResultCard">
             <div className="testResultEmoji">{marks >= totalMarks * 0.6 ? '🎉' : '📚'}</div>
             <h1 className="testResultTitle">Test Complete!</h1>
             <p className="testResultSub">{subjectName} · Test {selectedTest}</p>
-
             <div className="testResultMarks">{marks} / {totalMarks}</div>
             <p className="testResultMarksLabel">Total Marks</p>
 
             <div className="testResultStatsRow">
-              <div className="testResultStat">
-                <span className="testResultStatVal testResultStatVal--correct">{correct}</span>
-                <span className="testResultStatLabel">✅ Correct</span>
-              </div>
-              <div className="testResultStat">
-                <span className="testResultStatVal testResultStatVal--wrong">{wrong}</span>
-                <span className="testResultStatLabel">❌ Wrong</span>
-              </div>
-              <div className="testResultStat">
-                <span className="testResultStatVal testResultStatVal--skip">{skipped}</span>
-                <span className="testResultStatLabel">⏭ Skipped</span>
-              </div>
-              <div className="testResultStat">
-                <span className="testResultStatVal testResultStatVal--pct">{percentage}%</span>
-                <span className="testResultStatLabel">Score</span>
-              </div>
+              {[
+                { val: correct, label: '✅ Correct', cls: 'testResultStatVal--correct' },
+                { val: wrong,   label: '❌ Wrong',   cls: 'testResultStatVal--wrong' },
+                { val: skipped, label: '⏭ Skipped', cls: 'testResultStatVal--skip' },
+                { val: `${percentage}%`, label: 'Score', cls: 'testResultStatVal--pct' },
+              ].map((s) => (
+                <div key={s.label} className="testResultStat">
+                  <span className={`testResultStatVal ${s.cls}`}>{s.val}</span>
+                  <span className="testResultStatLabel">{s.label}</span>
+                </div>
+              ))}
             </div>
 
             <div className="testResultBtns">
@@ -162,6 +162,7 @@ export default function Test() {
                 setVisited(new Set())
                 setCurrent(0)
                 setTimeLeft(totalMins * 60)
+                setReady(true)
               }}>
                 Retry Test
               </button>
@@ -171,7 +172,7 @@ export default function Test() {
             </div>
           </div>
 
-          {/* Explanation section */}
+          {/* Explanations */}
           <div className="testExplanations">
             <h2 className="testExplTitle">Question Explanations</h2>
             {questions.map((q, i) => {
@@ -231,7 +232,7 @@ export default function Test() {
     )
   }
 
-  // ── Test selection screen ──────────────────────────────────
+  // ── Test picker ────────────────────────────────────────────
   if (selectedTest === null) {
     return (
       <div className="testPage">
@@ -284,17 +285,16 @@ export default function Test() {
     )
   }
 
-  // ── Active test screen ─────────────────────────────────────
+  // ── Active test ────────────────────────────────────────────
   const q = questions[current]
   const answered = Object.keys(answers).length
-  const isLowTime = timeLeft <= 300 // under 5 mins
+  const isLowTime = timeLeft <= 300
 
   return (
     <div className="testPage">
       <Navbar />
       <div className="testLayout">
 
-        {/* Left — question area */}
         <main className="testContent">
           <div className="testProgressHeader">
             <p className="testProgressCourse">{subjectName} · Test {selectedTest}</p>
@@ -303,10 +303,7 @@ export default function Test() {
               <span className="testProgressLabel">{answered} answered</span>
             </div>
             <div className="testProgressBar">
-              <div
-                className="testProgressFill"
-                style={{ width: `${((current + 1) / questions.length) * 100}%` }}
-              />
+              <div className="testProgressFill" style={{ width: `${((current + 1) / questions.length) * 100}%` }} />
             </div>
           </div>
 
@@ -315,9 +312,7 @@ export default function Test() {
               <div className="testQuestionCard">
                 <p className="testQuestionNum">Q{current + 1}</p>
                 <p className="testQuestionText">{q.text}</p>
-                {q.image_url && (
-                  <img src={q.image_url} alt="question" className="testQuestionImage" />
-                )}
+                {q.image_url && <img src={q.image_url} alt="question" className="testQuestionImage" />}
               </div>
 
               <div className="testOptions">
@@ -341,35 +336,23 @@ export default function Test() {
           )}
 
           <div className="testNav">
-            <button
-              className="testPrevBtn"
-              onClick={() => goTo(Math.max(0, current - 1))}
-              disabled={current === 0}
-            >
+            <button className="testPrevBtn" onClick={() => goTo(Math.max(0, current - 1))} disabled={current === 0}>
               ← Prev
             </button>
             {current < questions.length - 1 ? (
-              <button className="testNextBtn" onClick={() => goTo(current + 1)}>
-                Next →
-              </button>
+              <button className="testNextBtn" onClick={() => goTo(current + 1)}>Next →</button>
             ) : (
-              <button className="testSubmitBtn" onClick={handleSubmit}>
-                Submit Test ✓
-              </button>
+              <button className="testSubmitBtn" onClick={handleSubmit}>Submit Test ✓</button>
             )}
           </div>
         </main>
 
-        {/* Right — timer + palette */}
         <aside className="testSidebar">
-
-          {/* Timer */}
           <div className={`testTimer ${isLowTime ? 'testTimer--low' : ''}`}>
             <p className="testTimerLabel">Time Left</p>
             <p className="testTimerValue">{formatTime(timeLeft)}</p>
           </div>
 
-          {/* Legend */}
           <div className="testLegend">
             <div className="testLegendItem">
               <span className="testLegendDot testLegendDot--answered" />
@@ -385,7 +368,6 @@ export default function Test() {
             </div>
           </div>
 
-          {/* Palette */}
           <div className="testPalette">
             {questions.map((_, idx) => {
               const status = getPaletteStatus(idx)
@@ -401,12 +383,11 @@ export default function Test() {
             })}
           </div>
 
-          {/* Submit */}
           <button className="testSidebarSubmit" onClick={handleSubmit}>
             Submit Test ✓
           </button>
-
         </aside>
+
       </div>
     </div>
   )
