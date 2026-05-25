@@ -10,5 +10,6 @@ type Question struct {
 	OptionC       string  `json:"option_c"`
 	OptionD       string  `json:"option_d"`
 	CorrectOption int     `json:"correct_option"`
+	Explanation   string  `json:"explanation"`
 	ImageURL      *string `json:"image_url"`
 }

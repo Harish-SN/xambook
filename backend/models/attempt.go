@@ -8,6 +8,8 @@ type Attempt struct {
 	Subject     string    `json:"subject"`
 	TestNumber  int       `json:"test_number"`
 	Score       int       `json:"score"`
+	Marks       int       `json:"marks"`
+	TotalMarks  int       `json:"total_marks"`
 	Correct     int       `json:"correct"`
 	Wrong       int       `json:"wrong"`
 	Skipped     int       `json:"skipped"`
