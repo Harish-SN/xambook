@@ -103,11 +103,6 @@ export default function Test() {
     setCurrent(idx)
   }
 
-  function handleSubmit() {
-    clearInterval(timerRef.current!)
-    setSubmitted(true)
-  }
-
   function getPaletteStatus(idx: number) {
     if (answers[idx] !== undefined) return 'answered'
     if (visited.has(idx)) return 'skipped'
@@ -121,8 +116,34 @@ export default function Test() {
   const percentage = questions.length > 0 ? Math.round((marks / totalMarks) * 100) : 0
   const subjectName = subject ? subject.charAt(0).toUpperCase() + subject.slice(1) : ''
   const isLowTime = timeLeft <= 300
-
   const theme = dark ? 'testDark' : 'testLight'
+
+  async function saveAttempt() {
+    try {
+      await fetch('http://localhost:8080/api/attempts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          subject: subject,
+          test_number: selectedTest,
+          score: percentage,
+          marks: marks,
+          total_marks: totalMarks,
+          correct: correct,
+          wrong: wrong,
+          skipped: skipped,
+        }),
+      })
+    } catch (err) {
+      console.error('Failed to save attempt:', err)
+    }
+  }
+
+  function handleSubmit() {
+    clearInterval(timerRef.current!)
+    setSubmitted(true)
+    saveAttempt()
+  }
 
   // ── Result screen ──────────────────────────────────────────
   if (submitted && questions.length > 0) {
@@ -265,7 +286,7 @@ export default function Test() {
     )
   }
 
-  // ── Paused overlay ─────────────────────────────────────────
+  // ── Active test ────────────────────────────────────────────
   const q = questions[current]
   const answered = Object.keys(answers).length
 
@@ -339,7 +360,6 @@ export default function Test() {
         </main>
 
         <aside className="testSidebar">
-          {/* Timer */}
           <div className={`testTimer ${isLowTime ? 'testTimer--low' : ''}`}>
             <p className="testTimerLabel">Time Left</p>
             <p className="testTimerValue">{formatTime(timeLeft)}</p>
@@ -351,19 +371,16 @@ export default function Test() {
             </button>
           </div>
 
-          {/* Theme toggle */}
           <button className="testThemeBtn" onClick={() => setDark(!dark)}>
             {dark ? '☀️ Light Mode' : '🌙 Dark Mode'}
           </button>
 
-          {/* Legend */}
           <div className="testLegend">
             <div className="testLegendItem"><span className="testLegendDot testLegendDot--answered" /><span>Answered</span></div>
             <div className="testLegendItem"><span className="testLegendDot testLegendDot--skipped" /><span>Skipped</span></div>
             <div className="testLegendItem"><span className="testLegendDot testLegendDot--unattempted" /><span>Unattempted</span></div>
           </div>
 
-          {/* Palette */}
           <div className="testPalette">
             {questions.map((_, idx) => {
               const status = getPaletteStatus(idx)
@@ -379,7 +396,9 @@ export default function Test() {
             })}
           </div>
 
-          <button className="testSidebarSubmit" onClick={handleSubmit}>Submit Test ✓</button>
+          <button className="testSidebarSubmit" onClick={handleSubmit}>
+            Submit Test ✓
+          </button>
         </aside>
       </div>
     </div>
