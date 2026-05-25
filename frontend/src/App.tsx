@@ -5,6 +5,7 @@ import Test from './pages/Test'
 import About from './pages/About'
 import Dashboard from './pages/Dashboard'
 import Payment from './pages/Payment'
+import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Route path="/about" element={<About />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/payment" element={<Payment />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

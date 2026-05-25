@@ -1,0 +1,81 @@
+.nfPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+}
+
+.nfMain {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.nfContent {
+  text-align: center;
+  max-width: 480px;
+}
+
+.nfCode {
+  font-size: 120px;
+  font-weight: 800;
+  color: #e2e8f0;
+  line-height: 1;
+  margin-bottom: 1rem;
+  letter-spacing: -4px;
+}
+
+.nfTitle {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.nfSub {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.nfBtns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nfBtnPrimary {
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  background: #4f46e5;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.nfBtnPrimary:hover {
+  background: #3730a3;
+}
+
+.nfBtnSecondary {
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  background: #fff;
+  color: #475569;
+  text-decoration: none;
+  border: 1px solid #e2e8f0;
+  transition: all 0.15s;
+}
+
+.nfBtnSecondary:hover {
+  border-color: #4f46e5;
+  color: #4f46e5;
+}

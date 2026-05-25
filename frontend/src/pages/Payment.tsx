@@ -12,23 +12,20 @@ export default function Payment() {
     setLoading(true)
 
     try {
-      // Step 1 — create order from backend
       const res = await fetch('http://localhost:8080/api/payment/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       })
       const order = await res.json()
 
-      // Step 2 — open Razorpay checkout
       const options = {
-        key: 'rzp_test_xxxx', // replace with your Razorpay key id
+        key: 'rzp_test_xxxx',
         amount: order.amount,
         currency: order.currency,
         name: 'XamBook',
         description: 'Premium Access — Lifetime',
         order_id: order.id,
         handler: async function (response: any) {
-          // Step 3 — verify payment on backend
           const verify = await fetch('http://localhost:8080/api/payment/verify', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -40,18 +37,14 @@ export default function Payment() {
           })
 
           if (verify.ok) {
+            alert('🎉 Payment successful! Premium activated.')
             navigate('/dashboard')
           } else {
             alert('Payment verification failed. Please contact support.')
           }
         },
-        prefill: {
-          name: '',
-          email: '',
-        },
-        theme: {
-          color: '#4f46e5',
-        },
+        prefill: { name: '', email: '' },
+        theme: { color: '#4f46e5' },
       }
 
       const rzp = new (window as any).Razorpay(options)
@@ -66,26 +59,19 @@ export default function Payment() {
   return (
     <div className="payPage">
       <Navbar />
-
       <main className="payMain">
         <div className="payCard">
-
-          {/* Header */}
           <div className="payHeader">
             <div className="payBadge">⚡ ONE-TIME PAYMENT</div>
             <h1 className="payTitle">Go Premium</h1>
             <p className="paySub">Full access to all 20 NEET tests. Pay once, use forever.</p>
           </div>
-
-          {/* Price */}
           <div className="payPriceBox">
             <div className="payPriceRow">
               <span className="payPrice">₹99</span>
               <span className="payPriceNote">one-time · no renewals</span>
             </div>
           </div>
-
-          {/* What you get */}
           <div className="payPerks">
             {[
               { icon: '📋', text: '20 subject-wise & full mock tests' },
@@ -101,23 +87,14 @@ export default function Payment() {
               </div>
             ))}
           </div>
-
-          {/* Pay button */}
-          <button
-            className="payBtn"
-            onClick={handlePayment}
-            disabled={loading}
-          >
+          <button className="payBtn" onClick={handlePayment} disabled={loading}>
             {loading ? 'Processing...' : 'Pay ₹99 & Unlock Access'}
           </button>
-
           <p className="payNote">
             Secure payment via Razorpay · UPI, Cards, Netbanking accepted
           </p>
-
         </div>
       </main>
-
       <Footer />
     </div>
   )

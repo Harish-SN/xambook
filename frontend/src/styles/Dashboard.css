@@ -16,7 +16,7 @@
 
 .dashMain {
   flex: 1;
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
   width: 100%;
   padding: 2.5rem 2rem;
@@ -25,7 +25,7 @@
   gap: 2rem;
 }
 
-/* Welcome */
+/* ── Welcome ── */
 .dashWelcome {
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@
   background: #fff;
   border: 1px solid #e2e8f0;
   border-radius: 16px;
-  padding: 1.5rem 2rem;
+  padding: 1.75rem 2rem;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -74,7 +74,7 @@
   background: #3730a3;
 }
 
-/* Stats */
+/* ── Stats ── */
 .dashStatsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -85,15 +85,16 @@
   background: #fff;
   border: 1px solid #e2e8f0;
   border-radius: 14px;
-  padding: 1.25rem;
+  padding: 1.5rem 1rem;
   text-align: center;
 }
 
 .dashStatValue {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
   color: #4f46e5;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  line-height: 1;
 }
 
 .dashStatLabel {
@@ -102,7 +103,7 @@
   font-weight: 500;
 }
 
-/* Section */
+/* ── Section ── */
 .dashSection {
   display: flex;
   flex-direction: column;
@@ -115,7 +116,7 @@
   color: #0f172a;
 }
 
-/* Empty */
+/* ── Empty ── */
 .dashEmpty {
   background: #fff;
   border: 1px solid #e2e8f0;
@@ -146,7 +147,7 @@
   background: #3730a3;
 }
 
-/* Attempts */
+/* ── Attempt list ── */
 .dashAttemptList {
   display: flex;
   flex-direction: column;
@@ -157,18 +158,28 @@
   background: #fff;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  transition: border-color 0.15s;
+}
+
+.dashAttemptCard:hover {
+  border-color: #a5b4fc;
+}
+
+.dashAttemptLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .dashAttemptSubject {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: #0f172a;
-  margin-bottom: 4px;
   text-transform: capitalize;
 }
 
@@ -180,35 +191,30 @@
 .dashAttemptRight {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .dashAttemptStats {
   display: flex;
-  gap: 10px;
-  font-size: 12px;
+  gap: 14px;
+  font-size: 13px;
   color: #64748b;
 }
 
-.dashAttemptScore {
-  font-size: 18px;
-  font-weight: 800;
-  min-width: 52px;
-  text-align: right;
-}
-
-.dashAttemptScore--good { color: #10b981; }
-.dashAttemptScore--low  { color: #ef4444; }
+.dashAttemptCorrect { color: #10b981; font-weight: 600; }
+.dashAttemptWrong   { color: #ef4444; font-weight: 600; }
+.dashAttemptSkipped { color: #94a3b8; font-weight: 600; }
 
 .dashAttemptScoreBox {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 2px;
+  min-width: 80px;
 }
 
 .dashAttemptMarks {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 800;
 }
 
@@ -221,14 +227,78 @@
   font-weight: 500;
 }
 
+/* ── Quick links ── */
+.dashLinksGrid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dashLinkCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  transition: all 0.15s;
+}
+
+.dashLinkCard:hover {
+  border-color: #a5b4fc;
+  color: #4f46e5;
+}
+
+.dashLinkCard--premium {
+  background: #ede9fe;
+  border-color: #c7d2fe;
+  color: #4f46e5;
+}
+
+.dashLinkIcon {
+  font-size: 18px;
+}
+
+.dashLinkLabel {
+  white-space: nowrap;
+}
+
+/* ── Responsive ── */
 @media (max-width: 640px) {
+  .dashMain {
+    padding: 1.5rem 1rem;
+  }
+
   .dashStatsGrid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .dashAttemptRight {
+  .dashWelcome {
+    padding: 1.25rem;
+  }
+
+  .dashWelcomeTitle {
+    font-size: 18px;
+  }
+
+  .dashAttemptCard {
     flex-direction: column;
-    align-items: flex-end;
-    gap: 6px;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .dashAttemptRight {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dashAttemptStats {
+    gap: 10px;
+    font-size: 12px;
   }
 }
