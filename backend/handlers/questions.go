@@ -20,7 +20,7 @@ func GetQuestions(c *gin.Context) {
 	rows, err := db.DB.Query(`
 		SELECT id, subject, test_number, text,
 		option_a, option_b, option_c, option_d,
-		correct_option, image_url
+		correct_option, explanation, image_url
 		FROM questions
 		WHERE subject = $1 AND test_number = $2
 		ORDER BY id
@@ -32,15 +32,19 @@ func GetQuestions(c *gin.Context) {
 	}
 	defer rows.Close()
 
-	var questions []models.Question
+	questions := []models.Question{} // ← empty slice not nil
 	for rows.Next() {
 		var q models.Question
+		var explanation *string // nullable
 		if err := rows.Scan(
 			&q.ID, &q.Subject, &q.TestNumber, &q.Text,
 			&q.OptionA, &q.OptionB, &q.OptionC, &q.OptionD,
-			&q.CorrectOption, &q.ImageURL,
+			&q.CorrectOption, &explanation, &q.ImageURL,
 		); err != nil {
 			continue
+		}
+		if explanation != nil {
+			q.Explanation = *explanation
 		}
 		questions = append(questions, q)
 	}
