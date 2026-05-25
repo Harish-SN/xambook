@@ -13,7 +13,7 @@ export default function FreeTestPopup() {
           <div className="ftpBannerIcon">🎯</div>
           <div>
             <p className="ftpBannerTitle">Try a Free NEET Test</p>
-            <p className="ftpBannerSub">No login required · 5 questions · Instant result</p>
+            <p className="ftpBannerSub">No premium needed · 180 questions · 3 hours</p>
           </div>
         </div>
         <button className="ftpBannerBtn">Start Free</button>
@@ -26,14 +26,14 @@ export default function FreeTestPopup() {
 
             <div className="ftpModalHeader">
               <div className="ftpModalEmoji">🎯</div>
-              <h2 className="ftpModalTitle">Free NEET Sample Test</h2>
-              <p className="ftpModalSub">5 questions across Biology & Chemistry</p>
+              <h2 className="ftpModalTitle">Free NEET Full Test</h2>
+              <p className="ftpModalSub">Full-length NEET pattern test — completely free</p>
             </div>
 
             <div className="ftpModalGrid">
               {[
-                ['📋', '5 Questions', 'Mixed subjects'],
-                ['⏱️', '60 Minutes', 'Timed test'],
+                ['📋', '180 Questions', 'All subjects'],
+                ['⏱️', '3 Hours', 'Real NEET duration'],
                 ['📊', 'Instant Result', 'Score + analysis'],
                 ['🔓', 'No Premium', 'Completely free'],
               ].map(([icon, title, sub]) => (
@@ -45,11 +45,17 @@ export default function FreeTestPopup() {
               ))}
             </div>
 
+            <div className="ftpInfoRow">
+              <span>✅ +4 marks correct</span>
+              <span>❌ -1 mark wrong</span>
+              <span>⏭ 0 skipped</span>
+            </div>
+
             <button
               className="ftpStartBtn"
               onClick={() => { setOpen(false); navigate('/test/free') }}
             >
-              Begin Test →
+              Begin Free Test →
             </button>
             <p className="ftpModalNote">Free for everyone · No account needed</p>
           </div>

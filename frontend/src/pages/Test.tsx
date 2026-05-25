@@ -30,9 +30,10 @@ export default function Test() {
 
   const isPremium = true
   const isFree = subject === 'free'
+  const isMock = subject === 'mock'
 
-  const [selectedTest, setSelectedTest] = useState<number | null>(isFree ? 1 : null)
-  const [confirmTest, setConfirmTest] = useState<number | null>(null)
+  const [selectedTest, setSelectedTest] = useState<number | null>(null)
+  const [confirmTest, setConfirmTest] = useState<number | null>(isFree ? 1 : null)
   const [questions, setQuestions] = useState<Question[]>([])
   const [answers, setAnswers] = useState<Record<number, number>>({})
   const [visited, setVisited] = useState<Set<number>>(new Set())
@@ -45,8 +46,11 @@ export default function Test() {
   const [dark, setDark] = useState(false)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  const totalMins = subject === 'mock' ? 180 : 60
-  const totalMarks = subject === 'mock' ? 720 : 180
+  const isFullTest = isMock || isFree
+  const totalMins = isFullTest ? 180 : 60
+  const totalMarks = isFullTest ? 720 : 180
+  const totalQuestions = isFullTest ? 180 : 45
+  const durationLabel = isFullTest ? '3 hours' : '60 min'
 
   useEffect(() => {
     if (selectedTest === null) return
@@ -146,6 +150,58 @@ export default function Test() {
     saveAttempt()
   }
 
+  // ── Confirm popup ──────────────────────────────────────────
+  const ConfirmPopup = () => (
+    <div className="testConfirmOverlay" onClick={() => !isFree && setConfirmTest(null)}>
+      <div className="testConfirmBox" onClick={e => e.stopPropagation()}>
+        <div className="testConfirmIcon">📋</div>
+        <h2 className="testConfirmTitle">
+          {isFree ? 'Free NEET Full Test' : `${subjectName} · Test ${confirmTest}`}
+        </h2>
+        <p className="testConfirmSub">Read the details before you begin</p>
+
+        <div className="testConfirmGrid">
+          {[
+            { icon: '❓', label: 'Questions', val: `${totalQuestions}` },
+            { icon: '⏱', label: 'Duration', val: durationLabel },
+            { icon: '📝', label: 'Total Marks', val: `${totalMarks}` },
+            { icon: '✅', label: 'Correct', val: '+4 marks' },
+            { icon: '❌', label: 'Wrong', val: '-1 mark' },
+            { icon: '⏭', label: 'Skipped', val: '0 marks' },
+          ].map((item) => (
+            <div key={item.label} className="testConfirmItem">
+              <span className="testConfirmItemIcon">{item.icon}</span>
+              <span className="testConfirmItemLabel">{item.label}</span>
+              <span className="testConfirmItemVal">{item.val}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="testConfirmWarning">
+          ⚠️ Once started, the timer cannot be stopped permanently. Make sure you're ready.
+        </p>
+
+        <div className="testConfirmBtns">
+          {!isFree && (
+            <button className="testConfirmCancel" onClick={() => setConfirmTest(null)}>
+              Cancel
+            </button>
+          )}
+          <button
+            className="testConfirmStart"
+            style={isFree ? { flex: 1 } : {}}
+            onClick={() => {
+              setSelectedTest(confirmTest ?? 1)
+              setConfirmTest(null)
+            }}
+          >
+            Start Test →
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+
   // ── Result screen ──────────────────────────────────────────
   if (submitted && questions.length > 0) {
     return (
@@ -160,7 +216,9 @@ export default function Test() {
           <div className="testResultCard">
             <div className="testResultEmoji">{marks >= totalMarks * 0.6 ? '🎉' : '📚'}</div>
             <h1 className="testResultTitle">Test Complete!</h1>
-            <p className="testResultSub">{subjectName} · Test {selectedTest}</p>
+            <p className="testResultSub">
+              {isFree ? 'Free Test' : `${subjectName} · Test ${selectedTest}`}
+            </p>
             <div className="testResultMarks">{marks} / {totalMarks}</div>
             <p className="testResultMarksLabel">Total Marks</p>
             <div className="testResultStatsRow">
@@ -187,8 +245,8 @@ export default function Test() {
               }}>
                 Retry Test
               </button>
-              <button className="testBackBtn" onClick={() => navigate('/courses')}>
-                Back to Tests
+              <button className="testBackBtn" onClick={() => navigate(isFree ? '/' : '/courses')}>
+                {isFree ? 'Back to Home' : 'Back to Tests'}
               </button>
             </div>
           </div>
@@ -234,6 +292,16 @@ export default function Test() {
     )
   }
 
+  // ── Free test — confirm directly, no picker ────────────────
+  if (isFree && selectedTest === null) {
+    return (
+      <div className={`testPage ${theme}`}>
+        <Navbar />
+        {confirmTest !== null && <ConfirmPopup />}
+      </div>
+    )
+  }
+
   // ── Test picker ────────────────────────────────────────────
   if (selectedTest === null) {
     return (
@@ -244,7 +312,9 @@ export default function Test() {
             <p className="testPickerSubject">{subjectName}</p>
             <h1 className="testPickerTitle">Select a Test</h1>
             <p className="testPickerSub">
-              {subject === 'mock' ? '180 questions · 200 minutes · 720 marks' : '45 questions · 60 minutes · 180 marks'}
+              {isMock
+                ? '180 questions · 3 hours · 720 marks'
+                : '45 questions · 60 minutes · 180 marks'}
             </p>
           </div>
           <div className="testPickerGrid">
@@ -258,9 +328,9 @@ export default function Test() {
                   }
                 </div>
                 <div className="testPickerMeta">
-                  <span>📋 {subject === 'mock' ? '180' : '45'} Questions</span>
-                  <span>⏱ {subject === 'mock' ? '200' : '60'} min</span>
-                  <span>📝 {subject === 'mock' ? '720' : '180'} marks</span>
+                  <span>📋 {isMock ? '180' : '45'} Questions</span>
+                  <span>⏱ {isMock ? '3 hrs' : '60 min'}</span>
+                  <span>📝 {isMock ? '720' : '180'} marks</span>
                 </div>
                 {isPremium ? (
                   <button className="testPickerStartBtn" onClick={() => setConfirmTest(t.id)}>
@@ -276,49 +346,7 @@ export default function Test() {
           </div>
         </main>
 
-        {/* Confirm popup */}
-        {confirmTest !== null && (
-          <div className="testConfirmOverlay" onClick={() => setConfirmTest(null)}>
-            <div className="testConfirmBox" onClick={e => e.stopPropagation()}>
-              <div className="testConfirmIcon">📋</div>
-              <h2 className="testConfirmTitle">{subjectName} · Test {confirmTest}</h2>
-              <p className="testConfirmSub">Read the details before you begin</p>
-
-              <div className="testConfirmGrid">
-                {[
-                  { icon: '❓', label: 'Questions', val: subject === 'mock' ? '180' : '45' },
-                  { icon: '⏱', label: 'Duration', val: subject === 'mock' ? '200 min' : '60 min' },
-                  { icon: '📝', label: 'Total Marks', val: subject === 'mock' ? '720' : '180' },
-                  { icon: '✅', label: 'Correct', val: '+4 marks' },
-                  { icon: '❌', label: 'Wrong', val: '-1 mark' },
-                  { icon: '⏭', label: 'Skipped', val: '0 marks' },
-                ].map((item) => (
-                  <div key={item.label} className="testConfirmItem">
-                    <span className="testConfirmItemIcon">{item.icon}</span>
-                    <span className="testConfirmItemLabel">{item.label}</span>
-                    <span className="testConfirmItemVal">{item.val}</span>
-                  </div>
-                ))}
-              </div>
-
-              <p className="testConfirmWarning">
-                ⚠️ Once started, the timer cannot be stopped permanently. Make sure you're ready.
-              </p>
-
-              <div className="testConfirmBtns">
-                <button className="testConfirmCancel" onClick={() => setConfirmTest(null)}>
-                  Cancel
-                </button>
-                <button className="testConfirmStart" onClick={() => {
-                  setSelectedTest(confirmTest)
-                  setConfirmTest(null)
-                }}>
-                  Start Test →
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+        {confirmTest !== null && <ConfirmPopup />}
       </div>
     )
   }
@@ -357,7 +385,9 @@ export default function Test() {
       <div className="testLayout">
         <main className="testContent">
           <div className="testProgressHeader">
-            <p className="testProgressCourse">{subjectName} · Test {selectedTest}</p>
+            <p className="testProgressCourse">
+              {isFree ? 'Free Test' : `${subjectName} · Test ${selectedTest}`}
+            </p>
             <div className="testProgressMeta">
               <span className="testProgressLabel">Q {current + 1} of {questions.length}</span>
               <span className="testProgressLabel">{answered} answered</span>
