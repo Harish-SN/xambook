@@ -40,12 +40,13 @@ export default function Test() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [ready, setReady] = useState(false)
+  const [paused, setPaused] = useState(false)
+  const [dark, setDark] = useState(false)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const totalMins = subject === 'mock' ? 200 : 60
   const totalMarks = subject === 'mock' ? 720 : 180
 
-  // Fetch questions when test selected
   useEffect(() => {
     if (selectedTest === null) return
     setLoading(true)
@@ -55,25 +56,21 @@ export default function Test() {
     fetch(`http://localhost:8080/api/tests/${subject}/${selectedTest}/questions`)
       .then(r => r.json())
       .then(data => {
-        console.log('Questions:', data)
         setQuestions(Array.isArray(data) ? data : [])
         setAnswers({})
         setVisited(new Set())
         setCurrent(0)
         setTimeLeft(totalMins * 60)
         setSubmitted(false)
+        setPaused(false)
         setLoading(false)
         setReady(true)
       })
-      .catch(err => {
-        console.error('Fetch error:', err)
-        setLoading(false)
-      })
+      .catch(() => setLoading(false))
   }, [selectedTest])
 
-  // Timer — only starts when ready
   useEffect(() => {
-    if (!ready || submitted) return
+    if (!ready || submitted || paused) return
     clearInterval(timerRef.current!)
     timerRef.current = setInterval(() => {
       setTimeLeft(t => {
@@ -86,7 +83,7 @@ export default function Test() {
       })
     }, 1000)
     return () => clearInterval(timerRef.current!)
-  }, [ready, submitted])
+  }, [ready, submitted, paused])
 
   function formatTime(secs: number) {
     const h = Math.floor(secs / 3600)
@@ -122,29 +119,32 @@ export default function Test() {
   const skipped = questions.length - correct - wrong
   const marks = correct * 4 - wrong
   const percentage = questions.length > 0 ? Math.round((marks / totalMarks) * 100) : 0
+  const subjectName = subject ? subject.charAt(0).toUpperCase() + subject.slice(1) : ''
+  const isLowTime = timeLeft <= 300
 
-  const subjectName = subject
-    ? subject.charAt(0).toUpperCase() + subject.slice(1)
-    : ''
+  const theme = dark ? 'testDark' : 'testLight'
 
   // ── Result screen ──────────────────────────────────────────
   if (submitted && questions.length > 0) {
     return (
-      <div className="testPage">
+      <div className={`testPage ${theme}`}>
         <Navbar />
+        <div className="testThemeBar">
+          <button className="testThemeBtn" onClick={() => setDark(!dark)}>
+            {dark ? '☀️ Light Mode' : '🌙 Dark Mode'}
+          </button>
+        </div>
         <main className="testResultPage">
-
           <div className="testResultCard">
             <div className="testResultEmoji">{marks >= totalMarks * 0.6 ? '🎉' : '📚'}</div>
             <h1 className="testResultTitle">Test Complete!</h1>
             <p className="testResultSub">{subjectName} · Test {selectedTest}</p>
             <div className="testResultMarks">{marks} / {totalMarks}</div>
             <p className="testResultMarksLabel">Total Marks</p>
-
             <div className="testResultStatsRow">
               {[
                 { val: correct, label: '✅ Correct', cls: 'testResultStatVal--correct' },
-                { val: wrong,   label: '❌ Wrong',   cls: 'testResultStatVal--wrong' },
+                { val: wrong, label: '❌ Wrong', cls: 'testResultStatVal--wrong' },
                 { val: skipped, label: '⏭ Skipped', cls: 'testResultStatVal--skip' },
                 { val: `${percentage}%`, label: 'Score', cls: 'testResultStatVal--pct' },
               ].map((s) => (
@@ -154,7 +154,6 @@ export default function Test() {
                 </div>
               ))}
             </div>
-
             <div className="testResultBtns">
               <button className="testRetryBtn" onClick={() => {
                 setSubmitted(false)
@@ -172,7 +171,6 @@ export default function Test() {
             </div>
           </div>
 
-          {/* Explanations */}
           <div className="testExplanations">
             <h2 className="testExplTitle">Question Explanations</h2>
             {questions.map((q, i) => {
@@ -180,42 +178,25 @@ export default function Test() {
               const isCorrect = userAnswer === q.correct_option
               const isSkipped = userAnswer === undefined
               return (
-                <div
-                  key={q.id}
-                  className={`testExplCard ${isCorrect ? 'testExplCard--correct' : isSkipped ? 'testExplCard--skipped' : 'testExplCard--wrong'}`}
-                >
+                <div key={q.id} className={`testExplCard ${isCorrect ? 'testExplCard--correct' : isSkipped ? 'testExplCard--skipped' : 'testExplCard--wrong'}`}>
                   <div className="testExplTop">
                     <span className="testExplNum">Q{i + 1}</span>
                     <span className={`testExplStatus ${isCorrect ? 'testExplStatus--correct' : isSkipped ? 'testExplStatus--skipped' : 'testExplStatus--wrong'}`}>
                       {isCorrect ? '✅ Correct' : isSkipped ? '⏭ Skipped' : '❌ Wrong'}
                     </span>
                   </div>
-
                   <p className="testExplQuestion">{q.text}</p>
-
-                  {q.image_url && (
-                    <img src={q.image_url} alt="question" className="testExplImage" />
-                  )}
-
+                  {q.image_url && <img src={q.image_url} alt="question" className="testExplImage" />}
                   <div className="testExplOptions">
                     {OPTION_KEYS.map((key, idx) => (
-                      <div
-                        key={idx}
-                        className={`testExplOption
-                          ${idx === q.correct_option ? 'testExplOption--correct' : ''}
-                          ${userAnswer === idx && idx !== q.correct_option ? 'testExplOption--wrong' : ''}
-                        `}
-                      >
-                        <span className="testExplOptionLabel">
-                          {String.fromCharCode(65 + idx)}
-                        </span>
+                      <div key={idx} className={`testExplOption ${idx === q.correct_option ? 'testExplOption--correct' : ''} ${userAnswer === idx && idx !== q.correct_option ? 'testExplOption--wrong' : ''}`}>
+                        <span className="testExplOptionLabel">{String.fromCharCode(65 + idx)}</span>
                         {q[key]}
                         {idx === q.correct_option && <span className="testExplTick">✓</span>}
                         {userAnswer === idx && idx !== q.correct_option && <span className="testExplCross">✗</span>}
                       </div>
                     ))}
                   </div>
-
                   {q.explanation && (
                     <div className="testExplBox">
                       <p className="testExplBoxTitle">Explanation</p>
@@ -226,7 +207,6 @@ export default function Test() {
               )
             })}
           </div>
-
         </main>
       </div>
     )
@@ -235,7 +215,7 @@ export default function Test() {
   // ── Test picker ────────────────────────────────────────────
   if (selectedTest === null) {
     return (
-      <div className="testPage">
+      <div className={`testPage ${theme}`}>
         <Navbar />
         <main className="testMain">
           <div className="testPickerHeader">
@@ -278,23 +258,35 @@ export default function Test() {
   // ── Loading ────────────────────────────────────────────────
   if (loading) {
     return (
-      <div className="testPage">
+      <div className={`testPage ${theme}`}>
         <Navbar />
         <div className="testLoading">Loading questions...</div>
       </div>
     )
   }
 
-  // ── Active test ────────────────────────────────────────────
+  // ── Paused overlay ─────────────────────────────────────────
   const q = questions[current]
   const answered = Object.keys(answers).length
-  const isLowTime = timeLeft <= 300
 
   return (
-    <div className="testPage">
+    <div className={`testPage ${theme}`}>
       <Navbar />
-      <div className="testLayout">
 
+      {paused && (
+        <div className="testPausedOverlay">
+          <div className="testPausedBox">
+            <div className="testPausedIcon">⏸</div>
+            <h2 className="testPausedTitle">Test Paused</h2>
+            <p className="testPausedSub">Your timer is paused. Resume when you're ready.</p>
+            <button className="testPausedResumeBtn" onClick={() => setPaused(false)}>
+              ▶ Resume Test
+            </button>
+          </div>
+        </div>
+      )}
+
+      <div className="testLayout">
         <main className="testContent">
           <div className="testProgressHeader">
             <p className="testProgressCourse">{subjectName} · Test {selectedTest}</p>
@@ -314,7 +306,6 @@ export default function Test() {
                 <p className="testQuestionText">{q.text}</p>
                 {q.image_url && <img src={q.image_url} alt="question" className="testQuestionImage" />}
               </div>
-
               <div className="testOptions">
                 {OPTION_KEYS.map((key, idx) => {
                   const selected = answers[current] === idx
@@ -322,7 +313,7 @@ export default function Test() {
                     <button
                       key={idx}
                       className={`testOption ${selected ? 'testOption--selected' : ''}`}
-                      onClick={() => selectAnswer(current, idx)}
+                      onClick={() => !paused && selectAnswer(current, idx)}
                     >
                       <span className={`testOptionLabel ${selected ? 'testOptionLabel--selected' : ''}`}>
                         {String.fromCharCode(65 + idx)}
@@ -348,26 +339,31 @@ export default function Test() {
         </main>
 
         <aside className="testSidebar">
+          {/* Timer */}
           <div className={`testTimer ${isLowTime ? 'testTimer--low' : ''}`}>
             <p className="testTimerLabel">Time Left</p>
             <p className="testTimerValue">{formatTime(timeLeft)}</p>
+            <button
+              className={`testPauseBtn ${paused ? 'testPauseBtn--paused' : ''}`}
+              onClick={() => setPaused(!paused)}
+            >
+              {paused ? '▶ Resume' : '⏸ Pause'}
+            </button>
           </div>
 
+          {/* Theme toggle */}
+          <button className="testThemeBtn" onClick={() => setDark(!dark)}>
+            {dark ? '☀️ Light Mode' : '🌙 Dark Mode'}
+          </button>
+
+          {/* Legend */}
           <div className="testLegend">
-            <div className="testLegendItem">
-              <span className="testLegendDot testLegendDot--answered" />
-              <span>Answered</span>
-            </div>
-            <div className="testLegendItem">
-              <span className="testLegendDot testLegendDot--skipped" />
-              <span>Skipped</span>
-            </div>
-            <div className="testLegendItem">
-              <span className="testLegendDot testLegendDot--unattempted" />
-              <span>Unattempted</span>
-            </div>
+            <div className="testLegendItem"><span className="testLegendDot testLegendDot--answered" /><span>Answered</span></div>
+            <div className="testLegendItem"><span className="testLegendDot testLegendDot--skipped" /><span>Skipped</span></div>
+            <div className="testLegendItem"><span className="testLegendDot testLegendDot--unattempted" /><span>Unattempted</span></div>
           </div>
 
+          {/* Palette */}
           <div className="testPalette">
             {questions.map((_, idx) => {
               const status = getPaletteStatus(idx)
@@ -383,11 +379,8 @@ export default function Test() {
             })}
           </div>
 
-          <button className="testSidebarSubmit" onClick={handleSubmit}>
-            Submit Test ✓
-          </button>
+          <button className="testSidebarSubmit" onClick={handleSubmit}>Submit Test ✓</button>
         </aside>
-
       </div>
     </div>
   )

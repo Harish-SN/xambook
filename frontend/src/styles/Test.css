@@ -692,6 +692,278 @@
   border-color: #c7d2fe;
 }
 
+/* ── Dark / Light theme ── */
+.testLight {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.testDark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.testDark .testQuestionCard,
+.testDark .testProgressHeader,
+.testDark .testTimer,
+.testDark .testLegend,
+.testDark .testPalette,
+.testDark .testResultCard,
+.testDark .testExplCard,
+.testDark .testExplBox,
+.testDark .testPickerCard {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.testDark .testOption {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+.testDark .testOption:hover {
+  background: #273549;
+  border-color: #6366f1;
+}
+
+.testDark .testOption--selected {
+  background: #312e81;
+  border-color: #6366f1;
+  color: #e0e7ff;
+}
+
+.testDark .testOptionLabel {
+  background: #334155;
+  color: #94a3b8;
+}
+
+.testDark .testProgressBar {
+  background: #334155;
+}
+
+.testDark .testQuestionText,
+.testDark .testQuestionNum,
+.testDark .testProgressCourse,
+.testDark .testProgressLabel,
+.testDark .testResultTitle,
+.testDark .testResultSub,
+.testDark .testExplQuestion,
+.testDark .testPickerCardNum,
+.testDark .testPickerTitle {
+  color: #e2e8f0;
+}
+
+.testDark .testTimerValue {
+  color: #e2e8f0;
+}
+
+.testDark .testTimer--low .testTimerValue {
+  color: #f87171;
+}
+
+.testDark .testLegendItem {
+  color: #94a3b8;
+}
+
+.testDark .testExplOption {
+  background: #1e293b;
+  border-color: #334155;
+  color: #94a3b8;
+}
+
+.testDark .testExplOption--correct {
+  background: #064e3b;
+  border-color: #10b981;
+  color: #6ee7b7;
+}
+
+.testDark .testExplOption--wrong {
+  background: #450a0a;
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+.testDark .testExplBoxTitle {
+  color: #818cf8;
+}
+
+.testDark .testExplBoxText {
+  color: #94a3b8;
+}
+
+.testDark .testResultCard,
+.testDark .testResultStat {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.testDark .testPrevBtn {
+  background: #1e293b;
+  color: #94a3b8;
+  border-color: #334155;
+}
+
+.testDark .testPrevBtn:hover:not(:disabled) {
+  border-color: #6366f1;
+  color: #818cf8;
+}
+
+.testDark .testExplTitle {
+  color: #e2e8f0;
+}
+
+.testDark .testPickerSub,
+.testDark .testPickerSubject {
+  color: #64748b;
+}
+
+.testDark .testPickerMeta {
+  color: #64748b;
+}
+
+/* ── Theme toggle button ── */
+.testThemeBtn {
+  width: 100%;
+  padding: 9px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+.testThemeBtn:hover {
+  background: #e2e8f0;
+}
+
+.testDark .testThemeBtn {
+  background: #1e293b;
+  color: #94a3b8;
+  border-color: #334155;
+}
+
+.testDark .testThemeBtn:hover {
+  background: #273549;
+}
+
+/* ── Theme bar on result page ── */
+.testThemeBar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.75rem 2rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Pause button ── */
+.testPauseBtn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+.testPauseBtn:hover {
+  background: #e2e8f0;
+}
+
+.testPauseBtn--paused {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+}
+
+.testDark .testPauseBtn {
+  background: #1e293b;
+  color: #94a3b8;
+  border-color: #334155;
+}
+
+.testDark .testPauseBtn--paused {
+  background: #14532d;
+  color: #86efac;
+  border-color: #16a34a;
+}
+
+/* ── Paused overlay ── */
+.testPausedOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testPausedBox {
+  background: #fff;
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.testDark .testPausedBox {
+  background: #1e293b;
+}
+
+.testPausedIcon {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+
+.testPausedTitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.testDark .testPausedTitle {
+  color: #e2e8f0;
+}
+
+.testPausedSub {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.testPausedResumeBtn {
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+
+.testPausedResumeBtn:hover {
+  background: #3730a3;
+}
+
 @media (max-width: 768px) {
   .testLayout {
     flex-direction: column;
