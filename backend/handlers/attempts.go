@@ -76,6 +76,5 @@ func GetMyAttempts(c *gin.Context) {
 		}
 		attempts = append(attempts, a)
 	}
-
 	c.JSON(http.StatusOK, attempts)
 }

@@ -36,6 +36,7 @@ export default function Payment() {
             }),
           })
 
+          
           if (verify.ok) {
             alert('🎉 Payment successful! Premium activated.')
             navigate('/dashboard')
