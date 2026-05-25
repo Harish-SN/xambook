@@ -200,6 +200,26 @@
 .dashAttemptScore--good { color: #10b981; }
 .dashAttemptScore--low  { color: #ef4444; }
 
+.dashAttemptScoreBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.dashAttemptMarks {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.dashAttemptMarks--good { color: #10b981; }
+.dashAttemptMarks--low  { color: #ef4444; }
+
+.dashAttemptPct {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
 
 @media (max-width: 640px) {
   .dashStatsGrid {

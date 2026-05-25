@@ -17,6 +17,8 @@ interface Attempt {
   subject: string
   test_number: number
   score: number
+  marks: number
+  total_marks: number
   correct: number
   wrong: number
   skipped: number
@@ -48,6 +50,14 @@ export default function Dashboard() {
     )
   }
 
+  const avgMarks = attempts.length
+    ? Math.round(attempts.reduce((a, b) => a + b.marks, 0) / attempts.length)
+    : null
+
+  const bestAttempt = attempts.length
+    ? attempts.reduce((best, a) => a.marks > best.marks ? a : best)
+    : null
+
   return (
     <div className="dashPage">
       <Navbar />
@@ -69,17 +79,26 @@ export default function Dashboard() {
 
         {/* Stats */}
         <div className="dashStatsGrid">
-          {[
-            { label: 'Tests Taken', value: attempts.length },
-            { label: 'Avg Score', value: attempts.length ? Math.round(attempts.reduce((a, b) => a + b.score, 0) / attempts.length) + '%' : 'N/A' },
-            { label: 'Best Score', value: attempts.length ? Math.max(...attempts.map(a => a.score)) + '%' : 'N/A' },
-            { label: 'Status', value: user?.is_premium ? 'Premium' : 'Free' },
-          ].map((s) => (
-            <div key={s.label} className="dashStatCard">
-              <p className="dashStatValue">{s.value}</p>
-              <p className="dashStatLabel">{s.label}</p>
-            </div>
-          ))}
+          <div className="dashStatCard">
+            <p className="dashStatValue">{attempts.length}</p>
+            <p className="dashStatLabel">Tests Taken</p>
+          </div>
+          <div className="dashStatCard">
+            <p className="dashStatValue">
+              {avgMarks !== null ? avgMarks : 'N/A'}
+            </p>
+            <p className="dashStatLabel">Avg Marks</p>
+          </div>
+          <div className="dashStatCard">
+            <p className="dashStatValue">
+              {bestAttempt ? `${bestAttempt.marks}/${bestAttempt.total_marks}` : 'N/A'}
+            </p>
+            <p className="dashStatLabel">Best Score</p>
+          </div>
+          <div className="dashStatCard">
+            <p className="dashStatValue">{user?.is_premium ? 'Premium' : 'Free'}</p>
+            <p className="dashStatLabel">Status</p>
+          </div>
         </div>
 
         {/* Attempts */}
@@ -111,14 +130,42 @@ export default function Dashboard() {
                       <span className="dashAttemptWrong">❌ {a.wrong}</span>
                       <span className="dashAttemptSkipped">⏭ {a.skipped}</span>
                     </div>
-                    <div className={`dashAttemptScore ${a.score >= 60 ? 'dashAttemptScore--good' : 'dashAttemptScore--low'}`}>
-                      {a.score}%
+                    <div className="dashAttemptScoreBox">
+                      <div className={`dashAttemptMarks ${a.marks >= 0 ? 'dashAttemptMarks--good' : 'dashAttemptMarks--low'}`}>
+                        {a.marks} / {a.total_marks}
+                      </div>
+                      <div className="dashAttemptPct">{a.score}%</div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           )}
+        </div>
+
+        {/* Quick links */}
+        <div className="dashSection">
+          <h2 className="dashSectionTitle">Quick Links</h2>
+          <div className="dashLinksGrid">
+            <Link to="/courses" className="dashLinkCard">
+              <span className="dashLinkIcon">📋</span>
+              <span className="dashLinkLabel">Test Series</span>
+            </Link>
+            <Link to="/test/free" className="dashLinkCard">
+              <span className="dashLinkIcon">🎯</span>
+              <span className="dashLinkLabel">Free Test</span>
+            </Link>
+            <Link to="/about" className="dashLinkCard">
+              <span className="dashLinkIcon">ℹ️</span>
+              <span className="dashLinkLabel">About</span>
+            </Link>
+            {!user?.is_premium && (
+              <Link to="/payment" className="dashLinkCard dashLinkCard--premium">
+                <span className="dashLinkIcon">⚡</span>
+                <span className="dashLinkLabel">Go Premium</span>
+              </Link>
+            )}
+          </div>
         </div>
 
       </main>
