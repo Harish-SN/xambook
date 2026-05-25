@@ -15,9 +15,9 @@ export default function Navbar() {
 
       <nav className="navbar__nav">
         {[
+          { to: '/dashboard', label: 'Dashboard' },
           { to: '/courses', label: 'Test Series' },
           { to: '/about', label: 'About' },
-          { to: '/dashboard', label: 'Dashboard' },
         ].map(({ to, label }) => (
           <Link
             key={to}

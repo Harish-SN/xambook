@@ -200,42 +200,6 @@
 .dashAttemptScore--good { color: #10b981; }
 .dashAttemptScore--low  { color: #ef4444; }
 
-/* Quick links */
-.dashLinksGrid {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.dashLinkCard {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  color: #475569;
-  transition: all 0.15s;
-}
-
-.dashLinkCard:hover {
-  border-color: #a5b4fc;
-  color: #4f46e5;
-}
-
-.dashLinkCard--premium {
-  background: #ede9fe;
-  border-color: #c7d2fe;
-  color: #4f46e5;
-}
-
-.dashLinkIcon {
-  font-size: 18px;
-}
 
 @media (max-width: 640px) {
   .dashStatsGrid {

@@ -121,27 +121,6 @@ export default function Dashboard() {
           )}
         </div>
 
-        {/* Quick links */}
-        <div className="dashSection">
-          <h2 className="dashSectionTitle">Quick Links</h2>
-          <div className="dashLinksGrid">
-            <Link to="/courses" className="dashLinkCard">
-              <span className="dashLinkIcon">📋</span>
-              <span className="dashLinkLabel">Test Series</span>
-            </Link>
-            <Link to="/about" className="dashLinkCard">
-              <span className="dashLinkIcon">ℹ️</span>
-              <span className="dashLinkLabel">About</span>
-            </Link>
-            {!user?.is_premium && (
-              <Link to="/payment" className="dashLinkCard dashLinkCard--premium">
-                <span className="dashLinkIcon">⚡</span>
-                <span className="dashLinkLabel">Go Premium</span>
-              </Link>
-            )}
-          </div>
-        </div>
-
       </main>
       <Footer />
     </div>

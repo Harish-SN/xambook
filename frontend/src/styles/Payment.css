@@ -1,0 +1,142 @@
+.payPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+}
+
+.payMain {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.payCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Header */
+.payHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.payBadge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: #ede9fe;
+  border: 1px solid #c7d2fe;
+  font-size: 11px;
+  font-weight: 700;
+  color: #4f46e5;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+.payTitle {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.paySub {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Price */
+.payPriceBox {
+  background: #f8f7ff;
+  border: 1px solid #e0e7ff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.payPriceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  justify-content: center;
+}
+
+.payPrice {
+  font-size: 52px;
+  font-weight: 800;
+  color: #4f46e5;
+  line-height: 1;
+}
+
+.payPriceNote {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Perks */
+.payPerks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.payPerk {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.payPerkIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+
+.payPerkText {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Button */
+.payBtn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+
+.payBtn:hover:not(:disabled) {
+  background: #3730a3;
+}
+
+.payBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.payNote {
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+}

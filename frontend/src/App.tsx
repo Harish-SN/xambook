@@ -4,6 +4,7 @@ import Courses from './pages/Courses'
 import Test from './pages/Test'
 import About from './pages/About'
 import Dashboard from './pages/Dashboard'
+import Payment from './pages/Payment'
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Route path="/test/:courseId" element={<Test />} />
       <Route path="/about" element={<About />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/payment" element={<Payment />} />
     </Routes>
   )
 }
