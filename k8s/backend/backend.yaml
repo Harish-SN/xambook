@@ -1,0 +1,55 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backend-secret
+  namespace: xambook
+type: Opaque
+stringData:
+  POSTGRES_URL: postgres://postgres:xambook2025secure@postgres:5432/xambook?sslmode=disable
+  RAZORPAY_KEY_ID: rzp_test_xxxx
+  RAZORPAY_KEY_SECRET: xxxx
+  ADMIN_KEY: xambook-admin-secret-2025
+  KEYCLOAK_URL: http://keycloak:8080
+  KEYCLOAK_REALM: xambook
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: xambook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      nodeSelector:
+        role: app
+      containers:
+        - name: backend
+          image: harishsudalaimani/xambook-backend:latest
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: backend-secret
+          env:
+            - name: PORT
+              value: "8080"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: xambook
+spec:
+  selector:
+    app: backend
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: ClusterIP
