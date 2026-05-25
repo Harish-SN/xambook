@@ -32,6 +32,7 @@ export default function Test() {
   const isFree = subject === 'free'
 
   const [selectedTest, setSelectedTest] = useState<number | null>(isFree ? 1 : null)
+  const [confirmTest, setConfirmTest] = useState<number | null>(null)
   const [questions, setQuestions] = useState<Question[]>([])
   const [answers, setAnswers] = useState<Record<number, number>>({})
   const [visited, setVisited] = useState<Set<number>>(new Set())
@@ -124,14 +125,14 @@ export default function Test() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          subject: subject,
+          subject,
           test_number: selectedTest,
           score: percentage,
-          marks: marks,
+          marks,
           total_marks: totalMarks,
-          correct: correct,
-          wrong: wrong,
-          skipped: skipped,
+          correct,
+          wrong,
+          skipped,
         }),
       })
     } catch (err) {
@@ -242,7 +243,9 @@ export default function Test() {
           <div className="testPickerHeader">
             <p className="testPickerSubject">{subjectName}</p>
             <h1 className="testPickerTitle">Select a Test</h1>
-            <p className="testPickerSub">45 questions · 60 minutes · 180 marks</p>
+            <p className="testPickerSub">
+              {subject === 'mock' ? '180 questions · 200 minutes · 720 marks' : '45 questions · 60 minutes · 180 marks'}
+            </p>
           </div>
           <div className="testPickerGrid">
             {TESTS.map((t) => (
@@ -255,12 +258,12 @@ export default function Test() {
                   }
                 </div>
                 <div className="testPickerMeta">
-                  <span>📋 45 Questions</span>
-                  <span>⏱ 60 min</span>
-                  <span>📝 180 marks</span>
+                  <span>📋 {subject === 'mock' ? '180' : '45'} Questions</span>
+                  <span>⏱ {subject === 'mock' ? '200' : '60'} min</span>
+                  <span>📝 {subject === 'mock' ? '720' : '180'} marks</span>
                 </div>
                 {isPremium ? (
-                  <button className="testPickerStartBtn" onClick={() => setSelectedTest(t.id)}>
+                  <button className="testPickerStartBtn" onClick={() => setConfirmTest(t.id)}>
                     Take Test →
                   </button>
                 ) : (
@@ -272,6 +275,50 @@ export default function Test() {
             ))}
           </div>
         </main>
+
+        {/* Confirm popup */}
+        {confirmTest !== null && (
+          <div className="testConfirmOverlay" onClick={() => setConfirmTest(null)}>
+            <div className="testConfirmBox" onClick={e => e.stopPropagation()}>
+              <div className="testConfirmIcon">📋</div>
+              <h2 className="testConfirmTitle">{subjectName} · Test {confirmTest}</h2>
+              <p className="testConfirmSub">Read the details before you begin</p>
+
+              <div className="testConfirmGrid">
+                {[
+                  { icon: '❓', label: 'Questions', val: subject === 'mock' ? '180' : '45' },
+                  { icon: '⏱', label: 'Duration', val: subject === 'mock' ? '200 min' : '60 min' },
+                  { icon: '📝', label: 'Total Marks', val: subject === 'mock' ? '720' : '180' },
+                  { icon: '✅', label: 'Correct', val: '+4 marks' },
+                  { icon: '❌', label: 'Wrong', val: '-1 mark' },
+                  { icon: '⏭', label: 'Skipped', val: '0 marks' },
+                ].map((item) => (
+                  <div key={item.label} className="testConfirmItem">
+                    <span className="testConfirmItemIcon">{item.icon}</span>
+                    <span className="testConfirmItemLabel">{item.label}</span>
+                    <span className="testConfirmItemVal">{item.val}</span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="testConfirmWarning">
+                ⚠️ Once started, the timer cannot be stopped permanently. Make sure you're ready.
+              </p>
+
+              <div className="testConfirmBtns">
+                <button className="testConfirmCancel" onClick={() => setConfirmTest(null)}>
+                  Cancel
+                </button>
+                <button className="testConfirmStart" onClick={() => {
+                  setSelectedTest(confirmTest)
+                  setConfirmTest(null)
+                }}>
+                  Start Test →
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     )
   }
