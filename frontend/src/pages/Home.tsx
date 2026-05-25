@@ -15,7 +15,6 @@ const SUBJECTS = [
 const STATS = [
   { value: '20', label: 'Total Tests' },
   { value: '4', label: 'Subjects' },
-  { value: '1000+', label: 'Students' },
   { value: '₹99', label: 'One-time Price' },
 ]
 
