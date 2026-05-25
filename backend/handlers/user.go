@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yourusername/xambook-backend/db"
-	"github.com/yourusername/xambook-backend/models"
+	"github.com/Harish-SN/xambook-backend/db"
+	"github.com/Harish-SN/xambook-backend/models"
 )
 
 func GetMe(c *gin.Context) {

@@ -6,8 +6,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"github.com/yourusername/xambook-backend/db"
-	"github.com/yourusername/xambook-backend/handlers"
+	"github.com/Harish-SN/xambook-backend/db"
+	"github.com/Harish-SN/xambook-backend/handlers"
 )
 
 func main() {
