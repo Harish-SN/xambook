@@ -1,0 +1,250 @@
+.dashPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+}
+
+.dashLoading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #94a3b8;
+}
+
+.dashMain {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Welcome */
+.dashWelcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashWelcomeTitle {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.dashWelcomeSub {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.dashPremiumBadge {
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: #d1fae5;
+  color: #065f46;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dashBuyBtn {
+  padding: 10px 22px;
+  border-radius: 9px;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.dashBuyBtn:hover {
+  background: #3730a3;
+}
+
+/* Stats */
+.dashStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.dashStatCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.dashStatValue {
+  font-size: 28px;
+  font-weight: 800;
+  color: #4f46e5;
+  margin-bottom: 4px;
+}
+
+.dashStatLabel {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Section */
+.dashSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashSectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Empty */
+.dashEmpty {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.dashEmptyText {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.dashEmptyBtn {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 9px;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.dashEmptyBtn:hover {
+  background: #3730a3;
+}
+
+/* Attempts */
+.dashAttemptList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashAttemptCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dashAttemptSubject {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 4px;
+  text-transform: capitalize;
+}
+
+.dashAttemptDate {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.dashAttemptRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dashAttemptStats {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.dashAttemptScore {
+  font-size: 18px;
+  font-weight: 800;
+  min-width: 52px;
+  text-align: right;
+}
+
+.dashAttemptScore--good { color: #10b981; }
+.dashAttemptScore--low  { color: #ef4444; }
+
+/* Quick links */
+.dashLinksGrid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dashLinkCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  transition: all 0.15s;
+}
+
+.dashLinkCard:hover {
+  border-color: #a5b4fc;
+  color: #4f46e5;
+}
+
+.dashLinkCard--premium {
+  background: #ede9fe;
+  border-color: #c7d2fe;
+  color: #4f46e5;
+}
+
+.dashLinkIcon {
+  font-size: 18px;
+}
+
+@media (max-width: 640px) {
+  .dashStatsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dashAttemptRight {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+}
