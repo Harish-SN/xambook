@@ -83,7 +83,7 @@ resource "google_compute_instance" "app_server" {
   boot_disk {
     initialize_params {
       image = "ubuntu-os-cloud/ubuntu-2204-lts"
-      size  = 50
+      size  = 15
       type  = "pd-standard"
     }
   }
@@ -116,7 +116,7 @@ resource "google_compute_instance" "data_server" {
   boot_disk {
     initialize_params {
       image = "ubuntu-os-cloud/ubuntu-2204-lts"
-      size  = 50
+      size  = 15
       type  = "pd-standard"
     }
   }
