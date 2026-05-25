@@ -13,7 +13,7 @@ export default function FreeTestPopup() {
           <div className="ftpBannerIcon">🎯</div>
           <div>
             <p className="ftpBannerTitle">Try a Free NEET Test</p>
-            <p className="ftpBannerSub">No login required · 20 questions · Instant result</p>
+            <p className="ftpBannerSub">No login required · 5 questions · Instant result</p>
           </div>
         </div>
         <button className="ftpBannerBtn">Start Free</button>
@@ -27,15 +27,15 @@ export default function FreeTestPopup() {
             <div className="ftpModalHeader">
               <div className="ftpModalEmoji">🎯</div>
               <h2 className="ftpModalTitle">Free NEET Sample Test</h2>
-              <p className="ftpModalSub">20 questions across Biology, Chemistry & Physics</p>
+              <p className="ftpModalSub">5 questions across Biology & Chemistry</p>
             </div>
 
             <div className="ftpModalGrid">
               {[
-                ['📋', '20 Questions', 'Mixed subjects'],
-                ['⏱️', '25 Minutes', 'Timed test'],
+                ['📋', '5 Questions', 'Mixed subjects'],
+                ['⏱️', '60 Minutes', 'Timed test'],
                 ['📊', 'Instant Result', 'Score + analysis'],
-                ['🔓', 'No Login', 'Start right away'],
+                ['🔓', 'No Premium', 'Completely free'],
               ].map(([icon, title, sub]) => (
                 <div key={title} className="ftpModalCard">
                   <div className="ftpModalCardIcon">{icon}</div>
@@ -47,11 +47,11 @@ export default function FreeTestPopup() {
 
             <button
               className="ftpStartBtn"
-              onClick={() => { setOpen(false); navigate('/test/free-sample') }}
+              onClick={() => { setOpen(false); navigate('/test/free') }}
             >
               Begin Test →
             </button>
-            <p className="ftpModalNote">No account needed for this test</p>
+            <p className="ftpModalNote">Free for everyone · No account needed</p>
           </div>
         </div>
       )}

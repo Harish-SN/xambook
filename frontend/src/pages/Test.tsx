@@ -45,7 +45,7 @@ export default function Test() {
   const [dark, setDark] = useState(false)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  const totalMins = subject === 'mock' ? 200 : 60
+  const totalMins = subject === 'mock' ? 180 : 60
   const totalMarks = subject === 'mock' ? 720 : 180
 
   useEffect(() => {
