@@ -11,11 +11,10 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/courses" element={<Courses />} />
-      <Route path="/test/:courseId" element={<Test />} />
+      <Route path="/test/:subject" element={<Test />} />
       <Route path="/about" element={<About />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/payment" element={<Payment />} />
-      <Route path="/test/:subject" element={<Test />} />
     </Routes>
   )
 }
