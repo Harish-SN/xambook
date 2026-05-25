@@ -1,203 +1,413 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import '../styles/Test.css'
 
-const ALL_QUESTIONS = [
-  { id: 'q1', text: 'Which of the following is the functional unit of the kidney?', options: ['Nephron', 'Neuron', 'Sarcomere', 'Acinus'], answer: 0 },
-  { id: 'q2', text: 'Photosynthesis occurs in which part of the chloroplast?', options: ['Stroma', 'Thylakoid membrane', 'Outer membrane', 'Matrix'], answer: 1 },
-  { id: 'q3', text: 'Which bond connects amino acids in a protein?', options: ['Glycosidic bond', 'Ester bond', 'Peptide bond', 'Hydrogen bond'], answer: 2 },
-  { id: 'q4', text: 'The powerhouse of the cell is the:', options: ['Nucleus', 'Ribosome', 'Mitochondria', 'Golgi apparatus'], answer: 2 },
-  { id: 'q5', text: 'Which law states that genes for different traits are inherited independently?', options: ['Law of Dominance', 'Law of Segregation', 'Law of Independent Assortment', 'Hardy-Weinberg Law'], answer: 2 },
-]
-
-const TESTS = [
-  { id: 1, label: 'Test 1', questions: 45, mins: 60 },
-  { id: 2, label: 'Test 2', questions: 45, mins: 60 },
-  { id: 3, label: 'Test 3', questions: 45, mins: 60 },
-  { id: 4, label: 'Test 4', questions: 45, mins: 60 },
-]
-
-interface Result {
-  score: number
-  correct: number
-  wrong: number
-  skipped: number
+interface Question {
+  id: number
+  text: string
+  option_a: string
+  option_b: string
+  option_c: string
+  option_d: string
+  correct_option: number
+  explanation: string
+  image_url: string | null
 }
 
+const TESTS = [
+  { id: 1, label: 'Test 1' },
+  { id: 2, label: 'Test 2' },
+  { id: 3, label: 'Test 3' },
+  { id: 4, label: 'Test 4' },
+]
+
+const OPTION_KEYS = ['option_a', 'option_b', 'option_c', 'option_d'] as const
+
 export default function Test() {
-  const { courseId } = useParams()
+  const { subject, testNumber } = useParams()
   const navigate = useNavigate()
 
-  // Replace with real auth/purchase state later
+  // Replace with real auth later
   const isPremium = true
+  const isFree = subject === 'free'
 
-  const [selectedTest, setSelectedTest] = useState<number | null>(null)
+  const [selectedTest, setSelectedTest] = useState<number | null>(
+    isFree ? 1 : null
+  )
+  const [questions, setQuestions] = useState<Question[]>([])
+  const [answers, setAnswers] = useState<Record<number, number>>({})
+  const [visited, setVisited] = useState<Set<number>>(new Set())
   const [current, setCurrent] = useState(0)
-  const [answers, setAnswers] = useState<Record<string, number>>({})
-  const [result, setResult] = useState<Result | null>(null)
+  const [timeLeft, setTimeLeft] = useState(0)
+  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  const QUESTIONS = ALL_QUESTIONS
-  const total = QUESTIONS.length
-  const answered = Object.keys(answers).length
-  const q = selectedTest !== null ? QUESTIONS[current] : null
+  const totalMins = subject === 'mock' ? 200 : 60
+  const totalMarks = subject === 'mock' ? 720 : 180
 
-  const subjectName = courseId
-    ?.replace(/-/g, ' ')
-    .replace(/\b\w/g, (c) => c.toUpperCase())
+  // Fetch questions when test selected
+  useEffect(() => {
+    if (selectedTest === null) return
+    setLoading(true)
+    fetch(`http://localhost:8080/api/tests/${subject}/${selectedTest}/questions`)
+      .then(r => r.json())
+      .then(data => {
+        setQuestions(data || [])
+        setAnswers({})
+        setVisited(new Set())
+        setCurrent(0)
+        setTimeLeft(totalMins * 60)
+        setSubmitted(false)
+        setLoading(false)
+      })
+  }, [selectedTest])
 
-  function startTest(testId: number) {
-    setSelectedTest(testId)
-    setCurrent(0)
-    setAnswers({})
-    setResult(null)
+  // Timer
+  useEffect(() => {
+    if (selectedTest === null || submitted || loading) return
+    timerRef.current = setInterval(() => {
+      setTimeLeft(t => {
+        if (t <= 1) {
+          clearInterval(timerRef.current!)
+          handleSubmit()
+          return 0
+        }
+        return t - 1
+      })
+    }, 1000)
+    return () => clearInterval(timerRef.current!)
+  }, [selectedTest, submitted, loading])
+
+  function formatTime(secs: number) {
+    const h = Math.floor(secs / 3600)
+    const m = Math.floor((secs % 3600) / 60)
+    const s = secs % 60
+    if (h > 0) return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
+    return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
   }
 
-  function submit() {
-    let correct = 0
-    QUESTIONS.forEach((q) => { if (answers[q.id] === q.answer) correct++ })
-    const wrong = answered - correct
-    const skipped = total - answered
-    const score = Math.max(0, Math.round(((correct * 4 - wrong) / (total * 4)) * 100))
-    setResult({ score, correct, wrong, skipped })
+  function selectAnswer(qIndex: number, optionIdx: number) {
+    setAnswers(a => ({ ...a, [qIndex]: optionIdx }))
+    setVisited(v => new Set(v).add(qIndex))
   }
+
+  function goTo(idx: number) {
+    setVisited(v => new Set(v).add(current))
+    setCurrent(idx)
+  }
+
+  function handleSubmit() {
+    clearInterval(timerRef.current!)
+    setSubmitted(true)
+  }
+
+  function getPaletteStatus(idx: number) {
+    if (answers[idx] !== undefined) return 'answered'
+    if (visited.has(idx)) return 'skipped'
+    return 'unattempted'
+  }
+
+  // Result calculation
+  const correct = questions.filter((q, i) => answers[i] === q.correct_option).length
+  const wrong = questions.filter((q, i) => answers[i] !== undefined && answers[i] !== q.correct_option).length
+  const skipped = questions.length - correct - wrong
+  const marks = correct * 4 - wrong * 1
+  const percentage = questions.length > 0 ? Math.round((marks / totalMarks) * 100) : 0
+
+  const subjectName = subject
+    ? subject.charAt(0).toUpperCase() + subject.slice(1)
+    : ''
 
   // ── Result screen ──────────────────────────────────────────
-  if (result) {
+  if (submitted && questions.length > 0) {
     return (
       <div className="testPage">
         <Navbar />
-        <div className="testResultMain">
-          <div className="testResultEmoji">{result.score >= 60 ? '🎉' : '📚'}</div>
-          <h1 className="testResultTitle">Test Complete!</h1>
-          <p className="testResultSub">Here's how you did</p>
+        <main className="testResultPage">
 
+          {/* Score card */}
           <div className="testResultCard">
-            <div className="testResultScore">{result.score}%</div>
-            <p className="testResultScoreLabel">Overall Score</p>
-            <div className="testResultGrid">
-              {[
-                { icon: '✅', label: 'Correct', val: result.correct, color: '#10b981' },
-                { icon: '❌', label: 'Wrong', val: result.wrong, color: '#ef4444' },
-                { icon: '⏭️', label: 'Skipped', val: result.skipped, color: '#94a3b8' },
-              ].map((s) => (
-                <div key={s.label} className="testResultStat">
-                  <div className="testResultStatIcon">{s.icon}</div>
-                  <div className="testResultStatVal" style={{ color: s.color }}>{s.val}</div>
-                  <div className="testResultStatLabel">{s.label}</div>
-                </div>
-              ))}
+            <div className="testResultEmoji">{marks >= totalMarks * 0.6 ? '🎉' : '📚'}</div>
+            <h1 className="testResultTitle">Test Complete!</h1>
+            <p className="testResultSub">{subjectName} · Test {selectedTest}</p>
+
+            <div className="testResultMarks">{marks} / {totalMarks}</div>
+            <p className="testResultMarksLabel">Total Marks</p>
+
+            <div className="testResultStatsRow">
+              <div className="testResultStat">
+                <span className="testResultStatVal testResultStatVal--correct">{correct}</span>
+                <span className="testResultStatLabel">✅ Correct</span>
+              </div>
+              <div className="testResultStat">
+                <span className="testResultStatVal testResultStatVal--wrong">{wrong}</span>
+                <span className="testResultStatLabel">❌ Wrong</span>
+              </div>
+              <div className="testResultStat">
+                <span className="testResultStatVal testResultStatVal--skip">{skipped}</span>
+                <span className="testResultStatLabel">⏭ Skipped</span>
+              </div>
+              <div className="testResultStat">
+                <span className="testResultStatVal testResultStatVal--pct">{percentage}%</span>
+                <span className="testResultStatLabel">Score</span>
+              </div>
+            </div>
+
+            <div className="testResultBtns">
+              <button className="testRetryBtn" onClick={() => {
+                setSubmitted(false)
+                setAnswers({})
+                setVisited(new Set())
+                setCurrent(0)
+                setTimeLeft(totalMins * 60)
+              }}>
+                Retry Test
+              </button>
+              <button className="testBackBtn" onClick={() => navigate('/courses')}>
+                Back to Tests
+              </button>
             </div>
           </div>
 
-          <div className="testResultBtns">
-            <button className="testRetryBtn" onClick={() => startTest(selectedTest!)}>
-              Retry Test
-            </button>
-            <button className="testBackBtn" onClick={() => { setSelectedTest(null); setResult(null) }}>
-              Back to Tests
-            </button>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  // ── Active test screen ─────────────────────────────────────
-  if (selectedTest !== null && q) {
-    return (
-      <div className="testPage">
-        <Navbar />
-        <main className="testMain">
-          <div className="testProgressHeader">
-            <p className="testProgressCourse">
-              {subjectName} · Test {selectedTest}
-            </p>
-            <div className="testProgressMeta">
-              <span className="testProgressLabel">Question {current + 1} of {total}</span>
-              <span className="testProgressLabel">{answered} answered</span>
-            </div>
-            <div className="testProgressBar">
-              <div className="testProgressFill" style={{ width: `${((current + 1) / total) * 100}%` }} />
-            </div>
-          </div>
-
-          <div className="testQuestionCard">
-            <p className="testQuestionNum">Q{current + 1}</p>
-            <p className="testQuestionText">{q.text}</p>
-          </div>
-
-          <div className="testOptions">
-            {q.options.map((opt, idx) => {
-              const selected = answers[q.id] === idx
+          {/* Explanation section */}
+          <div className="testExplanations">
+            <h2 className="testExplTitle">Question Explanations</h2>
+            {questions.map((q, i) => {
+              const userAnswer = answers[i]
+              const isCorrect = userAnswer === q.correct_option
+              const isSkipped = userAnswer === undefined
               return (
-                <button
-                  key={idx}
-                  className={`testOption ${selected ? 'testOption--selected' : ''}`}
-                  onClick={() => setAnswers((a) => ({ ...a, [q.id]: idx }))}
+                <div
+                  key={q.id}
+                  className={`testExplCard ${isCorrect ? 'testExplCard--correct' : isSkipped ? 'testExplCard--skipped' : 'testExplCard--wrong'}`}
                 >
-                  <span className={`testOptionLabel ${selected ? 'testOptionLabel--selected' : ''}`}>
-                    {String.fromCharCode(65 + idx)}
-                  </span>
-                  {opt}
-                </button>
+                  <div className="testExplTop">
+                    <span className="testExplNum">Q{i + 1}</span>
+                    <span className={`testExplStatus ${isCorrect ? 'testExplStatus--correct' : isSkipped ? 'testExplStatus--skipped' : 'testExplStatus--wrong'}`}>
+                      {isCorrect ? '✅ Correct' : isSkipped ? '⏭ Skipped' : '❌ Wrong'}
+                    </span>
+                  </div>
+
+                  <p className="testExplQuestion">{q.text}</p>
+
+                  {q.image_url && (
+                    <img src={q.image_url} alt="question" className="testExplImage" />
+                  )}
+
+                  <div className="testExplOptions">
+                    {OPTION_KEYS.map((key, idx) => (
+                      <div
+                        key={idx}
+                        className={`testExplOption
+                          ${idx === q.correct_option ? 'testExplOption--correct' : ''}
+                          ${userAnswer === idx && idx !== q.correct_option ? 'testExplOption--wrong' : ''}
+                        `}
+                      >
+                        <span className="testExplOptionLabel">
+                          {String.fromCharCode(65 + idx)}
+                        </span>
+                        {q[key]}
+                        {idx === q.correct_option && <span className="testExplTick">✓</span>}
+                        {userAnswer === idx && idx !== q.correct_option && <span className="testExplCross">✗</span>}
+                      </div>
+                    ))}
+                  </div>
+
+                  {q.explanation && (
+                    <div className="testExplBox">
+                      <p className="testExplBoxTitle">Explanation</p>
+                      <p className="testExplBoxText">{q.explanation}</p>
+                    </div>
+                  )}
+                </div>
               )
             })}
           </div>
 
-          <div className="testNav">
-            <button className="testPrevBtn" onClick={() => setCurrent((c) => Math.max(0, c - 1))} disabled={current === 0}>
-              ← Prev
-            </button>
-            {current < total - 1 ? (
-              <button className="testNextBtn" onClick={() => setCurrent((c) => c + 1)}>Next →</button>
-            ) : (
-              <button className="testSubmitBtn" onClick={submit}>Submit Test ✓</button>
-            )}
-          </div>
         </main>
       </div>
     )
   }
 
   // ── Test selection screen ──────────────────────────────────
+  if (selectedTest === null) {
+    return (
+      <div className="testPage">
+        <Navbar />
+        <main className="testMain">
+          <div className="testPickerHeader">
+            <p className="testPickerSubject">{subjectName}</p>
+            <h1 className="testPickerTitle">Select a Test</h1>
+            <p className="testPickerSub">45 questions · 60 minutes · 180 marks</p>
+          </div>
+          <div className="testPickerGrid">
+            {TESTS.map((t) => (
+              <div key={t.id} className="testPickerCard">
+                <div className="testPickerCardTop">
+                  <span className="testPickerCardNum">Test {t.id}</span>
+                  {isPremium
+                    ? <span className="testPickerBadgePremium">✅ Purchased</span>
+                    : <span className="testPickerBadgeLocked">🔒 Premium</span>
+                  }
+                </div>
+                <div className="testPickerMeta">
+                  <span>📋 45 Questions</span>
+                  <span>⏱ 60 min</span>
+                  <span>📝 180 marks</span>
+                </div>
+                {isPremium ? (
+                  <button className="testPickerStartBtn" onClick={() => setSelectedTest(t.id)}>
+                    Take Test →
+                  </button>
+                ) : (
+                  <button className="testPickerLockedBtn" onClick={() => navigate('/payment')}>
+                    Buy Premium — ₹99
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+        </main>
+      </div>
+    )
+  }
+
+  // ── Loading ────────────────────────────────────────────────
+  if (loading) {
+    return (
+      <div className="testPage">
+        <Navbar />
+        <div className="testLoading">Loading questions...</div>
+      </div>
+    )
+  }
+
+  // ── Active test screen ─────────────────────────────────────
+  const q = questions[current]
+  const answered = Object.keys(answers).length
+  const isLowTime = timeLeft <= 300 // under 5 mins
+
   return (
     <div className="testPage">
       <Navbar />
-      <main className="testMain">
-        <div className="testPickerHeader">
-          <p className="testPickerSubject">{subjectName}</p>
-          <h1 className="testPickerTitle">Select a Test</h1>
-          <p className="testPickerSub">4 tests · 45 questions each · 60 minutes</p>
-        </div>
+      <div className="testLayout">
 
-        <div className="testPickerGrid">
-          {TESTS.map((t) => (
-            <div key={t.id} className="testPickerCard">
-              <div className="testPickerCardTop">
-                <span className="testPickerCardNum">Test {t.id}</span>
-                {isPremium
-                  ? <span className="testPickerBadgePremium">✅ Purchased</span>
-                  : <span className="testPickerBadgeLocked">🔒 Premium</span>
-                }
-              </div>
-              <div className="testPickerMeta">
-                <span>📋 {t.questions} Questions</span>
-                <span>⏱ {t.mins} min</span>
-              </div>
-              {isPremium ? (
-                <button className="testPickerStartBtn" onClick={() => startTest(t.id)}>
-                  Take Test →
-                </button>
-              ) : (
-                <button className="testPickerLockedBtn" onClick={() => navigate('/login')}>
-                  Buy Premium — ₹99
-                </button>
-              )}
+        {/* Left — question area */}
+        <main className="testContent">
+          <div className="testProgressHeader">
+            <p className="testProgressCourse">{subjectName} · Test {selectedTest}</p>
+            <div className="testProgressMeta">
+              <span className="testProgressLabel">Q {current + 1} of {questions.length}</span>
+              <span className="testProgressLabel">{answered} answered</span>
             </div>
-          ))}
-        </div>
-      </main>
+            <div className="testProgressBar">
+              <div
+                className="testProgressFill"
+                style={{ width: `${((current + 1) / questions.length) * 100}%` }}
+              />
+            </div>
+          </div>
+
+          {q && (
+            <>
+              <div className="testQuestionCard">
+                <p className="testQuestionNum">Q{current + 1}</p>
+                <p className="testQuestionText">{q.text}</p>
+                {q.image_url && (
+                  <img src={q.image_url} alt="question" className="testQuestionImage" />
+                )}
+              </div>
+
+              <div className="testOptions">
+                {OPTION_KEYS.map((key, idx) => {
+                  const selected = answers[current] === idx
+                  return (
+                    <button
+                      key={idx}
+                      className={`testOption ${selected ? 'testOption--selected' : ''}`}
+                      onClick={() => selectAnswer(current, idx)}
+                    >
+                      <span className={`testOptionLabel ${selected ? 'testOptionLabel--selected' : ''}`}>
+                        {String.fromCharCode(65 + idx)}
+                      </span>
+                      {q[key]}
+                    </button>
+                  )
+                })}
+              </div>
+            </>
+          )}
+
+          <div className="testNav">
+            <button
+              className="testPrevBtn"
+              onClick={() => goTo(Math.max(0, current - 1))}
+              disabled={current === 0}
+            >
+              ← Prev
+            </button>
+            {current < questions.length - 1 ? (
+              <button className="testNextBtn" onClick={() => goTo(current + 1)}>
+                Next →
+              </button>
+            ) : (
+              <button className="testSubmitBtn" onClick={handleSubmit}>
+                Submit Test ✓
+              </button>
+            )}
+          </div>
+        </main>
+
+        {/* Right — timer + palette */}
+        <aside className="testSidebar">
+
+          {/* Timer */}
+          <div className={`testTimer ${isLowTime ? 'testTimer--low' : ''}`}>
+            <p className="testTimerLabel">Time Left</p>
+            <p className="testTimerValue">{formatTime(timeLeft)}</p>
+          </div>
+
+          {/* Legend */}
+          <div className="testLegend">
+            <div className="testLegendItem">
+              <span className="testLegendDot testLegendDot--answered" />
+              <span>Answered</span>
+            </div>
+            <div className="testLegendItem">
+              <span className="testLegendDot testLegendDot--skipped" />
+              <span>Skipped</span>
+            </div>
+            <div className="testLegendItem">
+              <span className="testLegendDot testLegendDot--unattempted" />
+              <span>Unattempted</span>
+            </div>
+          </div>
+
+          {/* Palette */}
+          <div className="testPalette">
+            {questions.map((_, idx) => {
+              const status = getPaletteStatus(idx)
+              return (
+                <button
+                  key={idx}
+                  className={`testPaletteBtn testPaletteBtn--${status} ${idx === current ? 'testPaletteBtn--current' : ''}`}
+                  onClick={() => goTo(idx)}
+                >
+                  {idx + 1}
+                </button>
+              )
+            })}
+          </div>
+
+          {/* Submit */}
+          <button className="testSidebarSubmit" onClick={handleSubmit}>
+            Submit Test ✓
+          </button>
+
+        </aside>
+      </div>
     </div>
   )
 }

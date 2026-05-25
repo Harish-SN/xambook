@@ -87,7 +87,7 @@ export default function Courses() {
                     <span className="coursesCardMetaItem">📋 {test.questions} Qs</span>
                     <span className="coursesCardMetaItem">⏱ {test.mins} min</span>
                   </div>
-                  <Link to={`/test/${test.id}`} className="coursesUnlockBtn">
+                  <Link to={`/test/${section.subject.toLowerCase()}`} className="coursesUnlockBtn">
                     🔒 Unlock
                   </Link>
                 </div>
