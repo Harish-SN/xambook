@@ -1,28 +1,4 @@
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: postgres-pv
-  namespace: xambook
-spec:
-  capacity:
-    storage: 5Gi
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: local-storage
-  local:
-    path: /mnt/data/postgres
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: role
-              operator: In
-              values:
-                - data
-
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: postgres-pvc
@@ -30,7 +6,6 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-storage
   resources:
     requests:
       storage: 5Gi
@@ -49,33 +24,43 @@ stringData:
 
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: postgres
   namespace: xambook
 spec:
+  serviceName: postgres
   replicas: 1
+
   selector:
     matchLabels:
       app: postgres
+
   template:
     metadata:
       labels:
         app: postgres
+
     spec:
       nodeSelector:
         role: data
+
       containers:
         - name: postgres
           image: postgres:16
+          imagePullPolicy: Always
+
           ports:
             - containerPort: 5432
+
           envFrom:
             - secretRef:
                 name: postgres-secret
+
           volumeMounts:
             - name: postgres-data
               mountPath: /var/lib/postgresql/data
+
       volumes:
         - name: postgres-data
           persistentVolumeClaim:
@@ -90,7 +75,9 @@ metadata:
 spec:
   selector:
     app: postgres
+
   ports:
     - port: 5432
       targetPort: 5432
-  type: ClusterIP
+
+  clusterIP: None

@@ -17,7 +17,7 @@ spec:
         role: app
       containers:
         - name: frontend
-          image: harishsudalaimani/xambook-frontend:latest
+          image: harishsudalaimani/xambook-frontend:v1
           ports:
             - containerPort: 80
 ---

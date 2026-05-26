@@ -31,7 +31,7 @@ spec:
         role: app
       containers:
         - name: backend
-          image: harishsudalaimani/xambook-backend:latest
+          image: harishsudalaimani/xambook-backend:v1
           ports:
             - containerPort: 8080
           envFrom:
