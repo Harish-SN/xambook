@@ -5,7 +5,6 @@ metadata:
   namespace: xambook
 spec:
   gatewayClassName: cilium
-
   listeners:
     - name: http
       protocol: HTTP
@@ -13,37 +12,63 @@ spec:
       allowedRoutes:
         namespaces:
           from: Same
-
+    - name: https
+      protocol: HTTPS
+      port: 443
+      allowedRoutes:
+        namespaces:
+          from: Same
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - name: xambook-tls-secret
+            kind: Secret
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: xambook-http-redirect
+  namespace: xambook
+spec:
+  parentRefs:
+    - name: xambook-gateway
+      sectionName: http
+  hostnames:
+    - "xambook.com"
+    - "gcp.xambook.com"
+    - "www.xambook.com"
+  rules:
+    - filters:
+        - type: RequestRedirect
+          requestRedirect:
+            scheme: https
+            statusCode: 301
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: xambook-routes
   namespace: xambook
-
 spec:
   parentRefs:
     - name: xambook-gateway
-
+      sectionName: https
   hostnames:
     - "xambook.com"
     - "gcp.xambook.com"
-
+    - "www.xambook.com"
   rules:
     - matches:
         - path:
             type: PathPrefix
             value: /api
-
       backendRefs:
         - name: backend
           port: 8080
-
     - matches:
         - path:
             type: PathPrefix
             value: /
-
       backendRefs:
         - name: frontend
           port: 80
