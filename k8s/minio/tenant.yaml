@@ -8,14 +8,22 @@ spec:
   configuration:
     name: minio-root-user
   pools:
-    - name: pool-0
-      servers: 1
-      volumesPerServer: 1
-      env:
+    - env:
         - name: MINIO_BROWSER_REDIRECT_URL
           value: https://console.minio.xambook.com
         - name: MINIO_SERVER_URL
           value: https://minio.xambook.com
+      name: pool-0
+      nodeSelector:
+        role: data
+      resources:
+        requests:
+          memory: 256Mi
+          cpu: "100m"
+        limits:
+          memory: 512Mi
+          cpu: "500m"
+      servers: 1
       volumeClaimTemplate:
         metadata:
           name: minio-data
@@ -25,15 +33,7 @@ spec:
           resources:
             requests:
               storage: 5Gi
-      resources:
-        requests:
-          memory: 256Mi
-          cpu: "100m"
-        limits:
-          memory: 512Mi
-          cpu: "500m"
-      nodeSelector:
-        role: data
+      volumesPerServer: 1
   mountPath: /export
   requestAutoCert: false
   features:
