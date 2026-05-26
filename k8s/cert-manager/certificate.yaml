@@ -13,6 +13,3 @@ spec:
     - gcp.xambook.com
     - www.xambook.com
     - argocd.xambook.com
-    - minio.xambook.com
-    - console.minio.xambook.com
-    - auth.xambook.com
