@@ -5,22 +5,28 @@ metadata:
   namespace: xambook
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: frontend
+
   template:
     metadata:
       labels:
         app: frontend
+
     spec:
       nodeSelector:
-        role: app
+        workload: app
+
       containers:
         - name: frontend
           image: harishsudalaimani/xambook-frontend:v1
           imagePullPolicy: Always
+
           ports:
             - containerPort: 80
+
 ---
 apiVersion: v1
 kind: Service
@@ -30,7 +36,9 @@ metadata:
 spec:
   selector:
     app: frontend
+
   ports:
     - port: 80
       targetPort: 80
+
   type: ClusterIP
