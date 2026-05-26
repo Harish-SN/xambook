@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: keycloak
+
 ---
 apiVersion: v1
 kind: Secret
@@ -12,62 +13,112 @@ type: Opaque
 stringData:
   KEYCLOAK_ADMIN: admin
   KEYCLOAK_ADMIN_PASSWORD: xambook2025secure
+
+  KC_DB_URL: jdbc:postgresql://postgres.xambook.svc.cluster.local:5432/keycloak
+  KC_DB_USERNAME: postgres
+  KC_DB_PASSWORD: xambook2025secure
+
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: keycloak
   namespace: keycloak
+
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: keycloak
+
   template:
     metadata:
       labels:
         app: keycloak
+
     spec:
       containers:
         - name: keycloak
+
           image: quay.io/keycloak/keycloak:26.2.4
+
           args:
-            - start-dev
+            - start
+
           ports:
             - containerPort: 8080
+              name: http
+
+            - containerPort: 9000
+              name: management
+
           envFrom:
             - secretRef:
                 name: keycloak-secret
+
           env:
             - name: KC_PROXY
               value: edge
-            - name: KC_HOSTNAME_STRICT
-              value: "false"
+
+            - name: KC_PROXY_HEADERS
+              value: xforwarded
+
             - name: KC_HTTP_ENABLED
               value: "true"
+
+            - name: KC_HEALTH_ENABLED
+              value: "true"
+
+            - name: KC_HOSTNAME
+              value: auth.xambook.com
+
+            - name: KC_DB
+              value: postgres
+
           resources:
             requests:
               cpu: 200m
               memory: 512Mi
+
             limits:
               cpu: 500m
               memory: 1Gi
+
           readinessProbe:
             httpGet:
-              path: /realms/master
-              port: 8080
-            initialDelaySeconds: 30
+              path: /health/ready
+              port: 9000
+
+            initialDelaySeconds: 60
             periodSeconds: 10
+
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: 9000
+
+            initialDelaySeconds: 60
+            periodSeconds: 10
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: keycloak
   namespace: keycloak
+
 spec:
   selector:
     app: keycloak
+
   ports:
-    - port: 8080
+    - name: http
+      port: 8080
       targetPort: 8080
+
+    - name: management
+      port: 9000
+      targetPort: 9000
+
   type: ClusterIP
