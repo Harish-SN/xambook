@@ -1,17 +1,4 @@
 apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: postgres-pvc
-  namespace: xambook
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 5Gi
-
----
-apiVersion: v1
 kind: Secret
 metadata:
   name: postgres-secret
@@ -47,7 +34,7 @@ spec:
 
       containers:
         - name: postgres
-          image: postgres:16
+          image: postgres:16-alpine
           imagePullPolicy: Always
 
           ports:
@@ -61,10 +48,16 @@ spec:
             - name: postgres-data
               mountPath: /var/lib/postgresql/data
 
-      volumes:
-        - name: postgres-data
-          persistentVolumeClaim:
-            claimName: postgres-pvc
+  volumeClaimTemplates:
+    - metadata:
+        name: postgres-data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+
+        resources:
+          requests:
+            storage: 5Gi
 
 ---
 apiVersion: v1
