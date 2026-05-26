@@ -1,9 +1,9 @@
-output "app_server_ip" {
-  value       = google_compute_address.app_server_ip.address
-  description = "App server public IP"
+output "control_plane_ip" {
+  value       = google_compute_address.control_plane_ip.address
+  description = "Control plane public IP"
 }
 
-output "data_server_ip" {
-  value       = google_compute_address.data_server_ip.address
-  description = "Data server public IP"
+output "worker_ip" {
+  value       = google_compute_address.worker_ip.address
+  description = "Worker node public IP"
 }

@@ -1,15 +1,34 @@
 variable "project_id" {
-  default = "xambook-497417"
+  description = "GCP project ID"
+  type        = string
 }
 
 variable "region" {
-  default = "asia-south1"
+  description = "GCP region"
+  type        = string
+  default     = "asia-south1"
 }
 
 variable "zone" {
-  default = "asia-south1-a"
+  description = "GCP zone"
+  type        = string
+  default     = "asia-south1-a"
 }
 
 variable "credentials_file" {
-  default = "~/terraform-key.json"
+  description = "Path to GCP service account key"
+  type        = string
+  default     = "~/terraform-key.json"
+}
+
+variable "machine_type" {
+  description = "GCP machine type"
+  type        = string
+  default     = "e2-medium"
+}
+
+variable "disk_size" {
+  description = "Boot disk size in GB"
+  type        = number
+  default     = 20
 }
