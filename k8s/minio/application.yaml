@@ -21,30 +21,24 @@ spec:
         rootPassword: CHANGE_THIS_PASSWORD
 
         persistence:
-          enabled: true
-          size: 20Gi
+          enabled: false
 
         resources:
           requests:
-            memory: 512Mi
+            memory: 256Mi
 
         service:
           type: ClusterIP
 
-        ingress:
+        consoleService:
+          type: ClusterIP
+
+        minioConsole:
           enabled: true
-          ingressClassName: nginx
 
-          hosts:
-            - minio.xambook.com
-
-          tls:
-            - secretName: minio-tls
-              hosts:
-                - minio.xambook.com
-
-          annotations:
-            cert-manager.io/cluster-issuer: letsencrypt-prod
+        extraEnvVars:
+          - name: MINIO_BROWSER_REDIRECT_URL
+            value: https://minio.xambook.com
 
   destination:
     server: https://kubernetes.default.svc
