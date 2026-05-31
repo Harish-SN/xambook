@@ -23,9 +23,9 @@ module "compute" {
     "worker-2"
   ]
 
-  machine_type   = var.machine_type
-  zone           = var.zone
-  subnet_id      = module.network.subnet_id
-  ssh_user       = var.ssh_user
+  machine_type    = var.machine_type
+  zone            = var.zone
+  subnet_id       = module.network.subnet_id
+  ssh_user        = var.ssh_user
   public_key_path = var.public_key_path
 }
