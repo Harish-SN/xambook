@@ -23,7 +23,7 @@ spec:
           image: quay.io/keycloak/keycloak:26.2
 
           args:
-            - start-dev
+            - start
 
           env:
             - name: KC_BOOTSTRAP_ADMIN_USERNAME
@@ -32,17 +32,17 @@ spec:
             - name: KC_BOOTSTRAP_ADMIN_PASSWORD
               value: admin123
 
-            - name: KC_PROXY_HEADERS
-              value: xforwarded
-
             - name: KC_PROXY
               value: edge
+
+            - name: KC_PROXY_HEADERS
+              value: xforwarded
 
             - name: KC_HTTP_ENABLED
               value: "true"
 
             - name: KC_HOSTNAME
-              value: auth.xambook.com
+              value: https://auth.xambook.com
 
             - name: KC_HOSTNAME_STRICT
               value: "false"
@@ -54,6 +54,20 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 20
 
 ---
 apiVersion: v1
