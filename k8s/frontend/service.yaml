@@ -1,0 +1,14 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: xambook-frontend
+  namespace: default
+
+spec:
+  selector:
+    app: xambook-frontend
+
+  ports:
+    - port: 80
+      targetPort: 80

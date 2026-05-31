@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xambook-frontend
+  namespace: default
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: xambook-frontend
+
+  template:
+    metadata:
+      labels:
+        app: xambook-frontend
+
+    spec:
+      containers:
+        - name: frontend
+
+          image: harishsudalaimani/xambook-frontend:v1
+
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 80
