@@ -20,7 +20,7 @@ spec:
       containers:
         - name: frontend
 
-          image: harishsudalaimani/xambook-frontend:70df2d37d4af67fa0373139b8e25ee2321ebc269
+          image: harishsudalaimani/xambook-frontend:1610dd394236bbc91879c4caf6dfc95f7ab434c7
 
           imagePullPolicy: Always
 
