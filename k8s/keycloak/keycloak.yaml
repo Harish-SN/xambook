@@ -40,6 +40,9 @@ spec:
 
             - name: KC_HOSTNAME
               value: auth.xambook.com
+            
+            - name: KC_HOSTNAME_URL
+              value: https://auth.xambook.com
 
             - name: KC_HOSTNAME_STRICT
               value: "false"
