@@ -1,4 +1,4 @@
-# Logs
+# ---------- Logs ----------
 logs
 *.log
 npm-debug.log*
@@ -7,66 +7,51 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+# ---------- Node / frontend ----------
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# ---------- Go / backend ----------
+backend/tmp/
+backend/*.exe
+
+# ---------- Secrets (NEVER commit) ----------
+.env
+*.env
+.env.local
+.env.production
+
+# ---------- Terraform ----------
+# Ignore STATE and local var/secret files, but KEEP the .tf source code.
+# (Do NOT add a bare "terraform/" line — it would drop all your infra code.)
+**/.terraform/*
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+crash.*.log
+
+# ---------- Kubeconfig / cluster creds (NEVER commit) ----------
+*.kubeconfig
+admin.conf
+kubeconfig
+
+# ---------- Editor / IDE ----------
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-# Environment secrets - NEVER commit these
-.env
-*.env
-.env.local
-.env.production
 
-# Dependencies
-node_modules/
-frontend/node_modules/
-
-# Go build
-backend/tmp/
-backend/*.exe
-
-# Build output
-frontend/dist/
-frontend/build/
-
-# Terraform state (has secrets inside)
-terraform/
-*.tfstate
-*.tfstate.backup
-*.tfvars
-.terraform/
-.terraform.lock.hcl
-
-# OS
+# ---------- OS ----------
 .DS_Store
 Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-
-# Terraform
-terraform/.terraform/
-terraform/*.tfstate
-terraform/*.tfstate.backup
-terraform/.terraform.lock.hcl
-terraform/*.tfvars
-
-# Environment secrets
-.env
-*.env
-.env.local
-.env.production
-
-
