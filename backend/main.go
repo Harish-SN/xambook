@@ -1,13 +1,18 @@
 package main
 
 import (
+	"context"
 	"log"
 	"os"
 
 	"github.com/Harish-SN/xambook-backend/db"
 	"github.com/Harish-SN/xambook-backend/handlers"
+	"github.com/Harish-SN/xambook-backend/internal/telemetry"
+
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
+
+	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
 )
 
 func main() {
@@ -15,9 +20,14 @@ func main() {
 		log.Println("No .env file found")
 	}
 
+	shutdown := telemetry.InitTracer()
+	defer shutdown(context.Background())
+
 	db.Connect()
 
 	r := gin.Default()
+
+	r.Use(otelgin.Middleware("xambook-backend"))
 
 	// CORS Middleware
 	r.Use(func(c *gin.Context) {
@@ -25,7 +35,7 @@ func main() {
 			"https://xambook.com":        true,
 			"https://www.xambook.com":    true,
 			"https://argocd.xambook.com": true,
-			"http://localhost:5173":      true, // local frontend
+			"http://localhost:5173":      true,
 		}
 
 		origin := c.Request.Header.Get("Origin")
@@ -82,6 +92,3 @@ func main() {
 
 	r.Run(":" + port)
 }
-// trigger
-// trigger
-// trigger
