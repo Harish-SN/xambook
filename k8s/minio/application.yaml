@@ -1,0 +1,59 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: minio
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://charts.min.io/
+    chart: minio
+    targetRevision: 5.4.0
+
+    helm:
+      values: |
+        mode: standalone
+
+        rootUser: admin
+        rootPassword: CHANGE_THIS_PASSWORD
+
+        persistence:
+          enabled: true
+          size: 20Gi
+
+        resources:
+          requests:
+            memory: 512Mi
+
+        service:
+          type: ClusterIP
+
+        ingress:
+          enabled: true
+          ingressClassName: nginx
+
+          hosts:
+            - minio.xambook.com
+
+          tls:
+            - secretName: minio-tls
+              hosts:
+                - minio.xambook.com
+
+          annotations:
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: storage
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
