@@ -20,18 +20,31 @@ spec:
         image:
           repository: otel/opentelemetry-collector-k8s
 
+        presets:
+          logsCollection:
+            enabled: false
+
+          kubernetesAttributes:
+            enabled: false
+
+          kubeletMetrics:
+            enabled: false
+
+          kubernetesEvents:
+            enabled: false
+
         config:
           receivers:
             otlp:
               protocols:
-                grpc:
-                http:
+                grpc: {}
+                http: {}
 
           processors:
-            batch:
+            batch: {}
 
           exporters:
-            debug:
+            debug: {}
 
             otlp/tempo:
               endpoint: tempo.tracing.svc.cluster.local:4317
@@ -41,9 +54,15 @@ spec:
           service:
             pipelines:
               traces:
-                receivers: [otlp]
-                processors: [batch]
-                exporters: [debug, otlp/tempo]
+                receivers:
+                  - otlp
+
+                processors:
+                  - batch
+
+                exporters:
+                  - debug
+                  - otlp/tempo
 
   destination:
     server: https://kubernetes.default.svc
