@@ -1,0 +1,11 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: otel-collector
+  namespace: observability
+  labels: {app: otel-collector}
+spec:
+  selector:
+    matchLabels: {app: otel-collector}
+  endpoints:
+    - {port: prom, interval: 60s}

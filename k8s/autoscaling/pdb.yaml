@@ -1,0 +1,36 @@
+# With only 3 nodes, protect critical pods during drains/upgrades.
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: backend
+  namespace: xambook
+spec:
+  minAvailable: 1
+  selector: {matchLabels: {app: backend}}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: frontend
+  namespace: xambook
+spec:
+  minAvailable: 1
+  selector: {matchLabels: {app: frontend}}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: keycloak
+  namespace: xambook
+spec:
+  maxUnavailable: 1
+  selector: {matchLabels: {app: keycloak}}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: postgres
+  namespace: xambook
+spec:
+  maxUnavailable: 0          # single-replica DB: never voluntarily evict it
+  selector: {matchLabels: {app: postgres}}

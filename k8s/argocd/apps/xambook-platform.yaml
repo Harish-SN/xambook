@@ -1,0 +1,30 @@
+# In-house manifests (namespace, cert-manager, gateway, postgres, keycloak,
+# backend, frontend, autoscaling, observability, monitoring routes).
+# Helm-managed components and rook CRs are excluded (they have their own apps).
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: xambook-platform
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Harish-SN/xambook.git
+    targetRevision: main
+    path: k8s
+    directory:
+      recurse: true
+      exclude: "{argocd/**,rook-ceph/**,sealed-secrets/**}"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: xambook
+  syncPolicy:
+    automated: {prune: true, selfHeal: true}
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+    retry:
+      limit: 10
+      backoff: {duration: 15s, factor: 2, maxDuration: 5m}

@@ -1,0 +1,25 @@
+# CephCluster + BlockPool + StorageClass + toolbox.
+# Sync wave 2: runs AFTER the operator/CRDs (wave 1) are healthy.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rook-ceph-cluster
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  project: default
+  source:
+    # REPLACE with your repo URL
+    repoURL: https://github.com/Harish-SN/xambook.git
+    targetRevision: main
+    path: k8s/rook-ceph/cluster
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: rook-ceph
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ServerSideApply=true
