@@ -24,8 +24,6 @@ spec:
     ssl: false      # exposed internally only; TLS is terminated at the Gateway
 
   # --- Memory discipline for 4GB nodes ---
-  # Rook auto-derives osd_memory_target (~80% of the OSD memory limit),
-  # so setting the limit here keeps each OSD around ~800MB instead of the 4GB default.
   resources:
     mon:
       requests: {cpu: "100m", memory: "256Mi"}
@@ -34,8 +32,10 @@ spec:
       requests: {cpu: "100m", memory: "256Mi"}
       limits:   {memory: "512Mi"}
     osd:
+      # OSD memory target is pinned below (osdMemoryTargetBytes). The limit must
+      # sit ABOVE that target + overhead, or the OSD gets OOMKilled. 1280Mi works.
       requests: {cpu: "250m", memory: "512Mi"}
-      limits:   {memory: "1Gi"}
+      limits:   {memory: "1280Mi"}
     prepareosd:
       requests: {cpu: "100m", memory: "128Mi"}
       limits:   {memory: "256Mi"}
@@ -47,12 +47,16 @@ spec:
       limits:   {memory: "64Mi"}
 
   # All three nodes (incl. control-plane) contribute the one raw disk Terraform attached.
-  # The by-id path is identical on every GCP node (google-<device_name>).
   storage:
     useAllNodes: true
     useAllDevices: false
     devices:
       - name: "/dev/disk/by-id/google-ceph-data"
+    # Pin osd_memory_target to 896Mi (Ceph's hard minimum). Without this, Rook
+    # derives a value below the floor and the OSD aborts on startup with
+    # "FAILED ceph_assert(r >= 0)" in config.cc. This is the fix for the crash.
+    config:
+      osdMemoryTargetBytes: "939524096"   # 896 MiB
 
   # Allow Ceph daemons onto the control-plane (it runs workloads in this topology).
   placement:
