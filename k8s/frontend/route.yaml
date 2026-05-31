@@ -12,6 +12,7 @@ spec:
 
   hostnames:
     - xambook.com
+    - www.xambook.com
 
   rules:
     - matches:
