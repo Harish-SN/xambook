@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "k8s" {
   name    = "xambook-k8s-firewall"
-  network = var.network_name
+  network = var.network_id
 
   allow {
     protocol = "tcp"

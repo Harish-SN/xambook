@@ -1,1 +1,3 @@
-variable "network_name" {}
+variable "network_id" {
+  type = string
+}
