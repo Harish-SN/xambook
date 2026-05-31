@@ -7,13 +7,15 @@ on:
       - 'backend/**'
 
 permissions:
-  contents: write          # needed to commit the GitOps image-tag bump
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -44,15 +46,17 @@ jobs:
           context: ./backend
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/xambook-backend:latest
             ${{ secrets.DOCKER_USERNAME }}/xambook-backend:${{ github.sha }}
 
-      - name: Bump image tag in manifest (GitOps -> ArgoCD deploys)
+      - name: Bump image tag in manifest
         run: |
           IMG="${{ secrets.DOCKER_USERNAME }}/xambook-backend"
+
           sed -i -E "s|image: .*/xambook-backend:.*|image: ${IMG}:${{ github.sha }}|" k8s/backend/backend.yaml
-          git config user.name  "github-actions[bot]"
+
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           if ! git diff --quiet; then
             git commit -am "ci(backend): deploy ${{ github.sha }} [skip ci]"
             git push

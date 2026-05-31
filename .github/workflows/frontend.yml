@@ -12,8 +12,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,7 +31,11 @@ jobs:
         working-directory: frontend
         run: npm ci
 
-      - name: Build
+      - name: Set environment variables
+        run: |
+          echo "VITE_API_URL=https://api.xambook.com" >> $GITHUB_ENV
+
+      - name: Build frontend
         working-directory: frontend
         run: npm run build
 
@@ -45,15 +51,17 @@ jobs:
           context: ./frontend
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/xambook-frontend:latest
             ${{ secrets.DOCKER_USERNAME }}/xambook-frontend:${{ github.sha }}
 
-      - name: Bump image tag in manifest (GitOps -> ArgoCD deploys)
+      - name: Bump image tag in manifest
         run: |
           IMG="${{ secrets.DOCKER_USERNAME }}/xambook-frontend"
+
           sed -i -E "s|image: .*/xambook-frontend:.*|image: ${IMG}:${{ github.sha }}|" k8s/frontend/frontend.yaml
-          git config user.name  "github-actions[bot]"
+
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           if ! git diff --quiet; then
             git commit -am "ci(frontend): deploy ${{ github.sha }} [skip ci]"
             git push
