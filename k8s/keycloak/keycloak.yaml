@@ -49,7 +49,7 @@ spec:
         - name: keycloak
           image: quay.io/keycloak/keycloak:26.1
           # start (not start-dev); realm import on first boot.
-          args: ["start", "--import-realm", "--optimized"]
+          args: ["start", "--import-realm"]
           env:
             # --- DB (reuses the in-cluster Postgres, 'keycloak' database) ---
             - {name: KC_DB, value: postgres}
