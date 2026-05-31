@@ -13,3 +13,5 @@ spec:
     - gcp.xambook.com
     - www.xambook.com
     - argocd.xambook.com
+    - auth.xambook.com
+    - grafana.xambook.com
