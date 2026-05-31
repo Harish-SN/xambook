@@ -28,16 +28,12 @@ spec:
             - containerPort: 8080
 
           env:
-        - name: DB_HOST
-          value: postgres
-        - name: DB_PORT
-          value: "5432"
-        - name: DB_USER
-          value: postgres
-        - name: DB_PASSWORD
-          value: postgres123
-        - name: DB_NAME
-          value: xambook
+          - name: POSTGRES_URL
+            value: postgres://postgres:postgres123@postgres:5432/xambook?sslmode=disable
+          - name: RAZORPAY_KEY_ID
+            value: your_key
+          - name: RAZORPAY_KEY_SECRET
+            value: your_secret
 
           resources:
             requests:
