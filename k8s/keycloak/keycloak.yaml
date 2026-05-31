@@ -24,10 +24,32 @@ spec:
       labels:
         app: keycloak
     spec:
+      # --- Spread keycloak away from the other heavy pods (postgres, prometheus) ---
+      # "preferred" (not required) so it still schedules even on a full cluster.
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values: ["postgres"]
+                topologyKey: kubernetes.io/hostname
+            - weight: 80
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values: ["prometheus"]
+                topologyKey: kubernetes.io/hostname
       containers:
         - name: keycloak
           image: quay.io/keycloak/keycloak:26.1
-          args: ["start", "--import-realm"]
+          # start (not start-dev); realm import on first boot.
+          args: ["start", "--import-realm", "--optimized"]
           env:
             # --- DB (reuses the in-cluster Postgres, 'keycloak' database) ---
             - {name: KC_DB, value: postgres}
@@ -46,6 +68,8 @@ spec:
             - {name: KC_PROXY_HEADERS, value: "xforwarded"}
             - {name: KC_HEALTH_ENABLED, value: "true"}
             - {name: KC_METRICS_ENABLED, value: "true"}
+            # --- Build options must be present at runtime for --optimized to work ---
+            - {name: KC_DB, value: postgres}
             # --- Keep the JVM small enough for a 4GB node ---
             - {name: JAVA_OPTS_KC_HEAP, value: "-Xms256m -Xmx512m"}
           ports:
@@ -65,7 +89,7 @@ spec:
             httpGet: {path: /health/started, port: 9000}
             initialDelaySeconds: 30
             periodSeconds: 10
-            failureThreshold: 30
+            failureThreshold: 60        # ~10 min runway for slow first-boot build
       volumes:
         - name: realm
           configMap: {name: keycloak-realm}
