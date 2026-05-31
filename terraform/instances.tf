@@ -1,34 +1,18 @@
-# Static external IPs
+# Only the control-plane gets a public IP — for SSH administration.
+# Workers are private (reach the internet via Cloud NAT). With Cloudflare
+# Tunnel, nothing needs a public ingress IP at all.
 resource "google_compute_address" "control_plane_ip" {
   name   = "xambook-control-plane-ip"
   region = var.region
 }
 
-resource "google_compute_address" "worker_ip" {
-  count  = var.worker_count
-  name   = "xambook-worker-${count.index + 1}-ip"
-  region = var.region
-}
-
-# Ceph data disks  (one raw, empty disk per node — consumed by Rook as an OSD)
-# Index 0 belongs to the control-plane; 1..N belong to the workers.
-resource "google_compute_disk" "ceph_data" {
-  count = var.worker_count + 1
-  name  = "xambook-ceph-data-${count.index}"
-  type  = var.ceph_data_disk_type
-  zone  = var.zone
-  size  = var.ceph_data_disk_size
-}
-
-# Control Plane  (untainted by your kubeadm setup so it ALSO runs workloads
-# and a Ceph OSD — this is node #1 of the 3-node Ceph cluster)
+# ---------------- Control Plane ----------------
 resource "google_compute_instance" "control_plane" {
   name           = "xambook-control-plane"
   machine_type   = var.machine_type
   zone           = var.zone
   can_ip_forward = true
-
-  tags = ["xambook-control-plane"]
+  tags           = ["xambook-control-plane"]
 
   boot_disk {
     initialize_params {
@@ -36,11 +20,6 @@ resource "google_compute_instance" "control_plane" {
       size  = var.disk_size
       type  = "pd-standard"
     }
-  }
-  # Raw disk for Ceph. Appears in-guest as /dev/disk/by-id/google-ceph-data
-  attached_disk {
-    source      = google_compute_disk.ceph_data[0].id
-    device_name = "ceph-data"
   }
 
   network_interface {
@@ -56,19 +35,18 @@ resource "google_compute_instance" "control_plane" {
 
   labels = {
     role = "control-plane"
-    env  = "production"
+    env  = "learning"
   }
 }
 
-# Worker Nodes  (nodes #2..#N of the Ceph cluster)
+# ---------------- Workers (private, no external IP) ----------------
 resource "google_compute_instance" "worker" {
   count          = var.worker_count
   name           = "xambook-worker-${count.index + 1}"
   machine_type   = var.machine_type
   zone           = var.zone
   can_ip_forward = true
-
-  tags = ["xambook-worker"]
+  tags           = ["xambook-worker"]
 
   boot_disk {
     initialize_params {
@@ -78,16 +56,9 @@ resource "google_compute_instance" "worker" {
     }
   }
 
-  attached_disk {
-    source      = google_compute_disk.ceph_data[count.index + 1].id
-    device_name = "ceph-data"
-  }
-
   network_interface {
     subnetwork = google_compute_subnetwork.xambook_subnet.id
-    access_config {
-      nat_ip = google_compute_address.worker_ip[count.index].address
-    }
+    # No access_config block => no external IP. Internet via Cloud NAT.
   }
 
   metadata = {
@@ -96,6 +67,6 @@ resource "google_compute_instance" "worker" {
 
   labels = {
     role = "worker"
-    env  = "production"
+    env  = "learning"
   }
 }

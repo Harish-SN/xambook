@@ -22,31 +22,25 @@ variable "credentials_file" {
 }
 
 variable "machine_type" {
-  description = "GCP machine type for all nodes"
+  description = "Machine type for all nodes"
   type        = string
   default     = "e2-medium"
 }
 
 variable "disk_size" {
-  description = "Boot disk size in GB"
+  description = "Boot disk size in GB (also holds local-path PVC data)"
   type        = number
   default     = 20
 }
 
 variable "worker_count" {
-  description = "Number of worker nodes. With the control-plane this gives (worker_count + 1) nodes total."
+  description = "Number of workers. With the control-plane this is (worker_count + 1) nodes total."
   type        = number
-  default     = 2 # control-plane + 2 workers = 3 nodes that all run Ceph OSDs
+  default     = 2
 }
 
-variable "ceph_data_disk_size" {
-  description = "Size (GB) of the raw, empty data disk attached to each node for Ceph OSDs. Must NOT be the boot disk."
-  type        = number
-  default     = 50
-}
-
-variable "ceph_data_disk_type" {
-  description = "Disk type for the Ceph data disks. pd-balanced is a good price/perf default; pd-standard is cheapest but slow."
-  type        = string
-  default     = "pd-balanced"
+variable "ssh_source_ranges" {
+  description = "CIDRs allowed to SSH to the control-plane. Lock this to your IP for safety."
+  type        = list(string)
+  default     = ["0.0.0.0/0"] # CHANGE to ["YOUR.IP.ADDR.ESS/32"] for real security
 }
