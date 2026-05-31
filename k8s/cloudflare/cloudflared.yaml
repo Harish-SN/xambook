@@ -25,8 +25,6 @@ spec:
           args:
             - tunnel
             - --no-autoupdate
-            - --config
-            - /etc/cloudflared/config/config.yaml
             - run
 
           env:
@@ -36,10 +34,6 @@ spec:
                   name: tunnel-token
                   key: token
 
-          volumeMounts:
-            - name: cloudflared-config
-              mountPath: /etc/cloudflared/config
-
           resources:
             requests:
               cpu: 100m
@@ -48,33 +42,3 @@ spec:
             limits:
               cpu: 200m
               memory: 256Mi
-
-      volumes:
-        - name: cloudflared-config
-          configMap:
-            name: cloudflared-config
-
----
-apiVersion: v1
-kind: ConfigMap
-
-metadata:
-  name: cloudflared-config
-  namespace: cloudflare
-
-data:
-  config.yaml: |
-    ingress:
-      - hostname: argocd.xambook.com
-        service: http://argocd-server.argocd.svc.cluster.local:80
-
-      - hostname: api.xambook.com
-        service: http://xambook-backend.default.svc.cluster.local:8080
-
-      - hostname: xambook.com
-        service: http://xambook-frontend.default.svc.cluster.local:80
-
-      - hostname: www.xambook.com
-        service: http://xambook-frontend.default.svc.cluster.local:80
-
-      - service: http_status:404
