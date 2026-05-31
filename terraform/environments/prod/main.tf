@@ -6,6 +6,7 @@ module "network" {
   subnet_cidr  = "10.10.0.0/24"
   region = var.region
 }
+
 module "firewall" {
   source = "../../modules/firewall"
 
