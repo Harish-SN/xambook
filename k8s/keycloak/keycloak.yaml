@@ -45,8 +45,9 @@ spec:
               value: "false"
 
           ports:
-            - containerPort: 8080
-              name: http
+            - name: http
+              containerPort: 8080
+              protocol: TCP
 
 ---
 apiVersion: v1
@@ -57,11 +58,13 @@ metadata:
   namespace: default
 
 spec:
+  type: ClusterIP
+
   selector:
     app: keycloak
 
   ports:
     - name: http
+      protocol: TCP
       port: 80
       targetPort: 8080
-      protocol: TCP
