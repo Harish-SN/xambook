@@ -53,7 +53,7 @@ jobs:
         run: |
           IMG="${{ secrets.DOCKER_USERNAME }}/xambook-backend"
 
-          sed -i -E "s|image: .*/xambook-backend:.*|image: ${IMG}:${{ github.sha }}|" k8s/backend/backend.yaml
+          sed -i -E "s|image: .*/xambook-backend:.*|image: ${IMG}:${{ github.sha }}|" k8s/backend/deployment.yaml
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
