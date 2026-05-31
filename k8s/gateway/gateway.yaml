@@ -3,6 +3,7 @@ kind: Gateway
 metadata:
   name: shared-gateway
   namespace: default
+
 spec:
   gatewayClassName: cilium
 
@@ -15,7 +16,3 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
-
-  addresses:
-    - type: IPAddress
-      value: 34.47.128.66
