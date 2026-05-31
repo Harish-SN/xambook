@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'frontend/**'
+      - 'k8s/frontend/**'
 
 permissions:
   contents: write
