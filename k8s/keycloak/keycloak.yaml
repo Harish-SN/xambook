@@ -45,6 +45,7 @@ spec:
 
           ports:
             - containerPort: 8080
+              name: http
 
 ---
 apiVersion: v1
@@ -59,4 +60,6 @@ spec:
 
   ports:
     - port: 80
+      name: http
+      protocol: TCP
       targetPort: 8080
