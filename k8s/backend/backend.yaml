@@ -32,7 +32,7 @@ spec:
         workload: app
       containers:
         - name: backend
-          image: harishsudalaimani/xambook-backend:v1
+          image: harishsudalaimani/xambook-backend:fba51f93b4aa67f96b132c424d354c28b6634435
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
