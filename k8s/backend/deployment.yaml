@@ -27,6 +27,18 @@ spec:
           ports:
             - containerPort: 8080
 
+          env:
+        - name: DB_HOST
+          value: postgres
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          value: postgres
+        - name: DB_PASSWORD
+          value: postgres123
+        - name: DB_NAME
+          value: xambook
+
           resources:
             requests:
               cpu: "100m"
