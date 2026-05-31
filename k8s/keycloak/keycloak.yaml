@@ -3,6 +3,7 @@ kind: Deployment
 
 metadata:
   name: keycloak
+  namespace: default
 
 spec:
   replicas: 1
@@ -25,23 +26,29 @@ spec:
             - start-dev
 
           env:
-          - name: KC_BOOTSTRAP_ADMIN_USERNAME
-            value: admin
+            - name: KC_BOOTSTRAP_ADMIN_USERNAME
+              value: admin
 
-          - name: KC_BOOTSTRAP_ADMIN_PASSWORD
-            value: admin123
+            - name: KC_BOOTSTRAP_ADMIN_PASSWORD
+              value: admin123
 
-          - name: KC_PROXY_HEADERS
-            value: xforwarded
+            - name: KC_PROXY_HEADERS
+              value: xforwarded
 
-          - name: KC_HTTP_ENABLED
-            value: "true"
+            - name: KC_HTTP_ENABLED
+              value: "true"
 
-          - name: KC_HOSTNAME
-            value: auth.xambook.com
+            - name: KC_HOSTNAME
+              value: auth.xambook.com
 
-          - name: KC_HOSTNAME_STRICT
-            value: "false"
+            - name: KC_HOSTNAME_STRICT
+              value: "false"
+
+            - name: KC_HOSTNAME_STRICT_HTTPS
+              value: "false"
+
+            - name: KC_PROXY
+              value: edge
 
           ports:
             - containerPort: 8080
@@ -53,13 +60,14 @@ kind: Service
 
 metadata:
   name: keycloak
+  namespace: default
 
 spec:
   selector:
     app: keycloak
 
   ports:
-    - port: 80
-      name: http
-      protocol: TCP
+    - name: http
+      port: 80
       targetPort: 8080
+      protocol: TCP
