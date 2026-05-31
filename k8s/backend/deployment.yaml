@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: harishsudalaimani/xambook-backend:6f5aad659357aa7cc7a5b83cca2fbdbacb456741
+          image: harishsudalaimani/xambook-backend:babefef5162901153585b4958be5c6dc538fe575
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
