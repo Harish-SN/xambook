@@ -19,14 +19,22 @@ spec:
     spec:
       containers:
         - name: backend
-
           image: harishsudalaimani/xambook-backend:6f5aad659357aa7cc7a5b83cca2fbdbacb456741
-
           imagePullPolicy: Always
-
           ports:
             - containerPort: 8080
-
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
           env:
           - name: POSTGRES_URL
             value: postgres://postgres:postgres123@postgres:5432/xambook?sslmode=disable
@@ -34,28 +42,10 @@ spec:
             value: your_key
           - name: RAZORPAY_KEY_SECRET
             value: your_secret
-
           resources:
             requests:
               cpu: "100m"
               memory: "128Mi"
-
             limits:
               cpu: "500m"
               memory: "512Mi"
-
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-
-            initialDelaySeconds: 5
-            periodSeconds: 10
-
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-
-            initialDelaySeconds: 15
-            periodSeconds: 20

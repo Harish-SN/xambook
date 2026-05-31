@@ -19,19 +19,26 @@ spec:
     spec:
       containers:
         - name: frontend
-
           image: harishsudalaimani/xambook-frontend:1610dd394236bbc91879c4caf6dfc95f7ab434c7
-
           imagePullPolicy: Always
-
           ports:
             - containerPort: 80
-
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
           resources:
             requests:
               cpu: "100m"
               memory: "128Mi"
-
             limits:
               cpu: "500m"
               memory: "512Mi"
