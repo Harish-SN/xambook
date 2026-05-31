@@ -35,6 +35,9 @@ spec:
             - name: KC_PROXY_HEADERS
               value: xforwarded
 
+            - name: KC_PROXY
+              value: edge
+
             - name: KC_HTTP_ENABLED
               value: "true"
 
@@ -43,6 +46,9 @@ spec:
 
             - name: KC_HOSTNAME_STRICT
               value: "false"
+
+            - name: KC_HOSTNAME_STRICT_HTTPS
+              value: "true"
 
           ports:
             - name: http
