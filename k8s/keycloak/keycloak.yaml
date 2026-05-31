@@ -25,11 +25,23 @@ spec:
             - start-dev
 
           env:
-            - name: KC_BOOTSTRAP_ADMIN_USERNAME
-              value: admin
+          - name: KC_BOOTSTRAP_ADMIN_USERNAME
+            value: admin
 
-            - name: KC_BOOTSTRAP_ADMIN_PASSWORD
-              value: admin123
+          - name: KC_BOOTSTRAP_ADMIN_PASSWORD
+            value: admin123
+
+          - name: KC_PROXY_HEADERS
+            value: xforwarded
+
+          - name: KC_HTTP_ENABLED
+            value: "true"
+
+          - name: KC_HOSTNAME
+            value: auth.xambook.com
+
+          - name: KC_HOSTNAME_STRICT
+            value: "false"
 
           ports:
             - containerPort: 8080
