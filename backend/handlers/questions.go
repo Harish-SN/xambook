@@ -27,11 +27,18 @@ type QuestionsAPIResponse struct {
 }
 
 func GetQuestions(c *gin.Context) {
+
 	subject := c.Param("subject")
+
+	// FREE ROUTE DOES NOT HAVE :subject
+	if subject == "" {
+		subject = "free"
+	}
 
 	testNumberStr := c.Param("testNumber")
 
 	testNumber, err := strconv.Atoi(testNumberStr)
+
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": "invalid test number",
@@ -72,6 +79,7 @@ func GetQuestions(c *gin.Context) {
 	var response []QuestionResponse
 
 	for rows.Next() {
+
 		var q models.Question
 
 		err := rows.Scan(
@@ -119,21 +127,28 @@ func GetQuestions(c *gin.Context) {
 }
 
 func convertCorrectOption(option int) string {
+
 	switch option {
+
 	case 0:
 		return "a"
+
 	case 1:
 		return "b"
+
 	case 2:
 		return "c"
+
 	case 3:
 		return "d"
+
 	default:
 		return ""
 	}
 }
 
 func deref(s *string) string {
+
 	if s == nil {
 		return ""
 	}
@@ -142,9 +157,11 @@ func deref(s *string) string {
 }
 
 func normalizeSubject(subject string) string {
+
 	s := strings.ToLower(strings.TrimSpace(subject))
 
 	switch s {
+
 	case "free":
 		return "Free Test"
 

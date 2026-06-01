@@ -83,96 +83,76 @@ export default function Test() {
   useEffect(() => {
     let active = true
 
-    async function loadQuestions() {
-      try {
-        setLoading(true)
+    setLoading(true)
 
-        setReady(false)
+    setReady(false)
 
-        savedRef.current = false
+    savedRef.current = false
 
-        const token =
-          localStorage.getItem(
-            'kc_token'
-          )
+    // FIXED: correct endpoint
+    const endpoint = isFree
+      ? `https://api.xambook.com/api/tests/free/${selectedTest}/questions`
+      : `https://api.xambook.com/api/premium-tests/${subject}/${selectedTest}/questions`
 
-        const endpoint = isFree
-          ? `https://api.xambook.com/api/tests/free/${selectedTest}/questions`
-          : `https://api.xambook.com/api/tests/${encodeURIComponent(
-              apiSubject
-            )}/${selectedTest}/questions`
-
-        const response = await fetch(
-          endpoint,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        )
-
-        if (!response.ok) {
+    fetch(endpoint)
+      .then(async r => {
+        if (!r.ok) {
           throw new Error(
             'Failed to fetch questions'
           )
         }
 
-        const data =
-          await response.json()
+        return r.json()
+      })
 
+      .then((data: any) => {
         if (!active) return
 
         const rawQuestions =
-          Array.isArray(
-            data.questions
-          )
+          Array.isArray(data.questions)
             ? data.questions
             : []
 
         const qs: Question[] =
-          rawQuestions.map(
-            (q: any) => ({
-              id: q.id,
+          rawQuestions.map((q: any) => ({
+            id: q.id,
 
-              question:
-                q.question ||
-                q.text ||
+            question:
+              q.question ||
+              q.text ||
+              '',
+
+            options: {
+              a:
+                q.options?.a ||
+                q.option_a ||
                 '',
 
-              options: {
-                a:
-                  q.options?.a ||
-                  q.option_a ||
-                  '',
-
-                b:
-                  q.options?.b ||
-                  q.option_b ||
-                  '',
-
-                c:
-                  q.options?.c ||
-                  q.option_c ||
-                  '',
-
-                d:
-                  q.options?.d ||
-                  q.option_d ||
-                  '',
-              },
-
-              correct_option:
-                q.correct_option ||
+              b:
+                q.options?.b ||
+                q.option_b ||
                 '',
 
-              explanation:
-                q.explanation ||
+              c:
+                q.options?.c ||
+                q.option_c ||
                 '',
 
-              image_url:
-                q.image_url || '',
-            })
-          )
+              d:
+                q.options?.d ||
+                q.option_d ||
+                '',
+            },
+
+            correct_option:
+              q.correct_option || '',
+
+            explanation:
+              q.explanation || '',
+
+            image_url:
+              q.image_url || '',
+          }))
 
         console.log(
           'Questions loaded:',
@@ -196,7 +176,9 @@ export default function Test() {
         setStarted(false)
 
         setReady(true)
-      } catch (err) {
+      })
+
+      .catch(err => {
         console.error(
           'Question fetch failed:',
           err
@@ -205,14 +187,13 @@ export default function Test() {
         if (!active) return
 
         setQuestions([])
-      } finally {
+      })
+
+      .finally(() => {
         if (active) {
           setLoading(false)
         }
-      }
-    }
-
-    loadQuestions()
+      })
 
     return () => {
       active = false
@@ -232,22 +213,21 @@ export default function Test() {
 
     clearInterval(timerRef.current!)
 
-    timerRef.current =
-      setInterval(() => {
-        setTimeLeft(t => {
-          if (t <= 1) {
-            clearInterval(
-              timerRef.current!
-            )
+    timerRef.current = setInterval(() => {
+      setTimeLeft(t => {
+        if (t <= 1) {
+          clearInterval(
+            timerRef.current!
+          )
 
-            setSubmitted(true)
+          setSubmitted(true)
 
-            return 0
-          }
+          return 0
+        }
 
-          return t - 1
-        })
-      }, 1000)
+        return t - 1
+      })
+    }, 1000)
 
     return () =>
       clearInterval(timerRef.current!)
@@ -286,10 +266,7 @@ export default function Test() {
       return `${h}:${String(m).padStart(
         2,
         '0'
-      )}:${String(s).padStart(
-        2,
-        '0'
-      )}`
+      )}:${String(s).padStart(2, '0')}`
     }
 
     return `${String(m).padStart(
@@ -307,22 +284,16 @@ export default function Test() {
       [qIndex]: option,
     }))
 
-    setVisited(v =>
-      new Set(v).add(qIndex)
-    )
+    setVisited(v => new Set(v).add(qIndex))
   }
 
   function goTo(idx: number) {
-    setVisited(v =>
-      new Set(v).add(current)
-    )
+    setVisited(v => new Set(v).add(current))
 
     setCurrent(idx)
   }
 
-  function getPaletteStatus(
-    idx: number
-  ) {
+  function getPaletteStatus(idx: number) {
     if (answers[idx] !== undefined)
       return 'answered'
 
@@ -332,9 +303,7 @@ export default function Test() {
     return 'unattempted'
   }
 
-  const correctOf = (
-    q: Question
-  ) =>
+  const correctOf = (q: Question) =>
     (
       q.correct_option || ''
     ).toLowerCase()
@@ -360,8 +329,7 @@ export default function Test() {
   const percentage =
     totalMarks > 0
       ? Math.round(
-          (marks / totalMarks) *
-            100
+          (marks / totalMarks) * 100
         )
       : 0
 
@@ -374,18 +342,12 @@ export default function Test() {
 
   async function saveAttempt() {
     try {
-      const token =
-        localStorage.getItem(
-          'kc_token'
-        )
-
       await fetch(
         'https://api.xambook.com/api/attempts',
         {
           method: 'POST',
 
           headers: {
-            Authorization: `Bearer ${token}`,
             'Content-Type':
               'application/json',
           },
@@ -477,7 +439,7 @@ export default function Test() {
             <div className="testInstructionsBadge">
               {isFree
                 ? 'FREE NEET MOCK TEST'
-                : 'NEET TEST SERIES'}
+                : 'NEET TEST'}
             </div>
 
             <h2 className="testInstructionsTitle">
@@ -492,6 +454,7 @@ export default function Test() {
             <div className="testInstructionsGrid">
               <div className="testInstructionsCard">
                 <h3>Questions</h3>
+
                 <p>
                   {questions.length}
                 </p>
@@ -499,6 +462,7 @@ export default function Test() {
 
               <div className="testInstructionsCard">
                 <h3>Duration</h3>
+
                 <p>
                   {totalMins} mins
                 </p>
@@ -506,6 +470,7 @@ export default function Test() {
 
               <div className="testInstructionsCard">
                 <h3>Total Marks</h3>
+
                 <p>{totalMarks}</p>
               </div>
             </div>
@@ -647,47 +612,45 @@ export default function Test() {
               </div>
 
               <div className="testOptions">
-                {OPTION_KEYS.map(
-                  key => {
-                    const selected =
-                      answers[current] ===
-                      key
+                {OPTION_KEYS.map(key => {
+                  const selected =
+                    answers[current] ===
+                    key
 
-                    return (
-                      <button
-                        key={key}
-                        className={`testOption ${
+                  return (
+                    <button
+                      key={key}
+                      className={`testOption ${
+                        selected
+                          ? 'testOption--selected'
+                          : ''
+                      }`}
+                      onClick={() =>
+                        !paused &&
+                        selectAnswer(
+                          current,
+                          key
+                        )
+                      }
+                    >
+                      <span
+                        className={`testOptionLabel ${
                           selected
-                            ? 'testOption--selected'
+                            ? 'testOptionLabel--selected'
                             : ''
                         }`}
-                        onClick={() =>
-                          !paused &&
-                          selectAnswer(
-                            current,
-                            key
-                          )
-                        }
                       >
-                        <span
-                          className={`testOptionLabel ${
-                            selected
-                              ? 'testOptionLabel--selected'
-                              : ''
-                          }`}
-                        >
-                          {key.toUpperCase()}
-                        </span>
+                        {key.toUpperCase()}
+                      </span>
 
-                        <MathText
-                          text={
-                            q.options[key]
-                          }
-                        />
-                      </button>
-                    )
-                  }
-                )}
+                      <MathText
+                        text={
+                          q.options[key]
+                        }
+                      />
+                    </button>
+                  )
+                })}
               </div>
             </>
           )}
@@ -718,9 +681,7 @@ export default function Test() {
                 <button
                   className="testNextBtn"
                   onClick={() =>
-                    goTo(
-                      current + 1
-                    )
+                    goTo(current + 1)
                   }
                   disabled={paused}
                 >
@@ -783,31 +744,27 @@ export default function Test() {
           </button>
 
           <div className="testPalette">
-            {questions.map(
-              (_, idx) => {
-                const status =
-                  getPaletteStatus(
-                    idx
-                  )
+            {questions.map((_, idx) => {
+              const status =
+                getPaletteStatus(idx)
 
-                return (
-                  <button
-                    key={idx}
-                    className={`testPaletteBtn testPaletteBtn--${status} ${
-                      idx === current
-                        ? 'testPaletteBtn--current'
-                        : ''
-                    }`}
-                    onClick={() =>
-                      goTo(idx)
-                    }
-                    disabled={paused}
-                  >
-                    {idx + 1}
-                  </button>
-                )
-              }
-            )}
+              return (
+                <button
+                  key={idx}
+                  className={`testPaletteBtn testPaletteBtn--${status} ${
+                    idx === current
+                      ? 'testPaletteBtn--current'
+                      : ''
+                  }`}
+                  onClick={() =>
+                    goTo(idx)
+                  }
+                  disabled={paused}
+                >
+                  {idx + 1}
+                </button>
+              )
+            })}
           </div>
         </aside>
       </div>

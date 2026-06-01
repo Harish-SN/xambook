@@ -137,7 +137,7 @@ func main() {
 		// PREMIUM TEST ROUTES
 		// =========================================
 
-		premium := api.Group("/tests")
+		premium := api.Group("/premium-tests")
 
 		premium.Use(authMiddleware)
 
