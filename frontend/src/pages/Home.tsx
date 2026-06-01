@@ -1,6 +1,5 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import FreeTestPopup from '../components/FreeTestPopup'
 
 import { Link } from 'react-router-dom'
 import { useState } from 'react'

@@ -22,35 +22,28 @@ export default function Test() {
 
   const [questions, setQuestions] = useState<Question[]>([])
 
-  const [answers, setAnswers] = useState<
-    Record<number, string>
-  >({})
+  const [answers, setAnswers] = useState<Record<number, string>>({})
 
-  const [visited, setVisited] = useState<
-    Set<number>
-  >(new Set())
+  const [visited, setVisited] = useState<Set<number>>(new Set())
 
   const [current, setCurrent] = useState(0)
 
   const [timeLeft, setTimeLeft] = useState(0)
 
-  const [submitted, setSubmitted] =
-    useState(false)
+  const [submitted, setSubmitted] = useState(false)
 
-  const [loading, setLoading] =
-    useState(false)
+  const [loading, setLoading] = useState(false)
 
   const [ready, setReady] = useState(false)
 
-  const [paused, setPaused] =
-    useState(false)
+  // NEW: gate the test behind the instructions popup
+  const [started, setStarted] = useState(false)
+
+  const [paused, setPaused] = useState(false)
 
   const [dark, setDark] = useState(false)
 
-  const timerRef =
-    useRef<ReturnType<typeof setInterval> | null>(
-      null
-    )
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const savedRef = useRef(false)
 
@@ -59,8 +52,7 @@ export default function Test() {
     : isMock
     ? 'Full Test'
     : subject
-    ? subject.charAt(0).toUpperCase() +
-      subject.slice(1)
+    ? subject.charAt(0).toUpperCase() + subject.slice(1)
     : ''
 
   const isFullTest = isMock || isFree
@@ -88,9 +80,7 @@ export default function Test() {
     )
       .then(async r => {
         if (!r.ok) {
-          throw new Error(
-            'Failed to fetch questions'
-          )
+          throw new Error('Failed to fetch questions')
         }
 
         return r.json()
@@ -99,56 +89,33 @@ export default function Test() {
       .then((data: any) => {
         if (!active) return
 
-        const rawQuestions = Array.isArray(
-          data.questions
-        )
+        const rawQuestions = Array.isArray(data.questions)
           ? data.questions
           : []
 
-        const qs: Question[] = rawQuestions.map(
-          (q: any) => ({
-            id: q.id,
+        const qs: Question[] = rawQuestions.map((q: any) => ({
+          id: q.id,
 
-            question:
-              q.question || q.text || '',
+          question: q.question || q.text || '',
 
-            options: {
-              a:
-                q.options?.a ||
-                q.option_a ||
-                '',
+          options: {
+            a: q.options?.a || q.option_a || '',
 
-              b:
-                q.options?.b ||
-                q.option_b ||
-                '',
+            b: q.options?.b || q.option_b || '',
 
-              c:
-                q.options?.c ||
-                q.option_c ||
-                '',
+            c: q.options?.c || q.option_c || '',
 
-              d:
-                q.options?.d ||
-                q.option_d ||
-                '',
-            },
+            d: q.options?.d || q.option_d || '',
+          },
 
-            correct_option:
-              q.correct_option || '',
+          correct_option: q.correct_option || '',
 
-            explanation:
-              q.explanation || '',
+          explanation: q.explanation || '',
 
-            image_url:
-              q.image_url || '',
-          })
-        )
+          image_url: q.image_url || '',
+        }))
 
-        console.log(
-          'Questions loaded:',
-          qs.length
-        )
+        console.log('Questions loaded:', qs.length)
 
         setQuestions(qs)
 
@@ -164,14 +131,13 @@ export default function Test() {
 
         setPaused(false)
 
+        setStarted(false) // NEW: always show instructions first
+
         setReady(true)
       })
 
       .catch(err => {
-        console.error(
-          'Question fetch failed:',
-          err
-        )
+        console.error('Question fetch failed:', err)
 
         if (!active) return
 
@@ -192,7 +158,8 @@ export default function Test() {
   // ---------------- TIMER ----------------
 
   useEffect(() => {
-    if (!ready || submitted || paused) return
+    // NEW: don't start the clock until the user hits "Start Test"
+    if (!ready || !started || submitted || paused) return
 
     clearInterval(timerRef.current!)
 
@@ -210,19 +177,13 @@ export default function Test() {
       })
     }, 1000)
 
-    return () =>
-      clearInterval(timerRef.current!)
-  }, [ready, submitted, paused])
+    return () => clearInterval(timerRef.current!)
+  }, [ready, started, submitted, paused])
 
   // ---------------- SAVE ATTEMPT ----------------
 
   useEffect(() => {
-    if (
-      !submitted ||
-      questions.length === 0 ||
-      savedRef.current
-    )
-      return
+    if (!submitted || questions.length === 0 || savedRef.current) return
 
     savedRef.current = true
 
@@ -232,29 +193,21 @@ export default function Test() {
   function formatTime(secs: number) {
     const h = Math.floor(secs / 3600)
 
-    const m = Math.floor(
-      (secs % 3600) / 60
-    )
+    const m = Math.floor((secs % 3600) / 60)
 
     const s = secs % 60
 
     if (h > 0) {
-      return `${h}:${String(m).padStart(
+      return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(
         2,
         '0'
-      )}:${String(s).padStart(2, '0')}`
+      )}`
     }
 
-    return `${String(m).padStart(
-      2,
-      '0'
-    )}:${String(s).padStart(2, '0')}`
+    return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
   }
 
-  function selectAnswer(
-    qIndex: number,
-    option: string
-  ) {
+  function selectAnswer(qIndex: number, option: string) {
     setAnswers(a => ({
       ...a,
       [qIndex]: option,
@@ -270,11 +223,9 @@ export default function Test() {
   }
 
   function getPaletteStatus(idx: number) {
-    if (answers[idx] !== undefined)
-      return 'answered'
+    if (answers[idx] !== undefined) return 'answered'
 
-    if (visited.has(idx))
-      return 'skipped'
+    if (visited.has(idx)) return 'skipped'
 
     return 'unattempted'
   }
@@ -287,65 +238,49 @@ export default function Test() {
   ).length
 
   const wrong = questions.filter(
-    (q, i) =>
-      answers[i] !== undefined &&
-      answers[i] !== correctOf(q)
+    (q, i) => answers[i] !== undefined && answers[i] !== correctOf(q)
   ).length
 
-  const skipped =
-    questions.length - correct - wrong
+  const skipped = questions.length - correct - wrong
 
   const marks = correct * 4 - wrong
 
   const percentage =
-    totalMarks > 0
-      ? Math.round(
-          (marks / totalMarks) * 100
-        )
-      : 0
+    totalMarks > 0 ? Math.round((marks / totalMarks) * 100) : 0
 
   const isLowTime = timeLeft <= 300
 
-  const theme = dark
-    ? 'testDark'
-    : 'testLight'
+  const theme = dark ? 'testDark' : 'testLight'
 
   async function saveAttempt() {
     try {
-      await fetch(
-        'https://api.xambook.com/api/attempts',
-        {
-          method: 'POST',
+      await fetch('https://api.xambook.com/api/attempts', {
+        method: 'POST',
 
-          headers: {
-            'Content-Type':
-              'application/json',
-          },
+        headers: {
+          'Content-Type': 'application/json',
+        },
 
-          body: JSON.stringify({
-            subject: apiSubject,
+        body: JSON.stringify({
+          subject: apiSubject,
 
-            test_number: selectedTest,
+          test_number: selectedTest,
 
-            score: percentage,
+          score: percentage,
 
-            marks,
+          marks,
 
-            total_marks: totalMarks,
+          total_marks: totalMarks,
 
-            correct,
+          correct,
 
-            wrong,
+          wrong,
 
-            skipped,
-          }),
-        }
-      )
+          skipped,
+        }),
+      })
     } catch (err) {
-      console.error(
-        'Failed to save attempt:',
-        err
-      )
+      console.error('Failed to save attempt:', err)
     }
   }
 
@@ -355,6 +290,10 @@ export default function Test() {
     setSubmitted(true)
   }
 
+  function startTest() {
+    setStarted(true)
+  }
+
   // ---------------- LOADING ----------------
 
   if (loading) {
@@ -362,9 +301,7 @@ export default function Test() {
       <div className={`testPage ${theme}`}>
         <Navbar />
 
-        <div className="testLoading">
-          Loading questions...
-        </div>
+        <div className="testLoading">Loading questions...</div>
       </div>
     )
   }
@@ -376,8 +313,105 @@ export default function Test() {
       <div className={`testPage ${theme}`}>
         <Navbar />
 
-        <div className="testLoading">
-          No questions found.
+        <div className="testLoading">No questions found.</div>
+      </div>
+    )
+  }
+
+  // ---------------- INSTRUCTIONS POPUP ----------------
+
+  if (ready && !started && !submitted && questions.length > 0) {
+    return (
+      <div className={`testPage ${theme}`}>
+        <Navbar />
+
+        <div className="testInstructionsOverlay">
+          <div className="testInstructionsModal">
+            <h2 className="testInstructionsTitle">
+              {apiSubject} · Test {selectedTest}
+            </h2>
+
+            <p className="testInstructionsSub">
+              Read the instructions carefully before you begin.
+            </p>
+
+            <div className="testInstructionsGrid">
+              <div className="testInstructionsStat">
+                <span className="testInstructionsStatValue">
+                  {questions.length}
+                </span>
+                <span className="testInstructionsStatLabel">
+                  Questions
+                </span>
+              </div>
+
+              <div className="testInstructionsStat">
+                <span className="testInstructionsStatValue">
+                  {totalMins} min
+                </span>
+                <span className="testInstructionsStatLabel">
+                  Duration
+                </span>
+              </div>
+
+              <div className="testInstructionsStat">
+                <span className="testInstructionsStatValue">
+                  {totalMarks}
+                </span>
+                <span className="testInstructionsStatLabel">
+                  Total Marks
+                </span>
+              </div>
+            </div>
+
+            <div className="testInstructionsMarking">
+              <p className="testInstructionsMarkingTitle">
+                Marking Scheme
+              </p>
+
+              <ul className="testInstructionsMarkingList">
+                <li>
+                  <span className="testMarkPos">+4</span> for every
+                  correct answer
+                </li>
+                <li>
+                  <span className="testMarkNeg">−1</span> for every wrong
+                  answer (negative marking)
+                </li>
+                <li>
+                  <span className="testMarkZero">0</span> for unanswered
+                  questions
+                </li>
+              </ul>
+            </div>
+
+            {isFullTest && (
+              <div className="testInstructionsSubjects">
+                <p className="testInstructionsMarkingTitle">
+                  Subject Distribution
+                </p>
+
+                <ul className="testInstructionsSubjectList">
+                  <li>Physics — 45 questions</li>
+                  <li>Chemistry — 45 questions</li>
+                  <li>Botany — 45 questions</li>
+                  <li>Zoology — 45 questions</li>
+                </ul>
+              </div>
+            )}
+
+            <p className="testInstructionsNote">
+              The timer starts as soon as you begin and the test will
+              auto-submit when time runs out. Make sure you are ready.
+            </p>
+
+            <button
+              className="testInstructionsStartBtn"
+              onClick={startTest}
+            >
+              Start Test →
+            </button>
+          </div>
         </div>
       </div>
     )
@@ -405,8 +439,7 @@ export default function Test() {
 
   const q = questions[current]
 
-  const answered =
-    Object.keys(answers).length
+  const answered = Object.keys(answers).length
 
   return (
     <div className={`testPage ${theme}`}>
@@ -416,19 +449,15 @@ export default function Test() {
         <main className="testContent">
           <div className="testProgressHeader">
             <p className="testProgressCourse">
-              {apiSubject} · Test{' '}
-              {selectedTest}
+              {apiSubject} · Test {selectedTest}
             </p>
 
             <div className="testProgressMeta">
               <span>
-                Q {current + 1} of{' '}
-                {questions.length}
+                Q {current + 1} of {questions.length}
               </span>
 
-              <span>
-                {answered} answered
-              </span>
+              <span>{answered} answered</span>
             </div>
 
             <div className="testProgressBar">
@@ -436,9 +465,7 @@ export default function Test() {
                 className="testProgressFill"
                 style={{
                   width: `${
-                    ((current + 1) /
-                      questions.length) *
-                    100
+                    ((current + 1) / questions.length) * 100
                   }%`,
                 }}
               />
@@ -448,14 +475,10 @@ export default function Test() {
           {q && (
             <>
               <div className="testQuestionCard">
-                <p className="testQuestionNum">
-                  Q{current + 1}
-                </p>
+                <p className="testQuestionNum">Q{current + 1}</p>
 
                 <p className="testQuestionText">
-                  <MathText
-                    text={q.question}
-                  />
+                  <MathText text={q.question} />
                 </p>
 
                 {q.image_url && (
@@ -469,38 +492,27 @@ export default function Test() {
 
               <div className="testOptions">
                 {OPTION_KEYS.map(key => {
-                  const selected =
-                    answers[current] === key
+                  const selected = answers[current] === key
 
                   return (
                     <button
                       key={key}
                       className={`testOption ${
-                        selected
-                          ? 'testOption--selected'
-                          : ''
+                        selected ? 'testOption--selected' : ''
                       }`}
                       onClick={() =>
-                        !paused &&
-                        selectAnswer(
-                          current,
-                          key
-                        )
+                        !paused && selectAnswer(current, key)
                       }
                     >
                       <span
                         className={`testOptionLabel ${
-                          selected
-                            ? 'testOptionLabel--selected'
-                            : ''
+                          selected ? 'testOptionLabel--selected' : ''
                         }`}
                       >
                         {key.toUpperCase()}
                       </span>
 
-                      <MathText
-                        text={q.options[key]}
-                      />
+                      <MathText text={q.options[key]} />
                     </button>
                   )
                 })}
@@ -511,29 +523,17 @@ export default function Test() {
           <div className="testNav">
             <button
               className="testPrevBtn"
-              onClick={() =>
-                goTo(
-                  Math.max(
-                    0,
-                    current - 1
-                  )
-                )
-              }
-              disabled={
-                current === 0 || paused
-              }
+              onClick={() => goTo(Math.max(0, current - 1))}
+              disabled={current === 0 || paused}
             >
               ← Prev
             </button>
 
             <div className="testNavRight">
-              {current <
-                questions.length - 1 && (
+              {current < questions.length - 1 && (
                 <button
                   className="testNextBtn"
-                  onClick={() =>
-                    goTo(current + 1)
-                  }
+                  onClick={() => goTo(current + 1)}
                   disabled={paused}
                 >
                   Next →
@@ -554,32 +554,20 @@ export default function Test() {
         <aside className="testSidebar">
           <div
             className={`testTimer ${
-              isLowTime
-                ? 'testTimer--low'
-                : ''
+              isLowTime ? 'testTimer--low' : ''
             }`}
           >
-            <p className="testTimerLabel">
-              Time Left
-            </p>
+            <p className="testTimerLabel">Time Left</p>
 
-            <p className="testTimerValue">
-              {formatTime(timeLeft)}
-            </p>
+            <p className="testTimerValue">{formatTime(timeLeft)}</p>
 
             <button
               className={`testPauseBtn ${
-                paused
-                  ? 'testPauseBtn--paused'
-                  : ''
+                paused ? 'testPauseBtn--paused' : ''
               }`}
-              onClick={() =>
-                setPaused(!paused)
-              }
+              onClick={() => setPaused(!paused)}
             >
-              {paused
-                ? '▶ Resume'
-                : '⏸ Pause'}
+              {paused ? '▶ Resume' : '⏸ Pause'}
             </button>
           </div>
 
@@ -587,23 +575,18 @@ export default function Test() {
             className="testThemeBtn"
             onClick={() => setDark(!dark)}
           >
-            {dark
-              ? '☀️ Light Mode'
-              : '🌙 Dark Mode'}
+            {dark ? '☀️ Light Mode' : '🌙 Dark Mode'}
           </button>
 
           <div className="testPalette">
             {questions.map((_, idx) => {
-              const status =
-                getPaletteStatus(idx)
+              const status = getPaletteStatus(idx)
 
               return (
                 <button
                   key={idx}
                   className={`testPaletteBtn testPaletteBtn--${status} ${
-                    idx === current
-                      ? 'testPaletteBtn--current'
-                      : ''
+                    idx === current ? 'testPaletteBtn--current' : ''
                   }`}
                   onClick={() => goTo(idx)}
                   disabled={paused}
