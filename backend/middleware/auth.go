@@ -18,9 +18,6 @@ const (
 	CtxName       = "name"
 )
 
-// NewKeycloakAuth builds a Gin middleware that verifies a Bearer JWT against
-// the realm's JWKS endpoint. issuer is "<KEYCLOAK_URL>/realms/<REALM>".
-// The JWKS is fetched once and refreshed in the background by keyfunc.
 func NewKeycloakAuth(issuer string) (gin.HandlerFunc, error) {
 	jwksURL := strings.TrimRight(issuer, "/") + "/protocol/openid-connect/certs"
 

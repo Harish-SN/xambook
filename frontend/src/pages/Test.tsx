@@ -1,28 +1,16 @@
 // src/pages/Test.tsx
 
-import {
-  useState,
-  useEffect,
-  useRef,
-} from 'react'
-
+import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 
 import Navbar from '../components/Navbar'
 import MathText from '../components/MathText'
 
-import Result, {
-  type Question,
-} from './Result'
+import Result, { type Question } from './Result'
 
 import '../styles/Test.css'
 
-const OPTION_KEYS = [
-  'a',
-  'b',
-  'c',
-  'd',
-] as const
+const OPTION_KEYS = ['a', 'b', 'c', 'd'] as const
 
 export default function Test() {
   const { subject } = useParams()
@@ -32,24 +20,19 @@ export default function Test() {
 
   const selectedTest = 1
 
-  const [questions, setQuestions] =
-    useState<Question[]>([])
+  const [questions, setQuestions] = useState<Question[]>([])
 
-  const [answers, setAnswers] =
-    useState<
-      Record<number, string>
-    >({})
+  const [answers, setAnswers] = useState<
+    Record<number, string>
+  >({})
 
-  const [visited, setVisited] =
-    useState<Set<number>>(
-      new Set()
-    )
+  const [visited, setVisited] = useState<
+    Set<number>
+  >(new Set())
 
-  const [current, setCurrent] =
-    useState(0)
+  const [current, setCurrent] = useState(0)
 
-  const [timeLeft, setTimeLeft] =
-    useState(0)
+  const [timeLeft, setTimeLeft] = useState(0)
 
   const [submitted, setSubmitted] =
     useState(false)
@@ -57,24 +40,17 @@ export default function Test() {
   const [loading, setLoading] =
     useState(false)
 
-  const [ready, setReady] =
-    useState(false)
+  const [ready, setReady] = useState(false)
 
   const [paused, setPaused] =
     useState(false)
 
-  const [dark, setDark] =
-    useState(false)
-
-  const [showInstructions, setShowInstructions] =
-    useState(true)
+  const [dark, setDark] = useState(false)
 
   const timerRef =
-    useRef<
-      ReturnType<
-        typeof setInterval
-      > | null
-    >(null)
+    useRef<ReturnType<typeof setInterval> | null>(
+      null
+    )
 
   const savedRef = useRef(false)
 
@@ -87,15 +63,12 @@ export default function Test() {
       subject.slice(1)
     : ''
 
-  const isFullTest =
-    isMock || isFree
+  const isFullTest = isMock || isFree
 
-  const totalMins = isFullTest
-    ? 180
-    : 60
+  const totalMins = isFullTest ? 180 : 60
 
-  const totalMarks =
-    questions.length * 4
+  // Dynamic total marks
+  const totalMarks = questions.length * 4
 
   // ---------------- FETCH QUESTIONS ----------------
 
@@ -126,57 +99,51 @@ export default function Test() {
       .then((data: any) => {
         if (!active) return
 
-        const rawQuestions =
-          Array.isArray(
-            data.questions
-          )
-            ? data.questions
-            : []
+        const rawQuestions = Array.isArray(
+          data.questions
+        )
+          ? data.questions
+          : []
 
-        const qs: Question[] =
-          rawQuestions.map(
-            (q: any) => ({
-              id: q.id,
+        const qs: Question[] = rawQuestions.map(
+          (q: any) => ({
+            id: q.id,
 
-              question:
-                q.question ||
-                q.text ||
+            question:
+              q.question || q.text || '',
+
+            options: {
+              a:
+                q.options?.a ||
+                q.option_a ||
                 '',
 
-              options: {
-                a:
-                  q.options?.a ||
-                  q.option_a ||
-                  '',
-
-                b:
-                  q.options?.b ||
-                  q.option_b ||
-                  '',
-
-                c:
-                  q.options?.c ||
-                  q.option_c ||
-                  '',
-
-                d:
-                  q.options?.d ||
-                  q.option_d ||
-                  '',
-              },
-
-              correct_option:
-                q.correct_option ||
+              b:
+                q.options?.b ||
+                q.option_b ||
                 '',
 
-              explanation:
-                q.explanation ||
+              c:
+                q.options?.c ||
+                q.option_c ||
                 '',
 
-              image_url:
-                q.image_url || '',
-            })
-          )
+              d:
+                q.options?.d ||
+                q.option_d ||
+                '',
+            },
+
+            correct_option:
+              q.correct_option || '',
+
+            explanation:
+              q.explanation || '',
+
+            image_url:
+              q.image_url || '',
+          })
+        )
 
         console.log(
           'Questions loaded:',
@@ -191,17 +158,13 @@ export default function Test() {
 
         setCurrent(0)
 
-        setTimeLeft(
-          totalMins * 60
-        )
+        setTimeLeft(totalMins * 60)
 
         setSubmitted(false)
 
         setPaused(false)
 
         setReady(true)
-
-        setShowInstructions(true)
       })
 
       .catch(err => {
@@ -229,45 +192,27 @@ export default function Test() {
   // ---------------- TIMER ----------------
 
   useEffect(() => {
-    if (
-      !ready ||
-      submitted ||
-      paused ||
-      showInstructions
-    )
-      return
+    if (!ready || submitted || paused) return
 
-    clearInterval(
-      timerRef.current!
-    )
+    clearInterval(timerRef.current!)
 
-    timerRef.current =
-      setInterval(() => {
-        setTimeLeft(t => {
-          if (t <= 1) {
-            clearInterval(
-              timerRef.current!
-            )
+    timerRef.current = setInterval(() => {
+      setTimeLeft(t => {
+        if (t <= 1) {
+          clearInterval(timerRef.current!)
 
-            setSubmitted(true)
+          setSubmitted(true)
 
-            return 0
-          }
+          return 0
+        }
 
-          return t - 1
-        })
-      }, 1000)
+        return t - 1
+      })
+    }, 1000)
 
     return () =>
-      clearInterval(
-        timerRef.current!
-      )
-  }, [
-    ready,
-    submitted,
-    paused,
-    showInstructions,
-  ])
+      clearInterval(timerRef.current!)
+  }, [ready, submitted, paused])
 
   // ---------------- SAVE ATTEMPT ----------------
 
@@ -284,12 +229,8 @@ export default function Test() {
     saveAttempt()
   }, [submitted])
 
-  function formatTime(
-    secs: number
-  ) {
-    const h = Math.floor(
-      secs / 3600
-    )
+  function formatTime(secs: number) {
+    const h = Math.floor(secs / 3600)
 
     const m = Math.floor(
       (secs % 3600) / 60
@@ -298,26 +239,16 @@ export default function Test() {
     const s = secs % 60
 
     if (h > 0) {
-      return `${h}:${String(
-        m
-      ).padStart(
+      return `${h}:${String(m).padStart(
         2,
         '0'
-      )}:${String(s).padStart(
-        2,
-        '0'
-      )}`
+      )}:${String(s).padStart(2, '0')}`
     }
 
-    return `${String(
-      m
-    ).padStart(
+    return `${String(m).padStart(
       2,
       '0'
-    )}:${String(s).padStart(
-      2,
-      '0'
-    )}`
+    )}:${String(s).padStart(2, '0')}`
   }
 
   function selectAnswer(
@@ -329,25 +260,17 @@ export default function Test() {
       [qIndex]: option,
     }))
 
-    setVisited(
-      v => new Set(v).add(qIndex)
-    )
+    setVisited(v => new Set(v).add(qIndex))
   }
 
   function goTo(idx: number) {
-    setVisited(
-      v => new Set(v).add(current)
-    )
+    setVisited(v => new Set(v).add(current))
 
     setCurrent(idx)
   }
 
-  function getPaletteStatus(
-    idx: number
-  ) {
-    if (
-      answers[idx] !== undefined
-    )
+  function getPaletteStatus(idx: number) {
+    if (answers[idx] !== undefined)
       return 'answered'
 
     if (visited.has(idx))
@@ -356,48 +279,32 @@ export default function Test() {
     return 'unattempted'
   }
 
-  const correctOf = (
-    q: Question
-  ) =>
-    (
-      q.correct_option || ''
-    ).toLowerCase()
+  const correctOf = (q: Question) =>
+    (q.correct_option || '').toLowerCase()
 
-  const correct =
-    questions.filter(
-      (q, i) =>
-        answers[i] ===
-        correctOf(q)
-    ).length
+  const correct = questions.filter(
+    (q, i) => answers[i] === correctOf(q)
+  ).length
 
-  const wrong =
-    questions.filter(
-      (q, i) =>
-        answers[i] !==
-          undefined &&
-        answers[i] !==
-          correctOf(q)
-    ).length
+  const wrong = questions.filter(
+    (q, i) =>
+      answers[i] !== undefined &&
+      answers[i] !== correctOf(q)
+  ).length
 
   const skipped =
-    questions.length -
-    correct -
-    wrong
+    questions.length - correct - wrong
 
-  const marks =
-    correct * 4 - wrong
+  const marks = correct * 4 - wrong
 
   const percentage =
     totalMarks > 0
       ? Math.round(
-          (marks /
-            totalMarks) *
-            100
+          (marks / totalMarks) * 100
         )
       : 0
 
-  const isLowTime =
-    timeLeft <= 300
+  const isLowTime = timeLeft <= 300
 
   const theme = dark
     ? 'testDark'
@@ -416,19 +323,15 @@ export default function Test() {
           },
 
           body: JSON.stringify({
-            subject:
-              apiSubject,
+            subject: apiSubject,
 
-            test_number:
-              selectedTest,
+            test_number: selectedTest,
 
-            score:
-              percentage,
+            score: percentage,
 
             marks,
 
-            total_marks:
-              totalMarks,
+            total_marks: totalMarks,
 
             correct,
 
@@ -447,9 +350,7 @@ export default function Test() {
   }
 
   function handleSubmit() {
-    clearInterval(
-      timerRef.current!
-    )
+    clearInterval(timerRef.current!)
 
     setSubmitted(true)
   }
@@ -458,9 +359,7 @@ export default function Test() {
 
   if (loading) {
     return (
-      <div
-        className={`testPage ${theme}`}
-      >
+      <div className={`testPage ${theme}`}>
         <Navbar />
 
         <div className="testLoading">
@@ -472,14 +371,9 @@ export default function Test() {
 
   // ---------------- NO QUESTIONS ----------------
 
-  if (
-    !loading &&
-    questions.length === 0
-  ) {
+  if (!loading && questions.length === 0) {
     return (
-      <div
-        className={`testPage ${theme}`}
-      >
+      <div className={`testPage ${theme}`}>
         <Navbar />
 
         <div className="testLoading">
@@ -491,28 +385,19 @@ export default function Test() {
 
   // ---------------- RESULT PAGE ----------------
 
-  if (
-    submitted &&
-    questions.length > 0
-  ) {
+  if (submitted && questions.length > 0) {
     return (
       <Result
         questions={questions}
         answers={answers}
         apiSubject={apiSubject}
-        selectedTest={
-          selectedTest
-        }
+        selectedTest={selectedTest}
         marks={marks}
-        totalMarks={
-          totalMarks
-        }
+        totalMarks={totalMarks}
         correct={correct}
         wrong={wrong}
         skipped={skipped}
-        percentage={
-          percentage
-        }
+        percentage={percentage}
         theme={theme}
       />
     )
@@ -521,112 +406,11 @@ export default function Test() {
   const q = questions[current]
 
   const answered =
-    Object.keys(answers)
-      .length
+    Object.keys(answers).length
 
   return (
-    <div
-      className={`testPage ${theme}`}
-    >
+    <div className={`testPage ${theme}`}>
       <Navbar />
-
-      {/* ---------------- INSTRUCTIONS POPUP ---------------- */}
-
-      {showInstructions && (
-        <div className="testModalOverlay">
-          <div className="testModal">
-            <h2>
-              NEET Exam Pattern
-            </h2>
-
-            <div className="testModalContent">
-              <p>
-                ⏱ Duration:{' '}
-                <strong>
-                  {isFullTest
-                    ? '3 Hours'
-                    : '1 Hour'}
-                </strong>
-              </p>
-
-              <p>
-                ❓ Questions:{' '}
-                <strong>
-                  {
-                    questions.length
-                  }
-                </strong>
-              </p>
-
-              <p>
-                🎯 Total Marks:{' '}
-                <strong>
-                  {totalMarks}
-                </strong>
-              </p>
-
-              <hr />
-
-              <p>
-                ✅ Correct Answer =
-                +4 marks
-              </p>
-
-              <p>
-                ❌ Wrong Answer =
-                -1 mark
-              </p>
-
-              <p>
-                ➖ Unanswered = 0
-                marks
-              </p>
-
-              <hr />
-
-              {isFullTest ? (
-                <>
-                  <p>
-                    Physics — 45
-                    Questions
-                  </p>
-
-                  <p>
-                    Chemistry — 45
-                    Questions
-                  </p>
-
-                  <p>
-                    Botany — 45
-                    Questions
-                  </p>
-
-                  <p>
-                    Zoology — 45
-                    Questions
-                  </p>
-                </>
-              ) : (
-                <p>
-                  Subject Test — 45
-                  Questions
-                </p>
-              )}
-            </div>
-
-            <button
-              className="testStartBtn"
-              onClick={() =>
-                setShowInstructions(
-                  false
-                )
-              }
-            >
-              Start Test
-            </button>
-          </div>
-        </div>
-      )}
 
       <div className="testLayout">
         <main className="testContent">
@@ -639,14 +423,11 @@ export default function Test() {
             <div className="testProgressMeta">
               <span>
                 Q {current + 1} of{' '}
-                {
-                  questions.length
-                }
+                {questions.length}
               </span>
 
               <span>
-                {answered}{' '}
-                answered
+                {answered} answered
               </span>
             </div>
 
@@ -655,8 +436,7 @@ export default function Test() {
                 className="testProgressFill"
                 style={{
                   width: `${
-                    ((current +
-                      1) /
+                    ((current + 1) /
                       questions.length) *
                     100
                   }%`,
@@ -674,17 +454,13 @@ export default function Test() {
 
                 <p className="testQuestionText">
                   <MathText
-                    text={
-                      q.question
-                    }
+                    text={q.question}
                   />
                 </p>
 
                 {q.image_url && (
                   <img
-                    src={
-                      q.image_url
-                    }
+                    src={q.image_url}
                     alt="question"
                     className="testQuestionImage"
                   />
@@ -692,50 +468,42 @@ export default function Test() {
               </div>
 
               <div className="testOptions">
-                {OPTION_KEYS.map(
-                  key => {
-                    const selected =
-                      answers[
-                        current
-                      ] === key
+                {OPTION_KEYS.map(key => {
+                  const selected =
+                    answers[current] === key
 
-                    return (
-                      <button
-                        key={key}
-                        className={`testOption ${
+                  return (
+                    <button
+                      key={key}
+                      className={`testOption ${
+                        selected
+                          ? 'testOption--selected'
+                          : ''
+                      }`}
+                      onClick={() =>
+                        !paused &&
+                        selectAnswer(
+                          current,
+                          key
+                        )
+                      }
+                    >
+                      <span
+                        className={`testOptionLabel ${
                           selected
-                            ? 'testOption--selected'
+                            ? 'testOptionLabel--selected'
                             : ''
                         }`}
-                        onClick={() =>
-                          !paused &&
-                          selectAnswer(
-                            current,
-                            key
-                          )
-                        }
                       >
-                        <span
-                          className={`testOptionLabel ${
-                            selected
-                              ? 'testOptionLabel--selected'
-                              : ''
-                          }`}
-                        >
-                          {key.toUpperCase()}
-                        </span>
+                        {key.toUpperCase()}
+                      </span>
 
-                        <MathText
-                          text={
-                            q.options[
-                              key
-                            ]
-                          }
-                        />
-                      </button>
-                    )
-                  }
-                )}
+                      <MathText
+                        text={q.options[key]}
+                      />
+                    </button>
+                  )
+                })}
               </div>
             </>
           )}
@@ -752,8 +520,7 @@ export default function Test() {
                 )
               }
               disabled={
-                current === 0 ||
-                paused
+                current === 0 || paused
               }
             >
               ← Prev
@@ -761,18 +528,13 @@ export default function Test() {
 
             <div className="testNavRight">
               {current <
-                questions.length -
-                  1 && (
+                questions.length - 1 && (
                 <button
                   className="testNextBtn"
                   onClick={() =>
-                    goTo(
-                      current + 1
-                    )
+                    goTo(current + 1)
                   }
-                  disabled={
-                    paused
-                  }
+                  disabled={paused}
                 >
                   Next →
                 </button>
@@ -780,9 +542,7 @@ export default function Test() {
 
               <button
                 className="testSubmitBtn"
-                onClick={
-                  handleSubmit
-                }
+                onClick={handleSubmit}
                 disabled={paused}
               >
                 Submit Test ✓
@@ -804,9 +564,7 @@ export default function Test() {
             </p>
 
             <p className="testTimerValue">
-              {formatTime(
-                timeLeft
-              )}
+              {formatTime(timeLeft)}
             </p>
 
             <button
@@ -816,9 +574,7 @@ export default function Test() {
                   : ''
               }`}
               onClick={() =>
-                setPaused(
-                  !paused
-                )
+                setPaused(!paused)
               }
             >
               {paused
@@ -829,9 +585,7 @@ export default function Test() {
 
           <button
             className="testThemeBtn"
-            onClick={() =>
-              setDark(!dark)
-            }
+            onClick={() => setDark(!dark)}
           >
             {dark
               ? '☀️ Light Mode'
@@ -839,34 +593,25 @@ export default function Test() {
           </button>
 
           <div className="testPalette">
-            {questions.map(
-              (_, idx) => {
-                const status =
-                  getPaletteStatus(
-                    idx
-                  )
+            {questions.map((_, idx) => {
+              const status =
+                getPaletteStatus(idx)
 
-                return (
-                  <button
-                    key={idx}
-                    className={`testPaletteBtn testPaletteBtn--${status} ${
-                      idx ===
-                      current
-                        ? 'testPaletteBtn--current'
-                        : ''
-                    }`}
-                    onClick={() =>
-                      goTo(idx)
-                    }
-                    disabled={
-                      paused
-                    }
-                  >
-                    {idx + 1}
-                  </button>
-                )
-              }
-            )}
+              return (
+                <button
+                  key={idx}
+                  className={`testPaletteBtn testPaletteBtn--${status} ${
+                    idx === current
+                      ? 'testPaletteBtn--current'
+                      : ''
+                  }`}
+                  onClick={() => goTo(idx)}
+                  disabled={paused}
+                >
+                  {idx + 1}
+                </button>
+              )
+            })}
           </div>
         </aside>
       </div>
