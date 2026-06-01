@@ -63,7 +63,7 @@ export default function Payment() {
       }
 
       const options = {
-        key: 'rzp_test_Z9d2hQVn9DTVer',
+        key: 'rzp_test_SwNN6dlfoqgV8s',
 
         amount: order.amount,
 
