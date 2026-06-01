@@ -16,7 +16,6 @@ func UploadImage(c *gin.Context) {
 		})
 		return
 	}
-
 	file, err := fileHeader.Open()
 
 	if err != nil {
@@ -25,7 +24,6 @@ func UploadImage(c *gin.Context) {
 		})
 		return
 	}
-
 	defer file.Close()
 
 	url, err := storage.UploadFile(
@@ -33,7 +31,6 @@ func UploadImage(c *gin.Context) {
 		fileHeader.Size,
 		fileHeader.Header.Get("Content-Type"),
 	)
-
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),

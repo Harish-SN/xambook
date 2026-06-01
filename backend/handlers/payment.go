@@ -19,7 +19,6 @@ func CreateOrder(c *gin.Context) {
 	keyID := os.Getenv(
 		"RAZORPAY_KEY_ID",
 	)
-
 	keySecret := os.Getenv(
 		"RAZORPAY_KEY_SECRET",
 	)

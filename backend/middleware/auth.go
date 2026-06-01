@@ -77,7 +77,6 @@ func NewKeycloakAuth(issuer string) (gin.HandlerFunc, error) {
 		c.Next()
 	}, nil
 }
-
 func bearerToken(header string) string {
 	const prefix = "Bearer "
 	if len(header) > len(prefix) && strings.EqualFold(header[:len(prefix)], prefix) {
