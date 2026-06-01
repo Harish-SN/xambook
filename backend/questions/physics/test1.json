@@ -29,7 +29,6 @@
     {
       "id": 3,
       "question": "A car starting from rest accelerates uniformly at $2\\,\\text{m s}^{-2}$ for $5\\,\\text{s}$. The distance covered is:",
-      "image_file": "3.png",
       "options": {
         "a": "$10\\,\\text{m}$",
         "b": "$20\\,\\text{m}$",
@@ -37,13 +36,11 @@
         "d": "$50\\,\\text{m}$"
       },
       "correct_option": "c",
-      "explanation": "Equation of motion: $s = ut + \\tfrac{1}{2}at^2$.<br>Here $u = 0$, $a = 2\\,\\text{m/s}^2$, $t = 5$ s.<br>So $s = 0 + \\tfrac{1}{2}(2)(25) = 25$ m.<br><br>Alternate method: final velocity $v = u + at = 0 + 2\\times5 = 10$ m/s.<br>Average velocity = $(u+v)/2 = (0+10)/2 = 5$ m/s.<br>Distance = average velocity × time = 5 × 5 = 25 m.<br>Both methods agree.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test1/3.png"
+      "explanation": "Equation of motion: $s = ut + \\tfrac{1}{2}at^2$.<br>Here $u = 0$, $a = 2\\,\\text{m/s}^2$, $t = 5$ s.<br>So $s = 0 + \\tfrac{1}{2}(2)(25) = 25$ m.<br><br>Alternate method: final velocity $v = u + at = 0 + 2\\times5 = 10$ m/s.<br>Average velocity = $(u+v)/2 = (0+10)/2 = 5$ m/s.<br>Distance = average velocity × time = 5 × 5 = 25 m.<br>Both methods agree."
     },
     {
       "id": 4,
       "question": "A ball is projected vertically upward with speed $20\\,\\text{m s}^{-1}$. Take $g = 9.8\\,\\text{m s}^{-2}$. Maximum height reached is:",
-      "image_file": "4.png",
       "options": {
         "a": "$10.2\\,\\text{m}$",
         "b": "$15.3\\,\\text{m}$",
@@ -56,7 +53,6 @@
     {
       "id": 5,
       "question": "A projectile is fired with speed $10\\,\\text{m s}^{-1}$ at $45^{\\circ}$ on level ground ($g = 10\\,\\text{m s}^{-2}$). Its range is:",
-      "image_file": "5.png",
       "options": {
         "a": "$5\\,\\text{m}$",
         "b": "$10\\,\\text{m}$",
@@ -129,7 +125,6 @@
     {
       "id": 11,
       "question": "A $1\\,\\text{kg}$ mass attached to a light horizontal spring ($k = 4\\,\\text{N m}^{-1}$) performs small oscillations on a smooth surface. The time period of oscillation is:",
-      "image_file": "11.png",
       "options": {
         "a": "$2\\,\\text{s}$",
         "b": "$3.14\\,\\text{s}$",
@@ -137,8 +132,7 @@
         "d": "$1.57\\,\\text{s}$"
       },
       "correct_option": "b",
-      "explanation": "For a spring–mass system, the time period is given by:\n\\[ T = 2\\pi\\sqrt{\\frac{m}{k}}. \\]\nHere $m=1$ kg, $k=4$ N m$^{-1}$. Substituting,\n\\[ T = 2\\pi\\sqrt{\\tfrac{1}{4}} = 2\\pi\\times0.5 = \\pi\\,\\text{s} \\approx 3.14\\,\\text{s}. \\]\nThe angular frequency is $\\omega=\\sqrt{\\tfrac{k}{m}} = 2$ rad s$^{-1}$. Thus frequency $f=1/T\\approx0.318$ Hz. Units: $\\sqrt{\\tfrac{kg}{N/m}}=\\sqrt{\\tfrac{kg}{kg/s^2}}=s$, so dimensional check is correct.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test1/11.png"
+      "explanation": "For a spring–mass system, the time period is given by:\n\\[ T = 2\\pi\\sqrt{\\frac{m}{k}}. \\]\nHere $m=1$ kg, $k=4$ N m$^{-1}$. Substituting,\n\\[ T = 2\\pi\\sqrt{\\tfrac{1}{4}} = 2\\pi\\times0.5 = \\pi\\,\\text{s} \\approx 3.14\\,\\text{s}. \\]\nThe angular frequency is $\\omega=\\sqrt{\\tfrac{k}{m}} = 2$ rad s$^{-1}$. Thus frequency $f=1/T\\approx0.318$ Hz. Units: $\\sqrt{\\tfrac{kg}{N/m}}=\\sqrt{\\tfrac{kg}{kg/s^2}}=s$, so dimensional check is correct."
     },
     {
       "id": 12,
@@ -215,7 +209,6 @@
     {
       "id": 18,
       "question": "A body moves in a horizontal circle of radius $2.0\\,\\text{m}$ with speed $5.0\\,\\text{m s}^{-1}$. Its centripetal acceleration is:",
-      "image_file": "18.png",
       "options": {
         "a": "$2.5\\,\\text{m s}^{-2}$",
         "b": "$5.0\\,\\text{m s}^{-2}$",
@@ -223,8 +216,7 @@
         "d": "$12.5\\,\\text{m s}^{-2}$"
       },
       "correct_option": "d",
-      "explanation": "Centripetal acceleration is:\n\\[ a_c = \\frac{v^2}{r}. \\]\nSubstitute $v=5$, $r=2$:\n\\[ a_c = \\frac{25}{2} = 12.5\\,\\text{m s}^{-2}. \\]\nUnits: (m$^2$s$^{-2}$)/m = m/s$^2$. This shows acceleration increases rapidly with speed and decreases with radius.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test1/18.png"
+      "explanation": "Centripetal acceleration is:\n\\[ a_c = \\frac{v^2}{r}. \\]\nSubstitute $v=5$, $r=2$:\n\\[ a_c = \\frac{25}{2} = 12.5\\,\\text{m s}^{-2}. \\]\nUnits: (m$^2$s$^{-2}$)/m = m/s$^2$. This shows acceleration increases rapidly with speed and decreases with radius."
     },
     {
       "id": 19,
@@ -301,7 +293,6 @@
     {
       "id": 25,
       "question": "A light ray in air (n₁ = 1.00) is incident on glass (n₂ = 1.50) at 30°. The angle of refraction is:",
-      "image_file": "25.png",
       "options": {
         "a": "15°",
         "b": "19.5°",
@@ -309,8 +300,7 @@
         "d": "45°"
       },
       "correct_option": "b",
-      "explanation": "Snell's law: $n_1 \\sin i = n_2 \\sin r$.\n\\[ \\sin r = \\frac{n_1}{n_2} \\sin i = \\frac{1.0}{1.5} \\times \\sin30° = \\frac{0.5}{1.5} = 0.333 \\]\n\\[ r = \\arcsin(0.333) \\approx 19.5° \\] Refraction is towards normal since n increases.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test1/25.png"
+      "explanation": "Snell's law: $n_1 \\sin i = n_2 \\sin r$.\n\\[ \\sin r = \\frac{n_1}{n_2} \\sin i = \\frac{1.0}{1.5} \\times \\sin30° = \\frac{0.5}{1.5} = 0.333 \\]\n\\[ r = \\arcsin(0.333) \\approx 19.5° \\] Refraction is towards normal since n increases."
     },
     {
       "id": 26,
@@ -387,7 +377,6 @@
     {
       "id": 32,
       "question": "Two blocks of masses 3 kg and 2 kg move toward each other with speeds 4 m/s and 1 m/s respectively. They collide head-on and stick. The speed of the combined mass is (take 3 kg direction positive):",
-      "image_file": "32.png",
       "options": {
         "a": "2.0 m/s",
         "b": "2.2 m/s",
@@ -395,8 +384,7 @@
         "d": "3.0 m/s"
       },
       "correct_option": "a",
-      "explanation": "Use conservation of momentum: $p_i = p_f$\nInitial momentum: $p_i = 3\\cdot4 + 2\\cdot(-1) = 10$ kg·m/s\nTotal mass: $M = 3+2=5$ kg\nFinal speed: $v_f = p_i/M = 10/5 = 2.0$ m/s along 3 kg block’s initial direction.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test1/32.png"
+      "explanation": "Use conservation of momentum: $p_i = p_f$\nInitial momentum: $p_i = 3\\cdot4 + 2\\cdot(-1) = 10$ kg·m/s\nTotal mass: $M = 3+2=5$ kg\nFinal speed: $v_f = p_i/M = 10/5 = 2.0$ m/s along 3 kg block’s initial direction."
     },
     {
       "id": 33,

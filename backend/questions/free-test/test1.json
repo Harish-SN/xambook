@@ -45,7 +45,6 @@
       "id": 4,
       "subject": "Physics",
       "question": "A $2\\,\\mu$F capacitor is charged to $100$ V. It is then connected across an uncharged $3\\,\\mu$F capacitor. What is the common potential after connection?",
-      "image_file": "4.png",
       "options": {
         "a": "$40$ V",
         "b": "$60$ V",
@@ -54,7 +53,7 @@
       },
       "correct_option": "a",
       "explanation": "Initially, the $2\\,\\mu$F capacitor has charge $Q = CV = 2 \\times 100 = 200\\,\\mu$C. The $3\\,\\mu$F capacitor is uncharged. When connected in parallel, charge redistributes but total charge is conserved.\n\nEquivalent capacitance after connection: $C_{eq} = 2 + 3 = 5\\,\\mu$F.\n\nFinal potential across both: $V = Q/C_{eq} = 200/5 = 40$ V.\n\nThus, the common potential is $40$ V.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/4.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/4.png"
     },
     {
       "id": 5,
@@ -73,7 +72,6 @@
       "id": 6,
       "subject": "Physics",
       "question": "A coil of 100 turns and area $0.01\\,\\text{m}^2$ is placed perpendicular to a magnetic field decreasing uniformly from $0.5\\,\\text{T}$ to zero in $0.1\\,\\text{s}$. Find the induced emf.",
-      "image_file": "4.png",
       "options": {
         "a": "$2.5$ V",
         "b": "$5.0$ V",
@@ -82,7 +80,7 @@
       },
       "correct_option": "b",
       "explanation": "According to Faraday’s law of electromagnetic induction, the induced emf is given by:\n\n$\\mathcal{E} = N\\dfrac{\\Delta\\Phi}{\\Delta t}$.\n\nHere, $N = 100$, area $A = 0.01\\,\\text{m}^2$, and change in magnetic field $\\Delta B = 0.5 - 0 = 0.5\\,\\text{T}$. \n\nSo change in flux: $\\Delta \\Phi = A \\Delta B = 0.01 \\times 0.5 = 0.005\\,\\text{Wb}$. \n\nTime interval: $\\Delta t = 0.1\\,\\text{s}$. \n\nThus induced emf:\n$\\mathcal{E} = 100\\left(\\dfrac{0.005}{0.1}\\right) = 100 \\times 0.05 = 5.0\\,\\text{V}$.\n\nHence, the induced emf is $5.0$ V.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/6.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/6.png"
     },
     {
       "id": 7,
@@ -114,7 +112,6 @@
       "id": 9,
       "subject": "Physics",
       "question": "A current of $2$ A flows through a $10\\,\\Omega$ resistor for $2$ minutes. How much heat is produced?",
-      "image_file": "9.png",
       "options": {
         "a": "$2.4 \\times 10^3$ J",
         "b": "$4.8 \\times 10^3$ J",
@@ -123,7 +120,7 @@
       },
       "correct_option": "b",
       "explanation": "The heat produced is given by Joule’s law of heating:\n\n$H = I^2 R t$. \n\nHere, $I = 2$ A, $R = 10\\,\\Omega$, and $t = 2$ minutes $= 120$ s. \n\nThus, $H = (2^2)(10)(120) = 4 \\times 10 \\times 120 = 4800$ J.\n\nTherefore, $H = 4.8 \\times 10^3$ J.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/9.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/9.png"
     },
     {
       "id": 10,
@@ -142,7 +139,6 @@
       "id": 11,
       "subject": "Physics",
       "question": "Water flows through a horizontal pipe with cross-sectional areas $A_1=10\\,\\text{cm}^2$ and $A_2=5\\,\\text{cm}^2$. If velocity at $A_1$ is $2\\,\\text{m/s}$, find the pressure difference $P_1 - P_2$. (Density of water $=1000\\,\\text{kg/m}^3$)",
-      "image_file": "11.png",
       "options": {
         "a": "$2000$ Pa",
         "b": "$4000$ Pa",
@@ -151,7 +147,7 @@
       },
       "correct_option": "c",
       "explanation": "Step 1: Apply continuity equation: $A_1 v_1 = A_2 v_2$. \nHere, $A_1=10$, $A_2=5$, $v_1=2$. So, $v_2 = \\dfrac{A_1}{A_2} v_1 = \\dfrac{10}{5}\\times2 = 4\\,\\text{m/s}$. \n\nStep 2: Apply Bernoulli’s theorem for horizontal pipe (heights same):\n$P_1 + \\tfrac{1}{2}\\rho v_1^2 = P_2 + \\tfrac{1}{2}\\rho v_2^2$. \n\nRearranging:\n$P_1 - P_2 = \\tfrac{1}{2}\\rho (v_2^2 - v_1^2)$. \n\nSubstitute: $= \\tfrac{1}{2}(1000)(16 - 4) = 500 \\times 12 = 6000\\,\\text{Pa}$. \n\nHence, the pressure difference is $6000$ Pa.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/11.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/11.png"
     },
     {
       "id": 12,
@@ -170,7 +166,6 @@
       "id": 13,
       "subject": "Physics",
       "question": "A satellite orbits Earth just above the surface. If $g = 9.8\\,\\text{m/s}^2$ and Earth’s radius $R = 6400\\,\\text{km}$, find its orbital velocity.",
-      "image_file": "13.png",
       "options": {
         "a": "$7.9$ km/s",
         "b": "$5.6$ km/s",
@@ -179,13 +174,12 @@
       },
       "correct_option": "a",
       "explanation": "For a satellite in circular orbit close to Earth’s surface, the centripetal force is provided by gravity: $\\dfrac{mv^2}{R} = mg$. \n\nCancelling $m$: $v^2 = gR$, so $v = \\sqrt{gR}$. \n\nSubstitute: $g=9.8$, $R=6400\\,\\text{km}=6.4\\times10^6$ m. \n\n$v = \\sqrt{9.8\\times6.4\\times10^6} = \\sqrt{6.27\\times10^7}$. \n\n$v \\approx 7.9\\times10^3\\,\\text{m/s} = 7.9$ km/s. \n\nThus, the orbital velocity is about $7.9$ km/s.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/13.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/13.png"
     },
     {
       "id": 14,
       "subject": "Physics",
       "question": "Two resistors $6\\,\\Omega$ and $3\\,\\Omega$ are connected in parallel across a $6$ V battery. Find the current through the battery.",
-      "image_file": "14.png",
       "options": {
         "a": "$1$ A",
         "b": "$2$ A",
@@ -194,7 +188,7 @@
       },
       "correct_option": "c",
       "explanation": "Step 1: Equivalent resistance for parallel connection:\n$\\dfrac{1}{R} = \\dfrac{1}{6} + \\dfrac{1}{3} = \\dfrac{1}{6} + \\dfrac{2}{6} = \\dfrac{3}{6} = \\dfrac{1}{2}$. \nSo, $R = 2\\,\\Omega$. \n\nStep 2: Apply Ohm’s law for total circuit:\n$I = \\dfrac{V}{R} = \\dfrac{6}{2} = 3$ A. \n\nTherefore, the total current from the battery is 3 A.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/14.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/14.png"
     },
     {
       "id": 15,
@@ -226,7 +220,6 @@
       "id": 17,
       "subject": "Physics",
       "question": "Unpolarized light of intensity $I_0$ passes through two ideal polarizers. The angle between their transmission axes is $60^\\circ$. The transmitted intensity is:",
-      "image_file": "17.png",
       "options": {
         "a": "$\\dfrac{I_0}{2}$",
         "b": "$\\dfrac{I_0}{4}$",
@@ -235,7 +228,7 @@
       },
       "correct_option": "c",
       "explanation": "Step 1: After the first polarizer, unpolarized light becomes plane polarized. Its intensity is reduced by half: $I = I_0/2$. \n\nStep 2: The second polarizer is at angle $60^\\circ$ with the first. According to Malus’ law, $I = I_{in}\\cos^2\\theta$. \n\nSo, $I = (I_0/2) \\cos^2 60^\\circ = (I_0/2)(1/4) = I_0/8$. \n\nThus, the transmitted intensity is $I_0/8$.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/17.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/17.png"
     },
     {
       "id": 18,
@@ -267,7 +260,6 @@
       "id": 20,
       "subject": "Physics",
       "question": "A projectile is fired with velocity $20\\,\\text{m/s}$ at an angle of $30^\\circ$ with the horizontal. What is its maximum height? (Take $g = 10\\,\\text{m/s}^2$)",
-      "image_file": "20.png",
       "options": {
         "a": "$5$ m",
         "b": "$10$ m",
@@ -276,13 +268,12 @@
       },
       "correct_option": "a",
       "explanation": "Step 1: Resolve velocity into vertical component: $u_y = u\\sin\\theta = 20\\sin30^\\circ = 20\\times0.5 = 10$ m/s. \n\nStep 2: Maximum height is given by: $H = \\dfrac{u_y^2}{2g}$. \n\nSubstitute: $H = \\dfrac{(10)^2}{2(10)} = \\dfrac{100}{20} = 5$ m. \n\nThus, the maximum height of the projectile is 5 m.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/20.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/20.png"
     },
     {
       "id": 21,
       "subject": "Physics",
       "question": "One mole of an ideal gas at $300\\,\\text{K}$ undergoes a reversible isothermal expansion in which its volume doubles. The work done by the gas is (R = $8.314\\,\\text{J mol}^{-1}\\,\\text{K}^{-1}$):",
-      "image_file": "21.png",
       "options": {
         "a": "$0.69$ kJ",
         "b": "$1.73$ kJ",
@@ -291,7 +282,7 @@
       },
       "correct_option": "b",
       "explanation": "For an isothermal reversible expansion of an ideal gas:\n\n$W = nRT \\ln\\dfrac{V_2}{V_1}$.\n\nHere, $n = 1$ mol, $T = 300$ K, $V_2/V_1 = 2$, and $R = 8.314$. \n\nSo, $W = (1)(8.314)(300)\\ln 2$. \n\nNow, $8.314 \\times 300 = 2494.2$. With $\\ln 2 = 0.693$, we get $W = 2494.2 \\times 0.693 \\approx 1730$ J. \n\nConverting to kilojoules: $W = 1.73$ kJ.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/21.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/21.png"
     },
     {
       "id": 22,
@@ -310,7 +301,6 @@
       "id": 23,
       "subject": "Physics",
       "question": "Two thin lenses of focal lengths $+10\\,\\text{cm}$ and $+20\\,\\text{cm}$ are placed coaxially in contact. The equivalent focal length is:",
-      "image_file": "23.png",
       "options": {
         "a": "$+30\\,\\text{cm}$",
         "b": "$+6.7\\,\\text{cm}$",
@@ -319,7 +309,7 @@
       },
       "correct_option": "b",
       "explanation": "For lenses in contact, the powers add: $1/f_{eq} = 1/f_1 + 1/f_2$. \n\nHere, $f_1 = 10$ cm, $f_2 = 20$ cm. \n\n$1/f_{eq} = 1/10 + 1/20 = 2/20 + 1/20 = 3/20$. \n\nSo, $f_{eq} = 20/3 \\approx 6.67$ cm. \n\nTherefore, the effective focal length is about $6.7$ cm.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/23.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/23.png"
     },
     {
       "id": 24,
@@ -364,7 +354,6 @@
       "id": 27,
       "subject": "Physics",
       "question": "A conducting rod of length $\\ell = 0.50\\,\\text{m}$ moves with speed $v = 4.0\\,\\text{m/s}$ perpendicular to a uniform magnetic field $B = 0.60\\,\\text{T}$. The induced emf between its ends is:",
-      "image_file": "27.png",
       "options": {
         "a": "$0.60\\,\\text{V}$",
         "b": "$1.20\\,\\text{V}$",
@@ -373,7 +362,7 @@
       },
       "correct_option": "b",
       "explanation": "When a conductor of length $\\ell$ moves with velocity $v$ perpendicular to magnetic field $B$, a motional emf is induced:\n\n$\\mathcal{E} = B \\ell v$. \n\nHere, $B = 0.60$ T, $\\ell = 0.50$ m, $v = 4.0$ m/s. \n\nSo, $\\mathcal{E} = 0.60 \\times 0.50 \\times 4.0 = 1.20$ V. \n\nHence, the induced emf is $1.20$ V.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/27.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/27.png"
     },
     {
       "id": 28,
@@ -509,7 +498,6 @@
       "id": 38,
       "subject": "Physics",
       "question": "A particle in SHM of amplitude $A$ has displacement $x = A/2$. What fraction of the total mechanical energy is kinetic at that instant?",
-      "image_file": "38.png",
       "options": {
         "a": "$\\tfrac{1}{4}$",
         "b": "$\\tfrac{1}{2}$",
@@ -518,7 +506,7 @@
       },
       "correct_option": "c",
       "explanation": "Total energy of SHM: $E = \\tfrac{1}{2}kA^2$. \n\nPotential energy at displacement $x$: $U = \\tfrac{1}{2}kx^2 = \\tfrac{1}{2}k(A/2)^2 = \\tfrac{1}{8}kA^2$. \n\nSo, kinetic energy: $K = E - U = \\tfrac{1}{2}kA^2 - \\tfrac{1}{8}kA^2 = \\tfrac{3}{8}kA^2$. \n\nFraction of kinetic energy: $K/E = (3/8)/(1/2) = 3/4$. \n\nThus, three-fourths of the total energy is kinetic.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/free-test/38.png"
+      "image_url": "https://minio.xambook.com/neet-diagrams/free-test/test1/38.png"
     },
     {
       "id": 39,

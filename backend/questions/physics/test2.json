@@ -17,7 +17,6 @@
     {
       "id": 2,
       "question": "A particle moves in a circle of radius $0.5\\,\\text{m}$ with angular speed $12\\,\\text{rad s}^{-1}$. The centripetal acceleration is:",
-      "image_file": "2.png",
       "options": {
         "a": "$36\\,\\text{m s}^{-2}$",
         "b": "$48\\,\\text{m s}^{-2}$",
@@ -25,8 +24,7 @@
         "d": "$144\\,\\text{m s}^{-2}$"
       },
       "correct_option": "c",
-      "explanation": "Centripetal acceleration is $a_c = \\omega^2 r$. With $\\omega = 12$ rad/s, $r = 0.5$ m: $a_c = 12^2 \\cdot 0.5 = 144 \\cdot 0.5 = 72$ m/s$^2$.",
-      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test2/2.png"
+      "explanation": "Centripetal acceleration is $a_c = \\omega^2 r$. With $\\omega = 12$ rad/s, $r = 0.5$ m: $a_c = 12^2 \\cdot 0.5 = 144 \\cdot 0.5 = 72$ m/s$^2$."
     },
     {
       "id": 3,
