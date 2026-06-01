@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: harishsudalaimani/xambook-frontend:9bf1322da3812d9cdd0d496512132d5c576ce950
+          image: harishsudalaimani/xambook-frontend:ceb9667039b37c7e12fb7299899a6fa8abd695d8
           imagePullPolicy: Always
           ports:
             - containerPort: 80
