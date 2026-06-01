@@ -1,21 +1,16 @@
 apiVersion: batch/v1
 kind: Job
-
 metadata:
   name: question-import
   namespace: default
-
 spec:
   template:
     spec:
       containers:
         - name: importer
           image: harishsudalaimani/xambook-importer:9f22156ce8518bf1f50eeab70f790abf9b1f3840
-
           env:
             - name: POSTGRES_URL
               value: postgres://postgres:postgres123@postgres:5432/xambook?sslmode=disable
-
       restartPolicy: Never
-
   backoffLimit: 1
