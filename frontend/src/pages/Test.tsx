@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import '../styles/Test.css'
 
 interface Question {
   id: number
-  subject: string
   question: string
   options: {
     a: string
@@ -18,27 +17,18 @@ interface Question {
   image_url: string | null
 }
 
-const TESTS = [
-  { id: 1, label: 'Test 1' },
-  { id: 2, label: 'Test 2' },
-  { id: 3, label: 'Test 3' },
-  { id: 4, label: 'Test 4' },
-]
-
 const OPTION_KEYS = ['a', 'b', 'c', 'd'] as const
 
 export default function Test() {
   const { subject } = useParams()
-  const navigate = useNavigate()
 
-  const isPremium = true
   const isFree = subject === 'free'
   const isMock = subject === 'mock'
 
-  const [selectedTest, setSelectedTest] = useState<number | null>(null)
-  const [confirmTest, setConfirmTest] = useState<number | null>(isFree ? 1 : null)
+  const selectedTest = 1
+
   const [questions, setQuestions] = useState<Question[]>([])
-  const [answers, setAnswers] = useState<Record<number, number>>({})
+  const [answers, setAnswers] = useState<Record<number, string>>({})
   const [visited, setVisited] = useState<Set<number>>(new Set())
   const [current, setCurrent] = useState(0)
   const [timeLeft, setTimeLeft] = useState(0)
@@ -50,37 +40,44 @@ export default function Test() {
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
+  const apiSubject = isFree
+    ? 'Free Test'
+    : isMock
+    ? 'Full Test'
+    : subject
+        ? subject.charAt(0).toUpperCase() + subject.slice(1)
+        : ''
+
   const isFullTest = isMock || isFree
   const totalMins = isFullTest ? 180 : 60
   const totalMarks = isFullTest ? 720 : 180
-  const totalQuestions = isFullTest ? 180 : 45
-  const durationLabel = isFullTest ? '3 hours' : '60 min'
 
   useEffect(() => {
-    if (selectedTest === null) return
-
     setLoading(true)
     setReady(false)
-    setQuestions([])
 
-    fetch(`https://api.xambook.com/api/tests/${subject}/${selectedTest}/questions`)
+    fetch(
+      `https://api.xambook.com/api/tests/${encodeURIComponent(
+        apiSubject
+      )}/${selectedTest}/questions`
+    )
       .then(r => r.json())
       .then(data => {
-        setQuestions(data.questions || [])
+        const qs = data.questions || []
+
+        setQuestions(qs)
         setAnswers({})
         setVisited(new Set())
         setCurrent(0)
         setTimeLeft(totalMins * 60)
         setSubmitted(false)
         setPaused(false)
-        setLoading(false)
         setReady(true)
       })
-      .catch(err => {
-        console.error(err)
+      .finally(() => {
         setLoading(false)
       })
-  }, [selectedTest, subject])
+  }, [])
 
   useEffect(() => {
     if (!ready || submitted || paused) return
@@ -108,14 +105,21 @@ export default function Test() {
     const s = secs % 60
 
     if (h > 0) {
-      return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
+      return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(
+        2,
+        '0'
+      )}`
     }
 
     return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
   }
 
-  function selectAnswer(qIndex: number, optionIdx: number) {
-    setAnswers(a => ({ ...a, [qIndex]: optionIdx }))
+  function selectAnswer(qIndex: number, option: string) {
+    setAnswers(a => ({
+      ...a,
+      [qIndex]: option,
+    }))
+
     setVisited(v => new Set(v).add(qIndex))
   }
 
@@ -131,16 +135,17 @@ export default function Test() {
   }
 
   const correct = questions.filter(
-    (q, i) => OPTION_KEYS[answers[i]] === q.correct_option
+    (q, i) => answers[i] === q.correct_option
   ).length
 
   const wrong = questions.filter(
     (q, i) =>
       answers[i] !== undefined &&
-      OPTION_KEYS[answers[i]] !== q.correct_option
+      answers[i] !== q.correct_option
   ).length
 
   const skipped = questions.length - correct - wrong
+
   const marks = correct * 4 - wrong
 
   const percentage =
@@ -163,7 +168,7 @@ export default function Test() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          subject,
+          subject: apiSubject,
           test_number: selectedTest,
           score: percentage,
           marks,
@@ -174,7 +179,7 @@ export default function Test() {
         }),
       })
     } catch (err) {
-      console.error('Failed to save attempt:', err)
+      console.error(err)
     }
   }
 
@@ -193,6 +198,56 @@ export default function Test() {
     )
   }
 
+  if (submitted && questions.length > 0) {
+    return (
+      <div className={`testPage ${theme}`}>
+        <Navbar />
+
+        <main className="testResultPage">
+          <div className="testResultCard">
+            <div className="testResultEmoji">
+              {marks >= totalMarks * 0.6 ? '🎉' : '📚'}
+            </div>
+
+            <h1 className="testResultTitle">
+              Test Complete!
+            </h1>
+
+            <p className="testResultSub">
+              {apiSubject} · Test {selectedTest}
+            </p>
+
+            <div className="testResultMarks">
+              {marks} / {totalMarks}
+            </div>
+
+            <div className="testResultStatsRow">
+              <div className="testResultStat">
+                <span>{correct}</span>
+                <p>Correct</p>
+              </div>
+
+              <div className="testResultStat">
+                <span>{wrong}</span>
+                <p>Wrong</p>
+              </div>
+
+              <div className="testResultStat">
+                <span>{skipped}</span>
+                <p>Skipped</p>
+              </div>
+
+              <div className="testResultStat">
+                <span>{percentage}%</span>
+                <p>Score</p>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    )
+  }
+
   const q = questions[current]
   const answered = Object.keys(answers).length
 
@@ -202,27 +257,26 @@ export default function Test() {
 
       <div className="testLayout">
         <main className="testContent">
-
           <div className="testProgressHeader">
             <p className="testProgressCourse">
-              {subjectName} • Test {selectedTest}
+              {apiSubject} · Test {selectedTest}
             </p>
 
             <div className="testProgressMeta">
-              <span className="testProgressLabel">
+              <span>
                 Q {current + 1} of {questions.length}
               </span>
 
-              <span className="testProgressLabel">
-                {answered} answered
-              </span>
+              <span>{answered} answered</span>
             </div>
 
             <div className="testProgressBar">
               <div
                 className="testProgressFill"
                 style={{
-                  width: `${((current + 1) / questions.length) * 100}%`,
+                  width: `${
+                    ((current + 1) / questions.length) * 100
+                  }%`,
                 }}
               />
             </div>
@@ -249,17 +303,21 @@ export default function Test() {
               </div>
 
               <div className="testOptions">
-                {OPTION_KEYS.map((key, idx) => {
-                  const selected = answers[current] === idx
+                {OPTION_KEYS.map(key => {
+                  const selected =
+                    answers[current] === key
 
                   return (
                     <button
-                      key={idx}
+                      key={key}
                       className={`testOption ${
-                        selected ? 'testOption--selected' : ''
+                        selected
+                          ? 'testOption--selected'
+                          : ''
                       }`}
                       onClick={() =>
-                        !paused && selectAnswer(current, idx)
+                        !paused &&
+                        selectAnswer(current, key)
                       }
                     >
                       <span
@@ -269,7 +327,7 @@ export default function Test() {
                             : ''
                         }`}
                       >
-                        {String.fromCharCode(65 + idx)}
+                        {key.toUpperCase()}
                       </span>
 
                       {q.options[key]}
@@ -310,8 +368,11 @@ export default function Test() {
         </main>
 
         <aside className="testSidebar">
-
-          <div className={`testTimer ${isLowTime ? 'testTimer--low' : ''}`}>
+          <div
+            className={`testTimer ${
+              isLowTime ? 'testTimer--low' : ''
+            }`}
+          >
             <p className="testTimerLabel">
               Time Left
             </p>
@@ -322,7 +383,9 @@ export default function Test() {
 
             <button
               className={`testPauseBtn ${
-                paused ? 'testPauseBtn--paused' : ''
+                paused
+                  ? 'testPauseBtn--paused'
+                  : ''
               }`}
               onClick={() => setPaused(!paused)}
             >
@@ -334,7 +397,9 @@ export default function Test() {
             className="testThemeBtn"
             onClick={() => setDark(!dark)}
           >
-            {dark ? '☀️ Light Mode' : '🌙 Dark Mode'}
+            {dark
+              ? '☀️ Light Mode'
+              : '🌙 Dark Mode'}
           </button>
 
           <div className="testLegend">
