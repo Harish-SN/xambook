@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: harishsudalaimani/xambook-backend:59fbe152875e79cb7afbb01c1b36a6bd97766d17
+          image: harishsudalaimani/xambook-backend:1009205f117d3c621e46e43d2127110814a63b80
 
           imagePullPolicy: Always
 
