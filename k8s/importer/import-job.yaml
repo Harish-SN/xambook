@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
         - name: importer
-          image: harishsudalaimani/xambook-importer:218fbf621af6c81d25ccc3988e3c61658100616f
+          image: harishsudalaimani/xambook-importer:df89b20c4c771c2aa71938ba20dd498bb9575c35
           env:
             - name: POSTGRES_URL
               value: postgres://postgres:postgres123@postgres:5432/xambook?sslmode=disable
