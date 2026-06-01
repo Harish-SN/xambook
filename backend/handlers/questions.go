@@ -1,15 +1,13 @@
 package handlers
 
 import (
-	"encoding/json"
 	"net/http"
 	"strconv"
 	"strings"
 
-	"github.com/gorilla/mux"
-
 	"github.com/Harish-SN/xambook-backend/db"
 	"github.com/Harish-SN/xambook-backend/models"
+	"github.com/gin-gonic/gin"
 )
 
 type QuestionResponse struct {
@@ -27,15 +25,16 @@ type QuestionsAPIResponse struct {
 	Questions  []QuestionResponse `json:"questions"`
 }
 
-func GetQuestions(w http.ResponseWriter, r *http.Request) {
-	params := mux.Vars(r)
-
-	subject := params["subject"]
-	testNumberStr := params["test"]
+func GetQuestions(c *gin.Context) {
+	subject := c.Param("subject")
+	testNumberStr := c.Param("test")
 
 	testNumber, err := strconv.Atoi(testNumberStr)
+
 	if err != nil {
-		http.Error(w, "Invalid test number", http.StatusBadRequest)
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "invalid test number",
+		})
 		return
 	}
 
@@ -61,7 +60,9 @@ func GetQuestions(w http.ResponseWriter, r *http.Request) {
 	`, normalizedSubject, testNumber)
 
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
 		return
 	}
 
@@ -87,7 +88,9 @@ func GetQuestions(w http.ResponseWriter, r *http.Request) {
 		)
 
 		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
+			c.JSON(http.StatusInternalServerError, gin.H{
+				"error": err.Error(),
+			})
 			return
 		}
 
@@ -107,14 +110,11 @@ func GetQuestions(w http.ResponseWriter, r *http.Request) {
 		})
 	}
 
-	apiResponse := QuestionsAPIResponse{
+	c.JSON(http.StatusOK, QuestionsAPIResponse{
 		TestNumber: testNumber,
 		Subject:    normalizedSubject,
 		Questions:  response,
-	}
-
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(apiResponse)
+	})
 }
 
 func convertCorrectOption(option int) string {
