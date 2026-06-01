@@ -153,10 +153,6 @@ export default function Test() {
       ? Math.round((marks / totalMarks) * 100)
       : 0
 
-  const subjectName = subject
-    ? subject.charAt(0).toUpperCase() + subject.slice(1)
-    : ''
-
   const isLowTime = timeLeft <= 300
   const theme = dark ? 'testDark' : 'testLight'
 
