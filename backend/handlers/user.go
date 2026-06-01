@@ -3,20 +3,37 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/gin-gonic/gin"
 	"github.com/Harish-SN/xambook-backend/db"
+	"github.com/Harish-SN/xambook-backend/middleware"
 	"github.com/Harish-SN/xambook-backend/models"
+
+	"github.com/gin-gonic/gin"
 )
 
 func GetMe(c *gin.Context) {
-	// Later this will come from Keycloak JWT
-	// For now hardcode for testing
-	keycloakID := "test-user-123"
+	keycloakID := c.GetString(
+		middleware.CtxKeycloakID,
+	)
+
+	if keycloakID == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "unauthorized",
+		})
+		return
+	}
 
 	var user models.User
+
 	err := db.DB.QueryRow(`
-		SELECT id, keycloak_id, email, name, is_premium, purchased_at
-		FROM users WHERE keycloak_id = $1
+		SELECT
+			id,
+			keycloak_id,
+			email,
+			name,
+			is_premium,
+			purchased_at
+		FROM users
+		WHERE keycloak_id = $1
 	`, keycloakID).Scan(
 		&user.ID,
 		&user.KeycloakID,
@@ -27,7 +44,9 @@ func GetMe(c *gin.Context) {
 	)
 
 	if err != nil {
-		c.JSON(http.StatusNotFound, gin.H{"error": "user not found"})
+		c.JSON(http.StatusNotFound, gin.H{
+			"error": "user not found",
+		})
 		return
 	}
 

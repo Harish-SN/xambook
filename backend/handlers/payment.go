@@ -8,14 +8,26 @@ import (
 	"os"
 
 	"github.com/Harish-SN/xambook-backend/db"
+	"github.com/Harish-SN/xambook-backend/middleware"
+
 	"github.com/gin-gonic/gin"
 	razorpay "github.com/razorpay/razorpay-go"
 )
 
 func CreateOrder(c *gin.Context) {
+	keyID := os.Getenv("RAZORPAY_KEY_ID")
+	keySecret := os.Getenv("RAZORPAY_KEY_SECRET")
+
+	if keyID == "" || keySecret == "" {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": "razorpay env missing",
+		})
+		return
+	}
+
 	client := razorpay.NewClient(
-		os.Getenv("RAZORPAY_KEY_ID"),
-		os.Getenv("RAZORPAY_KEY_SECRET"),
+		keyID,
+		keySecret,
 	)
 
 	data := map[string]interface{}{
@@ -25,8 +37,11 @@ func CreateOrder(c *gin.Context) {
 	}
 
 	order, err := client.Order.Create(data, nil)
+
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to create order"})
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
 		return
 	}
 
@@ -41,34 +56,63 @@ func VerifyPayment(c *gin.Context) {
 	}
 
 	if err := c.ShouldBindJSON(&body); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid data"})
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "invalid data",
+		})
 		return
 	}
 
-	// Verify signature
 	secret := os.Getenv("RAZORPAY_KEY_SECRET")
-	message := body.RazorpayOrderID + "|" + body.RazorpayPaymentID
-	mac := hmac.New(sha256.New, []byte(secret))
+
+	message := body.RazorpayOrderID +
+		"|" +
+		body.RazorpayPaymentID
+
+	mac := hmac.New(
+		sha256.New,
+		[]byte(secret),
+	)
+
 	mac.Write([]byte(message))
-	expectedSig := hex.EncodeToString(mac.Sum(nil))
+
+	expectedSig := hex.EncodeToString(
+		mac.Sum(nil),
+	)
 
 	if expectedSig != body.RazorpaySignature {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid payment signature"})
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "invalid payment signature",
+		})
 		return
 	}
 
-	// Set isPremium = true
-	keycloakID := "test-user-123"
+	keycloakID := c.GetString(
+		middleware.CtxKeycloakID,
+	)
+
+	if keycloakID == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "unauthorized",
+		})
+		return
+	}
+
 	_, err := db.DB.Exec(`
 		UPDATE users
-		SET is_premium = true, purchased_at = NOW()
+		SET
+			is_premium = true,
+			purchased_at = NOW()
 		WHERE keycloak_id = $1
 	`, keycloakID)
 
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to update user"})
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": "failed to update user",
+		})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"message": "payment verified, premium activated"})
+	c.JSON(http.StatusOK, gin.H{
+		"message": "payment verified",
+	})
 }

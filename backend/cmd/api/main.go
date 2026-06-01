@@ -17,62 +17,112 @@ import (
 )
 
 func main() {
-	if err := godotenv.Load(); err != nil {
+
+	// Load .env
+	err := godotenv.Load()
+
+	if err != nil {
 		log.Println("No .env file found")
+	} else {
+		log.Println(".env loaded successfully")
 	}
 
+	// Debug Razorpay env
+	log.Println(
+		"RAZORPAY_KEY_ID:",
+		os.Getenv("RAZORPAY_KEY_ID"),
+	)
+
+	log.Println(
+		"RAZORPAY_KEY_SECRET loaded:",
+		os.Getenv("RAZORPAY_KEY_SECRET") != "",
+	)
+
+	// Telemetry
 	shutdown := telemetry.InitTracer()
 	defer shutdown(context.Background())
 
+	// Database
 	db.Connect()
 
+	// MinIO
 	if err := storage.InitMinio(); err != nil {
 		log.Fatal(err)
 	}
 
+	// Gin
 	r := gin.Default()
 
-	r.Use(otelgin.Middleware("xambook-backend"))
+	r.Use(
+		otelgin.Middleware(
+			"xambook-backend",
+		),
+	)
 
 	r.Use(corsMiddleware())
 
+	// Health
 	r.GET("/health", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"status": "ok",
 		})
 	})
 
+	// API routes
 	api := r.Group("/api")
 	{
-		api.POST("/admin/upload-image",
-			handlers.UploadImage)
+		// Admin
+		api.POST(
+			"/admin/upload-image",
+			handlers.UploadImage,
+		)
 
-		api.GET("/user/me",
-			handlers.GetMe)
+		// User
+		api.GET(
+			"/user/me",
+			handlers.GetMe,
+		)
 
-		api.GET("/tests/:subject/:testNumber/questions",
-			handlers.GetQuestions)
+		// Tests
+		api.GET(
+			"/tests/:subject/:testNumber/questions",
+			handlers.GetQuestions,
+		)
 
-		api.POST("/attempts",
-			handlers.SaveAttempt)
+		// Attempts
+		api.POST(
+			"/attempts",
+			handlers.SaveAttempt,
+		)
 
-		api.GET("/attempts/me",
-			handlers.GetMyAttempts)
+		api.GET(
+			"/attempts/me",
+			handlers.GetMyAttempts,
+		)
 
-		api.POST("/payment/create-order",
-			handlers.CreateOrder)
+		// Payments
+		api.POST(
+			"/payment/create-order",
+			handlers.CreateOrder,
+		)
 
-		api.POST("/payment/verify",
-			handlers.VerifyPayment)
+		api.POST(
+			"/payment/verify",
+			handlers.VerifyPayment,
+		)
 	}
 
+	// Port
 	port := os.Getenv("PORT")
 
 	if port == "" {
 		port = "8080"
 	}
 
-	log.Printf("Server running on port %s", port)
+	log.Printf(
+		"Server running on port %s",
+		port,
+	)
 
 	if err := r.Run(":" + port); err != nil {
 		log.Fatal(err)
@@ -93,12 +143,26 @@ func corsMiddleware() gin.HandlerFunc {
 		origin := c.Request.Header.Get("Origin")
 
 		if allowedOrigins[origin] {
-			c.Header("Access-Control-Allow-Origin", origin)
+			c.Header(
+				"Access-Control-Allow-Origin",
+				origin,
+			)
 		}
 
-		c.Header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
-		c.Header("Access-Control-Allow-Headers", "Authorization, Content-Type")
-		c.Header("Access-Control-Allow-Credentials", "true")
+		c.Header(
+			"Access-Control-Allow-Methods",
+			"GET, POST, PUT, DELETE, OPTIONS",
+		)
+
+		c.Header(
+			"Access-Control-Allow-Headers",
+			"Authorization, Content-Type",
+		)
+
+		c.Header(
+			"Access-Control-Allow-Credentials",
+			"true",
+		)
 
 		if c.Request.Method == "OPTIONS" {
 			c.AbortWithStatus(204)

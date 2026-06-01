@@ -246,9 +246,12 @@ export default function Home() {
               Buy Premium — ₹99 →
             </button>
           ) : (
-            <button className="homeCtaBtn">
+            <Link
+              to="/payment"
+              className="homeCtaBtn"
+            >
               Buy Premium — ₹99 →
-            </button>
+            </Link>
           )}
 
           <p className="homeCtaDisclaimer">
