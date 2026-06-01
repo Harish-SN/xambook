@@ -8,8 +8,8 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"xambook/db"
-	"xambook/models"
+	"github.com/Harish-SN/xambook-backend/db"
+	"github.com/Harish-SN/xambook-backend/models"
 )
 
 type QuestionResponse struct {
@@ -21,24 +21,25 @@ type QuestionResponse struct {
 	Options       map[string]string `json:"options"`
 }
 
-func deref(s *string) string {
-	if s == nil {
-		return ""
-	}
-
-	return *s
+type QuestionsAPIResponse struct {
+	TestNumber int                `json:"test_number"`
+	Subject    string             `json:"subject"`
+	Questions  []QuestionResponse `json:"questions"`
 }
 
 func GetQuestions(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 
 	subject := params["subject"]
+	testNumberStr := params["test"]
 
-	testNumber, err := strconv.Atoi(params["test"])
+	testNumber, err := strconv.Atoi(testNumberStr)
 	if err != nil {
-		http.Error(w, "invalid test number", http.StatusBadRequest)
+		http.Error(w, "Invalid test number", http.StatusBadRequest)
 		return
 	}
+
+	normalizedSubject := normalizeSubject(subject)
 
 	rows, err := db.DB.Query(`
 		SELECT
@@ -57,7 +58,7 @@ func GetQuestions(w http.ResponseWriter, r *http.Request) {
 		WHERE LOWER(subject) = LOWER($1)
 		AND test_number = $2
 		ORDER BY id ASC
-	`, strings.TrimSpace(subject), testNumber)
+	`, normalizedSubject, testNumber)
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -66,7 +67,7 @@ func GetQuestions(w http.ResponseWriter, r *http.Request) {
 
 	defer rows.Close()
 
-	var questions []models.Question
+	var response []QuestionResponse
 
 	for rows.Next() {
 		var q models.Question
@@ -90,17 +91,11 @@ func GetQuestions(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		questions = append(questions, q)
-	}
-
-	var response []QuestionResponse
-
-	for _, q := range questions {
 		response = append(response, QuestionResponse{
 			ID:            q.ID,
 			Question:      q.Text,
 			ImageURL:      deref(q.ImageURL),
-			CorrectOption: strings.ToLower(q.CorrectOption),
+			CorrectOption: convertCorrectOption(q.CorrectOption),
 			Explanation:   q.Explanation,
 
 			Options: map[string]string{
@@ -112,9 +107,62 @@ func GetQuestions(w http.ResponseWriter, r *http.Request) {
 		})
 	}
 
-	w.Header().Set("Content-Type", "application/json")
+	apiResponse := QuestionsAPIResponse{
+		TestNumber: testNumber,
+		Subject:    normalizedSubject,
+		Questions:  response,
+	}
 
-	json.NewEncoder(w).Encode(map[string]interface{}{
-		"questions": response,
-	})
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(apiResponse)
+}
+
+func convertCorrectOption(option int) string {
+	switch option {
+	case 0:
+		return "a"
+	case 1:
+		return "b"
+	case 2:
+		return "c"
+	case 3:
+		return "d"
+	default:
+		return ""
+	}
+}
+
+func deref(s *string) string {
+	if s == nil {
+		return ""
+	}
+
+	return *s
+}
+
+func normalizeSubject(subject string) string {
+	s := strings.ToLower(strings.TrimSpace(subject))
+
+	switch s {
+	case "free":
+		return "Free Test"
+
+	case "mock":
+		return "Full Test"
+
+	case "physics":
+		return "Physics"
+
+	case "chemistry":
+		return "Chemistry"
+
+	case "botany":
+		return "Botany"
+
+	case "zoology":
+		return "Zoology"
+
+	default:
+		return subject
+	}
 }

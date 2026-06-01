@@ -1,169 +1,121 @@
-package handlers
+package main
 
 import (
+	"database/sql"
 	"encoding/json"
-	"net/http"
-	"strconv"
-	"strings"
+	"log"
+	"os"
+	"path/filepath"
 
-	"github.com/gorilla/mux"
-
-	"github.com/Harish-SN/xambook-backend/db"
-	"github.com/Harish-SN/xambook-backend/models"
+	_ "github.com/lib/pq"
 )
 
-type QuestionResponse struct {
-	ID            int               `json:"id"`
+type QuestionFile struct {
+	TestNumber int        `json:"test_number"`
+	Subject    string     `json:"subject"`
+	Questions  []Question `json:"questions"`
+}
+
+type Question struct {
 	Question      string            `json:"question"`
 	ImageURL      string            `json:"image_url"`
+	Options       map[string]string `json:"options"`
 	CorrectOption string            `json:"correct_option"`
 	Explanation   string            `json:"explanation"`
-	Options       map[string]string `json:"options"`
 }
 
-type QuestionsAPIResponse struct {
-	TestNumber int                `json:"test_number"`
-	Subject    string             `json:"subject"`
-	Questions  []QuestionResponse `json:"questions"`
-}
+func main() {
+	dbURL := os.Getenv("POSTGRES_URL")
 
-func GetQuestions(w http.ResponseWriter, r *http.Request) {
-	params := mux.Vars(r)
-
-	subject := params["subject"]
-	testNumberStr := params["testNumber"]
-
-	testNumber, err := strconv.Atoi(testNumberStr)
-	if err != nil {
-		http.Error(w, "Invalid test number", http.StatusBadRequest)
-		return
+	if dbURL == "" {
+		dbURL = "postgres://postgres:postgres123@localhost:5432/xambook?sslmode=disable"
 	}
 
-	normalizedSubject := normalizeSubject(subject)
-
-	rows, err := db.DB.Query(`
-		SELECT
-			id,
-			subject,
-			test_number,
-			text,
-			option_a,
-			option_b,
-			option_c,
-			option_d,
-			correct_option,
-			explanation,
-			image_url
-		FROM questions
-		WHERE LOWER(subject) = LOWER($1)
-		AND test_number = $2
-		ORDER BY id ASC
-	`, normalizedSubject, testNumber)
-
+	db, err := sql.Open("postgres", dbURL)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		log.Fatal(err)
 	}
 
-	defer rows.Close()
+	defer db.Close()
 
-	var response []QuestionResponse
+	root := "./questions"
 
-	for rows.Next() {
-		var q models.Question
-
-		err := rows.Scan(
-			&q.ID,
-			&q.Subject,
-			&q.TestNumber,
-			&q.Text,
-			&q.OptionA,
-			&q.OptionB,
-			&q.OptionC,
-			&q.OptionD,
-			&q.CorrectOption,
-			&q.Explanation,
-			&q.ImageURL,
-		)
-
+	err = filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
+			return err
 		}
 
-		response = append(response, QuestionResponse{
-			ID:            q.ID,
-			Question:      q.Text,
-			ImageURL:      deref(q.ImageURL),
-			CorrectOption: convertCorrectOption(q.CorrectOption),
-			Explanation:   q.Explanation,
+		if filepath.Ext(path) != ".json" {
+			return nil
+		}
 
-			Options: map[string]string{
-				"a": q.OptionA,
-				"b": q.OptionB,
-				"c": q.OptionC,
-				"d": q.OptionD,
-			},
-		})
+		log.Println("Importing:", path)
+
+		data, err := os.ReadFile(path)
+		if err != nil {
+			return err
+		}
+
+		var file QuestionFile
+
+		err = json.Unmarshal(data, &file)
+		if err != nil {
+			return err
+		}
+
+		for _, q := range file.Questions {
+
+			correctOption := 0
+
+			switch q.CorrectOption {
+			case "a":
+				correctOption = 0
+			case "b":
+				correctOption = 1
+			case "c":
+				correctOption = 2
+			case "d":
+				correctOption = 3
+			}
+
+			_, err = db.Exec(`
+				INSERT INTO questions (
+					subject,
+					test_number,
+					text,
+					option_a,
+					option_b,
+					option_c,
+					option_d,
+					correct_option,
+					explanation,
+					image_url
+				)
+				VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
+			`,
+				file.Subject,
+				file.TestNumber,
+				q.Question,
+				q.Options["a"],
+				q.Options["b"],
+				q.Options["c"],
+				q.Options["d"],
+				correctOption,
+				q.Explanation,
+				q.ImageURL,
+			)
+
+			if err != nil {
+				return err
+			}
+		}
+
+		return nil
+	})
+
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	apiResponse := QuestionsAPIResponse{
-		TestNumber: testNumber,
-		Subject:    normalizedSubject,
-		Questions:  response,
-	}
-
-	w.Header().Set("Content-Type", "application/json")
-
-	json.NewEncoder(w).Encode(apiResponse)
-}
-
-func convertCorrectOption(option int) string {
-	switch option {
-	case 0:
-		return "a"
-	case 1:
-		return "b"
-	case 2:
-		return "c"
-	case 3:
-		return "d"
-	default:
-		return ""
-	}
-}
-
-func deref(s *string) string {
-	if s == nil {
-		return ""
-	}
-
-	return *s
-}
-
-func normalizeSubject(subject string) string {
-	s := strings.ToLower(strings.TrimSpace(subject))
-
-	switch s {
-	case "free":
-		return "Free Test"
-
-	case "mock":
-		return "Full Test"
-
-	case "physics":
-		return "Physics"
-
-	case "chemistry":
-		return "Chemistry"
-
-	case "botany":
-		return "Botany"
-
-	case "zoology":
-		return "Zoology"
-
-	default:
-		return subject
-	}
+	log.Println("Import completed successfully")
 }
