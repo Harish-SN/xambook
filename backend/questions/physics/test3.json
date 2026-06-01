@@ -1,0 +1,546 @@
+{
+  "test_number": 3,
+  "subject": "Physics",
+  "questions": [
+    {
+      "id": 1,
+      "question": "A hydraulic lift has a small piston of area $0.01\\,\\text{m}^2$ and a large piston of area $0.5\\,\\text{m}^2$. What force must be applied on the small piston to lift a car of mass $1000\\,\\text{kg}$?",
+      "options": {
+        "a": "100 N",
+        "b": "200 N",
+        "c": "500 N",
+        "d": "1000 N"
+      },
+      "correct_option": "b",
+      "explanation": "According to Pascal's principle, the pressure applied on a confined fluid is transmitted undiminished. Hence, pressure on small piston $P_1 = P_2$ on large piston:\n\n$$\\frac{F_1}{A_1} = \\frac{F_2}{A_2}$$\n\nWeight of the car: $F_2 = mg = 1000 \\times 9.8 = 9800\\,\\text{N}$.\n\nForce on small piston:\n\n$$F_1 = F_2 \\frac{A_1}{A_2} = 9800 \\times \\frac{0.01}{0.5} = 196\\,\\text{N} \\approx 200\\,\\text{N}$$"
+    },
+    {
+      "id": 2,
+      "question": "A particle of mass 0.5 kg is acted upon by a force that varies with displacement as $F=4x$ (SI). If the particle starts from rest at $x=0$, find its speed at $x=2$ m.",
+      "options": {
+        "a": "2 m/s",
+        "b": "4 m/s",
+        "c": "6 m/s",
+        "d": "8 m/s"
+      },
+      "correct_option": "c",
+      "explanation": "Work done by variable force:\n\n$$W = \\int_0^2 F dx = \\int_0^2 4x dx = [2x^2]_0^2 = 8\\,\\text{J}$$\n\nUsing work-energy theorem, kinetic energy gained = work done:\n\n$$\\frac{1}{2} m v^2 = W \\Rightarrow \\frac{1}{2} (0.5) v^2 = 8 \\Rightarrow v^2 = 32 \\Rightarrow v \\approx 5.66\\,\\text{m/s} \\approx 6\\,\\text{m/s}$$"
+    },
+    {
+      "id": 3,
+      "question": "A uniform rod of length 1.2 m and mass 2.0 kg is pivoted at one end and held horizontally. It is released from rest. Find its angular speed when it passes the vertical position (no air resistance).",
+      "options": {
+        "a": "4.0 rad/s",
+        "b": "5.0 rad/s",
+        "c": "6.0 rad/s",
+        "d": "7.0 rad/s"
+      },
+      "correct_option": "b",
+      "explanation": "Moment of inertia about pivot: \n\n$$I = \\frac{1}{3} m L^2 = \\frac{1}{3} \\cdot 2 \\cdot 1.2^2 = 0.96\\,\\text{kg·m}^2$$\n\nDrop of center of mass: $h = L/2 = 0.6$ m. Potential energy lost = rotational kinetic energy gained:\n\n$$m g h = \\frac{1}{2} I \\omega^2 \\Rightarrow 2 \\cdot 10 \\cdot 0.6 = 0.5 \\cdot 0.96 \\omega^2 \\Rightarrow \\omega^2 = 12 / 0.48 = 25 \\Rightarrow \\omega = 5\\,\\text{rad/s}$$"
+    },
+    {
+      "id": 4,
+      "question": "Two small spheres of masses 0.20 kg and 0.50 kg are released from rest at a separation of 0.40 m in deep space (no other forces). Find their relative speed when their separation becomes 0.20 m.",
+      "options": {
+        "a": "$7.3\\times10^{-6}$ m/s",
+        "b": "$1.0\\times10^{-5}$ m/s",
+        "c": "$1.6\\times10^{-5}$ m/s",
+        "d": "$3.2\\times10^{-5}$ m/s"
+      },
+      "correct_option": "c",
+      "explanation": "Gravitational potential energy change:\n\n$$\\Delta U = G \\frac{m_1 m_2}{r_f} - G \\frac{m_1 m_2}{r_i} = 6.67\\times10^{-11} \\frac{0.2 \\cdot 0.5}{1} \\left( \\frac{1}{0.2} - \\frac{1}{0.4} \\right) \\approx 1.67\\times10^{-11}\\,\\text{J}$$\n\nReduced mass: $\\mu = \\frac{m_1 m_2}{m_1 + m_2} = 0.1429$ kg. Kinetic energy of relative motion:\n\n$$\\frac{1}{2} \\mu v_{rel}^2 = \\Delta U \\Rightarrow v_{rel}^2 = \\frac{2 \\cdot 1.67\\times10^{-11}}{0.1429} \\approx 2.33\\times10^{-10} \\Rightarrow v_{rel} \\approx 1.53\\times10^{-5}\\,\\text{m/s} \\approx 1.6\\times10^{-5}$$"
+    },
+    {
+      "id": 5,
+      "question": "A particle executes SHM with amplitude 10 cm and period 2.0 s. Starting from $x=+10$ cm at $t=0$, find its displacement and speed at $t=0.50$ s.",
+      "options": {
+        "a": "$x=0,\\ v=-31.4$ cm/s",
+        "b": "$x=0,\\ v=+31.4$ cm/s",
+        "c": "$x=-10$ cm, $v=0$",
+        "d": "$x=+10$ cm, $v=0$"
+      },
+      "correct_option": "a",
+      "explanation": "Angular frequency: $\\omega = 2\\pi / T = \\pi$ rad/s. Equation of motion: $x = A \\cos(\\omega t)$. At $t = 0.5$ s:\n\n$$x = 0.10 \\cos(\\pi \\cdot 0.5) = 0\\,\\text{m}$$\n\nVelocity: $v = -A\\omega \\sin(\\omega t) = -0.10 \\cdot \\pi \\cdot \\sin(\\pi/2) = -0.314\\,\\text{m/s} = -31.4\\,\\text{cm/s}$$"
+    },
+    {
+      "id": 6,
+      "question": "A block slides down a smooth track and enters a vertical loop of radius $R=0.50$ m. What minimum height $h$ above the loop’s bottom is needed so that it just maintains contact at the top?",
+      "options": {
+        "a": "1.0 m",
+        "b": "1.25 m",
+        "c": "1.50 m",
+        "d": "2.5 m"
+      },
+      "correct_option": "b",
+      "explanation": "For just maintaining contact at the top, centripetal condition: $m v^2 / R = mg \\Rightarrow v^2 = gR$. Energy conservation from height $h$:\n\n$$m g h = m g (2R) + \\frac{1}{2} m v^2 = m g (2R) + \\frac{1}{2} m g R = 2.5 m g R \\Rightarrow h = 2.5 R = 1.25\\,\\text{m}$$"
+    },
+    {
+      "id": 7,
+      "question": "A parallel-plate capacitor has plate area $200\\,\\text{cm}^2$ and separation 1.0 mm, filled with dielectric $\\kappa=5$. The free charge on plates is $\\pm2.0\\,\\mu$C. Find the electric field in dielectric and potential difference (ε₀=8.85×10⁻¹²).",
+      "options": {
+        "a": "$E=0.45$ MV/m, $V=450$ V",
+        "b": "$E=0.90$ MV/m, $V=900$ V",
+        "c": "$E=1.80$ MV/m, $V=1800$ V",
+        "d": "$E=2.25$ MV/m, $V=2250$ V"
+      },
+      "correct_option": "d",
+      "explanation": "Plate area: $A = 200\\,\\text{cm}^2 = 0.02\\,\\text{m}^2$, charge $Q = 2 \\times 10^{-6}$ C. Surface charge density: $\\sigma = Q/A = 1.0 \\times 10^{-4}$ C/m². Electric field in dielectric:\n\n$$E = \\frac{\\sigma}{\\kappa \\varepsilon_0} = \\frac{1.0\\times10^{-4}}{5 \\cdot 8.85\\times10^{-12}} \\approx 2.26\\times10^6\\,\\text{V/m} \\approx 2.25\\,\\text{MV/m}$$\n\nPotential difference: $V = E d = 2.26\\times10^6 \\cdot 10^{-3} \\approx 2260$ V ≈ 2250 V."
+    },
+    {
+      "id": 8,
+      "question": "Two long parallel wires 5.0 cm apart carry equal currents 4.0 A in the same direction. Find the magnetic field at a point midway between them.",
+      "options": {
+        "a": "0 T",
+        "b": "$1.6\\times10^{-5}$ T",
+        "c": "$3.2\\times10^{-5}$ T",
+        "d": "$6.4\\times10^{-5}$ T"
+      },
+      "correct_option": "a",
+      "explanation": "Magnetic field due to a long straight wire: $B = \\frac{\\mu_0 I}{2 \\pi r}$. Midpoint distance from each wire $r = 0.025$ m. Both wires carry current in same direction; fields at midpoint are equal in magnitude but opposite in direction. Net field: $B_{net} = 0$ T."
+    },
+    {
+      "id": 9,
+      "question": "A concave mirror of focal length 15 cm produces an image twice the size of the object. Find object distance.",
+      "options": {
+        "a": "15 cm",
+        "b": "20 cm",
+        "c": "22.5 cm",
+        "d": "30 cm"
+      },
+      "correct_option": "c",
+      "explanation": "Magnification: $m = v/u = 2$. Mirror formula: $1/f = 1/u + 1/v = 1/u + 1/(2u) = 3/(2u) \\Rightarrow u = 3f/2 = 22.5$ cm."
+    },
+    {
+      "id": 10,
+      "question": "An electron beam passes through uniform electric field $E=1000\\,\\text{N C}^{-1}$ and magnetic field $B=2\\times10^{-3}\\,\\text{T}$, perpendicular to each other. If the beam is undeflected, find the speed of electrons.",
+      "options": {
+        "a": "2 × 10⁵ m/s",
+        "b": "5 × 10⁵ m/s",
+        "c": "2 × 10⁶ m/s",
+        "d": "5 × 10⁶ m/s"
+      },
+      "correct_option": "b",
+      "explanation": "For undeflected motion, electric and magnetic forces balance:\n\n$$qE = qvB \\Rightarrow v = \\frac{E}{B} = \\frac{1000}{2\\times10^{-3}} = 5 \\times 10^5\\,\\text{m/s}$$"
+    },
+    {
+      "id": 11,
+      "question": "In a photoelectric experiment with sodium, the stopping potential is 0.90 V for light of frequency $7.0\\times10^{14}$ Hz. Find photon energy $h\\nu$ (in eV) and the work function $\\phi$ (in eV). ($1\\,\\text{eV} = 1.6\\times10^{-19}\\,\\text{J}$, $h = 6.63\\times10^{-34}\\,\\text{J s}$)",
+      "options": {
+        "a": "$h\\nu \\approx 2.90$ eV, $\\phi \\approx 2.00$ eV",
+        "b": "$h\\nu \\approx 3.00$ eV, $\\phi \\approx 2.10$ eV",
+        "c": "Same as (a)",
+        "d": "$h\\nu \\approx 2.60$ eV, $\\phi \\approx 1.70$ eV"
+      },
+      "correct_option": "a",
+      "explanation": "Photon energy: \n\n$$h\\nu = 6.63\\times10^{-34} \\times 7.0\\times10^{14} = 4.641\\times10^{-19}\\,\\text{J}$$\n\nConvert to eV: \n\n$$h\\nu = \\frac{4.641\\times10^{-19}}{1.6\\times10^{-19}} \\approx 2.90\\,\\text{eV}$$\n\nMaximum kinetic energy of emitted electrons: $K_{max} = eV_s = 0.90$ eV. Work function: \n\n$$\\phi = h\\nu - K_{max} = 2.90 - 0.90 = 2.00\\,\\text{eV}$$"
+    },
+    {
+      "id": 12,
+      "question": "A radioactive sample shows activity 8000 decays/min initially and 1000 decays/min after time $t$. Express $t$ in terms of half-life $T_{1/2}$.",
+      "options": {
+        "a": "$t=T_{1/2}$",
+        "b": "$t=2T_{1/2}$",
+        "c": "$t=3T_{1/2}$",
+        "d": "$t=4T_{1/2}$"
+      },
+      "correct_option": "c",
+      "explanation": "Radioactive decay law: \n\n$$A = A_0 2^{-t/T_{1/2}}$$\n\nGiven $A/A_0 = 1000/8000 = 1/8 = 2^{-3}$. \n\nThus, $2^{-t/T_{1/2}} = 2^{-3} \\Rightarrow t/T_{1/2} = 3 \\Rightarrow t = 3 T_{1/2}$"
+    },
+    {
+      "id": 13,
+      "question": "A 10 μF capacitor is charged to 200 V and then connected across a 20 kΩ resistor. How long will it take for the voltage to drop to 50 V?",
+      "options": {
+        "a": "0.14 s",
+        "b": "0.20 s",
+        "c": "0.28 s",
+        "d": "0.32 s"
+      },
+      "correct_option": "c",
+      "explanation": "Discharging capacitor: \n\n$$V = V_0 e^{-t/RC}$$\n\nGiven: $R = 20\\,\\text{k}\\Omega = 2\\times10^4$ Ω, $C = 10\\,\\mu\\text{F} = 1\\times10^{-5}$ F, so $RC = 0.20$ s.\n\nCondition: $50 = 200 e^{-t/0.20} \\Rightarrow e^{-t/0.20} = 0.25 \\Rightarrow -t/0.20 = \\ln 0.25 = -\\ln 4$\n\n$$t = 0.20 \\ln 4 \\approx 0.277\\,\\text{s} \\approx 0.28\\,\\text{s}$$"
+    },
+    {
+      "id": 14,
+      "question": "A 1.0 m long wire is stretched by 1.0 mm under a 50 N load. If the cross-sectional area is $0.50\\,\\text{mm}^2$, find Young’s modulus.",
+      "options": {
+        "a": "$1.0\\times10^{10}$ Pa",
+        "b": "$2.0\\times10^{10}$ Pa",
+        "c": "$5.0\\times10^{10}$ Pa",
+        "d": "$1.0\\times10^{11}$ Pa"
+      },
+      "correct_option": "d",
+      "explanation": "Young's modulus: \n\n$$Y = \\frac{\\text{stress}}{\\text{strain}} = \\frac{F/A}{\\Delta L / L} = \\frac{F L}{A \\Delta L}$$\n\nGiven: $F = 50$ N, $L = 1$ m, $\\Delta L = 1 \\times 10^{-3}$ m, $A = 0.5\\,\\text{mm}^2 = 0.5 \\times 10^{-6}$ m²\n\n$$Y = \\frac{50 \\cdot 1}{0.5\\times10^{-6} \\cdot 1\\times10^{-3}} = 1.0 \\times 10^{11}\\,\\text{Pa}$$"
+    },
+    {
+      "id": 15,
+      "question": "A beam of electrons ($v=3.0\\times10^6$ m/s) enters a region of uniform $B=0.020$ T, perpendicular to velocity. Find the radius and time period. ($e=1.6\\times10^{-19}$ C, $m_e=9.11\\times10^{-31}$ kg)",
+      "options": {
+        "a": "$r=0.85$ mm, $T=1.8$ ns",
+        "b": "$r=0.86$ mm, $T=1.8$ ns",
+        "c": "$r=0.86$ mm, $T=3.0$ ns",
+        "d": "$r=1.0$ mm, $T=3.0$ ns"
+      },
+      "correct_option": "b",
+      "explanation": "Radius of circular path: \n\n$$r = \\frac{m v}{q B} = \\frac{9.11\\times10^{-31} \\cdot 3.0\\times10^6}{1.6\\times10^{-19} \\cdot 0.020} \\approx 8.54\\times10^{-4}\\,\\text{m} = 0.854\\,\\text{mm} \\approx 0.86\\,\\text{mm}$$\n\nTime period: \n\n$$T = \\frac{2\\pi m}{q B} = \\frac{2\\pi \\cdot 9.11\\times10^{-31}}{1.6\\times10^{-19} \\cdot 0.020} \\approx 1.79\\times10^{-9}\\,\\text{s} \\approx 1.8\\,\\text{ns}$$"
+    },
+    {
+      "id": 16,
+      "question": "A uniform disc (mass 2.0 kg, radius 0.50 m) rotates freely on a fixed axle. A 0.20 kg clay ball moving tangentially at 10 m/s sticks at rim. Find the angular speed just after impact.",
+      "options": {
+        "a": "2.0 rad/s",
+        "b": "3.3 rad/s",
+        "c": "5.0 rad/s",
+        "d": "6.7 rad/s"
+      },
+      "correct_option": "b",
+      "explanation": "Initial angular momentum of clay: $L_i = m v R = 0.20 \\cdot 10 \\cdot 0.50 = 1.0$ kg·m²/s.\n\nMoment of inertia after impact: \n\n$$I = I_{disc} + m R^2 = \\frac{1}{2} M R^2 + m R^2 = 0.5\\cdot2\\cdot0.5^2 + 0.20\\cdot0.5^2 = 0.25 + 0.05 = 0.30$$\n\nAngular speed: \n\n$$\\omega = \\frac{L_i}{I} = \\frac{1.0}{0.30} \\approx 3.33\\,\\text{rad/s}$$"
+    },
+    {
+      "id": 17,
+      "question": "A solid sphere rolls down a rough incline without slipping. If static friction coefficient $\\mu_s=0.20$, what is the maximum incline angle $\\theta$ for no slip?",
+      "options": {
+        "a": "30°",
+        "b": "35°",
+        "c": "45°",
+        "d": "50°"
+      },
+      "correct_option": "b",
+      "explanation": "Acceleration of sphere: $a = \\frac{5}{7} g \\sin\\theta$. Friction: $f = \\frac{2}{7} mg \\sin\\theta$. Condition for no slip: $f \\le \\mu_s mg \\cos\\theta$ \n\n$$\\frac{2}{7} mg \\sin\\theta \\le 0.2 mg \\cos\\theta \\Rightarrow \\tan\\theta \\le \\frac{7}{2} \\cdot 0.2 = 0.70$$\n\n$$\\theta_{max} = \\arctan(0.70) \\approx 35°$$"
+    },
+    {
+      "id": 18,
+      "question": "A satellite moves in an elliptical orbit with perigee $r_p=7000$ km and apogee $r_a=14000$ km. Find ratio of speeds $v_a/v_p$ at apogee to perigee.",
+      "options": {
+        "a": "0.25",
+        "b": "0.50",
+        "c": "1.0",
+        "d": "2.0"
+      },
+      "correct_option": "b",
+      "explanation": "Conservation of angular momentum: $r v =$ constant. \n\n$$r_a v_a = r_p v_p \\Rightarrow v_a / v_p = r_p / r_a = 7000 / 14000 = 0.50$$"
+    },
+    {
+      "id": 19,
+      "question": "An ideal monatomic gas ($\\gamma=5/3$) is compressed adiabatically from $V_1=2.0$ L to $V_2=0.50$ L. If initial $T_1=300$ K, find final temperature $T_2$.",
+      "options": {
+        "a": "600 K",
+        "b": "700 K",
+        "c": "756 K",
+        "d": "900 K"
+      },
+      "correct_option": "c",
+      "explanation": "Adiabatic law: $T V^{\\gamma-1} = $ constant \n\n$$T_2 / T_1 = (V_1 / V_2)^{\\gamma - 1} = (2.0 / 0.50)^{2/3} = 4^{2/3} \\approx 2.52$$\n\n$$T_2 = 300 \\cdot 2.52 \\approx 756\\,\\text{K}$$"
+    },
+    {
+      "id": 20,
+      "question": "A refrigerator operates between 0°C and 27°C. Its coefficient of performance (COP) is:",
+      "options": {
+        "a": "2.0",
+        "b": "4.0",
+        "c": "8.0",
+        "d": "10.0"
+      },
+      "correct_option": "d",
+      "explanation": "COP of refrigerator (Carnot): \n\n$$\\text{COP} = \\frac{T_L}{T_H - T_L}$$\n\nTemperatures in Kelvin: $T_L = 0+273 = 273$ K, $T_H = 27+273 = 300$ K\n\n$$\\text{COP} = \\frac{273}{300-273} = \\frac{273}{27} \\approx 10.1 \\approx 10$$"
+    },
+    {
+      "id": 21,
+      "question": "An electromagnetic wave in vacuum has electric field amplitude $E_0 = 120\\,\\text{V m}^{-1}$. Find the magnetic field amplitude $B_0$.",
+      "options": {
+        "a": "$2.0 \\times 10^{-7}\\,\\text{T}$",
+        "b": "$4.0 \\times 10^{-7}\\,\\text{T}$",
+        "c": "$6.0 \\times 10^{-7}\\,\\text{T}$",
+        "d": "$1.2 \\times 10^{-6}\\,\\text{T}$"
+      },
+      "correct_option": "b",
+      "explanation": "For an electromagnetic wave in vacuum, the electric and magnetic fields are related by:\n\n$$E_0 = c B_0 \\Rightarrow B_0 = \\frac{E_0}{c}$$\n\nWith $c = 3.0\\times10^8$ m/s:\n\n$$B_0 = \\frac{120}{3.0\\times10^8} \\approx 4.0\\times10^{-7}\\,\\text{T}$$"
+    },
+    {
+      "id": 22,
+      "question": "In an RL circuit ($L=2.0$ H, $R=10\\,\\Omega$), how long after closing the switch will the current reach 90% of its final value?",
+      "options": {
+        "a": "0.23 s",
+        "b": "0.32 s",
+        "c": "0.46 s",
+        "d": "0.69 s"
+      },
+      "correct_option": "c",
+      "explanation": "Current growth in RL circuit: \n\n$$I = I_0 \\left(1 - e^{-t/\\tau}\\right), \\quad \\tau = L/R$$\n\nTime constant: $\\tau = 2/10 = 0.20$ s.\n\nCondition $I = 0.9 I_0$:\n\n$$0.9 = 1 - e^{-t/0.20} \\Rightarrow e^{-t/0.20} = 0.1$$\n\n$$t = 0.20 \\ln 10 \\approx 0.20 \\times 2.303 = 0.46\\,\\text{s}$$"
+    },
+    {
+      "id": 23,
+      "question": "In a series RLC circuit, $R=50\\,\\Omega$, $X_L=100\\,\\Omega$, $X_C=25\\,\\Omega$, supply $200$ V (rms). Find the rms current and power factor.",
+      "options": {
+        "a": "$I=2.22$ A, $\\cos\\phi=0.55$",
+        "b": "$I=2.00$ A, $\\cos\\phi=0.50$",
+        "c": "$I=3.00$ A, $\\cos\\phi=0.60$",
+        "d": "$I=4.00$ A, $\\cos\\phi=0.50$"
+      },
+      "correct_option": "a",
+      "explanation": "Net reactance: \n\n$$X = X_L - X_C = 100 - 25 = 75\\,\\Omega$$\n\nImpedance: \n\n$$Z = \\sqrt{R^2 + X^2} = \\sqrt{50^2 + 75^2} = 90.1\\,\\Omega$$\n\nRMS current: \n\n$$I = \\frac{V}{Z} = \\frac{200}{90.1} \\approx 2.22\\,\\text{A}$$\n\nPower factor: \n\n$$\\cos\\phi = \\frac{R}{Z} = \\frac{50}{90.1} \\approx 0.55$$"
+    },
+    {
+      "id": 24,
+      "question": "A diffraction grating with 5000 slits is used in the second order ($m=2$) at $\\lambda=600$ nm. What is the minimum resolvable wavelength difference $\\Delta\\lambda$?",
+      "options": {
+        "a": "0.03 nm",
+        "b": "0.06 nm",
+        "c": "0.12 nm",
+        "d": "0.60 nm"
+      },
+      "correct_option": "b",
+      "explanation": "Resolving power: \n\n$$R = \\frac{\\lambda}{\\Delta\\lambda} = m N$$\n\nWhere $m = 2$, $N = 5000$ slits: \n\n$$R = 2 \\times 5000 = 10000$$\n\nMinimum resolvable wavelength difference:\n\n$$\\Delta\\lambda = \\frac{\\lambda}{R} = \\frac{600}{10000} = 0.06\\,\\text{nm}$$"
+    },
+    {
+      "id": 25,
+      "question": "A small-angle prism has $A=5.0^{\\circ}$. For red ($n_r=1.50$) and violet ($n_v=1.52$), find the angular dispersion.",
+      "options": {
+        "a": "0.05°",
+        "b": "0.10°",
+        "c": "0.50°",
+        "d": "1.00°"
+      },
+      "correct_option": "b",
+      "explanation": "For small-angle prism, deviation: \n\n$$\\delta \\approx (n-1)A$$\n\nRed: $\\delta_r = (1.50 - 1)\\cdot 5 = 2.50^{\\circ}$\n\nViolet: $\\delta_v = (1.52 - 1)\\cdot 5 = 2.60^{\\circ}$\n\nAngular dispersion: \n\n$$\\Delta\\delta = \\delta_v - \\delta_r = 2.60 - 2.50 = 0.10^{\\circ}$$"
+    },
+    {
+      "id": 26,
+      "question": "A radioactive substance decays from $N_0$ to $N_0/20$ in time $t$. Express $t$ in terms of half-life $T_{1/2}$.",
+      "options": {
+        "a": "$2T_{1/2}$",
+        "b": "$3T_{1/2}$",
+        "c": "$4.32T_{1/2}$",
+        "d": "$5T_{1/2}$"
+      },
+      "correct_option": "c",
+      "explanation": "Decay law: \n\n$$N = N_0 2^{-t/T_{1/2}}$$\n\nGiven $N/N_0 = 1/20 = 2^{-t/T_{1/2}}$ \n\n$$t/T_{1/2} = \\log_2 20 = \\frac{\\ln 20}{\\ln 2} \\approx \\frac{2.996}{0.693} \\approx 4.32$$\n\nSo $t = 4.32 T_{1/2}$"
+    },
+    {
+      "id": 27,
+      "question": "A silicon diode at 300 K has $I_s=1.0\\times10^{-12}$ A. Assuming $n=1$, estimate the forward voltage at $I=1.0$ mA.",
+      "options": {
+        "a": "0.43 V",
+        "b": "0.54 V",
+        "c": "0.65 V",
+        "d": "0.86 V"
+      },
+      "correct_option": "b",
+      "explanation": "Shockley diode equation: \n\n$$I = I_s \\left(e^{V/V_T}-1\\right)$$\n\nThermal voltage at 300 K: $V_T \\approx 25.9$ mV.\n\nForward voltage: \n\n$$V = V_T \\ln\\left(\\frac{I}{I_s}\\right) = 0.0259 \\ln\\left(\\frac{1\\times10^{-3}}{1\\times10^{-12}}\\right)$$\n\n$$\\ln(10^9) \\approx 20.72$$\n\n$$V \\approx 0.0259 \\times 20.72 \\approx 0.536\\,\\text{V} \\approx 0.54\\,\\text{V}$$"
+    },
+    {
+      "id": 28,
+      "question": "Photoelectric threshold $\\lambda_0=620$ nm. For $\\lambda=400$ nm, what stopping potential $V_s$ is required? ($hc=1240$ eV·nm)",
+      "options": {
+        "a": "0.80 V",
+        "b": "1.10 V",
+        "c": "1.50 V",
+        "d": "2.00 V"
+      },
+      "correct_option": "b",
+      "explanation": "Maximum kinetic energy: \n\n$$K_{max} = hc\\left(\\frac{1}{\\lambda} - \\frac{1}{\\lambda_0}\\right)$$\n\n$$K_{max} = 1240 \\left(\\frac{1}{400} - \\frac{1}{620} \\right) = 1240 (0.0025 - 0.001613)$$\n\n$$K_{max} = 1240 \\times 0.000887 \\approx 1.10\\,\\text{eV}$$\n\nStopping potential: $V_s = K_{max}/e = 1.10$ V"
+    },
+    {
+      "id": 29,
+      "question": "In a pendulum, $g=4\\pi^2 l/T^2$. If $\\Delta l/l=1\\%$ and $\\Delta T/T=2\\%$, what is percentage error in g?",
+      "options": {
+        "a": "3%",
+        "b": "4%",
+        "c": "5%",
+        "d": "6%"
+      },
+      "correct_option": "c",
+      "explanation": "Error propagation: \n\n$$g = \\frac{4\\pi^2 l}{T^2} \\Rightarrow \\frac{\\Delta g}{g} = \\frac{\\Delta l}{l} + 2\\frac{\\Delta T}{T}$$\n\n$$\\frac{\\Delta g}{g} = 1\\% + 2 \\times 2\\% = 5\\%$$"
+    },
+    {
+      "id": 30,
+      "question": "Copper wire diameter $0.50$ mm ($\\rho=1.7\\times10^{-8}\\,\\Omega$·m), length $10$ m, current $5$ A. Find potential drop and heat rate.",
+      "options": {
+        "a": "$V\\approx4.33$ V, $P\\approx21.7$ W",
+        "b": "$V\\approx1.73$ V, $P\\approx8.7$ W",
+        "c": "$V\\approx0.87$ V, $P\\approx4.3$ W",
+        "d": "$V\\approx0.43$ V, $P\\approx2.2$ W"
+      },
+      "correct_option": "a",
+      "explanation": "Cross-sectional area: \n\n$$A = \\pi r^2 = \\pi (0.25\\times10^{-3})^2 \\approx 1.96\\times10^{-7}\\,\\text{m}^2$$\n\nResistance: \n\n$$R = \\frac{\\rho L}{A} = \\frac{1.7\\times10^{-8} \\cdot 10}{1.96\\times10^{-7}} \\approx 0.866\\,\\Omega$$\n\nPotential drop: $V = I R = 5 \\cdot 0.866 \\approx 4.33$ V\n\nPower (heat rate): $P = I V = 5 \\cdot 4.33 \\approx 21.7$ W"
+    },
+    {
+      "id": 31,
+      "question": "A solid cylinder of radius 0.2 m rolls down an incline of height 1.8 m without slipping. Find its speed at bottom. (g = 10 m/s²).",
+      "options": {
+        "a": "4.0 m/s",
+        "b": "5.0 m/s",
+        "c": "6.0 m/s",
+        "d": "8.0 m/s"
+      },
+      "correct_option": "b",
+      "explanation": "For rolling without slipping, total kinetic energy at bottom is the sum of translational and rotational kinetic energies:\n\n$$mgh = \\frac{1}{2}mv^2 + \\frac{1}{2}I\\omega^2$$\n\nFor a solid cylinder, $I = \\frac{1}{2} mR^2$ and $\\omega = v/R$, so:\n\n$$mgh = \\frac{1}{2}mv^2 + \\frac{1}{2} \\cdot \\frac{1}{2}mR^2 \\cdot \\frac{v^2}{R^2} = \\frac{3}{4}mv^2$$\n\nSolve for $v$:\n\n$$v = \\sqrt{\\frac{4}{3}gh} = \\sqrt{\\frac{4 \\cdot 10 \\cdot 1.8}{3}} = \\sqrt{24} \\approx 4.9 \\approx 5\\,\\text{m/s}$$"
+    },
+    {
+      "id": 32,
+      "question": "A particle moves with position $\\vec r(t) = A\\cos(\\omega t)\\,\\hat i + 2A\\sin(\\omega t)\\,\\hat j$. Which statement is correct?",
+      "options": {
+        "a": "Circle radius A with speed Aω",
+        "b": "Circle radius 2A with speed 2Aω",
+        "c": "Ellipse with semi-axes A and 2A; speed not constant",
+        "d": "Straight-line SHM"
+      },
+      "correct_option": "c",
+      "explanation": "Eliminate time to find trajectory:\n\n$$x = A \\cos(\\omega t), \\quad y = 2A \\sin(\\omega t)$$\n\nDivide by semi-axes: \n\n$$\\frac{x^2}{A^2} + \\frac{y^2}{(2A)^2} = \\cos^2(\\omega t) + \\sin^2(\\omega t) = 1$$\n\nThus the path is an ellipse with semi-axes $A$ and $2A$. \n\nSpeed magnitude:\n\n$$v = \\sqrt{\\dot{x}^2 + \\dot{y}^2} = \\sqrt{(-A\\omega\\sin\\omega t)^2 + (2A\\omega\\cos\\omega t)^2} = A\\omega \\sqrt{\\sin^2(\\omega t)+4\\cos^2(\\omega t)}$$\n\nSince $v$ depends on $t$, speed is not constant."
+    },
+    {
+      "id": 33,
+      "question": "Blocks 3 kg (on table) and 1 kg (hanging) are connected by a string over a pulley. Friction coefficient $\\mu_k=0.20$. Take g = 10 m/s$^2$. Find acceleration and tension.",
+      "options": {
+        "a": "a = 0.5 m/s², T = 8.5 N",
+        "b": "a = 1.0 m/s², T = 8.0 N",
+        "c": "a = 1.0 m/s², T = 9.0 N",
+        "d": "a = 2.0 m/s², T = 8.0 N"
+      },
+      "correct_option": "c",
+      "explanation": "Friction force on 3 kg block:\n\n$$f = \\mu_k m g = 0.2 \\cdot 3 \\cdot 10 = 6\\,\\text{N}$$\n\nEquations of motion:\n\nHanging block: $m_2 g - T = m_2 a \\Rightarrow 10 - T = 1 \\cdot a$\n\nBlock on table: $T - f = m_1 a \\Rightarrow T - 6 = 3 a$\n\nSolve simultaneously: \n\n$$10 - a = T, \\quad T - 6 = 3a$$\n\nSubstitute $T = 10 - a$ into second: $10 - a - 6 = 3a \\Rightarrow 4 - a = 3a \\Rightarrow 4 = 4a \\Rightarrow a = 1\\,\\text{m/s²}$\n\nThen $T = 10 - 1 = 9$ N"
+    },
+    {
+      "id": 34,
+      "question": "A geostationary satellite orbits at radius $4.20\\times10^{7}$ m. Find its orbital speed. ($GM = 3.986\\times10^{14}\\,\\text{m}^3\\text{s}^{-2}$)",
+      "options": {
+        "a": "2.5 km s$^{-1}$",
+        "b": "3.1 km s$^{-1}$",
+        "c": "3.7 km s$^{-1}$",
+        "d": "4.2 km s$^{-1}$"
+      },
+      "correct_option": "b",
+      "explanation": "Orbital speed:\n\n$$v = \\sqrt{\\frac{GM}{r}}$$\n\n$$v = \\sqrt{\\frac{3.986\\times10^{14}}{4.20\\times10^{7}}} \\approx \\sqrt{9.49 \\times 10^6} \\approx 3080\\,\\text{m/s} \\approx 3.1\\,\\text{km/s}$$"
+    },
+    {
+      "id": 35,
+      "question": "A mass–spring system oscillates with amplitude A and angular frequency $\\omega$. At $x=A/2$, the speed is?",
+      "options": {
+        "a": "$A\\omega/2$",
+        "b": "$(\\sqrt{3}/2)A\\omega$",
+        "c": "$(\\sqrt{2}/2)A\\omega$",
+        "d": "$A\\omega$"
+      },
+      "correct_option": "b",
+      "explanation": "Total energy: \n\n$$E = \\frac{1}{2} k A^2 = \\frac{1}{2} m v^2 + \\frac{1}{2} k x^2$$\n\nVelocity: \n\n$$v = \\sqrt{\\omega^2 (A^2 - x^2)}$$\n\nAt $x = A/2$: \n\n$$v = \\omega \\sqrt{A^2 - (A/2)^2} = \\omega \\sqrt{A^2 - A^2/4} = \\omega \\sqrt{3A^2/4} = \\frac{\\sqrt{3}}{2} A \\omega$$"
+    },
+    {
+      "id": 36,
+      "question": "Gas follows $PV^2=\\text{const}$. Initially $(P_1,V_1,T_1)$. At $V_2=2V_1$, what is $T_2$?",
+      "options": {
+        "a": "$T_1/2$",
+        "b": "$T_1/\\sqrt{2}$",
+        "c": "$T_1$",
+        "d": "$2T_1$"
+      },
+      "correct_option": "a",
+      "explanation": "Given $PV^2 = \\text{const}$, when $V_2 = 2 V_1$, then \n\n$$P_2 = P_1 \\left(\\frac{V_1}{V_2}\\right)^2 = P_1 (1/2)^2 = P_1/4$$\n\nUsing ideal gas law $T = PV/(nR)$, temperature ratio:\n\n$$\\frac{T_2}{T_1} = \\frac{P_2 V_2}{P_1 V_1} = \\frac{(P_1/4) (2V_1)}{P_1 V_1} = \\frac{2}{4} = 1/2$$\n\nHence $T_2 = T_1/2$"
+    },
+    {
+      "id": 37,
+      "question": "Series LCR: $R=40\\,\\Omega$, $L=0.10$ H, $C=100\\,\\mu$F. Find resonance angular frequency $\\omega_0$ and quality factor Q.",
+      "options": {
+        "a": "$\\omega_0=316$ rad/s, Q=0.79",
+        "b": "$\\omega_0=316$ rad/s, Q=1.58",
+        "c": "$\\omega_0=1000$ rad/s, Q=2.5",
+        "d": "$\\omega_0=1000$ rad/s, Q=5.0"
+      },
+      "correct_option": "a",
+      "explanation": "Resonance frequency: \n\n$$\\omega_0 = \\frac{1}{\\sqrt{LC}} = \\frac{1}{\\sqrt{0.10 \\cdot 100 \\times 10^{-6}}} \\approx 316\\,\\text{rad/s}$$\n\nQuality factor: \n\n$$Q = \\frac{\\omega_0 L}{R} = \\frac{316 \\cdot 0.10}{40} \\approx 0.79$$"
+    },
+    {
+      "id": 38,
+      "question": "A thin prism of angle A has refractive index $n(\\lambda)=a+b/\\lambda^2$. Find angular dispersion between $\\lambda_1,\\lambda_2$ and dependence on $\\lambda$.",
+      "options": {
+        "a": "$\\Delta\\delta=A b(1/\\lambda_1^2-1/\\lambda_2^2)$; stronger for shorter λ",
+        "b": "$\\Delta\\delta=A a(1/\\lambda_1-1/\\lambda_2)$; stronger for longer λ",
+        "c": "$\\Delta\\delta=A b(1/\\lambda_1-1/\\lambda_2)$; stronger for longer λ",
+        "d": "$\\Delta\\delta=A a(1/\\lambda_1^2-1/\\lambda_2^2)$; independent of λ"
+      },
+      "correct_option": "a",
+      "explanation": "Deviation for small-angle prism:\n\n$$\\delta = (n-1)A = [a-1 + b/\\lambda^2] A$$\n\nAngular dispersion between two wavelengths:\n\n$$\\Delta\\delta = \\delta(\\lambda_1) - \\delta(\\lambda_2) = A b \\left(\\frac{1}{\\lambda_1^2} - \\frac{1}{\\lambda_2^2}\\right)$$\n\nSince $1/\\lambda^2$ increases for shorter wavelengths, dispersion is stronger for violet light."
+    },
+    {
+      "id": 39,
+      "question": "In a photoelectric experiment, light of wavelength $400\\,\\text{nm}$ is incident on a metal surface of work function $2.0\\,\\text{eV}$. The maximum kinetic energy of emitted electrons is (Take $hc = 1240\\,\\text{eV·nm}$):",
+      "options": {
+        "a": "1.1 eV",
+        "b": "2.1 eV",
+        "c": "3.1 eV",
+        "d": "0.1 eV"
+      },
+      "correct_option": "a",
+      "explanation": "Photon energy: \n\n$$E = \\frac{hc}{\\lambda} = \\frac{1240\\,\\text{eV·nm}}{400\\,\\text{nm}} = 3.1\\,\\text{eV}$$\n\nMaximum kinetic energy of photoelectrons:\n\n$$K_{max} = E - \\phi = 3.1 - 2.0 = 1.1\\,\\text{eV}$$"
+    },
+    {
+      "id": 40,
+      "question": "A nucleus at rest decays into two fragments of masses $m$ and $2m$. If the kinetic energy of the lighter fragment is $K$, what is the kinetic energy of the heavier fragment?",
+      "options": {
+        "a": "$K/2$",
+        "b": "$K$",
+        "c": "$K/4$",
+        "d": "$K/8$"
+      },
+      "correct_option": "a",
+      "explanation": "Conservation of momentum: lighter fragment ($m$) has momentum $p$; heavier fragment ($2m$) has momentum $-p$.\n\nFor lighter fragment:\n\n$$K_L = \\frac{p^2}{2m} = K \\Rightarrow p^2 = 2 m K$$\n\nFor heavier fragment ($2m$):\n\n$$K_H = \\frac{p^2}{2(2m)} = \\frac{2 m K}{4 m} = \\frac{K}{2}$$\n\nSo the heavier fragment has kinetic energy $K/2$."
+    },
+    {
+      "id": 41,
+      "question": "A beam of light is incident from glass ($n=1.50$) onto air at an angle greater than the critical angle. A thin transparent film ($n_{film}=1.33$) is coated on the glass. For which incident angles on the glass will total internal reflection (TIR) still occur at the glass–film interface?",
+      "options": {
+        "a": "$\\theta_i > \\sin^{-1}(1/1.50)$",
+        "b": "$\\theta_i > \\sin^{-1}(1.33/1.50)$",
+        "c": "$\\theta_i > \\sin^{-1}(1/1.33)$",
+        "d": "$\\theta_i > \\sin^{-1}(1.50/1.33)$"
+      },
+      "correct_option": "b",
+      "explanation": "Critical angle at glass–film interface:\n\n$$\\sin\\theta_c = \\frac{n_{film}}{n_{glass}} = \\frac{1.33}{1.50}$$\n\nTotal internal reflection occurs if the incident angle in the glass exceeds the critical angle:\n\n$$\\theta_i > \\theta_c = \\sin^{-1}(1.33/1.50)$$"
+    },
+    {
+      "id": 42,
+      "question": "In a transistor, the current gain $\\beta = 50$. If the base current is $40\\,\\mu\\text{A}$, the collector current is:",
+      "options": {
+        "a": "1.6 mA",
+        "b": "2.0 mA",
+        "c": "2.4 mA",
+        "d": "4.0 mA"
+      },
+      "correct_option": "b",
+      "explanation": "Collector current is related to base current:\n\n$$I_C = \\beta I_B = 50 \\times 40\\,\\mu\\text{A} = 2000\\,\\mu\\text{A} = 2.0\\,\\text{mA}$$"
+    },
+    {
+      "id": 43,
+      "question": "A 5 μF capacitor is charged to 100 V. It is disconnected and connected across a 10 μF capacitor. Find final common voltage.",
+      "options": {
+        "a": "25 V",
+        "b": "33 V",
+        "c": "50 V",
+        "d": "75 V"
+      },
+      "correct_option": "b",
+      "explanation": "Initial charge on 5 μF capacitor:\n\n$$Q_1 = C_1 V_1 = 5 \\times 100 = 500\\,\\mu\\text{C}$$\n\nAfter connecting to 10 μF capacitor, total capacitance:\n\n$$C_{total} = C_1 + C_2 = 5 + 10 = 15\\,\\mu\\text{F}$$\n\nFinal voltage (charge conservation):\n\n$$V_f = \\frac{Q_1}{C_{total}} = \\frac{500}{15} \\approx 33\\,\\text{V}$$"
+    },
+    {
+      "id": 44,
+      "question": "A source emits $680$ Hz and moves away from a stationary observer at $20$ m/s. The observer moves toward the source at $10$ m/s. If speed of sound is $340$ m/s, what frequency is heard?",
+      "options": {
+        "a": "661 Hz",
+        "b": "660 Hz",
+        "c": "680 Hz",
+        "d": "700 Hz"
+      },
+      "correct_option": "a",
+      "explanation": "Doppler effect formula:\n\n$$f' = f \\frac{v + v_O}{v + v_S}$$\n\nHere, $v = 340$ m/s, $v_O = 10$ m/s (observer toward source), $v_S = 20$ m/s (source away from observer):\n\n$$f' = 680 \\frac{340 + 10}{340 + 20} = 680 \\frac{350}{360} \\approx 661\\,\\text{Hz}$$"
+    },
+    {
+      "id": 45,
+      "question": "A particle of mass m in a 1D infinite square well (width L) makes transition n=3 → 2. Find the wavelength of the emitted photon.",
+      "options": {
+        "a": "$\\lambda = \\frac{hc}{\\frac{(9-4)\\pi^2 \\hbar^2}{2 m L^2}}$",
+        "b": "$\\lambda = \\frac{2 m L^2 c h}{5 \\pi^2 \\hbar^2}$",
+        "c": "$\\lambda = \\frac{8 m L^2 c}{5 h}$",
+        "d": "$\\lambda = \\frac{2 m L^2 c}{5 \\pi^2 \\hbar}$"
+      },
+      "correct_option": "c",
+      "explanation": "Energy levels in 1D infinite square well:\n\n$$E_n = \\frac{n^2 \\pi^2 \\hbar^2}{2 m L^2}$$\n\nEnergy difference for transition $n=3 \\to 2$:\n\n$$\\Delta E = E_3 - E_2 = \\frac{9\\pi^2 \\hbar^2}{2 m L^2} - \\frac{4\\pi^2 \\hbar^2}{2 m L^2} = \\frac{5\\pi^2 \\hbar^2}{2 m L^2}$$\n\nPhoton wavelength:\n\n$$\\lambda = \\frac{hc}{\\Delta E} = \\frac{hc}{5 \\pi^2 \\hbar^2/(2 m L^2)} = \\frac{2 m L^2 c h}{5 \\pi^2 \\hbar^2} = \\frac{8 m L^2 c}{5 h}$$"
+    }
+  ]
+}

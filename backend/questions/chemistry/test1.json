@@ -1,0 +1,546 @@
+{
+  "test_number": 1,
+  "subject": "Chemistry",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which law states that equal volumes of all gases at the same temperature and pressure contain equal number of molecules?",
+      "options": {
+        "a": "Boyle's law",
+        "b": "Charles' law",
+        "c": "Avogadro's law",
+        "d": "Graham's law"
+      },
+      "correct_option": "c",
+      "explanation": "Avogadro's law (1811) states that equal volumes of all gases under the same conditions of temperature and pressure contain equal numbers of molecules. Mathematically, $V \\propto n$ (when $T$ and $P$ are constant). This principle explains gaseous reactions by volume ratios and led to the definition of the mole concept. At STP (273 K and 1 atm), 1 mole of any ideal gas occupies $22.4\\,L$."
+    },
+    {
+      "id": 2,
+      "question": "The SI unit of amount of substance is:",
+      "options": {
+        "a": "Molarity",
+        "b": "Mole",
+        "c": "Gram",
+        "d": "Molality"
+      },
+      "correct_option": "b",
+      "explanation": "The SI base unit for amount of substance is the mole (mol). One mole corresponds to $6.022 \\times 10^{23}$ elementary entities (Avogadro's number), such as atoms, molecules, or ions. This unit connects the macroscopic world (mass, volume) to the microscopic scale (atoms and molecules)."
+    },
+    {
+      "id": 3,
+      "question": "At constant temperature, pressure is inversely proportional to volume for a fixed mass of gas. This is:",
+      "options": {
+        "a": "Charles' law",
+        "b": "Boyle's law",
+        "c": "Gay-Lussac's law",
+        "d": "Avogadro's law"
+      },
+      "correct_option": "b",
+      "explanation": "Boyle's law states $P \\propto \\tfrac{1}{V}$ at constant $T$ and $n$. Thus, $PV = k$, where $k$ is a constant. If a gas is compressed to half its volume, its pressure doubles. This law illustrates the inverse relationship between $P$ and $V$, verified by experiments using a J-tube."
+    },
+    {
+      "id": 4,
+      "question": "Which of the following is a strong electrolyte in aqueous solution?",
+      "options": {
+        "a": "Glucose",
+        "b": "Acetic acid",
+        "c": "Sodium chloride (NaCl)",
+        "d": "Ammonia"
+      },
+      "correct_option": "c",
+      "explanation": "NaCl is a strong electrolyte because it dissociates completely in water: $\\text{NaCl} \\to \\text{Na}^+ + \\text{Cl}^-$. This produces a high concentration of ions, allowing strong electrical conductivity. Glucose does not ionize (nonelectrolyte), while acetic acid and ammonia are weak electrolytes, partially ionizing in water."
+    },
+    {
+      "id": 5,
+      "question": "For the ideal gas equation $PV = nRT$, the gas constant $R$ (SI) equals:",
+      "options": {
+        "a": "$0.0821\\,L\\,atm\\,mol^{-1}\\,K^{-1}$",
+        "b": "$8.314\\,J\\,mol^{-1}\\,K^{-1}$",
+        "c": "$62.36\\,L\\,Torr\\,mol^{-1}\\,K^{-1}$",
+        "d": "$1.00\\,J\\,mol^{-1}$"
+      },
+      "correct_option": "b",
+      "explanation": "The universal gas constant $R$ links pressure, volume, temperature, and moles in the ideal gas equation. In SI units: $R = 8.314\\,J mol^{-1} K^{-1}$. In other units: $0.0821\\,L atm mol^{-1} K^{-1}$ or $62.36\\,L Torr mol^{-1} K^{-1}$. Its value depends on the choice of pressure and volume units."
+    },
+    {
+      "id": 6,
+      "question": "The electronic configuration of sodium ($Z=11$) is:",
+      "options": {
+        "a": "[He] $2s^2 2p^6$",
+        "b": "[Ne] $3s^1$",
+        "c": "[Ar] $4s^1$",
+        "d": "$1s^2 2s^2 2p^5 3s^2$"
+      },
+      "correct_option": "b",
+      "explanation": "Sodium has 11 electrons. Its configuration is $1s^2 2s^2 2p^6 3s^1$. The compact form is [Ne]$3s^1$. The single valence electron in the $3s$ orbital makes sodium highly reactive, readily losing it to form $Na^+$ with a stable noble gas configuration."
+    },
+    {
+      "id": 7,
+      "question": "Identify the limiting reagent when 1 mol of $N_2$ reacts with 2 mol of $H_2$ to form ammonia.",
+      "options": {
+        "a": "$N_2$",
+        "b": "$H_2$",
+        "c": "$NH_3$",
+        "d": "No limiting reagent"
+      },
+      "correct_option": "b",
+      "explanation": "Balanced reaction: $N_2 + 3H_2 \\to 2NH_3$. For 1 mol of $N_2$, 3 mol of $H_2$ are required, but only 2 mol are present. Therefore, $H_2$ is the limiting reagent, restricting the yield of ammonia, while excess $N_2$ remains unreacted."
+    },
+    {
+      "id": 8,
+      "question": "The pH of 1.0 M HCl (strong acid) at room temperature is approximately:",
+      "options": {
+        "a": "0",
+        "b": "1",
+        "c": "7",
+        "d": "14"
+      },
+      "correct_option": "a",
+      "explanation": "HCl is a strong acid and dissociates completely in water: $[H^+] = 1.0\\,M$. pH is calculated as $\\text{pH} = -\\log[H^+] = -\\log(1) = 0$. Thus, a 1 M solution of HCl has a pH close to 0, indicating very high acidity."
+    },
+    {
+      "id": 9,
+      "question": "Oxidation numbers in $KMnO_4$ (neutral medium) are:",
+      "options": {
+        "a": "K = +2, Mn = +5, O = −2",
+        "b": "K = +1, Mn = +7, O = −2",
+        "c": "K = 0, Mn = +7, O = −2",
+        "d": "K = +1, Mn = +5, O = −2"
+      },
+      "correct_option": "b",
+      "explanation": "Let oxidation state of Mn be $x$. For $KMnO_4$: $+1 + x + 4(-2) = 0 \\Rightarrow x = +7$. Hence, K = +1, Mn = +7, O = −2. The unusually high oxidation state of Mn (+7) makes $KMnO_4$ a powerful oxidizing agent in both acidic and neutral media."
+    },
+    {
+      "id": 10,
+      "question": "Which bond is most polar?",
+      "options": {
+        "a": "C–H",
+        "b": "C–Cl",
+        "c": "H–H",
+        "d": "Na–Cl"
+      },
+      "correct_option": "d",
+      "explanation": "Bond polarity depends on the difference in electronegativity ($\\Delta EN$) between bonded atoms. For Na–Cl, $\\Delta EN \\approx 2.1$, which is large enough for the bond to be highly polar and nearly ionic. In contrast, H–H has $\\Delta EN = 0$ (nonpolar), C–H has small polarity, and C–Cl has moderate polarity."
+    },
+    {
+      "id": 11,
+      "question": "The hybridisation of carbon in methane ($CH_4$) is:",
+      "options": {
+        "a": "sp",
+        "b": "sp²",
+        "c": "sp³",
+        "d": "sp³d"
+      },
+      "correct_option": "c",
+      "explanation": "In $CH_4$, carbon has the electronic configuration [He]$2s^2 2p^2$. To form four equivalent bonds, one $2s$ orbital and three $2p$ orbitals hybridise to form four $sp^3$ orbitals. These orbitals overlap with the $1s$ orbitals of four hydrogen atoms, forming four equivalent $\\sigma$ bonds. The geometry is tetrahedral with bond angles of $109.5^\\circ$, which minimizes electron pair repulsion."
+    },
+    {
+      "id": 12,
+      "question": "Which of the following organic compounds shows both resonance and hyperconjugation effects?",
+      "options": {
+        "a": "Toluene",
+        "b": "Phenol",
+        "c": "Ethyl carbocation",
+        "d": "Aniline"
+      },
+      "correct_option": "a",
+      "explanation": "Toluene ($C_6H_5CH_3$) shows resonance due to delocalisation of $\\pi$ electrons in the benzene ring, which stabilises the ring structure. Additionally, the $–CH_3$ group attached to the ring can show hyperconjugation by overlap of C–H $\\sigma$ bonds with the adjacent $\\pi$ system, providing extra stability. This dual effect influences its reactivity in electrophilic substitution reactions."
+    },
+    {
+      "id": 13,
+      "question": "The IUPAC name of $CH_3–CH_2–CH_3$ is:",
+      "options": {
+        "a": "Methane",
+        "b": "Ethane",
+        "c": "Propane",
+        "d": "Propanol"
+      },
+      "correct_option": "c",
+      "explanation": "The compound $CH_3–CH_2–CH_3$ has three carbon atoms in a straight chain with only single bonds, making it an alkane. The general formula for alkanes is $C_nH_{2n+2}$. For $n=3$, formula is $C_3H_8$. According to IUPAC rules, the name of the three-carbon alkane is **Propane**."
+    },
+    {
+      "id": 14,
+      "question": "Which biomolecule gives a positive Biuret test?",
+      "options": {
+        "a": "Glucose",
+        "b": "Starch",
+        "c": "Protein",
+        "d": "Cellulose"
+      },
+      "correct_option": "c",
+      "explanation": "The Biuret test detects peptide bonds ($–CO–NH–$). Proteins are polymers of amino acids linked by peptide bonds, so they give a violet/purple color with Biuret reagent (alkaline $Cu^{2+}$ solution). Carbohydrates like glucose, starch, and cellulose do not have peptide bonds, hence they do not respond to the test."
+    },
+    {
+      "id": 15,
+      "question": "Which polymer is obtained by condensation of hexamethylenediamine and adipic acid?",
+      "options": {
+        "a": "Nylon-6",
+        "b": "Nylon-6,6",
+        "c": "Terylene",
+        "d": "Bakelite"
+      },
+      "correct_option": "b",
+      "explanation": "Nylon-6,6 is a synthetic polyamide formed by condensation polymerisation of hexamethylenediamine ($H_2N–(CH_2)_6–NH_2$) and adipic acid ($HOOC–(CH_2)_4–COOH$). The reaction involves the elimination of water molecules between $–NH_2$ and $–COOH$ groups, resulting in long chains with amide linkages ($–CO–NH–$). This polymer is strong, durable, and used in textiles and engineering materials."
+    },
+    {
+      "id": 16,
+      "question": "Which statement is true for ideal gases?",
+      "options": {
+        "a": "Intermolecular forces are significant",
+        "b": "Molecules occupy finite volume compared to container",
+        "c": "Collisions are perfectly elastic",
+        "d": "They liquefy easily"
+      },
+      "correct_option": "c",
+      "explanation": "In the kinetic theory of ideal gases, molecules are considered as point particles with negligible volume, no intermolecular forces, and they undergo random motion. Their collisions are perfectly elastic, meaning both momentum and kinetic energy are conserved. The average kinetic energy depends only on absolute temperature: $\\overline{E_k} = \\tfrac{3}{2}RT$ per mole. Real gases deviate from ideal behavior at high pressure and low temperature."
+    },
+    {
+      "id": 17,
+      "question": "According to Dalton’s atomic theory, which statement is correct?",
+      "options": {
+        "a": "Atoms can be created or destroyed in chemical reactions",
+        "b": "Atoms of an element are identical in mass and properties",
+        "c": "Compounds are formed by random combination of atoms",
+        "d": "All atoms have the same mass"
+      },
+      "correct_option": "b",
+      "explanation": "Dalton's atomic theory (1808) stated that: (i) matter is made of indivisible atoms, (ii) atoms of the same element are identical in mass and properties, (iii) atoms of different elements have different properties, and (iv) compounds form by simple whole-number combinations of atoms. The correct statement here is (ii). Later discoveries of isotopes and subatomic particles showed limitations, but Dalton’s ideas laid the foundation for modern atomic theory."
+    },
+    {
+      "id": 18,
+      "question": "Which vitamin deficiency causes scurvy?",
+      "options": {
+        "a": "Vitamin A",
+        "b": "Vitamin B$_{12}$",
+        "c": "Vitamin C",
+        "d": "Vitamin D"
+      },
+      "correct_option": "c",
+      "explanation": "Scurvy is caused by deficiency of Vitamin C (ascorbic acid). Vitamin C is essential for collagen synthesis, which maintains healthy connective tissues, gums, and skin. Lack of it leads to bleeding gums, joint pain, poor wound healing, and anemia. It is water-soluble and abundant in citrus fruits, tomatoes, and green vegetables."
+    },
+    {
+      "id": 19,
+      "question": "Find the number of moles in 11.2 L of $CO_2$ at STP where 1 mol occupies 22.4 L.",
+      "options": {
+        "a": "0.25 mol",
+        "b": "0.40 mol",
+        "c": "0.50 mol",
+        "d": "2.0 mol"
+      },
+      "correct_option": "c",
+      "explanation": "At STP (273 K, 1 atm), the molar volume of an ideal gas is $22.4\\,L\\,mol^{-1}$. For 11.2 L of $CO_2$: $$n = \\frac{V}{22.4} = \\frac{11.2}{22.4} = 0.50\\,mol.$$ Thus, the sample contains half a mole of $CO_2$ molecules."
+    },
+    {
+      "id": 20,
+      "question": "The shell with principal quantum number $n = 3$ can accommodate a maximum of how many electrons?",
+      "options": {
+        "a": "8",
+        "b": "18",
+        "c": "32",
+        "d": "2"
+      },
+      "correct_option": "b",
+      "explanation": "The maximum number of electrons in a shell is given by the formula $2n^2$. For $n=3$: $$2(3)^2 = 18.$$ These electrons are distributed among subshells: 3s (2 electrons), 3p (6 electrons), and 3d (10 electrons), making a total of 18. This follows the Pauli exclusion principle and Aufbau principle of filling orbitals."
+    },
+    {
+      "id": 21,
+      "question": "Which statement about isotopes is correct?",
+      "options": {
+        "a": "Same mass number, different atomic number",
+        "b": "Same number of neutrons, different protons",
+        "c": "Same atomic number, different mass number",
+        "d": "Different atomic and mass numbers"
+      },
+      "correct_option": "c",
+      "explanation": "Isotopes are atoms of the same element having the same atomic number $Z$ (same number of protons) but different mass number $A$ (due to different neutrons). Example: $^1H$, $^2H$, and $^3H$ are isotopes of hydrogen. Related concepts: Isobars have the same $A$ but different $Z$, and isotones have the same number of neutrons."
+    },
+    {
+      "id": 22,
+      "question": "Which subshell type can hold a maximum of 10 electrons?",
+      "options": {
+        "a": "s",
+        "b": "p",
+        "c": "d",
+        "d": "f"
+      },
+      "correct_option": "c",
+      "explanation": "The maximum electrons in a subshell = (number of orbitals)$\\times 2$. Subshells: s (1 orbital) → 2 e⁻, p (3 orbitals) → 6 e⁻, d (5 orbitals) → 10 e⁻, f (7 orbitals) → 14 e⁻. Thus, the d-subshell can accommodate a maximum of 10 electrons (e.g., $3d^{10}$ in Zn)."
+    },
+    {
+      "id": 23,
+      "question": "Electronegativity generally increases across a period because:",
+      "options": {
+        "a": "Atomic size increases",
+        "b": "Effective nuclear charge increases and atomic radius decreases",
+        "c": "Number of shells increases",
+        "d": "Metallic character increases"
+      },
+      "correct_option": "b",
+      "explanation": "Across a period, nuclear charge increases while shielding remains almost constant. This increases the effective nuclear charge ($Z_{\\text{eff}}$), pulling valence electrons closer, reducing atomic radius, and enhancing the tendency to attract shared electrons. Hence, electronegativity rises. For example, in Period 2: Li < Be < B < C < N < O < F."
+    },
+    {
+      "id": 24,
+      "question": "Which has the highest first ionization enthalpy?",
+      "options": {
+        "a": "Li",
+        "b": "Na",
+        "c": "K",
+        "d": "Be"
+      },
+      "correct_option": "d",
+      "explanation": "Ionization enthalpy increases across a period and decreases down a group. Li, Na, and K are alkali metals with low values due to larger atomic radii and weaker attraction for valence electrons. Be, being a small alkaline earth metal with higher $Z_{\\text{eff}}$, requires more energy to remove its first electron. Thus, Be has the highest first ionization enthalpy among the given options."
+    },
+    {
+      "id": 25,
+      "question": "Which is predominantly a covalent compound?",
+      "options": {
+        "a": "NaCl",
+        "b": "MgO",
+        "c": "$H_2O$",
+        "d": "KBr"
+      },
+      "correct_option": "c",
+      "explanation": "Covalent compounds form between nonmetals via electron sharing. $H_2O$ consists of O–H polar covalent bonds formed by sharing of electrons. In contrast, NaCl, KBr, and MgO are ionic compounds formed by transfer of electrons between metals and nonmetals. Although water is polar, its bonding nature is covalent."
+    },
+    {
+      "id": 26,
+      "question": "The ideal tetrahedral bond angle is:",
+      "options": {
+        "a": "$90^{\\circ}$",
+        "b": "$104.5^{\\circ}$",
+        "c": "$109.5^{\\circ}$",
+        "d": "$120^{\\circ}$"
+      },
+      "correct_option": "c",
+      "explanation": "In $sp^3$ hybridisation, four orbitals arrange in 3D space to minimize repulsion, giving a tetrahedral geometry with bond angle $109.5^{\\circ}$. This angle can be derived from $\\cos \\theta = -\\tfrac{1}{3}$, giving $\\theta=109.5^{\\circ}$. Deviations occur in molecules like $H_2O$ ($104.5^{\\circ}$) due to lone pair repulsion."
+    },
+    {
+      "id": 27,
+      "question": "Which species are isoelectronic with Ne (10 electrons)?",
+      "options": {
+        "a": "$Na^+$",
+        "b": "$O^{2-}$",
+        "c": "$F^-$",
+        "d": "All of these"
+      },
+      "correct_option": "d",
+      "explanation": "Neon has 10 electrons. $Na^+$ (11–1=10), $O^{2-}$ (8+2=10), and $F^-$ (9+1=10) each have 10 electrons, making them isoelectronic with Ne. Isoelectronic species have identical electron counts but different nuclear charges, which affect their sizes ($Na^+$ smallest, $O^{2-}$ largest)."
+    },
+    {
+      "id": 28,
+      "question": "For an endothermic process with $\\Delta H > 0$, which statement is true?",
+      "options": {
+        "a": "System releases heat to surroundings",
+        "b": "System absorbs heat from surroundings",
+        "c": "Enthalpy of system always decreases",
+        "d": "Temperature of surroundings always increases"
+      },
+      "correct_option": "b",
+      "explanation": "For an endothermic process, $\\Delta H > 0$ and $q_p > 0$. This means the system absorbs heat from the surroundings, increasing its enthalpy. Example: melting of ice or dissolution of $NH_4NO_3$ in water. In contrast, exothermic processes have $\\Delta H < 0$ and release heat to the surroundings."
+    },
+    {
+      "id": 29,
+      "question": "Calculate heat absorbed when 100 g of water is heated from 25 °C to 35 °C. Specific heat, $c = 4.18\\,J g^{-1} K^{-1}$.",
+      "options": {
+        "a": "41.8 J",
+        "b": "418 J",
+        "c": "4180 J",
+        "d": "41800 J"
+      },
+      "correct_option": "c",
+      "explanation": "Heat absorbed is given by $q = mc\\Delta T$. Substituting: $m=100\\,g$, $c=4.18\\,J g^{-1} K^{-1}$, $\\Delta T=10\\,K$. Thus, $q = 100 \\times 4.18 \\times 10 = 4180\\,J$. This corresponds to option (c)."
+    },
+    {
+      "id": 30,
+      "question": "For reaction quotient $Q$ and equilibrium constant $K$, which is true when $Q < K$?",
+      "options": {
+        "a": "The system is at equilibrium",
+        "b": "The reaction proceeds in the forward direction",
+        "c": "The reaction proceeds in the reverse direction",
+        "d": "The reaction stops"
+      },
+      "correct_option": "b",
+      "explanation": "The reaction quotient is defined as $Q = \\dfrac{[\\text{products}]^{\\nu}}{[\\text{reactants}]^{\\nu}}$. If $Q < K$, the concentration of reactants is too high compared to equilibrium. To reach equilibrium, the reaction shifts forward (towards products). Conversely, if $Q > K$, the reaction shifts in the reverse direction."
+    },
+    {
+      "id": 31,
+      "question": "Water is a good solvent for ionic compounds because it has:",
+      "options": {
+        "a": "Low dielectric constant",
+        "b": "High dielectric constant and strong polarity",
+        "c": "No hydrogen bonding",
+        "d": "Very low boiling point"
+      },
+      "correct_option": "b",
+      "explanation": "Water has a very high dielectric constant ($\\varepsilon \\approx 80$ at 25 °C) and a strong dipole moment due to its bent molecular geometry and electronegativity difference between O and H. A high dielectric constant reduces the electrostatic force between ions since $F \\propto 1/\\varepsilon$. This allows ions to separate more easily in solution. Additionally, hydrogen bonding stabilizes solvated ions, further enhancing water's ability as a universal solvent for ionic and polar compounds."
+    },
+    {
+      "id": 32,
+      "question": "Which of the following is a weak acid in water?",
+      "options": {
+        "a": "HCl",
+        "b": "HNO₃",
+        "c": "CH₃COOH",
+        "d": "HBr"
+      },
+      "correct_option": "c",
+      "explanation": "Strong acids (HCl, HBr, HNO₃) ionize almost completely in aqueous solution, meaning $K_a$ is very large and $[H^+]$ is nearly equal to the acid concentration. Acetic acid ($CH_3COOH$) is a weak acid because it partially dissociates: $CH_3COOH \\rightleftharpoons CH_3COO^- + H^+$. Its dissociation constant is small ($K_a = 1.8 \\times 10^{-5}$), so only a small fraction of molecules ionize. This incomplete ionization distinguishes weak acids from strong ones."
+    },
+    {
+      "id": 33,
+      "question": "The pH of a neutral solution at 25 °C is:",
+      "options": {
+        "a": "0",
+        "b": "1",
+        "c": "7",
+        "d": "14"
+      },
+      "correct_option": "c",
+      "explanation": "At 25 °C, water self-ionizes: $H_2O \\rightleftharpoons H^+ + OH^-$. The ionic product is $K_w = [H^+][OH^-] = 1.0 \\times 10^{-14}$. In pure water, $[H^+] = [OH^-] = 1.0 \\times 10^{-7}$ M. Hence, $pH = -\\log[H^+] = 7$. This value is defined as neutral pH. At higher temperatures, $K_w$ increases, so the neutral pH decreases slightly (e.g., ~6.8 at 50 °C)."
+    },
+    {
+      "id": 34,
+      "question": "Which statement about redox reactions is correct?",
+      "options": {
+        "a": "Oxidation is gain of electrons",
+        "b": "Reduction is loss of electrons",
+        "c": "Oxidation number of a free element is zero",
+        "d": "Oxygen addition is always reduction"
+      },
+      "correct_option": "c",
+      "explanation": "By convention, the oxidation number of any free element is 0 (e.g., $Na$, $Cl_2$, $O_2$, $P_4$). Oxidation is defined as loss of electrons or increase in oxidation number, while reduction is gain of electrons or decrease in oxidation number. For example, in $Zn + Cu^{2+} \\to Zn^{2+} + Cu$, Zn is oxidized and Cu²⁺ is reduced. Oxygen addition usually indicates oxidation, not reduction."
+    },
+    {
+      "id": 35,
+      "question": "During electrolysis of molten NaCl, which species is formed at the cathode?",
+      "options": {
+        "a": "$Cl_2$",
+        "b": "Na metal",
+        "c": "$H_2$",
+        "d": "$O_2$"
+      },
+      "correct_option": "b",
+      "explanation": "In molten NaCl, only $Na^+$ and $Cl^-$ ions are present. At the cathode (reduction occurs): $Na^+ + e^- \\to Na$, depositing metallic sodium. At the anode (oxidation occurs): $2Cl^- \\to Cl_2 + 2e^-$. Since no water is present, hydrogen and oxygen are not produced. Thus, sodium metal forms at the cathode."
+    },
+    {
+      "id": 36,
+      "question": "The rate law for a first-order reaction depends on:",
+      "options": {
+        "a": "Square of concentration",
+        "b": "No concentration term",
+        "c": "First power of concentration",
+        "d": "Inverse of concentration"
+      },
+      "correct_option": "c",
+      "explanation": "For a first-order reaction: $\\text{Rate} = k[A]^1$, meaning the rate depends linearly on the concentration of reactant A. The integrated form is $\\ln[A] = -kt + \\ln[A]_0$. The half-life is independent of concentration: $t_{1/2} = 0.693/k$. In contrast, a second-order reaction has $\\text{Rate} = k[A]^2$, and a zero-order reaction has rate independent of [A]."
+    },
+    {
+      "id": 37,
+      "question": "Which of the following has the highest boiling point?",
+      "options": {
+        "a": "Propane ($C_3H_8$)",
+        "b": "Ethanol ($C_2H_5OH$)",
+        "c": "Diethyl ether (($C_2H_5$)₂O)",
+        "d": "Acetone ($CH_3COCH_3$)"
+      },
+      "correct_option": "b",
+      "explanation": "Boiling point is determined by the strength of intermolecular forces. Propane is nonpolar and interacts only via weak London dispersion forces, giving a low boiling point (~$-42^{\\circ}$C). Acetone and diethyl ether are polar and exhibit dipole–dipole interactions, with higher boiling points (~$56^{\\circ}$C and $35^{\\circ}$C respectively). Ethanol has strong hydrogen bonding between –OH groups, which greatly increases its boiling point (~$78^{\\circ}$C), making it the highest among the given options."
+    },
+    {
+      "id": 38,
+      "question": "Which functional group is present in methanoic acid?",
+      "options": {
+        "a": "Aldehyde",
+        "b": "Ketone",
+        "c": "Carboxylic acid",
+        "d": "Alcohol"
+      },
+      "correct_option": "c",
+      "explanation": "Methanoic acid (formic acid) has the formula HCOOH. It contains the $-COOH$ functional group, which is characteristic of carboxylic acids. This group consists of a carbonyl ($C=O$) and a hydroxyl ($-OH$) group attached to the same carbon. The $-COOH$ group is responsible for acidic properties, as it ionizes to release $H^+$: $HCOOH \\rightleftharpoons HCOO^- + H^+$. Carboxylic acids undergo reactions such as esterification and neutralization."
+    },
+    {
+      "id": 39,
+      "question": "The IUPAC name of CH₃–CH₂–OH is:",
+      "options": {
+        "a": "Methanol",
+        "b": "Ethanol",
+        "c": "Propanol",
+        "d": "Ethanal"
+      },
+      "correct_option": "b",
+      "explanation": "The molecule $CH_3CH_2OH$ contains two carbon atoms, so the parent name is 'eth–'. The functional group is hydroxyl (–OH), so the suffix is '–ol'. Therefore, the name is ethanol. Ethanol is a primary alcohol with formula $C_2H_5OH$. By contrast, ethanal ($CH_3CHO$) is an aldehyde, not an alcohol."
+    },
+    {
+      "id": 40,
+      "question": "Which statement about isomers is correct?",
+      "options": {
+        "a": "They have different molecular formulas",
+        "b": "They have the same molecular formula but different structures",
+        "c": "They always have different functional groups",
+        "d": "They must have different molar masses"
+      },
+      "correct_option": "b",
+      "explanation": "Isomers are compounds that share the same molecular formula but differ in structural arrangement or spatial orientation. For example, $C_2H_6O$ can be ethanol ($CH_3CH_2OH$, an alcohol) or dimethyl ether ($CH_3OCH_3$, an ether). Their molecular masses are identical, but their structures and properties differ. Thus, option (b) is correct."
+    },
+    {
+      "id": 41,
+      "question": "Which polymer is formed by addition polymerization?",
+      "options": {
+        "a": "Nylon-6,6",
+        "b": "Terylene (PET)",
+        "c": "Polythene",
+        "d": "Bakelite"
+      },
+      "correct_option": "c",
+      "explanation": "Polythene (polyethylene) is formed by addition polymerization of ethene monomers. In this process, the $\\pi$ bond of ethene breaks, and $n$ molecules add together without elimination of small molecules: \\\\[ nCH_2=CH_2 \\longrightarrow (–CH_2–CH_2–)_n \\\\] Nylon-6,6 and Terylene are condensation polymers, releasing $H_2O$ or $MeOH$ during formation. Bakelite is a condensation polymer of phenol and formaldehyde."
+    },
+    {
+      "id": 42,
+      "question": "Glucose belongs to which class of biomolecules?",
+      "options": {
+        "a": "Proteins",
+        "b": "Carbohydrates",
+        "c": "Lipids",
+        "d": "Nucleic acids"
+      },
+      "correct_option": "b",
+      "explanation": "Glucose ($C_6H_{12}O_6$) is a monosaccharide, the simplest form of carbohydrates. Carbohydrates are defined as polyhydroxy aldehydes or ketones. Glucose contains an aldehyde group at C1 and multiple hydroxyl groups, making it an aldohexose. It is the primary energy source in living organisms and undergoes glycolysis and respiration to release ATP."
+    },
+    {
+      "id": 43,
+      "question": "Which element belongs to the s-block of the periodic table?",
+      "options": {
+        "a": "Calcium",
+        "b": "Iron",
+        "c": "Chlorine",
+        "d": "Copper"
+      },
+      "correct_option": "a",
+      "explanation": "Calcium (Z = 20) has the electronic configuration [Ar]4s². Its valence electrons occupy the s-orbital, so it belongs to the s-block (Group 2, alkaline earth metals). Iron (d-block transition element), chlorine (p-block halogen), and copper (d-block transition element) are not s-block elements."
+    },
+    {
+      "id": 44,
+      "question": "Which oxide is amphoteric?",
+      "options": {
+        "a": "Na₂O",
+        "b": "MgO",
+        "c": "Al₂O₃",
+        "d": "SO₃"
+      },
+      "correct_option": "c",
+      "explanation": "$Al_2O_3$ shows amphoteric behavior, meaning it reacts with both acids and bases. \\\\[ Al_2O_3 + 6HCl \\to 2AlCl_3 + 3H_2O \\\\] (acid reaction) \\\\[ Al_2O_3 + 2NaOH \\to 2NaAlO_2 + H_2O \\\\] (base reaction) Na₂O and MgO are basic oxides (metallic), while SO₃ is an acidic oxide (non-metallic)."
+    },
+    {
+      "id": 45,
+      "question": "The crystalline form of carbon that conducts electricity poorly is:",
+      "options": {
+        "a": "Graphite",
+        "b": "Diamond",
+        "c": "Fullerene",
+        "d": "Graphene"
+      },
+      "correct_option": "b",
+      "explanation": "Diamond is an allotrope of carbon where each carbon is $sp^3$ hybridized and covalently bonded to four other carbons in a 3D tetrahedral network. This rigid structure lacks delocalized electrons, so diamond is an electrical insulator. Graphite and graphene have $sp^2$ hybridization with delocalized $\\pi$-electrons, making them good conductors. Fullerenes also conduct better than diamond due to delocalized electrons."
+    }
+  ]
+}

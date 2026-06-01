@@ -1,0 +1,546 @@
+{
+  "test_number": 4,
+  "subject": "Physics",
+  "questions": [
+    {
+      "id": 1,
+      "question": "A uniform rod of length 2 m and mass 4 kg lies on a smooth horizontal table. Work done to rotate it about its center through 90° and place it vertically on one end is?",
+      "options": {
+        "a": "20 J",
+        "b": "40 J",
+        "c": "60 J",
+        "d": "80 J"
+      },
+      "correct_option": "b",
+      "explanation": "The center of mass (COM) of the rod initially lies on the table (height = 0). When the rod is rotated to stand vertically on one end, its COM rises by half its length: $h = L/2 = 1$ m.\nWork done = increase in gravitational potential energy:\n\\[ W = m g h = 4 \\times 10 \\times 1 = 40\\,\\text{J} \\]"
+    },
+    {
+      "id": 2,
+      "question": "A flywheel of mass 20 kg and radius 0.2 m rotates at 600 rpm. Its kinetic energy is:",
+      "options": {
+        "a": "197 J",
+        "b": "394 J",
+        "c": "1570 J",
+        "d": "3140 J"
+      },
+      "correct_option": "c",
+      "explanation": "Moment of inertia of a solid disk: \n\\[ I = \\frac{1}{2} m R^2 = 0.5 \\times 20 \\times 0.2^2 = 0.4\\,\\text{kg·m}^2 \\]\nAngular speed: \n\\[ \\omega = 600 \\times \\frac{2\\pi}{60} \\approx 62.832\\,\\text{rad/s} \\]\nRotational kinetic energy:\n\\[ KE = \\frac{1}{2} I \\omega^2 = 0.5 \\times 0.4 \\times 62.832^2 \\approx 1570\\,\\text{J} \\]"
+    },
+    {
+      "id": 3,
+      "question": "A non-conducting spherical shell of inner radius $R$ and outer radius $2R$ carries uniform charge density $\\rho$ in the material. What is the electric field at $r=1.5R$?",
+      "options": {
+        "a": "0",
+        "b": "$\\dfrac{19\\,\\rho R}{54\\,\\varepsilon_0}$",
+        "c": "$\\dfrac{\\rho R}{3\\,\\varepsilon_0}$",
+        "d": "$\\dfrac{\\rho R}{2\\,\\varepsilon_0}$"
+      },
+      "correct_option": "b",
+      "explanation": "For $R < r < 2R$, the charge enclosed by a Gaussian surface of radius $r$ is:\n\\[ Q_{enc} = \\rho \\frac{4\\pi}{3} (r^3 - R^3) \\]\nFrom Gauss's law, the electric field:\n\\[ E = \\frac{Q_{enc}}{4\\pi \\varepsilon_0 r^2} = \\frac{\\rho}{3 \\varepsilon_0} \\frac{r^3 - R^3}{r^2} \\]\nSubstitute $r = 1.5R$:\n\\[ r^3 - R^3 = (\\frac{3}{2})^3 R^3 - R^3 = \\frac{27 - 8}{8} R^3 = \\frac{19}{8} R^3 \\]\n\\[ E = \\frac{\\rho}{3 \\varepsilon_0} \\frac{19 R^3 / 8}{(3R/2)^2} = \\frac{19 \\rho R}{54 \\varepsilon_0} \\]"
+    },
+    {
+      "id": 4,
+      "question": "An AC voltage $v=200\\sqrt{2}\\sin(100\\pi t)$ is applied to a series RLC circuit with $R=200\\,\\Omega$, $L=0.2$ H, $C=50\\,\\mu$F. Calculate the power dissipated.",
+      "options": {
+        "a": "100 W",
+        "b": "200 W",
+        "c": "400 W",
+        "d": "800 W"
+      },
+      "correct_option": "b",
+      "explanation": "RMS voltage: $V_{rms} = 200$ V\nAngular frequency: $\\omega = 100\\pi \\approx 314$ rad/s\nInductive reactance: $X_L = \\omega L = 314 \\times 0.2 = 62.8\\,\\Omega$\nCapacitive reactance: $X_C = 1/(\\omega C) = 1/(314\\cdot 50\\times10^{-6}) \\approx 63.7\\,\\Omega$\nNet reactance: $X = X_L - X_C \\approx -0.9\\,\\Omega$ (negligible)\nImpedance: $Z = \\sqrt{R^2 + X^2} \\approx 200\\,\\Omega$\nCurrent: $I = V/Z = 200/200 = 1$ A\nPower dissipated: $P = I^2 R = 1^2 \\times 200 = 200$ W"
+    },
+    {
+      "id": 5,
+      "question": "A soap film of thickness 300 nm ($n = 1.5$) is illuminated by white light. Which wavelength in the visible region (400–700 nm) is strongly reflected (near-normal incidence)?",
+      "options": {
+        "a": "450 nm",
+        "b": "500 nm",
+        "c": "600 nm",
+        "d": "700 nm"
+      },
+      "correct_option": "c",
+      "explanation": "For a film with one reflection undergoing a $\\pi$ phase shift, constructive interference occurs when:\n\\[ 2 n t = (m + \\tfrac12) \\lambda \\]\nHere: $2nt = 2 \\cdot 1.5 \\cdot 300 = 900$ nm\nFor $m = 1$: $\\lambda = 900 / 1.5 = 600$ nm (within visible spectrum)"
+    },
+    {
+      "id": 6,
+      "question": "An electron is accelerated through 1000 V and enters a uniform $B=0.02$ T field perpendicular to velocity. Find radius of curvature. ($e=1.6\\times10^{-19}$ C, $m_e=9.1\\times10^{-31}$ kg)",
+      "options": {
+        "a": "1.7 cm",
+        "b": "2.7 cm",
+        "c": "3.4 cm",
+        "d": "4.7 cm"
+      },
+      "correct_option": "b",
+      "explanation": "Kinetic energy: $K = eV = 1.6\\times10^{-19} \\cdot 1000 = 1.6\\times10^{-16}$ J\nVelocity: $v = \\sqrt{2K/m} = \\sqrt{2 \\cdot 1.6\\times10^{-16} / 9.1\\times10^{-31}} \\approx 1.88\\times10^7$ m/s\nRadius of circular path: $r = mv/(eB) = 9.1\\times10^{-31} \\cdot 1.88\\times10^7 / (1.6\\times10^{-19} \\cdot 0.02) \\approx 0.027$ m = 2.7 cm"
+    },
+    {
+      "id": 7,
+      "question": "A radioactive substance has activity 4000 dpm. After 3 half-lives, activity becomes?",
+      "options": {
+        "a": "2000 dpm",
+        "b": "1000 dpm",
+        "c": "500 dpm",
+        "d": "250 dpm"
+      },
+      "correct_option": "c",
+      "explanation": "After $n$ half-lives, remaining activity: \n\\[ A = A_0 / 2^n = 4000 / 2^3 = 4000 / 8 = 500 \\text{ dpm} \\]"
+    },
+    {
+      "id": 8,
+      "question": "A concave lens of focal length 15 cm forms an image at 10 cm from lens. Find object distance.",
+      "options": {
+        "a": "30 cm",
+        "b": "20 cm",
+        "c": "15 cm",
+        "d": "10 cm"
+      },
+      "correct_option": "a",
+      "explanation": "Lens formula: $1/f = 1/v - 1/u$, for concave lens $f = -15$ cm, image distance $v = -10$ cm\n\\[ 1/u = 1/v - 1/f = -1/10 - (-1/15) = -1/30 \\Rightarrow u = -30 \\text{ cm} \\]\nThe object is 30 cm in front of the lens."
+    },
+    {
+      "id": 9,
+      "question": "In a photoelectric experiment, stopping potential vs frequency graph extrapolates to threshold frequency $\\nu_0=5\\times10^{14}$ Hz. If slope is $h/e$, what is the work function?",
+      "options": {
+        "a": "1.6 eV",
+        "b": "2.0 eV",
+        "c": "2.1 eV",
+        "d": "2.5 eV"
+      },
+      "correct_option": "b",
+      "explanation": "Work function: $\\phi = h \\nu_0 = 6.63\\times10^{-34} \\cdot 5\\times10^{14} = 3.315\\times10^{-19}$ J\nConvert to eV: $3.315\\times10^{-19}/1.6\\times10^{-19} \\approx 2.07$ eV"
+    },
+    {
+      "id": 10,
+      "question": "A particle moves in a circle of radius $R$ with constant speed $v$. Find the work done by centripetal force in one revolution.",
+      "options": {
+        "a": "Zero",
+        "b": "$\\pi mv^2$",
+        "c": "$2\\pi mv^2$",
+        "d": "$mv^2/R$"
+      },
+      "correct_option": "a",
+      "explanation": "Centripetal force is always perpendicular to the instantaneous displacement. Hence, the work done over any displacement, including a full revolution, is:\n\\[ W = \\int \\vec F \\cdot d\\vec r = 0 \\]"
+    },
+    {
+      "id": 11,
+      "question": "A simple pendulum of length $1$ m executes small oscillations at a place where $g = 9.8$ m s$^{-2}$. Find its time period. If $g$ becomes $9.7$ m s$^{-2}$ due to altitude, what is the change in period?",
+      "options": {
+        "a": "2.00 s, change = +0.01 s",
+        "b": "2.01 s, change = +0.01 s",
+        "c": "2.01 s, change = +0.02 s",
+        "d": "2.02 s, change = +0.02 s"
+      },
+      "correct_option": "b",
+      "explanation": "Time period of a simple pendulum: $T = 2\\pi\\sqrt{l/g}$.\nFor $g = 9.8$ m/s²:\n\\[ T_1 = 2\\pi \\sqrt{1/9.8} \\approx 2.006 \\text{ s} \\approx 2.01\\,\\text{s} \\]\nFor $g = 9.7$ m/s²:\n\\[ T_2 = 2\\pi \\sqrt{1/9.7} \\approx 2.010 \\text{ s} \\]\nChange in period: $\\Delta T = T_2 - T_1 \\approx 0.004 \\text{ s} \\approx 0.01$ s."
+    },
+    {
+      "id": 12,
+      "question": "A stationary hydrogen atom in ground state absorbs a photon of energy $12.75$ eV. What will be the final state of the electron?",
+      "options": {
+        "a": "$n=2$",
+        "b": "$n=3$",
+        "c": "$n=4$",
+        "d": "$n=5$"
+      },
+      "correct_option": "c",
+      "explanation": "Energy levels of hydrogen: $E_n = -13.6/n^2$ eV. Ground state $E_1 = -13.6$ eV.\nEnergy differences:\n\\[ E_2 - E_1 = -3.4 - (-13.6) = 10.2 \\text{ eV} \\]\n\\[ E_3 - E_1 = -1.51 - (-13.6) = 12.09 \\text{ eV} \\]\n\\[ E_4 - E_1 = -0.85 - (-13.6) = 12.75 \\text{ eV} \\]\nPhoton energy matches excitation to $n=4$."
+    },
+    {
+      "id": 13,
+      "question": "Two small spheres of equal mass and charge are suspended by strings of equal length from a common point. At equilibrium, each string makes angle $\\theta$ with vertical. If $T$ is tension in each string, what is the electrostatic force between charges?",
+      "options": {
+        "a": "$T\\tan\\theta$",
+        "b": "$T\\sin\\theta$",
+        "c": "$T\\cos\\theta$",
+        "d": "$T\\tan\\theta/2$"
+      },
+      "correct_option": "b",
+      "explanation": "At equilibrium:\nVertical forces: $T\\cos\\theta = mg$\nHorizontal forces: $T\\sin\\theta = F_e$\nHence the electrostatic force between charges is $F_e = T\\sin\\theta$."
+    },
+    {
+      "id": 14,
+      "question": "A convex mirror of focal length 20 cm forms an image half the size of the object. Find the object distance.",
+      "options": {
+        "a": "10 cm",
+        "b": "20 cm",
+        "c": "30 cm",
+        "d": "60 cm"
+      },
+      "correct_option": "b",
+      "explanation": "Magnification: $m = v/u = -1/2$ (convex mirror, image virtual)\nMirror formula: $1/f = 1/v + 1/u$ with $f=+20$ cm, $v = m u = -u/2$\n\\[ 1/20 = 1/(-u/2) + 1/u = -2/u + 1/u = -1/u \\Rightarrow u = 20 \\text{ cm} \\]"
+    },
+    {
+      "id": 15,
+      "question": "Two long parallel wires $0.1$ m apart carry equal currents $5$ A in same direction. Find magnetic force per unit length between them. ($\\mu_0=4\\pi\\times10^{-7}$)",
+      "options": {
+        "a": "$1.0\\times10^{-5}$ N/m",
+        "b": "$2.5\\times10^{-5}$ N/m",
+        "c": "$5.0\\times10^{-5}$ N/m",
+        "d": "$1.0\\times10^{-4}$ N/m"
+      },
+      "correct_option": "c",
+      "explanation": "Force per unit length between parallel currents:\n\\[ F/L = \\frac{\\mu_0 I_1 I_2}{2\\pi d} = \\frac{4\\pi\\times10^{-7} \\cdot 5 \\cdot 5}{2\\pi \\cdot 0.1} = 5 \\times 10^{-5} \\text{ N/m} \\]"
+    },
+    {
+      "id": 16,
+      "question": "A tank is filled with water up to height 4 m. A small hole is made at a depth of 1 m from the surface. The velocity of efflux is:",
+      "options": {
+        "a": "4.9 m/s",
+        "b": "6.3 m/s",
+        "c": "7.7 m/s",
+        "d": "8.9 m/s"
+      },
+      "correct_option": "c",
+      "explanation": "Depth of hole from free surface: $h = 4-1 = 3$ m\nUsing Torricelli's theorem:\n\\[ v = \\sqrt{2 g h} = \\sqrt{2 \\cdot 9.8 \\cdot 3} \\approx 7.7 \\text{ m/s} \\]"
+    },
+    {
+      "id": 17,
+      "question": "A 1.0 kg mass is attached to two identical springs (each $k=200$ N m$^{-1}$) in series between fixed walls. The mass oscillates with small amplitude. Find the time period.",
+      "options": {
+        "a": "0.44 s",
+        "b": "0.63 s",
+        "c": "0.89 s",
+        "d": "1.26 s"
+      },
+      "correct_option": "b",
+      "explanation": "Two identical springs in series: $k_{eq} = k/2 = 100$ N/m\nAngular frequency: $\\omega = \\sqrt{k_{eq}/m} = \\sqrt{100/1} = 10$ rad/s\nTime period: $T = 2\\pi/\\omega = 2\\pi/10 \\approx 0.628$ s $\\approx 0.63$ s"
+    },
+    {
+      "id": 18,
+      "question": "A string of length $L=1.5$ m is fixed at both ends. A standing wave with 5 antinodes is formed. If wave speed is 120 m s$^{-1}$, what is the frequency?",
+      "options": {
+        "a": "120 Hz",
+        "b": "160 Hz",
+        "c": "200 Hz",
+        "d": "240 Hz"
+      },
+      "correct_option": "c",
+      "explanation": "Number of antinodes $n=5$ corresponds to 5 half-wavelengths along the string: $L = n \\lambda / 2 \\Rightarrow \\lambda = 2L/n = 2\\cdot1.5/5 = 0.6$ m\nFrequency: $f = v/\\lambda = 120/0.6 = 200$ Hz"
+    },
+    {
+      "id": 19,
+      "question": "A thin convex lens $f=+20$ cm is placed 10 cm in front of a plane mirror. An object is at 30 cm from lens. After light passes lens, reflects, and passes lens again, where is the final image relative to lens?",
+      "options": {
+        "a": "60 cm right (real)",
+        "b": "40 cm right (real)",
+        "c": "20 cm left (virtual)",
+        "d": "At infinity"
+      },
+      "correct_option": "b",
+      "explanation": "First pass through lens: $u=-30$ cm\n\\[ 1/f = 1/v - 1/u \\Rightarrow 1/20 = 1/v + 1/30 \\Rightarrow v = 60 \\text{ cm right} \\]\nDistance to mirror: 10 cm ⇒ image 50 cm in front of mirror, so virtual for second pass: $u=-40$ cm for lens\nSecond pass: $1/f = 1/v - 1/u = 1/20 - 1/(-40) = 1/40 \\Rightarrow v = 40$ cm right. Final image: 40 cm right of lens"
+    },
+    {
+      "id": 20,
+      "question": "A conducting rod $L=0.40$ m slides on rails in $B=0.50$ T. Rails connected to $R=0.50\\,\\Omega$. A horizontal pull $F=2.0$ N is applied. Find the terminal speed.",
+      "options": {
+        "a": "10 m s$^{-1}$",
+        "b": "16 m s$^{-1}$",
+        "c": "25 m s$^{-1}$",
+        "d": "40 m s$^{-1}$"
+      },
+      "correct_option": "c",
+      "explanation": "Induced emf: $\\mathcal{E} = B L v$, current: $I = \\mathcal{E}/R = B L v / R$\nMagnetic drag: $F_B = B I L = B^2 L^2 v / R$\nAt terminal speed: $F = F_B \\Rightarrow v = F R / (B^2 L^2) = (2 \\cdot 0.5) / (0.5^2 \\cdot 0.16) = 25$ m/s"
+    },
+    {
+      "id": 21,
+      "question": "An LC circuit has $L = 5.0$ mH and $C = 20\\,\\mu$F. The capacitor is initially charged to 50 V and then connected to the inductor (negligible resistance). Find the maximum current in the circuit and the oscillation frequency.",
+      "options": {
+        "a": "$I_{max}=2.24$ A, $f=225$ Hz",
+        "b": "$I_{max}=3.16$ A, $f=225$ Hz",
+        "c": "$I_{max}=2.24$ A, $f=503$ Hz",
+        "d": "$I_{max}=3.16$ A, $f=503$ Hz"
+      },
+      "correct_option": "d",
+      "explanation": "Energy conservation: $\\tfrac12 C V_0^2 = \\tfrac12 L I_{max}^2$.\n\\[ I_{max} = V_0 \\sqrt{C/L} = 50 \\sqrt{20\\times10^{-6}/5\\times10^{-3}} \\approx 3.16 \\text{ A} \\]\nOscillation angular frequency: $\\omega = 1/\\sqrt{LC} = 1/\\sqrt{5\\times10^{-3} \\cdot 20\\times10^{-6}} \\approx 3162$ rad/s\nFrequency: $f = \\omega/(2\\pi) \\approx 503$ Hz."
+    },
+    {
+      "id": 22,
+      "question": "A parallel-plate capacitor ($A=100$ cm$^2$, $d=1.0$ mm) is partially filled by sliding in a dielectric ($\\kappa=5$) from one side. The plates are at constant potential difference $V=100$ V. Overlap length of the slab is $x$ along plate length $L=10$ cm. Find the force pulling the slab in (neglect fringing, $\\varepsilon_0=8.85\\times10^{-12}$ F m$^{-1}$).",
+      "options": {
+        "a": "$1.8\\times10^{-6}$ N",
+        "b": "$1.8\\times10^{-5}$ N",
+        "c": "$9.0\\times10^{-5}$ N",
+        "d": "$1.8\\times10^{-4}$ N"
+      },
+      "correct_option": "b",
+      "explanation": "At constant voltage, force: $F = \\frac12 V^2 \\frac{dC}{dx}$\nDifferential capacitance due to slab: $dC/dx = \\varepsilon_0 (\\kappa -1) A/(d L)$\n\\[ dC/dx = 8.85\\times10^{-12} \\cdot 4 \\cdot 0.01 / (10^{-3} \\cdot 0.10) = 3.54\\times10^{-9} \\text{ F/m} \\]\nForce: $F = 0.5 \\cdot 100^2 \\cdot 3.54\\times10^{-9} \\approx 1.8\\times10^{-5}$ N."
+    },
+    {
+      "id": 23,
+      "question": "In hydrogen, what is the shortest wavelength in the Lyman series? ($R=1.097\\times10^7$ m$^{-1}$)",
+      "options": {
+        "a": "91.2 nm",
+        "b": "97.3 nm",
+        "c": "121.6 nm",
+        "d": "656.3 nm"
+      },
+      "correct_option": "a",
+      "explanation": "Lyman series: $n_f = 1$. Shortest wavelength corresponds to $n_i \\to \\infty$.\n\\[ \\frac{1}{\\lambda} = R \\left( \\frac{1}{1^2} - \\frac{1}{\\infty^2} \\right) = R \\]\n\\[ \\lambda = 1/R = 9.12\\times10^{-8} \\text{ m} = 91.2 \\text{ nm} \\]"
+    },
+    {
+      "id": 24,
+      "question": "Assertion (A): In the photoelectric effect, the stopping potential is independent of light intensity. Reason (R): The maximum kinetic energy of photoelectrons depends only on frequency, not on intensity.",
+      "options": {
+        "a": "A and R true; R explains A",
+        "b": "A and R true; R not explanation",
+        "c": "A true, R false",
+        "d": "A false, R true"
+      },
+      "correct_option": "a",
+      "explanation": "Stopping potential $V_s$ given by $e V_s = K_{max} = h\\nu - \\phi$, independent of intensity. Intensity affects photoelectron current, not kinetic energy. Both A and R are true and R explains A."
+    },
+    {
+      "id": 25,
+      "question": "A spacecraft escapes Earth’s gravity from surface. Escape speed is?",
+      "options": {
+        "a": "7.9 km/s",
+        "b": "9.8 km/s",
+        "c": "11.2 km/s",
+        "d": "13.6 km/s"
+      },
+      "correct_option": "c",
+      "explanation": "Escape speed: $v_{esc} = \\sqrt{2 g R}$\nEarth: $g=9.8$ m/s², $R=6.37\\times10^6$ m\n\\[ v = \\sqrt{2 \\cdot 9.8 \\cdot 6.37\\times10^6} \\approx 11.2 \\text{ km/s} \\]"
+    },
+    {
+      "id": 26,
+      "question": "A spherical particle of radius $r=0.10$ mm, density $\\rho_s=8000$ kg/m$^3$, falls slowly in oil of density $\\rho_f=1000$ kg/m$^3$, viscosity $\\eta=1$ Pa·s. Find terminal speed using Stokes’ law.",
+      "options": {
+        "a": "$1.6\\times10^{-4}$ m/s",
+        "b": "$7.8\\times10^{-4}$ m/s",
+        "c": "$1.6\\times10^{-3}$ m/s",
+        "d": "$7.8\\times10^{-3}$ m/s"
+      },
+      "correct_option": "a",
+      "explanation": "Stokes' law: $v_t = \\dfrac{2 r^2 (\\rho_s - \\rho_f) g}{9 \\eta}$\n\\[ r = 1.0\\times10^{-4} \\text{ m}, (\\rho_s - \\rho_f) = 7000, g = 10, \\eta = 1 \\]\n\\[ v_t = \\frac{2 \\cdot (1.0\\times10^{-4})^2 \\cdot 7000 \\cdot 10}{9 \\cdot 1} \\approx 1.6\\times10^{-4} \\text{ m/s} \\]"
+    },
+    {
+      "id": 27,
+      "question": "A 12 V battery with internal resistance $r=3\\,\\Omega$ supplies a load $R_L$. For maximum power transfer, what $R_L$ and power?",
+      "options": {
+        "a": "$R_L=1.5\\,\\Omega, P_{max}=6$ W",
+        "b": "$R_L=3.0\\,\\Omega, P_{max}=6$ W",
+        "c": "$R_L=3.0\\,\\Omega, P_{max}=12$ W",
+        "d": "$R_L=6.0\\,\\Omega, P_{max}=12$ W"
+      },
+      "correct_option": "c",
+      "explanation": "Maximum power occurs when $R_L = r = 3\\,\\Omega$\nCurrent: $I = V / (R_L + r) = 12 / 6 = 2$ A\nPower delivered: $P_{max} = I^2 R_L = 2^2 \\cdot 3 = 12$ W"
+    },
+    {
+      "id": 28,
+      "question": "Assertion (A): In adiabatic free expansion of an ideal gas, temperature remains constant. Reason (R): Here $Q=0$, $W=0$, so $\\Delta U=0$; for ideal gas $U=U(T)$.",
+      "options": {
+        "a": "A and R true; R explains A",
+        "b": "A and R true; R not explanation",
+        "c": "A true, R false",
+        "d": "A false, R true"
+      },
+      "correct_option": "a",
+      "explanation": "Free expansion: $Q = 0$, $W = 0 \\Rightarrow \\Delta U = 0$\nFor ideal gas, internal energy $U$ depends only on temperature, so $\\Delta T = 0$. Both A and R are true, and R explains A."
+    },
+    {
+      "id": 29,
+      "question": "Assertion (A): A soft iron core is used in a moving-coil galvanometer to make field radial. Reason (R): Radial field keeps coil plane perpendicular to B so torque $\\tau$ is proportional to current at all deflections.",
+      "options": {
+        "a": "A and R true; R explains A",
+        "b": "A and R true; R not explanation",
+        "c": "A true, R false",
+        "d": "A false, R true"
+      },
+      "correct_option": "a",
+      "explanation": "Soft iron shapes field radially; coil sides always cut field lines at 90°\nTorque $\\tau = N I A B$, independent of coil angle, giving linear scale. Both A and R are true, and R explains A."
+    },
+    {
+      "id": 30,
+      "question": "In Young’s double-slit experiment: (P) Path difference $(m+1/2)\\lambda$ gives minima. (Q) Fringe width $\\beta$ decreases if slit separation $d$ increases. (R) Adding a $\\lambda/2$ film in front of one slit shifts central maximum. (S) Reducing slit width necessarily increases visibility. How many statements are correct?",
+      "options": {
+        "a": "2",
+        "b": "3",
+        "c": "4",
+        "d": "1"
+      },
+      "correct_option": "b",
+      "explanation": "(P) True: minima occur at path difference $(m+1/2)\\lambda$\n(Q) True: fringe width $\\beta = \\lambda D/d$, increases as $d$ decreases\n(R) True: adding $\\lambda/2$ introduces phase shift, shifts fringes\n(S) False: narrower slits reduce intensity and may reduce visibility\nThus, 3 statements are correct."
+    },
+    {
+      "id": 31,
+      "question": "A small bead of mass $m$ can slide without friction on a fixed circular wire of radius $R$ placed in a vertical plane. The bead is released from rest at the top. Find the speed of the bead and the normal reaction of the wire when the bead is at an angle $\\theta$ from the top.",
+      "options": {
+        "a": "$v=\\sqrt{2gR(1-\\cos\\theta)},\\ N=mg(3\\cos\\theta-2)$",
+        "b": "$v=\\sqrt{2gR(1-\\cos\\theta)},\\ N=mg(3\\cos\\theta-2)+m(2gR(1-\\cos\\theta))/R$",
+        "c": "$v=\\sqrt{2gR(1-\\cos\\theta)},\\ N=mg\\cos\\theta-mv^2/R$",
+        "d": "$v=\\sqrt{2gR(1-\\cos\\theta)},\\ N=mv^2/R-mg\\cos\\theta$"
+      },
+      "correct_option": "d",
+      "explanation": "Using energy conservation: $mgR(1-\\cos\\theta) = \\tfrac12 m v^2 \\Rightarrow v = \\sqrt{2gR(1-\\cos\\theta)}$.\nRadial force balance: $N + mg\\cos\\theta = m v^2 / R \\Rightarrow N = m v^2 / R - mg\\cos\\theta$."
+    },
+    {
+      "id": 32,
+      "question": "A particle of charge $q$ and mass $m$ enters a region with uniform $\\vec E$ along +x and $\\vec B$ along +z. The particle enters with velocity $v$ along +y and goes undeviated. Which relation holds?",
+      "options": {
+        "a": "$qE=qvB,\\ v=E/B$",
+        "b": "$qE=qvB,\\ v=B/E$",
+        "c": "$qE=qvB,\\ v=EB$",
+        "d": "No such $v$ exists"
+      },
+      "correct_option": "a",
+      "explanation": "Lorentz force: $\\vec F = q(\\vec E + \\vec v \\times \\vec B)$. For zero deflection, $qE = qvB \\Rightarrow v = E/B$. Correct: (a)."
+    },
+    {
+      "id": 33,
+      "question": "A thin hoop of radius $R$ rolls without slip at speed $v$. It hits a step of height $h(\\ll R)$. Assuming inelastic impact at the corner, find the minimum $v$ so that it climbs the step.",
+      "options": {
+        "a": "$\\sqrt{2gh}$",
+        "b": "$\\sqrt{3gh}$",
+        "c": "$\\sqrt{4gh}$",
+        "d": "$\\sqrt{6gh}$"
+      },
+      "correct_option": "d",
+      "explanation": "Angular momentum about the corner just before impact is conserved. Energy analysis for rolling hoop shows minimum translational speed to climb step is $v_{min} = \\sqrt{6gh}$."
+    },
+    {
+      "id": 34,
+      "question": "In a nucleus, binding energy per nucleon is maximum for?",
+      "options": {
+        "a": "²H",
+        "b": "⁴He",
+        "c": "⁵⁶Fe",
+        "d": "²³⁸U"
+      },
+      "correct_option": "c",
+      "explanation": "Binding energy per nucleon peaks at iron (A ≈ 56), meaning ⁵⁶Fe is most stable. Correct: (c)."
+    },
+    {
+      "id": 35,
+      "question": "A block of mass $m$ attached to spring ($k$) lies on rough surface (coefficient $\\mu_k$). Pulled to $x=+A$ and released. After one full oscillation, what is new amplitude?",
+      "options": {
+        "a": "$A'\\approx A-\\tfrac{4\\mu_kmg}{k}$",
+        "b": "$A'\\approx A-\\tfrac{2\\mu_kmg}{k}$",
+        "c": "$A'\\approx A-\\tfrac{\\mu_kmg}{k}$",
+        "d": "$A'\\approx A e^{-2\\pi\\mu_kmg/(kA)}$"
+      },
+      "correct_option": "a",
+      "explanation": "Work done against friction over one full oscillation: $W = 4 \\mu_k m g A$.\nEnergy balance: $\\tfrac12 k A'^2 = \\tfrac12 k A^2 - 4 \\mu_k m g A \\Rightarrow A' \\approx A - 4 \\mu_k m g / k$."
+    },
+    {
+      "id": 36,
+      "question": "A capacitor ($A,d$) connected to battery $V$. A conductor slab of thickness $d/2$ is inserted centrally, leaving two gaps $d/4$. Compare new $C,U$ with $C_0=\\varepsilon_0A/d, U_0=\\tfrac12C_0V^2$.",
+      "options": {
+        "a": "$C=2C_0, U=2U_0$",
+        "b": "$C=2C_0, U=U_0$",
+        "c": "$C=2C_0, U=2U_0$ (isolated), $U=U_0$ (with battery)",
+        "d": "$C=2C_0, U=U_0/2$"
+      },
+      "correct_option": "a",
+      "explanation": "With central conductor, effective distance between plates: $d/2$. Capacitance: $C = \\varepsilon_0 A / (d/2) = 2 C_0$. Energy at constant voltage: $U = \\tfrac12 C V^2 = 2 U_0$."
+    },
+    {
+      "id": 37,
+      "question": "Light $\\lambda=600$ nm incident normally on film ($n=1.5$). For constructive reflection, what is minimum nonzero $t$?",
+      "options": {
+        "a": "100 nm",
+        "b": "200 nm",
+        "c": "300 nm",
+        "d": "400 nm"
+      },
+      "correct_option": "a",
+      "explanation": "For constructive reflection with one $pi$ phase shift: $2 n t = (m + 1/2) \\lambda$.\nMinimum $t$ for $m=0$: $t = \\lambda/(4 n) = 600/(4 \\cdot 1.5) = 100$ nm."
+    },
+    {
+      "id": 38,
+      "question": "In amplitude modulation, the modulation index is 0.5. If the carrier wave amplitude is 4 V, the maximum and minimum amplitudes of the modulated wave are:",
+      "options": {
+        "a": "6 V and 2 V",
+        "b": "5 V and 3 V",
+        "c": "4 V and 2 V",
+        "d": "8 V and 0 V"
+      },
+      "correct_option": "a",
+      "explanation": "Modulation index $m = A_m / A_c = 0.5 \\Rightarrow A_m = 0.5 A_c = 2$ V.\nMaximum amplitude: $A_{max} = A_c + A_m = 6$ V\nMinimum amplitude: $A_{min} = A_c - A_m = 2$ V."
+    },
+    {
+      "id": 39,
+      "question": "Half-life of a radioactive sample is 5 hours. In 15 hours, what fraction remains undecayed?",
+      "options": {
+        "a": "1/2",
+        "b": "1/4",
+        "c": "1/8",
+        "d": "1/16"
+      },
+      "correct_option": "c",
+      "explanation": "Fraction remaining: $N/N_0 = (1/2)^{t/T_{1/2}} = (1/2)^{15/5} = (1/2)^3 = 1/8$."
+    },
+    {
+      "id": 40,
+      "question": "A long solenoid (n turns/length) carries current $I$. A small coil of $N$ turns, area $A$, lies coaxially inside. Current changes at rate $dI/dt$. Find induced emf.",
+      "options": {
+        "a": "$\\varepsilon=\\mu_0 n A \\, dI/dt$",
+        "b": "$\\varepsilon=N \\mu_0 n A \\, dI/dt$",
+        "c": "$\\varepsilon=N \\mu_0 n^2 A \\, dI/dt$",
+        "d": "$\\varepsilon=N \\mu_0 n A^2 \\, dI/dt$"
+      },
+      "correct_option": "b",
+      "explanation": "Magnetic field in solenoid: $B = \\mu_0 n I$. Flux per turn: $\\Phi = B A$. Total flux for $N$ turns: $N\\Phi = N \\mu_0 n A I$. Induced emf: $\\varepsilon = d(N\\Phi)/dt = N \\mu_0 n A \\, dI/dt$."
+    },
+    {
+      "id": 41,
+      "question": "In a common-emitter transistor amplifier, the input resistance is $1\\,\\text{k}\\Omega$ and the collector load is $10\\,\\text{k}\\Omega$. If the current gain $\\beta\\approx100$ (assume a simple proportional model so $v_{out}\\approx \\beta\\, (R_C/R_{in})\\, v_{in}$), what is the approximate voltage gain?",
+      "options": {
+        "a": "$A_v\\approx10$",
+        "b": "$A_v\\approx100$",
+        "c": "$A_v\\approx500$",
+        "d": "$A_v\\approx1000$"
+      },
+      "correct_option": "d",
+      "explanation": "Voltage gain using proportional model: $A_v \\approx \\beta (R_C / R_{in}) = 100 \\times (10\\,\\text{k}\\Omega / 1\\,\\text{k}\\Omega) = 1000$. This is an approximate exam-style estimate."
+    },
+    {
+      "id": 42,
+      "question": "In a nuclear reaction $X + \\alpha \\to Y + p$, the Q-value is $+2.0\\,\\text{MeV}$. If the $\\alpha$-particle has kinetic energy $3.0\\,\\text{MeV}$ and the target $X$ is at rest, neglecting recoil of $Y$ compared to $p$, what is the approximate kinetic energy of the emitted proton?",
+      "options": {
+        "a": "1.0 MeV",
+        "b": "2.0 MeV",
+        "c": "3.0 MeV",
+        "d": "5.0 MeV"
+      },
+      "correct_option": "d",
+      "explanation": "Total available energy = KE of incoming particle + Q-value = 3.0 + 2.0 = 5.0 MeV. Neglecting heavy recoil, proton takes almost all kinetic energy ≈ 5.0 MeV."
+    },
+    {
+      "id": 43,
+      "question": "A $1.0$ m long uniform rod of mass $2.0$ kg is hinged at one end and held horizontally. It is released from rest. Find the instantaneous power delivered by gravity when the rod makes $60^\\circ$ with the horizontal.",
+      "options": {
+        "a": "12 W",
+        "b": "18 W",
+        "c": "25 W",
+        "d": "30 W"
+      },
+      "correct_option": "c",
+      "explanation": "Moment of inertia about hinge: $I = \\frac{1}{3} m \\ell^2 = \\frac{1}{3} \\cdot 2 \\cdot 1^2 = 2/3$ kg·m².\nPotential energy lost from horizontal: $\\Delta U = mg (\\ell/2)(1 - \\cos 60^\\circ) = 2 \\cdot 10 \\cdot 0.5 (1 - 0.5) = 5$ J.\nAngular speed: $\\frac12 I \\omega^2 = \\Delta U \\Rightarrow \\omega = \\sqrt{2\\Delta U / I} = \\sqrt{10/ (2/3)} = 3.87$ rad/s.\nTorque due to gravity: $\\tau = mg (\\ell/2) \\cos 60^\\circ = 2 \\cdot 10 \\cdot 0.5 \\cdot 0.5 = 5$ N·m.\nInstantaneous power: $P = \\tau \\omega = 5 \\cdot 5.0 \\approx 25$ W."
+    },
+    {
+      "id": 44,
+      "question": "If three quantities $A, B,$ and $C$ are measured with percentage errors of 4%, 1%, and 2% respectively, then the maximum percentage error in the quantity $Q = A^2 B^{1/2} / C^3$ is:",
+      "options": {
+        "a": "13%",
+        "b": "12%",
+        "c": "14%",
+        "d": "11%"
+      },
+      "correct_option": "c",
+      "explanation": "For $Q = A^2 B^{1/2} / C^3$, maximum relative error: $\\Delta Q/Q = 2(\\Delta A/A) + 0.5(\\Delta B/B) + 3(\\Delta C/C) = 2(4) + 0.5(1) + 3(2) = 8 + 0.5 + 6 = 14.5\\% \\approx 14\\%$."
+    },
+    {
+      "id": 45,
+      "question": "An electromagnetic wave is propagating along the x-axis. If the electric field vector is along the y-axis, then the magnetic field vector will be along:",
+      "options": {
+        "a": "x-axis",
+        "b": "y-axis",
+        "c": "z-axis",
+        "d": "negative y-axis"
+      },
+      "correct_option": "c",
+      "explanation": "In an electromagnetic wave, $\\vec{E}$, $\\vec{B}$, and the direction of propagation are mutually perpendicular. With propagation along x-axis and $\\vec{E}$ along y-axis, $\\vec{B}$ must be along z-axis to satisfy the right-hand rule."
+    }
+  ]
+}

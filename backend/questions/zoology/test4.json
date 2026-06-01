@@ -1,0 +1,546 @@
+{
+  "test_number": 4,
+  "subject": "Zoology",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Assertion (A): The cardiac output increases during exercise. Reason (R): Exercise increases venous return, stroke volume, and heart rate.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Cardiac output is the product of stroke volume and heart rate. During exercise, increased venous return and sympathetic stimulation increase both, so R correctly explains A."
+    },
+    {
+      "id": 2,
+      "question": "Which enzyme unzips the DNA helix during replication?",
+      "options": {
+        "a": "DNA polymerase",
+        "b": "Helicase",
+        "c": "Topoisomerase",
+        "d": "Ligase"
+      },
+      "correct_option": "b",
+      "explanation": "DNA helicase breaks hydrogen bonds between the strands to unwind the double helix at the replication fork."
+    },
+    {
+      "id": 3,
+      "question": "Assertion (A): Haemophilia is more common in males. Reason (R): The defective gene is located on the Y chromosome.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "Haemophilia is an X-linked recessive disorder. Males (XY) express the disease if X carries the defect. It is not on Y chromosome. Hence A is true, R is false."
+    },
+    {
+      "id": 4,
+      "question": "Which of the following statements about synaptic transmission are correct? \n1. Calcium influx into presynaptic terminal triggers neurotransmitter release. \n2. Transmission is unidirectional. \n3. Neurotransmitters bind to receptors on postsynaptic membrane. \n4. Neurotransmitters are stored in postsynaptic vesicles.",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "2 and 4 only",
+        "c": "1 and 4 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Synaptic transmission is chemical and unidirectional. Calcium triggers vesicle fusion and neurotransmitter release. They bind to receptors on postsynaptic membrane. Storage is in presynaptic vesicles, not postsynaptic."
+    },
+    {
+      "id": 5,
+      "question": "Assertion (A): Oxytocin secretion is essential for parturition. Reason (R): It causes relaxation of uterine muscles.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "Oxytocin is essential for parturition, but it stimulates strong contraction of uterine muscles, not relaxation. Hence A is true, R is false."
+    },
+    {
+      "id": 6,
+      "question": "Which of the following statements about human kidney are correct? \n1. Loop of Henle plays role in concentration of urine. \n2. Glomerular filtration is non-selective. \n3. ADH increases water reabsorption in collecting ducts. \n4. Bowman’s capsule actively reabsorbs glucose.",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "2 and 4 only",
+        "c": "1 and 4 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Loop of Henle concentrates urine, filtration is non-selective (except proteins and cells), ADH increases water reabsorption. Bowman’s capsule only filters, reabsorption occurs in PCT. So 1, 2, 3 are correct."
+    },
+    {
+      "id": 7,
+      "question": "Assertion (A): Sickle-cell anemia provides resistance to malaria. Reason (R): Plasmodium cannot survive well in sickle-shaped RBCs.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Sickle-cell mutation reduces malaria infection because Plasmodium cannot complete its life cycle in sickle-shaped RBCs. Hence A and R are true, and R explains A."
+    },
+    {
+      "id": 8,
+      "question": "In which stage of meiosis I does homologous chromosome separation occur?",
+      "options": {
+        "a": "Prophase I",
+        "b": "Metaphase I",
+        "c": "Anaphase I",
+        "d": "Telophase I"
+      },
+      "correct_option": "c",
+      "explanation": "During anaphase I of meiosis, homologous chromosomes (not sister chromatids) are pulled to opposite poles, reducing chromosome number by half."
+    },
+    {
+      "id": 9,
+      "question": "Assertion (A): Action potential in neurons is an all-or-none phenomenon. Reason (R): Stronger stimuli produce higher amplitude of action potentials.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "Action potentials are all-or-none: once threshold is reached, amplitude is constant. Stronger stimuli increase frequency, not amplitude. So A is true, R is false."
+    },
+    {
+      "id": 10,
+      "question": "Which statements about hormones are correct? \n1. Steroid hormones are lipid-soluble and act via intracellular receptors. \n2. Peptide hormones act via secondary messengers. \n3. Hormones are always proteins. \n4. Thyroxine regulates basal metabolic rate.",
+      "options": {
+        "a": "1, 2 and 4 only",
+        "b": "2 and 3 only",
+        "c": "1 and 3 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Steroid hormones (lipids) act inside cells, peptide hormones use cAMP/secondary messengers, thyroxine regulates metabolism. Hormones are not always proteins (steroids exist)."
+    },
+    {
+      "id": 11,
+      "question": "Assertion (A): Blood pressure in veins is lower than arteries. Reason (R): Veins have thicker muscular walls than arteries.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "Veins have lower pressure than arteries due to distance from the pumping heart, but they have thinner walls, not thicker. So A is true, R is false."
+    },
+    {
+      "id": 12,
+      "question": "Which of the following statements about the human brain are correct? \n1. Cerebrum controls intelligence and voluntary actions. \n2. Cerebellum controls balance and posture. \n3. Medulla regulates heartbeat and breathing. \n4. Hypothalamus secretes digestive enzymes.",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "2 and 4 only",
+        "c": "1 and 4 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Cerebrum controls voluntary functions, cerebellum balance, medulla autonomic functions. Hypothalamus regulates hormones but does not secrete digestive enzymes."
+    },
+    {
+      "id": 13,
+      "question": "Assertion (A): Lymph transports absorbed fats from intestine. Reason (R): Fats are absorbed into blood capillaries of villi.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "Lymph carries absorbed fats as chylomicrons from intestinal lacteals. Fats do not enter blood capillaries directly. Hence A is true, R is false."
+    },
+    {
+      "id": 14,
+      "question": "Which of the following are exocrine secretions? \n1. Saliva \n2. Sweat \n3. Milk \n4. Insulin",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "2 and 4 only",
+        "c": "1 and 4 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Saliva, sweat, and milk are exocrine secretions via ducts. Insulin is an endocrine secretion (ductless, into blood)."
+    },
+    {
+      "id": 15,
+      "question": "Assertion (A): Myelin sheath increases speed of nerve impulse. Reason (R): It allows saltatory conduction from one node of Ranvier to the next.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "The myelin sheath insulates axons, forcing impulses to jump between nodes of Ranvier (saltatory conduction), greatly increasing conduction velocity. Hence both A and R are true, and R explains A."
+    },
+    {
+      "id": 16,
+      "question": "Which of the following statements about antibodies is correct? \n1. They are secreted by plasma cells. \n2. They are proteins of the immunoglobulin family. \n3. They neutralize toxins and pathogens. \n4. They are hormones secreted by endocrine glands.",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "2 and 4 only",
+        "c": "1 and 4 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Antibodies are glycoproteins secreted by plasma cells derived from B-lymphocytes. They neutralize pathogens and belong to immunoglobulin family. They are not hormones of endocrine glands."
+    },
+    {
+      "id": 17,
+      "question": "Assertion (A): Bile salts are essential for digestion of fats. Reason (R): They break down triglycerides into fatty acids and glycerol directly.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "Bile salts emulsify fats into smaller droplets, increasing surface area for lipase action. They do not directly hydrolyze triglycerides; lipase does that. So A is true but R is false."
+    },
+    {
+      "id": 18,
+      "question": "Which of the following are functions of the placenta? \n1. Exchange of gases \n2. Transfer of nutrients \n3. Removal of wastes \n4. Secretion of progesterone and hCG",
+      "options": {
+        "a": "1 and 2 only",
+        "b": "2 and 3 only",
+        "c": "1, 2 and 3 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "d",
+      "explanation": "The placenta allows gas exchange, nutrient supply, waste removal, and secretes hormones like hCG, progesterone, and estrogen to maintain pregnancy."
+    },
+    {
+      "id": 19,
+      "question": "Assertion (A): The genetic code is universal. Reason (R): In all organisms, a codon codes for the same amino acid.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "The genetic code is nearly universal (same codons specify the same amino acids across organisms, with very rare exceptions). Thus, both A and R are true, and R explains A."
+    },
+    {
+      "id": 20,
+      "question": "Which statements about erythroblastosis foetalis are correct? \n1. It occurs when an Rh– mother carries an Rh+ foetus. \n2. Mother’s anti-Rh antibodies cross placenta. \n3. It occurs in the first pregnancy itself. \n4. It can be prevented by anti-Rh antibody injection to mother after delivery.",
+      "options": {
+        "a": "1, 2 and 4 only",
+        "b": "2 and 3 only",
+        "c": "1 and 3 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Erythroblastosis foetalis usually affects the second Rh+ child, as antibodies develop after first delivery. It occurs when an Rh– mother carries an Rh+ foetus. It is prevented by anti-Rh (RhoGAM) injection to mother."
+    },
+    {
+      "id": 21,
+      "question": "Assertion (A): Systolic pressure is higher than diastolic pressure. Reason (R): Systolic pressure occurs during relaxation of ventricles.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "Systolic pressure is higher because it occurs during ventricular contraction, not relaxation. Diastolic pressure is lower and occurs during relaxation."
+    },
+    {
+      "id": 22,
+      "question": "Which of the following statements about evolution are correct? \n1. Natural selection leads to differential survival. \n2. Mutations introduce new variations. \n3. Genetic drift is significant in large populations. \n4. Gene flow refers to movement of alleles between populations.",
+      "options": {
+        "a": "1, 2 and 4 only",
+        "b": "1 and 3 only",
+        "c": "2, 3 and 4 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Natural selection ensures survival of fittest, mutations introduce variation, and gene flow is movement of alleles between populations. Genetic drift is significant in small populations, not large."
+    },
+    {
+      "id": 23,
+      "question": "Assertion (A): Testosterone is secreted by Leydig cells. Reason (R): Sertoli cells support spermatogenesis and secrete inhibin.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "b",
+      "explanation": "Leydig cells secrete testosterone, Sertoli cells nourish spermatogenic cells and secrete inhibin. Both A and R are true, but R does not explain A."
+    },
+    {
+      "id": 24,
+      "question": "Which of the following are characteristics of synapsis in meiosis? \n1. Pairing of homologous chromosomes \n2. Formation of synaptonemal complex \n3. Occurs during zygotene \n4. Crossing over occurs here",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "2 and 4 only",
+        "c": "1, 3 and 4 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Synapsis is pairing of homologues during zygotene, with synaptonemal complex formation. Crossing over occurs later during pachytene, not synapsis itself."
+    },
+    {
+      "id": 25,
+      "question": "Assertion (A): Genetic drift causes random changes in allele frequencies. Reason (R): It always increases population fitness.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "Genetic drift causes random allele frequency changes, often in small populations. It may reduce or increase fitness, but not always beneficial. Hence A is true, R is false."
+    },
+    {
+      "id": 26,
+      "question": "Which statements about cartilage are correct? \n1. It is avascular connective tissue. \n2. Hyaline cartilage is found in trachea. \n3. Fibrocartilage is strongest type. \n4. It forms shaft of long bones.",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "2 and 4 only",
+        "c": "1 and 4 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Cartilage is avascular, hyaline cartilage in trachea, fibrocartilage is strongest (intervertebral discs). Shaft of long bones is bony, not cartilaginous."
+    },
+    {
+      "id": 27,
+      "question": "Assertion (A): Crossing over ensures genetic variation. Reason (R): It occurs between non-sister chromatids during pachytene of meiosis I.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Crossing over between non-sister chromatids at pachytene generates new gene combinations, increasing variation. Hence both A and R are true, and R explains A."
+    },
+    {
+      "id": 28,
+      "question": "Which of the following are functions of cerebrospinal fluid (CSF)? \n1. Provides buoyancy to brain \n2. Removes metabolic waste \n3. Supplies nutrients \n4. Transmits nerve impulses",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "2 and 4 only",
+        "c": "1 and 4 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "CSF cushions brain, provides buoyancy, removes waste, and supplies nutrients. It does not transmit impulses (done by neurons)."
+    },
+    {
+      "id": 29,
+      "question": "Assertion (A): All vertebrates possess a dorsal hollow nerve cord. Reason (R): It differentiates into brain and spinal cord in all vertebrates.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "All chordates (including vertebrates) have dorsal hollow nerve cord. In vertebrates, it differentiates into CNS (brain and spinal cord). Hence A and R are true, and R explains A."
+    },
+    {
+      "id": 30,
+      "question": "Which statements about spermatogenesis are correct? \n1. It starts at puberty in males. \n2. Primary spermatocyte undergoes meiosis I to form secondary spermatocytes. \n3. Secondary spermatocytes undergo meiosis II to form spermatids. \n4. Spermiogenesis converts spermatids into spermatozoa.",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "2 and 4 only",
+        "c": "1, 2, 3 and 4",
+        "d": "1 and 3 only"
+      },
+      "correct_option": "c",
+      "explanation": "Spermatogenesis begins at puberty. Primary spermatocytes (diploid) undergo meiosis I → secondary spermatocytes (haploid) → meiosis II → spermatids → spermiogenesis → spermatozoa. All 4 statements are correct."
+    },
+    {
+      "id": 31,
+      "question": "Assertion (A): The SA node is called the pacemaker of the heart. Reason (R): It generates impulses that initiate heartbeat.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "The sinoatrial (SA) node initiates electrical impulses that regulate heart rhythm, hence it is called the pacemaker. Both A and R are true and R explains A."
+    },
+    {
+      "id": 32,
+      "question": "Which of the following statements about genetic code are correct? \n1. It is triplet. \n2. It is degenerate. \n3. It is overlapping. \n4. It is nearly universal.",
+      "options": {
+        "a": "1, 2 and 4 only",
+        "b": "1 and 3 only",
+        "c": "2 and 3 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "The genetic code is triplet (three bases = one codon), degenerate (multiple codons for one amino acid), and nearly universal. It is non-overlapping (codons are read separately)."
+    },
+    {
+      "id": 33,
+      "question": "Assertion (A): The medulla oblongata controls respiration and heartbeat. Reason (R): It is part of the hindbrain that regulates involuntary activities.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "The medulla oblongata controls vital involuntary functions like heartbeat, breathing, swallowing. It is a part of hindbrain. So both A and R are true, and R explains A."
+    },
+    {
+      "id": 34,
+      "question": "Which statements about evolution are correct? \n1. Lamarck proposed theory of inheritance of acquired characters. \n2. Darwin proposed natural selection. \n3. Hugo de Vries proposed mutation theory. \n4. Mendel proposed pangenesis theory.",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "2 and 4 only",
+        "c": "1 and 3 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Lamarck → inheritance of acquired traits; Darwin → natural selection; Hugo de Vries → mutation theory. Mendel proposed laws of inheritance, not pangenesis."
+    },
+    {
+      "id": 35,
+      "question": "Assertion (A): In humans, the pulmonary vein carries oxygenated blood. Reason (R): All veins carry oxygenated blood.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "The pulmonary vein carries oxygenated blood from lungs to left atrium, but not all veins do so. Most veins carry deoxygenated blood. Hence A is true, R is false."
+    },
+    {
+      "id": 36,
+      "question": "Which of the following are functions of the large intestine? \n1. Absorption of water \n2. Absorption of vitamins (like K) \n3. Absorption of glucose \n4. Storage of undigested food",
+      "options": {
+        "a": "1, 2 and 4 only",
+        "b": "1 and 3 only",
+        "c": "2, 3 and 4 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "The large intestine absorbs water, minerals, vitamins (like K), and stores undigested food (feces). Glucose is absorbed in small intestine, not large intestine."
+    },
+    {
+      "id": 37,
+      "question": "Assertion (A): The right ventricle pumps blood to the lungs. Reason (R): The pulmonary artery carries deoxygenated blood.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "The right ventricle pumps deoxygenated blood into the pulmonary artery, which carries it to lungs for oxygenation. Both statements are true and related."
+    },
+    {
+      "id": 38,
+      "question": "Which hormone stimulates the 'fight or flight' response?",
+      "options": {
+        "a": "Cortisol",
+        "b": "Adrenaline",
+        "c": "Insulin",
+        "d": "Thyroxine"
+      },
+      "correct_option": "b",
+      "explanation": "Adrenaline (epinephrine), secreted by adrenal medulla, prepares the body for fight-or-flight response by increasing heart rate, blood glucose, and redirecting blood to muscles."
+    },
+    {
+      "id": 39,
+      "question": "Assertion (A): Alveoli are thin-walled and richly supplied with blood capillaries. Reason (R): This helps in efficient gaseous exchange.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Alveoli’s thin walls and rich vascular supply reduce diffusion distance and increase efficiency of gas exchange. Both A and R are true, and R explains A."
+    },
+    {
+      "id": 40,
+      "question": "Which of the following is a unique feature of reptiles compared to amphibians?",
+      "options": {
+        "a": "Three-chambered heart",
+        "b": "Cold-blooded nature",
+        "c": "Presence of amniotic egg",
+        "d": "Cutaneous respiration"
+      },
+      "correct_option": "c",
+      "explanation": "Reptiles are the first vertebrates to lay cleidoic (amniotic) eggs with protective membranes, unlike amphibians."
+    },
+    {
+      "id": 41,
+      "question": "Assertion (A): Lymph is similar to plasma but lacks RBCs and some proteins. Reason (R): Lymph transports oxygen to tissues.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "Lymph is plasma-like but lacks RBCs and has fewer proteins. It transports fats and immune cells, not oxygen. Hence A is true, R is false."
+    },
+    {
+      "id": 42,
+      "question": "Which statements about fertilization in humans are correct? \n1. It occurs in ampullary–isthmic junction. \n2. It involves acrosome reaction. \n3. It restores diploid chromosome number. \n4. It always occurs in the uterus.",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "1 and 4 only",
+        "c": "2 and 3 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Fertilization usually occurs in ampullary–isthmic junction of fallopian tube, requires acrosome reaction, and restores diploid state. It does not occur in uterus."
+    },
+    {
+      "id": 43,
+      "question": "Assertion (A): Mature RBCs in humans lack mitochondria. Reason (R): They rely on anaerobic respiration for energy.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Mature RBCs lack mitochondria to maximize hemoglobin content and avoid consuming oxygen. They rely on anaerobic glycolysis for ATP. Hence both A and R are true and related."
+    },
+    {
+      "id": 44,
+      "question": "Which of the following are features of chordates? \n1. Notochord \n2. Dorsal hollow nerve cord \n3. Pharyngeal gill slits \n4. Post-anal tail",
+      "options": {
+        "a": "1, 2 and 3 only",
+        "b": "2 and 4 only",
+        "c": "1, 2, 3 and 4",
+        "d": "1 and 3 only"
+      },
+      "correct_option": "c",
+      "explanation": "Chordates are defined by presence of notochord, dorsal hollow nerve cord, pharyngeal gill slits, and post-anal tail at some stage of development."
+    },
+    {
+      "id": 45,
+      "question": "Assertion (A): Progesterone maintains pregnancy. Reason (R): It prevents uterine contractions and supports endometrium.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Progesterone maintains endometrial lining and inhibits uterine contractions, ensuring pregnancy maintenance. Hence both A and R are true and R explains A."
+    }
+  ]
+}

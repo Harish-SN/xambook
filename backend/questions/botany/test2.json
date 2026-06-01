@@ -1,0 +1,546 @@
+{
+  "test_number": 2,
+  "subject": "Botany",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which enzyme is responsible for unwinding DNA during replication?",
+      "options": {
+        "a": "DNA ligase",
+        "b": "DNA helicase",
+        "c": "DNA polymerase I",
+        "d": "Topoisomerase"
+      },
+      "correct_option": "b",
+      "explanation": "DNA helicase separates the two DNA strands by breaking hydrogen bonds, creating a replication fork. DNA polymerase synthesizes new strands, ligase seals nicks, and topoisomerase relieves supercoiling."
+    },
+    {
+      "id": 2,
+      "question": "If the guard cells of a stoma are surrounded by subsidiary cells arranged parallel to guard cells, the stoma is:",
+      "options": {
+        "a": "Anomocytic",
+        "b": "Diacytic",
+        "c": "Paracytic",
+        "d": "Actinocytic"
+      },
+      "correct_option": "c",
+      "explanation": "In paracytic stomata, the guard cells are accompanied by two subsidiary cells arranged parallel to their long axis. Diacytic stomata have subsidiary cells at right angles, anomocytic stomata lack definite subsidiary cells, and actinocytic stomata have subsidiary cells forming a ring."
+    },
+    {
+      "id": 3,
+      "question": "In which stage of meiosis does crossing over occur?",
+      "options": {
+        "a": "Leptotene",
+        "b": "Zygotene",
+        "c": "Pachytene",
+        "d": "Diplotene"
+      },
+      "correct_option": "c",
+      "explanation": "Crossing over, the exchange of genetic material between homologous chromosomes, occurs during the pachytene stage of prophase I of meiosis. Leptotene involves chromosome condensation, zygotene is pairing (synapsis), pachytene is crossing over, and diplotene is when chiasmata become visible."
+    },
+    {
+      "id": 4,
+      "question": "Which law of Mendel is also called the ‘Law of Purity of Gametes’?",
+      "options": {
+        "a": "Law of Dominance",
+        "b": "Law of Segregation",
+        "c": "Law of Independent Assortment",
+        "d": "Law of Blending"
+      },
+      "correct_option": "b",
+      "explanation": "Mendel’s Law of Segregation states that alleles separate during gamete formation, so each gamete carries only one allele of a gene. This ensures purity of gametes. Law of dominance explains dominant–recessive traits, and law of independent assortment explains independent segregation of alleles of different traits."
+    },
+    {
+      "id": 5,
+      "question": "Which of the following statements is true for cyclic photophosphorylation?",
+      "options": {
+        "a": "Both ATP and NADPH are produced",
+        "b": "Only ATP is produced",
+        "c": "Both photosystems are involved",
+        "d": "Oxygen is released"
+      },
+      "correct_option": "b",
+      "explanation": "In cyclic photophosphorylation, electrons excited from Photosystem I return to the same photosystem via the electron transport chain. This generates ATP but does not produce NADPH or oxygen, since water is not split. Non-cyclic photophosphorylation, on the other hand, involves both PS I and PS II and produces ATP, NADPH, and O2."
+    },
+    {
+      "id": 6,
+      "question": "The Casparian strip in endodermis is absent in which region of root?",
+      "options": {
+        "a": "Maturation zone",
+        "b": "Meristematic zone",
+        "c": "Elongation zone",
+        "d": "Root cap"
+      },
+      "correct_option": "b",
+      "explanation": "The Casparian strip, made of suberin, develops in the endodermis of the maturation zone where differentiation occurs. It is absent in the meristematic and elongation zones because cells there are still dividing or elongating, not yet fully differentiated."
+    },
+    {
+      "id": 7,
+      "question": "The edible part of apple is:",
+      "options": {
+        "a": "Endosperm",
+        "b": "Pericarp",
+        "c": "Thalamus",
+        "d": "Seed coat"
+      },
+      "correct_option": "c",
+      "explanation": "Apple is a false fruit, as the edible part develops from the fleshy thalamus rather than the ovary. In true fruits like mango, the pericarp forms the edible portion. Seeds and endosperm are not consumed in apple."
+    },
+    {
+      "id": 8,
+      "question": "Which element is essential for photolysis of water during photosynthesis?",
+      "options": {
+        "a": "Iron",
+        "b": "Manganese",
+        "c": "Copper",
+        "d": "Zinc"
+      },
+      "correct_option": "b",
+      "explanation": "Manganese is a key component of the oxygen-evolving complex of Photosystem II, which catalyzes photolysis of water during photosynthesis. This releases oxygen, protons, and electrons. Iron, copper, and zinc are important for other enzymatic activities but not directly in photolysis."
+    },
+    {
+      "id": 9,
+      "question": "In angiosperms, the pollen tube enters the ovule through:",
+      "options": {
+        "a": "Micropyle",
+        "b": "Chalaza",
+        "c": "Integument",
+        "d": "Hilum"
+      },
+      "correct_option": "a",
+      "explanation": "In the most common mode of fertilization (porogamy), the pollen tube enters the ovule through the micropyle and releases two male gametes. In chalazogamy, entry is via chalaza, and in mesogamy, entry is through integuments."
+    },
+    {
+      "id": 10,
+      "question": "During respiration, the number of ATP molecules formed from one glucose in glycolysis is:",
+      "options": {
+        "a": "2 (net gain)",
+        "b": "4 (net gain)",
+        "c": "6",
+        "d": "8"
+      },
+      "correct_option": "a",
+      "explanation": "In glycolysis, which occurs in the cytoplasm, glucose (6C) is broken down into two molecules of pyruvate (3C). During this process, 4 ATP molecules are produced through substrate-level phosphorylation. However, 2 ATP are consumed in the initial phosphorylation steps (hexokinase and phosphofructokinase reactions). Therefore, the net gain is 2 ATP molecules per glucose. In addition, glycolysis also produces 2 NADH molecules, which, under aerobic conditions, enter the electron transport chain to yield further ATP. Hence, the immediate net yield of glycolysis itself is 2 ATP per glucose."
+    },
+    {
+      "id": 11,
+      "question": "Which of the following is a C3 cycle intermediate?",
+      "options": {
+        "a": "Oxaloacetate",
+        "b": "Phosphoenolpyruvate",
+        "c": "3-Phosphoglycerate",
+        "d": "Malate"
+      },
+      "correct_option": "c",
+      "explanation": "The first stable product of the Calvin cycle (C3 cycle) is 3-phosphoglycerate (3-PGA), a three-carbon compound. Oxaloacetate and malate are intermediates of the C4 cycle, while phosphoenolpyruvate is the CO2 acceptor in the C4 pathway."
+    },
+    {
+      "id": 12,
+      "question": "Which of the following plants shows gametophytic generation as independent and dominant?",
+      "options": {
+        "a": "Fern",
+        "b": "Moss",
+        "c": "Cycas",
+        "d": "Wheat"
+      },
+      "correct_option": "b",
+      "explanation": "In moss (a bryophyte), the gametophyte is independent, photosynthetic, and dominant, while the sporophyte remains attached and partially dependent. In ferns (pteridophytes), gymnosperms, and angiosperms, the sporophyte is dominant."
+    },
+    {
+      "id": 13,
+      "question": "Which of the following can break seed dormancy?",
+      "options": {
+        "a": "Abscisic acid",
+        "b": "Gibberellin",
+        "c": "Ethylene",
+        "d": "Both B and C"
+      },
+      "correct_option": "d",
+      "explanation": "Seed dormancy is broken by gibberellins (stimulating enzyme production for germination) and ethylene (weakening seed coat). Abscisic acid promotes dormancy. Thus, both gibberellins and ethylene are used to induce germination in seeds with dormancy."
+    },
+    {
+      "id": 14,
+      "question": "Which plant movement is independent of growth?",
+      "options": {
+        "a": "Tropic movements",
+        "b": "Nastic movements",
+        "c": "Ephemeral growth",
+        "d": "Primary growth"
+      },
+      "correct_option": "b",
+      "explanation": "Nastic movements (e.g., folding of leaves in Mimosa pudica) are independent of the direction of stimulus and occur due to turgor changes, not growth. Tropic movements (like phototropism) involve growth. Primary growth increases length of plant organs."
+    },
+    {
+      "id": 15,
+      "question": "Which tissue is responsible for the increase in girth of dicot stems?",
+      "options": {
+        "a": "Apical meristem",
+        "b": "Intercalary meristem",
+        "c": "Vascular cambium",
+        "d": "Epidermis"
+      },
+      "correct_option": "c",
+      "explanation": "Vascular cambium, a lateral meristem, produces secondary xylem and phloem, leading to an increase in thickness of dicot stems and roots. Apical and intercalary meristems cause primary growth, while epidermis provides protection."
+    },
+    {
+      "id": 16,
+      "question": "What is the role of plasmodesmata in plant cells?",
+      "options": {
+        "a": "Active transport of solutes",
+        "b": "Intercellular communication",
+        "c": "Storage of food",
+        "d": "Cell wall synthesis"
+      },
+      "correct_option": "b",
+      "explanation": "Plasmodesmata are cytoplasmic channels connecting adjacent plant cells through the cell wall. They allow exchange of ions, small molecules, hormones, and signaling substances, facilitating coordination of activities across tissues. They do not actively transport solutes (this is membrane transport), store food (vacuoles do), or synthesize cell walls."
+    },
+    {
+      "id": 17,
+      "question": "In glycolysis, NADH is produced during the conversion of:",
+      "options": {
+        "a": "Glucose to Glucose-6-phosphate",
+        "b": "Fructose-6-phosphate to Fructose-1,6-bisphosphate",
+        "c": "Glyceraldehyde-3-phosphate to 1,3-bisphosphoglycerate",
+        "d": "Phosphoenolpyruvate to Pyruvate"
+      },
+      "correct_option": "c",
+      "explanation": "During glycolysis, NAD+ is reduced to NADH when glyceraldehyde-3-phosphate is oxidized to 1,3-bisphosphoglycerate by the enzyme glyceraldehyde-3-phosphate dehydrogenase. The other steps involve phosphorylation or substrate-level phosphorylation without NADH production."
+    },
+    {
+      "id": 18,
+      "question": "Which of the following is the pioneer species in primary succession on rocks?",
+      "options": {
+        "a": "Lichens",
+        "b": "Mosses",
+        "c": "Algae",
+        "d": "Herbs"
+      },
+      "correct_option": "a",
+      "explanation": "Lichens are the pioneer species in xerarch succession on bare rocks. They secrete acids that weather the rock, paving the way for mosses and later herbs and shrubs."
+    },
+    {
+      "id": 19,
+      "question": "Which of the following is an example of imbibition?",
+      "options": {
+        "a": "Absorption of water by root hairs",
+        "b": "Swelling of seed when placed in water",
+        "c": "Diffusion of oxygen into leaf",
+        "d": "Exchange of gases through stomata"
+      },
+      "correct_option": "b",
+      "explanation": "Imbibition is the absorption of water by hydrophilic colloids (like cell walls, starch, proteins) causing swelling. A classic example is seed swelling in water. Root hairs absorb water mainly by osmosis, diffusion refers to gas movement, and stomata regulate transpiration and gas exchange."
+    },
+    {
+      "id": 20,
+      "question": "Which of the following is an example of polyembryony?",
+      "options": {
+        "a": "Mango",
+        "b": "Onion",
+        "c": "Citrus",
+        "d": "Maize"
+      },
+      "correct_option": "c",
+      "explanation": "Polyembryony is the occurrence of more than one embryo in a seed. In Citrus and Opuntia, nucellar cells form additional embryos apart from the zygotic embryo. Mango and onion usually have single embryos. Maize undergoes double fertilization but not natural polyembryony."
+    },
+    {
+      "id": 21,
+      "question": "Which of the following is an essential amino acid for humans (cannot be synthesized in the body and must be supplied in diet)?",
+      "options": {
+        "a": "Proline",
+        "b": "Serine",
+        "c": "Lysine",
+        "d": "Glycine"
+      },
+      "correct_option": "c",
+      "explanation": "Lysine is an essential amino acid for humans, meaning it must be obtained from diet since the body cannot synthesize it. Proline, serine, and glycine are non-essential because they can be synthesized in the body."
+    },
+    {
+      "id": 22,
+      "question": "What is the genetic reason behind downy mildew resistance in maize?",
+      "options": {
+        "a": "Polygenic inheritance",
+        "b": "Complementary genes",
+        "c": "Dominant single gene",
+        "d": "Epistatic interaction"
+      },
+      "correct_option": "a",
+      "explanation": "Resistance to diseases like downy mildew in crops often involves polygenic inheritance, where multiple genes contribute small effects leading to durable resistance. Single dominant gene resistance is common in some traits but less stable. Complementary and epistatic interactions modify phenotypes but not the typical pattern seen here."
+    },
+    {
+      "id": 23,
+      "question": "Which plant is commonly used in studies of photoperiodism?",
+      "options": {
+        "a": "Oryza sativa",
+        "b": "Xanthium",
+        "c": "Zea mays",
+        "d": "Pisum sativum"
+      },
+      "correct_option": "b",
+      "explanation": "Xanthium (cocklebur) is often used as an experimental plant for photoperiodism because it is a short-day plant and highly responsive to day length. Rice is also a short-day plant, maize is day-neutral, and pea is a long-day plant, but Xanthium is the model for research."
+    },
+    {
+      "id": 24,
+      "question": "Which term refers to the requirement of low temperature exposure for flowering in some plants?",
+      "options": {
+        "a": "Photoperiodism",
+        "b": "Vernalization",
+        "c": "Apomixis",
+        "d": "Parthenocarpy"
+      },
+      "correct_option": "b",
+      "explanation": "Vernalization is the induction of flowering by a period of low temperature, seen in winter cereals and biennials. It ensures flowering occurs at a favorable season."
+    },
+    {
+      "id": 25,
+      "question": "Which secondary metabolite is correctly matched with its source?",
+      "options": {
+        "a": "Morphine – Papaver somniferum",
+        "b": "Quinine – Digitalis",
+        "c": "Caffeine – Atropa belladonna",
+        "d": "Reserpine – Cinchona"
+      },
+      "correct_option": "a",
+      "explanation": "Morphine is an alkaloid obtained from opium poppy (Papaver somniferum). Quinine is from Cinchona, caffeine from Coffea, and reserpine from Rauwolfia."
+    },
+    {
+      "id": 26,
+      "question": "In a population, if allele frequencies remain constant across generations, which principle is operating?",
+      "options": {
+        "a": "Founder effect",
+        "b": "Hardy–Weinberg equilibrium",
+        "c": "Genetic drift",
+        "d": "Natural selection"
+      },
+      "correct_option": "b",
+      "explanation": "The Hardy–Weinberg principle states that allele frequencies remain constant in a large, random-mating population with no mutation, migration, or selection. It serves as a baseline to detect evolutionary forces."
+    },
+    {
+      "id": 27,
+      "question": "Which structure in the ovule produces the female gametophyte?",
+      "options": {
+        "a": "Nucellus",
+        "b": "Funiculus",
+        "c": "Integument",
+        "d": "Micropyle"
+      },
+      "correct_option": "a",
+      "explanation": "The nucellus is the nutritive tissue of the ovule, and the megaspore mother cell within it undergoes meiosis to produce megaspores, one of which develops into the female gametophyte (embryo sac). Funiculus attaches the ovule, integument forms seed coat, and micropyle is the entry point for pollen tube."
+    },
+    {
+      "id": 28,
+      "question": "The energy currency of living systems is:",
+      "options": {
+        "a": "Glucose",
+        "b": "ATP",
+        "c": "NADPH",
+        "d": "GTP"
+      },
+      "correct_option": "b",
+      "explanation": "ATP (adenosine triphosphate) is the universal energy currency of the cell, used to drive biochemical reactions. Glucose is a stored form of energy, NADPH acts as a reducing power in biosynthetic reactions, and GTP is also an energy molecule but not as universal as ATP."
+    },
+    {
+      "id": 29,
+      "question": "Double fertilization is unique to which group of plants?",
+      "options": {
+        "a": "Bryophytes",
+        "b": "Gymnosperms",
+        "c": "Angiosperms",
+        "d": "Pteridophytes"
+      },
+      "correct_option": "c",
+      "explanation": "Double fertilization, involving syngamy and triple fusion, is unique to angiosperms."
+    },
+    {
+      "id": 30,
+      "question": "In which phase of mitosis do chromosomes align at the equatorial plane?",
+      "options": {
+        "a": "Prophase",
+        "b": "Metaphase",
+        "c": "Anaphase",
+        "d": "Telophase"
+      },
+      "correct_option": "b",
+      "explanation": "During metaphase, spindle fibers arrange the chromosomes along the equatorial plate, ensuring accurate separation in the next phase. Prophase involves condensation, anaphase involves chromatid separation, and telophase involves decondensation and nuclear reformation."
+    },
+    {
+      "id": 31,
+      "question": "Which photosynthetic pigment acts as a reaction center in Photosystem II?",
+      "options": {
+        "a": "P680",
+        "b": "P700",
+        "c": "Chlorophyll b",
+        "d": "Carotenoids"
+      },
+      "correct_option": "a",
+      "explanation": "Photosystem II has a special chlorophyll a molecule called P680, which absorbs light of wavelength 680 nm and initiates electron transport. Photosystem I has P700 as its reaction center. Chlorophyll b and carotenoids act as accessory pigments, broadening the absorption spectrum."
+    },
+    {
+      "id": 32,
+      "question": "Which plant hormone is used for inducing flowering in pineapple?",
+      "options": {
+        "a": "Auxin",
+        "b": "Gibberellin",
+        "c": "Cytokinin",
+        "d": "Ethylene"
+      },
+      "correct_option": "d",
+      "explanation": "Ethylene is used commercially to induce flowering in pineapple (a multiple fruit). Auxins regulate cell elongation, gibberellins stimulate stem elongation and seed germination, and cytokinins promote cell division but are not typically used for flowering induction in pineapple."
+    },
+    {
+      "id": 33,
+      "question": "The cork cambium is also called:",
+      "options": {
+        "a": "Phellogen",
+        "b": "Phellem",
+        "c": "Periderm",
+        "d": "Phelloderm"
+      },
+      "correct_option": "a",
+      "explanation": "Cork cambium (phellogen) is a secondary meristem that forms cork (phellem) towards the outside and secondary cortex (phelloderm) towards the inside. The combination of phellem, phellogen, and phelloderm is called periderm, which replaces the epidermis in older stems."
+    },
+    {
+      "id": 34,
+      "question": "Which of the following best describes the endosperm of coconut?",
+      "options": {
+        "a": "Nuclear type",
+        "b": "Cellular type",
+        "c": "Helobial type",
+        "d": "Free nuclear at one end, cellular at other"
+      },
+      "correct_option": "a",
+      "explanation": "Coconut endosperm is nuclear type. The free nuclear liquid endosperm forms coconut water, while the cellular part forms the edible white kernel. Cellular endosperm occurs when cytokinesis follows every division, and helobial is intermediate between nuclear and cellular."
+    },
+    {
+      "id": 35,
+      "question": "Which of the following processes is common to both aerobic and anaerobic respiration?",
+      "options": {
+        "a": "Krebs cycle",
+        "b": "Electron transport chain",
+        "c": "Glycolysis",
+        "d": "Oxidative phosphorylation"
+      },
+      "correct_option": "c",
+      "explanation": "Glycolysis occurs in the cytoplasm and is common to both aerobic and anaerobic respiration. It breaks glucose into pyruvate, yielding 2 ATP. Krebs cycle, electron transport chain, and oxidative phosphorylation require oxygen and mitochondria."
+    },
+    {
+      "id": 36,
+      "question": "A homozygous tall pea plant is crossed with a dwarf pea plant. The F1 generation will have:",
+      "options": {
+        "a": "All tall plants",
+        "b": "All dwarf plants",
+        "c": "3 tall : 1 dwarf",
+        "d": "1 tall : 1 dwarf"
+      },
+      "correct_option": "a",
+      "explanation": "According to Mendel’s law of dominance, when a homozygous tall (TT) plant is crossed with a dwarf (tt), the F1 progeny are all heterozygous (Tt) but phenotypically tall, as tallness is dominant over dwarfness."
+    },
+    {
+      "id": 37,
+      "question": "Which of the following is an example of a long-day plant?",
+      "options": {
+        "a": "Xanthium",
+        "b": "Rice",
+        "c": "Spinach",
+        "d": "Tobacco"
+      },
+      "correct_option": "c",
+      "explanation": "Spinach is a long-day plant, requiring day length longer than a critical period to flower. Xanthium and rice are short-day plants, while tobacco is day-neutral."
+    },
+    {
+      "id": 38,
+      "question": "Which of the following ions is essential for the synthesis of chlorophyll?",
+      "options": {
+        "a": "Magnesium",
+        "b": "Calcium",
+        "c": "Iron",
+        "d": "Potassium"
+      },
+      "correct_option": "a",
+      "explanation": "Magnesium is present at the center of the porphyrin ring of chlorophyll and is essential for capturing light energy. Calcium is important for cell wall stabilization, iron for electron transport in respiration and photosynthesis, and potassium for osmoregulation."
+    },
+    {
+      "id": 39,
+      "question": "The Casparian strip is found in which tissue?",
+      "options": {
+        "a": "Endodermis",
+        "b": "Pericycle",
+        "c": "Cortex",
+        "d": "Phloem"
+      },
+      "correct_option": "a",
+      "explanation": "Casparian strips are bands of suberin in the endodermal cell walls that block apoplastic transport of water and solutes."
+    },
+    {
+      "id": 40,
+      "question": "The major photosynthetic product transported through phloem is:",
+      "options": {
+        "a": "Starch",
+        "b": "Sucrose",
+        "c": "Glucose",
+        "d": "Fructose"
+      },
+      "correct_option": "b",
+      "explanation": "Sucrose is the main form in which carbohydrates are translocated through phloem because it is stable and soluble. Glucose and fructose are reactive and converted into sucrose for transport. Starch is insoluble and stored locally in plastids."
+    },
+    {
+      "id": 41,
+      "question": "Which plant tissue provides flexibility to young stems?",
+      "options": {
+        "a": "Sclerenchyma",
+        "b": "Collenchyma",
+        "c": "Parenchyma",
+        "d": "Xylem"
+      },
+      "correct_option": "b",
+      "explanation": "Collenchyma cells have unevenly thickened cell walls with cellulose and pectin. They provide mechanical support with flexibility, allowing bending without breaking. Sclerenchyma provides rigidity, parenchyma is mainly for storage, and xylem conducts water."
+    },
+    {
+      "id": 42,
+      "question": "Which cyanobacterium lives symbiotically in coralloid roots of Cycas?",
+      "options": {
+        "a": "Nostoc",
+        "b": "Anabaena",
+        "c": "Azotobacter",
+        "d": "Rhizobium"
+      },
+      "correct_option": "b",
+      "explanation": "Anabaena lives symbiotically in coralloid roots of Cycas and fixes atmospheric nitrogen."
+    },
+    {
+      "id": 43,
+      "question": "In which type of phyllotaxy do two leaves arise opposite to each other at the same node?",
+      "options": {
+        "a": "Alternate",
+        "b": "Opposite",
+        "c": "Whorled",
+        "d": "Spiral"
+      },
+      "correct_option": "b",
+      "explanation": "In opposite phyllotaxy, two leaves grow opposite each other at a node, as in Calotropis and guava. In alternate, a single leaf grows per node; in whorled, more than two leaves arise at a node; spiral is a form of alternate arrangement."
+    },
+    {
+      "id": 44,
+      "question": "The perisperm in seeds is derived from:",
+      "options": {
+        "a": "Integuments",
+        "b": "Endosperm",
+        "c": "Nucellus",
+        "d": "Funiculus"
+      },
+      "correct_option": "c",
+      "explanation": "Perisperm is the residual persistent nucellus present in seeds of plants like black pepper and beet. It differs from endosperm (triploid tissue formed after fertilization). Integuments form seed coat, and funiculus attaches ovule to placenta."
+    },
+    {
+      "id": 45,
+      "question": "Which process explains ascent of sap in tall trees according to cohesion-tension theory?",
+      "options": {
+        "a": "Capillary action only",
+        "b": "Active transport",
+        "c": "Transpiration pull",
+        "d": "Root pressure only"
+      },
+      "correct_option": "c",
+      "explanation": "According to cohesion-tension theory, transpiration pull generates negative pressure in leaf xylem. Cohesion between water molecules and adhesion to xylem walls maintain a continuous water column. Root pressure and capillary action contribute but are insufficient for tall trees."
+    }
+  ]
+}

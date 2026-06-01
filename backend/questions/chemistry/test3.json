@@ -1,0 +1,546 @@
+{
+  "test_number": 3,
+  "subject": "Chemistry",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Calculate the pH of 0.020 M H$_2$SO$_4$ at 25 °C. Assume the first ionization is complete and the second has $K_{a2} = 1.2 \\times 10^{-2}$.",
+      "options": {
+        "a": "1.30",
+        "b": "1.46",
+        "c": "1.58",
+        "d": "1.70"
+      },
+      "correct_option": "c",
+      "explanation": "The first ionization of H$_2$SO$_4$ is strong and complete: H$_2$SO$_4$ → H$^+$ + HSO$_4^-$. Thus [H$^+$] = 0.020 M and [HSO$_4^-$] = 0.020 M initially. The second dissociation: HSO$_4^-$ ⇌ H$^+$ + SO$_4^{2-}$ with $K_{a2} = 1.2 \\times 10^{-2}$. Let $x$ = additional [H$^+$] from the second step. Then: [H$^+$] = 0.020 + $x$, [SO$_4^{2-}$] = $x$, [HSO$_4^-$] = 0.020 − $x$. Substituting in the equilibrium constant: $K_{a2} = \\frac{(0.020+x)x}{0.020-x}$. Solving gives $x \\approx 0.00627$ M. Therefore, total [H$^+$] ≈ 0.0263 M and pH = −log(0.0263) ≈ 1.58."
+    },
+    {
+      "id": 2,
+      "question": "Which compound gives a positive iodoform test?",
+      "options": {
+        "a": "Acetone",
+        "b": "Formaldehyde",
+        "c": "Methanol",
+        "d": "Benzaldehyde"
+      },
+      "correct_option": "a",
+      "explanation": "The iodoform test is given by compounds containing the $CH_3CO-$ group or those that can be oxidized to methyl ketones. Acetone (CH$_3$–CO–CH$_3$) has this structure and produces yellow precipitate of CHI$_3$. Formaldehyde and methanol lack the required group, and benzaldehyde (C$_6$H$_5$CHO) also does not respond."
+    },
+    {
+      "id": 3,
+      "question": "Given $K_{sp}(\\text{Ag}_2\\text{CrO}_4) = 1.1 \\times 10^{-12}$ at 25 °C, find the molar solubility of Ag$_2$CrO$_4$ in 0.10 M AgNO$_3$.",
+      "options": {
+        "a": "1.1×10$^{-6}$ M",
+        "b": "1.1×10$^{-10}$ M",
+        "c": "5.5×10$^{-11}$ M",
+        "d": "1.0×10$^{-12}$ M"
+      },
+      "correct_option": "b",
+      "explanation": "Dissolution: Ag$_2$CrO$_4$ ⇌ 2Ag$^+$ + CrO$_4^{2-}$. $K_{sp} = [\\text{Ag}^+]^2 [\\text{CrO}_4^{2-}]$. Because 0.10 M AgNO$_3$ is present, [Ag$^+$] ≈ 0.10 M (common ion effect). Let solubility = $s$, then [CrO$_4^{2-}$] = $s$ and [Ag$^+$] ≈ 0.10 M. Substituting: $1.1 \\times 10^{-12} = (0.10)^2(s)$. So $s = 1.1 \\times 10^{-10}$ M. Thus, molar solubility = $1.1 \\times 10^{-10}$ M."
+    },
+    {
+      "id": 4,
+      "question": "A Zn$^{2+}$ concentration cell has half-cells Zn$^{2+}$(1.0 M)|Zn and Zn$^{2+}$(0.010 M)|Zn at 25 °C. What is $E_{cell}$? ($n = 2$)",
+      "options": {
+        "a": "0.0296 V",
+        "b": "0.0591 V",
+        "c": "0.118 V",
+        "d": "0.236 V"
+      },
+      "correct_option": "b",
+      "explanation": "For a concentration cell, $E = (0.0591/n) \\log(C_{high}/C_{low})$ at 25 °C. Here $n=2$, $C_{high} = 1.0$ M, $C_{low} = 0.010$ M. Thus $E = (0.0591/2) \\cdot \\log(100) = 0.02955 \\times 2 = 0.0591$ V."
+    },
+    {
+      "id": 5,
+      "question": "A first-order reaction has $t_{1/2} = 30$ min. How long will it take for 12.5% of the reactant to remain?",
+      "options": {
+        "a": "45 min",
+        "b": "60 min",
+        "c": "90 min",
+        "d": "120 min"
+      },
+      "correct_option": "c",
+      "explanation": "For first-order kinetics: after $n$ half-lives, fraction remaining = $(1/2)^n$. If 12.5% (i.e., 0.125 = 1/8) remains, then $(1/2)^n = 1/8$, so $n=3$. Since one half-life is 30 min, total time = 3 × 30 = 90 min."
+    },
+    {
+      "id": 6,
+      "question": "A plot of ln k vs 1/T for a reaction is a straight line with slope −5000 K. What is the activation energy $E_a$?",
+      "options": {
+        "a": "33.1 kJ mol$^{-1}$",
+        "b": "41.6 kJ mol$^{-1}$",
+        "c": "50.0 kJ mol$^{-1}$",
+        "d": "62.4 kJ mol$^{-1}$"
+      },
+      "correct_option": "b",
+      "explanation": "Arrhenius equation: $\\ln k = \\ln A - E_a/(RT)$. The slope of ln k vs 1/T is −$E_a/R$. Given slope = −5000, so $E_a = 5000 \\times R = 5000 \\times 8.314 = 41570$ J mol$^{-1}$ ≈ 41.6 kJ mol$^{-1}$."
+    },
+    {
+      "id": 7,
+      "question": "Using Kohlrausch’s law, calculate $\\Lambda^\\infty$(CH$_3$COONa) at 25 °C given: $\\Lambda^\\infty$(HCl) = 426.1, $\\Lambda^\\infty$(NaCl) = 126.4, $\\Lambda^\\infty$(CH$_3$COOH) = 390.7 (S cm$^2$ mol$^{-1}$).",
+      "options": {
+        "a": "72.6",
+        "b": "91.0",
+        "c": "100.2",
+        "d": "116.0"
+      },
+      "correct_option": "b",
+      "explanation": "Kohlrausch’s law of independent migration of ions: $\\Lambda^\\infty$(NaAc) = $\\Lambda^\\infty$(NaCl) + $\\Lambda^\\infty$(HAc) − $\\Lambda^\\infty$(HCl). Substituting values: 126.4 + 390.7 − 426.1 = 91.0 S cm$^2$ mol$^{-1}$."
+    },
+    {
+      "id": 8,
+      "question": "At 25 °C, $\\Lambda_m$(CH$_3$COOH) at 0.010 M is 13.1 S cm$^2$ mol$^{-1}$. If $\\Lambda^\\infty$(CH$_3$COOH) = 390.7 S cm$^2$ mol$^{-1}$, estimate $K_a$ for acetic acid.",
+      "options": {
+        "a": "4.0×10$^{-6}$",
+        "b": "1.2×10$^{-5}$",
+        "c": "3.2×10$^{-5}$",
+        "d": "1.0×10$^{-4}$"
+      },
+      "correct_option": "b",
+      "explanation": "Degree of dissociation $\\alpha = \\Lambda_m/\\Lambda^\\infty = 13.1/390.7 = 0.0335$. For weak acid HA, $K_a = \\frac{\\alpha^2 c}{1-\\alpha}$. With $c=0.010$ M: $K_a = (0.0335^2)(0.010)/(1−0.0335) ≈ 1.2 \\times 10^{-5}$."
+    },
+    {
+      "id": 9,
+      "question": "Mix 100 mL of 0.100 M NH$_3$ with 100 mL of 0.080 M HCl. Find the pH of the resulting buffer. ($pK_b$(NH$_3$) = 4.75; use $pK_a = 14 − pK_b$)",
+      "options": {
+        "a": "8.35",
+        "b": "8.65",
+        "c": "9.25",
+        "d": "9.55"
+      },
+      "correct_option": "b",
+      "explanation": "Moles: NH$_3$ = 0.100 × 0.100 = 0.010 mol, HCl = 0.100 × 0.080 = 0.008 mol. Reaction: NH$_3$ + HCl → NH$_4^+$. Leftover: NH$_3$ = 0.002 mol, NH$_4^+$ = 0.008 mol. Total volume = 0.200 L, so [base] = 0.010 M, [acid] = 0.040 M. $pK_a = 14 − 4.75 = 9.25$. Henderson–Hasselbalch: pH = $pK_a + \\log(\\tfrac{[base]}{[acid]}) = 9.25 + \\log(0.25) ≈ 8.65$."
+    },
+    {
+      "id": 10,
+      "question": "Calculate the solubility of CaF$_2$ in 0.20 M NaF at 25 °C. $K_{sp}$(CaF$_2$) = 3.9×10$^{-11}$.",
+      "options": {
+        "a": "2.0×10$^{-5}$ M",
+        "b": "9.8×10$^{-10}$ M",
+        "c": "3.9×10$^{-9}$ M",
+        "d": "1.0×10$^{-8}$ M"
+      },
+      "correct_option": "b",
+      "explanation": "Dissolution: CaF$_2$ ⇌ Ca$^{2+}$ + 2F$^-$. Expression: $K_{sp} = [Ca^{2+}][F^-]^2$. Let solubility = $s$, then [Ca$^{2+}$] = $s$, [F$^-$] = 0.20 + 2$s$ ≈ 0.20 (since $s$ is very small). Substituting: $3.9\\times10^{-11} = s(0.20)^2$. So $s = 3.9\\times10^{-11}/0.040 = 9.75\\times10^{-10}$ M ≈ $9.8 \\times 10^{-10}$ M."
+    },
+    {
+      "id": 11,
+      "question": "Which statement is correct for the complexes of Fe with CN$^-$ and F$^-$?",
+      "options": {
+        "a": "[Fe(CN)$_6$]$^{4-}$ is high spin and paramagnetic",
+        "b": "[Fe(CN)$_6$]$^{4-}$ is low spin and diamagnetic",
+        "c": "[FeF$_6$]$^{3-}$ is low spin and diamagnetic",
+        "d": "[FeF$_6$]$^{3-}$ has fewer unpaired electrons than [Fe(CN)$_6$]$^{4-}$"
+      },
+      "correct_option": "b",
+      "explanation": "In [Fe(CN)$_6$]$^{4-}$, Fe is in +2 oxidation state (d$^6$). CN$^-$ is a strong-field ligand, causing pairing of electrons in the $t_{2g}$ orbitals, resulting in configuration $t_{2g}^6 e_g^0$. This gives no unpaired electrons, so the complex is low spin and diamagnetic. In [FeF$_6$]$^{3-}$, Fe is +3 (d$^5$), and F$^-$ is a weak-field ligand, so it forms a high-spin complex with configuration $t_{2g}^3 e_g^2$ (5 unpaired electrons), which is paramagnetic."
+    },
+    {
+      "id": 12,
+      "question": "Titrating 50.0 mL of 0.100 M CH$_3$COOH with 0.100 M NaOH, what is the pH at the half-equivalence point? ($pK_a = 4.76$)",
+      "options": {
+        "a": "4.16",
+        "b": "4.46",
+        "c": "4.76",
+        "d": "5.06"
+      },
+      "correct_option": "c",
+      "explanation": "At the half-equivalence point in a weak acid–strong base titration, half of the acid has been neutralized and [acid] = [conjugate base]. According to the Henderson–Hasselbalch equation: pH = $pK_a + \\log(\\tfrac{[base]}{[acid]})$. Since [acid] = [base], the log term = 0. Therefore, pH = $pK_a = 4.76$."
+    },
+    {
+      "id": 13,
+      "question": "Which of the following is an example of condensation polymer?",
+      "options": {
+        "a": "Polyethylene",
+        "b": "PVC",
+        "c": "Nylon-6,6",
+        "d": "Teflon"
+      },
+      "correct_option": "c",
+      "explanation": "Condensation polymers are formed by the reaction between bifunctional monomers with elimination of small molecules such as water or HCl. Nylon-6,6 is formed from hexamethylenediamine and adipic acid, with water molecules eliminated at each step. Polyethylene, PVC, and Teflon are addition polymers, not condensation polymers."
+    },
+    {
+      "id": 14,
+      "question": "Which of the following is aromatic?",
+      "options": {
+        "a": "Cyclobutadiene",
+        "b": "Cycloheptatrienyl cation (tropylium, C$_7$H$_7^+$)",
+        "c": "Cyclopentadienyl cation",
+        "d": "Cyclohexadienyl anion"
+      },
+      "correct_option": "b",
+      "explanation": "For aromaticity, the molecule must be cyclic, planar, fully conjugated, and follow Hückel’s rule (4$n$+2 π electrons). The tropylium cation C$_7$H$_7^+$ is planar, conjugated, and contains 6 π electrons (with $n=1$), making it aromatic and stable. Cyclobutadiene and cyclopentadienyl cation each have 4 π electrons ($n=1$ in 4$n$ rule), making them antiaromatic. Cyclohexadienyl anion is not fully conjugated and does not meet aromaticity conditions."
+    },
+    {
+      "id": 15,
+      "question": "On gradual addition of AgNO$_3$ to a solution containing Cl$^-$, Br$^-$, and I$^-$ ions of equal concentration, which silver halide precipitates first?",
+      "options": {
+        "a": "AgCl",
+        "b": "AgBr",
+        "c": "AgI",
+        "d": "All precipitate together"
+      },
+      "correct_option": "c",
+      "explanation": "The halide with the lowest solubility product ($K_{sp}$) will precipitate first. The approximate values are: $K_{sp}$(AgCl) = $1.8 \\times 10^{-10}$, $K_{sp}$(AgBr) = $5.0 \\times 10^{-13}$, $K_{sp}$(AgI) = $8.0 \\times 10^{-17}$. Since AgI has the smallest $K_{sp}$, it precipitates first when Ag$^+$ ions are gradually added."
+    },
+    {
+      "id": 16,
+      "question": "At 25 °C, the pH of a 1.0×10$^{-8}$ M HCl solution is approximately:",
+      "options": {
+        "a": "6.00",
+        "b": "7.00",
+        "c": "7.96",
+        "d": "8.00"
+      },
+      "correct_option": "b",
+      "explanation": "When the acid concentration is very low (comparable to $10^{-7}$ from water), we must account for water autoionization. Let [H$^+$] = $x$. Then: $x = 1.0 \\times 10^{-8} + 10^{-14}/x$. Multiplying through: $x^2 - (1.0 \\times 10^{-8})x - 10^{-14} = 0$. Solving the quadratic gives $x ≈ 1.10 \\times 10^{-7}$ M. Thus pH = −log(1.10×10$^{-7}$) ≈ 6.96 ≈ 7.0."
+    },
+    {
+      "id": 17,
+      "question": "Which statement correctly compares bond order and magnetism of O$_2$, O$_2^+$, and O$_2^−$ using MO theory?",
+      "options": {
+        "a": "O$_2$ has bond order 2, paramagnetic",
+        "b": "O$_2^+$ has bond order 2.5, diamagnetic",
+        "c": "O$_2^−$ has bond order 1.5, paramagnetic",
+        "d": "All of these are correct"
+      },
+      "correct_option": "d",
+      "explanation": "Molecular orbital (MO) configurations: O$_2$ has 12 valence electrons → $(\\sigma_{2s})^2(\\sigma_{2s}^*)^2(\\sigma_{2p_z})^2(\\pi_{2px})^2(\\pi_{2py})^2(\\pi_{2px}^*)^1(\\pi_{2py}^*)^1$. Bond order = (8 bonding − 4 antibonding)/2 = 2, with 2 unpaired electrons → paramagnetic. O$_2^+$ has one fewer electron, giving bond order 2.5 and all paired → diamagnetic. O$_2^−$ has one extra electron, bond order = 1.5 with an unpaired electron → paramagnetic. Hence all the given statements are correct."
+    },
+    {
+      "id": 18,
+      "question": "Which statement is true for crystal field splitting in octahedral complexes?",
+      "options": {
+        "a": "$t_{2g}$ orbitals are raised in energy",
+        "b": "$e_g$ orbitals are lowered in energy",
+        "c": "$t_{2g}$ orbitals are lowered and $e_g$ raised",
+        "d": "All orbitals remain degenerate"
+      },
+      "correct_option": "c",
+      "explanation": "In an octahedral field, ligands approach along the x, y, and z axes. The $d_{z^2}$ and $d_{x^2−y^2}$ orbitals (the $e_g$ set) point directly at ligands, experiencing maximum repulsion, so they are raised in energy. The $d_{xy}$, $d_{xz}$, and $d_{yz}$ orbitals (the $t_{2g}$ set) lie between the axes, experiencing less repulsion, so they are lowered in energy. The splitting between them is Δ$_o$."
+    },
+    {
+      "id": 19,
+      "question": "For a reaction at 298 K, ΔG° = −25.0 kJ mol⁻¹. Calculate the equilibrium constant K. (R = 8.314 J mol⁻¹K⁻¹)",
+      "options": {
+        "a": "2.4 × 10⁴",
+        "b": "7.2 × 10⁴",
+        "c": "4.8 × 10³",
+        "d": "1.0 × 10²"
+      },
+      "correct_option": "a",
+      "explanation": "The relation is ΔG° = −RT lnK. Substituting: ΔG° = −25,000 J mol$^{-1}$, R = 8.314 J mol$^{-1}$K$^{-1}$, T = 298 K. Thus lnK = (25,000)/(8.314×298) = 10.08. Therefore K = e$^{10.08}$ ≈ 2.4 × 10⁴."
+    },
+    {
+      "id": 20,
+      "question": "In a face-centered cubic (fcc) lattice of NaCl, what fraction of octahedral voids are occupied by Cl$^-$ ions?",
+      "options": {
+        "a": "All",
+        "b": "None",
+        "c": "Half",
+        "d": "One-third"
+      },
+      "correct_option": "a",
+      "explanation": "In the NaCl structure, Cl$^-$ ions form a face-centered cubic (fcc) lattice. Na$^+$ ions occupy all the octahedral voids created by this arrangement. Therefore, all the octahedral voids are fully occupied, and each Cl$^-$ ion corresponds to an octahedral void in the structure."
+    },
+    {
+      "id": 21,
+      "question": "Which transition in the hydrogen atom corresponds to the Lyman series?",
+      "options": {
+        "a": "n=2 → n=1",
+        "b": "n=3 → n=2",
+        "c": "n=4 → n=2",
+        "d": "n=3 → n=1"
+      },
+      "correct_option": "a",
+      "explanation": "The Lyman series corresponds to electronic transitions that end at the ground state ($n=1$) of the hydrogen atom. The first line is from $n=2 \\to n=1$, higher lines include $n=3 \\to 1$, $n=4 \\to 1$, etc. These lie in the ultraviolet region. The Balmer series ends at $n=2$ (visible region), Paschen at $n=3$ (infrared), and Brackett at $n=4$."
+    },
+    {
+      "id": 22,
+      "question": "Which is the most stable carbocation?",
+      "options": {
+        "a": "CH$_3^+$",
+        "b": "CH$_3$CH$_2^+$",
+        "c": "(CH$_3$)$_2$CH$^+$",
+        "d": "(CH$_3$)$_3$C$^+$"
+      },
+      "correct_option": "d",
+      "explanation": "Carbocation stability increases with the number of alkyl groups attached due to hyperconjugation and inductive effects. Order: tertiary (3°) > secondary (2°) > primary (1°) > methyl. (CH$_3$)$_3$C$^+$ (tertiary) is the most stable because it is stabilized by nine hyperconjugative structures and strong electron-donating inductive effects of the three CH$_3$ groups."
+    },
+    {
+      "id": 23,
+      "question": "Which reagent converts a primary alcohol to an aldehyde without further oxidation?",
+      "options": {
+        "a": "KMnO$_4$",
+        "b": "K$_2$Cr$_2$O$_7$/H$^+$",
+        "c": "PCC (pyridinium chlorochromate)",
+        "d": "Conc. HNO$_3$"
+      },
+      "correct_option": "c",
+      "explanation": "Strong oxidizing agents like KMnO$_4$, K$_2$Cr$_2$O$_7$, and HNO$_3$ oxidize primary alcohols first to aldehydes and then further to carboxylic acids. PCC (pyridinium chlorochromate) is a mild oxidizing agent, which selectively oxidizes primary alcohols to aldehydes without further oxidation to acids. Hence PCC is the correct reagent."
+    },
+    {
+      "id": 24,
+      "question": "Which order of stability is correct for different conformations of n-butane?",
+      "options": {
+        "a": "Anti > Gauche > Eclipse",
+        "b": "Gauche > Anti > Eclipse",
+        "c": "Eclipse > Gauche > Anti",
+        "d": "Anti > Eclipse > Gauche"
+      },
+      "correct_option": "a",
+      "explanation": "In n-butane, conformational isomers arise from rotation around the C–C bond. The anti conformation (methyl groups 180° apart) is the most stable due to minimum steric hindrance. The gauche conformation (methyl groups 60° apart) is less stable due to steric repulsion. The eclipsed conformations are least stable because of torsional strain from overlapping bonds. Thus, the stability order is Anti > Gauche > Eclipse."
+    },
+    {
+      "id": 25,
+      "question": "Calculate the number of atoms in a bcc unit cell of a pure metal.",
+      "options": {
+        "a": "1",
+        "b": "2",
+        "c": "4",
+        "d": "6"
+      },
+      "correct_option": "b",
+      "explanation": "In a body-centered cubic (bcc) unit cell: there are 8 corner atoms, each contributing $\\tfrac{1}{8}$ atom to the unit cell, giving 1 atom total from corners. Additionally, there is 1 atom at the body center which belongs entirely to the unit cell. Total atoms = 1 + 1 = 2."
+    },
+    {
+      "id": 26,
+      "question": "Which transition-metal ion is colorless in aqueous solution?",
+      "options": {
+        "a": "Ti$^{3+}$",
+        "b": "Cu$^{2+}$",
+        "c": "Zn$^{2+}$",
+        "d": "Cr$^{3+}$"
+      },
+      "correct_option": "c",
+      "explanation": "Color in transition-metal complexes arises from d–d electronic transitions between split d-orbitals. Zn$^{2+}$ has an electronic configuration of [Ar]3d$^{10}$, i.e., fully filled d-orbitals. Since no d–d transitions are possible, the complex is colorless. Ti$^{3+}$ (d$^1$), Cu$^{2+}$ (d$^9$), and Cr$^{3+}$ (d$^3$) all have partially filled d-orbitals and hence show color."
+    },
+    {
+      "id": 27,
+      "question": "Which colligative property is most useful for determining molar mass of a volatile liquid?",
+      "options": {
+        "a": "Osmotic pressure",
+        "b": "Elevation in boiling point",
+        "c": "Depression in freezing point",
+        "d": "Relative lowering of vapor pressure"
+      },
+      "correct_option": "d",
+      "explanation": "Colligative properties depend only on the number of solute particles, not their nature. For volatile liquids, relative lowering of vapor pressure ($\\Delta P/P^0$) is directly measurable and reliable for molar mass determination. Osmotic pressure is more useful for non-volatile large molecules (e.g., polymers). Elevation of boiling point and freezing point depression are less accurate for volatile substances."
+    },
+    {
+      "id": 28,
+      "question": "Which order of decreasing acidic strength is correct for the oxoacids of chlorine?",
+      "options": {
+        "a": "HClO < HClO$_2$ < HClO$_3$ < HClO$_4$",
+        "b": "HClO$_4$ < HClO$_3$ < HClO$_2$ < HClO",
+        "c": "HClO$_2$ < HClO < HClO$_4$ < HClO$_3$",
+        "d": "HClO < HClO$_3$ < HClO$_2$ < HClO$_4$"
+      },
+      "correct_option": "a",
+      "explanation": "The acidic strength of oxoacids increases with the oxidation number of chlorine. Higher oxidation states increase the electron-withdrawing power of Cl, stabilizing the conjugate base via delocalization. Order: HClO (Cl +1, weakest acid) < HClO$_2$ (Cl +3) < HClO$_3$ (Cl +5) < HClO$_4$ (Cl +7, strongest acid)."
+    },
+    {
+      "id": 29,
+      "question": "Which law explains the variation of conductance of electrolytes with dilution?",
+      "options": {
+        "a": "Kohlrausch’s law",
+        "b": "Henry’s law",
+        "c": "Raoult’s law",
+        "d": "Nernst distribution law"
+      },
+      "correct_option": "a",
+      "explanation": "Kohlrausch’s law of independent migration of ions states that the limiting molar conductivity of an electrolyte ($\\Lambda_m^{\\infty}$) is equal to the sum of the individual ionic contributions: $\\Lambda_m^{\\infty} = \\sum \\lambda_i^{\\infty}$. As dilution increases, interionic interactions decrease, and molar conductance increases, approaching a limiting value at infinite dilution."
+    },
+    {
+      "id": 30,
+      "question": "Which reaction is an example of electrophilic substitution?",
+      "options": {
+        "a": "Halogenation of benzene",
+        "b": "Addition of HBr to propene",
+        "c": "Neutralization of HCl with NaOH",
+        "d": "Decomposition of CaCO$_3$"
+      },
+      "correct_option": "a",
+      "explanation": "Halogenation of benzene is a typical electrophilic aromatic substitution reaction. Example: $C_6H_6 + Br_2/FeBr_3 \\to C_6H_5Br + HBr$. Here, Br$^+$ acts as the electrophile and substitutes a hydrogen atom on the benzene ring. Addition of HBr to propene is electrophilic addition, neutralization is an acid–base reaction, and decomposition of CaCO$_3$ is a thermal decomposition process."
+    },
+    {
+      "id": 31,
+      "question": "Calculate the wavelength of light emitted when an electron in a hydrogen atom transitions from n = 3 to n = 2. ($R_H = 1.097\\times10^7$ m$^{-1}$)",
+      "options": {
+        "a": "434 nm",
+        "b": "486 nm",
+        "c": "656 nm",
+        "d": "121 nm"
+      },
+      "correct_option": "c",
+      "explanation": "The wavenumber of emitted light is given by $\\tilde{\\nu} = R_H \\left( \\frac{1}{n_1^2} - \\frac{1}{n_2^2} \\right)$. For the transition $n_2=3$ to $n_1=2$: $\\tilde{\\nu} = 1.097\\times10^7 (\\frac{1}{2^2} - \\frac{1}{3^2}) = 1.097\\times10^7 (\\frac{5}{36}) \\approx 1.52\\times10^6$ m$^{-1}$. The wavelength is $\\lambda = \\frac{1}{\\tilde{\\nu}} \\approx 6.56\\times10^{-7}$ m = 656 nm. This line belongs to the Balmer series (visible red region)."
+    },
+    {
+      "id": 32,
+      "question": "Which element shows highest first ionization energy?",
+      "options": {
+        "a": "Li",
+        "b": "Na",
+        "c": "K",
+        "d": "Rb"
+      },
+      "correct_option": "a",
+      "explanation": "Ionization energy decreases down a group due to an increase in atomic size and shielding effect, which reduces effective nuclear attraction on valence electrons. Among alkali metals, Li has the smallest atomic radius and weakest shielding, so it requires the most energy to remove an electron. Hence, Li has the highest first ionization energy."
+    },
+    {
+      "id": 33,
+      "question": "Which is the correct order of stability for carbocations: CH$_3^+$, C$_2$H$_5^+$, (CH$_3$)$_2$CH$^+$, (CH$_3$)$_3$C$^+$?",
+      "options": {
+        "a": "CH$_3^+$ < C$_2$H$_5^+$ < (CH$_3$)$_2$CH$^+$ < (CH$_3$)$_3$C$^+$",
+        "b": "CH$_3^+$ > C$_2$H$_5^+$ > (CH$_3$)$_2$CH$^+$ > (CH$_3$)$_3$C$^+$",
+        "c": "C$_2$H$_5^+$ < CH$_3^+$ < (CH$_3$)$_2$CH$^+$ < (CH$_3$)$_3$C$^+$",
+        "d": "(CH$_3$)$_3$C$^+$ < (CH$_3$)$_2$CH$^+$ < C$_2$H$_5^+$ < CH$_3^+$"
+      },
+      "correct_option": "a",
+      "explanation": "Carbocation stability depends on hyperconjugation and +I effect from alkyl groups. More alkyl substituents donate electron density, stabilizing the positive charge. Order: CH$_3^+$ (no stabilization) < primary (C$_2$H$_5^+$) < secondary ((CH$_3$)$_2$CH$^+$) < tertiary ((CH$_3$)$_3$C$^+$)."
+    },
+    {
+      "id": 34,
+      "question": "Which order of acidity is correct?",
+      "options": {
+        "a": "Phenol < Ethanol < Acetic acid",
+        "b": "Ethanol < Phenol < Acetic acid",
+        "c": "Acetic acid < Phenol < Ethanol",
+        "d": "Ethanol < Acetic acid < Phenol"
+      },
+      "correct_option": "b",
+      "explanation": "Acidity depends on the stability of the conjugate base. Carboxylate ion (from acetic acid) is resonance-stabilized, making acetic acid the strongest. Phenoxide ion has resonance but negative charge is localized on oxygen, so weaker than carboxylates. Ethoxide ion (from ethanol) has no resonance stabilization, so it is least stable. Order: Ethanol (pKa ≈ 16) < Phenol (pKa ≈ 10) < Acetic acid (pKa ≈ 4.8)."
+    },
+    {
+      "id": 35,
+      "question": "Which gas is absorbed strongly on charcoal?",
+      "options": {
+        "a": "N$_2$",
+        "b": "H$_2$",
+        "c": "CO$_2$",
+        "d": "He"
+      },
+      "correct_option": "c",
+      "explanation": "Adsorption of gases depends on critical temperature ($T_c$) and ease of liquefaction. Higher $T_c$ means stronger intermolecular forces, leading to greater adsorption. $T_c$(CO$_2$) is much higher than that of N$_2$, H$_2$, or He, so CO$_2$ is most strongly adsorbed on charcoal."
+    },
+    {
+      "id": 36,
+      "question": "Which reaction is an example of disproportionation?",
+      "options": {
+        "a": "2KClO$_3$ $\\to$ 2KCl + 3O$_2$",
+        "b": "Cl$_2$ + 2NaOH (cold, dilute) $\\to$ NaCl + NaOCl + H$_2$O",
+        "c": "H$_2$ + Cl$_2$ $\\to$ 2HCl",
+        "d": "Zn + CuSO$_4$ $\\to$ ZnSO$_4$ + Cu"
+      },
+      "correct_option": "b",
+      "explanation": "In Cl$_2$ + 2NaOH $\\to$ NaCl + NaOCl + H$_2$O, chlorine simultaneously undergoes oxidation (0 $\\to$ +1 in NaOCl) and reduction (0 $\\to$ −1 in NaCl). Such reactions, where a single element is both oxidized and reduced, are called disproportionation reactions."
+    },
+    {
+      "id": 37,
+      "question": "Which salt hydrolyzes to give a basic solution?",
+      "options": {
+        "a": "NH$_4$Cl",
+        "b": "CH$_3$COONa",
+        "c": "KNO$_3$",
+        "d": "NaCl"
+      },
+      "correct_option": "b",
+      "explanation": "CH$_3$COONa is derived from a strong base (NaOH) and weak acid (CH$_3$COOH). On hydrolysis, CH$_3$COO$^-$ + H$_2$O $\\to$ CH$_3$COOH + OH$^-$, producing hydroxide ions, making the solution basic. NH$_4$Cl (weak base + strong acid) gives acidic solution, while NaCl and KNO$_3$ (strong acid + strong base) are neutral."
+    },
+    {
+      "id": 38,
+      "question": "Which law governs the distribution of a solute between two immiscible liquids?",
+      "options": {
+        "a": "Henry’s law",
+        "b": "Raoult’s law",
+        "c": "Nernst distribution law",
+        "d": "Kohlrausch’s law"
+      },
+      "correct_option": "c",
+      "explanation": "Nernst distribution law states that a solute distributes itself between two immiscible solvents in such a way that the ratio of concentrations in the two phases remains constant at constant temperature: $\\frac{C_1}{C_2} = K_d$. This principle is used in solvent extraction."
+    },
+    {
+      "id": 39,
+      "question": "Which is the major product in the nitration of benzene?",
+      "options": {
+        "a": "m-nitrobenzene",
+        "b": "o-nitrobenzene",
+        "c": "p-nitrobenzene",
+        "d": "Nitrobenzene"
+      },
+      "correct_option": "d",
+      "explanation": "When benzene is treated with conc. HNO$_3$/H$_2$SO$_4$, the electrophile NO$_2^+$ is generated. This undergoes electrophilic substitution to give the monosubstituted product, nitrobenzene. Options like o-nitrobenzene, p-nitrobenzene, and m-nitrobenzene are relevant only when a substituent is already present on the benzene ring. For unsubstituted benzene, the major product is nitrobenzene."
+    },
+    {
+      "id": 40,
+      "question": "Which colligative property is used to determine degree of dissociation ($\\alpha$) of an electrolyte?",
+      "options": {
+        "a": "Osmotic pressure",
+        "b": "Elevation in boiling point",
+        "c": "Depression in freezing point",
+        "d": "All of these"
+      },
+      "correct_option": "d",
+      "explanation": "All colligative properties depend only on the number of solute particles, not their nature. For electrolytes, dissociation increases the number of particles. The van’t Hoff factor is $i = 1 + (n-1)\\alpha$, where $n$ = number of ions produced. By comparing experimental and theoretical colligative properties (osmotic pressure, $\\Delta T_b$, $\\Delta T_f$, or vapor pressure lowering), $i$ can be determined, and hence the degree of dissociation $\\alpha$ can be calculated."
+    },
+    {
+      "id": 41,
+      "question": "Which reagent is used in the Lucas test for classifying alcohols?",
+      "options": {
+        "a": "Conc. H$_2$SO$_4$",
+        "b": "ZnCl$_2$ + conc. HCl",
+        "c": "K$_2$Cr$_2$O$_7$/H$^+$",
+        "d": "Na metal"
+      },
+      "correct_option": "b",
+      "explanation": "Lucas reagent is a mixture of ZnCl$_2$ and conc. HCl. It distinguishes alcohols based on their reactivity towards substitution. The alcohol reacts with HCl in presence of ZnCl$_2$ to form alkyl chlorides, which appear as turbidity. 3° alcohols react almost instantly (due to stable carbocation formation), 2° alcohols take a few minutes, and 1° alcohols react very slowly or not at room temperature."
+    },
+    {
+      "id": 42,
+      "question": "Which species is isoelectronic with CO?",
+      "options": {
+        "a": "CN$^-$",
+        "b": "NO$^+$",
+        "c": "N$_2$",
+        "d": "All of these"
+      },
+      "correct_option": "d",
+      "explanation": "CO has a total of 14 electrons (C: 6, O: 8 → 14). CN$^-$ has (C: 6 + N: 7 + 1 extra) = 14 electrons. NO$^+$ has (N: 7 + O: 8 − 1) = 14 electrons. N$_2$ has (7 + 7) = 14 electrons. Since all of them have the same number of total electrons, they are isoelectronic with CO."
+    },
+    {
+      "id": 43,
+      "question": "Which is the correct IUPAC name of CH$_3$–CH=CH–CHO?",
+      "options": {
+        "a": "But-2-enal",
+        "b": "But-3-enal",
+        "c": "But-1-enal",
+        "d": "Propenal"
+      },
+      "correct_option": "a",
+      "explanation": "The compound has four carbons in the main chain including the aldehyde group, so the parent name is 'butanal'. The aldehyde carbon is numbered as C1, giving the double bond starting at C2. Thus, the correct IUPAC name is But-2-enal. Other options are incorrect because they either assign wrong numbering or indicate wrong chain length."
+    },
+    {
+      "id": 44,
+      "question": "Which order of basicity in aqueous solution is correct?",
+      "options": {
+        "a": "NH$_3$ > PH$_3$ > AsH$_3$",
+        "b": "PH$_3$ > NH$_3$ > AsH$_3$",
+        "c": "AsH$_3$ > PH$_3$ > NH$_3$",
+        "d": "NH$_3$ > AsH$_3$ > PH$_3$"
+      },
+      "correct_option": "a",
+      "explanation": "Basicity of group 15 hydrides depends on availability of the lone pair on the central atom. Down the group, atomic size increases, so the lone pair is held more diffusely and less available for protonation. Therefore, basicity decreases in the order: NH$_3$ > PH$_3$ > AsH$_3$."
+    },
+    {
+      "id": 45,
+      "question": "Which gas law can be derived from the kinetic theory of gases assuming elastic collisions and negligible volume?",
+      "options": {
+        "a": "Boyle’s law",
+        "b": "Charles’ law",
+        "c": "Avogadro’s law",
+        "d": "Graham’s law"
+      },
+      "correct_option": "a",
+      "explanation": "According to kinetic theory, gas pressure arises from molecular collisions with container walls. At constant temperature, the average kinetic energy of molecules remains constant. This leads to an inverse relationship between pressure and volume: $PV = \\text{constant}$, which is Boyle’s law. Charles’ and Avogadro’s laws also derive from the ideal gas equation, but Boyle’s law is the most directly obtained from kinetic theory assumptions."
+    }
+  ]
+}

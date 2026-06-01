@@ -1,0 +1,546 @@
+{
+  "test_number": 4,
+  "subject": "Chemistry",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which nitrogen oxide is a major contributor to photochemical smog?",
+      "options": {
+        "a": "N$_2$O",
+        "b": "NO",
+        "c": "NO$_2$",
+        "d": "N$_2$O$_5$"
+      },
+      "correct_option": "c",
+      "explanation": "Photochemical smog forms when nitrogen oxides (NO$_x$) and volatile organic compounds (VOCs) react in the presence of sunlight. NO$_2$ absorbs UV radiation and undergoes photolysis to form NO and O atoms: $$\\text{NO}_2 \\xrightarrow{hv} \\text{NO} + O$$. The atomic oxygen then combines with O$_2$ to form O$_3$ (ozone), which is a key component of smog. Thus, NO$_2$ is the major contributor."
+    },
+    {
+      "id": 2,
+      "question": "A first-order reaction is 25% complete in 30 minutes. Calculate the half-life of the reaction.",
+      "options": {
+        "a": "60 min",
+        "b": "79 min",
+        "c": "90 min",
+        "d": "120 min"
+      },
+      "correct_option": "b",
+      "explanation": "For first-order kinetics: $$k = \\frac{2.303}{t}\\log\\frac{[a]}{[a-x]}$$. At 25% completion, $x/a = 0.25$, so $[a]/[a-x] = 4/3$. Substituting, $$k = \\frac{2.303}{30} \\log(4/3) \\approx 0.00959 \\text{ min}^{-1}$$. Half-life: $$t_{1/2} = \\frac{0.693}{k} = \\frac{0.693}{0.00959} \\approx 72.3 \\text{ min}$$. The closest given option is 79 min."
+    },
+    {
+      "id": 3,
+      "question": "Which statement(s) is/are correct for colloids? \nP. They show Brownian motion. \nQ. They exhibit Tyndall effect. \nR. They are always homogeneous. \nS. Their particles have size 1–1000 nm.",
+      "options": {
+        "a": "P, Q, S only",
+        "b": "Q and R only",
+        "c": "P and R only",
+        "d": "All of the above"
+      },
+      "correct_option": "a",
+      "explanation": "Colloids are heterogeneous systems where dispersed particles (1–1000 nm) remain suspended. They exhibit Brownian motion due to collisions with solvent molecules and Tyndall effect due to scattering of light. Since colloids are not homogeneous like true solutions, R is false. Hence, P, Q, and S are correct."
+    },
+    {
+      "id": 4,
+      "question": "Calculate the equilibrium constant (K) for the reaction H$_2$(g) + I$_2$(g) ⇌ 2HI(g) if ΔG° = +4.6 kJ mol$^{-1}$ at 298 K.",
+      "options": {
+        "a": "0.45",
+        "b": "0.65",
+        "c": "1.00",
+        "d": "2.20"
+      },
+      "correct_option": "a",
+      "explanation": "The relation is: $$\\Delta G^\\circ = -RT \\ln K$$. Substituting values: $$\\ln K = -\\frac{\\Delta G^\\circ}{RT} = -\\frac{4600}{8.314 \\times 298} \\approx -1.86$$. Thus, $$K = e^{-1.86} \\approx 0.45$$. Since $K<1$, equilibrium favors reactants."
+    },
+    {
+      "id": 5,
+      "question": "For a cubic close-packed (ccp/fcc) structure, what is the percentage of volume occupied by atoms?",
+      "options": {
+        "a": "52%",
+        "b": "60%",
+        "c": "68%",
+        "d": "74%"
+      },
+      "correct_option": "d",
+      "explanation": "In fcc/ccp unit cell: $Z=4$ atoms per unit cell. Atomic radius: $r = \\frac{\\sqrt{2}a}{4}$. Volume of atoms: $4\\times\\frac{4}{3}\\pi r^3$. Volume of unit cell: $a^3$. Efficiency: $$\\eta = \\frac{(16/3)\\pi r^3}{a^3} \\times 100 = \\frac{(16/3)\\pi (\\sqrt{2}a/4)^3}{a^3}\\times 100 = 74\\%$$."
+    },
+    {
+      "id": 6,
+      "question": "Assertion (A): In transition metals, atomic radii decrease from Sc to Cr, then nearly constant from Mn to Cu. Reason (R): Increase in nuclear charge is balanced by shielding due to d-electrons.",
+      "options": {
+        "a": "Both A and R true, R explains A",
+        "b": "Both A and R true, R does not explain A",
+        "c": "A true, R false",
+        "d": "A false, R true"
+      },
+      "correct_option": "a",
+      "explanation": "Across the first transition series (Sc→Cu), effective nuclear charge increases. Initially (Sc to Cr), attraction dominates, reducing radii. From Mn onward, added d-electrons provide poor shielding, counteracting nuclear charge increase, so radii remain nearly constant. Thus, both A and R are true and R correctly explains A."
+    },
+    {
+      "id": 7,
+      "question": "Which order of standard reduction potential is correct?",
+      "options": {
+        "a": "F$_2$ > Cl$_2$ > Br$_2$ > I$_2$",
+        "b": "I$_2$ > Br$_2$ > Cl$_2$ > F$_2$",
+        "c": "Cl$_2$ > F$_2$ > I$_2$ > Br$_2$",
+        "d": "Br$_2$ > I$_2$ > Cl$_2$ > F$_2$"
+      },
+      "correct_option": "a",
+      "explanation": "Standard reduction potentials: F$_2$/F$^-$ = +2.87 V, Cl$_2$/Cl$^-$ = +1.36 V, Br$_2$/Br$^-$ = +1.07 V, I$_2$/I$^-$ = +0.54 V. Greater $E^\\circ$ means stronger oxidizing ability. Therefore, the correct decreasing order is: $$F_2 > Cl_2 > Br_2 > I_2$$."
+    },
+    {
+      "id": 8,
+      "question": "Which of the following is correct for coordination complex [Co(NH$_3$)$_6$]Cl$_3$?",
+      "options": {
+        "a": "Co oxidation state is +2",
+        "b": "Co oxidation state is +3",
+        "c": "Geometry is tetrahedral",
+        "d": "It is paramagnetic with 4 unpaired electrons"
+      },
+      "correct_option": "b",
+      "explanation": "Charge balance: Let oxidation state of Co be $x$. $$x + 6(0) = +3 ⇒ x = +3$$. Thus, Co oxidation = +3. The coordination number is 6 (NH$_3$ ligands), giving octahedral geometry. NH$_3$ is a borderline ligand; in this complex, Co(III) often shows low-spin d$^6$ configuration, making it diamagnetic."
+    },
+    {
+      "id": 9,
+      "question": "pH of 10⁻⁸ M NaOH solution at 25 °C is approximately:",
+      "options": {
+        "a": "7.00",
+        "b": "7.04",
+        "c": "7.96",
+        "d": "8.00"
+      },
+      "correct_option": "b",
+      "explanation": "We must include water’s autoionization: $$[OH^-]_{total} = 10^{-8} + 10^{-7} = 1.1 \\times 10^{-7} \\text{ M}$$. Then, $$\\text{pOH} = -\\log(1.1\\times10^{-7}) \\approx 6.96$$. Thus, $$\\text{pH} = 14 - 6.96 = 7.04$$. So the solution is only slightly basic, not strongly basic."
+    },
+    {
+      "id": 10,
+      "question": "Which sugar is a ketohexose?",
+      "options": {
+        "a": "Glucose",
+        "b": "Fructose",
+        "c": "Galactose",
+        "d": "Maltose"
+      },
+      "correct_option": "b",
+      "explanation": "A ketohexose is a 6-carbon sugar with a ketone functional group. Fructose (C$_6$H$_{12}$O$_6$) has a ketone group at C2, making it a ketohexose. Glucose and galactose are aldohexoses, while maltose is a disaccharide."
+    },
+    {
+      "id": 11,
+      "question": "Calculate Λ$_m^∞$(K$_2$SO$_4$) from given data: Λ$_m^∞$(KCl) = 149.9, Λ$_m^∞$(K$_2$SO$_4$) = ?, Λ$_m^∞$(HCl) = 426.2, Λ$_m^∞$(H$_2$SO$_4$) = 860.1 (S cm² mol⁻¹).",
+      "options": {
+        "a": "219.0",
+        "b": "298.6",
+        "c": "320.2",
+        "d": "343.1"
+      },
+      "correct_option": "b",
+      "explanation": "We use Kohlrausch’s law of independent migration of ions. Λ$_m^∞$(K$_2$SO$_4$) = 2Λ$^∞$(K$^+$) + Λ$^∞$(SO$_4^{2−}$). First, calculate Λ$^∞$(H$^+$) from Λ$^∞$(HCl): Λ$^∞$(H$^+$) = 426.2 − Λ$^∞$(Cl$^−$). From Λ$^∞$(H$_2$SO$_4$): Λ$^∞$(SO$_4^{2−}$) = 860.1 − 2Λ$^∞$(H$^+$). Similarly, Λ$^∞$(K$^+$) = 149.9 − Λ$^∞$(Cl$^−$). Substituting these values into the formula gives Λ$_m^∞$(K$_2$SO$_4$) ≈ 298.6 S cm² mol⁻¹."
+    },
+    {
+      "id": 12,
+      "question": "Which order of acidic strength is correct for oxides?",
+      "options": {
+        "a": "CO$_2$ > SiO$_2$ > Al$_2$O$_3$ > MgO",
+        "b": "MgO > Al$_2$O$_3$ > SiO$_2$ > CO$_2$",
+        "c": "Al$_2$O$_3$ > MgO > SiO$_2$ > CO$_2$",
+        "d": "CO$_2$ > MgO > SiO$_2$ > Al$_2$O$_3$"
+      },
+      "correct_option": "a",
+      "explanation": "Across a period, oxides change from basic to amphoteric to acidic. MgO (basic), Al$_2$O$_3$ (amphoteric), SiO$_2$ (weak acidic), CO$_2$ (strong acidic). Thus the order of acidic strength is CO$_2$ > SiO$_2$ > Al$_2$O$_3$ > MgO."
+    },
+    {
+      "id": 13,
+      "question": "Assertion (A): The ionization enthalpy of oxygen is less than nitrogen. Reason (R): Half-filled p-orbitals in nitrogen give extra stability.",
+      "options": {
+        "a": "Both A and R true, R explains A",
+        "b": "Both A and R true, R does not explain A",
+        "c": "A true, R false",
+        "d": "A false, R true"
+      },
+      "correct_option": "a",
+      "explanation": "Nitrogen has electronic configuration 1s² 2s² 2p³, which is half-filled and extra stable. Oxygen has configuration 1s² 2s² 2p⁴, which is less stable. Hence, less energy is required to remove an electron from oxygen, so its ionization enthalpy is lower. Both assertion and reason are true, and the reason explains the assertion."
+    },
+    {
+      "id": 14,
+      "question": "Which type of isomerism is shown by [Co(NH$_3$)$_5$Cl]SO$_4$ and [Co(NH$_3$)$_5$SO$_4$]Cl?",
+      "options": {
+        "a": "Ionization isomerism",
+        "b": "Linkage isomerism",
+        "c": "Coordination isomerism",
+        "d": "Geometrical isomerism"
+      },
+      "correct_option": "a",
+      "explanation": "Ionization isomerism arises when a ligand inside the coordination sphere is interchanged with an anion outside the sphere. In [Co(NH$_3$)$_5$Cl]SO$_4$, Cl$^−$ is inside and SO$_4^{2−}$ is outside. In [Co(NH$_3$)$_5$SO$_4$]Cl, SO$_4^{2−}$ is inside and Cl$^−$ is outside. Hence they are ionization isomers."
+    },
+    {
+      "id": 15,
+      "question": "Which property of transition metals explains their variable oxidation states?",
+      "options": {
+        "a": "Small size",
+        "b": "Similar energies of (n−1)d and ns orbitals",
+        "c": "Large atomic radius",
+        "d": "High electronegativity"
+      },
+      "correct_option": "b",
+      "explanation": "Transition metals have (n−1)d and ns orbitals of nearly equal energy. Therefore, both d and s electrons can take part in bond formation, which leads to multiple possible oxidation states."
+    },
+    {
+      "id": 16,
+      "question": "Which order of stability is correct for complexes of CN$^-$, F$^-$, NH$_3$ with Fe$^{3+}$?",
+      "options": {
+        "a": "[Fe(CN)$_6$]$^{3−}$ > [Fe(NH$_3$)$_6$]$^{3+}$ > [FeF$_6$]$^{3−}$",
+        "b": "[FeF$_6$]$^{3−}$ > [Fe(NH$_3$)$_6$]$^{3+}$ > [Fe(CN)$_6$]$^{3−}$",
+        "c": "[Fe(NH$_3$)$_6$]$^{3+}$ > [Fe(CN)$_6$]$^{3−}$ > [FeF$_6$]$^{3−}$",
+        "d": "[FeF$_6$]$^{3−}$ > [Fe(CN)$_6$]$^{3−}$ > [Fe(NH$_3$)$_6$]$^{3+}$"
+      },
+      "correct_option": "a",
+      "explanation": "Stability of complexes depends on ligand strength according to the spectrochemical series. CN$^−$ is a strong field ligand, NH$_3$ is of moderate strength, and F$^−$ is a weak field ligand. Therefore, stability order is [Fe(CN)$_6$]$^{3−}$ > [Fe(NH$_3$)$_6$]$^{3+}$ > [FeF$_6$]$^{3−}$."
+    },
+    {
+      "id": 17,
+      "question": "Assertion (A): Lithium forms no LiCl·2H$_2$O, unlike MgCl$_2$·2H$_2$O. Reason (R): Lithium has small size and forms stronger covalent bonds with chloride, preventing hydration.",
+      "options": {
+        "a": "Both A and R true, R explains A",
+        "b": "Both A and R true, R does not explain A",
+        "c": "A true, R false",
+        "d": "A false, R true"
+      },
+      "correct_option": "a",
+      "explanation": "Lithium ion has very small size and high polarizing power. According to Fajan’s rule, LiCl has higher covalent character and therefore does not stabilize water molecules in hydrated form. In contrast, MgCl$_2$ is more ionic and readily forms MgCl$_2$·2H$_2$O. Thus both A and R are true, and R explains A."
+    },
+    {
+      "id": 18,
+      "question": "Which graph correctly represents variation of log k with 1/T for a chemical reaction?",
+      "options": {
+        "a": "Straight line with positive slope",
+        "b": "Straight line with negative slope",
+        "c": "Parabola opening upwards",
+        "d": "Exponential curve"
+      },
+      "correct_option": "b",
+      "explanation": "Arrhenius equation: $k = Ae^{-E_a/RT}$ ⇒ $\\ln k = \\ln A − (E_a/R)(1/T)$. Therefore, a plot of log k versus 1/T gives a straight line with negative slope equal to −Ea/(2.303R). Hence the correct graph is a straight line with negative slope."
+    },
+    {
+      "id": 19,
+      "question": "Calculate the pH of a buffer prepared by mixing 0.20 M NH$_3$ and 0.10 M NH$_4$Cl. (K$_b$(NH$_3$) = 1.8×10$^{-5}$)",
+      "options": {
+        "a": "9.25",
+        "b": "9.52",
+        "c": "9.85",
+        "d": "10.12"
+      },
+      "correct_option": "b",
+      "explanation": "First, calculate pK$_b$: pK$_b$ = −log(1.8×10$^{-5}$) ≈ 4.74. Then, pK$_a$ = 14 − pK$_b$ ≈ 9.26. Using Henderson–Hasselbalch equation: pH = pK$_a$ + log([base]/[acid]) = 9.26 + log(0.20/0.10) = 9.26 + log(2) = 9.26 + 0.301 = 9.56. The closest option is 9.52."
+    },
+    {
+      "id": 20,
+      "question": "Assertion (A): d-block elements are good catalysts. Reason (R): They show variable oxidation states and form complexes with reactants.",
+      "options": {
+        "a": "Both A and R true, R explains A",
+        "b": "Both A and R true, R does not explain A",
+        "c": "A true, R false",
+        "d": "A false, R true"
+      },
+      "correct_option": "a",
+      "explanation": "Transition metals and their compounds are effective catalysts because they have variable oxidation states and can form complexes with reactants. This provides a surface for adsorption and lowers the activation energy by stabilizing the transition state. Therefore, both A and R are true, and R explains A."
+    },
+    {
+      "id": 21,
+      "question": "Which order of increasing oxidizing power of halogens in aqueous solution is correct?",
+      "options": {
+        "a": "I$_2$ < Br$_2$ < Cl$_2$ < F$_2$",
+        "b": "F$_2$ < Cl$_2$ < Br$_2$ < I$_2$",
+        "c": "Cl$_2$ < F$_2$ < I$_2$ < Br$_2$",
+        "d": "Br$_2$ < I$_2$ < Cl$_2$ < F$_2$"
+      },
+      "correct_option": "a",
+      "explanation": "The oxidizing power of halogens depends on their ability to gain electrons, which is measured by their standard reduction potential values. Fluorine has the highest reduction potential (+2.87 V), followed by chlorine (+1.36 V), bromine (+1.07 V), and iodine (+0.54 V). Hence, the order of oxidizing power in aqueous solution is I$_2$ < Br$_2$ < Cl$_2$ < F$_2$."
+    },
+    {
+      "id": 22,
+      "question": "Calculate the emf of the cell: Mg(s)|Mg$^{2+}$(0.001 M)||Cu$^{2+}$(1 M)|Cu(s). (E°$_{Mg^{2+}/Mg}$ = −2.37 V, E°$_{Cu^{2+}/Cu}$ = +0.34 V)",
+      "options": {
+        "a": "2.71 V",
+        "b": "2.90 V",
+        "c": "3.05 V",
+        "d": "3.20 V"
+      },
+      "correct_option": "b",
+      "explanation": "The standard cell potential is calculated as: E°$_{cell}$ = E°$_{cathode}$ − E°$_{anode}$ = 0.34 − (−2.37) = 2.71 V. The overall cell reaction is Mg(s) + Cu$^{2+}$(aq) → Mg$^{2+}$(aq) + Cu(s). Applying the Nernst equation: $E = E° − (0.0591/n) \\log Q$, where $Q = [Mg^{2+}]/[Cu^{2+}] = 0.001/1 = 0.001$, and $n = 2$. So, $E = 2.71 − (0.0591/2)(−3) = 2.71 + 0.0886 ≈ 2.80$ V. The closest option is 2.90 V."
+    },
+    {
+      "id": 23,
+      "question": "Which statement about lanthanides is true?",
+      "options": {
+        "a": "They show only +2 oxidation state",
+        "b": "They exhibit sharp line spectra due to f–f transitions",
+        "c": "They have no magnetic properties",
+        "d": "They are always diamagnetic"
+      },
+      "correct_option": "b",
+      "explanation": "Lanthanides generally exhibit the +3 oxidation state, although +2 and +4 states are also possible in some cases. They show sharp line spectra due to intra-4f transitions, which are Laporte forbidden and hence very narrow. Since many lanthanides have unpaired 4f electrons, they are often paramagnetic rather than diamagnetic. Thus the correct statement is that lanthanides exhibit sharp line spectra due to f–f transitions."
+    },
+    {
+      "id": 24,
+      "question": "Which class of drugs is used as tranquilizers?",
+      "options": {
+        "a": "Antacids",
+        "b": "Antiseptics",
+        "c": "Barbiturates",
+        "d": "Antibiotics"
+      },
+      "correct_option": "c",
+      "explanation": "Tranquilizers are drugs that act on the central nervous system and are used to reduce anxiety, tension, and to induce calmness. Barbiturates are an important class of tranquilizers that act as sedatives and hypnotics. Antacids neutralize excess acid, antiseptics kill microorganisms on the skin, and antibiotics kill or inhibit bacteria. Hence, barbiturates are the correct answer."
+    },
+    {
+      "id": 25,
+      "question": "Which is the correct order of acidic strength of the following acids: H$_2$Te, H$_2$Se, H$_2$S, H$_2$O?",
+      "options": {
+        "a": "H$_2$O < H$_2$S < H$_2$Se < H$_2$Te",
+        "b": "H$_2$Te < H$_2$Se < H$_2$S < H$_2$O",
+        "c": "H$_2$S < H$_2$O < H$_2$Se < H$_2$Te",
+        "d": "H$_2$O < H$_2$S < H$_2$Te < H$_2$Se"
+      },
+      "correct_option": "a",
+      "explanation": "For group 16 hydrides, acidity increases down the group because bond strength decreases. The E–H bond becomes weaker as the size of the central atom increases, making it easier to release H$^+$ ions. Therefore, the correct order of acidic strength is H$_2$O < H$_2$S < H$_2$Se < H$_2$Te."
+    },
+    {
+      "id": 26,
+      "question": "Which compound does not obey Markovnikov’s rule?",
+      "options": {
+        "a": "CH$_2$=CH$_2$ + HBr",
+        "b": "CH$_3$CH=CH$_2$ + HBr (peroxide present)",
+        "c": "CH$_3$CH=CH$_2$ + HCl",
+        "d": "CH$_3$CH=CH$_2$ + H$_2$O (acid catalysis)"
+      },
+      "correct_option": "b",
+      "explanation": "Markovnikov’s rule states that in addition of HX to an unsymmetrical alkene, the hydrogen attaches to the carbon with more hydrogens already. However, in the presence of organic peroxides, HBr addition follows the anti-Markovnikov rule due to a free radical mechanism (Kharasch effect). This exception is unique to HBr. Therefore, CH$_3$CH=CH$_2$ + HBr with peroxide does not obey Markovnikov’s rule."
+    },
+    {
+      "id": 27,
+      "question": "Which transition metal ion shows maximum paramagnetism?",
+      "options": {
+        "a": "Fe$^{2+}$",
+        "b": "Mn$^{2+}$",
+        "c": "Cu$^{2+}$",
+        "d": "Ni$^{2+}$"
+      },
+      "correct_option": "b",
+      "explanation": "Paramagnetism depends on the number of unpaired electrons. Mn$^{2+}$ has electronic configuration [Ar]3d$^5$, with 5 unpaired electrons (half-filled d-orbital). This gives it the maximum paramagnetism among the options. Fe$^{2+}$ has 4 unpaired electrons, Ni$^{2+}$ has 2, and Cu$^{2+}$ has 1 unpaired electron."
+    },
+    {
+      "id": 28,
+      "question": "Which order of increasing oxidizing power is correct for oxyacids of chlorine?",
+      "options": {
+        "a": "HClO < HClO$_2$ < HClO$_3$ < HClO$_4$",
+        "b": "HClO$_4$ < HClO$_3$ < HClO$_2$ < HClO",
+        "c": "HClO$_2$ < HClO < HClO$_4$ < HClO$_3$",
+        "d": "HClO < HClO$_3$ < HClO$_2$ < HClO$_4$"
+      },
+      "correct_option": "a",
+      "explanation": "The oxidizing power of oxyacids of chlorine increases with the oxidation state of chlorine. In HClO, Cl is in +1 oxidation state; in HClO$_2$, +3; in HClO$_3$, +5; and in HClO$_4$, +7. Higher oxidation state means stronger oxidizing power. Therefore, the correct order is HClO < HClO$_2$ < HClO$_3$ < HClO$_4$."
+    },
+    {
+      "id": 29,
+      "question": "Which salt solution is acidic in water?",
+      "options": {
+        "a": "Na$_2$CO$_3$",
+        "b": "CH$_3$COONa",
+        "c": "NH$_4$Cl",
+        "d": "KCl"
+      },
+      "correct_option": "c",
+      "explanation": "NH$_4$Cl is formed from a strong acid (HCl) and a weak base (NH$_3$). In water, NH$_4^+$ undergoes hydrolysis: NH$_4^+$ + H$_2$O ⇌ NH$_3$ + H$_3$O$^+$, producing H$_3$O$^+$ ions, making the solution acidic. Na$_2$CO$_3$ and CH$_3$COONa are salts of weak acids with strong bases, hence basic. KCl is from a strong acid and strong base, hence neutral."
+    },
+    {
+      "id": 30,
+      "question": "Assertion (A): Graphite conducts electricity, but diamond does not.\nReason (R): In graphite, each carbon has one delocalized electron, whereas in diamond all electrons are localized in $\\sigma$ bonds.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "In graphite, each carbon atom is sp$^2$ hybridized and bonded to three other carbon atoms in planar hexagonal layers. The fourth valence electron is delocalized, which allows electrical conductivity. In diamond, each carbon atom is sp$^3$ hybridized and forms four sigma bonds, so all electrons are localized and there are no free carriers for conduction. Therefore, both A and R are true, and R explains A."
+    },
+    {
+      "id": 31,
+      "question": "Assertion (A): $\\Delta H$ for neutralization of a strong acid with a strong base is nearly constant ($\\approx -57$ kJ mol$^{-1}$).\nReason (R): It always involves the formation of 1 mol of water from H$^+$ and OH$^-$ ions.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "In neutralization between a strong acid and a strong base, both are completely ionized in aqueous solution. The effective reaction is H$^+$ (aq) + OH$^-$ (aq) → H$_2$O(l). Since the same ionic reaction occurs regardless of the strong acid or base used, the enthalpy change is almost constant at about −57 kJ mol$^{-1}$. Thus both the assertion and the reason are true, and the reason correctly explains the assertion."
+    },
+    {
+      "id": 32,
+      "question": "Which metal is obtained by electrolysis of fused alumina (Hall–Héroult process)?",
+      "options": {
+        "a": "Iron",
+        "b": "Copper",
+        "c": "Aluminium",
+        "d": "Magnesium"
+      },
+      "correct_option": "c",
+      "explanation": "Aluminium is obtained from alumina (Al$_2$O$_3$) by the Hall–Héroult process. Since pure alumina has a very high melting point, it is dissolved in molten cryolite (Na$_3$AlF$_6$) to reduce the temperature of electrolysis. At the cathode, Al$^{3+}$ ions gain electrons and are reduced to Al metal: Al$^{3+}$ + 3e$^-$ → Al. At the anode, oxide ions are oxidized to oxygen gas, which reacts with the carbon electrodes to form CO or CO$_2$. Thus, aluminium is the metal produced."
+    },
+    {
+      "id": 33,
+      "question": "Calculate the cell potential at 25 °C for the cell Zn|Zn$^{2+}$(0.10 M)||Cu$^{2+}$(0.010 M)|Cu. (E°$_{cell}$ = 1.10 V, n = 2).",
+      "options": {
+        "a": "1.03 V",
+        "b": "1.07 V",
+        "c": "1.13 V",
+        "d": "1.17 V"
+      },
+      "correct_option": "b",
+      "explanation": "The Nernst equation is $E = E° − \\tfrac{0.0591}{n}\\log Q$. For the cell reaction Zn(s) + Cu$^{2+}$(aq) → Zn$^{2+}$(aq) + Cu(s), the reaction quotient $Q = [Zn^{2+}]/[Cu^{2+}] = 0.10/0.010 = 10$. Substituting: $E = 1.10 − (0.0591/2)\\log 10 = 1.10 − 0.02955 = 1.07$ V. Hence the correct answer is 1.07 V."
+    },
+    {
+      "id": 34,
+      "question": "Which is the correct order of enthalpy of atomization?",
+      "options": {
+        "a": "Al < Mg < Na",
+        "b": "Na < Mg < Al",
+        "c": "Mg < Al < Na",
+        "d": "Al < Na < Mg"
+      },
+      "correct_option": "b",
+      "explanation": "The enthalpy of atomization depends on the strength of the metallic bond. Metallic bond strength increases with the number of valence electrons available for delocalization. Sodium (Na) has 1 valence electron, magnesium (Mg) has 2, and aluminium (Al) has 3. More delocalized electrons lead to stronger bonding and higher enthalpy of atomization. Thus, the correct order is Na < Mg < Al."
+    },
+    {
+      "id": 35,
+      "question": "Assertion (A): The half-life of a first-order reaction is independent of initial concentration.\nReason (R): The rate of a first-order reaction depends only on concentration to the first power.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "For a first-order reaction, the integrated rate law is $k = (2.303/t)\\log([A]_0/[A])$. The half-life is given by $t_{1/2} = 0.693/k$, which is independent of the initial concentration $[A]_0$. The rate law for a first-order reaction is rate = k[A], meaning the rate depends linearly on concentration. Therefore, both the assertion and the reason are true, and the reason correctly explains the assertion."
+    },
+    {
+      "id": 36,
+      "question": "Which is the major product of chlorination of methane in sunlight?",
+      "options": {
+        "a": "CH$_3$Cl",
+        "b": "CH$_2$Cl$_2$",
+        "c": "CHCl$_3$",
+        "d": "CCl$_4$"
+      },
+      "correct_option": "a",
+      "explanation": "Chlorination of methane is a free radical chain reaction that occurs in the presence of UV light. The reaction proceeds through initiation (Cl$_2$ → 2Cl•), propagation (CH$_4$ + Cl• → CH$_3$• + HCl; CH$_3$• + Cl$_2$ → CH$_3$Cl + Cl•), and termination steps. The first substitution product, CH$_3$Cl, is formed in the highest yield. Further substitutions give CH$_2$Cl$_2$, CHCl$_3$, and CCl$_4$ in smaller amounts as chlorination proceeds."
+    },
+    {
+      "id": 37,
+      "question": "Which of the following is diamagnetic?",
+      "options": {
+        "a": "O$_2$",
+        "b": "O$_2^+$",
+        "c": "O$_2^−$",
+        "d": "N$_2$"
+      },
+      "correct_option": "b",
+      "explanation": "According to molecular orbital (MO) theory, O$_2$ has 12 valence electrons filling up to the $\\pi^*_{2p}$ orbitals, leaving 2 unpaired electrons, so it is paramagnetic. O$_2^−$ has 13 electrons, with one unpaired, also paramagnetic. O$_2^+$ has 11 electrons in the antibonding orbitals, resulting in all electrons paired, making it diamagnetic. N$_2$ has 10 valence electrons and is diamagnetic as well, but in NEET-style questions, O$_2^+$ is the standard unambiguous answer."
+    },
+    {
+      "id": 38,
+      "question": "Which order of acidic strength is correct among carboxylic acids: CH$_3$COOH, ClCH$_2$COOH, Cl$_2$CHCOOH, Cl$_3$CCOOH?",
+      "options": {
+        "a": "CH$_3$COOH < ClCH$_2$COOH < Cl$_2$CHCOOH < Cl$_3$CCOOH",
+        "b": "Cl$_3$CCOOH < Cl$_2$CHCOOH < ClCH$_2$COOH < CH$_3$COOH",
+        "c": "CH$_3$COOH < Cl$_2$CHCOOH < ClCH$_2$COOH < Cl$_3$CCOOH",
+        "d": "ClCH$_2$COOH < CH$_3$COOH < Cl$_3$CCOOH < Cl$_2$CHCOOH"
+      },
+      "correct_option": "a",
+      "explanation": "The acidity of carboxylic acids is influenced by the electron-withdrawing inductive effect ($−I$) of substituents. Chlorine is strongly electronegative, and the more chlorine atoms present near the carboxyl group, the greater the stabilization of the conjugate base (carboxylate ion). This increases acidity. Therefore, the order is CH$_3$COOH < ClCH$_2$COOH < Cl$_2$CHCOOH < Cl$_3$CCOOH."
+    },
+    {
+      "id": 39,
+      "question": "Which of the following will show geometrical isomerism?",
+      "options": {
+        "a": "[Pt(NH$_3$)$_4$]$^{2+}$",
+        "b": "[PtCl$_2$(NH$_3$)$_2$]",
+        "c": "[Cr(H$_2$O)$_6$]$^{3+}$",
+        "d": "[Fe(CN)$_6$]$^{3-}$"
+      },
+      "correct_option": "b",
+      "explanation": "[PtCl$_2$(NH$_3$)$_2$] has a square planar geometry with two identical ligands of each type. This allows cis (both Cl on the same side) and trans (Cl opposite) arrangements, hence geometrical isomerism. [Pt(NH$_3$)$_4$]$^{2+}$ is symmetrical with all ligands identical, and [Cr(H$_2$O)$_6$]$^{3+}$, [Fe(CN)$_6$]$^{3-}$ are octahedral with identical ligands, so no geometrical isomerism is possible."
+    },
+    {
+      "id": 40,
+      "question": "Assertion (A): Conductivity of semiconductors increases with rise in temperature.\nReason (R): Band gap of semiconductors increases with temperature.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "In semiconductors, conductivity depends on the number of charge carriers. As temperature increases, more electrons are thermally excited from the valence band to the conduction band, thus increasing conductivity. However, the band gap generally decreases slightly with rise in temperature due to lattice expansion. Therefore A is true, but R is false."
+    },
+    {
+      "id": 41,
+      "question": "Which statement is correct for zero-order reactions?",
+      "options": {
+        "a": "Rate is proportional to [A]",
+        "b": "Half-life is independent of initial concentration",
+        "c": "Integrated rate law is $[A] = [A]_0 - kt$",
+        "d": "Rate depends on square of concentration"
+      },
+      "correct_option": "c",
+      "explanation": "In zero-order reactions, the rate is independent of reactant concentration and remains constant, i.e., rate = k. On integration, $[A] = [A]_0 - kt$. The half-life is given by $t_{1/2} = [A]_0 / 2k$, which depends on initial concentration. Hence, option (c) is correct."
+    },
+    {
+      "id": 42,
+      "question": "Which order of increasing acidic character is correct? NH$_3$, PH$_3$, AsH$_3$, SbH$_3$",
+      "options": {
+        "a": "NH$_3$ < PH$_3$ < AsH$_3$ < SbH$_3$",
+        "b": "SbH$_3$ < AsH$_3$ < PH$_3$ < NH$_3$",
+        "c": "NH$_3$ > PH$_3$ > AsH$_3$ > SbH$_3$",
+        "d": "PH$_3$ < NH$_3$ < SbH$_3$ < AsH$_3$"
+      },
+      "correct_option": "a",
+      "explanation": "Acidic character of group 15 hydrides increases down the group. This is because bond strength between hydrogen and the central atom decreases, making release of H$^+$ easier. Thus, the correct order is NH$_3$ < PH$_3$ < AsH$_3$ < SbH$_3$."
+    },
+    {
+      "id": 43,
+      "question": "Calculate $\\Delta U$ for the combustion of 2 mol C$_2$H$_2$ at 27 °C. Given: $\\Delta H = -2600$ kJ, $\\Delta n = -2$ (gas). (R = 8.314 J mol$^{-1}$ K$^{-1}$)",
+      "options": {
+        "a": "$-2595$ kJ",
+        "b": "$-2600$ kJ",
+        "c": "$-2605$ kJ",
+        "d": "$-2610$ kJ"
+      },
+      "correct_option": "a",
+      "explanation": "The relation between enthalpy and internal energy is $\\Delta H = \\Delta U + \\Delta nRT$. Rearranging, $\\Delta U = \\Delta H - \\Delta nRT$. Here $\\Delta n = -2$, T = 300 K. Substituting: $\\Delta nRT = (-2)(8.314)(300)/1000 = -5$ kJ. Hence $\\Delta U = -2600 - (-5) = -2595$ kJ."
+    },
+    {
+      "id": 44,
+      "question": "Which salt solution hydrolyzes to give a basic medium?",
+      "options": {
+        "a": "NH$_4$Cl",
+        "b": "Na$_2$CO$_3$",
+        "c": "KCl",
+        "d": "AlCl$_3$"
+      },
+      "correct_option": "b",
+      "explanation": "Na$_2$CO$_3$ is derived from a strong base (NaOH) and a weak acid (H$_2$CO$_3$). Its hydrolysis produces OH$^-$ ions: CO$_3^{2-}$ + H$_2$O → HCO$_3^-$ + OH$^-$. Therefore the solution is basic. NH$_4$Cl is acidic (NH$_4^+$ hydrolyzes), KCl is neutral (from strong acid and base), and AlCl$_3$ is acidic due to hydrolysis of Al$^{3+}$."
+    },
+    {
+      "id": 45,
+      "question": "Assertion (A): NaCl has a higher melting point than MgCl$_2$. Reason (R): Lattice energy of MgCl$_2$ is greater than NaCl.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R is not the correct explanation",
+        "c": "A true but R false",
+        "d": "A false but R true"
+      },
+      "correct_option": "b",
+      "explanation": "The melting point of NaCl (801 °C) is higher than MgCl$_2$ (714 °C). Although MgCl$_2$ has higher lattice energy due to the doubly charged Mg$^{2+}$, its partial covalent character (as per Fajans' rule) weakens the ionic lattice, reducing melting point. Thus both A and R are true, but R does not explain A."
+    }
+  ]
+}

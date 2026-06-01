@@ -1,0 +1,551 @@
+{
+  "test_number": 1,
+  "subject": "Physics",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which of the following is not an SI base quantity?",
+      "options": {
+        "a": "Length",
+        "b": "Mass",
+        "c": "Time",
+        "d": "Velocity"
+      },
+      "correct_option": "d",
+      "explanation": "In the SI system there are seven base quantities with their respective units:<br>1. Length (metre, m)<br>2. Mass (kilogram, kg)<br>3. Time (second, s)<br>4. Electric current (ampere, A)<br>5. Thermodynamic temperature (kelvin, K)<br>6. Amount of substance (mole, mol)<br>7. Luminous intensity (candela, cd).<br><br>All other physical quantities are derived from these. Velocity is defined as displacement per unit time: $v = \\Delta x / \\Delta t$.<br>Dimensional formula: $[v] = L T^{-1}$.<br>It depends on two base quantities (length and time), so it is a derived quantity, not a base quantity."
+    },
+    {
+      "id": 2,
+      "question": "The dimensional formula of work is:",
+      "options": {
+        "a": "$M L T^{-2}$",
+        "b": "$M L^{2} T^{-2}$",
+        "c": "$M^{0} L^{2} T^{-2}$",
+        "d": "$M^{2} L^{2} T^{-2}$"
+      },
+      "correct_option": "b",
+      "explanation": "Work is defined as $W = F \\cdot d$, where $F$ is force and $d$ is displacement.<br>Force: $F = ma$. Dimensional formula of mass $[M]$, acceleration $[L T^{-2}]$. So $[F] = M L T^{-2}$.<br>Displacement $[d] = L$.<br>Thus, $[W] = [F][d] = (M L T^{-2})(L) = M L^{2} T^{-2}$.<br><br>Unit check: joule (J) = newton × metre = (kg·m·s$^{-2}$)·m = kg·m$^{2}$·s$^{-2}$. This confirms the formula."
+    },
+    {
+      "id": 3,
+      "question": "A car starting from rest accelerates uniformly at $2\\,\\text{m s}^{-2}$ for $5\\,\\text{s}$. The distance covered is:",
+      "options": {
+        "a": "$10\\,\\text{m}$",
+        "b": "$20\\,\\text{m}$",
+        "c": "$25\\,\\text{m}$",
+        "d": "$50\\,\\text{m}$"
+      },
+      "correct_option": "c",
+      "explanation": "Equation of motion: $s = ut + \\tfrac{1}{2}at^2$.<br>Here $u = 0$, $a = 2\\,\\text{m/s}^2$, $t = 5$ s.<br>So $s = 0 + \\tfrac{1}{2}(2)(25) = 25$ m.<br><br>Alternate method: final velocity $v = u + at = 0 + 2\\times5 = 10$ m/s.<br>Average velocity = $(u+v)/2 = (0+10)/2 = 5$ m/s.<br>Distance = average velocity × time = 5 × 5 = 25 m.<br>Both methods agree.",
+      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test1/3.png"
+    },
+    {
+      "id": 4,
+      "question": "A ball is projected vertically upward with speed $20\\,\\text{m s}^{-1}$. Take $g = 9.8\\,\\text{m s}^{-2}$. Maximum height reached is:",
+      "options": {
+        "a": "$10.2\\,\\text{m}$",
+        "b": "$15.3\\,\\text{m}$",
+        "c": "$20.4\\,\\text{m}$",
+        "d": "$40.8\\,\\text{m}$"
+      },
+      "correct_option": "c",
+      "explanation": "At maximum height, final velocity $v = 0$.<br>Equation of motion: $v^2 = u^2 - 2gh$.<br>So $h = u^2 / (2g)$.<br>Substitute: $h = 20^2 / (2\\times 9.8) = 400 / 19.6 = 20.4$ m.<br><br>Unit check: $(m^2 s^{-2}) / (m s^{-2}) = m$.<br>If we approximate $g=10$, the result is 20 m; using $9.8$ gives 20.4 m (more accurate)."
+    },
+    {
+      "id": 5,
+      "question": "A projectile is fired with speed $10\\,\\text{m s}^{-1}$ at $45^{\\circ}$ on level ground ($g = 10\\,\\text{m s}^{-2}$). Its range is:",
+      "options": {
+        "a": "$5\\,\\text{m}$",
+        "b": "$10\\,\\text{m}$",
+        "c": "$15\\,\\text{m}$",
+        "d": "$20\\,\\text{m}$"
+      },
+      "correct_option": "b",
+      "explanation": "Formula for range: $R = \\dfrac{u^2 \\sin 2\\theta}{g}$.<br>$u = 10$ m/s, $\\theta = 45^{\\circ}$.<br>So $2\\theta = 90^{\\circ}$, and $\\sin 90^{\\circ} = 1$.<br>Thus $R = 100/10 = 10$ m.<br><br>Key point: maximum range for a given speed occurs at $45^{\\circ}$. Other angles give shorter range."
+    },
+    {
+      "id": 6,
+      "question": "Two blocks of masses $2\\,\\text{kg}$ and $3\\,\\text{kg}$ are connected and pulled on a frictionless horizontal surface by a horizontal force of $10\\,\\text{N}$. The acceleration of the system is:",
+      "options": {
+        "a": "$1\\,\\text{m s}^{-2}$",
+        "b": "$2\\,\\text{m s}^{-2}$",
+        "c": "$3\\,\\text{m s}^{-2}$",
+        "d": "$5\\,\\text{m s}^{-2}$"
+      },
+      "correct_option": "b",
+      "explanation": "The total mass of the system = $2 + 3 = 5$ kg.<br>By Newton’s second law: $a = F / M = 10 / 5 = 2$ m/s$^2$.<br><br>Reasoning: considering both blocks together eliminates the internal tension force. Only the external force (10 N) determines the acceleration."
+    },
+    {
+      "id": 7,
+      "question": "A constant force of $10\\,\\text{N}$ causes a displacement of $5\\,\\text{m}$ making an angle of $60^{\\circ}$ between the force and the displacement direction. The work done is:",
+      "options": {
+        "a": "$10\\,\\text{J}$",
+        "b": "$20\\,\\text{J}$",
+        "c": "$25\\,\\text{J}$",
+        "d": "$50\\,\\text{J}$"
+      },
+      "correct_option": "c",
+      "explanation": "Work is defined as $W = F s \\cos\\theta$.<br>Here $F = 10$ N, $s = 5$ m, $\\theta = 60^{\\circ}$.<br>So $W = 10 \\times 5 \\times \\cos 60^{\\circ} = 50 \\times 0.5 = 25$ J.<br><br>Only the component of force along displacement ($F\\cos\\theta$) contributes to the work done."
+    },
+    {
+      "id": 8,
+      "question": "A spring of force constant $k = 200\\,\\text{N m}^{-1}$ is compressed by $0.10\\,\\text{m}$. The elastic potential energy stored is:",
+      "options": {
+        "a": "$0.5\\,\\text{J}$",
+        "b": "$1.0\\,\\text{J}$",
+        "c": "$2.0\\,\\text{J}$",
+        "d": "$4.0\\,\\text{J}$"
+      },
+      "correct_option": "b",
+      "explanation": "Elastic potential energy in a spring is $U = \\tfrac{1}{2}kx^2$.<br>Here $k = 200$ N/m, $x = 0.10$ m.<br>So $U = 0.5 \\times 200 \\times (0.10)^2 = 0.5 \\times 200 \\times 0.01 = 1.0$ J.<br><br>Unit check: (N·m) = joule (J)."
+    },
+    {
+      "id": 9,
+      "question": "If $300\\,\\text{J}$ of work is done in $10\\,\\text{s}$, the average power delivered is:",
+      "options": {
+        "a": "$15\\,\\text{W}$",
+        "b": "$20\\,\\text{W}$",
+        "c": "$30\\,\\text{W}$",
+        "d": "$3000\\,\\text{W}$"
+      },
+      "correct_option": "c",
+      "explanation": "Power is defined as work done per unit time: $P = W/t$.<br>Here $W = 300$ J, $t = 10$ s.<br>So $P = 300/10 = 30$ W.<br><br>Unit check: J/s = W.<br>Interpretation: power indicates the rate at which work is done. Doing the same work faster means higher power."
+    },
+    {
+      "id": 10,
+      "question": "The escape velocity from the Earth is approximately (take $g = 9.8\\,\\text{m s}^{-2}$, $R = 6.4\\times10^{6}\\,\\text{m}$):",
+      "options": {
+        "a": "$7.9\\,\\text{km s}^{-1}$",
+        "b": "$9.8\\,\\text{km s}^{-1}$",
+        "c": "$11.2\\,\\text{km s}^{-1}$",
+        "d": "$13.0\\,\\text{km s}^{-1}$"
+      },
+      "correct_option": "c",
+      "explanation": "Escape velocity formula: $v_e = \\sqrt{2gR}$.<br>Substitute: $v_e = \\sqrt{2 \\times 9.8 \\times 6.4 \\times 10^6}$.<br>Inside the root: $2 \\times 9.8 \\times 6.4 \\times 10^6 = 1.2544 \\times 10^8$.<br>Square root: $\\sqrt{1.2544 \\times 10^8} \\approx 1.12 \\times 10^4$ m/s = 11.2 km/s.<br><br>Note: $\\sqrt{gR}$ gives orbital velocity, not escape velocity. Escape velocity is greater by factor $\\sqrt{2}$."
+    },
+    {
+      "id": 11,
+      "question": "A $1\\,\\text{kg}$ mass attached to a light horizontal spring ($k = 4\\,\\text{N m}^{-1}$) performs small oscillations on a smooth surface. The time period of oscillation is:",
+      "options": {
+        "a": "$2\\,\\text{s}$",
+        "b": "$3.14\\,\\text{s}$",
+        "c": "$6.28\\,\\text{s}$",
+        "d": "$1.57\\,\\text{s}$"
+      },
+      "correct_option": "b",
+      "explanation": "For a spring–mass system, the time period is given by:\n\\[ T = 2\\pi\\sqrt{\\frac{m}{k}}. \\]\nHere $m=1$ kg, $k=4$ N m$^{-1}$. Substituting,\n\\[ T = 2\\pi\\sqrt{\\tfrac{1}{4}} = 2\\pi\\times0.5 = \\pi\\,\\text{s} \\approx 3.14\\,\\text{s}. \\]\nThe angular frequency is $\\omega=\\sqrt{\\tfrac{k}{m}} = 2$ rad s$^{-1}$. Thus frequency $f=1/T\\approx0.318$ Hz. Units: $\\sqrt{\\tfrac{kg}{N/m}}=\\sqrt{\\tfrac{kg}{kg/s^2}}=s$, so dimensional check is correct.",
+      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test1/11.png"
+    },
+    {
+      "id": 12,
+      "question": "A sound wave has frequency $500\\,\\text{Hz}$ and wavelength $0.68\\,\\text{m}$. The speed of sound in this case is:",
+      "options": {
+        "a": "$170\\,\\text{m s}^{-1}$",
+        "b": "$240\\,\\text{m s}^{-1}$",
+        "c": "$300\\,\\text{m s}^{-1}$",
+        "d": "$340\\,\\text{m s}^{-1}$"
+      },
+      "correct_option": "d",
+      "explanation": "The relation between speed, frequency and wavelength is:\n\\[ v = f\\lambda. \\]\nSubstitute $f=500$ Hz and $\\lambda=0.68$ m:\n\\[ v = 500\\times0.68 = 340\\,\\text{m s}^{-1}. \\]\nUnit check: Hz·m = s$^{-1}$·m = m s$^{-1}$. This value matches the standard speed of sound in air at room temperature (~20 °C)."
+    },
+    {
+      "id": 13,
+      "question": "How much heat is required to raise the temperature of $200\\,\\text{g}$ of water from $25^{\\circ}\\text{C}$ to $35^{\\circ}\\text{C}$? (Specific heat of water $c = 4.2\\,\\text{J g}^{-1}\\text{K}^{-1}$)",
+      "options": {
+        "a": "$420\\,\\text{J}$",
+        "b": "$840\\,\\text{J}$",
+        "c": "$4200\\,\\text{J}$",
+        "d": "$8400\\,\\text{J}$"
+      },
+      "correct_option": "d",
+      "explanation": "Heat required: \n\\[ Q = mc\\Delta T. \\]\nHere $m=200$ g, $c=4.2$ J g$^{-1}$ K$^{-1}$, $\\Delta T=35-25=10$ K.\n\\[ Q=200\\times4.2\\times10=8400\\,\\text{J}. \\]\nUnit check: g·(J g$^{-1}$ K$^{-1}$)·K = J. Note: change in temperature in °C equals change in K, so no conversion needed."
+    },
+    {
+      "id": 14,
+      "question": "Two point charges each of $1\\,\\mu\\text{C}$ are placed $1\\,\\text{m}$ apart in air. The magnitude of the force between them is approximately (Coulomb constant $k = 9\\times10^{9}\\,\\text{N m}^{2}\\text{C}^{-2}$):",
+      "options": {
+        "a": "$9\\,\\text{N}$",
+        "b": "$0.09\\,\\text{N}$",
+        "c": "$0.009\\,\\text{N}$",
+        "d": "$9\\times10^{-6}\\,\\text{N}$"
+      },
+      "correct_option": "c",
+      "explanation": "By Coulomb’s law:\n\\[ F = k\\frac{q_1q_2}{r^2}. \\]\nHere $q_1=q_2=1\\,\\mu\\text{C}=1\\times10^{-6}$ C, $r=1$ m.\n\\[ F = 9\\times10^{9}\\times(10^{-6})(10^{-6})/1^2 = 9\\times10^{-3}\\,\\text{N}. \\]\nSo the force is 0.009 N (repulsive, since charges are like)."
+    },
+    {
+      "id": 15,
+      "question": "The equivalent resistance of $6\\,\\Omega$ and $3\\,\\Omega$ connected in parallel is:",
+      "options": {
+        "a": "$1\\,\\Omega$",
+        "b": "$2\\,\\Omega$",
+        "c": "$3\\,\\Omega$",
+        "d": "$4.5\\,\\Omega$"
+      },
+      "correct_option": "b",
+      "explanation": "For two resistors in parallel:\n\\[ R_{eq} = \\frac{R_1 R_2}{R_1+R_2}. \\]\nSubstituting $R_1=6\\,\\Omega$, $R_2=3\\,\\Omega$:\n\\[ R_{eq} = \\tfrac{6\\times3}{6+3} = \\tfrac{18}{9} = 2\\,\\Omega. \\]\nCheck: in parallel, the equivalent must be less than the smaller resistance (3 Ω), so 2 Ω is consistent."
+    },
+    {
+      "id": 16,
+      "question": "A car travels the first half of a journey at $60\\,\\text{km h}^{-1}$ and the second half at $30\\,\\text{km h}^{-1}$. The average speed for the entire journey is:",
+      "options": {
+        "a": "$40\\,\\text{km h}^{-1}$",
+        "b": "$45\\,\\text{km h}^{-1}$",
+        "c": "$30\\,\\text{km h}^{-1}$",
+        "d": "$36\\,\\text{km h}^{-1}$"
+      },
+      "correct_option": "a",
+      "explanation": "Let the distance of each half be $D$. Time for first half: $t_1=\\tfrac{D}{60}$. Time for second half: $t_2=\\tfrac{D}{30}$. Total distance $=2D$. Total time $=t_1+t_2=\\tfrac{D}{60}+\\tfrac{D}{30}=\\tfrac{D}{20}$.\nAverage speed:\n\\[ v_{avg} = \\frac{2D}{D/20} = 40\\,\\text{km h}^{-1}. \\]\nShortcut: For equal distances,\n\\[ v_{avg} = \\frac{2v_1v_2}{v_1+v_2} = \\frac{2\\times60\\times30}{90}=40\\,\\text{km h}^{-1}. \\]"
+    },
+    {
+      "id": 17,
+      "question": "A $1\\,\\text{kg}$ block slides down a rough plane inclined at $30^{\\circ}$ to the horizontal. The coefficient of kinetic friction is $\\mu = 0.20$. Take $g = 10\\,\\text{m s}^{-2}$. The acceleration of the block is:",
+      "options": {
+        "a": "$5.0\\,\\text{m s}^{-2}$",
+        "b": "$3.0\\,\\text{m s}^{-2}$",
+        "c": "$2.0\\,\\text{m s}^{-2}$",
+        "d": "$1.0\\,\\text{m s}^{-2}$"
+      },
+      "correct_option": "b",
+      "explanation": "For motion along an inclined plane:\n\\[ a = g(\\sin\\theta - \\mu\\cos\\theta). \\]\nSubstitute $g=10$, $\\theta=30^{\\circ}$, $\\mu=0.20$.\n\\[ a = 10(0.5 - 0.2\\times0.866) = 10(0.5 - 0.1732) = 10(0.3268) \\approx 3.27\\,\\text{m s}^{-2}. \\]\nClosest option is 3.0 m/s$^2$. Friction reduces acceleration below the frictionless value (5.0 m/s$^2$)."
+    },
+    {
+      "id": 18,
+      "question": "A body moves in a horizontal circle of radius $2.0\\,\\text{m}$ with speed $5.0\\,\\text{m s}^{-1}$. Its centripetal acceleration is:",
+      "options": {
+        "a": "$2.5\\,\\text{m s}^{-2}$",
+        "b": "$5.0\\,\\text{m s}^{-2}$",
+        "c": "$10.0\\,\\text{m s}^{-2}$",
+        "d": "$12.5\\,\\text{m s}^{-2}$"
+      },
+      "correct_option": "d",
+      "explanation": "Centripetal acceleration is:\n\\[ a_c = \\frac{v^2}{r}. \\]\nSubstitute $v=5$, $r=2$:\n\\[ a_c = \\frac{25}{2} = 12.5\\,\\text{m s}^{-2}. \\]\nUnits: (m$^2$s$^{-2}$)/m = m/s$^2$. This shows acceleration increases rapidly with speed and decreases with radius.",
+      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test1/18.png"
+    },
+    {
+      "id": 19,
+      "question": "The hydrostatic pressure at a depth of $5.0\\,\\text{m}$ below the surface of freshwater ($\\rho = 1000\\,\\text{kg m}^{-3}$) taking $g = 10\\,\\text{m s}^{-2}$ is:",
+      "options": {
+        "a": "$2.5\\times10^{4}\\,\\text{Pa}$",
+        "b": "$5.0\\times10^{4}\\,\\text{Pa}$",
+        "c": "$1.0\\times10^{5}\\,\\text{Pa}$",
+        "d": "$5.0\\times10^{5}\\,\\text{Pa}$"
+      },
+      "correct_option": "b",
+      "explanation": "Fluid pressure at depth is:\n\\[ P = \\rho g h. \\]\nSubstitute $\\rho=1000$, $g=10$, $h=5$:\n\\[ P = 1000\\times10\\times5 = 50,000\\,\\text{Pa} = 5.0\\times10^4\\,\\text{Pa}. \\]\nThis is gauge pressure due to water. Absolute pressure would be atmospheric + this value."
+    },
+    {
+      "id": 20,
+      "question": "A fully submerged object displaces $0.020\\,\\text{m}^3$ of water. The buoyant force acting on it (take $\\rho_{water} = 1000\\,\\text{kg m}^{-3}$, $g = 10\\,\\text{m s}^{-2}$) is:",
+      "options": {
+        "a": "$20\\,\\text{N}$",
+        "b": "$100\\,\\text{N}$",
+        "c": "$200\\,\\text{N}$",
+        "d": "$1000\\,\\text{N}$"
+      },
+      "correct_option": "c",
+      "explanation": "Archimedes’ principle states:\n\\[ F_b = \\rho g V_{disp}. \\]\nSubstitute $\\rho=1000$, $g=10$, $V=0.020$ m$^3$:\n\\[ F_b = 1000\\times10\\times0.020 = 200\\,\\text{N}. \\]\nThus buoyant force equals the weight of displaced liquid."
+    },
+    {
+      "id": 21,
+      "question": "100 g of water at 80°C is mixed with 200 g of water at 20°C in an insulated container. Assuming no heat loss, the final temperature is:",
+      "options": {
+        "a": "30°C",
+        "b": "35°C",
+        "c": "40°C",
+        "d": "50°C"
+      },
+      "correct_option": "c",
+      "explanation": "Heat lost by hot water = heat gained by cold water.\nLet $T_f$ be the final temperature:\n\\[ 100(80 - T_f) = 200(T_f - 20) \\]\n\\[ 8000 - 100T_f = 200T_f - 4000 \\]\n\\[ 12000 = 300T_f \\]\n\\[ T_f = 40\\,\\text{°C} \\]\nShortcut (same specific heat for both): weighted average:\n\\[ T_f = \\frac{m_1 T_1 + m_2 T_2}{m_1+m_2} = \\frac{100\\cdot80 + 200\\cdot20}{300} = 40\\,\\text{°C}. \\]"
+    },
+    {
+      "id": 22,
+      "question": "A sample of gas has volume 2.0 L at 1.0 atm. If the temperature remains constant, what will be the pressure when the volume is compressed to 0.50 L?",
+      "options": {
+        "a": "0.25 atm",
+        "b": "0.50 atm",
+        "c": "2.0 atm",
+        "d": "4.0 atm"
+      },
+      "correct_option": "d",
+      "explanation": "Boyle's law: $P_1 V_1 = P_2 V_2$ (temperature constant).\n\\[ P_2 = \\frac{P_1 V_1}{V_2} = \\frac{1.0\\times2.0}{0.50} = 4.0\\,\\text{atm} \\]\nPressure increases as volume decreases, inversely proportional."
+    },
+    {
+      "id": 23,
+      "question": "A string of length 1.0 m is fixed at both ends. A transverse wave travels along it with speed 40 m/s. The fundamental frequency is:",
+      "options": {
+        "a": "10 Hz",
+        "b": "20 Hz",
+        "c": "40 Hz",
+        "d": "80 Hz"
+      },
+      "correct_option": "b",
+      "explanation": "For a string fixed at both ends, fundamental (first harmonic) wavelength:\n\\[ \\lambda_1 = 2L = 2\\times1.0 = 2.0\\,\\text{m} \\]\nFrequency:\n\\[ f_1 = \\frac{v}{\\lambda_1} = \\frac{40}{2} = 20\\,\\text{Hz} \\]\nHigher harmonics: $f_n = n v / (2L)$. Pitfall: $f = v/L$ would give second harmonic."
+    },
+    {
+      "id": 24,
+      "question": "A thin convex lens has focal length f = +20 cm. An object is placed 60 cm in front of the lens. The image distance from the lens is:",
+      "options": {
+        "a": "20 cm (real, inverted)",
+        "b": "30 cm (real, inverted)",
+        "c": "40 cm (virtual, upright)",
+        "d": "60 cm (real, inverted)"
+      },
+      "correct_option": "b",
+      "explanation": "Lens formula: $\\frac{1}{f} = \\frac{1}{v} - \\frac{1}{u}$ (object distance $u$ negative in sign convention).\n\\[ \\frac{1}{20} = \\frac{1}{v} - \\frac{1}{-60} = \\frac{1}{v} + \\frac{1}{60} \\]\n\\[ \\frac{1}{v} = \\frac{1}{20} - \\frac{1}{60} = \\frac{3-1}{60} = \\frac{2}{60} = \\frac{1}{30} \\]\n\\[ v = +30\\,\\text{cm} \\] Image: real, inverted."
+    },
+    {
+      "id": 25,
+      "question": "A light ray in air (n₁ = 1.00) is incident on glass (n₂ = 1.50) at 30°. The angle of refraction is:",
+      "options": {
+        "a": "15°",
+        "b": "19.5°",
+        "c": "30°",
+        "d": "45°"
+      },
+      "correct_option": "b",
+      "explanation": "Snell's law: $n_1 \\sin i = n_2 \\sin r$.\n\\[ \\sin r = \\frac{n_1}{n_2} \\sin i = \\frac{1.0}{1.5} \\times \\sin30° = \\frac{0.5}{1.5} = 0.333 \\]\n\\[ r = \\arcsin(0.333) \\approx 19.5° \\] Refraction is towards normal since n increases.",
+      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test1/25.png"
+    },
+    {
+      "id": 26,
+      "question": "Three resistors 2 Ω, 3 Ω, and 5 Ω are connected in series to a 10 V ideal battery. The current is:",
+      "options": {
+        "a": "0.5 A",
+        "b": "1.0 A",
+        "c": "2.0 A",
+        "d": "5.0 A"
+      },
+      "correct_option": "b",
+      "explanation": "Series equivalent: $R_{eq} = 2 + 3 + 5 = 10\\,\\Omega$\nCurrent: $I = V/R = 10/10 = 1.0$ A. In series, current is same through all resistors."
+    },
+    {
+      "id": 27,
+      "question": "An electric bulb is rated 60 W, 240 V. The current drawn at rated voltage is:",
+      "options": {
+        "a": "0.25 A",
+        "b": "0.50 A",
+        "c": "0.75 A",
+        "d": "1.00 A"
+      },
+      "correct_option": "a",
+      "explanation": "Power: $P = VI \\Rightarrow I = P/V = 60/240 = 0.25$ A.\nResistance: $R = V^2/P = 240^2/60 = 960\\,\\Omega$."
+    },
+    {
+      "id": 28,
+      "question": "Two capacitors 6 μF and 3 μF are connected in series. The equivalent capacitance is:",
+      "options": {
+        "a": "1 μF",
+        "b": "2 μF",
+        "c": "3 μF",
+        "d": "4.5 μF"
+      },
+      "correct_option": "b",
+      "explanation": "Series capacitance: \n\\[ C_{eq} = \\frac{C_1 C_2}{C_1 + C_2} = \\frac{6 \\cdot 3}{6 + 3} = 2\\,\\mu\\text{F} \\]\nCheck: series capacitance < smaller capacitor (3 μF)."
+    },
+    {
+      "id": 29,
+      "question": "A charge q = 1.0×10⁻⁶ C moves with speed v = 1.0×10⁵ m/s perpendicular to a uniform magnetic field B = 0.20 T. The magnetic force is:",
+      "options": {
+        "a": "2.0×10⁻³ N",
+        "b": "2.0×10⁻² N",
+        "c": "2.0×10⁻¹ N",
+        "d": "2.0 N"
+      },
+      "correct_option": "b",
+      "explanation": "Magnetic force: $F = qvB \\sin\\theta$, here $\\theta=90° \\Rightarrow \\sin\\theta=1$.\n\\[ F = (1\\times10^{-6})(1\\times10^5)(0.20) = 2.0\\times10^{-2}\\,\\text{N} \\]"
+    },
+    {
+      "id": 30,
+      "question": "An ideal transformer has 1000 turns in its primary and 250 turns in its secondary. If the primary is connected to 240 V AC, the secondary voltage is:",
+      "options": {
+        "a": "24 V",
+        "b": "60 V",
+        "c": "120 V",
+        "d": "960 V"
+      },
+      "correct_option": "b",
+      "explanation": "Transformer turns ratio: $V_s / V_p = N_s / N_p$\n\\[ V_s = V_p \\frac{N_s}{N_p} = 240 \\frac{250}{1000} = 60\\,\\text{V} \\]\nStep-down transformer since $N_s < N_p$."
+    },
+    {
+      "id": 31,
+      "question": "A 0.20 kg ball moving at 10 m/s hits a wall and rebounds straight back with the same speed. The magnitude of impulse delivered by the wall is:",
+      "options": {
+        "a": "0 N·s",
+        "b": "1 N·s",
+        "c": "2 N·s",
+        "d": "4 N·s"
+      },
+      "correct_option": "d",
+      "explanation": "Impulse: $J = |\\Delta p| = m|v_f - v_i|$\nHere $v_i = +10$ m/s, $v_f = -10$ m/s:\n\\[ \\Delta p = v_f - v_i = -10 - 10 = -20 \\text{ m/s} \\]\nMagnitude: $|\\Delta p| = 0.20\\times20 = 4$ N·s."
+    },
+    {
+      "id": 32,
+      "question": "Two blocks of masses 3 kg and 2 kg move toward each other with speeds 4 m/s and 1 m/s respectively. They collide head-on and stick. The speed of the combined mass is (take 3 kg direction positive):",
+      "options": {
+        "a": "2.0 m/s",
+        "b": "2.2 m/s",
+        "c": "2.6 m/s",
+        "d": "3.0 m/s"
+      },
+      "correct_option": "a",
+      "explanation": "Use conservation of momentum: $p_i = p_f$\nInitial momentum: $p_i = 3\\cdot4 + 2\\cdot(-1) = 10$ kg·m/s\nTotal mass: $M = 3+2=5$ kg\nFinal speed: $v_f = p_i/M = 10/5 = 2.0$ m/s along 3 kg block’s initial direction.",
+      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test1/32.png"
+    },
+    {
+      "id": 33,
+      "question": "Two identical uniform rods of length 1 m each are joined to form an L-shape and suspended from the junction point. Find the distance of the center of mass from the junction.",
+      "options": {
+        "a": "0.25 m",
+        "b": "0.35 m",
+        "c": "0.50 m",
+        "d": "0.71 m"
+      },
+      "correct_option": "b",
+      "explanation": "Coordinates of COM of each rod from junction: r1=(0.5,0), r2=(0,0.5)\nEqual masses: r_CM = (r1 + r2)/2 = (0.25,0.25)\nDistance from junction: $\\sqrt{0.25^2 + 0.25^2} = \\sqrt{0.125} \\approx 0.3536$ m ≈ 0.35 m."
+    },
+    {
+      "id": 34,
+      "question": "A constant torque of 5 N·m acts on a flywheel of I = 2.0 kg·m². Starting from rest, its angular speed after 4 s is:",
+      "options": {
+        "a": "2 rad/s",
+        "b": "5 rad/s",
+        "c": "10 rad/s",
+        "d": "20 rad/s"
+      },
+      "correct_option": "c",
+      "explanation": "Angular acceleration: $\\alpha = \\tau/I = 5/2 = 2.5$ rad/s²\nFrom rest: $\\omega = \\alpha t = 2.5\\times4 = 10$ rad/s."
+    },
+    {
+      "id": 35,
+      "question": "The mechanical advantage of an ideal lever is 5. If the effort moves 50 cm, the load will move:",
+      "options": {
+        "a": "10 cm",
+        "b": "25 cm",
+        "c": "50 cm",
+        "d": "2.5 cm"
+      },
+      "correct_option": "a",
+      "explanation": "Ideal machine relation: MA = $d_e/d_l$\n\\[ d_l = d_e/MA = 50/5 = 10 \\text{ cm} \\]"
+    },
+    {
+      "id": 36,
+      "question": "A liquid (ρ = 800 kg/m³) flows in a horizontal pipe. At A: v = 2 m/s, P = 2.0×10⁵ Pa. At B: v = 5 m/s. Neglect viscosity. Pressure at B is:",
+      "options": {
+        "a": "1.9×10⁵ Pa",
+        "b": "1.5×10⁵ Pa",
+        "c": "1.2×10⁵ Pa",
+        "d": "1.0×10⁵ Pa"
+      },
+      "correct_option": "a",
+      "explanation": "Bernoulli equation: $P + ½\\rho v^2 = \\text{constant}$\n\\[ P_B = P_A + ½\\rho (v_A^2 - v_B^2) = 2.0×10^5 + 0.5(800)(4 - 25) \\]\nCompute: 0.5×800×(-21) = -8400\n\\[ P_B = 2.0×10^5 - 8400 ≈ 1.916×10^5 ≈ 1.9×10^5 \\text{ Pa} \\]"
+    },
+    {
+      "id": 37,
+      "question": "A 60 W lamp runs at 240 V. Energy used in 2 h is:",
+      "options": {
+        "a": "120 J",
+        "b": "1200 J",
+        "c": "120 kJ",
+        "d": "0.12 kWh"
+      },
+      "correct_option": "d",
+      "explanation": "Energy: $E = P t$\nTime: t = 2 h = 2×3600 = 7200 s\n\\[ E = 60 × 7200 = 432,000 \\text{ J} = 432 \\text{ kJ} \\approx 0.12 \\text{ kWh} \\]"
+    },
+    {
+      "id": 38,
+      "question": "A 10 μF capacitor is charged to 100 V and disconnected. The stored charge is:",
+      "options": {
+        "a": "1.0×10⁻³ C",
+        "b": "1.0×10⁻⁴ C",
+        "c": "1.0×10⁻⁵ C",
+        "d": "1.0×10⁻⁶ C"
+      },
+      "correct_option": "a",
+      "explanation": "Charge stored: $Q = C V$\n\\[ Q = 10×10^{-6} × 100 = 1.0×10^{-3} \\text{ C} \\]"
+    },
+    {
+      "id": 39,
+      "question": "A solenoid has 500 turns, length 0.50 m, current 2.0 A. Magnetic field at center (air core) is (μ₀ = 4π×10⁻⁷ H/m):",
+      "options": {
+        "a": "2.5×10⁻⁴ T",
+        "b": "4.0×10⁻³ T",
+        "c": "2.5×10⁻³ T",
+        "d": "4.0×10⁻² T"
+      },
+      "correct_option": "c",
+      "explanation": "Magnetic field at the center of a solenoid: $B = \\mu_0 n I$ where $n = N/\\ell$\n\\[ n = 500/0.50 = 1000 \\text{ turns/m} \\]\n\\[ B = (4\\pi\\times10^{-7})(1000)(2) = 8\\pi\\times10^{-4} \\approx 2.51\\times10^{-3} \\text{ T} \\]"
+    },
+    {
+      "id": 40,
+      "question": "Unpolarized light is incident at Brewster’s angle on a glass surface of refractive index μ = 1.5. The angle of incidence is:",
+      "options": {
+        "a": "30°",
+        "b": "45°",
+        "c": "57°",
+        "d": "60°"
+      },
+      "correct_option": "c",
+      "explanation": "At Brewster’s angle: $\\tan i_B = \\mu$\n\\[ i_B = \\tan^{-1}(1.5) \\approx 56.3° \\]\nClosest option = 57°."
+    },
+    {
+      "id": 41,
+      "question": "Photoelectric effect: Light of frequency 8.0×10¹⁴ Hz falls on a metal with work function φ = 2.0 eV. (h = 6.63×10⁻³⁴ J·s, 1 eV = 1.6×10⁻¹⁹ J). The maximum kinetic energy of emitted electrons is:",
+      "options": {
+        "a": "0.2 eV",
+        "b": "0.7 eV",
+        "c": "1.3 eV",
+        "d": "2.2 eV"
+      },
+      "correct_option": "c",
+      "explanation": "Photon energy: $E = h\\nu = 6.63\\times10^{-34} \\times 8.0\\times10^{14} = 5.304\\times10^{-19}$ J\nConvert to eV: $E/1.6\\times10^{-19} \\approx 3.315$ eV\nMaximum kinetic energy: $K_{max} = E - \\phi = 3.315 - 2.0 = 1.315 \\approx 1.3$ eV."
+    },
+    {
+      "id": 42,
+      "question": "A radioactive sample has a half-life of 5 days. What fraction of the original nuclei remains undecayed after 15 days?",
+      "options": {
+        "a": "1/8",
+        "b": "1/4",
+        "c": "1/3",
+        "d": "1/16"
+      },
+      "correct_option": "a",
+      "explanation": "Number of half-lives: $n = 15/5 = 3$\nRemaining fraction: $(1/2)^3 = 1/8$\nGeneral formula: $N = N_0 2^{-t/t_{1/2}}$."
+    },
+    {
+      "id": 43,
+      "question": "The rms speed of oxygen molecules (M = 32×10⁻³ kg/mol) at 300 K is approximately (R = 8.314 J/mol·K):",
+      "options": {
+        "a": "300 m/s",
+        "b": "400 m/s",
+        "c": "500 m/s",
+        "d": "600 m/s"
+      },
+      "correct_option": "c",
+      "explanation": "RMS speed: $v_{rms} = \\sqrt{3RT/M}$\n\\[ v_{rms} = \\sqrt{3 \\times 8.314 \\times 300 / 0.032} = \\sqrt{233{,}831} \\approx 484 \\text{ m/s} \\]\nClosest option = 500 m/s."
+    },
+    {
+      "id": 44,
+      "question": "A convex mirror has focal length f = -20 cm. An object is placed 30 cm in front of it. The image distance (from the mirror) and nature are:",
+      "options": {
+        "a": "v = -12 cm (virtual, upright)",
+        "b": "v = +12 cm (real, inverted)",
+        "c": "v = -60 cm (virtual, upright)",
+        "d": "v = +60 cm (real, inverted)"
+      },
+      "correct_option": "a",
+      "explanation": "Mirror formula: $1/f = 1/v + 1/u$, $u = -30$ cm, $f = -20$ cm\n\\[ 1/v = 1/f - 1/u = -1/20 + 1/(-30) = -1/12 \\Rightarrow v = -12 \\text{ cm} \\]\nConvex mirror always produces virtual, upright, and diminished images."
+    },
+    {
+      "id": 45,
+      "question": "In an ideal gas undergoing an isothermal expansion at temperature T, the work done when volume changes from V₁ to V₂ is:",
+      "options": {
+        "a": "W = nR(T₂ − T₁)",
+        "b": "W = P ΔV (constant P)",
+        "c": "W = nRT ln(V₂/V₁)",
+        "d": "W = 0"
+      },
+      "correct_option": "c",
+      "explanation": "Isothermal process: T = constant, PV = nRT\nWork done: $W = \\int_{V_1}^{V_2} P dV = nRT \\int_{V_1}^{V_2} dV/V = nRT \\ln(V_2/V_1)$."
+    }
+  ]
+}

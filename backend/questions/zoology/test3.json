@@ -1,0 +1,546 @@
+{
+  "test_number": 3,
+  "subject": "Zoology",
+  "questions": [
+    {
+      "id": 1,
+      "question": "In humans, how many molecules of ATP are produced from complete oxidation of one molecule of glucose?",
+      "options": {
+        "a": "28–30",
+        "b": "32–34",
+        "c": "36–38",
+        "d": "40–42"
+      },
+      "correct_option": "a",
+      "explanation": "Modern estimates in eukaryotes put the ATP yield per glucose at ~28–30 because of proton leak and shuttle costs. Older textbooks listed 36–38, but current biology accepts the lower range."
+    },
+    {
+      "id": 2,
+      "question": "Which statement about erythropoietin is correct?",
+      "options": {
+        "a": "It is secreted by the pancreas and stimulates RBC formation.",
+        "b": "It is secreted by the kidneys and stimulates RBC formation.",
+        "c": "It is secreted by the liver and breaks down RBCs.",
+        "d": "It is secreted by bone marrow and forms WBCs."
+      },
+      "correct_option": "b",
+      "explanation": "Erythropoietin is a hormone secreted by kidneys in response to low oxygen levels. It stimulates bone marrow to produce RBCs. The liver breaks down old RBCs, not erythropoietin."
+    },
+    {
+      "id": 3,
+      "question": "Which statements about lymphatic system are correct? \n1. It returns interstitial fluid to blood circulation. \n2. It transports absorbed fats from intestine. \n3. It carries RBCs to tissues. \n4. It helps in immune responses.",
+      "options": {
+        "a": "1, 2 and 4 only",
+        "b": "1 and 3 only",
+        "c": "2, 3 and 4 only",
+        "d": "All 1, 2, 3 and 4"
+      },
+      "correct_option": "a",
+      "explanation": "The lymphatic system returns fluid to blood, absorbs fats as chylomicrons from intestine, and helps immunity via lymphocytes. It does not carry RBCs (only WBCs and plasma)."
+    },
+    {
+      "id": 4,
+      "question": "Which enzyme converts fibrinogen into fibrin during blood clotting?",
+      "options": {
+        "a": "Thrombin",
+        "b": "Prothrombin",
+        "c": "Plasmin",
+        "d": "Pepsin"
+      },
+      "correct_option": "a",
+      "explanation": "Thrombin converts soluble fibrinogen into insoluble fibrin, forming a clot. Prothrombin is the inactive precursor of thrombin. Plasmin dissolves clots. Pepsin digests proteins."
+    },
+    {
+      "id": 5,
+      "question": "Which statement about synaptic transmission is correct?",
+      "options": {
+        "a": "Neurotransmitters are stored in vesicles in postsynaptic membrane.",
+        "b": "Calcium ions stimulate vesicle fusion with presynaptic membrane.",
+        "c": "Neurotransmitters are released into axon cytoplasm.",
+        "d": "Impulse can travel in both directions across synapse."
+      },
+      "correct_option": "b",
+      "explanation": "At synapse, calcium influx into the presynaptic terminal stimulates vesicle fusion, releasing neurotransmitters into the synaptic cleft. Neurotransmitters are in presynaptic vesicles, and transmission is one-way."
+    },
+    {
+      "id": 6,
+      "question": "In which part of the nephron does maximum reabsorption of glucose occur?",
+      "options": {
+        "a": "Proximal convoluted tubule",
+        "b": "Loop of Henle",
+        "c": "Distal convoluted tubule",
+        "d": "Collecting duct"
+      },
+      "correct_option": "a",
+      "explanation": "The proximal convoluted tubule reabsorbs about 100% of glucose and amino acids, along with most water and ions."
+    },
+    {
+      "id": 7,
+      "question": "Which statement about the small intestine is incorrect?",
+      "options": {
+        "a": "Villi increase surface area for absorption.",
+        "b": "Most digestion and absorption occur here.",
+        "c": "Pancreatic juice and bile are secreted directly into it.",
+        "d": "It produces pepsin for protein digestion."
+      },
+      "correct_option": "d",
+      "explanation": "Pepsin is secreted in the stomach. The small intestine receives pancreatic juice and bile, and produces its own enzymes (like maltase, peptidases) for digestion and absorption."
+    },
+    {
+      "id": 8,
+      "question": "Which statement about cartilage is correct?",
+      "options": {
+        "a": "It is highly vascular connective tissue.",
+        "b": "It is avascular and heals slowly.",
+        "c": "It has abundant calcium salts.",
+        "d": "It forms the shaft of long bones."
+      },
+      "correct_option": "b",
+      "explanation": "Cartilage is avascular (lacks blood supply), so it heals slowly compared to bone. Bone has calcium salts, not cartilage. Long bone shafts are bony, not cartilaginous."
+    },
+    {
+      "id": 9,
+      "question": "Which of the following is a disorder of excretory system?",
+      "options": {
+        "a": "Diabetes insipidus",
+        "b": "Diabetes mellitus",
+        "c": "Goitre",
+        "d": "Jaundice"
+      },
+      "correct_option": "a",
+      "explanation": "Diabetes insipidus occurs due to deficiency of ADH (antidiuretic hormone), causing excessive dilute urine. Diabetes mellitus is endocrine (insulin deficiency), goitre is thyroid disorder, jaundice is liver-related."
+    },
+    {
+      "id": 10,
+      "question": "Which statement about WBCs is correct?",
+      "options": {
+        "a": "They are the most numerous blood cells.",
+        "b": "They are nucleated and defend against infection.",
+        "c": "They transport oxygen using hemoglobin.",
+        "d": "They live for about 120 days."
+      },
+      "correct_option": "b",
+      "explanation": "WBCs are nucleated cells that defend against infection. RBCs are most numerous, transport oxygen, and live ~120 days. Platelets live 7–10 days."
+    },
+    {
+      "id": 11,
+      "question": "Which of the following animals is ureotelic?",
+      "options": {
+        "a": "Frog",
+        "b": "Bird",
+        "c": "Human",
+        "d": "Insect"
+      },
+      "correct_option": "c",
+      "explanation": "Humans excrete urea as the major nitrogenous waste (ureotelic). Frogs are also ureotelic, birds uricotelic, and insects uricotelic."
+    },
+    {
+      "id": 12,
+      "question": "Which is a feature of annelids but not arthropods?",
+      "options": {
+        "a": "Exoskeleton",
+        "b": "Metameric segmentation",
+        "c": "Jointed appendages",
+        "d": "Open circulatory system"
+      },
+      "correct_option": "b",
+      "explanation": "Annelids like earthworm show true metameric segmentation (internal and external). Arthropods have exoskeleton, jointed appendages, and open circulation."
+    },
+    {
+      "id": 13,
+      "question": "Which blood vessel has the lowest pressure?",
+      "options": {
+        "a": "Arteries",
+        "b": "Veins",
+        "c": "Capillaries",
+        "d": "Vena cava"
+      },
+      "correct_option": "d",
+      "explanation": "The vena cava has the lowest pressure because it returns blood to the heart from the body. Arteries have highest pressure, capillaries lower but higher than veins, and veins moderate."
+    },
+    {
+      "id": 14,
+      "question": "Which hormone stimulates milk production after childbirth?",
+      "options": {
+        "a": "Oxytocin",
+        "b": "Prolactin",
+        "c": "Progesterone",
+        "d": "Estrogen"
+      },
+      "correct_option": "b",
+      "explanation": "Prolactin, secreted by anterior pituitary, stimulates milk production. Oxytocin helps milk ejection. Estrogen and progesterone prepare mammary glands but inhibit lactation during pregnancy."
+    },
+    {
+      "id": 15,
+      "question": "Which statement about DNA replication is correct?",
+      "options": {
+        "a": "It is conservative replication.",
+        "b": "It occurs in S-phase of cell cycle.",
+        "c": "It produces only RNA molecules.",
+        "d": "It occurs in ribosomes."
+      },
+      "correct_option": "b",
+      "explanation": "DNA replication occurs during the S-phase of interphase and is semi-conservative (each daughter molecule has one old and one new strand). It produces DNA, not RNA, and occurs in nucleus, not ribosomes."
+    },
+    {
+      "id": 16,
+      "question": "Which of the following is NOT a function of the hypothalamus?",
+      "options": {
+        "a": "Regulation of body temperature",
+        "b": "Control of hunger and thirst",
+        "c": "Secretion of digestive enzymes",
+        "d": "Regulation of circadian rhythms"
+      },
+      "correct_option": "c",
+      "explanation": "The hypothalamus regulates temperature, hunger, thirst, emotions, and circadian rhythms. It does not secrete digestive enzymes; that is done by glands like pancreas and stomach."
+    },
+    {
+      "id": 17,
+      "question": "Which vitamin deficiency leads to pernicious anemia?",
+      "options": {
+        "a": "Vitamin B1",
+        "b": "Vitamin B12",
+        "c": "Vitamin C",
+        "d": "Vitamin K"
+      },
+      "correct_option": "b",
+      "explanation": "Vitamin B12 deficiency leads to pernicious anemia due to impaired RBC maturation. B1 deficiency causes beriberi, C deficiency causes scurvy, and K deficiency impairs blood clotting."
+    },
+    {
+      "id": 18,
+      "question": "Which statement about hemoglobin is correct?",
+      "options": {
+        "a": "It binds CO2 at the same site as O2.",
+        "b": "It carries oxygen by reversible binding to iron of heme.",
+        "c": "It is a monomeric protein.",
+        "d": "It is synthesized in kidneys."
+      },
+      "correct_option": "b",
+      "explanation": "Hemoglobin carries oxygen by reversible binding to Fe²⁺ in the heme group. CO2 binds to the globin protein, not heme. It is a tetrameric protein, synthesized in bone marrow RBCs."
+    },
+    {
+      "id": 19,
+      "question": "Which of the following is NOT an adaptation of alveoli for efficient gas exchange?",
+      "options": {
+        "a": "Thin walls",
+        "b": "Large surface area",
+        "c": "Rich blood supply",
+        "d": "Presence of cilia for sweeping mucus"
+      },
+      "correct_option": "d",
+      "explanation": "Alveoli are thin-walled, highly vascularized, and provide large surface area for diffusion. They do not have cilia; cilia are present in trachea and bronchi."
+    },
+    {
+      "id": 20,
+      "question": "Which statement about endocrine glands is correct?",
+      "options": {
+        "a": "They have ducts to secrete hormones.",
+        "b": "They secrete hormones directly into blood.",
+        "c": "They store hormones in gall bladder.",
+        "d": "They act only locally on neighboring cells."
+      },
+      "correct_option": "b",
+      "explanation": "Endocrine glands are ductless and release hormones directly into the blood, which carry them to target organs. Exocrine glands have ducts, and paracrine signaling acts locally."
+    },
+    {
+      "id": 21,
+      "question": "Which animal is correctly matched with its excretory structure?",
+      "options": {
+        "a": "Earthworm – flame cells",
+        "b": "Cockroach – malpighian tubules",
+        "c": "Planaria – nephridia",
+        "d": "Frog – coxal glands"
+      },
+      "correct_option": "b",
+      "explanation": "Cockroach excretes via malpighian tubules. Earthworm has nephridia, planaria have flame cells, and coxal glands are in some arachnids."
+    },
+    {
+      "id": 22,
+      "question": "Which statement about DNA is correct?",
+      "options": {
+        "a": "It contains uracil instead of thymine.",
+        "b": "It is single-stranded in all organisms.",
+        "c": "It replicates semi-conservatively.",
+        "d": "Its sugar is ribose."
+      },
+      "correct_option": "c",
+      "explanation": "DNA replication is semi-conservative (one old strand + one new strand). Uracil and ribose are in RNA. Some viruses have ssDNA but in most organisms DNA is double-stranded."
+    },
+    {
+      "id": 23,
+      "question": "Which statement about lymphocytes is correct?",
+      "options": {
+        "a": "B-lymphocytes are responsible for cell-mediated immunity.",
+        "b": "T-lymphocytes produce antibodies.",
+        "c": "B-lymphocytes produce antibodies, T-lymphocytes provide cell-mediated immunity.",
+        "d": "Lymphocytes are produced in liver only."
+      },
+      "correct_option": "c",
+      "explanation": "B-lymphocytes differentiate into plasma cells and secrete antibodies (humoral immunity). T-lymphocytes regulate and destroy infected cells (cell-mediated immunity). They are produced in bone marrow, not liver."
+    },
+    {
+      "id": 24,
+      "question": "Which of the following is NOT a function of the cerebellum?",
+      "options": {
+        "a": "Balance and posture",
+        "b": "Coordination of voluntary movement",
+        "c": "Regulation of breathing rate",
+        "d": "Motor learning"
+      },
+      "correct_option": "c",
+      "explanation": "The cerebellum regulates balance, posture, and voluntary movement coordination. Breathing rate is controlled by medulla oblongata."
+    },
+    {
+      "id": 25,
+      "question": "Which is the correct simplified sequence of events in one cross-bridge cycle of skeletal muscle contraction (with Ca²⁺ present)?",
+      "options": {
+        "a": "ATP binds myosin → cross-bridge detaches → ATP hydrolysis cocks myosin head → myosin binds actin → power stroke",
+        "b": "Myosin binds actin → power stroke → ATP binds myosin → cross-bridge detaches",
+        "c": "ATP hydrolysis → myosin binds actin → power stroke → ATP binds myosin to detach",
+        "d": "Calcium release → ATP synthesis → power stroke → actin release"
+      },
+      "correct_option": "a",
+      "explanation": "ATP binding causes myosin–actin detachment; ATP hydrolysis cocks the myosin head; the energized myosin binds actin; Pi release triggers the power stroke (followed by ADP release)."
+    },
+    {
+      "id": 26,
+      "question": "Which respiratory pigment is found in molluscs and arthropods?",
+      "options": {
+        "a": "Hemoglobin",
+        "b": "Haemocyanin",
+        "c": "Chlorocruorin",
+        "d": "Hemerythrin"
+      },
+      "correct_option": "b",
+      "explanation": "Haemocyanin is a copper-containing blue pigment in molluscs and arthropods. Hemoglobin (iron, red) is in vertebrates, chlorocruorin in some annelids, hemerythrin in some worms."
+    },
+    {
+      "id": 27,
+      "question": "Which of the following is NOT a function of the liver?",
+      "options": {
+        "a": "Urea synthesis",
+        "b": "Bile secretion",
+        "c": "Insulin secretion",
+        "d": "Detoxification"
+      },
+      "correct_option": "c",
+      "explanation": "Insulin is secreted by the pancreas, not the liver. The liver synthesizes urea, secretes bile, and detoxifies harmful substances."
+    },
+    {
+      "id": 28,
+      "question": "Which of the following animals has a three-chambered heart?",
+      "options": {
+        "a": "Fish",
+        "b": "Amphibians",
+        "c": "Mammals",
+        "d": "Birds"
+      },
+      "correct_option": "b",
+      "explanation": "Amphibians and most reptiles (except crocodiles) have three-chambered hearts (two atria, one ventricle). Fish have two chambers, birds and mammals have four."
+    },
+    {
+      "id": 29,
+      "question": "Which of the following structures is NOT part of the nephron?",
+      "options": {
+        "a": "Bowman’s capsule",
+        "b": "Loop of Henle",
+        "c": "Collecting duct",
+        "d": "Trachea"
+      },
+      "correct_option": "d",
+      "explanation": "Trachea is part of respiratory system. Nephron consists of Bowman’s capsule, PCT, loop of Henle, DCT, and collecting duct."
+    },
+    {
+      "id": 30,
+      "question": "Which statement about meiosis is correct?",
+      "options": {
+        "a": "Meiosis occurs in somatic cells for growth.",
+        "b": "Meiosis produces four genetically identical daughter cells.",
+        "c": "Meiosis reduces chromosome number by half and ensures variation.",
+        "d": "Meiosis occurs during zygote formation."
+      },
+      "correct_option": "c",
+      "explanation": "Meiosis occurs in germ cells to produce gametes, reducing chromosome number by half and introducing genetic variation through crossing over and independent assortment. Mitosis, not meiosis, is for growth in somatic cells."
+    },
+    {
+      "id": 31,
+      "question": "Which of the following is NOT a characteristic of the autonomic nervous system?",
+      "options": {
+        "a": "Controls involuntary functions",
+        "b": "Divided into sympathetic and parasympathetic",
+        "c": "Controls skeletal muscle contraction",
+        "d": "Regulates heartbeat and digestion"
+      },
+      "correct_option": "c",
+      "explanation": "The autonomic nervous system regulates involuntary functions like heartbeat, digestion, gland secretion, and smooth muscle activity. Skeletal muscle contraction is under somatic nervous system."
+    },
+    {
+      "id": 32,
+      "question": "Which of the following hormones is secreted by the posterior pituitary?",
+      "options": {
+        "a": "Oxytocin",
+        "b": "Prolactin",
+        "c": "Growth hormone",
+        "d": "Thyroid stimulating hormone"
+      },
+      "correct_option": "a",
+      "explanation": "The posterior pituitary releases oxytocin and ADH (vasopressin). Prolactin and GH are secreted by anterior pituitary, TSH also from anterior pituitary."
+    },
+    {
+      "id": 33,
+      "question": "Which organ removes old and worn-out red blood cells from circulation?",
+      "options": {
+        "a": "Liver",
+        "b": "Spleen",
+        "c": "Kidney",
+        "d": "Pancreas"
+      },
+      "correct_option": "b",
+      "explanation": "The spleen, called the 'graveyard of RBCs,' removes old and damaged red blood cells. The liver also helps recycle hemoglobin breakdown products."
+    },
+    {
+      "id": 34,
+      "question": "Which vitamin deficiency causes night blindness?",
+      "options": {
+        "a": "Vitamin A",
+        "b": "Vitamin C",
+        "c": "Vitamin D",
+        "d": "Vitamin K"
+      },
+      "correct_option": "a",
+      "explanation": "Vitamin A deficiency causes night blindness because retinal (a derivative of vitamin A) is required for rhodopsin in rod cells of the eye."
+    },
+    {
+      "id": 35,
+      "question": "Which of the following animals is a protostome?",
+      "options": {
+        "a": "Echinoderms",
+        "b": "Chordates",
+        "c": "Annelids",
+        "d": "Hemichordates"
+      },
+      "correct_option": "c",
+      "explanation": "Annelids, arthropods, and molluscs are protostomes (blastopore → mouth). Echinoderms and chordates are deuterostomes (blastopore → anus)."
+    },
+    {
+      "id": 36,
+      "question": "Which blood protein is essential for blood clotting?",
+      "options": {
+        "a": "Albumin",
+        "b": "Globulin",
+        "c": "Fibrinogen",
+        "d": "Myosin"
+      },
+      "correct_option": "c",
+      "explanation": "Fibrinogen is converted into fibrin during clotting. Albumin maintains osmotic pressure, globulins are antibodies, myosin is a muscle protein."
+    },
+    {
+      "id": 37,
+      "question": "Which statement about synaptic transmission is incorrect?",
+      "options": {
+        "a": "Neurotransmitters are released from presynaptic neurons.",
+        "b": "Transmission across synapse is one-way.",
+        "c": "Neurotransmitters are stored in postsynaptic vesicles.",
+        "d": "Calcium influx triggers neurotransmitter release."
+      },
+      "correct_option": "c",
+      "explanation": "Neurotransmitters are stored in vesicles of presynaptic neurons, not postsynaptic ones. Transmission is unidirectional, and calcium triggers release."
+    },
+    {
+      "id": 38,
+      "question": "Which hormone stimulates reabsorption of water in kidneys?",
+      "options": {
+        "a": "Aldosterone",
+        "b": "ADH (Vasopressin)",
+        "c": "Cortisol",
+        "d": "Glucagon"
+      },
+      "correct_option": "b",
+      "explanation": "ADH increases water reabsorption in the collecting ducts by increasing aquaporins. Aldosterone reabsorbs sodium, cortisol regulates metabolism, glucagon raises blood sugar."
+    },
+    {
+      "id": 39,
+      "question": "Which of the following is NOT an excretory organ?",
+      "options": {
+        "a": "Kidney",
+        "b": "Skin",
+        "c": "Lungs",
+        "d": "Gall bladder"
+      },
+      "correct_option": "d",
+      "explanation": "Kidneys excrete urea, skin excretes salts and water, lungs excrete CO2. Gall bladder stores bile but is not an excretory organ."
+    },
+    {
+      "id": 40,
+      "question": "Which statement about meiosis I is correct?",
+      "options": {
+        "a": "It is an equational division.",
+        "b": "Homologous chromosomes separate.",
+        "c": "Sister chromatids separate.",
+        "d": "No crossing over occurs."
+      },
+      "correct_option": "b",
+      "explanation": "In meiosis I, homologous chromosomes separate, reducing chromosome number by half (reductional division). Equational division is meiosis II. Crossing over occurs in prophase I."
+    },
+    {
+      "id": 41,
+      "question": "Which animal shows metameric segmentation?",
+      "options": {
+        "a": "Cockroach",
+        "b": "Earthworm",
+        "c": "Ascaris",
+        "d": "Hydra"
+      },
+      "correct_option": "b",
+      "explanation": "Earthworm (annelid) shows true metameric segmentation. Cockroach has segmentation but not true metamerism, Ascaris has pseudocoelom, Hydra has no segmentation."
+    },
+    {
+      "id": 42,
+      "question": "Which statement about the cardiac cycle is incorrect?",
+      "options": {
+        "a": "Systole is contraction of heart chambers.",
+        "b": "Diastole is relaxation of heart chambers.",
+        "c": "AV valves close at the beginning of diastole.",
+        "d": "Semilunar valves close at the beginning of diastole."
+      },
+      "correct_option": "c",
+      "explanation": "AV valves (tricuspid and bicuspid) close at the beginning of ventricular systole to prevent backflow. Semilunar valves close at the beginning of diastole."
+    },
+    {
+      "id": 43,
+      "question": "Which hormone prepares the uterus for implantation?",
+      "options": {
+        "a": "Estrogen",
+        "b": "Progesterone",
+        "c": "LH",
+        "d": "Prolactin"
+      },
+      "correct_option": "b",
+      "explanation": "Progesterone secreted by corpus luteum prepares endometrium for implantation. Estrogen promotes follicle growth, LH triggers ovulation, prolactin stimulates milk production."
+    },
+    {
+      "id": 44,
+      "question": "Which of the following is a genetic disorder?",
+      "options": {
+        "a": "Goitre",
+        "b": "Kwashiorkor",
+        "c": "Sickle-cell anemia",
+        "d": "Scurvy"
+      },
+      "correct_option": "c",
+      "explanation": "Sickle-cell anemia is a genetic disorder caused by mutation in hemoglobin gene. Goitre (iodine deficiency), Kwashiorkor (protein deficiency), and scurvy (vitamin C deficiency) are nutritional disorders."
+    },
+    {
+      "id": 45,
+      "question": "Which statement about antibodies is correct?",
+      "options": {
+        "a": "They are secreted by T-lymphocytes.",
+        "b": "They are secreted by B-lymphocytes/plasma cells.",
+        "c": "They are carbohydrates.",
+        "d": "They are hormones."
+      },
+      "correct_option": "b",
+      "explanation": "Antibodies are immunoglobulin proteins secreted by plasma cells derived from B-lymphocytes. T-lymphocytes mediate cellular immunity, not antibody secretion."
+    }
+  ]
+}

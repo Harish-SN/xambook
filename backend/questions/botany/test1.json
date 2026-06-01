@@ -1,0 +1,546 @@
+{
+  "test_number": 1,
+  "subject": "Botany",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which organelle is responsible for photosynthesis?",
+      "options": {
+        "a": "Mitochondria",
+        "b": "Ribosome",
+        "c": "Chloroplast",
+        "d": "Golgi apparatus"
+      },
+      "correct_option": "c",
+      "explanation": "Chloroplasts are the double-membrane organelles found in green plant cells. They contain the pigment chlorophyll, which absorbs light energy and initiates the process of photosynthesis. The light reactions occur in the thylakoid membranes, while the Calvin cycle occurs in the stroma of the chloroplast. Mitochondria are responsible for cellular respiration, ribosomes for protein synthesis, and Golgi apparatus for packaging and secretion of proteins."
+    },
+    {
+      "id": 2,
+      "question": "Which pigment is responsible for capturing light energy in plants?",
+      "options": {
+        "a": "Carotene",
+        "b": "Xanthophyll",
+        "c": "Chlorophyll",
+        "d": "Anthocyanin"
+      },
+      "correct_option": "c",
+      "explanation": "Chlorophyll is the primary pigment that captures light energy during photosynthesis. It absorbs light most effectively in the blue-violet and red regions of the spectrum, while reflecting green light, giving plants their green color. Carotene and xanthophyll are accessory pigments that broaden the range of light absorption, and anthocyanins mainly provide red, blue, or purple coloration but do not play a direct role in photosynthesis."
+    },
+    {
+      "id": 3,
+      "question": "The functional unit of heredity is:",
+      "options": {
+        "a": "Chromosome",
+        "b": "Gene",
+        "c": "DNA",
+        "d": "RNA"
+      },
+      "correct_option": "b",
+      "explanation": "A gene is a specific segment of DNA that carries the information required to produce a functional product, usually a protein. Genes are the fundamental units of heredity, controlling traits and passing information from one generation to the next. While DNA is the chemical basis of genetic material, and chromosomes are structures containing DNA, it is the gene that functions as the unit of inheritance. RNA acts mainly as an intermediary in protein synthesis."
+    },
+    {
+      "id": 4,
+      "question": "In plants, xylem is responsible for transport of:",
+      "options": {
+        "a": "Food",
+        "b": "Water and minerals",
+        "c": "Hormones",
+        "d": "ATP"
+      },
+      "correct_option": "b",
+      "explanation": "Xylem is a complex permanent tissue in plants that conducts water and dissolved minerals from the roots to the stem and leaves. It consists of tracheids, vessels, xylem fibers, and xylem parenchyma. This upward movement of water (ascent of sap) is aided by transpiration pull and cohesion-tension of water molecules. In contrast, phloem transports organic food materials like sucrose from leaves to other parts of the plant."
+    },
+    {
+      "id": 5,
+      "question": "Which of the following plants reproduces by gemmae?",
+      "options": {
+        "a": "Funaria",
+        "b": "Riccia",
+        "c": "Marchantia",
+        "d": "Selaginella"
+      },
+      "correct_option": "c",
+      "explanation": "Marchantia reproduces asexually by gemmae, which are multicellular structures that develop inside gemma cups. Bryophytes like Funaria reproduce by spores, Riccia also by spores and fragmentation, while Selaginella reproduces by spores (heterospory)."
+    },
+    {
+      "id": 6,
+      "question": "Which tissue is responsible for secondary growth in dicot stems?",
+      "options": {
+        "a": "Xylem",
+        "b": "Phloem",
+        "c": "Cambium",
+        "d": "Epidermis"
+      },
+      "correct_option": "c",
+      "explanation": "The vascular cambium is a lateral meristem that produces secondary xylem towards the inside and secondary phloem towards the outside. This results in an increase in the girth of dicot stems and roots, a process known as secondary growth. The epidermis provides protection, while xylem and phloem act as conducting tissues, but they do not bring about secondary growth themselves."
+    },
+    {
+      "id": 7,
+      "question": "Which part of the root is responsible for perception of gravity?",
+      "options": {
+        "a": "Root cap",
+        "b": "Zone of elongation",
+        "c": "Root hair zone",
+        "d": "Meristematic zone"
+      },
+      "correct_option": "a",
+      "explanation": "The root cap contains statocytes with starch grains (statoliths) that help perceive gravity, guiding the root downward (positive geotropism)."
+    },
+    {
+      "id": 8,
+      "question": "Which plant hormone is responsible for cell elongation?",
+      "options": {
+        "a": "Cytokinin",
+        "b": "Gibberellin",
+        "c": "Auxin",
+        "d": "Abscisic acid"
+      },
+      "correct_option": "c",
+      "explanation": "Auxins, especially Indole-3-acetic acid (IAA), promote cell elongation by loosening the cell wall through acid growth hypothesis. They stimulate proton pumps, lower pH in the cell wall, activate expansins, and thus allow cell wall stretching. Cytokinins mainly promote cell division, gibberellins promote stem elongation and seed germination, while abscisic acid acts as a growth inhibitor."
+    },
+    {
+      "id": 9,
+      "question": "Stomata are mainly responsible for:",
+      "options": {
+        "a": "Transpiration and gas exchange",
+        "b": "Photosynthesis",
+        "c": "Absorption of water",
+        "d": "Transport of food"
+      },
+      "correct_option": "a",
+      "explanation": "Stomata are tiny pores surrounded by guard cells on the leaf epidermis. They regulate the exchange of gases (CO2 entry for photosynthesis and O2 release) and control water vapor loss through transpiration. This process is vital for maintaining plant water balance and facilitating nutrient transport via transpiration pull. Stomata do not directly perform photosynthesis, absorb water, or transport food."
+    },
+    {
+      "id": 10,
+      "question": "The primary phloem in a plant stem is formed by:",
+      "options": {
+        "a": "Apical meristem",
+        "b": "Vascular cambium",
+        "c": "Intercalary meristem",
+        "d": "Cork cambium"
+      },
+      "correct_option": "a",
+      "explanation": "During primary growth of plants, the apical meristem at the tips of roots and shoots differentiates into primary tissues. The procambium gives rise to primary phloem and primary xylem. Vascular cambium produces secondary vascular tissues, cork cambium produces periderm, and intercalary meristems help in elongation of internodes, not in the formation of primary phloem."
+    },
+    {
+      "id": 11,
+      "question": "Which of the following is a leguminous plant?",
+      "options": {
+        "a": "Wheat",
+        "b": "Rice",
+        "c": "Pea",
+        "d": "Maize"
+      },
+      "correct_option": "c",
+      "explanation": "Pea belongs to the family Fabaceae (legume family). Leguminous plants form symbiotic associations with Rhizobium bacteria in their root nodules, which fix atmospheric nitrogen into ammonia. This process improves soil fertility. Wheat, rice, and maize are cereal crops and do not form such nitrogen-fixing symbiosis."
+    },
+    {
+      "id": 12,
+      "question": "Which organelle is called the ‘powerhouse of the cell’?",
+      "options": {
+        "a": "Chloroplast",
+        "b": "Mitochondria",
+        "c": "Golgi apparatus",
+        "d": "Endoplasmic reticulum"
+      },
+      "correct_option": "b",
+      "explanation": "Mitochondria are called the powerhouse of the cell because they generate ATP, the energy currency of the cell, through aerobic respiration. They have their own DNA and ribosomes, which allow them to produce some of their own proteins. Chloroplasts produce glucose through photosynthesis but not ATP directly for cellular processes. Golgi apparatus modifies and packages proteins, while ER aids in synthesis and transport."
+    },
+    {
+      "id": 13,
+      "question": "Which of the following is NOT a micronutrient for plants?",
+      "options": {
+        "a": "Iron",
+        "b": "Zinc",
+        "c": "Molybdenum",
+        "d": "Calcium"
+      },
+      "correct_option": "d",
+      "explanation": "Plant nutrients are classified as macronutrients (required in large amounts) and micronutrients (needed in trace amounts). Calcium is a macronutrient, essential for cell wall stabilization and cell division. Iron, zinc, and molybdenum are micronutrients involved in enzymatic and redox reactions. Deficiency of these micronutrients leads to specific symptoms like chlorosis or poor nitrogen fixation."
+    },
+    {
+      "id": 14,
+      "question": "Which experiment by Hershey and Chase confirmed DNA as the genetic material?",
+      "options": {
+        "a": "Blender experiment using T2 bacteriophage",
+        "b": "Transformation experiment in Streptococcus pneumoniae",
+        "c": "Meselson and Stahl experiment",
+        "d": "Griffith’s experiment with mice"
+      },
+      "correct_option": "a",
+      "explanation": "Hershey and Chase used radioactively labeled T2 phages (³²P for DNA, ³⁵S for protein) to infect bacteria. Only DNA entered host cells and directed virus multiplication, proving DNA is the genetic material."
+    },
+    {
+      "id": 15,
+      "question": "The enzyme RuBisCO is involved in:",
+      "options": {
+        "a": "Glycolysis",
+        "b": "Krebs cycle",
+        "c": "Calvin cycle",
+        "d": "Photorespiration only"
+      },
+      "correct_option": "c",
+      "explanation": "RuBisCO (Ribulose-1,5-bisphosphate carboxylase/oxygenase) is the most abundant enzyme on Earth. It catalyzes the fixation of CO2 into ribulose-1,5-bisphosphate in the Calvin cycle during photosynthesis. It also shows oxygenase activity, leading to photorespiration. However, its primary function in photosynthesis is carbon fixation."
+    },
+    {
+      "id": 16,
+      "question": "Which type of root system is found in monocots?",
+      "options": {
+        "a": "Tap root system",
+        "b": "Fibrous root system",
+        "c": "Adventitious root system",
+        "d": "Both B and C"
+      },
+      "correct_option": "d",
+      "explanation": "Monocots (like grasses, wheat, and maize) typically have fibrous root systems formed from the base of the stem. They may also develop adventitious roots for additional support and absorption. In contrast, dicots usually have a primary tap root system. Thus, both fibrous and adventitious root systems are characteristics of monocots."
+    },
+    {
+      "id": 17,
+      "question": "Which plant hormone is known as the ‘stress hormone’?",
+      "options": {
+        "a": "Auxin",
+        "b": "Gibberellin",
+        "c": "Cytokinin",
+        "d": "Abscisic acid"
+      },
+      "correct_option": "d",
+      "explanation": "Abscisic acid (ABA) is called the stress hormone because it helps plants cope with stress conditions like drought by inducing stomatal closure, reducing water loss. It also promotes seed dormancy and prevents premature germination. Auxins regulate growth, gibberellins stimulate stem elongation, and cytokinins promote cell division."
+    },
+    {
+      "id": 18,
+      "question": "Which process in plants releases oxygen?",
+      "options": {
+        "a": "Respiration",
+        "b": "Photosynthesis",
+        "c": "Transpiration",
+        "d": "Glycolysis"
+      },
+      "correct_option": "b",
+      "explanation": "During photosynthesis, water molecules are split in the presence of light and chlorophyll in a process called photolysis, releasing oxygen as a byproduct. Respiration consumes oxygen and releases CO2, transpiration is water loss through stomata, and glycolysis occurs in the cytoplasm without oxygen release."
+    },
+    {
+      "id": 19,
+      "question": "Which of the following is an example of a xerophyte?",
+      "options": {
+        "a": "Rice",
+        "b": "Cactus",
+        "c": "Mango",
+        "d": "Lotus"
+      },
+      "correct_option": "b",
+      "explanation": "Xerophytes are plants adapted to survive in arid conditions with features such as thick cuticles, reduced leaves (spines), and CAM photosynthesis. Cactus is a classic example of xerophytes. Rice and lotus are hydrophytes, while mango is a mesophyte adapted to moderate conditions."
+    },
+    {
+      "id": 20,
+      "question": "Which meristem is responsible for increase in length of plant?",
+      "options": {
+        "a": "Lateral meristem",
+        "b": "Apical meristem",
+        "c": "Intercalary meristem",
+        "d": "Secondary meristem"
+      },
+      "correct_option": "b",
+      "explanation": "Apical meristems are located at the tips of roots and shoots and bring about primary growth, leading to elongation of the plant. Intercalary meristems also contribute to elongation in grasses, but the main increase in length comes from apical meristem activity. Lateral meristems cause increase in girth, not length."
+    },
+    {
+      "id": 21,
+      "question": "The process of loss of water in liquid form from hydathodes is called:",
+      "options": {
+        "a": "Transpiration",
+        "b": "Guttation",
+        "c": "Evaporation",
+        "d": "Exudation"
+      },
+      "correct_option": "b",
+      "explanation": "Guttation is the exudation of water droplets from the hydathodes, usually at leaf margins, when root pressure is high and transpiration is low (commonly at night or early morning). Transpiration is the loss of water vapor, evaporation is a physical process, and exudation is general secretion of fluids."
+    },
+    {
+      "id": 22,
+      "question": "In angiosperms, which process leads to formation of the endosperm?",
+      "options": {
+        "a": "Syngamy",
+        "b": "Triple fusion",
+        "c": "Autogamy",
+        "d": "Cleistogamy"
+      },
+      "correct_option": "b",
+      "explanation": "Endosperm is formed after double fertilization when one male gamete fuses with two polar nuclei, a process called triple fusion."
+    },
+    {
+      "id": 23,
+      "question": "Which of the following is NOT a function of phloem?",
+      "options": {
+        "a": "Transport of sucrose",
+        "b": "Transport of amino acids",
+        "c": "Transport of water",
+        "d": "Transport of plant hormones"
+      },
+      "correct_option": "c",
+      "explanation": "Phloem is responsible for the translocation of organic solutes such as sucrose, amino acids, and even signaling molecules like hormones. Water transport is the primary function of xylem, not phloem."
+    },
+    {
+      "id": 24,
+      "question": "Which part of the flower develops into fruit after fertilization?",
+      "options": {
+        "a": "Ovule",
+        "b": "Ovary",
+        "c": "Style",
+        "d": "Stigma"
+      },
+      "correct_option": "b",
+      "explanation": "After fertilization, the ovary develops into the fruit, while the ovules inside develop into seeds. The style and stigma degenerate. This transformation ensures seed protection and dispersal."
+    },
+    {
+      "id": 25,
+      "question": "The mode of nutrition in fungi is:",
+      "options": {
+        "a": "Autotrophic",
+        "b": "Saprophytic",
+        "c": "Holozoic",
+        "d": "Parasitic only"
+      },
+      "correct_option": "b",
+      "explanation": "Most fungi are saprophytes that obtain nutrition by decomposing dead organic matter using extracellular enzymes. Some are parasitic (causing diseases), and a few form mutualistic associations (like lichens). They are never autotrophic, as they lack chlorophyll."
+    },
+    {
+      "id": 26,
+      "question": "Which statement about apomixis is correct?",
+      "options": {
+        "a": "It involves fertilization of gametes",
+        "b": "It produces genetically identical seeds without fertilization",
+        "c": "It occurs only in gymnosperms",
+        "d": "It is a type of vegetative propagation only"
+      },
+      "correct_option": "b",
+      "explanation": "Apomixis is asexual seed formation without fertilization, producing clones of the mother plant. Found in grasses and some citrus. It maintains hybrid vigor across generations."
+    },
+    {
+      "id": 27,
+      "question": "The chief water-conducting elements in gymnosperms are:",
+      "options": {
+        "a": "Vessels",
+        "b": "Tracheids",
+        "c": "Companion cells",
+        "d": "Sieve tubes"
+      },
+      "correct_option": "b",
+      "explanation": "Gymnosperms primarily conduct water through tracheids, as vessels are generally absent in them (except in some genera like Gnetum). Tracheids are elongated cells with pits that help in conduction and mechanical support. Vessels are common in angiosperms. Companion cells and sieve tubes belong to phloem tissue."
+    },
+    {
+      "id": 28,
+      "question": "The outermost layer of the root is:",
+      "options": {
+        "a": "Endodermis",
+        "b": "Cortex",
+        "c": "Epidermis",
+        "d": "Pericycle"
+      },
+      "correct_option": "c",
+      "explanation": "The epidermis is the outermost protective layer of the root. It often bears root hairs that increase surface area for absorption of water and minerals. Beneath the epidermis lies the cortex, then the endodermis and pericycle. Endodermis contains Casparian strips, and pericycle gives rise to lateral roots."
+    },
+    {
+      "id": 29,
+      "question": "Lenticels are involved in:",
+      "options": {
+        "a": "Absorption of water",
+        "b": "Exchange of gases",
+        "c": "Translocation of food",
+        "d": "Secondary growth"
+      },
+      "correct_option": "b",
+      "explanation": "Lenticels are small openings in the bark of woody plants that allow gaseous exchange between internal tissues and the external atmosphere. They are formed during secondary growth. They do not absorb water or transport food but are crucial for respiration in woody stems."
+    },
+    {
+      "id": 30,
+      "question": "In which group of plants is alternation of generations most prominent?",
+      "options": {
+        "a": "Bryophytes",
+        "b": "Angiosperms",
+        "c": "Gymnosperms",
+        "d": "Pteridophytes"
+      },
+      "correct_option": "a",
+      "explanation": "Bryophytes (like mosses) show a dominant gametophytic phase, while the sporophyte is dependent on the gametophyte. This alternation of generations is most evident here. In angiosperms and gymnosperms, the sporophyte dominates, while in pteridophytes, both phases are more independent but sporophyte is dominant."
+    },
+    {
+      "id": 31,
+      "question": "Which one of the following is a symbiotic association?",
+      "options": {
+        "a": "Lichen",
+        "b": "Cuscuta",
+        "c": "Yeast",
+        "d": "Amoeba"
+      },
+      "correct_option": "a",
+      "explanation": "Lichens are symbiotic associations between a fungus (providing protection and moisture) and an alga or cyanobacterium (providing food through photosynthesis). Cuscuta is a parasitic plant, yeast is a unicellular fungus, and amoeba is a free-living protozoan."
+    },
+    {
+      "id": 32,
+      "question": "Which plant is commonly used as a biofertilizer for paddy fields?",
+      "options": {
+        "a": "Azolla",
+        "b": "Nostoc",
+        "c": "Rhizobium",
+        "d": "Anabaena"
+      },
+      "correct_option": "a",
+      "explanation": "Azolla is a water fern that harbors Anabaena (a nitrogen-fixing cyanobacterium) in its leaves. This makes it an excellent biofertilizer for paddy fields, enhancing soil fertility. Nostoc also fixes nitrogen but is not specifically associated with rice cultivation. Rhizobium works with legumes, and Anabaena alone does not form the same effective association as Azolla."
+    },
+    {
+      "id": 33,
+      "question": "Which plant hormone is responsible for apical dominance?",
+      "options": {
+        "a": "Cytokinin",
+        "b": "Gibberellin",
+        "c": "Auxin",
+        "d": "Abscisic acid"
+      },
+      "correct_option": "c",
+      "explanation": "Auxins produced in the apical bud suppress the growth of lateral buds, causing apical dominance. Removal of the apical bud allows lateral buds to grow."
+    },
+    {
+      "id": 34,
+      "question": "Which is the male reproductive part of a flower?",
+      "options": {
+        "a": "Carpel",
+        "b": "Stamen",
+        "c": "Petal",
+        "d": "Sepal"
+      },
+      "correct_option": "b",
+      "explanation": "The stamen is the male reproductive organ of the flower, consisting of an anther (which produces pollen grains) and a filament. Carpel is the female organ, petals attract pollinators, and sepals protect the flower bud."
+    },
+    {
+      "id": 35,
+      "question": "In which tissue does most photosynthesis occur in leaves?",
+      "options": {
+        "a": "Epidermis",
+        "b": "Xylem",
+        "c": "Mesophyll",
+        "d": "Phloem"
+      },
+      "correct_option": "c",
+      "explanation": "The mesophyll tissue of leaves consists of palisade parenchyma (rich in chloroplasts for maximum photosynthesis) and spongy parenchyma (allowing gas exchange). Epidermis provides protection, xylem transports water, and phloem transports food but neither performs photosynthesis directly."
+    },
+    {
+      "id": 36,
+      "question": "Which type of plastids store starch?",
+      "options": {
+        "a": "Chromoplasts",
+        "b": "Leucoplasts",
+        "c": "Amyloplasts",
+        "d": "Elaioplasts"
+      },
+      "correct_option": "c",
+      "explanation": "Amyloplasts are colorless plastids (a type of leucoplast) specialized for storing starch, commonly found in storage organs like tubers."
+    },
+    {
+      "id": 37,
+      "question": "Which part of the ovule develops into the seed coat?",
+      "options": {
+        "a": "Nucellus",
+        "b": "Integuments",
+        "c": "Endosperm",
+        "d": "Embryo sac"
+      },
+      "correct_option": "b",
+      "explanation": "After fertilization, the integuments of the ovule harden to form the protective seed coat. The nucellus may degenerate or persist as perisperm, the embryo sac develops into the embryo, and the endosperm serves as nutritive tissue."
+    },
+    {
+      "id": 38,
+      "question": "The process of formation of pollen grains from microspore mother cells is called:",
+      "options": {
+        "a": "Sporogenesis",
+        "b": "Microsporogenesis",
+        "c": "Megasporogenesis",
+        "d": "Fertilization"
+      },
+      "correct_option": "b",
+      "explanation": "Microsporogenesis is the formation of microspores (pollen grains) through meiotic division of microspore mother cells inside the anthers. Megasporogenesis refers to the formation of megaspores in the ovule. Fertilization involves fusion of gametes, and sporogenesis is a general term."
+    },
+    {
+      "id": 39,
+      "question": "Which of the following is a non-vascular plant?",
+      "options": {
+        "a": "Fern",
+        "b": "Moss",
+        "c": "Cycas",
+        "d": "Mango"
+      },
+      "correct_option": "b",
+      "explanation": "Moss is a bryophyte, which lacks true vascular tissue (xylem and phloem). Ferns are pteridophytes with vascular tissue, Cycas is a gymnosperm, and mango is an angiosperm, both having vascular tissue."
+    },
+    {
+      "id": 40,
+      "question": "Which process helps in the ascent of sap in tall trees?",
+      "options": {
+        "a": "Root pressure",
+        "b": "Capillarity",
+        "c": "Transpiration pull",
+        "d": "Osmosis only"
+      },
+      "correct_option": "c",
+      "explanation": "In tall trees, transpiration pull is the main force that lifts water upward through the xylem. Cohesion and adhesion of water molecules maintain continuity. Root pressure and capillarity play minor roles but are not sufficient for tall plants."
+    },
+    {
+      "id": 41,
+      "question": "Which of the following is a free-living nitrogen-fixing bacterium?",
+      "options": {
+        "a": "Rhizobium",
+        "b": "Azotobacter",
+        "c": "Frankia",
+        "d": "Anabaena in cycas roots"
+      },
+      "correct_option": "b",
+      "explanation": "Azotobacter is a free-living nitrogen fixer in soil. Rhizobium and Frankia form symbiotic associations, while Anabaena lives in coralloid roots of Cycas."
+    },
+    {
+      "id": 42,
+      "question": "The mode of pollination in Vallisneria is:",
+      "options": {
+        "a": "Anemophily",
+        "b": "Hydrophily",
+        "c": "Entomophily",
+        "d": "Ornithophily"
+      },
+      "correct_option": "b",
+      "explanation": "Vallisneria is an aquatic plant where pollination occurs through water, a process called hydrophily. In this case, male flowers detach and float to the surface where they come in contact with female flowers. Anemophily is wind pollination, entomophily is insect pollination, and ornithophily is bird pollination."
+    },
+    {
+      "id": 43,
+      "question": "Which photoreceptor regulates photoperiodic flowering responses in plants?",
+      "options": {
+        "a": "Carotenoids",
+        "b": "Phytochrome",
+        "c": "Xanthophyll",
+        "d": "Chlorophyll b"
+      },
+      "correct_option": "b",
+      "explanation": "Phytochrome exists in two forms (Pr and Pfr) that absorb red and far-red light, controlling seed germination and flowering according to day length."
+    },
+    {
+      "id": 44,
+      "question": "Which one is a C3 plant?",
+      "options": {
+        "a": "Rice",
+        "b": "Maize",
+        "c": "Sorghum",
+        "d": "Sugarcane"
+      },
+      "correct_option": "a",
+      "explanation": "Rice follows the C3 pathway of photosynthesis (Calvin cycle) where the first stable product is a 3-carbon compound (3-phosphoglycerate). Maize, sorghum, and sugarcane are C4 plants with Kranz anatomy."
+    },
+    {
+      "id": 45,
+      "question": "Which type of interaction is seen in mycorrhizal association?",
+      "options": {
+        "a": "Parasitism",
+        "b": "Mutualism",
+        "c": "Commensalism",
+        "d": "Competition"
+      },
+      "correct_option": "b",
+      "explanation": "Mycorrhiza is a mutualistic association between fungal hyphae and plant roots. The fungus enhances mineral absorption (especially phosphorus) while receiving carbohydrates from the plant."
+    }
+  ]
+}

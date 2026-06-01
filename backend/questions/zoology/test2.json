@@ -1,0 +1,546 @@
+{
+  "test_number": 2,
+  "subject": "Zoology",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which of the following statements about human blood circulation is correct?",
+      "options": {
+        "a": "Pulmonary artery carries oxygenated blood.",
+        "b": "Pulmonary vein carries deoxygenated blood.",
+        "c": "Pulmonary artery carries deoxygenated blood from heart to lungs.",
+        "d": "Pulmonary vein carries deoxygenated blood from lungs to heart."
+      },
+      "correct_option": "c",
+      "explanation": "The pulmonary artery is the only artery that carries deoxygenated blood from the right ventricle to the lungs. Pulmonary veins bring oxygenated blood from lungs to the left atrium."
+    },
+    {
+      "id": 2,
+      "question": "Which of the following is NOT a function of the liver?",
+      "options": {
+        "a": "Storage of glycogen",
+        "b": "Secretion of bile",
+        "c": "Excretion of urea",
+        "d": "Detoxification of harmful substances"
+      },
+      "correct_option": "c",
+      "explanation": "Urea is produced in the liver (urea cycle) but excretion is carried out by kidneys. The liver stores glycogen, secretes bile, and detoxifies harmful chemicals."
+    },
+    {
+      "id": 3,
+      "question": "Which statement about human excretion is correct?",
+      "options": {
+        "a": "Ureters connect kidneys to urethra.",
+        "b": "Urethra carries urine from bladder to outside.",
+        "c": "Nephrons are located only in renal pelvis.",
+        "d": "Glomerular filtration occurs in collecting duct."
+      },
+      "correct_option": "b",
+      "explanation": "The urethra carries urine from the bladder to outside. Ureters connect kidneys to bladder, not urethra. Nephrons are present in cortex and medulla, not renal pelvis. Filtration occurs in Bowman’s capsule, not collecting duct."
+    },
+    {
+      "id": 4,
+      "question": "Which protein is primarily responsible for oxygen transport in annelids?",
+      "options": {
+        "a": "Haemocyanin",
+        "b": "Haemoglobin",
+        "c": "Haemoerythrin",
+        "d": "Chlorocruorin"
+      },
+      "correct_option": "d",
+      "explanation": "In many polychaete annelids, chlorocruorin is the respiratory pigment. Haemoglobin is common in vertebrates, haemocyanin in arthropods, and haemoerythrin in some marine invertebrates."
+    },
+    {
+      "id": 5,
+      "question": "Which enzyme is secreted in the stomach for protein digestion?",
+      "options": {
+        "a": "Trypsin",
+        "b": "Pepsin",
+        "c": "Lipase",
+        "d": "Amylase"
+      },
+      "correct_option": "b",
+      "explanation": "Pepsin is secreted as inactive pepsinogen in the stomach and activated by HCl. Trypsin is secreted from the pancreas, lipase digests fats, amylase digests starch."
+    },
+    {
+      "id": 6,
+      "question": "Which of the following is NOT a function of the skeletal system?",
+      "options": {
+        "a": "Support and protection",
+        "b": "Movement with muscles",
+        "c": "Production of hormones",
+        "d": "Production of blood cells"
+      },
+      "correct_option": "c",
+      "explanation": "The skeletal system provides support, protection, movement, and produces blood cells (in bone marrow). It does not produce hormones, which is the function of endocrine glands."
+    },
+    {
+      "id": 7,
+      "question": "In the human brain, the medulla oblongata controls:",
+      "options": {
+        "a": "Memory and intelligence",
+        "b": "Vision",
+        "c": "Heart rate and breathing",
+        "d": "Voluntary movement"
+      },
+      "correct_option": "c",
+      "explanation": "The medulla oblongata controls involuntary functions such as heartbeat, respiration, swallowing, and blood pressure. Cerebrum controls memory and intelligence, occipital lobe controls vision, cerebellum controls voluntary movement coordination."
+    },
+    {
+      "id": 8,
+      "question": "Which statement about human reproduction is correct?",
+      "options": {
+        "a": "Fertilization occurs in uterus.",
+        "b": "Zygote formation occurs in fallopian tube.",
+        "c": "Ovulation releases ovum from uterus.",
+        "d": "Implantation occurs in fallopian tube."
+      },
+      "correct_option": "b",
+      "explanation": "Fertilization and zygote formation occur in the fallopian tube (ampullary–isthmic junction). Ovulation releases ovum from ovary, implantation occurs in uterus, not tube."
+    },
+    {
+      "id": 9,
+      "question": "Which structure prevents backflow of blood in veins?",
+      "options": {
+        "a": "Capillaries",
+        "b": "Valves",
+        "c": "Sphincters",
+        "d": "Thick muscular walls"
+      },
+      "correct_option": "b",
+      "explanation": "Valves in veins prevent backflow of blood since venous pressure is low. Capillaries allow exchange, sphincters regulate flow in arterioles, arteries prevent backflow by high pressure and elastic walls."
+    },
+    {
+      "id": 10,
+      "question": "Which hormone regulates the basal metabolic rate in humans?",
+      "options": {
+        "a": "Insulin",
+        "b": "Adrenaline",
+        "c": "Thyroxine",
+        "d": "Glucagon"
+      },
+      "correct_option": "c",
+      "explanation": "Thyroxine (T4) secreted by the thyroid gland regulates metabolism, protein synthesis, and basal metabolic rate. Insulin and glucagon regulate blood sugar, adrenaline regulates emergency responses."
+    },
+    {
+      "id": 11,
+      "question": "Which of the following animals is triploblastic?",
+      "options": {
+        "a": "Hydra",
+        "b": "Tapeworm",
+        "c": "Sponges",
+        "d": "Coelenterates"
+      },
+      "correct_option": "b",
+      "explanation": "Tapeworm is triploblastic (three germ layers). Hydra and coelenterates are diploblastic (two germ layers), sponges lack true tissues."
+    },
+    {
+      "id": 12,
+      "question": "Which of the following correctly matches the digestive enzyme with its source?",
+      "options": {
+        "a": "Trypsin – Stomach",
+        "b": "Pepsin – Pancreas",
+        "c": "Lipase – Pancreas",
+        "d": "Amylase – Small intestine"
+      },
+      "correct_option": "c",
+      "explanation": "Lipase is secreted by pancreas and digests fats. Trypsin is from pancreas, pepsin from stomach, and amylase mainly from salivary glands and pancreas."
+    },
+    {
+      "id": 13,
+      "question": "Which statement about alveoli is correct?",
+      "options": {
+        "a": "They are thick-walled to support lung pressure.",
+        "b": "They are lined with cilia for movement of air.",
+        "c": "They are thin-walled to allow gaseous exchange.",
+        "d": "They contract to expel air during breathing."
+      },
+      "correct_option": "c",
+      "explanation": "Alveoli are thin-walled, highly vascularized sacs that allow oxygen to diffuse into blood and carbon dioxide to diffuse out. They are not ciliated or contractile."
+    },
+    {
+      "id": 14,
+      "question": "Which part of the human brain regulates hunger and thirst?",
+      "options": {
+        "a": "Medulla oblongata",
+        "b": "Hypothalamus",
+        "c": "Cerebellum",
+        "d": "Pons"
+      },
+      "correct_option": "b",
+      "explanation": "The hypothalamus regulates homeostasis, including hunger, thirst, body temperature, and circadian rhythms."
+    },
+    {
+      "id": 15,
+      "question": "Which blood cells are involved in blood clotting?",
+      "options": {
+        "a": "RBCs",
+        "b": "WBCs",
+        "c": "Platelets",
+        "d": "Basophils"
+      },
+      "correct_option": "c",
+      "explanation": "Platelets (thrombocytes) are fragments that release clotting factors like thromboplastin, leading to fibrin clot formation. RBCs carry oxygen, WBCs fight infections, basophils release histamine."
+    },
+    {
+      "id": 16,
+      "question": "Which ion is essential for neurotransmitter release at the synaptic cleft?",
+      "options": {
+        "a": "Na⁺",
+        "b": "K⁺",
+        "c": "Ca²⁺",
+        "d": "Cl⁻"
+      },
+      "correct_option": "c",
+      "explanation": "Calcium ions enter the presynaptic terminal when an action potential arrives, triggering vesicle fusion and release of neurotransmitters into the synaptic cleft."
+    },
+    {
+      "id": 17,
+      "question": "Which statement about human reproduction is incorrect?",
+      "options": {
+        "a": "Fertilization usually occurs in ampulla of fallopian tube.",
+        "b": "Implantation occurs in endometrium of uterus.",
+        "c": "Corpus luteum secretes progesterone to maintain pregnancy.",
+        "d": "Ovulation occurs from the uterus."
+      },
+      "correct_option": "d",
+      "explanation": "Ovulation occurs from the ovary, not the uterus. Fertilization occurs in fallopian tube, implantation in uterus, and corpus luteum secretes progesterone for pregnancy maintenance."
+    },
+    {
+      "id": 18,
+      "question": "Which of the following is NOT part of the human axial skeleton?",
+      "options": {
+        "a": "Skull",
+        "b": "Vertebral column",
+        "c": "Rib cage",
+        "d": "Pectoral girdle"
+      },
+      "correct_option": "d",
+      "explanation": "The axial skeleton includes skull, vertebral column, and rib cage. The appendicular skeleton includes pectoral and pelvic girdles with limbs."
+    },
+    {
+      "id": 19,
+      "question": "Which statement about bile is correct?",
+      "options": {
+        "a": "Bile contains enzymes for fat digestion.",
+        "b": "Bile emulsifies fats into smaller droplets.",
+        "c": "Bile neutralizes proteins.",
+        "d": "Bile is secreted by gall bladder."
+      },
+      "correct_option": "b",
+      "explanation": "Bile emulsifies fats into micelles to increase surface area for lipase activity. It does not contain enzymes. It is produced by liver and stored in gall bladder."
+    },
+    {
+      "id": 20,
+      "question": "Which of the following pairs is correctly matched?",
+      "options": {
+        "a": "Thyroid – insulin",
+        "b": "Pancreas – glucagon",
+        "c": "Adrenal medulla – thyroxine",
+        "d": "Pituitary – adrenaline"
+      },
+      "correct_option": "b",
+      "explanation": "Pancreas secretes insulin and glucagon. Thyroid secretes thyroxine, adrenal medulla secretes adrenaline and noradrenaline, pituitary secretes tropic hormones like GH, TSH, FSH, LH."
+    },
+    {
+      "id": 21,
+      "question": "Which statement about human blood is incorrect?",
+      "options": {
+        "a": "RBCs are enucleated in humans.",
+        "b": "WBCs are involved in defense.",
+        "c": "Platelets are cell fragments.",
+        "d": "Plasma is devoid of proteins."
+      },
+      "correct_option": "d",
+      "explanation": "Plasma contains proteins like albumin, globulins, and fibrinogen. RBCs lack nucleus, WBCs fight infections, and platelets are fragments important for clotting."
+    },
+    {
+      "id": 22,
+      "question": "Which statement about reflex action is correct?",
+      "options": {
+        "a": "It is an involuntary response mediated by brain.",
+        "b": "It is an involuntary response mediated by spinal cord.",
+        "c": "It is a voluntary response mediated by spinal cord.",
+        "d": "It is a voluntary response mediated by brain."
+      },
+      "correct_option": "b",
+      "explanation": "Reflex actions are quick, involuntary responses controlled by the spinal cord (reflex arc). The brain may become aware but is not directly involved in the reflex pathway."
+    },
+    {
+      "id": 23,
+      "question": "Which statement about erythrocytes is true?",
+      "options": {
+        "a": "They are nucleated in humans.",
+        "b": "They are formed in bone marrow.",
+        "c": "They transport CO2 only.",
+        "d": "They live for 200 days."
+      },
+      "correct_option": "b",
+      "explanation": "RBCs are formed in red bone marrow (erythropoiesis). They are non-nucleated in humans, transport mainly O2 and some CO2, and live for about 120 days."
+    },
+    {
+      "id": 24,
+      "question": "Which of the following animals is pseudocoelomate?",
+      "options": {
+        "a": "Roundworm",
+        "b": "Earthworm",
+        "c": "Cockroach",
+        "d": "Leech"
+      },
+      "correct_option": "a",
+      "explanation": "Roundworms (nematodes) are pseudocoelomates, having a false coelom not completely lined by mesoderm. Earthworms and leeches (annelids) are coelomates, cockroach is coelomate arthropod."
+    },
+    {
+      "id": 25,
+      "question": "Which statement about lymph is correct?",
+      "options": {
+        "a": "It is identical to blood.",
+        "b": "It lacks plasma.",
+        "c": "It transports fatty acids and glycerol absorbed from intestine.",
+        "d": "It transports oxygen to tissues."
+      },
+      "correct_option": "c",
+      "explanation": "Lymph transports absorbed fats (as chylomicrons) from intestinal villi to blood. It differs from blood (no RBCs), contains plasma and WBCs, but does not transport oxygen."
+    },
+    {
+      "id": 26,
+      "question": "Which hormone is secreted in response to low blood glucose?",
+      "options": {
+        "a": "Insulin",
+        "b": "Glucagon",
+        "c": "Thyroxine",
+        "d": "Aldosterone"
+      },
+      "correct_option": "b",
+      "explanation": "Glucagon, secreted by α-cells of pancreas, raises blood glucose by promoting glycogen breakdown. Insulin lowers blood glucose, thyroxine controls metabolism, aldosterone regulates sodium–potassium balance."
+    },
+    {
+      "id": 27,
+      "question": "Which of the following is NOT a function of saliva?",
+      "options": {
+        "a": "Moistening food",
+        "b": "Breaking down starch",
+        "c": "Killing bacteria",
+        "d": "Breaking down proteins"
+      },
+      "correct_option": "d",
+      "explanation": "Saliva moistens food, contains amylase (ptyalin) for starch digestion, and has lysozyme to kill bacteria. Protein digestion begins in the stomach with pepsin, not in the mouth."
+    },
+    {
+      "id": 28,
+      "question": "Which one of the following organisms is diploblastic?",
+      "options": {
+        "a": "Frog",
+        "b": "Roundworm",
+        "c": "Hydra",
+        "d": "Leech"
+      },
+      "correct_option": "c",
+      "explanation": "Hydra, a cnidarian, is diploblastic with two germ layers. Frog (vertebrate), roundworm (nematode), and leech (annelid) are triploblastic."
+    },
+    {
+      "id": 29,
+      "question": "Which hormone regulates sodium reabsorption in kidneys?",
+      "options": {
+        "a": "Insulin",
+        "b": "Aldosterone",
+        "c": "Thyroxine",
+        "d": "Glucagon"
+      },
+      "correct_option": "b",
+      "explanation": "Aldosterone, secreted by adrenal cortex, promotes sodium reabsorption and potassium excretion in kidneys. Insulin and glucagon regulate blood sugar, thyroxine regulates metabolism."
+    },
+    {
+      "id": 30,
+      "question": "Which statement about antibodies is correct?",
+      "options": {
+        "a": "They are secreted by T-lymphocytes.",
+        "b": "They are secreted by B-lymphocytes/plasma cells.",
+        "c": "They are hormones.",
+        "d": "They are enzymes."
+      },
+      "correct_option": "b",
+      "explanation": "Antibodies (immunoglobulins) are proteins secreted by plasma cells derived from B-lymphocytes. T-lymphocytes provide cell-mediated immunity, not antibody production."
+    },
+    {
+      "id": 31,
+      "question": "Which statement about the human cardiac cycle is correct?",
+      "options": {
+        "a": "Systole is relaxation of the heart chambers.",
+        "b": "Diastole is contraction of the heart chambers.",
+        "c": "During systole, ventricles contract and pump blood out.",
+        "d": "During diastole, atria remain contracted."
+      },
+      "correct_option": "c",
+      "explanation": "Systole refers to contraction of heart chambers, while diastole is relaxation. During ventricular systole, ventricles contract and pump blood into the pulmonary artery and aorta."
+    },
+    {
+      "id": 32,
+      "question": "Which of the following is a structural protein?",
+      "options": {
+        "a": "Insulin",
+        "b": "Hemoglobin",
+        "c": "Keratin",
+        "d": "Amylase"
+      },
+      "correct_option": "c",
+      "explanation": "Keratin is a structural protein found in hair, nails, and skin. Insulin is a hormone, hemoglobin is a transport protein, and amylase is an enzyme."
+    },
+    {
+      "id": 33,
+      "question": "Which blood group is considered a universal donor?",
+      "options": {
+        "a": "A",
+        "b": "B",
+        "c": "AB",
+        "d": "O"
+      },
+      "correct_option": "d",
+      "explanation": "Blood group O negative is considered the universal donor because it lacks A and B antigens, preventing immune reactions when transfused to other groups."
+    },
+    {
+      "id": 34,
+      "question": "Which of the following statements about the respiratory system is correct?",
+      "options": {
+        "a": "Trachea is lined by non-ciliated epithelium.",
+        "b": "Alveoli are thick-walled sacs.",
+        "c": "Diaphragm contraction increases thoracic volume.",
+        "d": "Gas exchange occurs in bronchi."
+      },
+      "correct_option": "c",
+      "explanation": "When the diaphragm contracts, it flattens and increases thoracic cavity volume, lowering pressure to draw air in. Trachea is lined by ciliated epithelium, alveoli are thin-walled, and gas exchange occurs only in alveoli."
+    },
+    {
+      "id": 35,
+      "question": "Which gland controls other endocrine glands by secreting tropic hormones?",
+      "options": {
+        "a": "Thyroid",
+        "b": "Adrenal",
+        "c": "Pituitary",
+        "d": "Pancreas"
+      },
+      "correct_option": "c",
+      "explanation": "The pituitary gland (anterior lobe) secretes tropic hormones like TSH, ACTH, FSH, and LH that regulate other endocrine glands. Thyroid produces thyroxine, adrenal secretes adrenaline and cortisol, pancreas regulates sugar."
+    },
+    {
+      "id": 36,
+      "question": "Which of the following statements about muscle contraction is correct?",
+      "options": {
+        "a": "ATP is not required for muscle contraction.",
+        "b": "Calcium ions play no role in contraction.",
+        "c": "Actin and myosin filaments slide past each other during contraction.",
+        "d": "Muscle contraction occurs without nerve stimulation."
+      },
+      "correct_option": "c",
+      "explanation": "Muscle contraction occurs by sliding filament theory, where actin and myosin slide past each other. ATP and calcium ions are essential, and nerve stimulation triggers contraction."
+    },
+    {
+      "id": 37,
+      "question": "Which of the following blood cells secrete histamine during allergic reactions?",
+      "options": {
+        "a": "Neutrophils",
+        "b": "Eosinophils",
+        "c": "Basophils",
+        "d": "Monocytes"
+      },
+      "correct_option": "c",
+      "explanation": "Basophils release histamine and heparin during allergic reactions and inflammatory responses. Eosinophils fight parasites, neutrophils engulf bacteria, and monocytes differentiate into macrophages."
+    },
+    {
+      "id": 38,
+      "question": "Which of the following is NOT a characteristic of mammals?",
+      "options": {
+        "a": "Hair on body",
+        "b": "Mammary glands",
+        "c": "Three-chambered heart",
+        "d": "Diaphragm"
+      },
+      "correct_option": "c",
+      "explanation": "Mammals have a four-chambered heart, not three. Hair, mammary glands, and diaphragm are characteristic features of mammals."
+    },
+    {
+      "id": 39,
+      "question": "Which part of nephron reabsorbs glucose, amino acids, and most of the water?",
+      "options": {
+        "a": "Distal convoluted tubule",
+        "b": "Loop of Henle",
+        "c": "Proximal convoluted tubule",
+        "d": "Collecting duct"
+      },
+      "correct_option": "c",
+      "explanation": "The proximal convoluted tubule reabsorbs glucose, amino acids, vitamins, and most of the water and ions. Loop of Henle concentrates urine, DCT regulates salts, collecting duct finalizes urine volume."
+    },
+    {
+      "id": 40,
+      "question": "Which hormone is secreted by the adrenal medulla?",
+      "options": {
+        "a": "Cortisol",
+        "b": "Aldosterone",
+        "c": "Adrenaline",
+        "d": "Thyroxine"
+      },
+      "correct_option": "c",
+      "explanation": "Adrenal medulla secretes adrenaline and noradrenaline for fight-or-flight response. Cortisol and aldosterone are secreted by adrenal cortex, thyroxine by thyroid gland."
+    },
+    {
+      "id": 41,
+      "question": "Which of the following organisms has an open circulatory system?",
+      "options": {
+        "a": "Earthworm",
+        "b": "Cockroach",
+        "c": "Frog",
+        "d": "Human"
+      },
+      "correct_option": "b",
+      "explanation": "Cockroach has an open circulatory system where blood flows into body cavities. Earthworm, frog, and humans have closed circulatory systems where blood remains inside vessels."
+    },
+    {
+      "id": 42,
+      "question": "Which structure is common for both digestive and respiratory systems?",
+      "options": {
+        "a": "Larynx",
+        "b": "Pharynx",
+        "c": "Esophagus",
+        "d": "Trachea"
+      },
+      "correct_option": "b",
+      "explanation": "The pharynx is a common passage for food (digestive system) and air (respiratory system). Larynx and trachea belong to respiratory system, esophagus to digestive system."
+    },
+    {
+      "id": 43,
+      "question": "Which statement about hormones is correct?",
+      "options": {
+        "a": "They are secreted by exocrine glands.",
+        "b": "They are secreted in very small amounts and act at distant sites.",
+        "c": "They are enzymes acting locally.",
+        "d": "They are always proteins."
+      },
+      "correct_option": "b",
+      "explanation": "Hormones are secreted in small amounts by endocrine glands and act at distant target organs. They are not exocrine, not enzymes, and not always proteins (steroid hormones are lipids)."
+    },
+    {
+      "id": 44,
+      "question": "Which pair of vitamins are fat-soluble?",
+      "options": {
+        "a": "A and D",
+        "b": "B and C",
+        "c": "C and K",
+        "d": "B12 and A"
+      },
+      "correct_option": "a",
+      "explanation": "Fat-soluble vitamins are A, D, E, and K. Water-soluble vitamins include B-complex and C."
+    },
+    {
+      "id": 45,
+      "question": "Which mineral is primarily stored in human bones?",
+      "options": {
+        "a": "Sodium",
+        "b": "Potassium",
+        "c": "Calcium (as calcium phosphate)",
+        "d": "Iron"
+      },
+      "correct_option": "c",
+      "explanation": "Bones act as a major reservoir for calcium and phosphate (mostly as hydroxyapatite), supporting mineral homeostasis."
+    }
+  ]
+}

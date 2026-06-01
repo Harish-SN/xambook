@@ -1,0 +1,546 @@
+{
+  "test_number": 2,
+  "subject": "Chemistry",
+  "questions": [
+    {
+      "id": 1,
+      "question": "At constant temperature, 2.0 mol of an ideal gas occupies 44.8 L at 1 atm. What will be the pressure if the volume is compressed to 22.4 L?",
+      "options": {
+        "a": "0.5 atm",
+        "b": "1 atm",
+        "c": "2 atm",
+        "d": "4 atm"
+      },
+      "correct_option": "c",
+      "explanation": "According to Boyle’s law (valid at constant temperature for an ideal gas): \\\\[ P_1V_1 = P_2V_2 \\\\] Here, $P_1 = 1$ atm, $V_1 = 44.8$ L, $V_2 = 22.4$ L. Substituting: \\\\[ P_2 = \\frac{P_1 V_1}{V_2} = \\frac{1 \\times 44.8}{22.4} = 2~\\text{atm} \\\\] Thus, the pressure doubles when the volume is halved."
+    },
+    {
+      "id": 2,
+      "question": "Which quantum number determines the shape of an orbital?",
+      "options": {
+        "a": "Principal quantum number $n$",
+        "b": "Azimuthal quantum number $l$",
+        "c": "Magnetic quantum number $m$",
+        "d": "Spin quantum number $s$"
+      },
+      "correct_option": "b",
+      "explanation": "The azimuthal quantum number ($l$) defines the shape of orbitals: \\\\[ l = 0 \\;(s \\text{, spherical}), \\quad l = 1 \\;(p \\text{, dumbbell}), \\quad l = 2 \\;(d), \\quad l = 3 \\;(f) \\\\] The principal quantum number ($n$) decides size, $m$ gives orientation in space, and $s$ denotes spin ($+1/2$ or $-1/2$). Hence, orbital shape is governed by $l$."
+    },
+    {
+      "id": 3,
+      "question": "The half-life ($t_{1/2}$) of a first-order reaction is 693 s. What is the rate constant $k$?",
+      "options": {
+        "a": "1.0 × 10⁻² s⁻¹",
+        "b": "1.0 × 10⁻³ s⁻¹",
+        "c": "1.0 × 10⁻¹ s⁻¹",
+        "d": "7.0 × 10⁻² s⁻¹"
+      },
+      "correct_option": "b",
+      "explanation": "For a first-order reaction, the half-life is related to the rate constant as: \\\\[ t_{1/2} = \\frac{0.693}{k} \\\\] Rearranging: \\\\[ k = \\frac{0.693}{t_{1/2}} = \\frac{0.693}{693} = 1.0 \\times 10^{-3}~s^{-1} \\\\] Therefore, the rate constant is $1.0 \\times 10^{-3}~s^{-1}$."
+    },
+    {
+      "id": 4,
+      "question": "Which among the following has maximum ionic character (based on Fajan’s rule)?",
+      "options": {
+        "a": "LiI",
+        "b": "LiF",
+        "c": "CsI",
+        "d": "CsF"
+      },
+      "correct_option": "d",
+      "explanation": "According to Fajan’s rule, ionic character increases when the cation is large and has low polarizing power, and the anion is small and less polarizable. Cs$^+$ is very large (least polarizing), and F$^-$ is the smallest anion, making CsF the most ionic. In contrast, Li$^+$ is small and polarizes large anions like I$^-$ strongly, giving LiI more covalent character."
+    },
+    {
+      "id": 5,
+      "question": "Which is the correct order of decreasing bond dissociation energy?",
+      "options": {
+        "a": "F$_2$ > Cl$_2$ > Br$_2$ > I$_2$",
+        "b": "Cl$_2$ > Br$_2$ > F$_2$ > I$_2$",
+        "c": "Cl$_2$ > F$_2$ > Br$_2$ > I$_2$",
+        "d": "F$_2$ > Br$_2$ > Cl$_2$ > I$_2$"
+      },
+      "correct_option": "b",
+      "explanation": "Bond dissociation enthalpy values (approximate): Cl$_2$ (242 kJ/mol) > Br$_2$ (193 kJ/mol) > F$_2$ (158 kJ/mol) > I$_2$ (151 kJ/mol). Although F–F bond is between small atoms, strong electron–electron repulsion in compact 2p orbitals weakens it. Thus, Cl$_2$ has the strongest bond and the order is Cl$_2$ > Br$_2$ > F$_2$ > I$_2$."
+    },
+    {
+      "id": 6,
+      "question": "Which of the following reagents can distinguish between aldehydes and ketones?",
+      "options": {
+        "a": "Fehling’s solution",
+        "b": "Tollen’s reagent",
+        "c": "Benedict’s solution",
+        "d": "All of these"
+      },
+      "correct_option": "d",
+      "explanation": "All three reagents can oxidize aldehydes but not ketones (except $\u03b1$-hydroxy ketones). \\\\– Fehling’s solution: aldehydes reduce Cu$^{2+}$ to Cu$_2$O (red precipitate). \\\\– Tollen’s reagent: aldehydes reduce Ag$^+$ to Ag (silver mirror). \\\\– Benedict’s solution: similar to Fehling’s, forming Cu$_2$O. Ketones generally do not react, so these tests help distinguish them."
+    },
+    {
+      "id": 7,
+      "question": "Which among the following is used as an antacid?",
+      "options": {
+        "a": "NaOH",
+        "b": "Mg(OH)$_2$",
+        "c": "NaHCO$_3$",
+        "d": "Both b and c"
+      },
+      "correct_option": "d",
+      "explanation": "Antacids neutralize excess stomach HCl. Mg(OH)$_2$ (milk of magnesia) and NaHCO$_3$ (baking soda) are mild bases that reduce acidity without being too corrosive. NaOH, however, is too strong and caustic to be used safely inside the body."
+    },
+    {
+      "id": 8,
+      "question": "The electron gain enthalpy is most negative for:",
+      "options": {
+        "a": "Fluorine",
+        "b": "Chlorine",
+        "c": "Oxygen",
+        "d": "Sulphur"
+      },
+      "correct_option": "b",
+      "explanation": "Electron gain enthalpy (ΔH$_{eg}$) is the energy released when an atom accepts an electron. Expected trend: increases across a period and decreases down a group. However, fluorine has a less negative value (−328 kJ/mol) than chlorine (−349 kJ/mol), due to inter-electronic repulsion in fluorine’s compact 2p orbital. Thus, chlorine has the most negative ΔH$_{eg}$ among these."
+    },
+    {
+      "id": 9,
+      "question": "Which gas is mainly responsible for ozone layer depletion?",
+      "options": {
+        "a": "CO$_2$",
+        "b": "CH$_4$",
+        "c": "CFCs",
+        "d": "SO$_2$"
+      },
+      "correct_option": "c",
+      "explanation": "Chlorofluorocarbons (CFCs) are the main culprits of ozone depletion. In the stratosphere, UV light breaks CFCs to release Cl radicals: \\\\[ CFCl_3 \\xrightarrow{hv} CFCl_2 + Cl^\\cdot \\\\] The chlorine radical reacts with ozone: \\\\[ Cl^\\cdot + O_3 \\to ClO^\\cdot + O_2 \\\\] \\\\[ ClO^\\cdot + O \\to Cl^\\cdot + O_2 \\\\] Overall: $O_3 + O \\to 2O_2$. One Cl radical can destroy thousands of ozone molecules, leading to ozone hole formation."
+    },
+    {
+      "id": 10,
+      "question": "Which statement about molecular orbital (MO) theory is correct?",
+      "options": {
+        "a": "Bond order = (N$_b$ − N$_a$)/2",
+        "b": "Bond order = (N$_a$ − N$_b$)/2",
+        "c": "Antibonding orbitals increase bond strength",
+        "d": "Bonding orbitals increase energy"
+      },
+      "correct_option": "a",
+      "explanation": "In MO theory, bond order is defined as: \\\\[ BO = \\frac{N_b - N_a}{2} \\\\] where $N_b$ = number of bonding electrons, $N_a$ = number of antibonding electrons. Higher bond order means stronger bond, higher stability, and shorter bond length. Antibonding orbitals weaken bonds, while bonding orbitals lower energy and increase stability."
+    },
+    {
+      "id": 11,
+      "question": "Which metal is extracted by the electrolytic reduction of its molten chloride?",
+      "options": {
+        "a": "Copper",
+        "b": "Aluminium",
+        "c": "Sodium",
+        "d": "Iron"
+      },
+      "correct_option": "c",
+      "explanation": "Highly reactive alkali metals like sodium cannot be extracted by reduction of their oxides using carbon, since they are more electropositive than carbon. Instead, sodium is obtained by **Downs process** involving electrolysis of molten NaCl. \nAt cathode: $\\text{Na}^+ + e^- \\to \\text{Na}$. \nAt anode: $2\\text{Cl}^- \\to \\text{Cl}_2 + 2e^-$. \nThus sodium is extracted from its molten chloride by electrolytic reduction. Aluminium is extracted from alumina by Hall–Héroult process, copper and iron by reduction methods."
+    },
+    {
+      "id": 12,
+      "question": "Which is the correct decreasing order of basic strength in aqueous medium?",
+      "options": {
+        "a": "NH$_3$ > PH$_3$ > AsH$_3$",
+        "b": "PH$_3$ > NH$_3$ > AsH$_3$",
+        "c": "AsH$_3$ > PH$_3$ > NH$_3$",
+        "d": "NH$_3$ > AsH$_3$ > PH$_3$"
+      },
+      "correct_option": "a",
+      "explanation": "The basic strength of group 15 hydrides depends on the availability of the lone pair on the central atom. As we go down the group: \n- Size of the central atom increases. \n- Bond length increases, but the lone pair becomes more diffuse and less available for donation. \nThus, the order of basicity is: $NH_3$ (small N, high electron density, strong base) > $PH_3$ > $AsH_3$. \nTherefore option (a) is correct."
+    },
+    {
+      "id": 13,
+      "question": "Which species has sp hybridisation?",
+      "options": {
+        "a": "CO$_2$",
+        "b": "BF$_3$",
+        "c": "CH$_4$",
+        "d": "NH$_3$"
+      },
+      "correct_option": "a",
+      "explanation": "For CO$_2$, the Lewis structure is O=C=O. Carbon makes two double bonds with oxygen atoms. \n- To form this linear molecule, carbon undergoes sp hybridisation. \n- Two sp hybrid orbitals form $\\sigma$-bonds with O atoms, while the two unhybridized p-orbitals overlap sideways to form $\\pi$-bonds. \nThus CO$_2$ is linear (180° bond angle) with sp hybridisation. \nIn contrast: BF$_3$ is sp$^2$, CH$_4$ is sp$^3$, NH$_3$ is sp$^3$ (with lone pair)."
+    },
+    {
+      "id": 14,
+      "question": "In the galvanic cell Zn | Zn$^{2+}$ || Cu$^{2+}$ | Cu, the electrode reactions are:",
+      "options": {
+        "a": "Zn$^{2+}$ + 2e⁻ → Zn (anode), Cu → Cu$^{2+}$ + 2e⁻ (cathode)",
+        "b": "Zn → Zn$^{2+}$ + 2e⁻ (anode), Cu$^{2+}$ + 2e⁻ → Cu (cathode)",
+        "c": "Zn$^{2+}$ + 2e⁻ → Zn (cathode), Cu → Cu$^{2+}$ + 2e⁻ (anode)",
+        "d": "None"
+      },
+      "correct_option": "b",
+      "explanation": "In the Daniell cell: \n- Anode (oxidation): $\\text{Zn}(s) \\to \\text{Zn}^{2+}(aq) + 2e^-$. \n- Cathode (reduction): $\\text{Cu}^{2+}(aq) + 2e^- \\to \\text{Cu}(s)$. \nElectrons flow from Zn to Cu through the external circuit, and current flows in the opposite direction. Hence option (b) is correct."
+    },
+    {
+      "id": 15,
+      "question": "Which amine does not respond to the carbylamine test?",
+      "options": {
+        "a": "Methylamine",
+        "b": "Ethylamine",
+        "c": "Aniline",
+        "d": "Diethylamine"
+      },
+      "correct_option": "d",
+      "explanation": "The carbylamine test (isocyanide test) is given by **primary amines** only. Reaction: \n$R–NH_2 + CHCl_3 + 3KOH \\to R–NC + 3KCl + 3H_2O$. \nThe foul-smelling isocyanide confirms the presence of a primary amine. \nMethylamine, ethylamine, and aniline (all primary) give the test, but diethylamine is secondary and does not."
+    },
+    {
+      "id": 16,
+      "question": "A student dilutes 250 mL of 2.0 M H$_2$SO$_4$ to a final volume of 1.00 L. What is the molarity of the diluted solution?",
+      "options": {
+        "a": "0.25 M",
+        "b": "0.40 M",
+        "c": "0.50 M",
+        "d": "0.80 M"
+      },
+      "correct_option": "c",
+      "explanation": "We use the dilution formula: $M_1V_1 = M_2V_2$. \n- Here, $M_1 = 2.0$ M, $V_1 = 250$ mL = 0.250 L. \n- Final volume $V_2 = 1.00$ L. \nSo, $M_2 = \\dfrac{M_1V_1}{V_2} = \\dfrac{2.0 \\times 0.250}{1.00} = 0.50$ M. \nThus, the final molarity is 0.50 M."
+    },
+    {
+      "id": 17,
+      "question": "Estimate the freezing point depression of 0.50 m aqueous NaCl assuming complete dissociation. (For water, $K_f=1.86\\,\\mathrm{K\\,kg\\,mol^{-1}}$.)",
+      "options": {
+        "a": "0.93 °C",
+        "b": "1.86 °C",
+        "c": "2.79 °C",
+        "d": "3.72 °C"
+      },
+      "correct_option": "b",
+      "explanation": "For NaCl (1:1 electrolyte), van’t Hoff factor $i = 2$. \nThe formula: $\\Delta T_f = i K_f m$. \nHere $m = 0.50$, $K_f = 1.86$. \nSo $\\Delta T_f = 2 \\times 1.86 \\times 0.50 = 1.86\\,^{\\circ}\\!C$. \nThus, freezing point decreases by 1.86 °C. The new freezing point = $0 - 1.86 = -1.86$ °C."
+    },
+    {
+      "id": 18,
+      "question": "The solubility product of AgCl at 25 °C is $K_{sp}=1.8\\times10^{-10}$. What is its molar solubility in pure water?",
+      "options": {
+        "a": "1.3 × 10⁻³ M",
+        "b": "1.3 × 10⁻⁵ M",
+        "c": "1.3 × 10⁻⁶ M",
+        "d": "7.5 × 10⁻⁶ M"
+      },
+      "correct_option": "b",
+      "explanation": "Dissociation: $AgCl(s) \\rightleftharpoons Ag^+(aq) + Cl^-(aq)$. \nIf solubility = $s$, then $[Ag^+] = [Cl^-] = s$. \nSo, $K_{sp} = s^2 = 1.8 \\times 10^{-10}$. \nHence $s = \\sqrt{1.8 \\times 10^{-10}} = 1.34 \\times 10^{-5}$ M. \nThus molar solubility is about $1.3 \\times 10^{-5}$ M."
+    },
+    {
+      "id": 19,
+      "question": "For the cell Zn | Zn$^{2+}$(0.10 M) || Cu$^{2+}$(1.0 M) | Cu at 25 °C, calculate $E_{cell}$. Take $E^{\\circ}_{cell}=1.10$ V for Zn/Cu and $n=2$.",
+      "options": {
+        "a": "1.07 V",
+        "b": "1.10 V",
+        "c": "1.13 V",
+        "d": "1.20 V"
+      },
+      "correct_option": "c",
+      "explanation": "Reaction: $Zn + Cu^{2+} \\to Zn^{2+} + Cu$. \nReaction quotient: $Q = \\dfrac{[Zn^{2+}]}{[Cu^{2+}]} = \\dfrac{0.10}{1.0} = 0.10$. \nNernst equation: $E = E^\\circ - \\dfrac{0.0591}{n} \\log Q$. \nSubstitute: $E = 1.10 - \\dfrac{0.0591}{2} \\log(0.10)$. \nSince $\\log(0.10) = -1$, \n$E = 1.10 - 0.02955(-1) = 1.12955 \\approx 1.13$ V."
+    },
+    {
+      "id": 20,
+      "question": "For a process at 300 K with $\\Delta H=+10\\,\\text{kJ mol}^{-1}$ and $\\Delta S=+40\\,\\text{J mol}^{-1}\\,\\text{K}^{-1}$, predict spontaneity.",
+      "options": {
+        "a": "Non-spontaneous at 300 K",
+        "b": "Spontaneous at 300 K",
+        "c": "At equilibrium at 300 K",
+        "d": "Insufficient data"
+      },
+      "correct_option": "b",
+      "explanation": "We use Gibbs free energy equation: $\\Delta G = \\Delta H - T\\Delta S$. \nGiven: $\\Delta H = +10$ kJ mol$^{-1}$, $\\Delta S = +40$ J mol$^{-1}$K$^{-1}$ = 0.040 kJ mol$^{-1}$K$^{-1}$. \nSo, $\\Delta G = 10 - (300)(0.040) = 10 - 12 = -2$ kJ mol$^{-1}$. \nSince $\\Delta G < 0$, the process is **spontaneous at 300 K**."
+    },
+    {
+      "id": 21,
+      "question": "In a reaction, the rate constant doubles when temperature increases from 300 K to 310 K. Estimate the activation energy $E_a$ (Arrhenius equation).",
+      "options": {
+        "a": "25 kJ mol⁻¹",
+        "b": "40 kJ mol⁻¹",
+        "c": "54 kJ mol⁻¹",
+        "d": "85 kJ mol⁻¹"
+      },
+      "correct_option": "c",
+      "explanation": "According to the Arrhenius equation, $\\ln(\\tfrac{k_2}{k_1}) = \\dfrac{E_a}{R}(\\tfrac{1}{T_1} - \\tfrac{1}{T_2})$. Here $k_2/k_1 = 2$, so $\\ln 2 = 0.693$. The difference in reciprocals of temperature is $1/300 - 1/310 = 10/(300\\times310) \\approx 1.075\\times10^{-4}$. Substituting values, $E_a = (8.314\\times0.693)/(1.075\\times10^{-4}) \\approx 5.35\\times10^4$ J mol$^{-1}$, or about 54 kJ mol$^{-1}$."
+    },
+    {
+      "id": 22,
+      "question": "Calculate the pH of a buffer made by mixing 0.10 M NH$_3$ and 0.20 M NH$_4$Cl. Given $pK_b$(NH$_3$) = 4.75 at 25 °C.",
+      "options": {
+        "a": "8.65",
+        "b": "8.95",
+        "c": "9.25",
+        "d": "9.55"
+      },
+      "correct_option": "b",
+      "explanation": "For NH$_3$, $pK_a$ of the conjugate acid is $14 - 4.75 = 9.25$. Using the Henderson–Hasselbalch equation, $pH = pK_a + \\log\\dfrac{[\\text{base}]}{[\\text{acid}]} = 9.25 + \\log\\dfrac{0.10}{0.20} = 9.25 + \\log(0.5) = 9.25 - 0.301 = 8.95$. Hence the buffer has a pH of 8.95."
+    },
+    {
+      "id": 23,
+      "question": "Major product of bromination of toluene with Br$_2$/FeBr$_3$ at room temperature is:",
+      "options": {
+        "a": "m-bromotoluene",
+        "b": "o-bromotoluene",
+        "c": "p-bromotoluene",
+        "d": "benzyl bromide"
+      },
+      "correct_option": "c",
+      "explanation": "The $-CH_3$ group on toluene is an electron-donating group, which activates the ring and directs substitution to the ortho and para positions. Both ortho and para products form, but steric hindrance near the methyl group reduces the ortho product. The para isomer dominates under these conditions, giving p-bromotoluene as the major product."
+    },
+    {
+      "id": 24,
+      "question": "Arrange the acids in increasing strength: CH$_3$COOH, CH$_2$ClCOOH, CHCl$_2$COOH, CCl$_3$COOH.",
+      "options": {
+        "a": "CH$_3$COOH < CH$_2$ClCOOH < CHCl$_2$COOH < CCl$_3$COOH",
+        "b": "CCl$_3$COOH < CHCl$_2$COOH < CH$_2$ClCOOH < CH$_3$COOH",
+        "c": "CH$_2$ClCOOH < CH$_3$COOH < CHCl$_2$COOH < CCl$_3$COOH",
+        "d": "CH$_3$COOH < CHCl$_2$COOH < CH$_2$ClCOOH < CCl$_3$COOH"
+      },
+      "correct_option": "a",
+      "explanation": "The $-Cl$ substituent exerts a strong $-I$ (electron-withdrawing) effect, stabilizing the conjugate base and thereby increasing acidity. As the number of chlorine atoms increases, acidity becomes stronger: CH$_3$COOH (no Cl) < CH$_2$ClCOOH (one Cl) < CHCl$_2$COOH (two Cl) < CCl$_3$COOH (three Cl)."
+    },
+    {
+      "id": 25,
+      "question": "Which statement about transition metals is correct?",
+      "options": {
+        "a": "They never show variable oxidation states",
+        "b": "They form colored ions due to $d\\to d$ transitions",
+        "c": "They cannot act as catalysts",
+        "d": "They have completely filled d-subshells in all cases"
+      },
+      "correct_option": "b",
+      "explanation": "Transition-metal ions often appear colored because their d-orbitals split in a ligand field, and absorption of visible light promotes electrons from one set of d-orbitals to another ($d \\to d$ transitions). These elements also commonly show variable oxidation states and act as catalysts, and their d-subshells are typically only partially filled. Therefore, the correct statement is that they form colored ions due to $d \\to d$ transitions."
+    },
+    {
+      "id": 26,
+      "question": "For the complex ion [Ni(CN)$_4$]$^{2-}$, predict geometry, hybridisation, and magnetic behavior.",
+      "options": {
+        "a": "Tetrahedral, sp$^3$, paramagnetic",
+        "b": "Square planar, dsp$^2$, diamagnetic",
+        "c": "Octahedral, d$^2$sp$^3$, paramagnetic",
+        "d": "Tetrahedral, sp$^3$, diamagnetic"
+      },
+      "correct_option": "b",
+      "explanation": "Ni$^{2+}$ has the electronic configuration [Ar] 3d$^8$. The CN$^-$ ion is a strong-field ligand that forces pairing of electrons in the 3d orbitals, leaving one 3d orbital vacant. Hybridisation occurs as dsp$^2$, giving a square planar geometry. Because all electrons are paired in this arrangement, the complex is diamagnetic."
+    },
+    {
+      "id": 27,
+      "question": "Copper crystallizes in an fcc lattice with edge length $a = 3.61$ Å. Given $M$(Cu) = 63.5 g mol$^{-1}$, calculate its density. (Use $Z=4$ for fcc, $N_A=6.022\\times10^{23}$ mol$^{-1}$.)",
+      "options": {
+        "a": "7.80 g cm$^{-3}$",
+        "b": "8.00 g cm$^{-3}$",
+        "c": "8.96 g cm$^{-3}$",
+        "d": "9.80 g cm$^{-3}$"
+      },
+      "correct_option": "c",
+      "explanation": "In an fcc lattice, there are $Z=4$ atoms per unit cell. The unit cell volume is $a^3 = (3.61 \\times 10^{-8}\\,cm)^3 = 4.70\\times10^{-23}\\,cm^3$. The mass of one unit cell is $(4\\times63.5)/(6.022\\times10^{23}) = 4.22\\times10^{-22}$ g. Dividing mass by volume gives the density: $4.22\\times10^{-22}/4.70\\times10^{-23} = 8.96$ g cm$^{-3}$. Hence, the density of copper is 8.96 g cm$^{-3}$."
+    },
+    {
+      "id": 28,
+      "question": "For the Freundlich adsorption isotherm $\\dfrac{x}{m}=kP^{1/n}$, which graph should be a straight line?",
+      "options": {
+        "a": "$x/m$ vs $P$",
+        "b": "$x/m$ vs $1/P$",
+        "c": "$\\log(x/m)$ vs $\\log P$",
+        "d": "$x/m$ vs $\\log P$"
+      },
+      "correct_option": "c",
+      "explanation": "The Freundlich equation $x/m = kP^{1/n}$ can be linearized by taking logarithms: $\\log(x/m) = \\log k + (1/n)\\log P$. This is of the form $y = c + mx$, which represents a straight line. A plot of $\\log(x/m)$ against $\\log P$ gives a straight line with slope $1/n$ and intercept $\\log k$."
+    },
+    {
+      "id": 29,
+      "question": "A 0.10 m BaCl$_2$ solution shows a freezing point depression of 0.52 °C. For water $K_f = 1.86\\,\\mathrm{K\\,kg\\,mol^{-1}}$. What is the van’t Hoff factor $i$?",
+      "options": {
+        "a": "2.0",
+        "b": "2.4",
+        "c": "2.8",
+        "d": "3.0"
+      },
+      "correct_option": "c",
+      "explanation": "The relation is $\\Delta T_f = i K_f m$. Substituting values, $i = 0.52/(1.86\\times0.10) = 0.52/0.186 = 2.80$. The theoretical value for complete dissociation of BaCl$_2$ into Ba$^{2+}$ and 2Cl$^-$ is 3, but the observed value is slightly lower due to ion pairing in solution. Therefore, the van’t Hoff factor is about 2.8."
+    },
+    {
+      "id": 30,
+      "question": "Which reagent selectively oxidizes a secondary alcohol to a ketone under mild conditions?",
+      "options": {
+        "a": "LiAlH$_4$",
+        "b": "NaBH$_4$",
+        "c": "PCC (pyridinium chlorochromate)",
+        "d": "H$_2$/Ni"
+      },
+      "correct_option": "c",
+      "explanation": "LiAlH$_4$ and NaBH$_4$ are strong reducing agents, while H$_2$/Ni is used for hydrogenation. None of these oxidize alcohols. PCC (pyridinium chlorochromate) is a mild oxidizing agent that converts secondary alcohols to ketones without further oxidation, making it the selective reagent in this case."
+    },
+    {
+      "id": 31,
+      "question": "Which statement about the photoelectric effect is correct?",
+      "options": {
+        "a": "Electrons are ejected only when frequency is below the threshold",
+        "b": "Kinetic energy of emitted electrons increases with frequency",
+        "c": "Number of electrons depends only on frequency, not intensity",
+        "d": "Classical wave theory explains the threshold frequency well"
+      },
+      "correct_option": "b",
+      "explanation": "According to Einstein’s photoelectric equation $E_k = h\\nu - \\phi$, emission occurs only when the frequency $\\nu$ exceeds the threshold frequency $\\nu_0$. The kinetic energy of photoelectrons depends directly on the frequency of incident light, not on its intensity. Increasing frequency above the threshold increases $E_k$. The intensity controls the number of electrons emitted, not their kinetic energy, and classical wave theory fails to explain the threshold frequency."
+    },
+    {
+      "id": 32,
+      "question": "Which compound shows geometrical isomerism?",
+      "options": {
+        "a": "CH$_3$–CH$_2$–CH$_3$",
+        "b": "CH$_2$=CHCl",
+        "c": "CHCl=CHCl",
+        "d": "C$_6$H$_6$"
+      },
+      "correct_option": "c",
+      "explanation": "Geometrical (cis–trans) isomerism arises in alkenes when each carbon of the double bond has two different substituents, and rotation around the C=C bond is restricted. In CHCl=CHCl, one carbon is attached to H and Cl, and the other also to H and Cl. This allows two possible arrangements: cis (both Cl atoms on the same side) and trans (Cl atoms on opposite sides). The other compounds either lack a double bond or do not have two different substituents on each carbon."
+    },
+    {
+      "id": 33,
+      "question": "Which order of conductivity of 0.1 M solutions is correct?",
+      "options": {
+        "a": "CH$_3$COOH < NaCl < NaOH",
+        "b": "NaCl < NaOH < CH$_3$COOH",
+        "c": "NaOH < CH$_3$COOH < NaCl",
+        "d": "NaOH < NaCl < CH$_3$COOH"
+      },
+      "correct_option": "a",
+      "explanation": "Conductivity depends on the concentration of ions and their mobility in solution. NaOH is a strong base that ionizes completely to give OH$^-$ and Na$^+$, providing high conductivity. NaCl is a strong electrolyte that also ionizes completely but produces fewer ions than NaOH at the same concentration. CH$_3$COOH is a weak acid that ionizes only partially, producing the least number of ions. Therefore, the order is CH$_3$COOH < NaCl < NaOH."
+    },
+    {
+      "id": 34,
+      "question": "Which metal cannot be extracted by carbon reduction?",
+      "options": {
+        "a": "Zn",
+        "b": "Fe",
+        "c": "Al",
+        "d": "Pb"
+      },
+      "correct_option": "c",
+      "explanation": "Metals that are low in the reactivity series can be extracted by carbon reduction of their oxides. Zinc, iron, and lead oxides are reduced by carbon or CO at high temperatures. Aluminium oxide (Al$_2$O$_3$) is extremely stable due to the high lattice energy and strong Al–O bond. Aluminium is highly reactive and cannot be reduced by carbon; it is extracted by electrolytic reduction of alumina in the Hall–Héroult process."
+    },
+    {
+      "id": 35,
+      "question": "Which gas deviates most from ideal behavior?",
+      "options": {
+        "a": "H$_2$",
+        "b": "He",
+        "c": "NH$_3$",
+        "d": "N$_2$"
+      },
+      "correct_option": "c",
+      "explanation": "Deviation from ideal gas behavior is caused by significant intermolecular forces or finite molecular volume. NH$_3$ has strong hydrogen bonding and high polarity, which produce strong intermolecular attractions, leading to large deviations from the ideal gas law. H$_2$ and He are nearly ideal because they are small, non-polar molecules with weak interactions. N$_2$ is non-polar with moderate van der Waals forces and deviates less than NH$_3$."
+    },
+    {
+      "id": 36,
+      "question": "Which law relates the rate of diffusion of gases to their molar masses?",
+      "options": {
+        "a": "Boyle’s law",
+        "b": "Charles’ law",
+        "c": "Graham’s law",
+        "d": "Avogadro’s law"
+      },
+      "correct_option": "c",
+      "explanation": "Graham’s law states that the rate of diffusion or effusion of a gas is inversely proportional to the square root of its molar mass: $\\tfrac{r_1}{r_2} = \\sqrt{\\tfrac{M_2}{M_1}}$. This means lighter gases diffuse or effuse faster than heavier gases. Boyle’s law, Charles’ law, and Avogadro’s law deal with pressure–volume–temperature relations, not diffusion."
+    },
+    {
+      "id": 37,
+      "question": "Which alcohol shows a positive iodoform test?",
+      "options": {
+        "a": "Methanol",
+        "b": "2-Propanol",
+        "c": "tert-Butanol",
+        "d": "1-Propanol"
+      },
+      "correct_option": "b",
+      "explanation": "The iodoform test is given by compounds containing the $-COCH_3$ group or those that can be oxidized to it, such as alcohols with the $-CH(OH)CH_3$ group. 2-Propanol has the structure CH$_3$–CHOH–CH$_3$, which on oxidation forms acetone (CH$_3$COCH$_3$). This gives a positive iodoform test, producing yellow iodoform crystals. Methanol and 1-propanol do not produce the required group, and tert-butanol has no hydrogen on the carbon attached to the OH group, so it fails the test."
+    },
+    {
+      "id": 38,
+      "question": "Which statement is true for lanthanides?",
+      "options": {
+        "a": "They show only +2 oxidation state",
+        "b": "They exhibit variable oxidation states, mainly +3",
+        "c": "They never form colored ions",
+        "d": "They have no magnetic properties"
+      },
+      "correct_option": "b",
+      "explanation": "Lanthanides commonly exhibit the +3 oxidation state because loss of two 6s electrons and one 4f electron gives a stable configuration. Some elements also show +2 or +4 oxidation states due to stability of half-filled or empty f-subshells. They often form colored ions due to f–f electronic transitions, and many are paramagnetic because of unpaired 4f electrons. Thus, the correct statement is that lanthanides exhibit variable oxidation states, mainly +3."
+    },
+    {
+      "id": 39,
+      "question": "Which reagent is used to convert alcohols to alkenes by dehydration?",
+      "options": {
+        "a": "Conc. HCl",
+        "b": "Conc. H$_2$SO$_4$",
+        "c": "NaOH (aq)",
+        "d": "KMnO$_4$"
+      },
+      "correct_option": "b",
+      "explanation": "Concentrated H$_2$SO$_4$ acts as a strong dehydrating agent and removes water from alcohols when heated, giving alkenes. For example: $CH_3CH_2OH \\xrightarrow[170^{\\circ}C]{conc.\\ H_2SO_4} CH_2=CH_2 + H_2O$. The mechanism follows the E1 pathway in case of secondary and tertiary alcohols, involving carbocation formation, and generally produces the more substituted alkene as the major product according to Zaitsev’s rule."
+    },
+    {
+      "id": 40,
+      "question": "Which salt solution will have pH > 7?",
+      "options": {
+        "a": "NaCl",
+        "b": "NH$_4$Cl",
+        "c": "CH$_3$COONa",
+        "d": "AlCl$_3$"
+      },
+      "correct_option": "c",
+      "explanation": "CH$_3$COONa is the salt of a weak acid (CH$_3$COOH) and a strong base (NaOH). In aqueous solution, CH$_3$COO$^-$ ions undergo hydrolysis to produce OH$^-$ ions, making the solution basic with pH > 7. NaCl is formed from a strong acid and strong base, so it is neutral (pH ≈ 7). NH$_4$Cl is acidic because NH$_4^+$ hydrolyzes to release H$^+$. AlCl$_3$ is also acidic due to hydrolysis of the highly charged Al$^{3+}$ ion."
+    },
+    {
+      "id": 41,
+      "question": "Which colligative property is best used to determine molar mass of polymers?",
+      "options": {
+        "a": "Osmotic pressure",
+        "b": "Elevation in boiling point",
+        "c": "Depression in freezing point",
+        "d": "Relative lowering of vapor pressure"
+      },
+      "correct_option": "a",
+      "explanation": "Osmotic pressure is given by $\\pi = cRT = \\dfrac{n}{V}RT$, where $n$ is moles of solute and $V$ is solution volume. This property can be measured accurately even in very dilute solutions, where other colligative properties such as boiling point elevation or freezing point depression become too small to detect for polymers. Since polymers have very high molar mass and produce extremely low colligative effects, osmotic pressure is the most reliable property to determine their molecular weights."
+    },
+    {
+      "id": 42,
+      "question": "Which of the following is not an intensive property?",
+      "options": {
+        "a": "Pressure",
+        "b": "Density",
+        "c": "Temperature",
+        "d": "Volume"
+      },
+      "correct_option": "d",
+      "explanation": "Intensive properties are those that do not depend on the amount of substance, such as pressure, density, and temperature. Extensive properties depend on the total quantity of matter present. Volume is an extensive property because it changes with the amount of substance. For example, doubling the amount of gas doubles the volume but does not change its pressure, density, or temperature under the same conditions."
+    },
+    {
+      "id": 43,
+      "question": "Which factor affects adsorption of gases on solids?",
+      "options": {
+        "a": "Nature of gas",
+        "b": "Pressure of gas",
+        "c": "Temperature",
+        "d": "All of these"
+      },
+      "correct_option": "d",
+      "explanation": "The extent of adsorption of a gas on a solid depends on several factors. The nature of the gas matters because easily liquefiable gases with high critical temperature are adsorbed more strongly. Pressure also affects adsorption, as increasing pressure generally increases the amount adsorbed (until saturation). Temperature plays a role since adsorption is exothermic; increasing temperature decreases adsorption. Thus, all the listed factors influence adsorption."
+    },
+    {
+      "id": 44,
+      "question": "Which one is an example of homogeneous catalysis?",
+      "options": {
+        "a": "$SO_2 + O_2 \\to SO_3$ using V$_2$O$_5$",
+        "b": "$H_2 + I_2 \\to 2HI$",
+        "c": "Decomposition of H$_2$O$_2$ by MnO$_2$",
+        "d": "Haber process using Fe catalyst"
+      },
+      "correct_option": "b",
+      "explanation": "In homogeneous catalysis, the catalyst and the reactants are present in the same phase. In the reaction $H_2 + I_2 \\to 2HI$, both reactants are gases and iodine (acting as catalyst) is also in the gaseous state, making it a homogeneous catalytic process. In contrast, V$_2$O$_5$, MnO$_2$, and Fe are solids used as catalysts with gaseous reactants, which makes those examples heterogeneous catalysis."
+    },
+    {
+      "id": 45,
+      "question": "Which statement about colloids is correct?",
+      "options": {
+        "a": "They are always transparent",
+        "b": "Their particles are larger than 1 μm",
+        "c": "They exhibit Tyndall effect",
+        "d": "They are true solutions"
+      },
+      "correct_option": "c",
+      "explanation": "Colloidal particles have a size between 1 nm and 1000 nm, which is larger than the particles in true solutions but smaller than those in suspensions. Because of this size range, colloidal particles scatter light passing through them, producing the Tyndall effect. This property makes colloids appear opalescent but not fully transparent like true solutions. The particle size is smaller than 1 μm, so option (b) is incorrect, and they are not true solutions."
+    }
+  ]
+}

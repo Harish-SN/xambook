@@ -1,0 +1,546 @@
+{
+  "test_number": 1,
+  "subject": "Zoology",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which is the basic structural and functional unit of life?",
+      "options": {
+        "a": "Tissue",
+        "b": "Cell",
+        "c": "Organ",
+        "d": "Organ system"
+      },
+      "correct_option": "b",
+      "explanation": "The cell is the fundamental unit of life, capable of performing all necessary functions like metabolism, growth, and reproduction. Tissues, organs, and organ systems are higher levels of organization formed by groups of cells."
+    },
+    {
+      "id": 2,
+      "question": "Which organelle is the site of beta-oxidation of fatty acids in eukaryotic cells?",
+      "options": {
+        "a": "Mitochondria",
+        "b": "Peroxisomes",
+        "c": "Golgi apparatus",
+        "d": "Endoplasmic reticulum"
+      },
+      "correct_option": "b",
+      "explanation": "Peroxisomes carry out beta-oxidation of very long chain fatty acids, whereas mitochondria mainly handle short and medium chain fatty acids."
+    },
+    {
+      "id": 3,
+      "question": "Which blood group is considered a universal recipient?",
+      "options": {
+        "a": "A",
+        "b": "B",
+        "c": "AB",
+        "d": "O"
+      },
+      "correct_option": "c",
+      "explanation": "Individuals with blood group AB positive are considered universal recipients because they have both A and B antigens on red blood cells and lack anti-A and anti-B antibodies in plasma, allowing them to safely receive blood from any group."
+    },
+    {
+      "id": 4,
+      "question": "The functional unit of the kidney is:",
+      "options": {
+        "a": "Neuron",
+        "b": "Alveolus",
+        "c": "Nephron",
+        "d": "Glomerulus"
+      },
+      "correct_option": "c",
+      "explanation": "The nephron is the functional unit of the kidney, responsible for filtration, reabsorption, secretion, and urine formation. The glomerulus is a part of the nephron, whereas neurons and alveoli belong to other organ systems."
+    },
+    {
+      "id": 5,
+      "question": "Which of the following is an example of connective tissue?",
+      "options": {
+        "a": "Blood",
+        "b": "Muscle",
+        "c": "Nerve",
+        "d": "Skin epithelium"
+      },
+      "correct_option": "a",
+      "explanation": "Blood is a fluid connective tissue that transports gases, nutrients, and wastes. Muscles are muscular tissue, nerves form nervous tissue, and skin epithelium is epithelial tissue."
+    },
+    {
+      "id": 6,
+      "question": "The powerhouse of the cell is:",
+      "options": {
+        "a": "Nucleus",
+        "b": "Ribosome",
+        "c": "Mitochondria",
+        "d": "Endoplasmic reticulum"
+      },
+      "correct_option": "c",
+      "explanation": "Mitochondria are called the powerhouse of the cell as they produce ATP, the energy currency, through aerobic respiration. Nucleus controls activities, ribosomes synthesize proteins, ER aids transport and synthesis."
+    },
+    {
+      "id": 7,
+      "question": "Which vitamin deficiency causes rickets?",
+      "options": {
+        "a": "Vitamin A",
+        "b": "Vitamin C",
+        "c": "Vitamin D",
+        "d": "Vitamin K"
+      },
+      "correct_option": "c",
+      "explanation": "Vitamin D deficiency causes rickets in children, characterized by weak, soft bones due to poor calcium and phosphate absorption. Vitamin A deficiency causes night blindness, vitamin C deficiency causes scurvy, and vitamin K deficiency causes poor blood clotting."
+    },
+    {
+      "id": 8,
+      "question": "Which chamber of the human heart pumps oxygenated blood to the body?",
+      "options": {
+        "a": "Right atrium",
+        "b": "Right ventricle",
+        "c": "Left atrium",
+        "d": "Left ventricle"
+      },
+      "correct_option": "d",
+      "explanation": "The left ventricle pumps oxygenated blood into the aorta and then to the entire body. The right atrium receives deoxygenated blood, the right ventricle pumps it to the lungs, and the left atrium receives oxygenated blood from lungs."
+    },
+    {
+      "id": 9,
+      "question": "Which of the following is NOT a component of the human axial skeleton?",
+      "options": {
+        "a": "Skull",
+        "b": "Vertebral column",
+        "c": "Rib cage",
+        "d": "Pelvic girdle"
+      },
+      "correct_option": "d",
+      "explanation": "The axial skeleton consists of skull, vertebral column, sternum, and rib cage. The pelvic girdle is part of the appendicular skeleton, which includes limbs and girdles."
+    },
+    {
+      "id": 10,
+      "question": "Which endocrine gland is both exocrine and endocrine in function?",
+      "options": {
+        "a": "Adrenal gland",
+        "b": "Pancreas",
+        "c": "Pituitary gland",
+        "d": "Thyroid gland"
+      },
+      "correct_option": "b",
+      "explanation": "The pancreas has exocrine acini (secreting digestive enzymes) and endocrine islets of Langerhans (secreting insulin, glucagon, somatostatin)."
+    },
+    {
+      "id": 11,
+      "question": "Which of the following organisms is a diploblastic animal?",
+      "options": {
+        "a": "Earthworm",
+        "b": "Hydra",
+        "c": "Cockroach",
+        "d": "Frog"
+      },
+      "correct_option": "b",
+      "explanation": "Hydra, a cnidarian, is diploblastic with two germ layers (ectoderm and endoderm). Earthworm, cockroach, and frog are triploblastic with three germ layers."
+    },
+    {
+      "id": 12,
+      "question": "Which blood vessels carry blood away from the heart?",
+      "options": {
+        "a": "Veins",
+        "b": "Arteries",
+        "c": "Capillaries",
+        "d": "Venules"
+      },
+      "correct_option": "b",
+      "explanation": "Arteries carry blood away from the heart, usually oxygenated except pulmonary artery. Veins bring blood back to the heart, capillaries connect arteries and veins, and venules are small veins."
+    },
+    {
+      "id": 13,
+      "question": "Which pigment is responsible for oxygen transport in human blood?",
+      "options": {
+        "a": "Chlorophyll",
+        "b": "Haemoglobin",
+        "c": "Haemocyanin",
+        "d": "Myoglobin"
+      },
+      "correct_option": "b",
+      "explanation": "Hemoglobin, present in red blood cells, binds oxygen and transports it to tissues. Haemocyanin is a copper-containing respiratory pigment in arthropods and mollusks. Myoglobin is found in muscle for oxygen storage. Chlorophyll is a photosynthetic pigment."
+    },
+    {
+      "id": 14,
+      "question": "Which type of synovial joint is present between the articular processes of adjacent vertebrae?",
+      "options": {
+        "a": "Ball and socket joint",
+        "b": "Hinge joint",
+        "c": "Gliding (plane) joint",
+        "d": "Pivot joint"
+      },
+      "correct_option": "c",
+      "explanation": "The zygapophyseal (facet) joints between the articular processes of adjacent vertebrae are plane (gliding) synovial joints allowing small sliding movements. (Between vertebral bodies the joint is a secondary cartilaginous symphysis.)"
+    },
+    {
+      "id": 15,
+      "question": "The enzyme pepsin is secreted in:",
+      "options": {
+        "a": "Mouth",
+        "b": "Stomach",
+        "c": "Pancreas",
+        "d": "Small intestine"
+      },
+      "correct_option": "b",
+      "explanation": "Pepsin is secreted as inactive pepsinogen by gastric glands in the stomach. It is activated by hydrochloric acid to pepsin, which digests proteins. Salivary amylase is in the mouth, pancreatic enzymes are secreted in the small intestine."
+    },
+    {
+      "id": 16,
+      "question": "Which organ produces bile juice?",
+      "options": {
+        "a": "Pancreas",
+        "b": "Liver",
+        "c": "Gall bladder",
+        "d": "Small intestine"
+      },
+      "correct_option": "b",
+      "explanation": "The liver produces bile juice, which helps in emulsification of fats. The gall bladder stores bile, the pancreas secretes digestive enzymes, and the small intestine secretes intestinal juice."
+    },
+    {
+      "id": 17,
+      "question": "Which part of the nephron is responsible for primary filtration of blood?",
+      "options": {
+        "a": "Loop of Henle",
+        "b": "Bowman’s capsule",
+        "c": "Collecting duct",
+        "d": "Distal convoluted tubule"
+      },
+      "correct_option": "b",
+      "explanation": "Bowman’s capsule surrounds the glomerulus and is the site of ultrafiltration, where plasma minus large proteins is filtered. Loop of Henle concentrates urine, DCT fine-tunes salt and water reabsorption, and the collecting duct controls final urine volume."
+    },
+    {
+      "id": 18,
+      "question": "Which gland is known as the ‘master gland’?",
+      "options": {
+        "a": "Thyroid gland",
+        "b": "Pituitary gland",
+        "c": "Adrenal gland",
+        "d": "Pancreas"
+      },
+      "correct_option": "b",
+      "explanation": "The pituitary gland is called the master gland because it secretes hormones that regulate other endocrine glands. Thyroid regulates metabolism, adrenals secrete adrenaline and corticosteroids, and pancreas regulates sugar with insulin and glucagon."
+    },
+    {
+      "id": 19,
+      "question": "Which blood vessels carry oxygenated blood from lungs to heart?",
+      "options": {
+        "a": "Pulmonary artery",
+        "b": "Pulmonary vein",
+        "c": "Aorta",
+        "d": "Superior vena cava"
+      },
+      "correct_option": "b",
+      "explanation": "Pulmonary veins carry oxygenated blood from lungs to the left atrium of the heart. Pulmonary artery carries deoxygenated blood to lungs. Aorta distributes oxygenated blood to the body, vena cava carries deoxygenated blood from the body to the right atrium."
+    },
+    {
+      "id": 20,
+      "question": "Which is the largest organ in the human body?",
+      "options": {
+        "a": "Liver",
+        "b": "Skin",
+        "c": "Lungs",
+        "d": "Heart"
+      },
+      "correct_option": "b",
+      "explanation": "The skin is the largest organ of the human body, serving as a protective barrier. The liver is the largest internal organ, lungs the largest respiratory organ, and the heart is muscular but smaller."
+    },
+    {
+      "id": 21,
+      "question": "Which of the following animals is cold-blooded?",
+      "options": {
+        "a": "Frog",
+        "b": "Bird",
+        "c": "Whale",
+        "d": "Tiger"
+      },
+      "correct_option": "a",
+      "explanation": "Frog is an amphibian and ectothermic (cold-blooded), meaning its body temperature varies with the environment. Birds and mammals (whale, tiger) are warm-blooded and maintain constant body temperature."
+    },
+    {
+      "id": 22,
+      "question": "Which part of the human digestive system is the main site of nutrient absorption?",
+      "options": {
+        "a": "Stomach",
+        "b": "Small intestine",
+        "c": "Large intestine",
+        "d": "Rectum"
+      },
+      "correct_option": "b",
+      "explanation": "The small intestine (especially jejunum and ileum) is the major site of digestion and absorption of nutrients. The stomach mainly digests proteins, the large intestine absorbs water and salts, and the rectum stores feces."
+    },
+    {
+      "id": 23,
+      "question": "Which type of blood cells are called soldiers of the body?",
+      "options": {
+        "a": "Red blood cells",
+        "b": "White blood cells",
+        "c": "Platelets",
+        "d": "Plasma cells"
+      },
+      "correct_option": "b",
+      "explanation": "White blood cells (leukocytes) defend the body against infections and foreign invaders. RBCs transport oxygen, platelets help in clotting, and plasma is the liquid medium of blood."
+    },
+    {
+      "id": 24,
+      "question": "Which structure connects the pharynx to the stomach?",
+      "options": {
+        "a": "Trachea",
+        "b": "Esophagus",
+        "c": "Larynx",
+        "d": "Small intestine"
+      },
+      "correct_option": "b",
+      "explanation": "The esophagus (food pipe) carries food from the pharynx to the stomach. The trachea carries air to the lungs, larynx is the voice box, and the small intestine is for digestion and absorption."
+    },
+    {
+      "id": 25,
+      "question": "Which vitamin is necessary for blood clotting?",
+      "options": {
+        "a": "Vitamin A",
+        "b": "Vitamin B12",
+        "c": "Vitamin K",
+        "d": "Vitamin D"
+      },
+      "correct_option": "c",
+      "explanation": "Vitamin K is essential for synthesis of prothrombin and other clotting factors. Vitamin A is for vision, B12 for RBC formation, and D for calcium absorption and bone health."
+    },
+    {
+      "id": 26,
+      "question": "Which blood cells are responsible for producing antibodies?",
+      "options": {
+        "a": "Red blood cells",
+        "b": "Platelets",
+        "c": "B-lymphocytes",
+        "d": "Neutrophils"
+      },
+      "correct_option": "c",
+      "explanation": "B-lymphocytes (a type of white blood cell) differentiate into plasma cells that produce antibodies, which are crucial for the immune response. Red blood cells carry oxygen, platelets help in clotting, and neutrophils destroy pathogens by phagocytosis."
+    },
+    {
+      "id": 27,
+      "question": "The human appendix is an example of:",
+      "options": {
+        "a": "Excretory organ",
+        "b": "Vestigial organ",
+        "c": "Respiratory organ",
+        "d": "Endocrine organ"
+      },
+      "correct_option": "b",
+      "explanation": "The appendix in humans is considered a vestigial organ, meaning it has lost its original function (cellulose digestion in herbivores) but persists in reduced form. Excretory organs include kidneys, respiratory organs include lungs, and endocrine organs secrete hormones."
+    },
+    {
+      "id": 28,
+      "question": "Which type of muscle is found in the walls of the alimentary canal?",
+      "options": {
+        "a": "Skeletal muscle",
+        "b": "Cardiac muscle",
+        "c": "Smooth muscle",
+        "d": "Voluntary muscle"
+      },
+      "correct_option": "c",
+      "explanation": "Smooth muscles are involuntary, spindle-shaped, and found in walls of hollow organs like stomach, intestines, and blood vessels. Skeletal muscles are voluntary and striated, cardiac muscle is striated but involuntary."
+    },
+    {
+      "id": 29,
+      "question": "Which hormone regulates blood sugar by lowering it?",
+      "options": {
+        "a": "Glucagon",
+        "b": "Insulin",
+        "c": "Adrenaline",
+        "d": "Thyroxine"
+      },
+      "correct_option": "b",
+      "explanation": "Insulin, secreted by β-cells of pancreas, lowers blood sugar by promoting uptake and storage of glucose. Glucagon raises blood sugar, adrenaline raises glucose in stress, and thyroxine regulates metabolism."
+    },
+    {
+      "id": 30,
+      "question": "Which structure carries urine from the kidney to the urinary bladder?",
+      "options": {
+        "a": "Urethra",
+        "b": "Ureter",
+        "c": "Nephron",
+        "d": "Collecting duct"
+      },
+      "correct_option": "b",
+      "explanation": "Ureters are muscular tubes that carry urine from kidneys to the urinary bladder. The urethra carries urine outside the body, nephrons make urine, and collecting ducts collect it within the kidney."
+    },
+    {
+      "id": 31,
+      "question": "Which organ secretes insulin?",
+      "options": {
+        "a": "Liver",
+        "b": "Pancreas",
+        "c": "Adrenal gland",
+        "d": "Pituitary gland"
+      },
+      "correct_option": "b",
+      "explanation": "The pancreas secretes insulin from its beta cells of the islets of Langerhans. Insulin reduces blood sugar levels. Liver stores glycogen, adrenal gland secretes adrenaline, and pituitary secretes tropic hormones."
+    },
+    {
+      "id": 32,
+      "question": "Which is the smallest bone in the human body?",
+      "options": {
+        "a": "Stapes",
+        "b": "Incus",
+        "c": "Malleus",
+        "d": "Hyoid"
+      },
+      "correct_option": "a",
+      "explanation": "The stapes, located in the middle ear, is the smallest bone in the human body. It helps in transmitting sound vibrations. Incus and malleus are other ear ossicles, while hyoid supports the tongue."
+    },
+    {
+      "id": 33,
+      "question": "Which type of blood cell helps in clotting?",
+      "options": {
+        "a": "Red blood cells",
+        "b": "Platelets",
+        "c": "Neutrophils",
+        "d": "Lymphocytes"
+      },
+      "correct_option": "b",
+      "explanation": "Platelets (thrombocytes) help in clotting by releasing clotting factors like thromboplastin. RBCs carry oxygen, neutrophils fight infections, and lymphocytes are part of the immune response."
+    },
+    {
+      "id": 34,
+      "question": "The functional unit of the nervous system is:",
+      "options": {
+        "a": "Neuron",
+        "b": "Axon",
+        "c": "Dendrite",
+        "d": "Ganglion"
+      },
+      "correct_option": "a",
+      "explanation": "The neuron is the structural and functional unit of the nervous system, responsible for conducting impulses. Axon and dendrites are parts of a neuron, while ganglion is a cluster of nerve cell bodies."
+    },
+    {
+      "id": 35,
+      "question": "Which chamber of the heart receives deoxygenated blood from the body?",
+      "options": {
+        "a": "Left atrium",
+        "b": "Right atrium",
+        "c": "Left ventricle",
+        "d": "Right ventricle"
+      },
+      "correct_option": "b",
+      "explanation": "The right atrium receives deoxygenated blood from the body through the superior and inferior vena cava. The left atrium receives oxygenated blood from lungs, ventricles pump blood out."
+    },
+    {
+      "id": 36,
+      "question": "Which organ filters metabolic waste from blood?",
+      "options": {
+        "a": "Liver",
+        "b": "Kidney",
+        "c": "Heart",
+        "d": "Lungs"
+      },
+      "correct_option": "b",
+      "explanation": "Kidneys filter metabolic waste like urea, excess salts, and water from blood. Liver detoxifies chemicals, heart pumps blood, lungs exchange gases."
+    },
+    {
+      "id": 37,
+      "question": "Which organ produces hydrochloric acid?",
+      "options": {
+        "a": "Liver",
+        "b": "Pancreas",
+        "c": "Stomach",
+        "d": "Small intestine"
+      },
+      "correct_option": "c",
+      "explanation": "The stomach’s parietal cells produce hydrochloric acid, which activates pepsinogen into pepsin and kills microbes. Liver produces bile, pancreas secretes enzymes, small intestine secretes intestinal juice."
+    },
+    {
+      "id": 38,
+      "question": "Which of the following is a voluntary muscle?",
+      "options": {
+        "a": "Cardiac muscle",
+        "b": "Smooth muscle",
+        "c": "Skeletal muscle",
+        "d": "Intestinal muscle"
+      },
+      "correct_option": "c",
+      "explanation": "Skeletal muscles are voluntary and controlled by will. Cardiac muscle is involuntary and rhythmic, smooth muscle is involuntary, intestinal muscle is smooth."
+    },
+    {
+      "id": 39,
+      "question": "Which vitamin is essential for vision?",
+      "options": {
+        "a": "Vitamin A",
+        "b": "Vitamin B12",
+        "c": "Vitamin D",
+        "d": "Vitamin K"
+      },
+      "correct_option": "a",
+      "explanation": "Vitamin A is essential for vision as its derivative (retinal) forms part of rhodopsin in rod cells of the eye. Deficiency causes night blindness. Vitamin B12 is for RBCs, D for calcium absorption, K for clotting."
+    },
+    {
+      "id": 40,
+      "question": "Which blood component helps in immunity?",
+      "options": {
+        "a": "RBCs",
+        "b": "Platelets",
+        "c": "WBCs",
+        "d": "Plasma proteins"
+      },
+      "correct_option": "c",
+      "explanation": "White blood cells (WBCs) are responsible for immunity. Lymphocytes produce antibodies, neutrophils and monocytes engulf pathogens. RBCs carry oxygen, platelets clot blood, plasma proteins include albumin and fibrinogen."
+    },
+    {
+      "id": 41,
+      "question": "Which blood vessel brings blood to the glomerulus for filtration?",
+      "options": {
+        "a": "Efferent arteriole",
+        "b": "Afferent arteriole",
+        "c": "Renal vein",
+        "d": "Peritubular capillary"
+      },
+      "correct_option": "b",
+      "explanation": "The afferent arteriole delivers blood into the glomerular capillaries, where ultrafiltration occurs. Blood exits via the efferent arteriole; peritubular capillaries arise downstream from the efferent arteriole."
+    },
+    {
+      "id": 42,
+      "question": "Which bone protects the brain?",
+      "options": {
+        "a": "Ribs",
+        "b": "Cranium",
+        "c": "Vertebrae",
+        "d": "Sternum"
+      },
+      "correct_option": "b",
+      "explanation": "The cranium (part of the skull) protects the brain. Ribs protect lungs and heart, vertebrae protect the spinal cord, sternum protects chest organs."
+    },
+    {
+      "id": 43,
+      "question": "Which blood cell carries oxygen in humans?",
+      "options": {
+        "a": "WBCs",
+        "b": "Platelets",
+        "c": "RBCs",
+        "d": "Plasma"
+      },
+      "correct_option": "c",
+      "explanation": "Red blood cells (RBCs) contain hemoglobin, which binds oxygen and transports it to tissues. WBCs defend against infections, platelets help in clotting, plasma transports nutrients and hormones."
+    },
+    {
+      "id": 44,
+      "question": "Which muscle is involuntary and striated?",
+      "options": {
+        "a": "Skeletal muscle",
+        "b": "Cardiac muscle",
+        "c": "Smooth muscle",
+        "d": "Voluntary muscle"
+      },
+      "correct_option": "b",
+      "explanation": "Cardiac muscle is striated but involuntary, found only in the heart. Skeletal muscle is striated voluntary, smooth muscle is non-striated involuntary."
+    },
+    {
+      "id": 45,
+      "question": "Which organ is responsible for producing urea in humans?",
+      "options": {
+        "a": "Kidney",
+        "b": "Liver",
+        "c": "Lungs",
+        "d": "Pancreas"
+      },
+      "correct_option": "b",
+      "explanation": "The liver produces urea through the urea cycle by detoxifying ammonia. Kidneys excrete urea, lungs excrete CO2, pancreas secretes enzymes and hormones."
+    }
+  ]
+}

@@ -1,0 +1,2346 @@
+{
+  "test_number": 1,
+  "subject": "Full Test",
+  "questions": [
+    {
+      "id": 1,
+      "subject": "Physics",
+      "question": "Statement I: In projectile motion, the time of flight depends only on the vertical component of initial velocity and acceleration due to gravity.<br>Statement II: The horizontal component of velocity has no effect on the time of flight.",
+      "options": {
+        "a": "Both statements are true and Statement II correctly explains Statement I",
+        "b": "Both statements are true but Statement II does not explain Statement I",
+        "c": "Statement I is true, Statement II is false",
+        "d": "Both statements are false"
+      },
+      "correct_option": "a",
+      "explanation": "Resolve the launch velocity into components: $u_x = u\\cos\\theta$, $u_y = u\\sin\\theta$.<br>Vertical motion obeys $y(t) = u_y t - \\tfrac{1}{2} g t^2$. For a projectile launched and landing at the same level, put $y=0$ and solve for $t$ to get the non-trivial root $T = \\tfrac{2u_y}{g} = \\tfrac{2u\\sin\\theta}{g}$.<br>Notice $u_x$ does not appear in this expression—horizontal motion is uniform (no horizontal acceleration in ideal conditions), so it only affects the range, not $T$.<br>Assumptions: same launch/landing height, constant $g$, and negligible air resistance. Under these standard assumptions, Statement II directly explains Statement I."
+    },
+    {
+      "id": 2,
+      "subject": "Physics",
+      "question": "A block of mass $2\\,\\text{kg}$ rests on a rough horizontal surface with coefficient of friction $\\mu = 0.2$. A horizontal force of $3\\,\\text{N}$ is applied. Will the block move? (Take $g = 10\\,\\text{m/s}^2$).",
+      "options": {
+        "a": "Yes, it moves with acceleration $1.5\\,\\text{m/s}^2$",
+        "b": "No, it remains at rest",
+        "c": "Yes, with zero acceleration",
+        "d": "Cannot be determined"
+      },
+      "correct_option": "b",
+      "explanation": "Normal reaction: $N = mg = 2\\times10 = 20\\,\\text{N}$.<br>Maximum static friction: $f_{\\max} = \\mu N = 0.2\\times20 = 4\\,\\text{N}$.<br>Applied force $F=3\\,\\text{N}$ is less than $f_{\\max}$, so static friction can fully balance it. The block stays at rest and the actual static friction equals $3\\,\\text{N}$ (opposing the applied force).<br>Acceleration $=0$ since net force is zero. It would begin to move only if $F>f_{\\max}$."
+    },
+    {
+      "id": 3,
+      "subject": "Physics",
+      "question": "Assertion (A): Work done by centripetal force in uniform circular motion is zero.<br>Reason (R): Centripetal force is always perpendicular to the displacement of the particle at every instant.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Instantaneous displacement $d\\vec{r}$ is tangential, while centripetal force $\\vec{F}_c$ points toward the center (radially inward). Thus $\\vec{F}_c \\perp d\\vec{r}$ at each instant.<br>Work element: $dW = \\vec{F}\\cdot d\\vec{r} = F\\,dr\\,\\cos90^\\circ = 0$. Hence the total work $W = \\int dW = 0$.<br>By the work–energy theorem, zero work implies kinetic energy (and speed) remains constant, consistent with uniform circular motion. Therefore R correctly explains A."
+    },
+    {
+      "id": 4,
+      "subject": "Physics",
+      "question": "Two wires of the same material and length are stretched under the same tension. One wire has double the radius of the other. The ratio of their fundamental frequencies is:",
+      "options": {
+        "a": "1:1",
+        "b": "1:2",
+        "c": "2:1",
+        "d": "4:1"
+      },
+      "correct_option": "c",
+      "explanation": "For a stretched string fixed at both ends, the fundamental frequency is $f = \\tfrac{1}{2L}\\sqrt{\\tfrac{T}{\\mu}}$, where $\\mu$ is the linear mass density.<br>With same material and length, $\\mu = \\rho A = \\rho\\pi r^2$ so $\\mu \\propto r^2$. If one wire has radius $2r$, then its $\\mu$ becomes $4\\mu$ of the thin wire.<br>Thus $f \\propto 1/\\sqrt{\\mu}$, so the thicker wire has half the frequency of the thinner wire. Therefore $f_{\\text{thin}} : f_{\\text{thick}} = 2:1$."
+    },
+    {
+      "id": 5,
+      "subject": "Physics",
+      "question": "Which statement about $\\text{sun\\text{-}synchronous}$ (near-polar) satellites is correct?",
+      "options": {
+        "a": "They hover over one longitude like geostationary satellites",
+        "b": "They typically have an orbital period of $\\,\\approx 24\\,\\text{h}$",
+        "c": "They pass over a given point at nearly the $\\text{same local solar time}$ each day, ideal for imaging",
+        "d": "Their orbital plane is equatorial"
+      },
+      "correct_option": "c",
+      "explanation": "Sun-synchronous orbits are near-polar (inclination $\\sim 98^\\circ$), with periods $\\sim\\!100\\,\\text{min}$ at a few hundred km altitude. Due to Earth’s oblateness, the orbital plane precesses at a rate that keeps the local solar time of the ground track nearly constant.<br>This constant lighting geometry is excellent for remote sensing and Earth observation. They do not hover (that’s geostationary), are not equatorial, and their period is far less than $24\\,\\text{h}$."
+    },
+    {
+      "id": 6,
+      "subject": "Physics",
+      "question": "A sound source emits waves of frequency $500\\,\\text{Hz}$. An observer moves towards the source with speed $20\\,\\text{m/s}$. If the speed of sound in air is $340\\,\\text{m/s}$, what frequency does the observer hear?",
+      "options": {
+        "a": "$470\\,\\text{Hz}$",
+        "b": "$500\\,\\text{Hz}$",
+        "c": "$529\\,\\text{Hz}$",
+        "d": "$540\\,\\text{Hz}$"
+      },
+      "correct_option": "c",
+      "explanation": "For a moving observer and stationary source, Doppler formula is $f' = f\\,\\tfrac{v + v_o}{v}$, where $v$ is sound speed and $v_o$ the observer speed towards the source.<br>Substitute: $f' = 500\\,\\tfrac{340+20}{340} = 500\\times\\tfrac{360}{340} \\approx 529\\,\\text{Hz}$.<br>The increase occurs because successive wavefronts are encountered more frequently as the observer moves towards them (air is at rest; no wind)."
+    },
+    {
+      "id": 7,
+      "subject": "Physics",
+      "question": "Assertion (A): In a transformer, the core is laminated.<br>Reason (R): Laminations reduce eddy current losses by increasing the effective resistance of eddy current paths.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Alternating flux in the core induces circulating eddy currents (by Faraday’s law). These currents cause $I^2R$ losses and heating.<br>Laminating the core into thin, insulated sheets reduces the cross-section available for eddy loops and dramatically increases the effective resistance of those loops, hence reducing the eddy current magnitude and loss. (Hysteresis loss is minimized by choosing suitable core material; lamination specifically targets eddy currents.)<br>Thus R correctly explains A."
+    },
+    {
+      "id": 8,
+      "subject": "Physics",
+      "question": "A concave mirror of focal length $20\\,\\text{cm}$ forms an image of an object placed $30\\,\\text{cm}$ in front of it. What is the nature and position of the image?",
+      "options": {
+        "a": "Real, inverted, formed at $60\\,\\text{cm}$",
+        "b": "Virtual, erect, formed at $12\\,\\text{cm}$",
+        "c": "Real, inverted, formed at $60\\,\\text{cm}$ behind the mirror",
+        "d": "Virtual, erect, formed at infinity"
+      },
+      "correct_option": "a",
+      "explanation": "Mirror formula: $\\tfrac{1}{f} = \\tfrac{1}{v} + \\tfrac{1}{u}$. Using the Cartesian sign convention for mirrors: take $f=-20\\,\\text{cm}$ (concave), $u=-30\\,\\text{cm}$ (object in front).<br>$\\dfrac{1}{v} = \\dfrac{1}{f} - \\dfrac{1}{u} = \\dfrac{1}{-20} - \\dfrac{1}{-30} = -\\tfrac{1}{20} + \\tfrac{1}{30} = -\\tfrac{1}{60} \\Rightarrow v = -60\\,\\text{cm}$.<br>Negative $v$ means the image is on the same side as the object (in front of the mirror), hence real and inverted. Position $60\\,\\text{cm}$ from the mirror."
+    },
+    {
+      "id": 9,
+      "subject": "Physics",
+      "question": "Two capacitors $4\\,\\mu\\text{F}$ and $6\\,\\mu\\text{F}$ are connected in series across a $12\\,\\text{V}$ battery. What is the potential difference across the $6\\,\\mu\\text{F}$ capacitor?",
+      "options": {
+        "a": "$7.2\\,\\text{V}$",
+        "b": "$4.8\\,\\text{V}$",
+        "c": "$6.0\\,\\text{V}$",
+        "d": "$2.4\\,\\text{V}$"
+      },
+      "correct_option": "b",
+      "explanation": "Series combination: $\\dfrac{1}{C_{eq}} = \\dfrac{1}{4} + \\dfrac{1}{6} = \\dfrac{5}{12} \\Rightarrow C_{eq} = 2.4\\,\\mu\\text{F}$.<br>Total charge: $Q = C_{eq}V = 2.4\\times12 = 28.8\\,\\mu\\text{C}$. In series, each capacitor has the same $Q$.<br>Voltage across $6\\,\\mu\\text{F}$: $V_6 = Q/C_6 = 28.8/6 = 4.8\\,\\text{V}$. (Check: $V_4 = 28.8/4=7.2\\,\\text{V}$ and $V_4+V_6=12\\,\\text{V}$.)<br>Hence the $6\\,\\mu\\text{F}$ capacitor has $4.8\\,\\text{V}$ across it."
+    },
+    {
+      "id": 10,
+      "subject": "Physics",
+      "question": "Assertion (A): Current through an ideal inductor lags behind voltage by $90^{\\circ}$ in an AC circuit.<br>Reason (R): In an inductor, $V = L\\,\\tfrac{di}{dt}$, so voltage leads current by $90^{\\circ}$.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Let the current be sinusoidal: $i(t) = I_m\\sin\\omega t$. Then $\\dfrac{di}{dt} = I_m\\omega\\cos\\omega t = I_m\\omega\\sin\\left(\\omega t + \\tfrac{\\pi}{2}\\right)$.<br>From $v(t)=L\\,\\dfrac{di}{dt}$, the inductor voltage is a cosine (or a sine shifted by $+90^{\\circ}$), i.e. it reaches its peaks a quarter cycle before the current does. Hence the voltage leads the current by $90^{\\circ}$, or equivalently, the current lags the voltage by $90^{\\circ}$.<br>This phase relation is the defining reactive behavior of an ideal inductor (average power over a cycle is zero)."
+    },
+    {
+      "id": 11,
+      "subject": "Physics",
+      "question": "Statement I: The escape velocity from Earth does not depend on the mass of the object.<br>Statement II: Escape velocity is derived from the condition that the total mechanical energy of the body at infinity is zero.",
+      "options": {
+        "a": "Both statements I and II are true and Statement II correctly explains Statement I",
+        "b": "Both statements I and II are true but II does not explain I",
+        "c": "Statement I is true but Statement II is false",
+        "d": "Statement I is false but Statement II is true"
+      },
+      "correct_option": "a",
+      "explanation": "Set the total mechanical energy to zero at infinity (marginal escape): $E_\\infty = K_\\infty + U_\\infty = 0 + 0 = 0$. At Earth's surface, $E_0 = \\tfrac{1}{2}mv_e^2 - \\dfrac{GMm}{R}$. Conservation $E_0 = E_\\infty$ gives $\\tfrac{1}{2}mv_e^2 - \\dfrac{GMm}{R} = 0 \\Rightarrow v_e = \\sqrt{\\tfrac{2GM}{R}}$.<br>The object's mass $m$ cancels, so $v_e$ depends only on Earth's $M$ and $R$. Statement II (derivation condition) directly explains Statement I (mass-independence)."
+    },
+    {
+      "id": 12,
+      "subject": "Physics",
+      "question": "A ball is dropped from a height of $20\\,\\text{m}$. What is the velocity with which it strikes the ground? (Take $g = 10\\,\\text{m/s}^2$)",
+      "options": {
+        "a": "$10\\,\\text{m/s}$",
+        "b": "$20\\,\\text{m/s}$",
+        "c": "$30\\,\\text{m/s}$",
+        "d": "$40\\,\\text{m/s}$"
+      },
+      "correct_option": "b",
+      "explanation": "Using kinematics for free fall: $v^2 = u^2 + 2gh$. With $u=0$, $g=10\\,\\text{m/s}^2$, $h=20\\,\\text{m}$: $v = \\sqrt{2\\times10\\times20} = \\sqrt{400} = 20\\,\\text{m/s}$.<br>(Equivalently by energy: $mgh = \\tfrac{1}{2}mv^2 \\Rightarrow v = \\sqrt{2gh}$.)"
+    },
+    {
+      "id": 13,
+      "subject": "Physics",
+      "question": "Assertion (A): A convex lens can produce both real and virtual images.<br>Reason (R): The nature of the image depends on the position of the object with respect to the focal length of the lens.",
+      "options": {
+        "a": "Both A and R are true and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Lens equation: $\\dfrac{1}{f} = \\dfrac{1}{v} - \\dfrac{1}{u}$. For a convex lens, $f>0$. If the object is placed beyond the focal length ($|u|>f$), solving gives $v>0$ (real image on the opposite side), which is inverted. If the object is within the focal length ($0<|u|<f$), the solution gives $v<0$ (image on the same side as the object), which is virtual and erect.<br>Thus the image nature depends on $u$ relative to $f$, explaining how a convex lens can form both real and virtual images."
+    },
+    {
+      "id": 14,
+      "subject": "Physics",
+      "question": "A current of $2\\,\\text{A}$ flows through a conductor for $5\\,\\text{s}$. How many electrons pass through the conductor in this time? (Charge of electron $= 1.6 \\times 10^{-19}\\,\\text{C}$)",
+      "options": {
+        "a": "$6.25 \\times 10^{19}$",
+        "b": "$3.12 \\times 10^{19}$",
+        "c": "$1.25 \\times 10^{20}$",
+        "d": "$5.00 \\times 10^{20}$"
+      },
+      "correct_option": "a",
+      "explanation": "Total charge transported: $Q = It = 2\\times5 = 10\\,\\text{C}$. Number of electrons $n = Q/e = \\dfrac{10}{1.6\\times10^{-19}} = 6.25\\times10^{19}$.<br>So $6.25\\times10^{19}$ electrons pass the cross-section in $5\\,\\text{s}$."
+    },
+    {
+      "id": 15,
+      "subject": "Physics",
+      "question": "Assertion (A): A body moving with uniform speed in a straight line has zero acceleration.<br>Reason (R): Acceleration is the rate of change of velocity, and if both magnitude and direction are constant, acceleration is zero.",
+      "options": {
+        "a": "Both A and R are true and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Velocity is a vector. Uniform rectilinear motion means constant speed and unchanging direction, so $\\vec{v}$ is constant. Acceleration is $\\vec{a} = d\\vec{v}/dt = 0$.<br>(Contrast: in uniform circular motion speed is constant but direction changes, so $\\vec{a}\\neq 0$.) Reason correctly explains the assertion."
+    },
+    {
+      "id": 16,
+      "subject": "Physics",
+      "question": "Two resistors of $6\\,\\Omega$ and $3\\,\\Omega$ are connected in parallel. What is the equivalent resistance?",
+      "options": {
+        "a": "$9\\,\\Omega$",
+        "b": "$2\\,\\Omega$",
+        "c": "$3\\,\\Omega$",
+        "d": "$1\\,\\Omega$"
+      },
+      "correct_option": "b",
+      "explanation": "Parallel rule: $\\dfrac{1}{R_{eq}} = \\dfrac{1}{6} + \\dfrac{1}{3} = \\dfrac{1}{6} + \\dfrac{2}{6} = \\dfrac{3}{6} = \\dfrac{1}{2}$. Therefore $R_{eq} = 2\\,\\Omega$.<br>The equivalent of parallel resistors is less than the smallest branch resistance."
+    },
+    {
+      "id": 17,
+      "subject": "Physics",
+      "question": "Statement I: The magnetic field at the center of a circular current-carrying loop is directly proportional to the current.<br>Statement II: It is inversely proportional to the radius of the loop.",
+      "options": {
+        "a": "Both statements are true",
+        "b": "Only I is true",
+        "c": "Only II is true",
+        "d": "Both statements are false"
+      },
+      "correct_option": "a",
+      "explanation": "From the Biot–Savart law for a loop of radius $R$: $B = \\dfrac{\\mu_0 I}{2R}$ at the center (for one turn). Thus $B\\propto I$ and $B\\propto 1/R$.<br>(For $N$ turns: $B = \\dfrac{\\mu_0 N I}{2R}$, same proportionalities hold.)"
+    },
+    {
+      "id": 18,
+      "subject": "Physics",
+      "question": "The half-life of a radioactive substance is 10 days. After 30 days, what fraction of the original sample will remain?",
+      "options": {
+        "a": "$1/2$",
+        "b": "$1/4$",
+        "c": "$1/8$",
+        "d": "$1/16$"
+      },
+      "correct_option": "c",
+      "explanation": "Number of half-lives elapsed: $n = \\dfrac{30}{10} = 3$. Remaining fraction after $n$ half-lives: $(1/2)^n = (1/2)^3 = 1/8$.<br>So $12.5\\%$ of the original activity (or nuclei) remains."
+    },
+    {
+      "id": 19,
+      "subject": "Physics",
+      "question": "Assertion (A): A diverging lens always forms a virtual, erect, and diminished image of an object placed anywhere.<br>Reason (R): Diverging lenses cause parallel rays to diverge as if coming from a principal focus on the same side.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "A diverging (concave) lens has negative focal length. For any real object, the refracted rays diverge and appear to originate from a point between the lens and its focal point on the object side—giving a virtual, erect, diminished image.<br>Ray rule: a ray initially parallel to the axis emerges as if from the near focus, encapsulated by the statement in R, which explains why the image is always virtual and smaller."
+    },
+    {
+      "id": 20,
+      "subject": "Physics",
+      "question": "An electric bulb rated $60\\,\\text{W}, 220\\,\\text{V}$ is used for 1 hour. How much energy is consumed?",
+      "options": {
+        "a": "$60\\,\\text{J}$",
+        "b": "$13200\\,\\text{J}$",
+        "c": "$216000\\,\\text{J}$",
+        "d": "$3600\\,\\text{J}$"
+      },
+      "correct_option": "c",
+      "explanation": "Energy $E = Pt$. With $P = 60\\,\\text{W} = 60\\,\\text{J/s}$ and $t = 1\\,\\text{h} = 3600\\,\\text{s}$: $E = 60\\times3600 = 216000\\,\\text{J} = 2.16\\times10^5\\,\\text{J}$.<br>(In practical units: $60\\,\\text{W}\\times1\\,\\text{h} = 60\\,\\text{Wh} = 0.06\\,\\text{kWh}$.)"
+    },
+    {
+      "id": 21,
+      "subject": "Physics",
+      "question": "Assertion (A): A geostationary satellite appears stationary to an observer on Earth.<br>Reason (R): Its orbital period is equal to the rotational period of Earth and it revolves in the equatorial plane from west to east.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "A satellite will appear fixed over one longitude only if its angular velocity matches Earth's rotation and its orbit lies in the equatorial plane with prograde motion (west→east). For a circular geostationary orbit, $T \\approx 24\\,\\text{h}$ (one sidereal day) and inclination $=0^{\\circ}$. With the same angular speed and equatorial plane, the sub-satellite point stays constant, so the satellite appears stationary. Hence A and R are true, and R explains A."
+    },
+    {
+      "id": 22,
+      "subject": "Physics",
+      "question": "Two identical springs, each of spring constant $k$, are connected in parallel. What is the effective spring constant of the system?",
+      "options": {
+        "a": "$k/2$",
+        "b": "$k$",
+        "c": "$2k$",
+        "d": "$4k$"
+      },
+      "correct_option": "c",
+      "explanation": "For parallel springs under the same extension $x$, individual forces add: $F=F_1+F_2=kx+kx=2kx$. By definition $F=k_{eq}x$, so $k_{eq}=2k$. (Contrast: in series, extensions add for the same force, giving $k_{eq}=\\left(\\tfrac{1}{k}+\\tfrac{1}{k}\\right)^{-1}=k/2$.)"
+    },
+    {
+      "id": 23,
+      "subject": "Physics",
+      "question": "The output of a logic gate is $1$ only when **both** inputs are $1$. Which gate is this?",
+      "options": {
+        "a": "OR gate",
+        "b": "AND gate",
+        "c": "NAND gate",
+        "d": "NOR gate"
+      },
+      "correct_option": "b",
+      "explanation": "The AND gate implements the logical product: $Y=A\\cdot B$. Its truth table yields $Y=1$ only for $(A,B)=(1,1)$. OR gives $1$ if either input is $1$, NAND is the complement of AND, and NOR is the complement of OR."
+    },
+    {
+      "id": 24,
+      "subject": "Physics",
+      "question": "In an RC circuit, a capacitor of capacitance $C$ is charged through a resistor of resistance $R$ by a DC source of emf $V$. The time at which the capacitor voltage first reaches $(1 - e^{-1})V$ is:",
+      "options": {
+        "a": "$\\tau = RC$",
+        "b": "$2\\tau$",
+        "c": "$\\tfrac{\\tau}{2}$",
+        "d": "It depends on $V$"
+      },
+      "correct_option": "a",
+      "explanation": "Charging follows $v_C(t)=V\\big(1-e^{-t/RC}\\big)$. Set $v_C=(1-e^{-1})V$ to obtain $1-e^{-t/RC}=1-e^{-1}\\Rightarrow e^{-t/RC}=e^{-1}\\Rightarrow t=RC=\\tau$. The result is independent of $V$; it depends only on the time constant $\\tau$."
+    },
+    {
+      "id": 25,
+      "subject": "Physics",
+      "question": "A particle executes simple harmonic motion with amplitude $5\\,\\text{cm}$ and time period $2\\,\\text{s}$. What is the maximum velocity of the particle?",
+      "options": {
+        "a": "$5\\pi$ cm/s",
+        "b": "$10\\pi$ cm/s",
+        "c": "$5$ cm/s",
+        "d": "$2.5\\pi$ cm/s"
+      },
+      "correct_option": "a",
+      "explanation": "For SHM, $v_{max}=\\omega A$ with $\\omega=2\\pi/T$. Given $T=2\\,\\text{s}$, $\\omega=\\pi\\,\\text{rad/s}$. With $A=5\\,\\text{cm}$, $v_{max}=\\pi\\times5=5\\pi$ cm/s. Velocity is maximum at the mean position where $x=0$."
+    },
+    {
+      "id": 26,
+      "subject": "Physics",
+      "question": "Assertion (A): In Young’s double slit experiment, fringe width increases if the distance between slits and screen is increased.<br>Reason (R): Fringe width is directly proportional to the distance between the screen and slits.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Fringe width in YDSE is $\\beta=\\dfrac{\\lambda D}{d}$, where $D$ is the slit–screen distance and $d$ is slit separation. Thus $\\beta\\propto D$ (for fixed $\\lambda$ and $d$). Increasing $D$ increases spacing between adjacent bright (or dark) fringes. Therefore A and R are true, and R explains A."
+    },
+    {
+      "id": 27,
+      "subject": "Physics",
+      "question": "The emf induced in a coil of $N$ turns, when the magnetic flux through each turn changes at a rate $d\\Phi/dt$, is:",
+      "options": {
+        "a": "$N\\Phi$",
+        "b": "$N\\,d\\Phi/dt$",
+        "c": "$\\Phi/N$",
+        "d": "$d\\Phi/dt$"
+      },
+      "correct_option": "b",
+      "explanation": "Faraday’s law states $\\varepsilon=-N\\,\\dfrac{d\\Phi}{dt}$. The magnitude is $|\\varepsilon|=N\\,\\dfrac{d\\Phi}{dt}$. The negative sign (Lenz’s law) indicates that the induced emf opposes the change in flux that produces it."
+    },
+    {
+      "id": 28,
+      "subject": "Physics",
+      "question": "Two bodies of masses $2\\,\\text{kg}$ and $4\\,\\text{kg}$ are moving with velocities $2\\,\\text{m/s}$ and $1\\,\\text{m/s}$ respectively in the same direction. They collide perfectly inelastically. What is their common velocity after collision?",
+      "options": {
+        "a": "$1.0\\,\\text{m/s}$",
+        "b": "$1.33\\,\\text{m/s}$",
+        "c": "$1.5\\,\\text{m/s}$",
+        "d": "$2.0\\,\\text{m/s}$"
+      },
+      "correct_option": "b",
+      "explanation": "In a perfectly inelastic collision, bodies stick together and momentum is conserved: $v=\\dfrac{m_1u_1+m_2u_2}{m_1+m_2}=\\dfrac{2\\cdot2+4\\cdot1}{2+4}=\\dfrac{8}{6}=1.33\\,\\text{m/s}$. Kinetic energy is not conserved, but total momentum is."
+    },
+    {
+      "id": 29,
+      "subject": "Physics",
+      "question": "Assertion (A): The pressure at the bottom of a liquid column depends on the density of the liquid and height of the column.<br>Reason (R): Pressure at depth is given by $P = h\\rho g$.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "From hydrostatic equilibrium of a fluid element: $dP=\\rho g\\,dh \\Rightarrow P(h)=\\rho gh$ (taking atmospheric pressure as reference). Thus pressure at depth $h$ depends on $\\rho$ and $h$ (and $g$), independent of container shape. Hence R provides the governing formula that explains A."
+    },
+    {
+      "id": 30,
+      "subject": "Physics",
+      "question": "A wire of resistance $10\\,\\Omega$ is stretched to double its length. What is its new resistance?",
+      "options": {
+        "a": "$10\\,\\Omega$",
+        "b": "$20\\,\\Omega$",
+        "c": "$30\\,\\Omega$",
+        "d": "$40\\,\\Omega$"
+      },
+      "correct_option": "d",
+      "explanation": "With resistivity $\\rho$ constant and volume conserved, $R=\\rho\\dfrac{L}{A}$. Doubling the length to $2L$ halves the cross-sectional area to $A/2$ (since $AL=\\text{const}$). Thus $R' = \\rho\\dfrac{2L}{A/2}=4\\rho\\dfrac{L}{A}=4R=40\\,\\Omega$. Resistance quadruples when length doubles at constant volume."
+    },
+    {
+      "id": 31,
+      "subject": "Physics",
+      "question": "Assertion (A): For a rigid body rotating about a fixed axis, the net external torque about that axis equals the time rate of change of angular momentum about the same axis.<br>Reason (R): Angular momentum of a rigid body about a fixed axis is $I\\omega$, where $I$ is the moment of inertia and $\\omega$ is angular velocity.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Rotational dynamics is governed by Newton’s second law in angular form: $\\tau_{net} = \\dfrac{dL}{dt}$. For a rigid body with constant moment of inertia about a fixed axis, angular momentum is $L = I\\omega$. Differentiating: $\\dfrac{dL}{dt} = I\\alpha$, where $\\alpha$ is angular acceleration. Thus torque equals the rate of change of angular momentum, and R correctly explains A."
+    },
+    {
+      "id": 32,
+      "subject": "Physics",
+      "question": "A gas expands quasi-statically from state A to B along a straight line on a P–V diagram (pressure decreases linearly with volume). Which statement is correct about the work done by the gas?",
+      "options": {
+        "a": "W is equal to the area under the line AB and is positive for expansion",
+        "b": "W is independent of the path between A and B",
+        "c": "W is negative for expansion",
+        "d": "W equals zero because internal energy is a state function"
+      },
+      "correct_option": "a",
+      "explanation": "Work done in a quasi-static process is given by $W = \\int P\\,dV$, which is the geometric area under the P–V curve. For expansion ($\\Delta V > 0$), the integral is positive. Work is path-dependent, unlike internal energy, which is a state function. Thus the correct statement is that $W$ equals the area under AB and is positive for expansion."
+    },
+    {
+      "id": 33,
+      "subject": "Physics",
+      "question": "A thin prism of small refracting angle $A$ has refractive index $\\mu$. For small $A$, which relation holds at minimum deviation?",
+      "options": {
+        "a": "$\\delta_{min} = (\\mu - 1)A$",
+        "b": "$\\delta_{min} = \\mu A$",
+        "c": "$\\delta_{min} = A/\\mu$",
+        "d": "$\\delta_{min} = (\\mu + 1)A$"
+      },
+      "correct_option": "a",
+      "explanation": "For a prism, refractive index is $\\mu = \\dfrac{\\sin[(A+\\delta_{min})/2]}{\\sin(A/2)}$. For a thin prism (small $A$), $\\sin\\theta \\approx \\theta$ (in radians). This simplifies to $\\mu \\approx 1 + \\dfrac{\\delta_{min}}{A}$, or $\\delta_{min} \\approx (\\mu - 1)A$."
+    },
+    {
+      "id": 34,
+      "subject": "Physics",
+      "question": "Statement I: In an ideal p–n junction diode, current in forward bias increases exponentially with applied voltage.<br>Statement II: In reverse bias, the diode current is nearly constant (saturation current) until breakdown.",
+      "options": {
+        "a": "Both statements are true",
+        "b": "Only I is true",
+        "c": "Only II is true",
+        "d": "Both statements are false"
+      },
+      "correct_option": "a",
+      "explanation": "The Shockley diode equation is $I = I_s(e^{V/(nV_T)} - 1)$. In forward bias, when $V$ increases beyond threshold ($\\sim 0.6$–$0.7$ V for Si), current rises exponentially. In reverse bias, $I \\approx -I_s$, a very small saturation current due to minority carriers, until reverse breakdown occurs. Thus both statements are correct."
+    },
+    {
+      "id": 35,
+      "subject": "Physics",
+      "question": "Which statement about nuclear binding energy is correct?",
+      "options": {
+        "a": "Binding energy per nucleon is highest for hydrogen",
+        "b": "Iron-group nuclei have high binding energy per nucleon, so both fusion of light nuclei and fission of heavy nuclei release energy",
+        "c": "Binding energy per nucleon increases monotonically with mass number",
+        "d": "A nucleus with higher total binding energy is less stable"
+      },
+      "correct_option": "b",
+      "explanation": "The binding energy per nucleon curve peaks at $A \\approx 56$ (iron/nickel) at around 8.8 MeV/nucleon. Light nuclei ($A<56$) release energy by fusion, and heavy nuclei ($A>56$) release energy by fission, as both move towards greater stability near iron. Therefore, the statement about iron-group nuclei being most stable and energy released in both fusion and fission is correct."
+    },
+    {
+      "id": 36,
+      "subject": "Physics",
+      "question": "Arrange the following electromagnetic waves in order of increasing frequency: microwaves (M), ultraviolet (UV), X-rays (X), infrared (IR).",
+      "options": {
+        "a": "M < IR < UV < X",
+        "b": "IR < M < UV < X",
+        "c": "M < UV < IR < X",
+        "d": "IR < UV < M < X"
+      },
+      "correct_option": "a",
+      "explanation": "The electromagnetic spectrum is ordered by frequency as follows: Radio waves < Microwaves < Infrared < Visible < Ultraviolet < X-rays < Gamma rays. Thus, for the given options: microwaves (lowest) < infrared < ultraviolet < X-rays (highest)."
+    },
+    {
+      "id": 37,
+      "subject": "Physics",
+      "question": "A copper wire of length $L$ and cross-sectional area $A$ carries current $I$. Which expression gives the drift speed $v_d$ of electrons (number density $n$, charge $e$)?",
+      "options": {
+        "a": "$v_d = I/(neA)$",
+        "b": "$v_d = neA/I$",
+        "c": "$v_d = IA/(neL)$",
+        "d": "$v_d = neI/A$"
+      },
+      "correct_option": "a",
+      "explanation": "Current density is $J = I/A$. Also, $J = ne v_d$, where $n$ is electron number density, $e$ is electron charge, and $v_d$ is drift velocity. Thus $v_d = I/(neA)$. The length $L$ of the wire does not affect the drift velocity directly."
+    },
+    {
+      "id": 38,
+      "subject": "Physics",
+      "question": "Two identical capacitors (each $C$) are first connected in series and charged to $V$. They are then disconnected and reconnected in parallel (positive to positive). What is the total electrostatic energy stored after reconnection?",
+      "options": {
+        "a": "Same as initial series energy",
+        "b": "Double the initial series energy",
+        "c": "Half the initial series energy",
+        "d": "Zero, since charges cancel"
+      },
+      "correct_option": "c",
+      "explanation": "Initially: two capacitors in series, $C_{eq} = C/2$. Stored energy $U_i = \\tfrac{1}{2}(C/2)V^2 = \\tfrac{1}{4}CV^2$. Each capacitor carries charge $Q = C(V/2)$. After parallel connection (positive to positive), total charge $Q_{tot} = 2Q = CV$. Effective capacitance = $2C$, so common voltage $V_f = Q_{tot}/(2C) = V/2$. Final energy $U_f = \\tfrac{1}{2}(2C)(V/2)^2 = \\tfrac{1}{8}CV^2$. This is half of the initial series energy. The lost energy is dissipated as heat during redistribution."
+    },
+    {
+      "id": 39,
+      "subject": "Physics",
+      "question": "In an AC circuit with impedance $Z$ and power factor $\\cos\\phi$, the average power consumed is:",
+      "options": {
+        "a": "$P = VI$",
+        "b": "$P = VI\\sin\\phi$",
+        "c": "$P = VI\\cos\\phi$",
+        "d": "$P = I^{2} Z$"
+      },
+      "correct_option": "c",
+      "explanation": "In AC, instantaneous power is $p(t) = v(t)i(t)$. The time average over a cycle gives $P_{avg} = V_{rms} I_{rms} \\cos\\phi$, where $\\phi$ is the phase difference between voltage and current. If the circuit is purely resistive, $\\cos\\phi=1$ and $P=VI$. If purely reactive, $\\cos\\phi=0$ and $P=0$. Thus the correct formula is $P = VI\\cos\\phi$."
+    },
+    {
+      "id": 40,
+      "subject": "Physics",
+      "question": "A capillary tube of radius $r$ is dipped vertically in a liquid of surface tension $S$ and contact angle $\\theta$. The rise of liquid column $h$ is:",
+      "options": {
+        "a": "$h = \\tfrac{2S}{\\rho g r}$",
+        "b": "$h = \\tfrac{Sr}{2\\rho g \\cos\\theta}$",
+        "c": "$h = \\tfrac{2S \\cos\\theta}{\\rho g r}$",
+        "d": "$h = \\tfrac{S \\cos\\theta}{\\rho g r^2}$"
+      },
+      "correct_option": "c",
+      "explanation": "When a capillary tube is dipped, surface tension pulls the liquid upward along the inner wall. The vertical component of the surface tension force is $F = 2\\pi r S \\cos\\theta$. The weight of the liquid column of height $h$ is $W = \\pi r^2 h \\rho g$. Equating forces: $2\\pi r S \\cos\\theta = \\pi r^2 h \\rho g$. Simplifying gives $h = \\tfrac{2S \\cos\\theta}{\\rho g r}$. The rise is inversely proportional to tube radius, directly proportional to $S$, and depends on wetting angle $\\theta$."
+    },
+    {
+      "id": 41,
+      "subject": "Physics",
+      "question": "Statement I: The total mechanical energy of a satellite in circular orbit of radius $r$ is $E = -\\tfrac{GMm}{2r}$.<br>Statement II: Orbital speed decreases with increasing $r$ as $v = \\sqrt{GM/r}$.",
+      "options": {
+        "a": "Both statements are true and II supports I",
+        "b": "Both statements are true but II does not support I",
+        "c": "Only I is true",
+        "d": "Only II is true"
+      },
+      "correct_option": "a",
+      "explanation": "For a satellite in circular orbit: gravitational potential energy $U = -\\tfrac{GMm}{r}$, kinetic energy $K = +\\tfrac{GMm}{2r}$, so total $E = K+U = -\\tfrac{GMm}{2r}$. Orbital speed $v = \\sqrt{GM/r}$ decreases with larger $r$. Both statements are correct, and the fact that $E$ depends inversely on $r$ is consistent with the expression for $v$, so II supports I."
+    },
+    {
+      "id": 42,
+      "subject": "Physics",
+      "question": "Assertion (A): In photoelectric effect, stopping potential depends on light frequency but not intensity.<br>Reason (R): Maximum kinetic energy of photoelectrons is $K_{max} = h\\nu - \\phi$, independent of intensity.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "From Einstein’s photoelectric equation: $K_{max} = h\\nu - \\phi = eV_s$. Stopping potential $V_s$ depends only on $\\nu$ (light frequency) and work function $\\phi$, but not on intensity. Intensity changes the number of emitted electrons (hence current), but not their maximum energy. Thus both A and R are true, and R correctly explains A."
+    },
+    {
+      "id": 43,
+      "subject": "Physics",
+      "question": "Which mode of heat transfer can occur through a vacuum between two bodies at different temperatures?",
+      "options": {
+        "a": "Conduction only",
+        "b": "Convection only",
+        "c": "Radiation only",
+        "d": "Conduction and convection"
+      },
+      "correct_option": "c",
+      "explanation": "Conduction requires particle collisions and convection requires a fluid medium. In a vacuum, no matter is present, so neither conduction nor convection can occur. Heat transfer is possible only by radiation, which involves electromagnetic waves and does not need a medium. This is why the Sun’s heat reaches Earth through space."
+    },
+    {
+      "id": 44,
+      "subject": "Physics",
+      "question": "A simple pendulum has period $T = 2\\pi\\sqrt{L/g}$. Which statements are correct?<br>1) $T$ is independent of bob mass.<br>2) $T$ is independent of amplitude (small oscillations).<br>3) $T$ decreases if $g$ decreases.",
+      "options": {
+        "a": "Only 1 and 2 are correct",
+        "b": "Only 2 and 3 are correct",
+        "c": "Only 1 and 3 are correct",
+        "d": "1, 2, and 3 are all correct"
+      },
+      "correct_option": "a",
+      "explanation": "From $T = 2\\pi\\sqrt{L/g}$:<br>1) Mass $m$ does not appear, so $T$ is independent of mass.<br>2) For small angles (small oscillations), approximation $\\sin\\theta \\approx \\theta$ holds, making $T$ independent of amplitude.<br>3) If $g$ decreases, denominator decreases, so $T$ increases (not decreases). Hence only statements 1 and 2 are correct."
+    },
+    {
+      "id": 45,
+      "subject": "Physics",
+      "question": "The magnetic field inside a long, tightly wound solenoid with $n$ turns per unit length carrying current $I$ is:",
+      "options": {
+        "a": "$B = \\mu_0 n I$",
+        "b": "$B = \\mu_0 I / (2R)$",
+        "c": "$B = \\mu_0 n I / 2$",
+        "d": "$B = \\mu_0 I / (4\\pi r)$"
+      },
+      "correct_option": "a",
+      "explanation": "For a solenoid, apply Ampere’s circuital law along a rectangular path through the solenoid: $\\oint B\\,dl = \\mu_0 I_{enc}$. If there are $n$ turns per unit length, total current enclosed is $nIl$ for length $l$. This gives $Bl = \\mu_0 nIl$, or $B = \\mu_0 n I$. Options (b), (c), and (d) correspond to field of circular loops or long straight wires, not solenoids."
+    },
+    {
+      "id": 46,
+      "subject": "Chemistry",
+      "question": "Statement I: For an ideal gas, $C_p - C_v = R$ (per mole).<br>Statement II: The difference arises because enthalpy $H$ includes $pV$ work whereas internal energy $U$ does not.",
+      "options": {
+        "a": "Both statements are true and Statement II correctly explains Statement I",
+        "b": "Both statements are true but Statement II does not explain Statement I",
+        "c": "Only Statement I is true",
+        "d": "Only Statement II is true"
+      },
+      "correct_option": "a",
+      "explanation": "For 1 mole of an ideal gas: $H = U + pV$. Since $pV = RT$, differentiating with respect to $T$ gives $dH = dU + RdT$. By definition, $C_p = (\\partial H/\\partial T)_p$ and $C_v = (\\partial U/\\partial T)_v$, so $C_p - C_v = R$. Physically, constant-pressure heating requires extra energy to allow expansion work, included in $H$ but not in $U$. Thus both statements are true and II explains I."
+    },
+    {
+      "id": 47,
+      "subject": "Chemistry",
+      "question": "A buffer solution is made by mixing $0.20$ mol CH$_3$COOH ($K_a = 1.8\\times10^{−5}$) and $0.10$ mol CH$_3$COONa in enough water to make $1.0$ L. What is the pH at 25 °C?",
+      "options": {
+        "a": "4.44",
+        "b": "4.74",
+        "c": "5.04",
+        "d": "5.44"
+      },
+      "correct_option": "a",
+      "explanation": "Henderson–Hasselbalch equation: $\\text{pH} = pK_a + \\log\\tfrac{[A^-]}{[HA]}$. $pK_a = -\\log(1.8\\times10^{-5}) \\approx 4.74$. Ratio $[A^-]/[HA] = 0.10/0.20 = 0.5$, so $\\log 0.5 = -0.301$. Thus $\\text{pH} = 4.74 - 0.301 = 4.44$. Therefore the buffer solution has pH 4.44."
+    },
+    {
+      "id": 48,
+      "subject": "Chemistry",
+      "question": "In the reaction N$_2$O$_4$(g) ⇌ 2NO$_2$(g), $\\Delta H^\\circ > 0$. Which set of changes will increase the equilibrium degree of dissociation of N$_2$O$_4$?",
+      "options": {
+        "a": "Increase pressure; decrease temperature",
+        "b": "Decrease pressure; increase temperature",
+        "c": "Increase pressure; increase temperature",
+        "d": "Decrease pressure; decrease temperature"
+      },
+      "correct_option": "b",
+      "explanation": "The forward dissociation reaction $N_2O_4 \\to 2NO_2$ produces more moles of gas and is endothermic. By Le Chatelier’s principle: decreasing pressure favors higher number of gas molecules, and increasing temperature favors the endothermic direction. Therefore, both changes increase the degree of dissociation."
+    },
+    {
+      "id": 49,
+      "subject": "Chemistry",
+      "question": "A first-order reaction has a half-life of $23.1$ min. How long will it take for the reactant concentration to drop to $12.5\\%$ of its initial value?",
+      "options": {
+        "a": "23.1 min",
+        "b": "46.2 min",
+        "c": "69.3 min",
+        "d": "92.4 min"
+      },
+      "correct_option": "c",
+      "explanation": "$12.5\\% = 1/8$ of the initial concentration, which corresponds to 3 half-lives ($1/2^3 = 1/8$). Time required = $3 \\times 23.1 = 69.3$ min. Hence the answer is option (c)."
+    },
+    {
+      "id": 50,
+      "subject": "Chemistry",
+      "question": "Statement I: For a galvanic cell operating reversibly, the maximum non-PV work obtainable equals $-\\Delta G$.<br>Statement II: At equilibrium, cell EMF is zero because $\\Delta G = 0$.",
+      "options": {
+        "a": "Both statements are true and Statement II correctly explains Statement I",
+        "b": "Both statements are true but Statement II does not explain Statement I",
+        "c": "Only Statement I is true",
+        "d": "Only Statement II is true"
+      },
+      "correct_option": "b",
+      "explanation": "For a reversible galvanic cell, maximum electrical work = $-\\Delta G$. Also $E_{cell} = -\\Delta G/(nF)$. At equilibrium, $\\Delta G=0$ so $E_{cell}=0$. Both statements are true, but Statement II (equilibrium condition) is not the reason why $w_{max}=-\\Delta G$. Therefore option (b) is correct."
+    },
+    {
+      "id": 51,
+      "subject": "Chemistry",
+      "question": "A $0.100$ m solution of a nonelectrolyte in water freezes at $−0.186$ °C. What is the cryoscopic constant ($K_f$) of water implied by this data?",
+      "options": {
+        "a": "$0.512$ K·kg·mol$^{−1}$",
+        "b": "$1.86$ K·kg·mol$^{−1}$",
+        "c": "$3.71$ K·kg·mol$^{−1}$",
+        "d": "$0.186$ K·kg·mol$^{−1}$"
+      },
+      "correct_option": "b",
+      "explanation": "Freezing point depression: $\\Delta T_f = K_f m i$. Here $\\Delta T_f = 0.186$ K, $m=0.100$, $i=1$ (nonelectrolyte). Thus $K_f = 0.186/0.100 = 1.86$ K·kg·mol$^{−1}$. Therefore, option (b) is correct."
+    },
+    {
+      "id": 52,
+      "subject": "Chemistry",
+      "question": "Which statement is correct regarding Crystal Field Stabilization Energy (CFSE) in octahedral complexes?",
+      "options": {
+        "a": "High-spin $d^5$ has the maximum CFSE",
+        "b": "Low-spin $d^6$ has higher CFSE than high-spin $d^6$ in the same ligand field",
+        "c": "CFSE is independent of pairing energy",
+        "d": "CFSE cannot be negative"
+      },
+      "correct_option": "b",
+      "explanation": "In octahedral fields: high-spin $d^6 = t_{2g}^4 e_g^2$, CFSE = $(-0.4\\Delta_o)$. Low-spin $d^6 = t_{2g}^6 e_g^0$, CFSE = $-2.4\\Delta_o$. Thus low-spin $d^6$ has much higher stabilization compared to high-spin $d^6$ if pairing energy is low enough. CFSE depends on pairing energy and is negative (stabilizing)."
+    },
+    {
+      "id": 53,
+      "subject": "Chemistry",
+      "question": "Which reagent sequence will best convert benzene to m-nitrobenzoic acid?",
+      "options": {
+        "a": "Nitration $\\to$ Sulfonation $\\to$ Friedel\\text{--}Crafts acylation $\\to$ Oxidation",
+        "b": "Nitration $\\to$ Friedel\\text{--}Crafts alkylation $\\to$ Oxidation",
+        "c": "Friedel\\text{--}Crafts acylation $\\to$ Nitration $\\to$ Side\\text{-}chain oxidation",
+        "d": "Nitration $\\to$ Sulfonation $\\to$ Side\\text{-}chain alkylation $\\to$ Oxidation $\\to$ Desulfonation"
+      },
+      "correct_option": "c",
+      "explanation": "To prepare m-nitrobenzoic acid: first perform Friedel--Crafts acylation on benzene, introducing an acyl group (meta-directing). Next, nitration introduces $NO_2$ group at the meta position relative to the acyl group. Finally, oxidize the acyl side chain (${-}COCH_3$) to carboxyl (${-}COOH$), giving m-nitrobenzoic acid. Other sequences fail because nitration first would deactivate the ring too much for Friedel--Crafts."
+    },
+    {
+      "id": 54,
+      "subject": "Chemistry",
+      "question": "Which pair is correctly matched for qualitative analysis of cations?",
+      "options": {
+        "a": "Group II: H$_2$S in alkaline medium → sulfides of Cu$^{2+}$, Pb$^{2+}$",
+        "b": "Group I: Dilute HCl → chlorides of Ag$^+$, Pb$^{2+}$, Hg$_2^{2+}$",
+        "c": "Group III: NH$_4$OH in presence of NH$_4$Cl → hydroxides of Ca$^{2+}$, Sr$^{2+}$, Ba$^{2+}$",
+        "d": "Group IV: (NH$_4$)$_2$CO$_3$ in NH$_4$Cl → carbonates of Fe$^{3+}$, Al$^{3+}$"
+      },
+      "correct_option": "b",
+      "explanation": "In qualitative inorganic analysis: Group I cations (Ag$^+$, Pb$^{2+}$, Hg$_2^{2+}$) are precipitated as chlorides with dilute HCl. Group II uses H$_2$S in acidic medium (not alkaline). Group III forms hydroxides of Fe$^{3+}$, Al$^{3+}$, Cr$^{3+}$. Group IV forms carbonates of Ca$^{2+}$, Sr$^{2+}$, Ba$^{2+}$. Hence option (b) is correct."
+    },
+    {
+      "id": 55,
+      "subject": "Chemistry",
+      "question": "In the electrolytic refining of copper, which statements are correct?<br>1) Impure copper acts as anode.<br>2) Pure copper is deposited at cathode.<br>3) Anode mud may contain Ag and Au.<br>4) Electrolyte is acidified CuSO$_4$ solution.",
+      "options": {
+        "a": "Only 1, 2, and 3",
+        "b": "Only 2 and 4",
+        "c": "Only 1, 3, and 4",
+        "d": "1, 2, 3, and 4"
+      },
+      "correct_option": "d",
+      "explanation": "In copper electrorefining: the impure Cu slab is the anode, pure Cu sheets are cathodes, and electrolyte is CuSO$_4$ with a little H$_2$SO$_4$ to increase conductivity. At the anode, Cu dissolves as Cu$^{2+}$ ions; at the cathode, Cu$^{2+}$ deposits as pure copper. Less reactive noble metals (Ag, Au, Pt) do not dissolve and remain as anode mud. Therefore, all four statements are correct."
+    },
+    {
+      "id": 56,
+      "subject": "Chemistry",
+      "question": "Statement I: For a galvanic cell at fixed composition, the sign of the temperature coefficient of EMF depends on $\\Delta S^\\circ$, and the EMF decreases with temperature when $\\Delta S^\\circ < 0$.<br>Statement II: At constant pressure, $\\left(\\tfrac{\\partial E^\\circ}{\\partial T}\\right)_p = \\tfrac{\\Delta S^\\circ}{nF}$.",
+      "options": {
+        "a": "Both statements are true and Statement II correctly explains Statement I",
+        "b": "Both statements are true but Statement II does not explain Statement I",
+        "c": "Statement I is true but Statement II is false",
+        "d": "Statement I is false but Statement II is true"
+      },
+      "correct_option": "a",
+      "explanation": "From electrochemical thermodynamics: $\\Delta G^\\circ = -nFE^\\circ$ and $\\left(\\tfrac{\\partial \\Delta G^\\circ}{\\partial T}\\right)_p = -\\Delta S^\\circ$. Differentiating $\\Delta G^\\circ = -nFE^\\circ$ with respect to $T$ at constant pressure gives $\\left(\\tfrac{\\partial E^\\circ}{\\partial T}\\right)_p = \\tfrac{\\Delta S^\\circ}{nF}$. Therefore, if $\\Delta S^\\circ < 0$, then $\\left(\\tfrac{\\partial E^\\circ}{\\partial T}\\right)_p < 0$ and $E^\\circ$ decreases with $T$; if $\\Delta S^\\circ > 0$, $E^\\circ$ increases with $T$. Thus both statements are true and II explains I."
+    },
+    {
+      "id": 57,
+      "subject": "Chemistry",
+      "question": "A buffer is prepared by mixing $0.20$ mol NH$_3$ ($K_b = 1.8\\times10^{−5}$) and $0.20$ mol NH$_4$Cl in $1.00$ L solution at 25 °C. What is the pH?",
+      "options": {
+        "a": "9.26",
+        "b": "9.56",
+        "c": "4.74",
+        "d": "5.26"
+      },
+      "correct_option": "a",
+      "explanation": "For a basic buffer (base/conjugate acid): $\\text{pOH} = pK_b + \\log\\tfrac{[\\text{salt}]}{[\\text{base}]}$. Here $pK_b = -\\log(1.8\\times10^{-5}) = 4.74$. With equimolar NH$_3$ and NH$_4^+$, the ratio is 1 so $\\log 1 = 0$, giving $\\text{pOH} = 4.74$. Therefore $\\text{pH} = 14.00 - 4.74 = 9.26$ at 25 °C. (Using $pK_a + pK_b = 14$ would give the same result.)"
+    },
+    {
+      "id": 58,
+      "subject": "Chemistry",
+      "question": "Which of the following is the most acidic?",
+      "options": {
+        "a": "Phenol",
+        "b": "o-Nitrophenol",
+        "c": "m-Nitrophenol",
+        "d": "p-Nitrophenol"
+      },
+      "correct_option": "d",
+      "explanation": "The $\\mathrm{NO_2}$ group is strongly $-I$ and $-M$ (electron-withdrawing), stabilizing the phenoxide anion. Para substitution maximizes resonance interaction between the ring and $\\mathrm{NO_2}$, enhancing anion stabilization. In o-nitrophenol, intramolecular H-bonding reduces solvation of the anion, slightly lowering acidity compared with the para isomer. Meta position lacks resonance interaction (only $-I$), so it is less acidic than o/p. Order: phenol < m-nitrophenol < o-nitrophenol < p-nitrophenol."
+    },
+    {
+      "id": 59,
+      "subject": "Chemistry",
+      "question": "A nonelectrolyte (10.0 g) is dissolved in 250 g water. The boiling point elevation is 0.640 K ($K_b$ for water = 0.512 K·kg·mol$^{−1}$). What is the molar mass of the solute?",
+      "options": {
+        "a": "16 g·mol$^{−1}$",
+        "b": "24 g·mol$^{−1}$",
+        "c": "32 g·mol$^{−1}$",
+        "d": "64 g·mol$^{−1}$"
+      },
+      "correct_option": "c",
+      "explanation": "Elevation: $\\Delta T_b = K_b m$ (since $i = 1$ for a nonelectrolyte). Thus $m = \\Delta T_b/K_b = 0.640/0.512 = 1.25\\,\\text{mol·kg}^{-1}$. Moles solute $= m \\times$ mass of solvent (kg) $= 1.25 \\times 0.250 = 0.3125$ mol. Molar mass $= \\dfrac{10.0\\,\\text{g}}{0.3125\\,\\text{mol}} = 32\\,\\text{g·mol}^{-1}$."
+    },
+    {
+      "id": 60,
+      "subject": "Chemistry",
+      "question": "A high-spin octahedral complex shows a spin-only magnetic moment of 4.90 BM. Which metal ion (in aqueous complex) most likely exhibits this value?",
+      "options": {
+        "a": "[Mn(H$_2$O)$_6$]$^{2+}$",
+        "b": "[Fe(H$_2$O)$_6$]$^{2+}$",
+        "c": "[Co(H$_2$O)$_6$]$^{2+}$",
+        "d": "[Ni(H$_2$O)$_6$]$^{2+}$"
+      },
+      "correct_option": "b",
+      "explanation": "Spin-only moment: $\\mu = \\sqrt{n(n+2)}$ BM. Setting $\\mu \\approx 4.90$ gives $n(n+2) \\approx 24 \\Rightarrow n = 4$ unpaired electrons. High-spin Fe$^{2+}$ (d$^6$) in octahedral $\\to t_{2g}^4 e_g^2$ with 4 unpaired electrons (matches 4.90 BM). Mn$^{2+}$ (d$^5$) gives $\\approx 5.92$ BM, Co$^{2+}$ (d$^7$) $\\approx 3.87$ BM, Ni$^{2+}$ (d$^8$) $\\approx 2.83$ BM."
+    },
+    {
+      "id": 61,
+      "subject": "Chemistry",
+      "question": "Arrange the following oxides in order of increasing acidity: Na$_2$O, MgO, Al$_2$O$_3$, SiO$_2$.",
+      "options": {
+        "a": "SiO$_2$ < Al$_2$O$_3$ < MgO < Na$_2$O",
+        "b": "Na$_2$O < MgO < Al$_2$O$_3$ < SiO$_2$",
+        "c": "MgO < Na$_2$O < SiO$_2$ < Al$_2$O$_3$",
+        "d": "Al$_2$O$_3$ < Na$_2$O < MgO < SiO$_2$"
+      },
+      "correct_option": "b",
+      "explanation": "Across Period 3 (Na→Si), metallic/basic character decreases, covalent/acidic character increases. Thus basic oxides Na$_2$O < MgO < amphoteric Al$_2$O$_3$ < acidic SiO$_2$. Therefore increasing acidity is Na$_2$O < MgO < Al$_2$O$_3$ < SiO$_2$."
+    },
+    {
+      "id": 62,
+      "subject": "Chemistry",
+      "question": "Assertion (A): For a first-order reaction, the half-life is independent of initial concentration.<br>Reason (R): For first-order kinetics, $t_{1/2} = 0.693/k$.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "For a first-order reaction, $\\ln\\tfrac{[A]_0}{[A]} = kt$. Setting $[A] = [A]_0/2$ gives $\\ln 2 = kt_{1/2} \\Rightarrow t_{1/2} = (\\ln 2)/k = 0.693/k$. Since $t_{1/2}$ depends only on $k$, not on $[A]_0$, the half-life is independent of initial concentration. Hence R correctly explains A."
+    },
+    {
+      "id": 63,
+      "subject": "Chemistry",
+      "question": "Which reagent most cleanly converts a primary alcohol R–CH$_2$OH to the corresponding alkyl chloride R–CH$_2$Cl with minimal side reactions?",
+      "options": {
+        "a": "HCl (conc.)/ZnCl$_2$",
+        "b": "SOCl$_2$ (thionyl chloride)/pyridine",
+        "c": "PCl$_5$",
+        "d": "NaCl in H$_2$SO$_4$"
+      },
+      "correct_option": "b",
+      "explanation": "SOCl$_2$/pyridine converts alcohols to alkyl chlorides under mild conditions with gaseous byproducts (SO$_2$, HCl), simplifying purification and minimizing rearrangements. Lucas reagent (HCl/ZnCl$_2$) is best for secondary/tertiary alcohols (SN1). PCl$_5$ is harsher and can cause side reactions; NaCl/H$_2$SO$_4$ is not an efficient general method."
+    },
+    {
+      "id": 64,
+      "subject": "Chemistry",
+      "question": "A metal crystallizes in a face-centered cubic (fcc) lattice with edge length $a = 400$ pm. What is the metallic radius (in pm)?",
+      "options": {
+        "a": "100",
+        "b": "113",
+        "c": "141",
+        "d": "200"
+      },
+      "correct_option": "c",
+      "explanation": "In fcc, nearest neighbors touch along a face diagonal, so $4r = \\sqrt{2}\\,a$. Hence $r = (\\sqrt{2}/4)a = a/(2\\sqrt{2})$. With $a=400$ pm: $r = 400/(2\\times1.414) \\approx 400/2.828 \\approx 141$ pm."
+    },
+    {
+      "id": 65,
+      "subject": "Chemistry",
+      "question": "Which of the following polymers is obtained by condensation polymerization?",
+      "options": {
+        "a": "Polythene",
+        "b": "Polypropene",
+        "c": "Nylon-6,6",
+        "d": "Polyvinyl chloride"
+      },
+      "correct_option": "c",
+      "explanation": "Nylon-6,6 is formed by condensation of adipic acid (HOOC–(CH$_2$)$_4$–COOH) with hexamethylenediamine (H$_2$N–(CH$_2$)$_6$–NH$_2$), eliminating small molecules (H$_2$O) and creating amide linkages. Polythene, polypropylene, and PVC arise from chain-growth (addition) polymerization of alkenes/vinyl monomers."
+    },
+    {
+      "id": 66,
+      "subject": "Chemistry",
+      "question": "Assertion (A): The rate of a reaction generally increases with increase in temperature.<br>Reason (R): An increase in temperature increases the fraction of molecules having energy greater than the activation energy.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Arrhenius equation: $k = A e^{-E_a/RT}$. As $T$ increases, the exponential term increases because $-E_a/(RT)$ becomes less negative, so $k$ (and thus rate) increases. Kinetic theory/Maxwell–Boltzmann distribution shows that a higher $T$ increases the fraction of molecules with $E \\ge E_a$. Hence both statements are true and the reason correctly explains the assertion. Quantitatively, a common empirical rule is that rates roughly double for a $10^{\\circ}\\text{C}$ rise when $E_a$ is moderate."
+    },
+    {
+      "id": 67,
+      "subject": "Chemistry",
+      "question": "Which gas law combination leads to the ideal gas equation $PV = nRT$?",
+      "options": {
+        "a": "Boyle’s law + Avogadro’s law + Dalton’s law",
+        "b": "Boyle’s law + Charles’s law + Avogadro’s law",
+        "c": "Charles’s law + Graham’s law + Avogadro’s law",
+        "d": "Boyle’s law + Graham’s law + Dalton’s law"
+      },
+      "correct_option": "b",
+      "explanation": "Boyle: $P \\propto 1/V\\,(T,n\\,\\text{const})$; Charles: $V \\propto T\\,(P,n\\,\\text{const})$; Avogadro: $V \\propto n\\,(P,T\\,\\text{const})$. Combining gives $V \\propto \\tfrac{nT}{P}$ or $PV \\propto nT$. Introducing the proportionality constant $R$ yields $PV = nRT$. (Dalton’s and Graham’s laws treat mixtures and diffusion, not the single-gas state equation.)"
+    },
+    {
+      "id": 68,
+      "subject": "Chemistry",
+      "question": "A radioactive isotope has a half-life of 10 days. What fraction of the original sample remains after 30 days?",
+      "options": {
+        "a": "50%",
+        "b": "25%",
+        "c": "12.5%",
+        "d": "6.25%"
+      },
+      "correct_option": "c",
+      "explanation": "Number of half-lives $= 30/10 = 3$. Remaining fraction $= \\left(\\tfrac{1}{2}\\right)^3 = \\tfrac{1}{8} = 12.5\\%$. The activity and amount both decay exponentially as $N=N_0 e^{-kt}$ with $t_{1/2}=\\tfrac{\\ln 2}{k}$."
+    },
+    {
+      "id": 69,
+      "subject": "Chemistry",
+      "question": "Which is the correct decreasing order of oxidizing power of halogens in aqueous solution?",
+      "options": {
+        "a": "Cl$_2$ > Br$_2$ > I$_2$ > F$_2$",
+        "b": "F$_2$ > Cl$_2$ > Br$_2$ > I$_2$",
+        "c": "I$_2$ > Br$_2$ > Cl$_2$ > F$_2$",
+        "d": "Br$_2$ > Cl$_2$ > F$_2$ > I$_2$"
+      },
+      "correct_option": "b",
+      "explanation": "Oxidizing strength correlates with standard reduction potentials $E^\\circ(X_2/X^-)$. Values (aq): $E^\\circ$(F$_2$/F$^-$)$\\approx +2.87$ V $>$ Cl$_2$/$\\text{Cl}^-\\,(+1.36\\,\\text{V}) >$ Br$_2$/$\\text{Br}^-\\,(+1.09\\,\\text{V}) >$ I$_2$/$\\text{I}^-\\,(+0.54\\,\\text{V})$. Higher $E^\\circ$ means a stronger tendency to be reduced (i.e., stronger oxidizing agent). Thus $\\mathrm{F_2 > Cl_2 > Br_2 > I_2}$. (In water, F$_2$ is so strong it can oxidize H$_2$O.)"
+    },
+    {
+      "id": 70,
+      "subject": "Chemistry",
+      "question": "A metal has a body-centered cubic (bcc) structure with edge length $a$. What is the relationship between atomic radius ($r$) and edge length?",
+      "options": {
+        "a": "$r = a/2$",
+        "b": "$r = \\sqrt{2}a/2$",
+        "c": "$r = \\sqrt{3}a/4$",
+        "d": "$r = a/\\sqrt{2}$"
+      },
+      "correct_option": "c",
+      "explanation": "In bcc, nearest neighbors touch along the body diagonal. Body diagonal length $= \\sqrt{3}\\,a$, which equals $4r$ (two radii from a corner atom to the center atom and two radii to the opposite corner atom). Hence $\\sqrt{3}a = 4r \\Rightarrow r = (\\sqrt{3}a)/4$."
+    },
+    {
+      "id": 71,
+      "subject": "Chemistry",
+      "question": "Arrange the following in order of increasing basicity in aqueous medium: Aniline, p-Toluidine, p-Nitroaniline.",
+      "options": {
+        "a": "p-Nitroaniline < Aniline < p-Toluidine",
+        "b": "Aniline < p-Nitroaniline < p-Toluidine",
+        "c": "p-Toluidine < Aniline < p-Nitroaniline",
+        "d": "Aniline < p-Toluidine < p-Nitroaniline"
+      },
+      "correct_option": "a",
+      "explanation": "Basicity of aryl amines depends on the electron density on N. $p$-Nitroaniline has a strongly electron-withdrawing $\\mathrm{-NO_2}$ ($-I$, $-M$), greatly decreasing lone-pair availability $\\Rightarrow$ least basic. Aniline is intermediate. $p$-Toluidine has an electron-donating $\\mathrm{-CH_3}$ ($+I$) that slightly increases electron density, enhancing basicity. Thus: p-Nitroaniline < Aniline < p-Toluidine."
+    },
+    {
+      "id": 72,
+      "subject": "Chemistry",
+      "question": "In the electrolytic cell for sodium extraction, molten NaCl is electrolyzed. Which statement is correct?",
+      "options": {
+        "a": "At cathode, Na$^+$ ions are reduced to Na metal",
+        "b": "At anode, Na$^+$ is oxidized to Na",
+        "c": "At cathode, Cl$^−$ is oxidized to Cl$_2$",
+        "d": "At anode, Na metal deposits"
+      },
+      "correct_option": "a",
+      "explanation": "Downs process (molten NaCl): Cathode (reduction): $\\mathrm{Na^+ + e^- \\to Na}$. Anode (oxidation): $\\mathrm{2Cl^- \\to Cl_2 + 2e^-}$. Hence Na metal forms at the cathode; chlorine gas evolves at the anode. (In aqueous solution this does not work due to water reduction prior to Na$^+$.)"
+    },
+    {
+      "id": 73,
+      "subject": "Chemistry",
+      "question": "Which reagent sequence will best achieve the conversion: benzene → p-bromoaniline?",
+      "options": {
+        "a": "Nitration → Reduction → Bromination",
+        "b": "Bromination → Nitration → Reduction",
+        "c": "Nitration → Bromination → Reduction",
+        "d": "Reduction → Bromination → Nitration"
+      },
+      "correct_option": "b",
+      "explanation": "Direct aniline formation first is problematic (strongly activating $-\\mathrm{NH_2}$ gives polysubstitution). Sequence (b): brominate benzene to bromobenzene (Br is o/p-directing, deactivating), then nitrate to obtain mainly o-/p-bromonitrobenzene (para favored sterically), then reduce $\\mathrm{NO_2}$ to $\\mathrm{NH_2}$ → p-bromoaniline. (For higher para selectivity in practice, acetanilide protection or other strategies are used, but among given options (b) is best.)"
+    },
+    {
+      "id": 74,
+      "subject": "Chemistry",
+      "question": "Which type of hybridization and geometry is exhibited by [Ni(CN)$_4$]$^{2−}$?",
+      "options": {
+        "a": "sp$^3$, tetrahedral",
+        "b": "dsp$^2$, square planar",
+        "c": "sp$^3$d, trigonal bipyramidal",
+        "d": "d$^2$sp$^3$, octahedral"
+      },
+      "correct_option": "b",
+      "explanation": "Ni$^{2+}$ is 3d$^8$. With strong-field CN$^-$ ligands, electrons in 3d pair to allow a low-spin configuration. The complex uses $\\mathrm{dsp^2}$ hybrid orbitals (one $d$, one $s$, two $p$) to form four coplanar bonds → square planar geometry. This contrasts with weak-field ligands (e.g., $\\mathrm{Cl^-}$) where tetrahedral sp$^3$ may be favored for d$^8$ systems."
+    },
+    {
+      "id": 75,
+      "subject": "Chemistry",
+      "question": "Which drug is commonly used as both an antipyretic and an analgesic?",
+      "options": {
+        "a": "Ibuprofen",
+        "b": "Paracetamol (Acetaminophen)",
+        "c": "Ranitidine",
+        "d": "Diazepam"
+      },
+      "correct_option": "b",
+      "explanation": "Paracetamol (acetaminophen) effectively reduces fever (antipyretic) and relieves mild to moderate pain (analgesic) via central inhibition of prostaglandin synthesis. Ibuprofen is also antipyretic/analgesic but is primarily classified as an NSAID with notable anti-inflammatory action; ranitidine is an H$_2$ receptor antagonist (acid reducer); diazepam is an anxiolytic/benzodiazepine."
+    },
+    {
+      "id": 76,
+      "subject": "Chemistry",
+      "question": "Bakelite is obtained by the condensation polymerization of:",
+      "options": {
+        "a": "Tetrafluoroethylene",
+        "b": "Caprolactam",
+        "c": "Phenol and formaldehyde",
+        "d": "Adipic acid and hexamethylenediamine"
+      },
+      "correct_option": "c",
+      "explanation": "Bakelite is a thermosetting polymer formed by condensation of phenol and formaldehyde under acidic or basic conditions. Initially, linear chains form (novolac or resol), which then crosslink upon heating to give a rigid 3D structure. Options (a), (b), (d) correspond to Teflon, Nylon-6, and Nylon-6,6 respectively, not Bakelite."
+    },
+    {
+      "id": 77,
+      "subject": "Chemistry",
+      "question": "Which statement is true about the Lanthanide contraction?",
+      "options": {
+        "a": "It is the gradual increase in atomic radius from La to Lu",
+        "b": "It causes Zr and Hf to have nearly identical atomic radii",
+        "c": "It decreases ionization enthalpy regularly across the series",
+        "d": "It arises due to poor shielding by 4f electrons, leading to increased effective nuclear charge"
+      },
+      "correct_option": "b",
+      "explanation": "Lanthanide contraction is the gradual decrease (not increase) in atomic and ionic radii from La to Lu, caused by poor shielding of nuclear charge by 4f electrons. A consequence is that 4d and 5d elements (e.g., Zr and Hf) end up with almost identical radii. Thus option (b) correctly states an important result of lanthanide contraction."
+    },
+    {
+      "id": 78,
+      "subject": "Chemistry",
+      "question": "Which of the following arrangements shows the correct order of increasing first ionization enthalpy (Period 3 elements)?",
+      "options": {
+        "a": "Na < Al < Mg < Si",
+        "b": "Na < Mg < Al < Si",
+        "c": "Mg < Na < Si < Al",
+        "d": "Si < Al < Mg < Na"
+      },
+      "correct_option": "a",
+      "explanation": "Across a period, ionization enthalpy generally increases due to higher nuclear charge, but Al has lower ionization enthalpy than Mg because the electron removed from Al is a 3p electron (higher energy, more shielded) compared to Mg’s 3s electron. Therefore, the correct order is Na < Al < Mg < Si."
+    },
+    {
+      "id": 79,
+      "subject": "Chemistry",
+      "question": "Which statement about the entropy change ($\\Delta S$) in phase transitions at equilibrium is correct?",
+      "options": {
+        "a": "$\\Delta S = 0$ for phase transition",
+        "b": "$\\Delta S = \\Delta H/T$ for the transition",
+        "c": "$\\Delta S = \\Delta G/T$",
+        "d": "$\\Delta S$ is always negative"
+      },
+      "correct_option": "b",
+      "explanation": "At equilibrium for a phase transition, $\\Delta G = 0$. Since $\\Delta G = \\Delta H - T\\Delta S$, rearranging gives $\\Delta S = \\Delta H/T$. For melting/vaporization, $\\Delta H > 0$ so $\\Delta S > 0$; for freezing/condensation, $\\Delta H < 0$ so $\\Delta S < 0$. Thus the general expression is $\\Delta S = \\Delta H/T$."
+    },
+    {
+      "id": 80,
+      "subject": "Chemistry",
+      "question": "Which reagent would best distinguish between aldehydes and ketones?",
+      "options": {
+        "a": "Tollens’ reagent",
+        "b": "Fehling’s solution",
+        "c": "2,4-DNP",
+        "d": "Both (a) and (b)"
+      },
+      "correct_option": "d",
+      "explanation": "Both Tollens’ reagent and Fehling’s solution are positive for aldehydes but not for most ketones. Tollens’ test gives a silver mirror as aldehydes reduce Ag$^+$ to metallic Ag. Fehling’s solution gives a brick-red Cu$_2$O precipitate when aldehydes reduce Cu$^{2+}$. Ketones generally do not react with these, except alpha-hydroxy ketones. 2,4-DNP reacts with both aldehydes and ketones, so it cannot distinguish them."
+    },
+    {
+      "id": 81,
+      "subject": "Chemistry",
+      "question": "Arrange the following in increasing order of thermal stability: Li$_2$CO$_3$, Na$_2$CO$_3$, K$_2$CO$_3$.",
+      "options": {
+        "a": "K$_2$CO$_3$ < Na$_2$CO$_3$ < Li$_2$CO$_3$",
+        "b": "Li$_2$CO$_3$ < Na$_2$CO$_3$ < K$_2$CO$_3$",
+        "c": "Na$_2$CO$_3$ < K$_2$CO$_3$ < Li$_2$CO$_3$",
+        "d": "All have equal stability"
+      },
+      "correct_option": "b",
+      "explanation": "Thermal stability of carbonates increases down Group 1 due to decreasing polarization of the carbonate ion by the larger cations. Li$^+$, being very small, strongly polarizes CO$_3^{2−}$ and destabilizes it, so Li$_2$CO$_3$ decomposes most easily. Na$_2$CO$_3$ is more stable, and K$_2$CO$_3$ is the most stable. Hence order: Li$_2$CO$_3$ < Na$_2$CO$_3$ < K$_2$CO$_3$."
+    },
+    {
+      "id": 82,
+      "subject": "Chemistry",
+      "question": "Assertion (A): Graphite is a good conductor of electricity, while diamond is an insulator.<br>Reason (R): In graphite, each carbon atom is sp$^2$ hybridized with delocalized $\\pi$ electrons, while in diamond, each carbon is sp$^3$ hybridized with localized bonds.",
+      "options": {
+        "a": "Both A and R are true and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Graphite consists of layers of sp$^2$ hybridized carbon atoms with delocalized $\\pi$ electrons that move freely within the layers, making it conductive. Diamond has each carbon sp$^3$ hybridized in a rigid tetrahedral lattice with localized electrons, so it cannot conduct electricity. Thus both statements are true and R explains A."
+    },
+    {
+      "id": 83,
+      "subject": "Chemistry",
+      "question": "Which of the following solutions will have the highest boiling point elevation?<br>(i) 0.1 m glucose, (ii) 0.1 m NaCl, (iii) 0.1 m BaCl$_2$, (iv) 0.1 m Al$_2$(SO$_4$)$_3$",
+      "options": {
+        "a": "Glucose",
+        "b": "NaCl",
+        "c": "BaCl$_2$",
+        "d": "Al$_2$(SO$_4$)$_3$"
+      },
+      "correct_option": "d",
+      "explanation": "Boiling point elevation: $\\Delta T_b = i K_b m$. Here $m=0.1$ for all. Van’t Hoff factor $i$ values: glucose = 1 (nonelectrolyte), NaCl ≈ 2, BaCl$_2$ ≈ 3, Al$_2$(SO$_4$)$_3$ ≈ 5. The highest $i$ gives the greatest colligative effect. Therefore, Al$_2$(SO$_4$)$_3$ solution has the maximum boiling point elevation."
+    },
+    {
+      "id": 84,
+      "subject": "Chemistry",
+      "question": "Which statement about coordination compounds is correct?",
+      "options": {
+        "a": "In [Co(NH$_3$)$_6$]Cl$_3$, the Cl atoms are outside the coordination sphere",
+        "b": "In [Ag(NH$_3$)$_2$]Cl, Ag$^+$ has coordination number 6",
+        "c": "In [Fe(CN)$_6$]$^{4−}$, Fe has coordination number 4",
+        "d": "In [Cu(NH$_3$)$_4$]$^{2+}$, Cu has oxidation state +1"
+      },
+      "correct_option": "a",
+      "explanation": "In [Co(NH$_3$)$_6$]Cl$_3$, six NH$_3$ ligands coordinate to Co$^{3+}$, forming the coordination sphere. The three Cl$^−$ ions are counter-ions outside the sphere. In [Ag(NH$_3$)$_2$]+, the coordination number is 2 (not 6). In [Fe(CN)$_6$]$^{4−}$, Fe has coordination number 6. In [Cu(NH$_3$)$_4$]$^{2+}$, Cu is in +2 state (not +1)."
+    },
+    {
+      "id": 85,
+      "subject": "Chemistry",
+      "question": "Which of the following is a correct statement about ozone depletion?",
+      "options": {
+        "a": "CFCs release chlorine atoms that catalytically decompose ozone",
+        "b": "CO$_2$ is the main gas causing ozone depletion",
+        "c": "Ozone depletion increases greenhouse effect",
+        "d": "NOx gases have no role in ozone depletion"
+      },
+      "correct_option": "a",
+      "explanation": "CFCs (chlorofluorocarbons) release chlorine radicals in the stratosphere upon UV photolysis. These radicals catalytically destroy ozone: $\\mathrm{Cl· + O_3 → ClO· + O_2}$; $\\mathrm{ClO· + O → Cl· + O_2}$. CO$_2$ causes global warming but is not an ozone-depleting gas. NOx also contributes to ozone destruction. Hence option (a) is correct."
+    },
+    {
+      "id": 86,
+      "subject": "Chemistry",
+      "question": "Assertion (A): The rate constant of a reaction increases exponentially with increase in temperature.<br>Reason (R): According to the Arrhenius equation, $k = A e^{−E_a/RT}$, a small increase in T decreases the exponential factor significantly because $E_a/RT$ decreases.",
+      "options": {
+        "a": "Both A and R are true and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Arrhenius behavior says $k = Ae^{-E_a/(RT)}$. As $T$ rises, the ratio $E_a/RT$ becomes smaller, so the negative exponent becomes less negative; the exponential term increases rapidly and hence $k$ increases sharply (often approximated by the rule of thumb that rates roughly double for a 10 °C rise when $E_a$ is moderate). Taking natural logs, $\\ln k = \\ln A - E_a/(RT)$, the linear $\\ln k$ vs $1/T$ plot further shows why even small changes in $1/T$ can significantly change $k$. Therefore both A and R are true, and R correctly explains A."
+    },
+    {
+      "id": 87,
+      "subject": "Chemistry",
+      "question": "Which of the following salts will show highest pH in aqueous solution?",
+      "options": {
+        "a": "NH$_4$Cl",
+        "b": "NaCl",
+        "c": "Na$_2$CO$_3$",
+        "d": "CH$_3$COONa"
+      },
+      "correct_option": "c",
+      "explanation": "Na$_2$CO$_3$ is derived from a strong base (NaOH) and a diprotic weak acid (H$_2$CO$_3$). In water, CO$_3^{2-}$ undergoes basic hydrolysis: $\\mathrm{CO_3^{2-} + H_2O \\rightleftharpoons HCO_3^- + OH^-}$, producing the largest $[\\mathrm{OH^-}]$ among the options and thus the highest pH. CH$_3$COONa (strong base + weak acid) is also basic but weaker because $\\mathrm{CH_3COO^-}$ is a weaker base than $\\mathrm{CO_3^{2-}}$. NaCl (strong acid + strong base) is neutral (pH ≈ 7). NH$_4$Cl (weak base + strong acid) is acidic (NH$_4^+$ hydrolyzes to produce H$_3$O$^+$). Hence Na$_2$CO$_3$ gives the highest pH."
+    },
+    {
+      "id": 88,
+      "subject": "Chemistry",
+      "question": "Which of the following represents a disproportionation reaction?",
+      "options": {
+        "a": "2H$_2$O$_2$ → 2H$_2$O + O$_2$",
+        "b": "2Na + Cl$_2$ → 2NaCl",
+        "c": "H$_2$ + Cl$_2$ → 2HCl",
+        "d": "Zn + CuSO$_4$ → ZnSO$_4$ + Cu"
+      },
+      "correct_option": "a",
+      "explanation": "In a disproportionation, the same element is simultaneously oxidized and reduced. In $\\mathrm{2H_2O_2 \\to 2H_2O + O_2}$, oxygen starts at oxidation state −1 in H$_2$O$_2$; it is reduced to −2 in H$_2$O and oxidized to 0 in O$_2$ at the same time. The other reactions are straightforward redox (combination or single displacement) without the same element undergoing both oxidation and reduction."
+    },
+    {
+      "id": 89,
+      "subject": "Chemistry",
+      "question": "Which reagent converts nitrobenzene to aniline?",
+      "options": {
+        "a": "Zn/HCl",
+        "b": "Sn/HCl",
+        "c": "Fe/HCl",
+        "d": "All of these"
+      },
+      "correct_option": "d",
+      "explanation": "Acidic metal reductions (Sn/HCl, Fe/HCl, Zn/HCl) all convert nitrobenzene to aniline via stepwise reduction of $\\mathrm{-NO_2}$ to $\\mathrm{-NH_2}$. A typical sequence (with Sn/HCl) is: nitrobenzene $\\xrightarrow[\\text{HCl}]{\\text{Sn}}$ anilinium chloride (Ph–NH$_3^+$Cl$^-$), which upon basification yields aniline (Ph–NH$_2$). Fe/HCl and Zn/HCl operate analogously; catalytic hydrogenation (H$_2$/Pd) is another viable route."
+    },
+    {
+      "id": 90,
+      "subject": "Chemistry",
+      "question": "Which statement is correct about the comparison of CO and CO$_2$ molecules?",
+      "options": {
+        "a": "CO$_2$ is polar, CO is nonpolar",
+        "b": "Bond order of CO is greater than that of CO$_2$",
+        "c": "Both CO and CO$_2$ are linear molecules",
+        "d": "CO$_2$ has stronger bonding than CO"
+      },
+      "correct_option": "c",
+      "explanation": "Both CO (diatomic) and CO$_2$ (O=C=O) are linear. Option (a) is false because CO$_2$ is nonpolar overall (linear symmetry cancels dipoles), whereas CO has a small dipole moment. Option (b) is potentially true if one compares the CO bond order (≈3) with each individual C=O bond order in CO$_2$ (2), but phrasing \"bond order of CO$_2$\" is ambiguous for a polyatomic molecule; the unambiguous, always-correct statement is that both molecules are linear. Option (d) is false—CO has an exceptionally strong bond (very high bond dissociation energy), stronger than a single C=O in CO$_2$."
+    },
+    {
+      "id": 91,
+      "subject": "Botany",
+      "question": "Assertion (A): In C4 plants, the first stable product of carbon fixation is oxaloacetic acid (OAA).\nReason (R): C4 plants use phosphoenolpyruvate (PEP) carboxylase in mesophyll cells to fix CO2 initially.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "C4 plants (e.g., maize, sugarcane, sorghum) initially fix CO$_2$ in mesophyll cells by PEP carboxylase, producing oxaloacetic acid (OAA), a 4-carbon compound. This OAA is later converted into malate or aspartate, transported to bundle sheath cells, and decarboxylated to release CO$_2$ for the Calvin cycle. In contrast, C3 plants directly fix CO$_2$ by Rubisco to form 3-PGA. Hence both A and R are correct, and R explains A."
+    },
+    {
+      "id": 92,
+      "subject": "Botany",
+      "question": "Which plant hormone is responsible for promoting seed dormancy?",
+      "options": {
+        "a": "Auxin",
+        "b": "Gibberellin",
+        "c": "Abscisic acid",
+        "d": "Cytokinin"
+      },
+      "correct_option": "c",
+      "explanation": "Abscisic acid (ABA) promotes seed dormancy by suppressing germination, closing stomata under stress, and inducing storage protein synthesis. Gibberellins (GA) act antagonistically by breaking dormancy and promoting germination. Auxins regulate cell elongation and differentiation, while cytokinins promote cell division and delay senescence."
+    },
+    {
+      "id": 93,
+      "subject": "Botany",
+      "question": "Which plants are commonly used for phytoremediation of heavy metal contaminated soils?",
+      "options": {
+        "a": "Rice and wheat",
+        "b": "Brassica juncea and Helianthus annuus",
+        "c": "Pea and chickpea",
+        "d": "Cuscuta and Orobanche"
+      },
+      "correct_option": "b",
+      "explanation": "Brassica juncea (Indian mustard) and Helianthus annuus (sunflower) are hyperaccumulators that absorb and store heavy metals like Pb, Cd, and As from soils. This makes them valuable for phytoremediation. Rice, wheat, pea, and chickpea are not efficient hyperaccumulators, while Cuscuta and Orobanche are parasitic plants."
+    },
+    {
+      "id": 94,
+      "subject": "Botany",
+      "question": "Which statement about water transport in plants is correct according to the cohesion-tension theory?",
+      "options": {
+        "a": "Water is actively pumped upward by xylem",
+        "b": "Transpiration pull generates a negative pressure that pulls water column upward",
+        "c": "Root pressure is the main force lifting water to great heights",
+        "d": "Cohesion between water and xylem walls is unimportant"
+      },
+      "correct_option": "b",
+      "explanation": "The cohesion-tension theory (proposed by Dixon and Joly) explains ascent of sap. Transpiration from leaves creates negative pressure (tension), which pulls the continuous column of water upward through xylem. Cohesion between water molecules (due to H-bonding) and adhesion with xylem walls maintain continuity. Root pressure can move water only short distances and is insufficient in tall trees."
+    },
+    {
+      "id": 95,
+      "subject": "Botany",
+      "question": "Casparian strips in root endodermis are chemically composed of:",
+      "options": {
+        "a": "Lignin",
+        "b": "Suberin",
+        "c": "Cutin",
+        "d": "Pectin"
+      },
+      "correct_option": "b",
+      "explanation": "Casparian strips are bands of suberin (a hydrophobic material) deposited in the radial and transverse walls of endodermal cells. They block apoplastic transport of water and solutes, forcing them into the symplastic pathway through the plasma membrane, ensuring selective uptake of minerals."
+    },
+    {
+      "id": 96,
+      "subject": "Botany",
+      "question": "Assertion (A): Root nodules of leguminous plants contain nitrogen-fixing bacteria.\nReason (R): Rhizobium bacteria convert atmospheric N2 into ammonia using nitrogenase enzyme under anaerobic conditions provided by leghaemoglobin.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Leguminous plants harbor Rhizobium in root nodules. The bacteria fix atmospheric N$_2$ to NH$_3$ using nitrogenase, an O$_2$-sensitive enzyme. Leghaemoglobin binds free O$_2$, maintaining low O$_2$ concentration while providing enough for respiration. This ensures efficient nitrogen fixation. Hence both A and R are true, and R explains A."
+    },
+    {
+      "id": 97,
+      "subject": "Botany",
+      "question": "Which genetic technique involves transfer of genes using Agrobacterium tumefaciens?",
+      "options": {
+        "a": "Microinjection",
+        "b": "Biolistics",
+        "c": "Ti-plasmid mediated transformation",
+        "d": "Electroporation"
+      },
+      "correct_option": "c",
+      "explanation": "Agrobacterium tumefaciens carries the Ti (tumor-inducing) plasmid. Its T-DNA integrates into the plant genome, a natural gene transfer system harnessed in genetic engineering. Biolistics uses gene guns, microinjection uses needles, and electroporation uses electrical pulses to make membranes permeable."
+    },
+    {
+      "id": 98,
+      "subject": "Botany",
+      "question": "In CAM plants, stomata open:",
+      "options": {
+        "a": "During daytime",
+        "b": "Only under stress",
+        "c": "At night",
+        "d": "Never"
+      },
+      "correct_option": "c",
+      "explanation": "CAM (Crassulacean Acid Metabolism) plants open stomata at night to minimize water loss. They fix CO$_2$ into malate, stored in vacuoles. During the day, stomata remain closed and CO$_2$ is released internally from malate for photosynthesis. This adaptation helps plants survive in arid conditions."
+    },
+    {
+      "id": 99,
+      "subject": "Botany",
+      "question": "Statement I: In monocot roots, xylem and phloem are radially arranged.\nStatement II: The vascular bundles in monocot roots are polyarch (many xylem poles).",
+      "options": {
+        "a": "Both statements are true",
+        "b": "Only I is true",
+        "c": "Only II is true",
+        "d": "Both statements are false"
+      },
+      "correct_option": "a",
+      "explanation": "Monocot roots exhibit radial vascular bundles with xylem and phloem arranged alternately in a ring around the center. They typically have more than six xylem poles (polyarch). Dicots usually show tetrarch condition with fewer xylem poles. Thus both statements are correct."
+    },
+    {
+      "id": 100,
+      "subject": "Botany",
+      "question": "Which statement about double fertilization in angiosperms is correct?",
+      "options": {
+        "a": "One male gamete fuses with the egg to form diploid zygote, the other with two polar nuclei to form triploid endosperm",
+        "b": "Both male gametes fuse with eggs to form twin zygotes",
+        "c": "One male gamete degenerates, the other fertilizes egg",
+        "d": "Male gamete fuses with antipodals to form embryo sac"
+      },
+      "correct_option": "a",
+      "explanation": "Double fertilization is a hallmark of angiosperms. One sperm cell fuses with the egg cell (syngamy) to form diploid zygote. The other sperm fuses with two polar nuclei in the central cell (triple fusion) to form triploid primary endosperm nucleus, which develops into endosperm. This ensures simultaneous formation of embryo and nutritive tissue."
+    },
+    {
+      "id": 101,
+      "subject": "Botany",
+      "question": "Assertion (A): Guard cells regulate the opening and closing of stomata.\nReason (R): Stomatal aperture depends on the turgor pressure of guard cells, which is influenced by K+ ion transport and osmotic changes.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Guard cells control stomatal aperture by changing their turgor. When K$^+$ ions actively enter guard cells, water follows osmotically, increasing turgor pressure and causing guard cells to bow outward, opening the pore. When K$^+$ efflux occurs, water leaves, turgor decreases, and the stomata close. This mechanism regulates transpiration and gas exchange. Hence both A and R are true, and R explains A."
+    },
+    {
+      "id": 102,
+      "subject": "Botany",
+      "question": "Golden rice was genetically engineered to be rich in which nutrient?",
+      "options": {
+        "a": "Iron",
+        "b": "Vitamin A (β-carotene)",
+        "c": "Vitamin C",
+        "d": "Zinc"
+      },
+      "correct_option": "b",
+      "explanation": "Golden rice was developed by introducing genes from daffodil (psy) and a bacterium (crtI) into rice endosperm to enable biosynthesis of β-carotene, the precursor of vitamin A. This biofortification addresses vitamin A deficiency, especially in developing countries."
+    },
+    {
+      "id": 103,
+      "subject": "Botany",
+      "question": "Which is the correct sequence of events during germination of a seed?",
+      "options": {
+        "a": "Radicle emerges → Plumule emerges → Cotyledons expand",
+        "b": "Plumule emerges → Radicle emerges → Cotyledons expand",
+        "c": "Cotyledons expand → Radicle emerges → Plumule emerges",
+        "d": "Radicle emerges → Cotyledons expand → Plumule emerges"
+      },
+      "correct_option": "a",
+      "explanation": "Seed germination begins with imbibition, followed by resumption of metabolic activity. The radicle (embryonic root) emerges first to absorb water and anchor the plant. Next, the plumule (embryonic shoot) emerges upward. In epigeal germination, cotyledons expand and photosynthesize; in hypogeal germination, they remain below. Thus the correct sequence is radicle → plumule → cotyledons."
+    },
+    {
+      "id": 104,
+      "subject": "Botany",
+      "question": "Which photoperiodic plants require exposure to short days for flowering?",
+      "options": {
+        "a": "Spinach and sugar beet",
+        "b": "Wheat and barley",
+        "c": "Xanthium and soybean",
+        "d": "Pea and oats"
+      },
+      "correct_option": "c",
+      "explanation": "Short-day plants like Xanthium and soybean require night length longer than a critical photoperiod to flower. Wheat, barley, pea, and oats are long-day plants that flower when days are longer. Spinach and sugar beet are also long-day biennials. Thus option (c) is correct."
+    },
+    {
+      "id": 105,
+      "subject": "Botany",
+      "question": "Which plant hormone is widely used in inducing parthenocarpy (seedless fruits)?",
+      "options": {
+        "a": "Auxin",
+        "b": "Cytokinin",
+        "c": "Gibberellin",
+        "d": "Abscisic acid"
+      },
+      "correct_option": "c",
+      "explanation": "Parthenocarpy is the development of fruit without fertilization. Gibberellins (especially GA$_3$) are commonly applied to induce parthenocarpic fruits like grapes and apples. Auxins can also induce seedless fruits (e.g., tomatoes), but gibberellins are more widely used commercially. Cytokinins promote cell division, while ABA induces dormancy."
+    },
+    {
+      "id": 106,
+      "subject": "Botany",
+      "question": "Which plant hormone is primarily responsible for the ripening of fruits like banana and tomato?",
+      "options": {
+        "a": "Auxin",
+        "b": "Gibberellin",
+        "c": "Ethylene",
+        "d": "Cytokinin"
+      },
+      "correct_option": "c",
+      "explanation": "Ethylene is a gaseous plant hormone that triggers and accelerates fruit ripening. It induces enzymatic changes such as conversion of starch to sugars, cell wall softening, and pigment changes (chlorophyll breakdown and carotenoid synthesis). Auxins regulate growth, gibberellins promote stem elongation, and cytokinins promote cell division, but ethylene is the ripening hormone."
+    },
+    {
+      "id": 107,
+      "subject": "Botany",
+      "question": "Which enzyme is deficient in photorespiratory mutants leading to accumulation of glycolate?",
+      "options": {
+        "a": "Rubisco",
+        "b": "Glycolate oxidase",
+        "c": "PEP carboxylase",
+        "d": "Malate dehydrogenase"
+      },
+      "correct_option": "b",
+      "explanation": "In photorespiration, Rubisco oxygenates RuBP, producing glycolate. Glycolate is transported to peroxisomes, where glycolate oxidase converts it to glyoxylate. Mutants deficient in glycolate oxidase cannot metabolize glycolate, leading to its accumulation and photorespiratory stress. PEP carboxylase and malate dehydrogenase are enzymes of C$_4$ metabolism."
+    },
+    {
+      "id": 108,
+      "subject": "Botany",
+      "question": "Which plants use pneumatophores for gaseous exchange?",
+      "options": {
+        "a": "Desert cacti",
+        "b": "Mangroves like Avicennia",
+        "c": "Epiphytes like orchids",
+        "d": "Hydrophytes like Hydrilla"
+      },
+      "correct_option": "b",
+      "explanation": "Mangrove species (e.g., Avicennia, Sonneratia) grow in swampy soils deficient in oxygen. They develop specialized aerial roots called pneumatophores, which protrude above the soil and possess lenticels for gas exchange. Desert cacti use stem photosynthesis, orchids have aerial roots with velamen, and Hydrilla performs gas exchange through submerged leaves."
+    },
+    {
+      "id": 109,
+      "subject": "Botany",
+      "question": "Statement I: Bryophytes are called amphibians of the plant kingdom.\nStatement II: They require water for fertilization because male gametes are motile.",
+      "options": {
+        "a": "Both statements are true",
+        "b": "Only I is true",
+        "c": "Only II is true",
+        "d": "Both statements are false"
+      },
+      "correct_option": "a",
+      "explanation": "Bryophytes (mosses, liverworts) are terrestrial but depend on water for fertilization, as their male gametes (antherozoids) swim to the archegonia. This dual dependency on land and water is why they are called amphibians of the plant kingdom. Thus both statements are true."
+    },
+    {
+      "id": 110,
+      "subject": "Botany",
+      "question": "Which of the following is a feature of dicot leaves but not monocot leaves?",
+      "options": {
+        "a": "Parallel venation",
+        "b": "Reticulate venation",
+        "c": "Bulliform cells",
+        "d": "Isobilateral anatomy"
+      },
+      "correct_option": "b",
+      "explanation": "Dicot leaves show reticulate venation, where veins form a network. Monocot leaves typically show parallel venation. Bulliform cells (for leaf rolling) and isobilateral anatomy (similar upper and lower surfaces) are monocot features. Thus reticulate venation is a distinguishing feature of dicots."
+    },
+    {
+      "id": 111,
+      "subject": "Botany",
+      "question": "Assertion (A): Mycorrhizal association improves mineral absorption in plants.\nReason (R): Fungal hyphae increase the surface area of roots and help in the uptake of phosphorus and other minerals.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Mycorrhiza is a symbiotic association between plant roots and fungi. The fungal hyphae extend deep and wide into the soil, thereby greatly increasing the absorptive surface area of the root system. They enhance the uptake of phosphorus, zinc, and copper and also protect roots from pathogens. Hence both A and R are true, and R correctly explains A."
+    },
+    {
+      "id": 112,
+      "subject": "Botany",
+      "question": "Which statement about gymnosperms is correct?",
+      "options": {
+        "a": "They produce flowers and fruits",
+        "b": "They have ovules that remain exposed before and after fertilization",
+        "c": "They lack vascular tissues",
+        "d": "They show double fertilization"
+      },
+      "correct_option": "b",
+      "explanation": "Gymnosperms (e.g., Pinus, Cycas) produce seeds that are not enclosed in fruits. Their ovules remain naked on megasporophylls before and after fertilization. They possess well-developed vascular tissues (xylem and phloem), but lack flowers and fruits. Double fertilization is absent in gymnosperms and unique to angiosperms. Hence option (b) is correct."
+    },
+    {
+      "id": 113,
+      "subject": "Botany",
+      "question": "Which is the correct chronological sequence in the life cycle of angiosperms?",
+      "options": {
+        "a": "Microsporogenesis → Microgametogenesis → Pollination → Fertilization",
+        "b": "Pollination → Microsporogenesis → Fertilization → Microgametogenesis",
+        "c": "Microgametogenesis → Microsporogenesis → Pollination → Fertilization",
+        "d": "Fertilization → Pollination → Microsporogenesis → Microgametogenesis"
+      },
+      "correct_option": "a",
+      "explanation": "Microsporogenesis occurs first when microspore mother cells undergo meiosis to produce microspores (pollen grains). Then microgametogenesis takes place inside pollen grains to form male gametophytes. Pollination transfers pollen to the stigma. Finally, fertilization occurs when the male gametes fuse with egg and polar nuclei. Hence option (a) is correct."
+    },
+    {
+      "id": 114,
+      "subject": "Botany",
+      "question": "Which statement about photoperiodism is correct?",
+      "options": {
+        "a": "It is the response of plants to changes in water availability",
+        "b": "It is controlled by the duration of light and dark periods affecting flowering",
+        "c": "It is the breaking of seed dormancy by light",
+        "d": "It is the movement of chloroplasts within cells due to light"
+      },
+      "correct_option": "b",
+      "explanation": "Photoperiodism refers to the physiological response of plants to the relative length of day and night. It plays a key role in flowering and is mediated by phytochrome pigments. Short-day plants flower when night exceeds a critical length, long-day plants flower when nights are shorter, and day-neutral plants are unaffected. Hence option (b) is correct."
+    },
+    {
+      "id": 115,
+      "subject": "Botany",
+      "question": "Which of the following pairs is correctly matched?\n1) Cycas – Coralloid roots\n2) Opuntia – Phylloclade\n3) Potato – Corm\n4) Onion – Bulb",
+      "options": {
+        "a": "1, 2, and 4",
+        "b": "1 and 3 only",
+        "c": "2 and 3 only",
+        "d": "1, 2, 3, and 4"
+      },
+      "correct_option": "a",
+      "explanation": "Cycas forms coralloid roots containing cyanobacteria for nitrogen fixation. Opuntia has flattened phylloclades for photosynthesis in arid conditions. Potato is a stem tuber, not a corm. Onion is a true bulb composed of a short stem and fleshy leaves. Hence 1, 2, and 4 are correct."
+    },
+    {
+      "id": 116,
+      "subject": "Botany",
+      "question": "Assertion (A): Transpiration is a necessary evil in plants.\nReason (R): Though it causes water loss, transpiration also helps in absorption and ascent of sap, and in cooling of leaves.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Transpiration leads to significant water loss, which may be harmful, hence called a 'necessary evil'. However, it is essential for creating transpiration pull, which aids ascent of sap, facilitates mineral transport, and provides cooling to leaves. Hence both A and R are true, and R explains A."
+    },
+    {
+      "id": 117,
+      "subject": "Botany",
+      "question": "Which statement about apical dominance is correct?",
+      "options": {
+        "a": "It is caused by high concentration of cytokinins in apical bud",
+        "b": "It is maintained by auxins produced in apical bud suppressing lateral buds",
+        "c": "It is maintained by abscisic acid accumulation in lateral buds",
+        "d": "It is promoted by gibberellins in apical bud"
+      },
+      "correct_option": "b",
+      "explanation": "Apical dominance is the inhibition of lateral bud growth by auxins secreted from the shoot tip (apical bud). Removing the apical bud removes auxin influence, allowing lateral buds to grow. Cytokinins promote lateral bud growth, ABA induces dormancy, and gibberellins promote stem elongation, not apical dominance."
+    },
+    {
+      "id": 118,
+      "subject": "Botany",
+      "question": "Which statement about the vascular bundles of dicot stems is correct?",
+      "options": {
+        "a": "They are scattered, closed, and without cambium",
+        "b": "They are arranged in a ring, open, and have cambium between xylem and phloem",
+        "c": "They are radial, closed, and exarch",
+        "d": "They are conjoint, closed, and endarch"
+      },
+      "correct_option": "b",
+      "explanation": "Dicot stems show vascular bundles arranged in a ring. Each bundle is conjoint (xylem and phloem together), collateral, and open, meaning they contain cambium between xylem and phloem. This cambium allows secondary growth. Monocot stems, in contrast, have scattered closed bundles without cambium."
+    },
+    {
+      "id": 119,
+      "subject": "Botany",
+      "question": "Which of the following plants shows hydrotropism?",
+      "options": {
+        "a": "Shoot apex bending towards light",
+        "b": "Root apex bending towards water source",
+        "c": "Climbing stems twining around a support",
+        "d": "Sunflower inflorescence following the sun"
+      },
+      "correct_option": "b",
+      "explanation": "Hydrotropism is directional growth in response to water. Roots exhibit positive hydrotropism by bending toward a water source. Other tropisms include phototropism (light), thigmotropism (touch in climbers), and heliotropism (sun tracking in sunflower)."
+    },
+    {
+      "id": 120,
+      "subject": "Botany",
+      "question": "Which component of chloroplast is responsible for capturing solar energy?",
+      "options": {
+        "a": "Stroma",
+        "b": "Grana thylakoids",
+        "c": "Plastoglobuli",
+        "d": "Envelope membranes"
+      },
+      "correct_option": "b",
+      "explanation": "Grana are stacks of thylakoids, and their membranes contain chlorophyll pigments and photosystems I and II. These structures absorb light energy and initiate the light-dependent reactions of photosynthesis. The stroma hosts the Calvin cycle, plastoglobuli store lipids, and the envelope membranes provide compartmentalization."
+    },
+    {
+      "id": 121,
+      "subject": "Botany",
+      "question": "Assertion (A): Companion cells in angiosperms are essential for the functioning of sieve tube elements.\nReason (R): Companion cells assist in loading and unloading of sucrose into sieve tubes through active transport mechanisms.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Sieve tube elements lose nuclei at maturity, becoming metabolically dependent on companion cells. Companion cells, derived from the same mother cell, retain dense cytoplasm and nuclei. They perform metabolic activities and actively transport sucrose (via proton-sucrose symporters) into and out of sieve tubes. This makes phloem loading and unloading possible. Thus both A and R are true, and R explains A."
+    },
+    {
+      "id": 122,
+      "subject": "Botany",
+      "question": "Which of the following is an adaptation of xerophytes?",
+      "options": {
+        "a": "Broad leaves with thin cuticle",
+        "b": "Stomata on upper surface only",
+        "c": "Thick cuticle, sunken stomata, reduced leaves as spines",
+        "d": "Large intercellular spaces in mesophyll"
+      },
+      "correct_option": "c",
+      "explanation": "Xerophytes are adapted to dry habitats. To minimize transpiration, they show features such as thick waxy cuticle, sunken stomata to trap moist air, and reduction of leaves into spines (as in cactus). Photosynthesis shifts to the stem (phylloclade). Succulent tissues also store water. Thin leaves and large intercellular spaces are typical of hydrophytes, not xerophytes."
+    },
+    {
+      "id": 123,
+      "subject": "Botany",
+      "question": "Which type of placentation is seen in sunflower?",
+      "options": {
+        "a": "Marginal",
+        "b": "Axile",
+        "c": "Parietal",
+        "d": "Basal"
+      },
+      "correct_option": "d",
+      "explanation": "In sunflower (family Asteraceae), the ovary is unilocular and has a single ovule attached at the base, which is the defining feature of basal placentation. Marginal placentation occurs in legumes (pea), axile in Hibiscus and tomato (ovules at axis), and parietal in mustard (ovules on inner ovary wall)."
+    },
+    {
+      "id": 124,
+      "subject": "Botany",
+      "question": "Statement I: Phytochrome is a photoreceptor pigment sensitive to red and far-red light.\nStatement II: It exists in two interconvertible forms, Pr and Pfr, regulating photoperiodic responses.",
+      "options": {
+        "a": "Both statements are true",
+        "b": "Only I is true",
+        "c": "Only II is true",
+        "d": "Both statements are false"
+      },
+      "correct_option": "a",
+      "explanation": "Phytochrome is a blue-green pigment that senses red light (660 nm) and far-red light (730 nm). It exists in two forms: Pr (inactive, absorbs red) and Pfr (active, absorbs far-red). These two forms interconvert depending on light quality and regulate seed germination, flowering (photoperiodism), and shade avoidance. Hence both statements are true."
+    },
+    {
+      "id": 125,
+      "subject": "Botany",
+      "question": "Which statement about algae is correct?",
+      "options": {
+        "a": "All algae are multicellular and terrestrial",
+        "b": "Brown algae store food as laminarin and mannitol",
+        "c": "Red algae have chlorophyll a and chlorophyll b",
+        "d": "Green algae lack chlorophyll b"
+      },
+      "correct_option": "b",
+      "explanation": "Brown algae (Phaeophyceae, e.g., Laminaria, Sargassum) store reserve food as laminarin (a polysaccharide) and mannitol (a sugar alcohol). Red algae (Rhodophyceae) possess chlorophyll a and d, not b. Green algae (Chlorophyceae) contain chlorophyll a and b. Many algae are unicellular and aquatic, not all are multicellular or terrestrial."
+    },
+    {
+      "id": 126,
+      "subject": "Botany",
+      "question": "Which nutrient deficiency typically causes interveinal chlorosis first in the younger leaves of a plant?",
+      "options": {
+        "a": "Iron (Fe)",
+        "b": "Magnesium (Mg)",
+        "c": "Nitrogen (N)",
+        "d": "Potassium (K)"
+      },
+      "correct_option": "a",
+      "explanation": "Iron (Fe) is immobile in plants, so it cannot be readily translocated from older to younger leaves. Hence, Fe deficiency symptoms appear first in younger leaves as interveinal chlorosis (veins remain green, lamina turns yellow). In contrast, mobile elements like N, Mg, and K show deficiency symptoms in older leaves first, because they are relocated to younger tissues."
+    },
+    {
+      "id": 127,
+      "subject": "Botany",
+      "question": "Which gymnosperm has palm-like leaves and is called a 'living fossil'?",
+      "options": {
+        "a": "Pinus",
+        "b": "Cycas",
+        "c": "Ginkgo",
+        "d": "Ephedra"
+      },
+      "correct_option": "b",
+      "explanation": "Cycas is a gymnosperm with pinnately compound, palm-like leaves. It shows primitive features such as motile sperms and is therefore considered a 'living fossil'. Ginkgo biloba is also called a living fossil but it has fan-shaped leaves, not palm-like. Pinus has needle-like leaves and Ephedra has small scaly leaves."
+    },
+    {
+      "id": 128,
+      "subject": "Botany",
+      "question": "Which of the following is NOT a function of endosperm in angiosperms?",
+      "options": {
+        "a": "Providing nutrition to developing embryo",
+        "b": "Helping in seed dispersal",
+        "c": "Storing starch, oils, or proteins",
+        "d": "Supporting embryo until photosynthesis begins"
+      },
+      "correct_option": "b",
+      "explanation": "The endosperm serves as nutritive tissue, providing food reserves (starch, oils, proteins) to the developing embryo. It also supports the embryo until it becomes photosynthetic. Seed dispersal is instead facilitated by fruits (pericarp) and seed modifications (e.g., wings, hooks, hairs). Thus (b) is not a function of endosperm."
+    },
+    {
+      "id": 129,
+      "subject": "Botany",
+      "question": "Which of the following plants shows polyembryony?",
+      "options": {
+        "a": "Citrus",
+        "b": "Maize",
+        "c": "Wheat",
+        "d": "Rice"
+      },
+      "correct_option": "a",
+      "explanation": "Polyembryony refers to the presence of more than one embryo in a single seed. It occurs naturally in Citrus due to adventive embryos developing from nucellar tissue along with the zygotic embryo. It is also observed in Opuntia. Maize, wheat, and rice generally produce one embryo per seed."
+    },
+    {
+      "id": 130,
+      "subject": "Botany",
+      "question": "Which pair is correctly matched for seed/fruit dispersal?",
+      "options": {
+        "a": "Coconut — Hydrochory (water dispersal)",
+        "b": "Xanthium — Anemochory (wind dispersal)",
+        "c": "Maple (Acer) — Zoochory (animal dispersal)",
+        "d": "Tridax — Autochory (self-dispersal)"
+      },
+      "correct_option": "a",
+      "explanation": "Coconut fruits have fibrous, buoyant mesocarp and are dispersed by water (hydrochory). Xanthium has spiny burrs that cling to animals (epizoochory), Maple produces winged samaras that disperse by wind (anemochory), and Tridax seeds are also dispersed by wind, not by self-dispersal. Hence coconut–hydrochory is the correct match."
+    },
+    {
+      "id": 131,
+      "subject": "Botany",
+      "question": "Assertion (A): C3 plants are less efficient in hot, dry climates compared to C4 plants.\nReason (R): In C3 plants, RuBisCO frequently binds O2 instead of CO2 under such conditions, leading to photorespiration.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "C3 plants fix CO$_2$ through RuBisCO, but under hot and dry conditions, stomata close to prevent water loss, reducing internal CO$_2$ concentration. As a result, RuBisCO increasingly binds O$_2$, initiating photorespiration, which wastes ATP and NADPH and reduces sugar production. C4 plants, however, use PEP carboxylase in mesophyll cells to initially fix CO$_2$ into oxaloacetate (OAA), which is transported to bundle sheath cells where CO$_2$ is concentrated around RuBisCO. This adaptation minimizes photorespiration and makes C4 plants more efficient in such environments. Hence both A and R are true, and R explains A."
+    },
+    {
+      "id": 132,
+      "subject": "Botany",
+      "question": "Which of the following best describes sclerenchyma cells?",
+      "options": {
+        "a": "Living, thin-walled, with large vacuoles",
+        "b": "Dead, thick-walled, lignified, providing mechanical support",
+        "c": "Living, specialized for photosynthesis",
+        "d": "Living, non-lignified, providing temporary support"
+      },
+      "correct_option": "b",
+      "explanation": "Sclerenchyma cells are dead at maturity and are characterized by thick, lignified secondary walls. They provide rigidity and mechanical strength to plants, especially in stems, seed coats, and vascular tissues. They occur as fibers and sclereids. In contrast, parenchyma are living thin-walled cells, collenchyma are living and provide flexible support with unevenly thickened walls, and mesophyll cells are living and photosynthetic. Thus option (b) is correct."
+    },
+    {
+      "id": 133,
+      "subject": "Botany",
+      "question": "Which statement about pollen grains is correct?",
+      "options": {
+        "a": "Pollen grains are haploid, formed after meiosis in microspore mother cells",
+        "b": "Pollen grains are diploid, formed directly by mitosis in anthers",
+        "c": "Pollen grains are diploid, carrying both male and female gametes",
+        "d": "Pollen grains are haploid but never divide further"
+      },
+      "correct_option": "a",
+      "explanation": "Inside anthers, diploid microspore mother cells (2n) undergo meiosis to produce haploid microspores. These microspores develop into pollen grains, which are haploid and represent the male gametophyte. Each pollen grain undergoes mitosis to form a generative cell (producing two male gametes) and a vegetative cell (forming pollen tube). Therefore, pollen grains are haploid products of meiosis. Hence (a) is correct."
+    },
+    {
+      "id": 134,
+      "subject": "Botany",
+      "question": "Which of the following is an example of insect-pollinated (entomophilous) flower?",
+      "options": {
+        "a": "Wheat",
+        "b": "Rice",
+        "c": "Pea",
+        "d": "Maize"
+      },
+      "correct_option": "c",
+      "explanation": "Pea (Pisum sativum) is insect-pollinated (entomophilous). It shows adaptations like colorful petals, fragrance, nectar, and suitable floral structure that attract pollinators. In contrast, wheat, rice, and maize are grasses that rely on wind pollination (anemophily). Their flowers are small, inconspicuous, and produce large amounts of light pollen grains. Hence the correct answer is (c)."
+    },
+    {
+      "id": 135,
+      "subject": "Botany",
+      "question": "Statement I: In dicot seeds, cotyledons are rich in food storage and may emerge above ground during germination (epigeal).\nStatement II: In monocot seeds like maize, endosperm persists and provides nutrition to the embryo.",
+      "options": {
+        "a": "Both statements are true",
+        "b": "Only I is true",
+        "c": "Only II is true",
+        "d": "Both statements are false"
+      },
+      "correct_option": "a",
+      "explanation": "In dicot seeds (e.g., bean), food reserves are stored in the cotyledons. During germination, in epigeal type, the cotyledons may come above the soil and provide nutrition until photosynthesis starts. In monocot seeds (e.g., maize), a large persistent endosperm stores food for the embryo. The single cotyledon (scutellum) helps absorb nutrients from the endosperm. Thus both statements are true."
+    },
+    {
+      "id": 136,
+      "subject": "Zoology",
+      "question": "Assertion (A): Mammalian red blood cells lack nuclei and mitochondria.\nReason (R): This adaptation increases surface area for oxygen transport and ensures RBCs do not consume the oxygen they carry.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Mammalian RBCs (erythrocytes) are unique in being enucleated and lacking mitochondria at maturity. This adaptation maximizes the space available for hemoglobin, thereby increasing oxygen-carrying capacity. The absence of mitochondria ensures that RBCs rely on anaerobic glycolysis for ATP production, preventing them from using the oxygen they transport. The biconcave shape also increases surface area for diffusion of $\\mathrm{O_2}$ and $\\mathrm{CO_2}$. Hence both A and R are true, and R explains A."
+    },
+    {
+      "id": 137,
+      "subject": "Zoology",
+      "question": "Which statement about the cardiac cycle is correct?",
+      "options": {
+        "a": "The heart spends more time in systole than diastole",
+        "b": "The atria and ventricles contract simultaneously",
+        "c": "Ventricular systole forces blood into pulmonary artery and aorta",
+        "d": "Semilunar valves prevent backflow into atria"
+      },
+      "correct_option": "c",
+      "explanation": "The cardiac cycle lasts about $0.8\\,\\text{s}$, with atrial systole ($0.1\\,\\text{s}$), ventricular systole ($0.3\\,\\text{s}$), and joint diastole ($0.4\\,\\text{s}$). During ventricular systole, the ventricles contract, increasing pressure and forcing open the semilunar valves (aortic and pulmonary) so blood is pumped into the aorta and pulmonary artery. Atria do not contract simultaneously with ventricles; they contract earlier. The heart actually spends more time in diastole than systole, allowing filling. Semilunar valves prevent backflow into ventricles, not atria. Hence option (c) is correct."
+    },
+    {
+      "id": 138,
+      "subject": "Zoology",
+      "question": "Which hormone regulates basal metabolic rate in humans?",
+      "options": {
+        "a": "Insulin",
+        "b": "Thyroxine",
+        "c": "Glucagon",
+        "d": "Cortisol"
+      },
+      "correct_option": "b",
+      "explanation": "Thyroxine ($\\mathrm{T_4}$) and triiodothyronine ($\\mathrm{T_3}$), secreted by the thyroid gland, regulate basal metabolic rate (BMR). They stimulate oxygen consumption, mitochondrial activity, and regulate metabolism of proteins, carbohydrates, and fats. Hypothyroidism leads to reduced BMR (fatigue, weight gain), while hyperthyroidism increases BMR (weight loss, heat intolerance). Insulin and glucagon mainly control blood glucose, while cortisol regulates stress and protein catabolism. Hence thyroxine is the key regulator of BMR."
+    },
+    {
+      "id": 139,
+      "subject": "Zoology",
+      "question": "Statement I: Innate immunity is non-specific and present at birth.\nStatement II: Acquired immunity is specific and develops after exposure to antigens.",
+      "options": {
+        "a": "Both statements are true",
+        "b": "Only I is true",
+        "c": "Only II is true",
+        "d": "Both statements are false"
+      },
+      "correct_option": "a",
+      "explanation": "Innate immunity provides the body’s first line of defense and includes physical barriers (skin, mucosa), physiological barriers (pH, enzymes), cellular defenses (phagocytes, NK cells), and complement proteins. It is non-specific and present at birth. Acquired immunity (adaptive immunity) is highly specific, mediated by lymphocytes and antibodies, and develops after antigen exposure. It also has memory, enabling a faster response on re-exposure. Thus both statements are true."
+    },
+    {
+      "id": 140,
+      "subject": "Zoology",
+      "question": "Which of the following best describes the sliding filament theory of muscle contraction?",
+      "options": {
+        "a": "Actin and myosin filaments shorten during contraction",
+        "b": "Actin filaments slide past myosin filaments, shortening the sarcomere",
+        "c": "Myosin filaments slide past actin, lengthening the sarcomere",
+        "d": "ATP is not required for cross-bridge cycling"
+      },
+      "correct_option": "b",
+      "explanation": "According to the sliding filament theory, muscle contraction occurs when actin filaments slide inward between myosin filaments, causing the sarcomere (the functional unit of a myofibril) to shorten. Neither actin nor myosin filaments themselves change length. Cross-bridge cycling involves myosin heads binding actin, pulling (power stroke), and detaching with ATP hydrolysis. ATP is essential both for energizing myosin heads and for detachment after each stroke. Thus option (b) correctly describes the process."
+    },
+    {
+      "id": 141,
+      "subject": "Zoology",
+      "question": "Which of the following is correct about reflex actions?",
+      "options": {
+        "a": "They are voluntary and involve the brain directly",
+        "b": "They are involuntary, fast responses involving spinal cord or brainstem",
+        "c": "They are slow and involve complex processing",
+        "d": "They always require conscious control"
+      },
+      "correct_option": "b",
+      "explanation": "Reflex actions are automatic, involuntary, and protective responses mediated by the reflex arc. They bypass higher brain centers for speed, being coordinated by the spinal cord (e.g., withdrawal reflex) or brainstem (e.g., pupil reflex). Voluntary actions are under conscious control, unlike reflexes. This rapid mechanism minimizes damage to the body. Hence option (b) is correct."
+    },
+    {
+      "id": 142,
+      "subject": "Zoology",
+      "question": "Which of the following animals exhibits a closed circulatory system?",
+      "options": {
+        "a": "Cockroach",
+        "b": "Earthworm",
+        "c": "Prawn",
+        "d": "Housefly"
+      },
+      "correct_option": "b",
+      "explanation": "Earthworms (Annelida) have a closed circulatory system with blood confined to vessels (dorsal, ventral, and lateral hearts). This allows efficient transport of oxygen and nutrients. In contrast, arthropods such as cockroach, prawn, and housefly have open circulatory systems where hemolymph bathes tissues directly in body cavities (hemocoel). Hence option (b) is correct."
+    },
+    {
+      "id": 143,
+      "subject": "Zoology",
+      "question": "Assertion (A): The pancreas has both endocrine and exocrine functions.\nReason (R): The endocrine pancreas secretes digestive enzymes, while the exocrine pancreas secretes insulin and glucagon.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "The pancreas is a heterocrine gland, performing both endocrine and exocrine functions. The exocrine part (acinar cells) secretes digestive enzymes such as amylase, lipase, and proteases into the duodenum via pancreatic ducts. The endocrine part (Islets of Langerhans) secretes hormones—insulin, glucagon, and somatostatin—directly into blood. The Reason statement incorrectly reverses the roles. Hence Assertion is true but Reason is false."
+    },
+    {
+      "id": 144,
+      "subject": "Zoology",
+      "question": "Which of the following is an example of an amniote?",
+      "options": {
+        "a": "Frog",
+        "b": "Shark",
+        "c": "Pigeon",
+        "d": "Salamander"
+      },
+      "correct_option": "c",
+      "explanation": "Amniotes are vertebrates (reptiles, birds, mammals) whose embryos develop within an amnion, a protective fluid-filled membrane. This adaptation allows reproduction on land without dependence on water. Birds (e.g., pigeon) are amniotes. Amphibians (frog, salamander) lack an amnion, while fishes (shark) also do not possess this feature. Thus option (c) is correct."
+    },
+    {
+      "id": 145,
+      "subject": "Zoology",
+      "question": "Which statement about human excretory system is correct?",
+      "options": {
+        "a": "Ultrafiltration occurs in Bowman’s capsule due to high hydrostatic pressure in glomerular capillaries",
+        "b": "Loop of Henle actively secretes urea",
+        "c": "Collecting duct reabsorbs glucose under normal conditions",
+        "d": "Afferent arteriole has smaller diameter than efferent arteriole"
+      },
+      "correct_option": "a",
+      "explanation": "Ultrafiltration occurs in the renal corpuscle as blood enters glomerular capillaries under high hydrostatic pressure. The afferent arteriole has a wider diameter than the efferent arteriole, maintaining high pressure for filtration into Bowman’s capsule. The filtrate includes water, salts, glucose, and urea. The Loop of Henle reabsorbs water and salts, not urea. Glucose is reabsorbed in the proximal convoluted tubule, not in the collecting duct. Hence option (a) is correct."
+    },
+    {
+      "id": 146,
+      "subject": "Zoology",
+      "question": "Which of the following is NOT a function of the liver in humans?",
+      "options": {
+        "a": "Secretion of bile",
+        "b": "Detoxification of harmful substances",
+        "c": "Storage of glycogen and vitamins",
+        "d": "Production of insulin"
+      },
+      "correct_option": "d",
+      "explanation": "The liver is the largest gland in humans and performs vital functions such as bile secretion (for emulsification of fats), detoxification of alcohol/drugs, and storage of glycogen, iron, and fat-soluble vitamins (A, D, E, K). It also plays a role in protein metabolism and urea formation. Insulin, however, is secreted by $\\beta$-cells of the pancreas (Islets of Langerhans), not the liver. Hence option (d) is correct."
+    },
+    {
+      "id": 147,
+      "subject": "Zoology",
+      "question": "Statement I: The refractory period in a neuron prevents backward conduction of the action potential.\nStatement II: During refractory period, sodium channels remain inactivated after depolarization.",
+      "options": {
+        "a": "Both statements are true",
+        "b": "Only I is true",
+        "c": "Only II is true",
+        "d": "Both statements are false"
+      },
+      "correct_option": "a",
+      "explanation": "During an action potential, depolarization occurs due to $\\mathrm{Na^+}$ influx. Immediately after, sodium channels enter an inactivated state (absolute refractory period), preventing reopening. This ensures that the action potential travels only forward along the axon, not backward. During the relative refractory period, a stronger stimulus may generate another impulse. Thus both statements are true, and Statement II explains Statement I."
+    },
+    {
+      "id": 148,
+      "subject": "Zoology",
+      "question": "Which statement about haemoglobin is correct?",
+      "options": {
+        "a": "It binds oxygen irreversibly",
+        "b": "Oxygen binding is cooperative, shown by sigmoid oxygen dissociation curve",
+        "c": "Binding of one $\\mathrm{O_2}$ decreases affinity for the next $\\mathrm{O_2}$",
+        "d": "It carries only oxygen, not $\\mathrm{CO_2}$"
+      },
+      "correct_option": "b",
+      "explanation": "Hemoglobin (Hb) is a tetrameric protein with four heme groups. Its oxygen-binding shows *positive cooperativity*: binding of the first $\\mathrm{O_2}$ increases the affinity of remaining sites, producing a sigmoid (S-shaped) oxygen dissociation curve. Oxygen binding is reversible, allowing Hb to pick up oxygen in the lungs and release it in tissues. Hb also carries some $\\mathrm{CO_2}$ (as carbaminohemoglobin) and buffers $\\mathrm{H^+}$. Thus option (b) is correct."
+    },
+    {
+      "id": 149,
+      "subject": "Zoology",
+      "question": "Which of the following structures is NOT part of the human brainstem?",
+      "options": {
+        "a": "Medulla oblongata",
+        "b": "Pons",
+        "c": "Midbrain",
+        "d": "Cerebellum"
+      },
+      "correct_option": "d",
+      "explanation": "The brainstem is the lower part of the brain that connects with the spinal cord, consisting of the midbrain, pons, and medulla oblongata. These regions control vital functions such as breathing, heartbeat, and reflexes. The cerebellum, although located near the brainstem, is separate and mainly coordinates balance, posture, and fine motor control. Hence option (d) is correct."
+    },
+    {
+      "id": 150,
+      "subject": "Zoology",
+      "question": "Assertion (A): In human males, spermatogenesis is continuous after puberty.\nReason (R): Spermatogonia undergo mitotic and meiotic divisions in seminiferous tubules under the influence of hormones like FSH and testosterone.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Spermatogenesis begins at puberty under the influence of gonadotropins. Spermatogonia (diploid stem cells) divide mitotically and then meiotically in seminiferous tubules to produce haploid spermatids, which differentiate into spermatozoa. FSH stimulates Sertoli cells to support spermatogenesis, while LH stimulates Leydig cells to secrete testosterone, which promotes sperm production. This process continues throughout adult life. Thus both A and R are true, and R explains A."
+    },
+    {
+      "id": 151,
+      "subject": "Zoology",
+      "question": "Which of the following is NOT a function of the lymphatic system?",
+      "options": {
+        "a": "Return of interstitial fluid to the blood",
+        "b": "Transport of absorbed lipids from intestine",
+        "c": "Production of red blood cells in adults",
+        "d": "Defense against pathogens"
+      },
+      "correct_option": "c",
+      "explanation": "The lymphatic system returns excess tissue fluid to the bloodstream, transports dietary lipids via lacteals, and plays a crucial role in immunity through lymph nodes and lymphocytes. In adults, red blood cell production occurs in red bone marrow (hematopoiesis), not in lymphatic organs. Thus option (c) is correct."
+    },
+    {
+      "id": 152,
+      "subject": "Zoology",
+      "question": "Statement I: Osteocytes reside in lacunae of bone tissue.\nStatement II: Canaliculi connect lacunae, allowing exchange of nutrients and waste.",
+      "options": {
+        "a": "Both statements are true",
+        "b": "Only I is true",
+        "c": "Only II is true",
+        "d": "Both statements are false"
+      },
+      "correct_option": "a",
+      "explanation": "Bone tissue is composed of osteocytes (mature bone cells) located in small cavities called lacunae. These cells are interconnected through tiny canals called canaliculi, which allow diffusion of nutrients and waste between osteocytes and blood vessels in Haversian canals. This ensures survival of bone cells in the hard matrix. Thus both statements are true."
+    },
+    {
+      "id": 153,
+      "subject": "Zoology",
+      "question": "Which of the following vitamin deficiencies causes pernicious anemia?",
+      "options": {
+        "a": "Vitamin B1",
+        "b": "Vitamin B6",
+        "c": "Vitamin B12",
+        "d": "Vitamin K"
+      },
+      "correct_option": "c",
+      "explanation": "Vitamin $\\mathrm{B_{12}}$ deficiency causes pernicious anemia due to impaired DNA synthesis in rapidly dividing red blood cell precursors. It also involves lack of intrinsic factor needed for absorption. $\\mathrm{B_1}$ deficiency leads to beriberi, $\\mathrm{B_6}$ deficiency causes neurological issues, and vitamin $\\mathrm{K}$ deficiency impairs blood clotting. Thus option (c) is correct."
+    },
+    {
+      "id": 154,
+      "subject": "Zoology",
+      "question": "Which group of vertebrates has a three-chambered heart with incomplete separation of oxygenated and deoxygenated blood?",
+      "options": {
+        "a": "Fishes",
+        "b": "Amphibians",
+        "c": "Birds",
+        "d": "Mammals"
+      },
+      "correct_option": "b",
+      "explanation": "Amphibians have a three-chambered heart consisting of two atria and one ventricle. Oxygenated and deoxygenated blood mix partially in the ventricle, resulting in less efficient oxygen delivery. Most reptiles also have a similar structure with partial separation. Fishes have a two-chambered heart, while birds and mammals possess fully separated four-chambered hearts. Hence option (b) is correct."
+    },
+    {
+      "id": 155,
+      "subject": "Zoology",
+      "question": "Which statement about human reproduction is correct?",
+      "options": {
+        "a": "Fertilization occurs in the uterus",
+        "b": "Corpus luteum forms from Graafian follicle after ovulation",
+        "c": "Implantation occurs in the fallopian tube",
+        "d": "LH surge maintains pregnancy throughout gestation"
+      },
+      "correct_option": "b",
+      "explanation": "In humans, fertilization occurs in the ampullary-isthmic junction of the fallopian tube, not in the uterus. After ovulation, the ruptured Graafian follicle transforms into the corpus luteum, which secretes progesterone to maintain the uterine lining for possible implantation. Implantation normally occurs in the uterus (not tube; implantation in tube is ectopic pregnancy). The LH surge induces ovulation but does not maintain pregnancy; instead, $\\mathrm{hCG}$ from the embryo maintains the corpus luteum in early pregnancy. Thus option (b) is correct."
+    },
+    {
+      "id": 156,
+      "subject": "Zoology",
+      "question": "Assertion (A): The sinoatrial (SA) node is called the pacemaker of the heart.\nReason (R): The SA node initiates the heartbeat by generating action potentials that spread through the atria and then to the ventricles.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "The SA node (in the right atrial wall near the superior vena cava) has the highest rate of spontaneous depolarization (automaticity) among cardiac tissues due to its unstable resting potential (phase 4 pacemaker current). It initiates each cardiac cycle; impulses spread across atrial myocardium (via internodal pathways/Bachmann’s bundle), reach the AV node (physiological delay), then travel through the His–Purkinje system to depolarize ventricles. This dominant initiation is why the SA node is termed the pacemaker. Hence both statements are true and R explains A."
+    },
+    {
+      "id": 157,
+      "subject": "Zoology",
+      "question": "Which of the following structures is derived from ectoderm during embryonic development?",
+      "options": {
+        "a": "Nervous system and epidermis",
+        "b": "Muscles and bones",
+        "c": "Kidneys and gonads",
+        "d": "Circulatory system"
+      },
+      "correct_option": "a",
+      "explanation": "Germ layer fates: Ectoderm → central and peripheral nervous system, epidermis (skin), hair, nails, lens, enamel; Mesoderm → muscles, bones, connective tissues, kidneys, gonads, blood and vessels; Endoderm → epithelial lining of digestive/respiratory tracts and associated glands. Therefore \"nervous system and epidermis\" correctly matches ectoderm."
+    },
+    {
+      "id": 158,
+      "subject": "Zoology",
+      "question": "Which statement about synapses is correct?",
+      "options": {
+        "a": "Electrical synapses are more common than chemical synapses in humans",
+        "b": "At chemical synapses, neurotransmitters cross the synaptic cleft to transmit signals",
+        "c": "Synapses conduct impulses equally well in both directions",
+        "d": "Neurotransmitters are always excitatory"
+      },
+      "correct_option": "b",
+      "explanation": "Most mammalian synapses are chemical. An arriving action potential triggers $\\mathrm{Ca^{2+}}$ influx at the presynaptic terminal, synaptic vesicles fuse, and neurotransmitter diffuses across the cleft to bind postsynaptic receptors, generating EPSPs or IPSPs. Electrical synapses (gap junctions) are relatively rare in humans. Chemical synapses are functionally unidirectional (pre → post), and neurotransmitters can be excitatory (e.g., glutamate) or inhibitory (e.g., GABA, glycine)."
+    },
+    {
+      "id": 159,
+      "subject": "Zoology",
+      "question": "Which of the following is correct about digestion in ruminants?",
+      "options": {
+        "a": "Cellulose digestion occurs in the rumen and reticulum with help of microbes",
+        "b": "Abomasum is the site of microbial fermentation",
+        "c": "Omasum is the true stomach secreting enzymes",
+        "d": "Cellulose digestion occurs in abomasum by ruminant enzymes alone"
+      },
+      "correct_option": "a",
+      "explanation": "Ruminants possess a four-chambered stomach. Rumen + reticulum host symbiotic microbes that ferment cellulose and hemicellulose, producing volatile fatty acids (major energy source). Omasum mainly absorbs water and salts; abomasum is the true glandular stomach secreting acid and proteolytic enzymes. The animal itself lacks cellulase—microbes supply it—so (a) is correct."
+    },
+    {
+      "id": 160,
+      "subject": "Zoology",
+      "question": "Which factor shifts the oxyhemoglobin dissociation curve to the right, thereby facilitating oxygen unloading to tissues?",
+      "options": {
+        "a": "Decreased temperature",
+        "b": "Decreased 2,3-BPG (DPG)",
+        "c": "Decreased $\\mathrm{CO_2}$ (hypocapnia)",
+        "d": "Decreased pH (acidosis)"
+      },
+      "correct_option": "d",
+      "explanation": "Right shift (reduced $\\mathrm{O_2}$ affinity → enhanced unloading) occurs with increased temperature, increased $\\mathrm{CO_2}$, increased 2,3-BPG, and decreased pH (Bohr effect). Options (a), (b), and (c) would favor a left shift, increasing affinity. Thus decreased pH (acidosis) correctly causes a right shift."
+    },
+    {
+      "id": 161,
+      "subject": "Zoology",
+      "question": "Which group of vertebrates is characterized by external fertilization and development in water?",
+      "options": {
+        "a": "Amphibians",
+        "b": "Birds",
+        "c": "Mammals",
+        "d": "Reptiles"
+      },
+      "correct_option": "a",
+      "explanation": "Most amphibians (e.g., frogs, toads) exhibit external fertilization: eggs and sperm are released into water where fertilization and early development occur. Birds and mammals have internal fertilization with terrestrial development (amniotes). Many reptiles also have internal fertilization with shelled eggs or live birth."
+    },
+    {
+      "id": 162,
+      "subject": "Zoology",
+      "question": "Which statement about antibodies is correct?",
+      "options": {
+        "a": "They are produced by T-lymphocytes",
+        "b": "They are immunoglobulin proteins secreted by plasma cells",
+        "c": "They directly kill pathogens",
+        "d": "They are hormones regulating immunity"
+      },
+      "correct_option": "b",
+      "explanation": "Antibodies (immunoglobulins IgG, IgM, IgA, IgE, IgD) are produced and secreted by plasma cells (terminally differentiated B-lymphocytes). They bind antigens to neutralize, opsonize, or activate complement; they do not directly kill pathogens like cytotoxic T cells do. Thus (b) is correct."
+    },
+    {
+      "id": 163,
+      "subject": "Zoology",
+      "question": "Which vitamin is necessary for normal blood clotting?",
+      "options": {
+        "a": "Vitamin A",
+        "b": "Vitamin C",
+        "c": "Vitamin D",
+        "d": "Vitamin K"
+      },
+      "correct_option": "d",
+      "explanation": "Vitamin $\\mathrm{K}$ is required for hepatic $\\gamma$-carboxylation of glutamate residues in clotting factors II (prothrombin), VII, IX, and X (and proteins C and S). Deficiency or antagonism (e.g., warfarin) impairs coagulation and prolongs bleeding."
+    },
+    {
+      "id": 164,
+      "subject": "Zoology",
+      "question": "Assertion (A): In human females, LH surge triggers ovulation.\nReason (R): High levels of estrogen before ovulation provide positive feedback on the hypothalamus and pituitary, increasing LH secretion.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Late follicular phase estradiol rises and—unlike the usual negative feedback—exerts positive feedback on the hypothalamus (↑ GnRH) and anterior pituitary (↑ LH), producing the mid-cycle LH surge that induces ovulation (follicular rupture and oocyte release). Therefore both statements are true and the Reason explains the Assertion."
+    },
+    {
+      "id": 165,
+      "subject": "Zoology",
+      "question": "Which of the following is correct regarding human lymph nodes?",
+      "options": {
+        "a": "They filter blood and remove old RBCs",
+        "b": "They filter lymph and act as sites of lymphocyte activation",
+        "c": "They produce bile for fat digestion",
+        "d": "They are endocrine glands secreting hormones"
+      },
+      "correct_option": "b",
+      "explanation": "Lymph nodes are small, encapsulated lymphoid organs along lymphatic vessels. Afferent lymph enters, antigens are trapped and presented to lymphocytes; germinal centers support B-cell proliferation and antibody production. The spleen—not lymph nodes—filters blood and removes senescent RBCs. Lymph nodes neither produce bile nor function as endocrine glands."
+    },
+    {
+      "id": 166,
+      "subject": "Zoology",
+      "question": "Which of the following hormones is secreted by the posterior pituitary?",
+      "options": {
+        "a": "Oxytocin",
+        "b": "Prolactin",
+        "c": "Growth hormone",
+        "d": "Thyroid-stimulating hormone"
+      },
+      "correct_option": "a",
+      "explanation": "The posterior pituitary (neurohypophysis) does not synthesize hormones but stores and releases oxytocin and vasopressin (antidiuretic hormone, ADH), both produced in the hypothalamic supraoptic and paraventricular nuclei. Oxytocin regulates uterine contractions and milk ejection; ADH regulates water balance. Prolactin, growth hormone (GH), and thyroid-stimulating hormone (TSH) are secreted by the anterior pituitary (adenohypophysis)."
+    },
+    {
+      "id": 167,
+      "subject": "Zoology",
+      "question": "Statement I: The myelin sheath in the central nervous system is formed by Schwann cells.\nStatement II: In the peripheral nervous system, Schwann cells form the myelin sheath.",
+      "options": {
+        "a": "Both statements are true",
+        "b": "Only I is true",
+        "c": "Only II is true",
+        "d": "Both statements are false"
+      },
+      "correct_option": "c",
+      "explanation": "In the central nervous system (CNS), myelin is produced by oligodendrocytes, each of which can myelinate multiple axons. In the peripheral nervous system (PNS), Schwann cells form the myelin sheath, each cell myelinating a segment of a single axon. Thus Statement I is false and Statement II is true."
+    },
+    {
+      "id": 168,
+      "subject": "Zoology",
+      "question": "Which of the following structures is homologous to the wings of a bat?",
+      "options": {
+        "a": "Wings of a butterfly",
+        "b": "Flippers of a whale",
+        "c": "Wings of a bird",
+        "d": "Antennae of insects"
+      },
+      "correct_option": "c",
+      "explanation": "Homologous organs arise from the same embryonic origin but may perform different functions. Bat wings and bird wings are both derived from the forelimb skeleton of vertebrates (radius, ulna, metacarpals), hence homologous. Whale flippers are also homologous forelimb modifications. Butterfly wings and insect antennae are analogous (different origin, similar function)."
+    },
+    {
+      "id": 169,
+      "subject": "Zoology",
+      "question": "Which of the following blood components is essential for blood clotting?",
+      "options": {
+        "a": "Erythrocytes",
+        "b": "Leukocytes",
+        "c": "Platelets",
+        "d": "Albumin"
+      },
+      "correct_option": "c",
+      "explanation": "Platelets (thrombocytes) are cytoplasmic fragments of megakaryocytes that aggregate at injury sites and release clotting factors (e.g., platelet factor 3) initiating the coagulation cascade. RBCs (erythrocytes) transport gases, WBCs (leukocytes) defend against pathogens, and plasma protein albumin maintains oncotic pressure. Thus platelets are essential for clotting."
+    },
+    {
+      "id": 170,
+      "subject": "Zoology",
+      "question": "Assertion (A): Pulmonary veins carry oxygenated blood.\nReason (R): They transport blood from the lungs to the left atrium.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Pulmonary veins are unique among veins: they carry oxygen-rich blood from the lungs to the left atrium. Most veins normally carry deoxygenated blood. Thus both the Assertion and Reason are correct, and R explains A."
+    },
+    {
+      "id": 171,
+      "subject": "Zoology",
+      "question": "Which statement about the human ear is correct?",
+      "options": {
+        "a": "Eustachian tube connects middle ear to pharynx and equalizes pressure",
+        "b": "Cochlea is part of the middle ear responsible for balance",
+        "c": "Ear ossicles are three bones located in the inner ear",
+        "d": "Semicircular canals are responsible for hearing"
+      },
+      "correct_option": "a",
+      "explanation": "The Eustachian tube connects the middle ear cavity with the nasopharynx to equalize air pressure across the tympanic membrane. The cochlea (inner ear) is the organ of hearing, while semicircular canals (also inner ear) detect angular acceleration and help maintain balance. Ear ossicles (malleus, incus, stapes) are located in the middle ear, not the inner ear."
+    },
+    {
+      "id": 172,
+      "subject": "Zoology",
+      "question": "Which group of animals is characterized by a four-chambered heart and uricotelic excretion?",
+      "options": {
+        "a": "Amphibians",
+        "b": "Birds",
+        "c": "Mammals",
+        "d": "Reptiles (all)"
+      },
+      "correct_option": "b",
+      "explanation": "Birds have a completely divided four-chambered heart (like mammals), ensuring separation of oxygenated and deoxygenated blood. They are uricotelic—excreting nitrogen as uric acid crystals to conserve water. Mammals are mostly ureotelic, amphibians are ammonotelic or ureotelic, and reptiles (except crocodilians with 4-chambered hearts) generally have 3-chambered hearts."
+    },
+    {
+      "id": 173,
+      "subject": "Zoology",
+      "question": "Which of the following animals shows metamorphosis?",
+      "options": {
+        "a": "Earthworm",
+        "b": "Frog",
+        "c": "Whale",
+        "d": "Pigeon"
+      },
+      "correct_option": "b",
+      "explanation": "Frog undergoes complete metamorphosis: aquatic larval stage (tadpole with gills, tail, herbivorous diet) transforms into terrestrial adult (lungs, limbs, carnivorous). Earthworm, whale, and pigeon exhibit direct development without dramatic morphological change from juvenile to adult."
+    },
+    {
+      "id": 174,
+      "subject": "Zoology",
+      "question": "Which of the following statements about DNA replication in eukaryotes is correct?",
+      "options": {
+        "a": "It is conservative replication",
+        "b": "It begins at a single origin of replication",
+        "c": "It is semi-conservative and bidirectional, with multiple origins of replication",
+        "d": "It is unidirectional and dispersive"
+      },
+      "correct_option": "c",
+      "explanation": "DNA replication in eukaryotes is semi-conservative (each daughter double helix has one parental and one new strand). Replication initiates at many origins of replication across the large linear chromosomes, and replication forks move in both directions (bidirectional). Thus option (c) is correct."
+    },
+    {
+      "id": 175,
+      "subject": "Zoology",
+      "question": "Which statement about the structure of nephron is correct?",
+      "options": {
+        "a": "Bowman’s capsule is the site of selective reabsorption",
+        "b": "Loop of Henle creates osmotic gradient in the medulla",
+        "c": "Collecting duct filters blood plasma",
+        "d": "Proximal tubule is impermeable to water"
+      },
+      "correct_option": "b",
+      "explanation": "The Loop of Henle establishes a medullary osmotic gradient via countercurrent multiplication: descending limb permeable to water, ascending limb impermeable to water but actively transports $\\mathrm{Na^+}$ and $\\mathrm{Cl^-}$. This gradient allows collecting ducts to reabsorb variable amounts of water under ADH control. Bowman’s capsule performs ultrafiltration (not reabsorption). The proximal tubule is highly permeable to water."
+    },
+    {
+      "id": 176,
+      "subject": "Zoology",
+      "question": "Assertion (A): Human lungs are covered by a double-layered pleura.\nReason (R): The pleural fluid between the layers reduces friction during breathing movements.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true but R is not the correct explanation of A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Each human lung is enclosed by two membranes: the visceral pleura (covering the lung surface) and the parietal pleura (lining the thoracic cavity). Between them lies the pleural cavity containing pleural fluid, which reduces friction during inspiration and expiration and ensures adhesion between the lung and chest wall. Thus both Assertion and Reason are true, and R correctly explains A."
+    },
+    {
+      "id": 177,
+      "subject": "Zoology",
+      "question": "Which type of epithelial tissue forms the lining of kidney tubules?",
+      "options": {
+        "a": "Simple squamous epithelium",
+        "b": "Stratified squamous epithelium",
+        "c": "Simple cuboidal epithelium",
+        "d": "Columnar epithelium"
+      },
+      "correct_option": "c",
+      "explanation": "Kidney tubules (especially proximal and distal convoluted tubules) are lined by simple cuboidal epithelium. These cube-shaped cells with centrally placed nuclei facilitate secretion and reabsorption. Simple squamous epithelium forms thin diffusion surfaces (alveoli, endothelium), columnar epithelium lines absorptive organs like the intestine, and stratified squamous epithelium provides protection (e.g., skin, esophagus)."
+    },
+    {
+      "id": 178,
+      "subject": "Zoology",
+      "question": "Which of the following correctly pairs an enzyme with its substrate?",
+      "options": {
+        "a": "Pepsin – Fats",
+        "b": "Lipase – Proteins",
+        "c": "Amylase – Starch",
+        "d": "Trypsin – DNA"
+      },
+      "correct_option": "c",
+      "explanation": "Amylase (salivary and pancreatic) hydrolyzes starch (polysaccharide) into maltose and smaller sugars. Pepsin and trypsin are proteolytic enzymes acting on proteins. Lipase digests triglycerides into glycerol and fatty acids. DNA is digested by nucleases (DNase), not trypsin. Hence the correct pairing is Amylase – Starch."
+    },
+    {
+      "id": 179,
+      "subject": "Zoology",
+      "question": "Which statement about human reproduction is correct?",
+      "options": {
+        "a": "Fertilization normally occurs in the isthmus of fallopian tube",
+        "b": "Progesterone maintains the endometrium during pregnancy",
+        "c": "Implantation normally occurs in the cervix",
+        "d": "Oogenesis produces four functional ova from one oogonium"
+      },
+      "correct_option": "b",
+      "explanation": "In humans, fertilization typically occurs in the ampullary region of the fallopian tube, not the isthmus. Implantation occurs in the uterine endometrium, not cervix. Oogenesis produces one functional ovum and three polar bodies** per oogonium. Progesterone, secreted by the corpus luteum and later by the placenta, maintains the endometrium for pregnancy, preventing menstruation. Thus option (b) is correct."
+    },
+    {
+      "id": 180,
+      "subject": "Zoology",
+      "question": "Which of the following organisms is the primary host of Plasmodium species causing malaria?",
+      "options": {
+        "a": "Human",
+        "b": "Female Anopheles mosquito",
+        "c": "Male Anopheles mosquito",
+        "d": "Housefly"
+      },
+      "correct_option": "b",
+      "explanation": "Plasmodium has two hosts: the female Anopheles mosquito and humans. The mosquito is the definitive (primary) host because sexual reproduction (sporogony) of Plasmodium occurs in its gut. Humans are the **intermediate host**, where asexual reproduction (schizogony) occurs in liver cells and red blood cells, causing malaria symptoms. Male mosquitoes and houseflies are not hosts."
+    }
+  ]
+}

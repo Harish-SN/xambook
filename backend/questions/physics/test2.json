@@ -1,0 +1,547 @@
+{
+  "test_number": 2,
+  "subject": "Physics",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Two forces $10\\,\\text{N}$ and $6\\,\\text{N}$ act at a point at $60^{\\circ}$ to each other. The magnitude of the resultant is:",
+      "options": {
+        "a": "$4\\,\\text{N}$",
+        "b": "$8\\,\\text{N}$",
+        "c": "$12\\,\\text{N}$",
+        "d": "$14\\,\\text{N}$"
+      },
+      "correct_option": "d",
+      "explanation": "The resultant of two forces at an angle $\\theta$ is given by $R = \\sqrt{F_1^2 + F_2^2 + 2 F_1 F_2 \\cos\\theta}$. Here, $F_1 = 10$ N, $F_2 = 6$ N, $\\theta = 60^\\circ$. Then $R = \\sqrt{10^2 + 6^2 + 2 \\cdot 10 \\cdot 6 \\cdot \\cos 60^\\circ} = \\sqrt{100 + 36 + 60} = \\sqrt{196} = 14$ N."
+    },
+    {
+      "id": 2,
+      "question": "A particle moves in a circle of radius $0.5\\,\\text{m}$ with angular speed $12\\,\\text{rad s}^{-1}$. The centripetal acceleration is:",
+      "options": {
+        "a": "$36\\,\\text{m s}^{-2}$",
+        "b": "$48\\,\\text{m s}^{-2}$",
+        "c": "$72\\,\\text{m s}^{-2}$",
+        "d": "$144\\,\\text{m s}^{-2}$"
+      },
+      "correct_option": "c",
+      "explanation": "Centripetal acceleration is $a_c = \\omega^2 r$. With $\\omega = 12$ rad/s, $r = 0.5$ m: $a_c = 12^2 \\cdot 0.5 = 144 \\cdot 0.5 = 72$ m/s$^2$.",
+      "diagram_url": "https://d3g79yng5irpee.cloudfront.net/diagrams/physics/test2/2.png"
+    },
+    {
+      "id": 3,
+      "question": "A force of $50\\,\\text{N}$ displaces a body by $2\\,\\text{m}$ in the direction of the force. The work done is:",
+      "options": {
+        "a": "$25\\,\\text{J}$",
+        "b": "$50\\,\\text{J}$",
+        "c": "$75\\,\\text{J}$",
+        "d": "$100\\,\\text{J}$"
+      },
+      "correct_option": "d",
+      "explanation": "Work done is $W = F s \\cos\\theta$, where $\\theta$ is the angle between force and displacement. Here $\\theta = 0^\\circ$, so $\\cos 0 = 1$. Therefore, $W = 50 \\times 2 \\times 1 = 100$ J."
+    },
+    {
+      "id": 4,
+      "question": "A car of mass $1000\\,\\text{kg}$ moves at $72\\,\\text{km h}^{-1}$. Its kinetic energy is:",
+      "options": {
+        "a": "$2.0\\times10^{5}\\,\\text{J}$",
+        "b": "$1.0\\times10^{5}\\,\\text{J}$",
+        "c": "$5.0\\times10^{5}\\,\\text{J}$",
+        "d": "$2.5\\times10^{5}\\,\\text{J}$"
+      },
+      "correct_option": "a",
+      "explanation": "Convert speed to m/s: $72$ km/h = $72 \\cdot 1000 / 3600 = 20$ m/s. Kinetic energy $K = \\frac{1}{2} m v^2 = 0.5 \\cdot 1000 \\cdot 20^2 = 0.5 \\cdot 1000 \\cdot 400 = 2.0 \\times 10^5$ J."
+    },
+    {
+      "id": 5,
+      "question": "A $1.0\\,\\text{kg}$ stone tied to a string of length $1.5\\,\\text{m}$ is whirled in a horizontal circle with speed $6\\,\\text{m s}^{-1}$. The tension in the string is:",
+      "options": {
+        "a": "$12\\,\\text{N}$",
+        "b": "$18\\,\\text{N}$",
+        "c": "$24\\,\\text{N}$",
+        "d": "$30\\,\\text{N}$"
+      },
+      "correct_option": "c",
+      "explanation": "Centripetal force is provided by tension: $T = m v^2 / r = 1 \\cdot 6^2 / 1.5 = 36 / 1.5 = 24$ N."
+    },
+    {
+      "id": 6,
+      "question": "Two bodies of masses $1\\,\\text{kg}$ and $4\\,\\text{kg}$ are connected over a frictionless pulley. The acceleration is ($g=10\\,\\text{m s}^{-2}$):",
+      "options": {
+        "a": "$2\\,\\text{m s}^{-2}$",
+        "b": "$4\\,\\text{m s}^{-2}$",
+        "c": "$6\\,\\text{m s}^{-2}$",
+        "d": "$8\\,\\text{m s}^{-2}$"
+      },
+      "correct_option": "c",
+      "explanation": "Acceleration for Atwood's machine: $a = \\dfrac{(m_2 - m_1) g}{m_1 + m_2} = \\dfrac{(4-1) \\cdot 10}{1+4} = 30/5 = 6$ m/s$^2$."
+    },
+    {
+      "id": 7,
+      "question": "The gravitational potential energy of a $2\\,\\text{kg}$ body at a height $5\\,\\text{m}$ above ground is ($g=10\\,\\text{m s}^{-2}$):",
+      "options": {
+        "a": "$10\\,\\text{J}$",
+        "b": "$20\\,\\text{J}$",
+        "c": "$50\\,\\text{J}$",
+        "d": "$100\\,\\text{J}$"
+      },
+      "correct_option": "d",
+      "explanation": "Gravitational potential energy $U = m g h = 2 \\cdot 10 \\cdot 5 = 100$ J."
+    },
+    {
+      "id": 8,
+      "question": "A bullet of mass $0.02\\,\\text{kg}$ moving at $100\\,\\text{m s}^{-1}$ embeds into a block of mass $0.98\\,\\text{kg}$ on a smooth surface. Velocity of block-bullet system is:",
+      "options": {
+        "a": "$1\\,\\text{m s}^{-1}$",
+        "b": "$2\\,\\text{m s}^{-1}$",
+        "c": "$3\\,\\text{m s}^{-1}$",
+        "d": "$4\\,\\text{m s}^{-1}$"
+      },
+      "correct_option": "b",
+      "explanation": "Use momentum conservation: $p_i = m_b v_b + m_B v_B = 0.02 \\cdot 100 + 0.98 \\cdot 0 = 2.0$ kg·m/s. Total mass after collision = 0.02+0.98=1 kg. Velocity $v_f = p / m = 2.0 / 1.0 = 2$ m/s."
+    },
+    {
+      "id": 9,
+      "question": "A $0.5\\,\\text{kg}$ ball is dropped from $10\\,\\text{m}$. Speed on striking ground is (take $g=10\\,\\text{m s}^{-2}$):",
+      "options": {
+        "a": "$10\\,\\text{m s}^{-1}$",
+        "b": "$14\\,\\text{m s}^{-1}$",
+        "c": "$20\\,\\text{m s}^{-1}$",
+        "d": "$25\\,\\text{m s}^{-1}$"
+      },
+      "correct_option": "b",
+      "explanation": "Velocity from $v = \\sqrt{2 g h} = \\sqrt{2 \\cdot 10 \\cdot 10} = \\sqrt{200} \\approx 14.1$ m/s."
+    },
+    {
+      "id": 10,
+      "question": "Two resistors $6\\,\\Omega$ and $12\\,\\Omega$ are connected in parallel. The equivalent resistance is:",
+      "options": {
+        "a": "$4\\,\\Omega$",
+        "b": "$6\\,\\Omega$",
+        "c": "$8\\,\\Omega$",
+        "d": "$12\\,\\Omega$"
+      },
+      "correct_option": "a",
+      "explanation": "For resistors in parallel: $R_{eq} = \\frac{R_1 R_2}{R_1 + R_2} = \\frac{6 \\cdot 12}{6+12} = 72 / 18 = 4\\,\\Omega$."
+    },
+    {
+      "id": 11,
+      "question": "The focal length of a convex lens is $25\\,\\text{cm}$. Its optical power is:",
+      "options": {
+        "a": "$2\\,\\text{D}$",
+        "b": "$3\\,\\text{D}$",
+        "c": "$4\\,\\text{D}$",
+        "d": "$5\\,\\text{D}$"
+      },
+      "correct_option": "c",
+      "explanation": "Optical power $P$ (in diopters) is related to focal length $f$ (in cm) by $P = \\dfrac{100}{f(\\text{cm})}$. Here, $f = 25$ cm, so $P = 100/25 = 4$ D. Positive since convex lens is converging."
+    },
+    {
+      "id": 12,
+      "question": "The half-life of a radioactive isotope is $10\\,\\text{days}$. In $30\\,\\text{days}$, the fraction of the sample remaining undecayed is:",
+      "options": {
+        "a": "$\\tfrac{1}{8}$",
+        "b": "$\\tfrac{1}{16}$",
+        "c": "$\\tfrac{1}{4}$",
+        "d": "$\\tfrac{1}{2}$"
+      },
+      "correct_option": "a",
+      "explanation": "Number of half-lives $n = 30/10 = 3$. Remaining fraction $= (1/2)^n = (1/2)^3 = 1/8$."
+    },
+    {
+      "id": 13,
+      "question": "An electron is accelerated through a potential difference of $200\\,\\text{V}$. The kinetic energy gained is:",
+      "options": {
+        "a": "$200\\,\\text{eV}$",
+        "b": "$100\\,\\text{eV}$",
+        "c": "$400\\,\\text{eV}$",
+        "d": "$600\\,\\text{eV}$"
+      },
+      "correct_option": "a",
+      "explanation": "Kinetic energy gained by electron $K = eV = 200$ eV. In joules: $K = 200 \\cdot 1.6\\times10^{-19} = 3.2\\times10^{-17}$ J."
+    },
+    {
+      "id": 14,
+      "question": "In Young’s double slit experiment, slits are $0.20\\,\\text{mm}$ apart, screen is $1.0\\,\\text{m}$ away, and light wavelength $600\\,\\text{nm}$. The fringe width is:",
+      "options": {
+        "a": "$1.5\\,\\text{mm}$",
+        "b": "$2.0\\,\\text{mm}$",
+        "c": "$3.0\\,\\text{mm}$",
+        "d": "$4.0\\,\\text{mm}$"
+      },
+      "correct_option": "c",
+      "explanation": "Fringe width $\\beta = \\dfrac{\\lambda D}{d}$, with $\\lambda = 600$ nm $=6.0\\times10^{-7}$ m, $D=1$ m, $d=0.20$ mm $=2.0\\times10^{-4}$ m. Then $\\beta = (6.0\\times10^{-7} \\cdot 1)/(2.0\\times10^{-4}) = 3.0\\times10^{-3}$ m $= 3.0$ mm."
+    },
+    {
+      "id": 15,
+      "question": "A steady current of $2\\,\\text{A}$ flows for $3\\,\\text{minutes}$. The total charge passed is:",
+      "options": {
+        "a": "$60\\,\\text{C}$",
+        "b": "$180\\,\\text{C}$",
+        "c": "$240\\,\\text{C}$",
+        "d": "$360\\,\\text{C}$"
+      },
+      "correct_option": "d",
+      "explanation": "Total charge $Q = I t = 2 \\cdot (3\\,\\text{min} \\cdot 60\\,\\text{s/min}) = 2 \\cdot 180 = 360$ C."
+    },
+    {
+      "id": 16,
+      "question": "A swimmer can swim with speed $5\\,\\text{km/h}$ in still water. He wants to cross a river of width $1\\,\\text{km}$ flowing at $3\\,\\text{km/h}$. If he swims perpendicular to the current, the time taken to cross the river is:",
+      "options": {
+        "a": "10 min",
+        "b": "12 min",
+        "c": "15 min",
+        "d": "20 min"
+      },
+      "correct_option": "b",
+      "explanation": "Time to cross depends on component of velocity perpendicular to river. Here, he swims straight across: $t = \\text{width}/v_{swim} = 1 / 5$ h = 0.2 h = 12 min."
+    },
+    {
+      "id": 17,
+      "question": "A $2\\,\\text{kg}$ block on rough surface ($\\mu_s=0.5$, $\\mu_k=0.4$). A force $F=12\\,\\text{N}$ acts. Find acceleration ($g=10$):",
+      "options": {
+        "a": "$0\\,\\text{m s}^{-2}$",
+        "b": "$1\\,\\text{m s}^{-2}$",
+        "c": "$2\\,\\text{m s}^{-2}$",
+        "d": "$3\\,\\text{m s}^{-2}$"
+      },
+      "correct_option": "c",
+      "explanation": "Maximum static friction $f_s^{max} = \\mu_s m g = 0.5 \\cdot 2 \\cdot 10 = 10$ N. Since $F=12>10$, block moves. Kinetic friction $f_k = \\mu_k m g = 0.4 \\cdot 2 \\cdot 10 = 8$ N. Net force $F_{net}=12-8=4$ N. Acceleration $a = F_{net}/m = 4/2 = 2$ m/s$^2$."
+    },
+    {
+      "id": 18,
+      "question": "A ball is thrown horizontally at $10\\,\\text{m s}^{-1}$ from a cliff $20\\,\\text{m}$ high. Find horizontal distance travelled ($g=10$):",
+      "options": {
+        "a": "$10\\,\\text{m}$",
+        "b": "$20\\,\\text{m}$",
+        "c": "$\\sqrt{40}\\,\\text{m}$",
+        "d": "$40\\,\\text{m}$"
+      },
+      "correct_option": "b",
+      "explanation": "Time to fall: $t = \\sqrt{2h/g} = \\sqrt{2\\cdot20/10} = \\sqrt{4} = 2$ s. Horizontal distance $x = u t = 10 \\cdot 2 = 20$ m."
+    },
+    {
+      "id": 19,
+      "question": "A $1.0\\,\\text{kg}$ block attached to spring ($k=100\\,\\text{N m}^{-1}$) is pulled $0.10\\,\\text{m}$ and released. Max speed is:",
+      "options": {
+        "a": "$0.5\\,\\text{m s}^{-1}$",
+        "b": "$1.0\\,\\text{m s}^{-1}$",
+        "c": "$1.5\\,\\text{m s}^{-1}$",
+        "d": "$2.0\\,\\text{m s}^{-1}$"
+      },
+      "correct_option": "b",
+      "explanation": "Max speed occurs at equilibrium: $\\tfrac{1}{2} m v_{max}^2 = \\tfrac{1}{2} k A^2 \\Rightarrow v_{max} = A \\sqrt{k/m} = 0.10 \\sqrt{100/1} = 1.0$ m/s."
+    },
+    {
+      "id": 20,
+      "question": "A satellite near Earth has orbital speed $v_o=\\sqrt{GM/R}$. Escape speed at surface is:",
+      "options": {
+        "a": "$v_o$",
+        "b": "$\\sqrt{2}\\,v_o$",
+        "c": "$2v_o$",
+        "d": "$v_o/\\sqrt{2}$"
+      },
+      "correct_option": "b",
+      "explanation": "Escape speed $v_e = \\sqrt{2GM/R} = \\sqrt{2} \\, v_o$, since $v_o = \\sqrt{GM/R}$ for circular orbit at Earth's surface."
+    },
+    {
+      "id": 21,
+      "question": "A gas expands isobarically at $P = 2.0\\times10^{5}\\,\\text{Pa}$ from volume $0.010\\,\\text{m}^3$ to $0.030\\,\\text{m}^3$. The work done by the gas is:",
+      "options": {
+        "a": "$2.0\\times10^{3}\\,\\text{J}$",
+        "b": "$3.0\\times10^{3}\\,\\text{J}$",
+        "c": "$4.0\\times10^{3}\\,\\text{J}$",
+        "d": "$5.0\\times10^{3}\\,\\text{J}$"
+      },
+      "correct_option": "c",
+      "explanation": "For isobaric expansion, work done $W = P\\Delta V = P(V_2 - V_1) = 2.0\\times10^5 \\cdot (0.030 - 0.010) = 2.0\\times10^5 \\cdot 0.020 = 4.0\\times10^3$ J."
+    },
+    {
+      "id": 22,
+      "question": "A wire of length $2.0\\,\\text{m}$ and cross-sectional area $1.0\\,\\text{mm}^2\\,(1.0\\times10^{-6}\\,\\text{m}^2)$ is stretched by $1.0\\,\\text{mm}$ under a load. Young’s modulus is $2.0\\times10^{11}\\,\\text{Pa}$. Find the applied force.",
+      "options": {
+        "a": "$50\\,\\text{N}$",
+        "b": "$100\\,\\text{N}$",
+        "c": "$200\\,\\text{N}$",
+        "d": "$400\\,\\text{N}$"
+      },
+      "correct_option": "b",
+      "explanation": "Using $F = Y A (\\Delta L / L)$, with $Y = 2.0\\times10^{11}$ Pa, $A = 1.0\\times10^{-6}$ m$^2$, $\\Delta L = 1.0\\times10^{-3}$ m, $L = 2.0$ m: $F = 2.0\\times10^{11} \\cdot 1.0\\times10^{-6} \\cdot (1.0\\times10^{-3}/2.0) = 100$ N."
+    },
+    {
+      "id": 23,
+      "question": "A $10\\,\\Omega$ resistor and a $20\\,\\Omega$ resistor are connected in series across a $12\\,\\text{V}$ ideal battery. What fraction of the total power is dissipated in the $20\\,\\Omega$ resistor?",
+      "options": {
+        "a": "$\\tfrac{1}{3}$",
+        "b": "$\\tfrac{1}{2}$",
+        "c": "$\\tfrac{2}{3}$",
+        "d": "$\\tfrac{3}{4}$"
+      },
+      "correct_option": "c",
+      "explanation": "Series current $I = V/(R_1 + R_2) = 12/(10+20) = 0.4$ A. Power in $20\\,\\Omega$: $P_2 = I^2 R_2 = 0.16 \\cdot 20 = 3.2$ W. Total power $P_{tot} = I^2(R_1+R_2) = 0.16 \\cdot 30 = 4.8$ W. Fraction $= 3.2/4.8 = 2/3$."
+    },
+    {
+      "id": 24,
+      "question": "A cell of emf $1.5\\,\\text{V}$ and internal resistance $0.5\\,\\Omega$ is connected to an external resistor of $4.5\\,\\Omega$. Find the current and terminal voltage.",
+      "options": {
+        "a": "$I=0.3\\,\\text{A},\\ V=1.35\\,\\text{V}$",
+        "b": "$I=0.3\\,\\text{A},\\ V=1.50\\,\\text{V}$",
+        "c": "$I=0.25\\,\\text{A},\\ V=1.25\\,\\text{V}$",
+        "d": "$I=0.25\\,\\text{A},\\ V=1.50\\,\\text{V}$"
+      },
+      "correct_option": "a",
+      "explanation": "Total resistance $R_T = R + r = 4.5 + 0.5 = 5.0\\,\\Omega$. Current $I = \\mathcal{E}/R_T = 1.5/5 = 0.30$ A. Terminal voltage $V = IR = 0.30 \\cdot 4.5 = 1.35$ V."
+    },
+    {
+      "id": 25,
+      "question": "In a series LCR circuit at resonance (ideal components), which statement is true?",
+      "options": {
+        "a": "Impedance equals $X_L$",
+        "b": "Impedance equals $X_C$",
+        "c": "Impedance equals $R$",
+        "d": "Current is minimum"
+      },
+      "correct_option": "c",
+      "explanation": "At resonance, inductive reactance $X_L$ equals capacitive reactance $X_C$, so net reactance $X = X_L - X_C = 0$. Impedance $Z = \\sqrt{R^2 + X^2} = R$. The current is maximum: $I = V/Z = V/R$."
+    },
+    {
+      "id": 26,
+      "question": "A convex lens of focal length $15\\,\\text{cm}$ forms a real image three times the size of the object. The object distance $u$ is:",
+      "options": {
+        "a": "$10\\,\\text{cm}$",
+        "b": "$15\\,\\text{cm}$",
+        "c": "$20\\,\\text{cm}$",
+        "d": "$60\\,\\text{cm}$"
+      },
+      "correct_option": "c",
+      "explanation": "Magnification $m = v/u = 3$ (real image, so positive). Lens formula: $1/f = 1/v - 1/u$. Since $v = 3u$, $1/15 = 1/(3u) - 1/u = (1-3)/(3u) = -2/(3u)$. Solving: $u = 20$ cm, $v = 60$ cm."
+    },
+    {
+      "id": 27,
+      "question": "In Young’s double-slit experiment, path difference $=1.5\\lambda$. The observed intensity (relative to central maximum $I_0$) is:",
+      "options": {
+        "a": "$I=I_0$",
+        "b": "$I=0$",
+        "c": "$I=I_0/4$",
+        "d": "$I=3I_0/4$"
+      },
+      "correct_option": "b",
+      "explanation": "Phase difference $\\phi = 2\\pi \\Delta x / \\lambda = 2\\pi (1.5) = 3\\pi$. Intensity $I = I_0 \\cos^2(\\phi/2) = I_0 \\cos^2(3\\pi/2) = 0$ (destructive interference)."
+    },
+    {
+      "id": 28,
+      "question": "Light of wavelength $500\\,\\text{nm}$ is incident on a grating with spacing $d=2.5\\,\\mu\\text{m}$. At what angle is the first-order maximum?",
+      "options": {
+        "a": "$5.7^\\circ$",
+        "b": "$11.5^\\circ$",
+        "c": "$30.0^\\circ$",
+        "d": "$90.0^\\circ$"
+      },
+      "correct_option": "b",
+      "explanation": "Grating formula: $d\\sin\\theta = m\\lambda$. For first order $m=1$, $\\sin\\theta = \\lambda/d = (500\\times10^{-9})/(2.5\\times10^{-6}) = 0.20$. So $\\theta = 11.5^\\circ$."
+    },
+    {
+      "id": 29,
+      "question": "A proton is accelerated through $1000\\,\\text{V}$. Find its speed (non-relativistic). ($e=1.6\\times10^{-19}\\,\\text{C},\\ m_p=1.67\\times10^{-27}\\,\\text{kg}$)",
+      "options": {
+        "a": "$4.4\\times10^{5}\\,\\text{m s}^{-1}$",
+        "b": "$7.0\\times10^{5}\\,\\text{m s}^{-1}$",
+        "c": "$1.4\\times10^{6}\\,\\text{m s}^{-1}$",
+        "d": "$4.4\\times10^{6}\\,\\text{m s}^{-1}$"
+      },
+      "correct_option": "a",
+      "explanation": "Kinetic energy gained by proton: $K = qV = (1.6\\times10^{-19}) \\cdot 1000 = 1.6\\times10^{-16}$ J. \nVelocity: $v = \\sqrt{2K/m} = \\sqrt{2 \\cdot 1.6\\times10^{-16} / 1.67\\times10^{-27}} \\approx 4.38\\times10^5$ m/s."
+    },
+    {
+      "id": 30,
+      "question": "A satellite is revolving around the Earth in a circular orbit of radius $R$. If $T$ is the orbital period, then the ratio of kinetic energy to potential energy of the satellite is:",
+      "options": {
+        "a": "1 : 1",
+        "b": "1 : 2",
+        "c": "2 : 1",
+        "d": "−1 : 2"
+      },
+      "correct_option": "d",
+      "explanation": "For circular orbit: $K = \\frac{1}{2} m v^2 = \\frac{GMm}{2R}$, $U = -\\frac{GMm}{R}$. Therefore, $K:U = (GMm/2R) : (-GMm/R) = -1 : 2$."
+    },
+    {
+      "id": 31,
+      "question": "The force on a $0.50\\,\\text{kg}$ cart varies with time as a triangular pulse: it rises linearly from $0\\,\\text{N}$ at $t=0$ to $10\\,\\text{N}$ at $t=0.50\\,\\text{s}$, then falls linearly back to $0\\,\\text{N}$ at $t=1.0\\,\\text{s}$. What is the cart’s change in velocity (initial velocity = 0 just before the pulse)?",
+      "options": {
+        "a": "$10\\,\\text{m s}^{-1}$",
+        "b": "$5.0\\,\\text{m s}^{-1}$",
+        "c": "$2.0\\,\\text{m s}^{-1}$",
+        "d": "$1.0\\,\\text{m s}^{-1}$"
+      },
+      "correct_option": "a",
+      "explanation": "Impulse = area under $F$–$t$ graph = area of triangle = $\\frac{1}{2} \\cdot 1.0 \\cdot 10 = 5.0$ N·s. \nChange in velocity: $\\Delta v = J/m = 5.0 / 0.50 = 10$ m/s."
+    },
+    {
+      "id": 32,
+      "question": "A $0.20\\,\\text{kg}$ ball moving at $15\\,\\text{m s}^{-1}$ hits a rigid wall and rebounds elastically with the same speed. What is the impulse delivered by the wall?",
+      "options": {
+        "a": "$1.5\\,\\text{N·s}$",
+        "b": "$3.0\\,\\text{N·s}$",
+        "c": "$4.5\\,\\text{N·s}$",
+        "d": "$6.0\\,\\text{N·s}$"
+      },
+      "correct_option": "d",
+      "explanation": "Impulse: $J = |m(v_f - v_i)| = 0.20 (-15 - 15) = |-6.0| = 6.0$ N·s."
+    },
+    {
+      "id": 33,
+      "question": "A uniform solid disc of mass $2.0\\,\\text{kg}$ and radius $0.40\\,\\text{m}$ rolls without slipping at $3.0\\,\\text{m s}^{-1}$. What is its total kinetic energy?",
+      "options": {
+        "a": "$4.5\\,\\text{J}$",
+        "b": "$6.0\\,\\text{J}$",
+        "c": "$9.0\\,\\text{J}$",
+        "d": "$13.5\\,\\text{J}$"
+      },
+      "correct_option": "d",
+      "explanation": "Total kinetic energy: $K = \\frac{1}{2}mv^2 + \\frac{1}{2}I\\omega^2$. For solid disc, $I = \\frac{1}{2} m R^2$, and rolling: $\\omega = v/R$. \nSo $K = \\frac{1}{2}mv^2 + \\frac{1}{4}mv^2 = \\frac{3}{4}mv^2 = 0.75 \\cdot 2 \\cdot 9 = 13.5$ J."
+    },
+    {
+      "id": 34,
+      "question": "How much work is required to lift a $1.0\\,\\text{kg}$ object from Earth’s surface to a height equal to Earth’s radius $R$ (i.e., $r: R\\to2R$)? ($g=9.8\\,\\text{m s}^{-2}, R=6.4\\times10^6\\,\\text{m}$)",
+      "options": {
+        "a": "$3.1\\times10^{7}\\,\\text{J}$",
+        "b": "$6.3\\times10^{7}\\,\\text{J}$",
+        "c": "$9.8\\times10^{7}\\,\\text{J}$",
+        "d": "$1.3\\times10^{8}\\,\\text{J}$"
+      },
+      "correct_option": "a",
+      "explanation": "Gravitational work: $W = \\Delta U = GMm \\left( \\frac{1}{R} - \\frac{1}{2R} \\right) = \\frac{1}{2} m g R \\approx 0.5 \\cdot 9.8 \\cdot 6.4\\times10^6 \\approx 3.1\\times10^7$ J."
+    },
+    {
+      "id": 35,
+      "question": "A particle in SHM has $x(t)=0.08\\cos(5t+\\pi/3)$ (SI units). Find amplitude, angular frequency, and first mean-position crossing after $t=0$.",
+      "options": {
+        "a": "$A=0.08$ m, $\\omega=5$ s$^{-1}$, $t=0.21$ s",
+        "b": "$A=0.08$ m, $\\omega=5$ s$^{-1}$, $t=0.10$ s",
+        "c": "$A=0.08$ m, $\\omega=5$ s$^{-1}$, $t=0.42$ s",
+        "d": "$A=0.08$ m, $\\omega=5$ s$^{-1}$, $t=0.31$ s"
+      },
+      "correct_option": "b",
+      "explanation": "Mean-position crossing occurs at $x=0$: $0.08 \\cos(5t+\\pi/3) = 0 \\Rightarrow 5t+\\pi/3 = \\pi/2$. \nSolve: $5t = \\pi/2 - \\pi/3 = \\pi/6 \\Rightarrow t \\approx 0.105$ s ≈ 0.10 s. Amplitude $A=0.08$ m, angular frequency $\\omega=5$ s$^{-1}$."
+    },
+    {
+      "id": 36,
+      "question": "An ideal gas undergoes a rectangular cycle: A$(1\\times10^5,0.020)$ → B$(3\\times10^5,0.020)$ → C$(3\\times10^5,0.060)$ → D$(1\\times10^5,0.060)$ → A. What is the net work done (SI units)?",
+      "options": {
+        "a": "$0$ J",
+        "b": "$2.0\\times10^3$ J",
+        "c": "$4.0\\times10^3$ J",
+        "d": "$8.0\\times10^3$ J"
+      },
+      "correct_option": "d",
+      "explanation": "Net work in a P–V cycle = area enclosed. ΔP = 2×10^5 Pa, ΔV = 0.060−0.020 = 0.040 m³. \nWork $W = ΔP · ΔV = 2×10^5 × 0.040 = 8.0×10^3$ J. Clockwise cycle ⇒ work done by gas is positive."
+    },
+    {
+      "id": 37,
+      "question": "In an RC charging circuit with $R=2.0\\,\\text{k}\\Omega$, $C=50\\,\\mu$F, how long until capacitor voltage reaches 63% of final value?",
+      "options": {
+        "a": "$0.050$ s",
+        "b": "$0.10$ s",
+        "c": "$0.20$ s",
+        "d": "$0.40$ s"
+      },
+      "correct_option": "b",
+      "explanation": "Time constant $\\tau = RC = 2000 \\cdot 50\\times10^{-6} = 0.10$ s. \nAt $t=\\tau$, charging voltage $V = 0.63 V_0$ of final value."
+    },
+    {
+      "id": 38,
+      "question": "In a series RLC circuit: $R=50\\,\\Omega$, $L=0.20\\,\\text{H}$, $C=50\\,\\mu$F, driven at $\\omega=200$ rad s$^{-1}$. What is the power factor $\\cos\\phi$?",
+      "options": {
+        "a": "0.50",
+        "b": "0.64",
+        "c": "0.80",
+        "d": "1.00"
+      },
+      "correct_option": "b",
+      "explanation": "Inductive reactance: $X_L = \\omega L = 200 \\cdot 0.20 = 40\\,\\Omega$. \nCapacitive reactance: $X_C = 1/(\\omega C) = 1/(200\\cdot50\\times10^{-6}) = 100\\,\\Omega$. \nNet reactance: $X = X_L - X_C = 40 - 100 = -60\\,\\Omega$. \nImpedance: $Z = \\sqrt{R^2 + X^2} = \\sqrt{50^2 + 60^2} \\approx 78.1\\,\\Omega$. \nPower factor: $\\cos\\phi = R/Z = 50/78.1 \\approx 0.64$."
+    },
+    {
+      "id": 39,
+      "question": "A prism has angle $A=60^\\circ$. At minimum deviation $\\delta_{min}=30^\\circ$, what is refractive index $n$?",
+      "options": {
+        "a": "$1.33$",
+        "b": "$1.41$",
+        "c": "$1.50$",
+        "d": "$1.73$"
+      },
+      "correct_option": "b",
+      "explanation": "Refractive index: $n = \\frac{\\sin((A+\\delta_{min})/2)}{\\sin(A/2)} = \\frac{\\sin((60+30)/2)}{\\sin(60/2)} = \\frac{\\sin45^\\circ}{\\sin30^\\circ} = (\\sqrt{2}/2)/0.5 \\approx 1.414$."
+    },
+    {
+      "id": 40,
+      "question": "Single-slit diffraction: first minimum at $a\\sin\\theta=\\lambda$. If $a=0.20$ mm, $\\lambda=600$ nm, find $\\theta$.",
+      "options": {
+        "a": "$0.086^\\circ$",
+        "b": "$0.17^\\circ$",
+        "c": "$0.34^\\circ$",
+        "d": "$0.86^\\circ$"
+      },
+      "correct_option": "b",
+      "explanation": "First minimum condition: $a\\sin\\theta = \\lambda$. \n$\\sin\\theta = \\lambda / a = 600\\times10^{-9} / 2.0\\times10^{-4} = 3.0\\times10^{-3}$. \nFor small angles, $\\theta \\approx \\sin\\theta = 0.003$ rad $\\approx 0.172^\\circ$."
+    },
+    {
+      "id": 41,
+      "question": "Find the de Broglie wavelength (in nm) of an electron accelerated through a potential difference of $150\\,\\text{V}$ (non-relativistic).",
+      "options": {
+        "a": "$0.050\\,\\text{nm}$",
+        "b": "$0.075\\,\\text{nm}$",
+        "c": "$0.10\\,\\text{nm}$",
+        "d": "$0.20\\,\\text{nm}$"
+      },
+      "correct_option": "c",
+      "explanation": "For non-relativistic electrons: $\\lambda(\\text{Å}) \\approx \\frac{12.27}{\\sqrt{V(\\text{volts})}}$. \n$\\lambda \\approx 12.27 / \\sqrt{150} = 1.00$ Å $= 0.100$ nm."
+    },
+    {
+      "id": 42,
+      "question": "A nucleus has mass defect $\\Delta m = 0.120\\,\\text{u}$ per nucleus. Estimate its total binding energy and binding energy per nucleon if the mass number is $A=16$. (Given $1\\,\\text{u} = 931\\,\\text{MeV}/c^{2}$)",
+      "options": {
+        "a": "$E_B \\approx 112\\,\\text{MeV},\\; E_B/A \\approx 7.0\\,\\text{MeV}$",
+        "b": "$E_B \\approx 112\\,\\text{MeV},\\; E_B/A \\approx 9.3\\,\\text{MeV}$",
+        "c": "$E_B \\approx 75\\,\\text{MeV},\\; E_B/A \\approx 4.7\\,\\text{MeV}$",
+        "d": "$E_B \\approx 150\\,\\text{MeV},\\; E_B/A \\approx 9.4\\,\\text{MeV}$"
+      },
+      "correct_option": "a",
+      "explanation": "Total binding energy: $E_B = \\Delta m \\cdot 931 = 0.120 \\cdot 931 \\approx 111.7$ MeV. \nBinding energy per nucleon: $E_B/A = 111.7 / 16 \\approx 6.98$ MeV ≈ 7.0 MeV."
+    },
+    {
+      "id": 43,
+      "question": "A silicon diode ($V_{th}\\approx0.70$ V) is in series with a $1.0\\,\\text{k}\\Omega$ resistor and a $5.0\\,\\text{V}$ ideal DC supply. Approximate the circuit current when the diode is forward biased.",
+      "options": {
+        "a": "$3.3\\,\\text{mA}$",
+        "b": "$4.3\\,\\text{mA}$",
+        "c": "$5.0\\,\\text{mA}$",
+        "d": "$7.1\\,\\text{mA}$"
+      },
+      "correct_option": "b",
+      "explanation": "Voltage across resistor: $V_R = V_{supply} - V_{diode} = 5.0 - 0.70 = 4.30$ V. \nCurrent: $I = V_R / R = 4.30 / 1000 = 4.3$ mA."
+    },
+    {
+      "id": 44,
+      "question": "The magnetic field at a distance $r=2.0\\,\\text{cm}$ from a very long straight wire carrying $I=5.0$ A is:",
+      "options": {
+        "a": "$5.0\\times10^{-6}\\,\\text{T}$",
+        "b": "$1.0\\times10^{-5}\\,\\text{T}$",
+        "c": "$2.5\\times10^{-5}\\,\\text{T}$",
+        "d": "$5.0\\times10^{-5}\\,\\text{T}$"
+      },
+      "correct_option": "d",
+      "explanation": "Magnetic field: $B = \\frac{\\mu_0 I}{2\\pi r} = \\frac{4\\pi\\times10^{-7} \\cdot 5}{2\\pi \\cdot 0.02} = 5.0\\times10^{-5}$ T."
+    },
+    {
+      "id": 45,
+      "question": "An ideal transformer has $N_p=500$ turns and $N_s=100$ turns. The primary is connected to $200$ V AC and draws $0.50$ A. What are the secondary voltage and current?",
+      "options": {
+        "a": "$V_s=40$ V, $I_s=2.5$ A",
+        "b": "$V_s=40$ V, $I_s=0.10$ A",
+        "c": "$V_s=100$ V, $I_s=1.0$ A",
+        "d": "$V_s=100$ V, $I_s=2.5$ A"
+      },
+      "correct_option": "a",
+      "explanation": "Turns ratio: $N_s/N_p = 100/500 = 0.20$. \nSecondary voltage: $V_s = 0.20 \\cdot 200 = 40$ V. \nPower conservation: $V_p I_p = V_s I_s \\Rightarrow I_s = (200\\cdot0.50)/40 = 2.5$ A."
+    }
+  ]
+}

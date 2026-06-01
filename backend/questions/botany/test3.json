@@ -1,0 +1,546 @@
+{
+  "test_number": 3,
+  "subject": "Botany",
+  "questions": [
+    {
+      "id": 1,
+      "question": "In a cross between a true-breeding red-flowered (RR) and a true-breeding white-flowered (rr) Mirabilis plant, the F1 generation is pink (Rr). If two F1 plants are crossed, the phenotypic ratio in F2 will be:",
+      "options": {
+        "a": "3 red : 1 white",
+        "b": "1 red : 2 pink : 1 white",
+        "c": "9 red : 3 pink : 4 white",
+        "d": "All pink"
+      },
+      "correct_option": "b",
+      "explanation": "This is a classic case of incomplete dominance. When a red-flowered (RR) plant is crossed with a white-flowered (rr) plant, all F1 hybrids are pink (Rr). Self-crossing F1 (Rr × Rr) produces F2 progeny in a phenotypic ratio of 1 red (RR) : 2 pink (Rr) : 1 white (rr). This 1:2:1 ratio is distinct from the Mendelian 3:1 ratio of complete dominance."
+    },
+    {
+      "id": 2,
+      "question": "During photorespiration, which of the following is NOT formed?",
+      "options": {
+        "a": "3-Phosphoglycerate",
+        "b": "2-Phosphoglycolate",
+        "c": "Oxygen",
+        "d": "Glycine"
+      },
+      "correct_option": "c",
+      "explanation": "Photorespiration starts when RuBisCO oxygenates RuBP, forming 3-phosphoglycerate (3-PGA) and 2-phosphoglycolate. The latter enters the glycolate pathway, involving peroxisomes and mitochondria, and leads to intermediates like glycine and serine. Oxygen is consumed in this process, not produced. Therefore, oxygen is not formed during photorespiration."
+    },
+    {
+      "id": 3,
+      "question": "Which of the following shows polygenic inheritance?",
+      "options": {
+        "a": "Colour of garden pea flower",
+        "b": "Height in humans",
+        "c": "Seed shape in pea",
+        "d": "Blood group in humans"
+      },
+      "correct_option": "b",
+      "explanation": "Polygenic inheritance involves multiple genes collectively controlling a single trait, producing continuous variation in the population. Human height and skin colour are classic examples. In contrast, flower colour and seed shape in pea are governed by Mendelian inheritance, while blood groups are controlled by multiple alleles but not polygenic inheritance."
+    },
+    {
+      "id": 4,
+      "question": "If there are 8 chromosomes in an oogonium of a plant, the number of chromosomes in its endosperm will be:",
+      "options": {
+        "a": "8",
+        "b": "16",
+        "c": "12",
+        "d": "24"
+      },
+      "correct_option": "c",
+      "explanation": "An oogonium of a plant is diploid (2n = 8), so the haploid gamete has n = 4 chromosomes. In angiosperms, the endosperm is formed by fusion of one male gamete with two polar nuclei, resulting in a triploid structure (3n). Hence, the endosperm will have 3n = 12 chromosomes."
+    },
+    {
+      "id": 5,
+      "question": "A cell has a membrane potential of –70 mV. Which ion’s movement will depolarize the cell membrane?",
+      "options": {
+        "a": "Efflux of K+",
+        "b": "Influx of Na+",
+        "c": "Influx of Cl–",
+        "d": "Efflux of Ca2+"
+      },
+      "correct_option": "b",
+      "explanation": "Depolarization means the inside of the cell becomes less negative. This occurs when positively charged ions, such as sodium (Na+), move into the cell (influx). Efflux of K+ or influx of Cl– increases negativity (hyperpolarization), while efflux of Ca2+ does not significantly cause depolarization."
+    },
+    {
+      "id": 6,
+      "question": "Which anatomical feature is characteristic of xerophytic leaves?",
+      "options": {
+        "a": "Thin cuticle and many large intercellular spaces",
+        "b": "Sunken stomata and thick cuticle",
+        "c": "Absence of palisade tissue",
+        "d": "Poorly developed vascular bundles"
+      },
+      "correct_option": "b",
+      "explanation": "Xerophytes minimize water loss with thick cuticle, sunken stomata, often multiple epidermis and well-developed sclerenchyma. Hydrophytes show thin cuticle and large air spaces; palisade is usually present in sun leaves; vascular bundles are typically well developed in xerophytes."
+    },
+    {
+      "id": 7,
+      "question": "A plant shows chlorosis in young leaves. Which element deficiency is most likely?",
+      "options": {
+        "a": "Nitrogen",
+        "b": "Iron",
+        "c": "Magnesium",
+        "d": "Potassium"
+      },
+      "correct_option": "b",
+      "explanation": "Iron is immobile in plants, meaning it cannot be easily transported from older to younger tissues. Therefore, iron deficiency first appears as chlorosis in young leaves. Nitrogen, magnesium, and potassium are mobile elements, so their deficiencies appear first in older leaves."
+    },
+    {
+      "id": 8,
+      "question": "Which statement about water potential $(\\psi)$ in plant cells is correct?",
+      "options": {
+        "a": "$\\psi = \\psi_s + \\psi_p$; adding solute makes $\\psi_s$ more positive",
+        "b": "$\\psi = \\psi_s + \\psi_p$; adding solute makes $\\psi_s$ more negative",
+        "c": "$\\psi = \\psi_s - \\psi_p$; pressure potential always decreases $\\psi$",
+        "d": "$\\psi$ of pure water is positive at atmospheric pressure"
+      },
+      "correct_option": "b",
+      "explanation": "Water potential is $\\psi = \\psi_s + \\psi_p$. Solute potential $(\\psi_s)$ is negative and becomes more negative as solute is added. Pure water has $\\psi=0$ at 1 atm. Positive pressure potential $(\\psi_p)$ raises $\\psi$."
+    },
+    {
+      "id": 9,
+      "question": "Which one of the following is an example of multiple allelism?",
+      "options": {
+        "a": "ABO blood group in humans",
+        "b": "Skin colour in humans",
+        "c": "Height in pea plant",
+        "d": "Colour of pea flower"
+      },
+      "correct_option": "a",
+      "explanation": "The ABO blood group system in humans is controlled by three alleles (IA, IB, and i). Although each individual inherits only two alleles, the presence of more than two alleles in the population defines multiple allelism. Skin colour and human height are polygenic traits, while pea traits are simple Mendelian."
+    },
+    {
+      "id": 10,
+      "question": "In angiosperms, triple fusion involves:",
+      "options": {
+        "a": "Two male gametes and one egg cell",
+        "b": "One male gamete and two polar nuclei",
+        "c": "One male gamete and antipodals",
+        "d": "One male gamete and synergids"
+      },
+      "correct_option": "b",
+      "explanation": "Triple fusion occurs when one male gamete fuses with two polar nuclei, forming a triploid primary endosperm nucleus. The other male gamete fertilizes the egg cell (syngamy) to form the zygote. Together, these processes constitute double fertilization, which is characteristic of angiosperms."
+    },
+    {
+      "id": 11,
+      "question": "Which leaf modification for support is correctly matched with the plant?",
+      "options": {
+        "a": "Leaf spines – Pisum sativum",
+        "b": "Leaf tendrils – Gloriosa",
+        "c": "Leaf tendrils – Pisum sativum",
+        "d": "Phyllode – Opuntia"
+      },
+      "correct_option": "c",
+      "explanation": "Pea shows leaf tendrils (terminal leaflets modified). Gloriosa has stem tendrils. Opuntia has stem cladodes (spines are leaves); phyllode occurs in Acacia."
+    },
+    {
+      "id": 12,
+      "question": "In pea, round seeds (R) are dominant over wrinkled (r). If a heterozygous plant is selfed, what will be the genotypic ratio?",
+      "options": {
+        "a": "1:2:1",
+        "b": "3:1",
+        "c": "2:1",
+        "d": "All heterozygous"
+      },
+      "correct_option": "a",
+      "explanation": "Cross: Rr × Rr → offspring genotypes are 1 RR : 2 Rr : 1 rr. Phenotypically, this results in 3 round : 1 wrinkled, but the genotypic ratio remains 1:2:1."
+    },
+    {
+      "id": 13,
+      "question": "Cytochromes involved in electron transport chain are:",
+      "options": {
+        "a": "Proteins with Fe-S centers",
+        "b": "Flavoproteins",
+        "c": "Haemoproteins",
+        "d": "Copper proteins"
+      },
+      "correct_option": "c",
+      "explanation": "Cytochromes are haemoproteins containing iron as a heme prosthetic group. They undergo reversible redox reactions between Fe²⁺ and Fe³⁺ states to transfer electrons. Flavoproteins have FAD or FMN, Fe-S proteins contain iron-sulphur clusters, and copper proteins like plastocyanin are distinct electron carriers but not cytochromes."
+    },
+    {
+      "id": 14,
+      "question": "Which one of the following is a false fruit?",
+      "options": {
+        "a": "Tomato",
+        "b": "Apple",
+        "c": "Mango",
+        "d": "Pea"
+      },
+      "correct_option": "b",
+      "explanation": "A false fruit develops from floral parts in addition to the ovary. Apple is a false fruit because the thalamus contributes to fruit formation. Mango and tomato develop only from the ovary (true fruits), while pea is also a true fruit (pod)."
+    },
+    {
+      "id": 15,
+      "question": "Which relation between primary productivity terms is correct?",
+      "options": {
+        "a": "$\\text{NPP} = \\text{GPP} + \\text{R}$",
+        "b": "$\\text{GPP} = \\text{NPP} + \\text{R}$",
+        "c": "$\\text{R} = \\text{NPP} - \\text{GPP}$",
+        "d": "$\\text{NPP}$ and $\\text{GPP}$ are identical"
+      },
+      "correct_option": "b",
+      "explanation": "By definition, Gross Primary Productivity (GPP) is the total rate of photosynthesis; Net Primary Productivity (NPP) is what remains after plant respiration (R): $\\boxed{\\text{GPP} = \\text{NPP} + \\text{R}}$."
+    },
+    {
+      "id": 16,
+      "question": "In maize, a cross between a pure tall plant (TT) and a dwarf plant (tt) produces F₁ hybrids. If these hybrids are selfed, what proportion of tall plants in F₂ will be homozygous?",
+      "options": {
+        "a": "$\\tfrac{1}{2}$",
+        "b": "$\\tfrac{1}{3}$",
+        "c": "$\\tfrac{1}{4}$",
+        "d": "$\\tfrac{2}{3}$"
+      },
+      "correct_option": "c",
+      "explanation": "Parental cross: $(TT \\times tt) \\; \\Rightarrow \\; F_1$ hybrids are all $Tt$ (tall).<br>Selfing $F_1$: $(Tt \\times Tt) \\; \\Rightarrow$ genotypic ratio $= 1\\,TT : 2\\,Tt : 1\\,tt$.<br>Total tall plants $= TT + Tt = \\tfrac{3}{4}$.<br>Homozygous tall plants $(TT) = \\tfrac{1}{4}$.<br>Therefore, the proportion of homozygous tall plants in $F_2$ is $\\tfrac{1}{4}$."
+    },
+    {
+      "id": 17,
+      "question": "In the lac operon of E. coli, which combination permits maximal transcription?",
+      "options": {
+        "a": "Lactose absent; glucose absent",
+        "b": "Lactose present; glucose present",
+        "c": "Lactose present; glucose absent",
+        "d": "Lactose absent; glucose present"
+      },
+      "correct_option": "c",
+      "explanation": "Maximal expression requires induction (lactose inactivates the repressor) and catabolite activation (glucose absent → high cAMP → CAP–cAMP binds promoter). Thus, lactose present & glucose absent."
+    },
+    {
+      "id": 18,
+      "question": "Which type of ovule is found in sunflower?",
+      "options": {
+        "a": "Orthotropous",
+        "b": "Anatropous",
+        "c": "Amphitropous",
+        "d": "Campylotropous"
+      },
+      "correct_option": "b",
+      "explanation": "The most common type of ovule in angiosperms is anatropous, where the ovule is inverted and the micropyle lies close to the funiculus. Sunflower, being a dicot, has anatropous ovules. Orthotropous is straight, campylotropous is curved, and amphitropous is intermediate."
+    },
+    {
+      "id": 19,
+      "question": "What is the net ATP yield from complete aerobic oxidation of one glucose molecule in eukaryotic cells?",
+      "options": {
+        "a": "30–32",
+        "b": "36",
+        "c": "38",
+        "d": "24"
+      },
+      "correct_option": "a",
+      "explanation": "In eukaryotes, the net ATP yield is about 30–32 per glucose molecule. This modern estimate accounts for variability in NADH shuttles and proton leakage. Earlier textbooks mentioned 36 or 38 ATP, but these are overestimates."
+    },
+    {
+      "id": 20,
+      "question": "Which one is a wrong match?",
+      "options": {
+        "a": "Etiolation – growth in darkness",
+        "b": "Phototropism – response to light",
+        "c": "Nyctinasty – opening of stomata",
+        "d": "Thigmotropism – response to touch"
+      },
+      "correct_option": "c",
+      "explanation": "Nyctinasty refers to sleep movements of leaves (such as folding in legumes at night), not stomatal opening. Stomatal opening is controlled by light, CO2 concentration, and water balance. The other matches—etiolation, phototropism, and thigmotropism—are correct."
+    },
+    {
+      "id": 21,
+      "question": "During meiosis, the point of attachment between homologous chromosomes is called:",
+      "options": {
+        "a": "Centromere",
+        "b": "Chiasma",
+        "c": "Kinetochore",
+        "d": "Synaptonemal complex"
+      },
+      "correct_option": "b",
+      "explanation": "Chiasmata are the points of attachment between homologous chromosomes after crossing over during diplotene of prophase I. Centromere attaches sister chromatids, kinetochore is the protein complex for spindle attachment, and synaptonemal complex is the protein structure mediating synapsis, but not the attachment point."
+    },
+    {
+      "id": 22,
+      "question": "Which part of the embryo sac in angiosperms guides the entry of pollen tube?",
+      "options": {
+        "a": "Antipodals",
+        "b": "Synergids",
+        "c": "Central cell",
+        "d": "Egg cell"
+      },
+      "correct_option": "b",
+      "explanation": "Synergids are located near the micropyle and contain a filiform apparatus that secretes signals guiding the pollen tube toward the egg cell. Antipodals usually degenerate, the central cell contributes to endosperm formation, and the egg cell itself is the female gamete."
+    },
+    {
+      "id": 23,
+      "question": "Which type of association is present in mycorrhiza?",
+      "options": {
+        "a": "Parasitism",
+        "b": "Mutualism",
+        "c": "Commensalism",
+        "d": "Competition"
+      },
+      "correct_option": "b",
+      "explanation": "Mycorrhiza represents a mutualistic association between fungi and plant roots. The fungus aids in absorption of water and minerals, especially phosphorus, while the plant provides carbohydrates to the fungus. Both partners benefit, so it is not parasitism."
+    },
+    {
+      "id": 24,
+      "question": "Which of the following pairs of placentation and example is correct?",
+      "options": {
+        "a": "Parietal – Tomato",
+        "b": "Axile – Mustard",
+        "c": "Basal – Sunflower",
+        "d": "Free central – Dianthus"
+      },
+      "correct_option": "d",
+      "explanation": "Dianthus shows free-central placentation. Tomato/lemon: axile; Mustard: parietal; Sunflower (Asteraceae): typically basal placentation in the one-seeded ovary, but the correct pair among options is (d)."
+    },
+    {
+      "id": 25,
+      "question": "Which plant hormone is commonly used for inducing parthenocarpy in tomatoes?",
+      "options": {
+        "a": "Cytokinin",
+        "b": "Auxin",
+        "c": "Abscisic acid",
+        "d": "Gibberellin"
+      },
+      "correct_option": "b",
+      "explanation": "Auxins (like NAA, IAA) are applied to induce parthenocarpy, producing seedless fruits in tomato and brinjal. Gibberellins induce parthenocarpy in grapes, while ABA induces dormancy."
+    },
+    {
+      "id": 26,
+      "question": "Which plant hormone is responsible for the closing of stomata under water stress?",
+      "options": {
+        "a": "Auxin",
+        "b": "Abscisic acid",
+        "c": "Cytokinin",
+        "d": "Gibberellin"
+      },
+      "correct_option": "b",
+      "explanation": "Abscisic acid (ABA) induces closure of stomata during water stress to prevent water loss."
+    },
+    {
+      "id": 27,
+      "question": "Which xylem element is responsible for water transport in angiosperms?",
+      "options": {
+        "a": "Tracheids",
+        "b": "Vessels",
+        "c": "Xylem fibres",
+        "d": "Xylem parenchyma"
+      },
+      "correct_option": "b",
+      "explanation": "In angiosperms, vessels (with perforated end walls) form continuous tubes for efficient water transport. Tracheids conduct water in gymnosperms, xylem fibres provide support, and xylem parenchyma stores food."
+    },
+    {
+      "id": 28,
+      "question": "Which of the following shows cytoplasmic inheritance?",
+      "options": {
+        "a": "Colour of pea seed",
+        "b": "Leaf variegation in Mirabilis",
+        "c": "Height in pea",
+        "d": "Blood group in humans"
+      },
+      "correct_option": "b",
+      "explanation": "Leaf variegation in Mirabilis jalapa is controlled by plastid DNA inherited maternally, making it an example of cytoplasmic inheritance. Traits like pea seed colour and height follow Mendelian nuclear inheritance, and human blood groups are due to multiple alleles."
+    },
+    {
+      "id": 29,
+      "question": "Which stage of meiosis leads to reduction in chromosome number?",
+      "options": {
+        "a": "Anaphase I",
+        "b": "Anaphase II",
+        "c": "Prophase I",
+        "d": "Metaphase II"
+      },
+      "correct_option": "a",
+      "explanation": "Anaphase I of meiosis is the reductional division stage where homologous chromosomes separate and move to opposite poles, halving the chromosome number. Anaphase II separates sister chromatids but does not reduce ploidy. Prophase I and metaphase II do not involve chromosome reduction."
+    },
+    {
+      "id": 30,
+      "question": "Which statement about the genetic code is correct?",
+      "options": {
+        "a": "It is overlapping and ambiguous",
+        "b": "A single codon can code for multiple amino acids",
+        "c": "It is non-overlapping and unambiguous, but degenerate",
+        "d": "Stop codons specify amino acids in mitochondria"
+      },
+      "correct_option": "c",
+      "explanation": "The standard genetic code is non-overlapping and unambiguous (one codon → one amino acid), yet degenerate (many amino acids have multiple codons). Stop codons do not specify amino acids."
+    },
+    {
+      "id": 31,
+      "question": "In the C3 cycle, how many ATP and NADPH are required to fix one molecule of CO$_2$?",
+      "options": {
+        "a": "$2\\,ATP + 2\\,NADPH$",
+        "b": "$3\\,ATP + 2\\,NADPH$",
+        "c": "$2\\,ATP + 3\\,NADPH$",
+        "d": "$3\\,ATP + 3\\,NADPH$"
+      },
+      "correct_option": "b",
+      "explanation": "The Calvin cycle (C3 pathway) requires **3 ATP** and **2 NADPH** to fix one CO$_2$ molecule into carbohydrate.<br>For synthesis of one glucose molecule (from 6 CO$_2$), the cycle consumes **18 ATP** and **12 NADPH**."
+    },
+    {
+      "id": 32,
+      "question": "Which step of the nitrogen cycle converts ammonium compounds into nitrates?",
+      "options": {
+        "a": "Ammonification",
+        "b": "Nitrification",
+        "c": "Denitrification",
+        "d": "Assimilation"
+      },
+      "correct_option": "b",
+      "explanation": "Nitrification is the biological oxidation of ammonium ($NH_4^+$) to nitrites ($NO_2^−$) by *Nitrosomonas*, and further to nitrates ($NO_3^−$) by *Nitrobacter*.<br>Ammonification releases $NH_4^+$ from organic matter, denitrification reduces $NO_3^−$ back to $N_2$, and assimilation is uptake of nitrates by plants."
+    },
+    {
+      "id": 33,
+      "question": "Which of the following will have a haplontic life cycle?",
+      "options": {
+        "a": "Fucus",
+        "b": "Polysiphonia",
+        "c": "Chlamydomonas",
+        "d": "Pteris"
+      },
+      "correct_option": "c",
+      "explanation": "In a haplontic life cycle, the haploid phase dominates, and the diploid stage is only the zygote, which undergoes meiosis. Chlamydomonas (a green alga) is haplontic. Fucus is diplontic, Polysiphonia is haplo-diplontic, and Pteris (fern) is also haplo-diplontic."
+    },
+    {
+      "id": 34,
+      "question": "Which of the following statements about CAM plants is correct?",
+      "options": {
+        "a": "They fix CO$_2$ during the day using PEPcase",
+        "b": "They fix CO$_2$ at night and release it in the day",
+        "c": "They lack RuBisCO",
+        "d": "They perform photorespiration at high temperatures"
+      },
+      "correct_option": "b",
+      "explanation": "CAM (Crassulacean Acid Metabolism) plants open stomata at **night**, fixing CO$_2$ into malic acid via **PEP carboxylase**. During the **day**, stomata close to conserve water, and CO$_2$ is released from malic acid to enter the Calvin cycle using **RuBisCO**. They do possess RuBisCO, and photorespiration is minimized by this **temporal separation** of carbon fixation."
+    },
+    {
+      "id": 35,
+      "question": "Which type of interaction exists between fig trees and wasps?",
+      "options": {
+        "a": "Parasitism",
+        "b": "Commensalism",
+        "c": "Mutualism",
+        "d": "Amensalism"
+      },
+      "correct_option": "c",
+      "explanation": "Figs and wasps exhibit mutualism. Wasps pollinate fig flowers, aiding reproduction, while figs provide a site for wasps to lay eggs. Both partners benefit, so it is not parasitism, commensalism, or amensalism."
+    },
+    {
+      "id": 36,
+      "question": "Which structure in the chloroplast contains the ATP synthase enzyme?",
+      "options": {
+        "a": "Outer membrane",
+        "b": "Thylakoid membrane",
+        "c": "Stroma",
+        "d": "Inner membrane"
+      },
+      "correct_option": "b",
+      "explanation": "ATP synthase, also called the **CF$_0$–CF$_1$ complex**, is embedded in the **thylakoid membrane** of chloroplasts. During the light reactions, protons ($H^+$) accumulate inside the **thylakoid lumen**. They then diffuse back into the **stroma** through ATP synthase, and this proton-motive force drives the phosphorylation of ADP to form ATP (photophosphorylation)."
+    },
+    {
+      "id": 37,
+      "question": "Which evolutionary concept is supported by the similarity of C4 pathway in maize and sorghum?",
+      "options": {
+        "a": "Convergent evolution",
+        "b": "Divergent evolution",
+        "c": "Adaptive radiation",
+        "d": "Parallel evolution"
+      },
+      "correct_option": "d",
+      "explanation": "Parallel evolution is when closely related species evolve similar adaptations independently. Maize and sorghum, both grasses, evolved the C4 pathway. Convergent evolution involves unrelated lineages, divergent evolution is when related species evolve differently, and adaptive radiation is diversification from a common ancestor into many forms."
+    },
+    {
+      "id": 38,
+      "question": "In plant tissue culture, the ability of a cell to regenerate into a whole plant is called:",
+      "options": {
+        "a": "Totipotency",
+        "b": "Pluripotency",
+        "c": "Differentiation",
+        "d": "Dedifferentiation"
+      },
+      "correct_option": "a",
+      "explanation": "Totipotency is the capacity of a single cell to develop into a complete organism under suitable conditions. Plant cells exhibit totipotency, which is the basis of tissue culture techniques where callus can differentiate into shoots and roots."
+    },
+    {
+      "id": 39,
+      "question": "In a cross between two heterozygous tall plants $(Tt \\times Tt)$, what is the probability that the offspring will be dwarf?",
+      "options": {
+        "a": "$\\tfrac{1}{2}$",
+        "b": "$\\tfrac{1}{3}$",
+        "c": "$\\tfrac{1}{4}$",
+        "d": "$\\tfrac{3}{4}$"
+      },
+      "correct_option": "c",
+      "explanation": "Cross: $Tt \\times Tt$<br>Gametes: $T$ and $t$ from each parent.<br>Punnett square: $TT, Tt, Tt, tt$.<br>Genotypic ratio = $1\\,TT : 2\\,Tt : 1\\,tt$.<br>Phenotypic ratio = $3$ tall : $1$ dwarf.<br>Thus, the probability of dwarf ($tt$) offspring is $\\tfrac{1}{4}$."
+    },
+    {
+      "id": 40,
+      "question": "The first stable product of C$_4$ photosynthesis is:",
+      "options": {
+        "a": "3-Phosphoglycerate",
+        "b": "Oxaloacetate",
+        "c": "Malate",
+        "d": "Phosphoenolpyruvate"
+      },
+      "correct_option": "b",
+      "explanation": "In C$_4$ plants, atmospheric CO$_2$ is initially fixed by PEP carboxylase in mesophyll cells to form oxaloacetate (OAA, a 4-carbon compound). This oxaloacetate is the first stable product of C$_4$ photosynthesis. It is then converted into malate or aspartate, which are transported to bundle sheath cells where the Calvin cycle occurs."
+    },
+    {
+      "id": 41,
+      "question": "The aleurone layer of cereal grains is rich in:",
+      "options": {
+        "a": "Starch",
+        "b": "Proteins",
+        "c": "Lipids",
+        "d": "Lignin"
+      },
+      "correct_option": "b",
+      "explanation": "The aleurone layer is protein-rich and surrounds the endosperm. During germination, it secretes hydrolytic enzymes like amylases to mobilize starch stored in the endosperm."
+    },
+    {
+      "id": 42,
+      "question": "Which of the following is a free-living nitrogen fixer?",
+      "options": {
+        "a": "Rhizobium",
+        "b": "Frankia",
+        "c": "Azotobacter",
+        "d": "Anabaena in Cycas roots"
+      },
+      "correct_option": "c",
+      "explanation": "Azotobacter is a free-living nitrogen fixer, while Rhizobium and Frankia are symbiotic, and Anabaena lives in Cycas roots."
+    },
+    {
+      "id": 43,
+      "question": "Which of the following is a C3 plant?",
+      "options": {
+        "a": "Sugarcane",
+        "b": "Sorghum",
+        "c": "Rice",
+        "d": "Maize"
+      },
+      "correct_option": "c",
+      "explanation": "Rice is a C3 plant, while sugarcane, sorghum, and maize are C4 plants."
+    },
+    {
+      "id": 44,
+      "question": "The folding of leaves in Mimosa pudica on touch is an example of:",
+      "options": {
+        "a": "Seismonasty",
+        "b": "Phototropism",
+        "c": "Hydrotropism",
+        "d": "Thigmotropism"
+      },
+      "correct_option": "a",
+      "explanation": "Mimosa pudica shows rapid leaf-folding due to turgor changes in pulvinus cells, a nastic movement called seismonasty. Thigmotropism is directional growth in response to touch, e.g., tendrils."
+    },
+    {
+      "id": 45,
+      "question": "Which statement about restriction endonucleases is true?",
+      "options": {
+        "a": "They cut DNA at random positions, generating only blunt ends",
+        "b": "They recognize specific palindromic sequences and cleave within or near them",
+        "c": "They always require RNA guides to cut DNA",
+        "d": "They ligate DNA fragments at sticky ends"
+      },
+      "correct_option": "b",
+      "explanation": "Restriction enzymes (e.g., EcoRI) recognize specific palindromic sites and make cuts to produce sticky or blunt ends. RNA guides are used by CRISPR–Cas, not classical REs. DNA ligase joins fragments."
+    }
+  ]
+}

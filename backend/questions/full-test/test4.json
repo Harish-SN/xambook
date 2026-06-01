@@ -1,0 +1,2346 @@
+{
+  "test_number": 4,
+  "subject": "Full Test",
+  "questions": [
+    {
+      "id": 1,
+      "subject": "Physics",
+      "question": "Assertion (A): A body moving with uniform speed in a circular path has acceleration.<br>Reason (R): Acceleration occurs because the direction of velocity changes continuously, though speed remains constant.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "In uniform circular motion, the speed is constant but the velocity vector continuously changes its direction toward the tangent of the circle. A change in velocity (even at constant speed) implies an acceleration. The required acceleration is the centripetal acceleration, directed toward the center: \\(a_c=\\dfrac{v^2}{r}=\\omega^2 r\\). This nonzero, inward acceleration is precisely due to the continual change in the direction of \\(\\vec v\\); therefore R correctly explains A."
+    },
+    {
+      "id": 2,
+      "subject": "Physics",
+      "question": "A satellite is orbiting close to the Earth’s surface. Which of the following is correct about its motion?",
+      "options": {
+        "a": "It has zero acceleration",
+        "b": "It is in free fall, continuously accelerating towards Earth",
+        "c": "It experiences no gravitational force",
+        "d": "Its speed is independent of Earth’s gravity"
+      },
+      "correct_option": "b",
+      "explanation": "An orbit is a state of perpetual free fall: the satellite has a tangential velocity such that, while it falls toward Earth under gravity, the surface curves away beneath it. The gravitational force provides the centripetal acceleration required to keep it on a circular (or nearly circular) path. Near the surface, \\(a\\approx g\\), directed toward Earth’s center. Thus it is not force-free and not zero-acceleration; it is continuously accelerated toward Earth."
+    },
+    {
+      "id": 3,
+      "subject": "Physics",
+      "question": "On a planet with mass \\(M=\\tfrac{1}{8}M_E\\) and radius \\(R=\\tfrac{1}{2}R_E\\) (where \\(M_E, R_E\\) are Earth’s mass and radius), the escape velocity \\(v_{e,\\,\\text{planet}}\\) compared to Earth’s escape velocity \\(v_{e,\\,E}\\) is:",
+      "options": {
+        "a": "\\(\\dfrac{1}{2}v_{e,\\,E}\\)",
+        "b": "\\(\\dfrac{1}{\\sqrt{2}}v_{e,\\,E}\\)",
+        "c": "\\(v_{e,\\,E}\\)",
+        "d": "\\(\\sqrt{2}\\,v_{e,\\,E}\\)"
+      },
+      "correct_option": "a",
+      "explanation": "Escape speed is \\(v_e=\\sqrt{\\dfrac{2GM}{R}}\\). Taking the ratio, \\[\\frac{v_{e,\\,\\text{planet}}}{v_{e,\\,E}}=\\sqrt{\\frac{M/M_E}{R/R_E}}=\\sqrt{\\frac{(1/8)}{(1/2)}}=\\sqrt{\\frac{1}{4}}=\\frac{1}{2}.\\] Hence the planet’s escape speed is half Earth’s, i.e., option (a)."
+    },
+    {
+      "id": 4,
+      "subject": "Physics",
+      "question": "Which physical quantity has the same dimensions as impulse?",
+      "options": {
+        "a": "Energy",
+        "b": "Momentum",
+        "c": "Force",
+        "d": "Power"
+      },
+      "correct_option": "b",
+      "explanation": "Impulse is defined as \\(J=\\int F\\,dt\\), and for a constant force over time \\(\\Delta t\\), \\(J=F\\Delta t\\). Newton’s second law implies \\(J=\\Delta p\\) (change in momentum). Therefore impulse and momentum share dimensions \\([MLT^{-1}]\\). Energy \\([ML^2T^{-2}]\\), force \\([MLT^{-2}]\\), and power \\([ML^2T^{-3}]\\) do not match."
+    },
+    {
+      "id": 5,
+      "subject": "Physics",
+      "question": "Assertion (A): A geostationary satellite appears stationary relative to an observer on Earth.<br>Reason (R): Its orbital period equals Earth’s rotation period, and it orbits in equatorial plane.",
+      "options": {
+        "a": "Both A and R are true, and R explains A",
+        "b": "Both A and R are true, but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "A geostationary satellite must have (i) orbital period \\(T=\\) sidereal day (about 23 h 56 min), (ii) zero inclination (equatorial orbit), and (iii) prograde motion. These conditions place it at \\(\\approx\\!3.58\\times10^7\\,\\text{m}\\) from Earth’s center (altitude \\(\\approx\\!3.6\\times10^4\\,\\text{km}\\)). Then its angular speed equals Earth’s rotation, so it remains fixed relative to a point on the equator. Thus R correctly explains A."
+    },
+    {
+      "id": 6,
+      "subject": "Physics",
+      "question": "A spring of force constant \\(k\\) is compressed by a distance \\(x\\). The potential energy stored in it is:",
+      "options": {
+        "a": "\\(kx\\)",
+        "b": "\\(\\tfrac{1}{2}kx^2\\)",
+        "c": "\\(kx^2\\)",
+        "d": "\\(\\tfrac{1}{2}kx\\)"
+      },
+      "correct_option": "b",
+      "explanation": "For a Hookean spring, the restoring force is \\(F=kx\\). The work done to compress from 0 to \\(x\\) (area under the \\(F\\)–\\(x\\) graph) is \\(\\int_0^x kx'\\,dx' = \\tfrac{1}{2}kx^2\\). This work is stored as elastic potential energy: \\(U=\\tfrac{1}{2}kx^2\\)."
+    },
+    {
+      "id": 7,
+      "subject": "Physics",
+      "question": "Statement I: Pressure at a point inside a fluid at rest is equal in all directions.<br>Statement II: This is because fluids cannot resist shear stress.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "In a static fluid, the stress at a point is isotropic: the normal stress (pressure) is the same in all directions (Pascal’s law). This isotropy arises because a fluid at rest cannot sustain shear stresses; any applied shear leads to flow until only normal stresses remain. Hence both statements are correct and consistent."
+    },
+    {
+      "id": 8,
+      "subject": "Physics",
+      "question": "Two resistors \\(6\\,\\Omega\\) and \\(3\\,\\Omega\\) are connected in parallel across a \\(6\\) V battery. The total current drawn is:",
+      "options": {
+        "a": "1 A",
+        "b": "2 A",
+        "c": "3 A",
+        "d": "4 A"
+      },
+      "correct_option": "c",
+      "explanation": "Parallel equivalent: \\(\\dfrac{1}{R_{eq}}=\\dfrac{1}{6}+\\dfrac{1}{3}=\\dfrac{1}{6}+\\dfrac{2}{6}=\\dfrac{3}{6}\\Rightarrow R_{eq}=2\\,\\Omega\\). Total current \\(I=\\dfrac{V}{R_{eq}}=\\dfrac{6}{2}=3\\,\\text{A}\\). Alternatively, branch currents are \\(I_1=6/6=1\\,\\text{A}\\) and \\(I_2=6/3=2\\,\\text{A}\\), summing to 3 A."
+    },
+    {
+      "id": 9,
+      "subject": "Physics",
+      "question": "Assertion (A): The capacitance of a parallel plate capacitor increases when a dielectric slab is introduced.<br>Reason (R): Dielectric reduces effective electric field, lowering potential for same charge.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "With a material of relative permittivity \\(K\\) between the plates, the polarization of the dielectric partially cancels the field inside, so \\(E\\) and hence \\(V=Ed\\) decrease for the same stored charge \\(Q\\). Since \\(C=Q/V\\), the capacitance increases to \\(C'=K\\varepsilon_0A/d=K C_0\\). The microphysical reason (reduced effective field due to polarization) directly explains the macroscopic increase in \\(C\\)."
+    },
+    {
+      "id": 10,
+      "subject": "Physics",
+      "question": "Which of the following physical quantities is NOT a vector?",
+      "options": {
+        "a": "Displacement",
+        "b": "Force",
+        "c": "Work",
+        "d": "Acceleration"
+      },
+      "correct_option": "c",
+      "explanation": "Displacement, force, and acceleration require both magnitude and direction and thus are vectors. Work is defined via the scalar (dot) product \\(W=\\vec F\\cdot\\vec s=Fs\\cos\\theta\\), yielding a scalar result with dimensions of energy. Therefore, work is not a vector."
+    },
+    {
+      "id": 11,
+      "subject": "Physics",
+      "question": "The work done by a centripetal force on a particle moving in a circular path is:",
+      "options": {
+        "a": "Positive",
+        "b": "Negative",
+        "c": "Zero",
+        "d": "Variable"
+      },
+      "correct_option": "c",
+      "explanation": "Work done is \\(W = \\vec{F}\\cdot\\vec{d} = Fd\\cos\\theta\\). For circular motion, the centripetal force is always directed toward the center, while instantaneous displacement is tangential. This makes \\(\\theta=90^\\circ\\). Hence, \\(W=Fd\\cos 90^\\circ=0\\). The force changes only the direction of velocity, not its magnitude, so no work is done."
+    },
+    {
+      "id": 12,
+      "subject": "Physics",
+      "question": "Assertion (A): The escape velocity from the Moon is less than that from the Earth.<br>Reason (R): The Moon has smaller mass and radius than Earth, resulting in weaker gravity.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Escape velocity is given by \\(v_e = \\sqrt{2GM/R}\\). The Moon has much lower mass and a smaller radius compared to Earth, resulting in a weaker gravitational field at its surface. Numerically, \\(v_e \\approx 2.4\\,\\text{km/s}\\) on the Moon, while it is \\(11.2\\,\\text{km/s}\\) on Earth. Therefore both A and R are correct, and R explains A."
+    },
+    {
+      "id": 13,
+      "subject": "Physics",
+      "question": "A sound wave has frequency \\(500\\,\\text{Hz}\\) and wavelength \\(0.68\\,\\text{m}\\). What is the velocity of sound in the medium?",
+      "options": {
+        "a": "\\(170\\,\\text{m/s}\\)",
+        "b": "\\(240\\,\\text{m/s}\\)",
+        "c": "\\(340\\,\\text{m/s}\\)",
+        "d": "\\(400\\,\\text{m/s}\\)"
+      },
+      "correct_option": "c",
+      "explanation": "The relation between speed, frequency, and wavelength is \\(v=f\\lambda\\). Substituting, \\(v=500\\times0.68=340\\,\\text{m/s}\\). This corresponds well to the typical speed of sound in air at room temperature."
+    },
+    {
+      "id": 14,
+      "subject": "Physics",
+      "question": "Statement I: In SHM, acceleration is directly proportional to displacement and opposite in direction.<br>Statement II: Maximum acceleration occurs at extreme positions.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "In simple harmonic motion, the acceleration is given by \\(a = -\\omega^2 x\\). This shows acceleration is proportional to displacement but opposite in sign. At extreme displacements \\(x=\\pm A\\), the acceleration magnitude \\(|a|=\\omega^2A\\) is maximum. At equilibrium \\(x=0\\), acceleration vanishes. Thus both statements are correct."
+    },
+    {
+      "id": 15,
+      "subject": "Physics",
+      "question": "Which relation between pressure and depth in a liquid is correct?",
+      "options": {
+        "a": "\\(p = \\rho gh\\)",
+        "b": "\\(p = \\rho g/h\\)",
+        "c": "\\(p = h/\\rho g\\)",
+        "d": "\\(p = \\rho h^2 g\\)"
+      },
+      "correct_option": "a",
+      "explanation": "The pressure at a depth \\(h\\) in a liquid of density \\(\\rho\\) is \\(p=\\rho g h\\). This relation comes from hydrostatics: pressure increases linearly with depth due to the weight of the fluid column. The formula is independent of the container’s shape."
+    },
+    {
+      "id": 16,
+      "subject": "Physics",
+      "question": "Assertion (A): A convex lens can form both real and virtual images.<br>Reason (R): If \\(u<f\\), image is virtual, erect; if \\(u>f\\), image is real, inverted.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "The lens formula is \\(\\tfrac{1}{f}=\\tfrac{1}{v}-\\tfrac{1}{u}\\). For an object inside the focal length (\\(u<f\\)), the image forms on the same side as the object: virtual, erect, and magnified. For \\(u>f\\), the image forms on the opposite side: real and inverted. Hence both statements are correct and R explains A."
+    },
+    {
+      "id": 17,
+      "subject": "Physics",
+      "question": "A body of mass \\(2\\,\\text{kg}\\) moves with velocity \\(4\\,\\text{m/s}\\). Its kinetic energy is:",
+      "options": {
+        "a": "\\(4\\,\\text{J}\\)",
+        "b": "\\(8\\,\\text{J}\\)",
+        "c": "\\(16\\,\\text{J}\\)",
+        "d": "\\(32\\,\\text{J}\\)"
+      },
+      "correct_option": "c",
+      "explanation": "Kinetic energy is \\(KE=\\tfrac{1}{2}mv^2\\). Substituting values: \\(KE=0.5\\times2\\times4^2=16\\,\\text{J}\\)."
+    },
+    {
+      "id": 18,
+      "subject": "Physics",
+      "question": "Statement I: Magnetic flux through a surface depends on both field strength and orientation.<br>Statement II: Flux is maximum when surface is perpendicular to field.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "Magnetic flux through area \\(A\\) is \\(\\Phi=BA\\cos\\theta\\), where \\(\\theta\\) is angle between field and normal to surface. Thus flux depends on \\(B\\), \\(A\\), and orientation. Maximum flux occurs when \\(\\theta=0^\\circ\\), i.e., surface normal parallel to \\(B\\), so the surface itself is perpendicular to the field."
+    },
+    {
+      "id": 19,
+      "subject": "Physics",
+      "question": "If two resistors \\(2\\,\\Omega\\) and \\(3\\,\\Omega\\) are in series, their equivalent resistance is:",
+      "options": {
+        "a": "\\(0.6\\,\\Omega\\)",
+        "b": "\\(5\\,\\Omega\\)",
+        "c": "\\(6\\,\\Omega\\)",
+        "d": "\\(1.2\\,\\Omega\\)"
+      },
+      "correct_option": "b",
+      "explanation": "In series, resistances add: \\(R_{eq}=R_1+R_2=2+3=5\\,\\Omega\\). The current is same in both resistors, while the potential difference divides proportionally."
+    },
+    {
+      "id": 20,
+      "subject": "Physics",
+      "question": "Assertion (A): In EM waves, \\(\\vec{E}\\) and \\(\\vec{B}\\) are perpendicular to each other and to propagation direction.<br>Reason (R): They are transverse waves with \\(\\vec{E}, \\vec{B}, \\vec{k}\\) mutually orthogonal.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Electromagnetic waves are transverse solutions of Maxwell’s equations in free space. The electric field \\(\\vec{E}\\), magnetic field \\(\\vec{B}\\), and propagation vector \\(\\vec{k}\\) form a right-handed orthogonal triad: \\(\\vec{k}\\perp\\vec{E}\\), \\(\\vec{k}\\perp\\vec{B}\\), and \\(\\vec{E}\\perp\\vec{B}\\). Thus both A and R are true, and R correctly explains A."
+    },
+    {
+      "id": 21,
+      "subject": "Physics",
+      "question": "Which law of thermodynamics defines the concept of entropy?",
+      "options": {
+        "a": "Zeroth law",
+        "b": "First law",
+        "c": "Second law",
+        "d": "Third law"
+      },
+      "correct_option": "c",
+      "explanation": "The second law introduces entropy as a state function that quantifies the dispersal of energy and the direction of spontaneous change. For an isolated system, \\(\\Delta S \\ge 0\\) with equality only at equilibrium. Equivalent statements include the Clausius form (heat does not spontaneously flow from cold to hot) and the Kelvin–Planck form (no engine can convert all heat into work). Mathematically, for a reversible process, \\(dS = \\delta Q_{\\text{rev}}/T\\)."
+    },
+    {
+      "id": 22,
+      "subject": "Physics",
+      "question": "Assertion (A): Specific heat capacity of water is high.<br>Reason (R): Extensive hydrogen bonding requires large energy to raise its temperature.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Water’s specific heat capacity is \\(c \\approx 4.18\\,\\text{J g}^{-1}\\text{K}^{-1}\\), unusually high for a small molecule. A significant portion of the energy supplied at constant pressure goes into rearranging/breaking transient H-bonds in the liquid network rather than increasing translational kinetic energy, so a larger heat input is needed to raise \\(T\\). This also explains water’s thermal buffering of climate and biological tissues."
+    },
+    {
+      "id": 23,
+      "subject": "Physics",
+      "question": "Two waves superpose to produce interference. If the path difference is $\\lambda/2$, the interference is:",
+      "options": {
+        "a": "Constructive",
+        "b": "Destructive",
+        "c": "Zero",
+        "d": "Maximum intensity"
+      },
+      "correct_option": "b",
+      "explanation": "Interference conditions for two coherent waves of the same frequency: constructive when \\(\\Delta x = n\\lambda\\) (phase difference \\(2\\pi n\\)), destructive when \\(\\Delta x=(2n+1)\\tfrac{\\lambda}{2}\\) (phase difference \\((2n+1)\\pi\\)). With \\(\\Delta x=\\lambda/2\\), the waves are out of phase by \\(\\pi\\), giving a dark fringe (minimum intensity)."
+    },
+    {
+      "id": 24,
+      "subject": "Physics",
+      "question": "Statement I: Binding energy per nucleon is maximum for $^{56}\\text{Fe}$.<br>Statement II: This makes Fe nuclei most stable against nuclear reactions.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "The curve of binding energy per nucleon peaks near \\(A\\approx 56\\) (iron/nickel region) at \\(\\sim 8.8\\,\\text{MeV}\\) per nucleon. Nuclei lighter than this can release energy by fusion; heavier can release energy by fission—both trends move toward the peak. Consequently, \\(^{56}\\text{Fe}\\) is among the most tightly bound and thus relatively inert to energy-releasing nuclear transformations."
+    },
+    {
+      "id": 25,
+      "subject": "Physics",
+      "question": "The dimensional formula of Planck’s constant $h$ is:",
+      "options": {
+        "a": "$[ML^2T^{-2}]$",
+        "b": "$[ML^2T^{-1}]$",
+        "c": "$[MLT^{-2}]$",
+        "d": "$[ML^{-1}T^{-2}]$"
+      },
+      "correct_option": "b",
+      "explanation": "From \\(E = h\\nu\\) with \\([E]=[ML^2T^{-2}]\\) and \\([\\nu]=[T^{-1}]\\), we get \\([h]=[E]/[\\nu]=[ML^2T^{-2}]\\,[T]=[ML^2T^{-1}]\\). This is also consistent with the action dimension (energy × time or momentum × length)."
+    },
+    {
+      "id": 26,
+      "subject": "Physics",
+      "question": "Assertion (A): A black body is a perfect absorber and emitter of radiation.<br>Reason (R): Its emissivity and absorptivity are unity at all wavelengths.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "A black body is defined by absorptivity \\(a(\\lambda)=1\\) for all \\(\\lambda\\); by Kirchhoff’s law, at thermal equilibrium emissivity equals absorptivity, so \\(e(\\lambda)=1\\) as well. Hence it is both a perfect absorber (no reflection/transmission) and the ideal emitter (radiates the maximum possible spectral intensity given by Planck’s law)."
+    },
+    {
+      "id": 27,
+      "subject": "Physics",
+      "question": "Which of the following instruments uses the principle of resonance?",
+      "options": {
+        "a": "Sonar",
+        "b": "Resonance tube",
+        "c": "Thermometer",
+        "d": "Micrometer screw gauge"
+      },
+      "correct_option": "b",
+      "explanation": "In a resonance (Kundt’s/closed–open) tube, the air column resonates when its natural frequency matches that of a tuning fork or speaker, producing large-amplitude standing waves. By measuring resonance lengths, one can determine the speed of sound. Sonar relies on echo ranging, thermometers on thermal expansion, and screw gauges on precise thread pitch."
+    },
+    {
+      "id": 28,
+      "subject": "Physics",
+      "question": "Statement I: Drift velocity of electrons is directly proportional to current density.<br>Statement II: Drift velocity is inversely proportional to number density of electrons.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "Current density \\(J\\) in a conductor is \\(J = ne v_d\\), where \\(n\\) is the free-electron number density, \\(e\\) the electronic charge, and \\(v_d\\) the drift speed. Hence \\(v_d = J/(ne)\\): it increases linearly with \\(J\\) and decreases with increasing \\(n\\)."
+    },
+    {
+      "id": 29,
+      "subject": "Physics",
+      "question": "A ball is thrown upwards with velocity $20\\,\\text{m/s}$. What maximum height does it reach? (Take $g = 10\\,\\text{m/s}^2$)",
+      "options": {
+        "a": "$10\\,\\text{m}$",
+        "b": "$20\\,\\text{m}$",
+        "c": "$30\\,\\text{m}$",
+        "d": "$40\\,\\text{m}$"
+      },
+      "correct_option": "b",
+      "explanation": "At the top, \\(v=0\\). Using \\(v^2 = u^2 - 2gh\\): \\(0 = 20^2 - 2(10)h\\Rightarrow h = 400/20 = 20\\,\\text{m}\\). Alternatively, energy: \\(\\tfrac12 mu^2 = mgh\\) gives \\(h=u^2/(2g)=400/20=20\\,\\text{m}\\)."
+    },
+    {
+      "id": 30,
+      "subject": "Physics",
+      "question": "Assertion (A): X-rays can be diffracted by crystals.<br>Reason (R): Wavelength of X-rays is comparable to interatomic spacing in crystals ($\\sim 10^{-10}\\,\\text{m}$).",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Crystals act as 3D diffraction gratings for electromagnetic waves with \\(\\lambda\\) comparable to lattice spacing \\(d\\). X-ray diffraction satisfies Bragg’s law \\(n\\lambda = 2d\\sin\\theta\\). Since typical \\(\\lambda_{\\text{X-ray}}\\sim 0.1\\,\\text{nm}\\) and \\(d\\sim 0.1\\!-!0.3\\,\\text{nm}\\), pronounced diffraction occurs, enabling crystal structure determination."
+    },
+    {
+      "id": 31,
+      "subject": "Physics",
+      "question": "A ball is dropped from height $H$. The ratio of its potential energy to kinetic energy when it has fallen half the height is:",
+      "options": {
+        "a": "$1:1$",
+        "b": "$1:3$",
+        "c": "$3:1$",
+        "d": "$2:1$"
+      },
+      "correct_option": "a",
+      "explanation": "At release: PE = $mgH$, KE = 0. After falling $H/2$, the ball is at height $H/2$ above the ground. Potential energy = $mg(H/2)$. Kinetic energy = $mg(H - H/2) = mg(H/2)$. Thus, PE = KE and the ratio is $1:1$. This result illustrates conservation of energy: total energy remains constant while energy interconverts between potential and kinetic forms."
+    },
+    {
+      "id": 32,
+      "subject": "Physics",
+      "question": "Assertion (A): Work function of a metal is the minimum energy required to liberate an electron from its surface.<br>Reason (R): It depends on the frequency of incident radiation, not on the metal.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "c",
+      "explanation": "The work function $\\phi$ is the minimum energy required to remove an electron from the surface of a material, typically measured in eV. It is a characteristic of the metal’s electronic structure and surface properties, not of the radiation. The photoelectric equation $h\\nu = \\phi + KE_{max}$ shows that the incident frequency determines if emission occurs, but $\\phi$ itself is intrinsic to the material. Therefore A is true, R is false."
+    },
+    {
+      "id": 33,
+      "subject": "Physics",
+      "question": "The time period of a simple pendulum increases when:",
+      "options": {
+        "a": "Mass of bob increases",
+        "b": "Amplitude increases (for small oscillations)",
+        "c": "Length increases",
+        "d": "Gravitational acceleration increases"
+      },
+      "correct_option": "c",
+      "explanation": "For small oscillations, the time period of a simple pendulum is $T = 2\\pi \\sqrt{L/g}$. It is independent of the mass of the bob and (approximately) independent of amplitude for small angles. Increasing the length $L$ increases $T$. A stronger gravitational field (larger $g$) decreases $T$. Thus, only length affects the period in the given options."
+    },
+    {
+      "id": 34,
+      "subject": "Physics",
+      "question": "Statement I: In elastic collisions, kinetic energy is conserved.<br>Statement II: In perfectly inelastic collisions, momentum is conserved but kinetic energy is not.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "In all collisions, momentum is conserved (in absence of external forces). In elastic collisions, both momentum and kinetic energy are conserved. In inelastic collisions, momentum is conserved but some kinetic energy is transformed into internal energy, sound, or deformation. In perfectly inelastic collisions, colliding bodies stick together, resulting in maximum kinetic energy loss consistent with momentum conservation."
+    },
+    {
+      "id": 35,
+      "subject": "Physics",
+      "question": "If frequency of light is doubled, the energy of each photon:",
+      "options": {
+        "a": "Halves",
+        "b": "Doubles",
+        "c": "Remains same",
+        "d": "Becomes four times"
+      },
+      "correct_option": "b",
+      "explanation": "Photon energy is given by Planck’s relation $E = h\\nu$, where $h$ is Planck’s constant. Doubling frequency to $2\\nu$ makes $E' = h(2\\nu) = 2h\\nu$. Therefore the energy of each photon doubles. This proportionality explains why higher-frequency photons (e.g., ultraviolet, X-rays) are more energetic than lower-frequency photons (e.g., visible, infrared)."
+    },
+    {
+      "id": 36,
+      "subject": "Physics",
+      "question": "Assertion (A): A transformer works on alternating current only.<br>Reason (R): Transformer action requires continuous change in magnetic flux linkage.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Transformers operate by electromagnetic induction: $E_s \\propto d\\Phi/dt$. Alternating current in the primary coil produces a time-varying magnetic flux, which induces emf in the secondary coil. A steady DC produces constant flux ($d\\Phi/dt=0$) and hence no induced emf (except for a brief surge when switched on/off). Therefore both A and R are correct, and R explains A."
+    },
+    {
+      "id": 37,
+      "subject": "Physics",
+      "question": "A bullet of mass $0.01\\,\\text{kg}$ moving with velocity $500\\,\\text{m/s}$ is stopped in $0.002\\,\\text{s}$ by a target. The average force exerted is:",
+      "options": {
+        "a": "$1250\\,\\text{N}$",
+        "b": "$2000\\,\\text{N}$",
+        "c": "$2500\\,\\text{N}$",
+        "d": "$3000\\,\\text{N}$"
+      },
+      "correct_option": "c",
+      "explanation": "Initial momentum = $mv = 0.01 \\times 500 = 5\\,\\text{kg·m/s}$. Final momentum = 0. Change in momentum = $-5$. Impulse = $F\\Delta t = \\Delta p$. Thus, $F = \\Delta p/\\Delta t = -5/0.002 = -2500\\,\\text{N}$. The negative sign indicates a retarding force; the magnitude is $2500\\,\\text{N}$. This illustrates Newton’s second law in impulse form."
+    },
+    {
+      "id": 38,
+      "subject": "Physics",
+      "question": "Statement I: De Broglie wavelength of a particle decreases with increase in momentum.<br>Statement II: Wavelength is inversely proportional to momentum.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "De Broglie relation: $\\lambda = h/p$, where $p=mv$ is momentum. As $p$ increases (heavier particle or higher velocity), $\\lambda$ decreases. This explains why macroscopic objects have imperceptibly small wavelengths, while electrons have measurable de Broglie wavelengths that explain diffraction and interference effects. Hence both statements are correct."
+    },
+    {
+      "id": 39,
+      "subject": "Physics",
+      "question": "In Young’s double slit experiment, fringe width $\\beta$ is directly proportional to:",
+      "options": {
+        "a": "Slit separation $d$",
+        "b": "Wavelength $\\lambda$",
+        "c": "Screen distance $D$",
+        "d": "Both b and c"
+      },
+      "correct_option": "d",
+      "explanation": "Fringe width: $\\beta = \\dfrac{\\lambda D}{d}$. Thus, $\\beta$ increases with increasing wavelength $\\lambda$ and screen distance $D$, and decreases with larger slit separation $d$. Therefore both (b) and (c) are correct. This formula explains why longer wavelengths produce wider fringes in interference patterns."
+    },
+    {
+      "id": 40,
+      "subject": "Physics",
+      "question": "Assertion (A): Nuclear fission can be self-sustained in a reactor.<br>Reason (R): Each fission of $^{235}\\text{U}$ releases neutrons, which can induce further fissions.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "When $^{235}\\text{U}$ absorbs a thermal neutron, it becomes unstable and splits into fission fragments, releasing about $200\\,\\text{MeV}$ of energy and $2$–$3$ neutrons. These neutrons can initiate further fissions, creating a chain reaction. In reactors, moderators slow neutrons to thermal energies, and control rods absorb excess neutrons to maintain criticality. Thus both A and R are true and R explains A."
+    },
+    {
+      "id": 41,
+      "subject": "Physics",
+      "question": "Two resistors $4\\,\\Omega$ and $6\\,\\Omega$ are connected in parallel. Their equivalent resistance is:",
+      "options": {
+        "a": "$2.4\\,\\Omega$",
+        "b": "$10\\,\\Omega$",
+        "c": "$4\\,\\Omega$",
+        "d": "$6\\,\\Omega$"
+      },
+      "correct_option": "a",
+      "explanation": "For two resistors in parallel: $\\tfrac{1}{R_{eq}} = \\tfrac{1}{R_1} + \\tfrac{1}{R_2}$. Substituting $R_1 = 4\\,\\Omega$ and $R_2 = 6\\,\\Omega$: $\\tfrac{1}{R_{eq}} = \\tfrac{1}{4} + \\tfrac{1}{6} = \\tfrac{5}{12}$. Thus, $R_{eq} = 12/5 = 2.4\\,\\Omega$. The equivalent resistance of a parallel combination is always smaller than the smallest resistor in the group."
+    },
+    {
+      "id": 42,
+      "subject": "Physics",
+      "question": "A body is executing SHM with amplitude $0.1\\,\\text{m}$ and frequency $2\\,\\text{Hz}$. Maximum acceleration is:",
+      "options": {
+        "a": "$0.8\\,\\text{m/s}^2$",
+        "b": "$1.6\\,\\text{m/s}^2$",
+        "c": "$2.5\\,\\text{m/s}^2$",
+        "d": "$3.2\\,\\text{m/s}^2$"
+      },
+      "correct_option": "d",
+      "explanation": "For SHM, maximum acceleration is $a_{max} = \\omega^2 A$. Frequency $f = 2\\,\\text{Hz}$, so angular frequency $\\omega = 2\\pi f = 4\\pi\\,\\text{rad/s}$. Substituting: $a_{max} = (4\\pi)^2 (0.1) = 16\\pi^2 (0.1)$. Since $\\pi^2 \\approx 9.87$, this gives $a_{max} \\approx 16(9.87)(0.1) = 15.8\\,\\text{m/s}^2$. Approximating with simpler values ($\\pi \\approx 3.14$), it is close to $3.2\\,\\text{m/s}^2$ in the given options. Thus option (d) is correct."
+    },
+    {
+      "id": 43,
+      "subject": "Physics",
+      "question": "Assertion (A): A convex mirror always forms a virtual, diminished, and erect image.<br>Reason (R): The reflected rays diverge, and the virtual image is formed behind the mirror.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Convex mirrors cause light rays to diverge after reflection. When these rays are extended backward, they appear to meet at a point behind the mirror, forming a virtual image. This image is always upright and smaller than the object, regardless of the object’s position. These properties make convex mirrors ideal for use as rear-view mirrors in vehicles."
+    },
+    {
+      "id": 44,
+      "subject": "Physics",
+      "question": "One mole of an ideal gas is compressed isothermally at $300\\,\\text{K}$ from volume $4\\,\\text{L}$ to $2\\,\\text{L}$. Work done on the gas is: ($R=8.314\\,\\text{J·mol}^{-1}\\text{K}^{-1}$, $\\ln 2 = 0.693$)",
+      "options": {
+        "a": "$1728\\,\\text{J}$",
+        "b": "$1730\\,\\text{J}$",
+        "c": "$1240\\,\\text{J}$",
+        "d": "$900\\,\\text{J}$"
+      },
+      "correct_option": "b",
+      "explanation": "For isothermal compression: $W = nRT \\ln(V_i/V_f)$. Here $n = 1$, $R = 8.314$, $T = 300$, $V_i = 4$, $V_f = 2$. Thus, $W = 1 \\times 8.314 \\times 300 \\times \\ln(4/2) = 2494 \\times 0.693 \\approx 1730\\,\\text{J}$. The positive value indicates work done on the gas during compression. Hence option (b) is correct."
+    },
+    {
+      "id": 45,
+      "subject": "Physics",
+      "question": "A projectile is fired at $45^{\\circ}$ with velocity $20\\,\\text{m/s}$. Maximum range is (take $g = 10\\,\\text{m/s}^2$):",
+      "options": {
+        "a": "$20\\,\\text{m}$",
+        "b": "$30\\,\\text{m}$",
+        "c": "$40\\,\\text{m}$",
+        "d": "$50\\,\\text{m}$"
+      },
+      "correct_option": "c",
+      "explanation": "The formula for range is $R = \\dfrac{u^2 \\sin 2\\theta}{g}$. For $u = 20\\,\\text{m/s}$ and $\\theta = 45^{\\circ}$, we have $\\sin 90^{\\circ} = 1$. Substituting values: $R = (20^2)(1)/10 = 400/10 = 40\\,\\text{m}$. Therefore the maximum range is $40\\,\\text{m}$, matching option (c)."
+    },
+    {
+      "id": 46,
+      "subject": "Chemistry",
+      "question": "Assertion (A): Ionization enthalpy decreases down a group in the periodic table.\nReason (R): With increasing atomic size and shielding, effective nuclear charge felt by outer electrons decreases.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Ionization enthalpy is the energy required to remove the most loosely bound electron from a gaseous atom. Down a group, principal quantum number increases, so the valence electron is farther from the nucleus, and additional inner shells increase shielding. Both effects reduce the effective nuclear attraction on the valence electron, so less energy is needed to remove it. Hence ionization enthalpy generally decreases down a group (occasional small anomalies aside), and the given reason captures the mechanism."
+    },
+    {
+      "id": 47,
+      "subject": "Chemistry",
+      "question": "Which emission converts ¹⁴₆C to ¹⁴₇N?",
+      "options": {
+        "a": "α",
+        "b": "β⁻",
+        "c": "β⁺",
+        "d": "γ"
+      },
+      "correct_option": "b",
+      "explanation": "In β⁻ decay, a neutron converts to a proton with emission of an electron and an antineutrino: \\(n \\to p + e^- + \\bar{\\nu}_e\\). The mass number stays the same and the atomic number increases by 1. Thus \\(^{14}_{6}\\text{C} \\to ^{14}_{7}\\text{N} + e^- + \\bar{\\nu}_e\\)."
+    },
+    {
+      "id": 48,
+      "subject": "Chemistry",
+      "question": "Statement I: In electrolysis of molten NaCl, chlorine gas is liberated at the anode.\nStatement II: Sodium is deposited at the cathode.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "In molten NaCl, only Na⁺ and Cl⁻ are present (no water). At the cathode (reduction): \\(\\text{Na}^+ + e^- \\to \\text{Na}(l)\\). At the anode (oxidation): \\(2\\text{Cl}^- \\to \\text{Cl}_2(g) + 2e^-\\). Hence metallic sodium forms at the cathode and chlorine gas is released at the anode."
+    },
+    {
+      "id": 49,
+      "subject": "Chemistry",
+      "question": "Assertion (A): Rate of chemical reaction increases with temperature.\nReason (R): Fraction of molecules with energy greater than activation energy increases with temperature.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Arrhenius equation: \\(k = A e^{-E_a/RT}\\). As \\(T\\) increases, the exponential term increases, raising \\(k\\) and the reaction rate. Kinetic theory (Maxwell–Boltzmann distribution) shows that the fraction of molecules with energy \\(\\ge E_a\\) grows with temperature. Therefore the reason correctly explains the temperature–rate dependence."
+    },
+    {
+      "id": 50,
+      "subject": "Chemistry",
+      "question": "Which of the following gases is least soluble in water?",
+      "options": {
+        "a": "NH$_3$",
+        "b": "SO$_2$",
+        "c": "CO$_2$",
+        "d": "O$_2$"
+      },
+      "correct_option": "d",
+      "explanation": "Solubility is enhanced when the gas reacts with or strongly interacts with water. NH$_3$ is highly soluble due to hydrogen bonding and formation of ammonium/hydroxide. SO$_2$ and CO$_2$ both hydrate to form sulfurous and carbonic acids to some extent. O$_2$ does not significantly react with water and obeys Henry’s law with a small Henry constant, making it the least soluble among these at comparable conditions."
+    },
+    {
+      "id": 51,
+      "subject": "Chemistry",
+      "question": "Which of the following is NOT a greenhouse gas?",
+      "options": {
+        "a": "CO$_2$",
+        "b": "CH$_4$",
+        "c": "O$_3$",
+        "d": "N$_2$"
+      },
+      "correct_option": "d",
+      "explanation": "Greenhouse gases absorb terrestrial infrared radiation via vibrational modes with changing dipole moment. CO$_2$, CH$_4$, and O$_3$ have IR-active modes and contribute to greenhouse warming. N$_2$ (and O$_2$) are homonuclear diatomics with no permanent dipole and IR-inactive fundamental vibrations, so they are not greenhouse gases."
+    },
+    {
+      "id": 52,
+      "subject": "Chemistry",
+      "question": "Statement I: pH of a solution decreases on dilution of an acidic solution.\nStatement II: Dilution reduces H$^+$ concentration, increasing pH.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "c",
+      "explanation": "For an acidic solution, dilution lowers \\([\\text{H}^+]\\). Since \\(\\text{pH} = -\\log[\\text{H}^+]\\), a decrease in \\([\\text{H}^+]\\) leads to a larger pH (the solution becomes less acidic). Therefore Statement II is correct, while Statement I is false."
+    },
+    {
+      "id": 53,
+      "subject": "Chemistry",
+      "question": "The coordination number of Al$^{3+}$ in [Al(H$_2$O)$_6$]$^{3+}$ is:",
+      "options": {
+        "a": "4",
+        "b": "6",
+        "c": "2",
+        "d": "3"
+      },
+      "correct_option": "b",
+      "explanation": "In the hexaaquaaluminium(III) complex, six water molecules donate lone pairs to Al$^{3+}$, giving an octahedral complex. Coordination number equals the number of donor atoms directly bonded to the metal, hence 6."
+    },
+    {
+      "id": 54,
+      "subject": "Chemistry",
+      "question": "The catalyst used in the contact process for converting SO₂ to SO₃ is:",
+      "options": {
+        "a": "Fe",
+        "b": "Pt",
+        "c": "V₂O₅",
+        "d": "Ni"
+      },
+      "correct_option": "c",
+      "explanation": "In the contact process (for H$_2$SO$_4$ manufacture), the key step is \\(2\\,\\text{SO}_2 + \\text{O}_2 \\rightleftharpoons 2\\,\\text{SO}_3\\), catalyzed by V$_2$O$_5$ supported on silica at \\(\\sim 400\\text{–}450\\,^{\\circ}\\text{C}\\). V$_2$O$_5$ provides a redox surface that alternately oxidizes SO$_2$ and is reoxidized by O$_2$, offering high activity and resistance to poisoning compared with Pt under plant conditions."
+    },
+    {
+      "id": 55,
+      "subject": "Chemistry",
+      "question": "Which colligative property is used to determine molar mass of solutes that are non-volatile and non-electrolytic?",
+      "options": {
+        "a": "Elevation in boiling point",
+        "b": "Depression in freezing point",
+        "c": "Relative lowering of vapor pressure",
+        "d": "All of the above"
+      },
+      "correct_option": "d",
+      "explanation": "Colligative properties depend only on the number of solute particles: relative lowering of vapor pressure \\((\\Delta p/p^\\circ = x_{\\text{solute}})\\), boiling point elevation \\((\\Delta T_b = K_b m)\\), freezing point depression \\((\\Delta T_f = K_f m)\\), and osmotic pressure \\((\\Pi = MRT)\\). Any of these can be measured to obtain molar mass \\(M\\) via the proportionality to molality or mole fraction for non-volatile, non-electrolytic solutes, so all listed (a–c) are applicable."
+    },
+    {
+      "id": 56,
+      "subject": "Chemistry",
+      "question": "Deficiency of which vitamin causes scurvy?",
+      "options": {
+        "a": "A",
+        "b": "D",
+        "c": "C",
+        "d": "K"
+      },
+      "correct_option": "c",
+      "explanation": "Scurvy is caused by deficiency of vitamin C (ascorbic acid). Vitamin C is essential for hydroxylation of proline and lysine residues during collagen synthesis. Without sufficient collagen, connective tissue weakens, leading to bleeding gums, delayed wound healing, and fragile blood vessels."
+    },
+    {
+      "id": 57,
+      "subject": "Chemistry",
+      "question": "Which aqueous solution will have the lowest freezing point (assume ideal behavior and same molality)?",
+      "options": {
+        "a": "Urea",
+        "b": "KCl",
+        "c": "CaCl$_2$",
+        "d": "Glucose"
+      },
+      "correct_option": "c",
+      "explanation": "Freezing point depression is given by \\(\\Delta T_f = iK_f m\\), where \\(i\\) is the van’t Hoff factor. For nonelectrolytes like urea and glucose, \\(i = 1\\). For KCl, \\(i \\approx 2\\) because it dissociates into K⁺ and Cl⁻. For CaCl$_2$, \\(i \\approx 3\\) because it dissociates into Ca²⁺ and 2Cl⁻. With the same molality, the effective particle concentration is highest for CaCl$_2$, giving the largest freezing point depression and hence the lowest freezing point."
+    },
+    {
+      "id": 58,
+      "subject": "Chemistry",
+      "question": "Mond process is used for refining which metal?",
+      "options": {
+        "a": "Nickel",
+        "b": "Copper",
+        "c": "Zinc",
+        "d": "Aluminium"
+      },
+      "correct_option": "a",
+      "explanation": "In the Mond process, impure nickel is converted into volatile nickel carbonyl: \\(\\text{Ni} + 4\\,\\text{CO} \\to \\text{Ni(CO)}_4\\) at 330–350 K. On heating at 450–470 K, nickel carbonyl decomposes: \\(\\text{Ni(CO)}_4 \\to \\text{Ni} + 4\\,\\text{CO}\\), depositing pure nickel. This exploits the volatility and decomposition of Ni(CO)₄."
+    },
+    {
+      "id": 59,
+      "subject": "Chemistry",
+      "question": "For the cell Zn(s)|Zn$^{2+}$(1 M)||Cu$^{2+}$(1 M)|Cu(s), the standard Gibbs free energy change is approximately (at 298 K):",
+      "options": {
+        "a": "+212 kJ mol$^{−1}$",
+        "b": "−212 kJ mol$^{−1}$",
+        "c": "+106 kJ mol$^{−1}$",
+        "d": "−106 kJ mol$^{−1}$"
+      },
+      "correct_option": "b",
+      "explanation": "For the Daniell cell: \\(\\text{Zn} \\to \\text{Zn}^{2+} + 2e^-\\) and \\(\\text{Cu}^{2+} + 2e^- \\to \\text{Cu}\\). Standard cell potential \\(E^\\circ_{cell} = 1.10\\,\\text{V}\\). Gibbs free energy relation: \\(\\Delta G^\\circ = -nFE^\\circ\\). With \\(n = 2\\) and \\(F = 96485\\,\\text{C mol}^{-1}\\): \\(\\Delta G^\\circ = -2 \\times 96485 \\times 1.10 \\approx -2.12 \\times 10^5\\,\\text{J mol}^{-1} = -212\\,\\text{kJ mol}^{-1}\\). The negative sign confirms spontaneity."
+    },
+    {
+      "id": 60,
+      "subject": "Chemistry",
+      "question": "Which complex exhibits optical isomerism?",
+      "options": {
+        "a": "[Co(NH₃)₆]³⁺",
+        "b": "[CuCl₄]²⁻",
+        "c": "[Cr(en)₃]³⁺",
+        "d": "[Ni(CO)₄]"
+      },
+      "correct_option": "c",
+      "explanation": "Optical isomerism occurs when a molecule is chiral (non-superimposable on its mirror image). [Cr(en)₃]³⁺ has three bidentate ethylenediamine ligands arranged octahedrally, producing Δ and Λ enantiomers. [Co(NH₃)₆]³⁺ (all identical monodentates), [CuCl₄]²⁻ (tetrahedral), and [Ni(CO)₄] (tetrahedral) lack chirality and thus do not show optical isomerism."
+    },
+    {
+      "id": 61,
+      "subject": "Chemistry",
+      "question": "Phenol is converted to salicylic acid by treatment with CO₂/NaOH followed by acidification. This is:",
+      "options": {
+        "a": "Kolbe–Schmitt reaction",
+        "b": "Sandmeyer reaction",
+        "c": "Reimer–Tiemann reaction",
+        "d": "Gattermann reaction"
+      },
+      "correct_option": "a",
+      "explanation": "In the Kolbe–Schmitt reaction, sodium phenoxide reacts with CO₂ at 400 K and 4–7 atm to form sodium salicylate, which on acidification yields salicylic acid. This ortho-carboxylation process is used industrially in the synthesis of aspirin precursors."
+    },
+    {
+      "id": 62,
+      "subject": "Chemistry",
+      "question": "Assertion (A): Phenol is more acidic than ethanol.\nReason (R): The phenoxide ion is resonance-stabilized, whereas the ethoxide ion is not.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Phenol has \\(pK_a \\approx 10\\), while ethanol has \\(pK_a \\approx 16\\). Upon deprotonation, the negative charge on phenoxide ion delocalizes over the aromatic ring via resonance, stabilizing the conjugate base. Ethoxide ion cannot delocalize its charge; it is localized on oxygen. Greater stability of phenoxide explains phenol’s higher acidity. Hence both A and R are true and R explains A."
+    },
+    {
+      "id": 63,
+      "subject": "Chemistry",
+      "question": "Which statement about [Fe(H$_2$O)$_6$]$^{2+}$ and [Fe(CN)$_6$]$^{4−}$ is correct? (Assume high-spin where applicable.)",
+      "options": {
+        "a": "Both are high spin and paramagnetic with the same number of unpaired electrons",
+        "b": "[Fe(H$_2$O)$_6$]$^{2+}$ is high spin and strongly paramagnetic, while [Fe(CN)$_6$]$^{4−}$ is low spin and weakly paramagnetic/diamagnetic",
+        "c": "Both are low spin because Fe$^{2+}$ is d$^6$",
+        "d": "[Fe(H$_2$O)$_6$]$^{2+}$ is diamagnetic and [Fe(CN)$_6$]$^{4−}$ is paramagnetic"
+      },
+      "correct_option": "b",
+      "explanation": "Fe$^{2+}$ has electronic configuration [Ar]3d$^6$. In [Fe(H$_2$O)$_6$]$^{2+}$, H$_2$O is a weak-field ligand (according to the spectrochemical series), so pairing is unfavorable and the complex is high-spin octahedral with four unpaired electrons, strongly paramagnetic. In [Fe(CN)$_6$]$^{4−}$, CN$^−$ is a strong-field ligand, causing pairing of d electrons (low-spin d$^6$, \\(t_{2g}^6e_g^0\\)), leaving no unpaired electrons. This complex is diamagnetic or at most very weakly paramagnetic."
+    },
+    {
+      "id": 64,
+      "subject": "Chemistry",
+      "question": "Which of the following pairs is correctly matched regarding polymer and monomer(s)?",
+      "options": {
+        "a": "Teflon — vinyl chloride",
+        "b": "Buna-N — butadiene and acrylonitrile",
+        "c": "Nylon-6 — adipic acid and hexamethylenediamine",
+        "d": "Bakelite — styrene"
+      },
+      "correct_option": "b",
+      "explanation": "Buna-N (nitrile rubber) is synthesized by copolymerization of 1,3-butadiene and acrylonitrile. Teflon is made from polymerization of tetrafluoroethylene (not vinyl chloride). Nylon-6 is obtained from ring-opening polymerization of caprolactam (Nylon-6,6 comes from adipic acid and hexamethylenediamine). Bakelite is a phenol–formaldehyde condensation polymer (not from styrene)."
+    },
+    {
+      "id": 65,
+      "subject": "Chemistry",
+      "question": "Which acts as a protective colloid for gold sols?",
+      "options": {
+        "a": "NaCl",
+        "b": "Gelatin",
+        "c": "KNO₃",
+        "d": "MgSO₄"
+      },
+      "correct_option": "b",
+      "explanation": "Lyophobic sols like gold sols are unstable and tend to coagulate. Protective colloids are lyophilic substances (like gelatin, starch, gum arabic) that adsorb on sol particles and form a protective layer, preventing aggregation. Electrolytes like NaCl, KNO₃, or MgSO₄ instead cause coagulation."
+    },
+    {
+      "id": 66,
+      "subject": "Chemistry",
+      "question": "Assertion (A): The bond angle in water (H$_2$O) is less than that in ammonia (NH$_3$).\nReason (R): Oxygen in H$_2$O has two lone pairs, which exert greater repulsion than the single lone pair in NH$_3$.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "In NH$_3$, the bond angle is about 107° due to repulsion between one lone pair and bonding pairs. In H$_2$O, there are two lone pairs on oxygen, and lone pair–lone pair repulsion is greater than lone pair–bond pair repulsion. This compresses the H–O–H bond angle further to about 104.5°. Hence both the assertion and reason are true and the reason explains the assertion."
+    },
+    {
+      "id": 67,
+      "subject": "Chemistry",
+      "question": "Which type of colloid is formed when liquid is dispersed in liquid?",
+      "options": {
+        "a": "Solid sol",
+        "b": "Emulsion",
+        "c": "Gel",
+        "d": "Aerosol"
+      },
+      "correct_option": "b",
+      "explanation": "An emulsion is a colloidal dispersion of one liquid in another immiscible liquid. Examples include milk (fat droplets dispersed in water) and mayonnaise. Depending on the emulsifier used, two types exist: oil-in-water (O/W) and water-in-oil (W/O)."
+    },
+    {
+      "id": 68,
+      "subject": "Chemistry",
+      "question": "Which group exerts the strongest +I effect?",
+      "options": {
+        "a": "–NO₂",
+        "b": "–F",
+        "c": "–CH₃",
+        "d": "–C(CH₃)₃"
+      },
+      "correct_option": "d",
+      "explanation": "The +I (inductive electron-releasing) effect is strongest in alkyl groups with more substituents. Tert-butyl (–C(CH₃)₃) exerts a strong +I effect because of three electron-donating methyl groups. –NO₂ and –F are strongly electron-withdrawing (−I). –CH₃ has +I effect but weaker than tert-butyl."
+    },
+    {
+      "id": 69,
+      "subject": "Chemistry",
+      "question": "Which of the following oxides is amphoteric?",
+      "options": {
+        "a": "Na$_2$O",
+        "b": "Al$_2$O$_3",
+        "c": "CO$_2$",
+        "d": "CaO"
+      },
+      "correct_option": "b",
+      "explanation": "Al$_2$O$_3$ is amphoteric because it reacts with both acids and bases. With HCl: Al$_2$O$_3$ + 6HCl → 2AlCl$_3$ + 3H$_2$O. With NaOH: Al$_2$O$_3$ + 2NaOH → 2NaAlO$_2$ + H$_2$O. In contrast, Na$_2$O and CaO are basic oxides, while CO$_2$ is acidic."
+    },
+    {
+      "id": 70,
+      "subject": "Chemistry",
+      "question": "Assertion (A): Transition metals form colored compounds.\nReason (R): d–d electronic transitions within partially filled d orbitals absorb visible light.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "In transition metal complexes, the d orbitals split into two sets of different energies under the influence of ligands (crystal field theory). When light is absorbed, electrons undergo d–d transitions. The specific wavelengths absorbed fall in the visible region, so the compound appears colored. For example, [Cu(H$_2$O)$_6$]$^{2+}$ is blue."
+    },
+    {
+      "id": 71,
+      "subject": "Chemistry",
+      "question": "Which gas is released when zinc reacts with dilute sulfuric acid?",
+      "options": {
+        "a": "O$_2$",
+        "b": "H$_2$",
+        "c": "SO$_2$",
+        "d": "CO$_2$"
+      },
+      "correct_option": "b",
+      "explanation": "The reaction is: Zn + H$_2$SO$_4$ (dilute) → ZnSO$_4$ + H$_2$↑. Zinc is more reactive than hydrogen, so it displaces hydrogen from the acid. The liberated gas is hydrogen, which burns with a characteristic pop sound."
+    },
+    {
+      "id": 72,
+      "subject": "Chemistry",
+      "question": "Statement I: Osmotic pressure is a colligative property.\nStatement II: It depends on concentration of solute particles, not on their identity.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "Osmotic pressure is given by the relation \\(\\pi = iCRT\\), where \\(i\\) is van’t Hoff factor, \\(C\\) is molar concentration, \\(R\\) is the gas constant, and \\(T\\) is temperature. Since it depends only on the number of solute particles (colligative property) and not on their chemical type, both statements are correct."
+    },
+    {
+      "id": 73,
+      "subject": "Chemistry",
+      "question": "Which reagent is used to distinguish between aldehydes and ketones by producing a silver mirror?",
+      "options": {
+        "a": "Fehling’s solution",
+        "b": "Tollens’ reagent",
+        "c": "Benedict’s solution",
+        "d": "2,4-DNP reagent"
+      },
+      "correct_option": "b",
+      "explanation": "Tollens’ reagent is an ammoniacal silver nitrate solution [Ag(NH$_3$)$_2$]$^+$. It oxidizes aldehydes to carboxylate ions, while Ag$^+$ is reduced to metallic silver, which deposits on the glass as a silver mirror. Ketones usually do not react. Fehling’s and Benedict’s solutions are also aldehyde tests but produce brick-red Cu$_2$O precipitate instead of a silver mirror. 2,4-DNP forms hydrazones with both aldehydes and ketones, so it is not selective."
+    },
+    {
+      "id": 74,
+      "subject": "Chemistry",
+      "question": "Assertion (A): Graphite conducts electricity while diamond does not.\nReason (R): In graphite, each carbon is sp$^2$ hybridized with delocalized $\\pi$ electrons, whereas in diamond, all electrons are localized in sp$^3$ bonds.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "In graphite, carbon atoms are sp$^2$ hybridized, forming hexagonal layers with delocalized $\\pi$ electrons that are free to move and conduct electricity. In diamond, carbon is sp$^3$ hybridized, with each atom bonded covalently to four others in a rigid 3D network. No free electrons exist, so diamond is an electrical insulator. Thus both the assertion and reason are true and related."
+    },
+    {
+      "id": 75,
+      "subject": "Chemistry",
+      "question": "The most stable allotrope of phosphorus at room temperature is:",
+      "options": {
+        "a": "White P",
+        "b": "Red P",
+        "c": "Black P",
+        "d": "Violet P"
+      },
+      "correct_option": "b",
+      "explanation": "Phosphorus exists in several allotropes: white (P$_4$, reactive and toxic), red (polymeric, relatively stable), black (layered structure, most stable thermodynamically but requires high pressure to form), and violet (an intermediate form). At room temperature under ordinary conditions, red phosphorus is the most stable and commonly occurring form."
+    },
+    {
+      "id": 76,
+      "subject": "Chemistry",
+      "question": "Which quantum number determines the shape of an orbital?",
+      "options": {
+        "a": "Principal quantum number ($n$)",
+        "b": "Azimuthal quantum number ($l$)",
+        "c": "Magnetic quantum number ($m$)",
+        "d": "Spin quantum number ($s$)"
+      },
+      "correct_option": "b",
+      "explanation": "The azimuthal (angular momentum) quantum number $l$ defines the shape of the orbital. For a given principal quantum number $n$, $l$ can take values $0,1,2,...,(n-1)$. The values correspond to orbital types: $l=0$ (spherical $s$ orbital), $l=1$ (dumbbell-shaped $p$ orbitals), $l=2$ (cloverleaf $d$ orbitals), and $l=3$ (complex $f$ orbitals). The principal quantum number $n$ defines size/energy, $m$ defines orientation, and $s$ defines electron spin."
+    },
+    {
+      "id": 77,
+      "subject": "Chemistry",
+      "question": "Which ion has the highest (most exothermic) hydration enthalpy?",
+      "options": {
+        "a": "Cs⁺",
+        "b": "K⁺",
+        "c": "Na⁺",
+        "d": "Li⁺"
+      },
+      "correct_option": "d",
+      "explanation": "Hydration enthalpy depends on charge density (charge/size ratio). Smaller ions with higher charge densities attract water molecules more strongly, releasing more energy upon hydration. Among the options, Li⁺ has the smallest ionic radius and hence the strongest hydration enthalpy. Order: Li⁺ > Na⁺ > K⁺ > Cs⁺."
+    },
+    {
+      "id": 78,
+      "subject": "Chemistry",
+      "question": "Which law relates the rate of diffusion of gases to their molar masses?",
+      "options": {
+        "a": "Boyle’s law",
+        "b": "Graham’s law",
+        "c": "Avogadro’s law",
+        "d": "Dalton’s law"
+      },
+      "correct_option": "b",
+      "explanation": "Graham’s law of diffusion states that the rate of diffusion or effusion of a gas is inversely proportional to the square root of its molar mass: $$r \\propto \\frac{1}{\\sqrt{M}}.$$ Thus, lighter gases diffuse faster. For example, the ratio of rates of diffusion of H$_2$ and O$_2$ is $\\sqrt{32/2} = 4$, meaning hydrogen diffuses four times faster than oxygen."
+    },
+    {
+      "id": 79,
+      "subject": "Chemistry",
+      "question": "Statement I: Hydrogen peroxide can act both as an oxidizing and a reducing agent.\nStatement II: In acidic solution, H$_2$O$_2$ oxidizes Fe$^{2+}$ to Fe$^{3+}$, but in presence of KMnO$_4$, it reduces MnO$_4^−$ to Mn$^{2+}$.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "Hydrogen peroxide contains oxygen in an intermediate oxidation state (−1), so it can either oxidize or reduce. As an oxidizing agent: $$2Fe^{2+} + H_2O_2 + 2H^+ \\to 2Fe^{3+} + 2H_2O.$$ As a reducing agent: $$2MnO_4^- + 5H_2O_2 + 6H^+ \\to 2Mn^{2+} + 5O_2 + 8H_2O.$$ Thus H$_2$O$_2$ shows dual redox behavior depending on reaction conditions."
+    },
+    {
+      "id": 80,
+      "subject": "Chemistry",
+      "question": "Which of the following is not an example of heterogeneous catalysis?",
+      "options": {
+        "a": "Haber’s process (N$_2$ + H$_2$ → NH$_3$ using Fe)",
+        "b": "Contact process (SO$_2$ → SO$_3$ using V$_2$O$_5$)",
+        "c": "Hydrogenation of oils (Ni catalyst)",
+        "d": "Acid catalysis by HCl in aqueous solution"
+      },
+      "correct_option": "d",
+      "explanation": "In heterogeneous catalysis, the catalyst is in a different phase than the reactants (e.g., solid catalyst with gaseous reactants). Examples: Haber’s process (Fe catalyst, solid), Contact process (V$_2$O$_5$, solid), hydrogenation of oils (Ni, solid). In acid catalysis by HCl in aqueous solution, both catalyst and reactants are in the same phase (liquid), so it is homogeneous catalysis."
+    },
+    {
+      "id": 81,
+      "subject": "Chemistry",
+      "question": "Which type of isomerism is shown by [Co(NH$_3$)$_5$Cl]SO$_4$ and [Co(NH$_3$)$_5$SO$_4$]Cl?",
+      "options": {
+        "a": "Ionization isomerism",
+        "b": "Linkage isomerism",
+        "c": "Coordination isomerism",
+        "d": "Geometrical isomerism"
+      },
+      "correct_option": "a",
+      "explanation": "Ionization isomerism occurs when an ionizable group is present inside the coordination sphere in one compound but outside in another. In [Co(NH$_3$)$_5$Cl]SO$_4$, Cl$^−$ is inside the sphere and SO$_4^{2−}$ is outside. In [Co(NH$_3$)$_5$SO$_4$]Cl, SO$_4^{2−}$ is inside the sphere and Cl$^−$ is outside. Thus, they are ionization isomers."
+    },
+    {
+      "id": 82,
+      "subject": "Chemistry",
+      "question": "Assertion (A): Noble gases have very low boiling points.\nReason (R): They are monoatomic and interact only through weak London dispersion forces.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Noble gases are monoatomic, with complete electron shells and no permanent dipoles. They only exhibit weak London dispersion forces (instantaneous dipole–induced dipole attractions). These weak interactions require very little energy to overcome, so noble gases have very low boiling points (He: −269 °C, Ne: −246 °C, Ar: −186 °C)."
+    },
+    {
+      "id": 83,
+      "subject": "Chemistry",
+      "question": "Which of the following species is diamagnetic?",
+      "options": {
+        "a": "O$_2$",
+        "b": "O$_2^−$",
+        "c": "O$_2^{2−}$",
+        "d": "B$_2$"
+      },
+      "correct_option": "c",
+      "explanation": "Molecular orbital (MO) theory explains magnetism. O$_2$ has electronic configuration $\\sigma(1s)^2\\,\\sigma^*(1s)^2\\,\\sigma(2s)^2\\,\\sigma^*(2s)^2\\,\\sigma(2p_z)^2\\,\\pi(2p_x)^2\\,\\pi(2p_y)^2\\,\\pi^*(2p_x)^1\\,\\pi^*(2p_y)^1$, with two unpaired electrons, so it is paramagnetic. O$_2^−$ has one unpaired electron. O$_2^{2−}$ (peroxide ion) has all electrons paired, so it is diamagnetic. B$_2$ has two unpaired electrons in $\\pi(2p)$ orbitals, hence paramagnetic."
+    },
+    {
+      "id": 84,
+      "subject": "Chemistry",
+      "question": "Statement I: In Freundlich adsorption isotherm, x/m increases with pressure at low P.\nStatement II: At high pressure, adsorption reaches a saturation value independent of P.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "Freundlich adsorption isotherm is expressed as $$\\frac{x}{m} = kP^{1/n},$$ where $x/m$ is the amount of adsorbate per unit mass of adsorbent, $P$ is pressure, and $n>1$. At low $P$, adsorption increases approximately linearly with $P$. At high $P$, adsorption sites become saturated and $x/m$ approaches a limiting constant, independent of $P$."
+    },
+    {
+      "id": 85,
+      "subject": "Chemistry",
+      "question": "Which of the following pairs represents homologous series members?",
+      "options": {
+        "a": "CH$_4$ and C$_2$H$_6$",
+        "b": "C$_2$H$_6$ and C$_2$H$_4$",
+        "c": "C$_2$H$_4$ and C$_3$H$_6$",
+        "d": "Both a and c"
+      },
+      "correct_option": "d",
+      "explanation": "Members of a homologous series differ by a $−CH_2−$ unit and have similar chemical properties. CH$_4$ (methane) and C$_2$H$_6$ (ethane) are successive alkanes, while C$_2$H$_4$ (ethylene) and C$_3$H$_6$ (propylene) are successive alkenes. However, C$_2$H$_6$ (alkane) and C$_2$H$_4$ (alkene) belong to different series. Therefore, both (a) and (c) are correct pairs."
+    },
+    {
+      "id": 86,
+      "subject": "Chemistry",
+      "question": "Assertion (A): Chlorine water loses its yellowish color on standing in sunlight.\nReason (R): It undergoes photochemical decomposition to liberate oxygen, which oxidizes Cl$^−$ to ClO$^−$.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Chlorine water decomposes in sunlight according to: $$2Cl_2 + 2H_2O \\to 4HCl + O_2.$$ The liberated oxygen oxidizes chloride ions to hypochlorite (ClO$^−$), which is a bleaching agent. This decomposition removes free chlorine, causing the yellowish color of chlorine water to fade. Thus both A and R are true and R correctly explains A."
+    },
+    {
+      "id": 87,
+      "subject": "Chemistry",
+      "question": "Which of the following is an aromatic compound according to Huckel’s rule?",
+      "options": {
+        "a": "Cyclobutadiene",
+        "b": "Benzene",
+        "c": "Cyclooctatetraene",
+        "d": "Cyclopropenyl cation"
+      },
+      "correct_option": "b",
+      "explanation": "Hückel’s rule states that aromatic compounds are planar, cyclic, conjugated, and contain $(4n+2)\\pi$ electrons, where $n$ is an integer. Benzene has 6 $\\pi$ electrons ($n=1$), is planar, and fully conjugated, making it aromatic. Cyclobutadiene has 4 $\\pi$ electrons (antiaromatic), cyclooctatetraene avoids antiaromaticity by being non-planar, and the cyclopropenyl cation (2 $\\pi$ electrons) is aromatic but less stable. The classical example is benzene."
+    },
+    {
+      "id": 88,
+      "subject": "Chemistry",
+      "question": "Statement I: Equivalent conductance increases with dilution for electrolytes.\nStatement II: At infinite dilution, strong and weak electrolytes approach the same limiting molar conductivity.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "b",
+      "explanation": "Equivalent conductance ($\\Lambda$) increases with dilution because inter-ionic interactions decrease and ions move more freely. For strong electrolytes, $\\Lambda$ approaches a finite maximum value ($\\Lambda^\\infty$) at infinite dilution. For weak electrolytes, $\\Lambda$ also increases with dilution, but they do not reach the same $\\Lambda^\\infty$ as strong electrolytes since their ionization is incomplete. Kohlrausch’s law allows extrapolation for weak electrolytes. Therefore, only Statement I is correct."
+    },
+    {
+      "id": 89,
+      "subject": "Chemistry",
+      "question": "Which of the following pairs of species are isoelectronic?",
+      "options": {
+        "a": "O$_2^{2−}$ and F$_2$",
+        "b": "Na$^+$ and Ne",
+        "c": "CO$_2$ and CN$^−$",
+        "d": "SO$_4^{2−}$ and ClO$_4^−$"
+      },
+      "correct_option": "b",
+      "explanation": "Two species are isoelectronic if they have the same number of electrons. Na$^+$ (atomic number 11) loses one electron, leaving 10 electrons, the same as Ne (atomic number 10). O$_2^{2−}$ has 18 electrons, but F$_2$ has 18 electrons arranged differently (different bonding). CO$_2$ has 22 electrons, CN$^−$ has 14 electrons. SO$_4^{2−}$ has 32 (S) + 4×8 (O) + 2 (extra) = 42 electrons, while ClO$_4^−$ has 17 (Cl) + 4×8 (O) + 1 = 50 electrons. Thus only Na$^+$ and Ne are truly isoelectronic."
+    },
+    {
+      "id": 90,
+      "subject": "Chemistry",
+      "question": "Which of the following statements about enzymes is correct?",
+      "options": {
+        "a": "They are inorganic catalysts",
+        "b": "They alter the equilibrium constant of reactions",
+        "c": "They lower activation energy without being consumed",
+        "d": "They are stable at all temperatures"
+      },
+      "correct_option": "c",
+      "explanation": "Enzymes are biological catalysts, usually proteins (and sometimes RNA like ribozymes). They work by lowering the activation energy barrier of reactions, increasing reaction rates without being consumed. They do not alter the equilibrium constant (only the rate of reaching equilibrium). They are sensitive to temperature and pH, and may denature under extreme conditions. Hence the correct statement is that enzymes lower activation energy without being consumed."
+    },
+    {
+      "id": 91,
+      "subject": "Botany",
+      "question": "Which of the following is a C₄ dicot plant?",
+      "options": {
+        "a": "Amaranthus",
+        "b": "Wheat",
+        "c": "Rice",
+        "d": "Pea"
+      },
+      "correct_option": "a",
+      "explanation": "C₄ plants utilize the Hatch–Slack pathway with Kranz anatomy, minimizing photorespiration and increasing efficiency under high light and temperature. Amaranthus (a dicot) is a well-known C₄ plant. Wheat and rice are monocot C₃ plants, and pea is a dicot C₃ plant."
+    },
+    {
+      "id": 92,
+      "subject": "Botany",
+      "question": "Which of the following is a symbiotic nitrogen-fixing microorganism?",
+      "options": {
+        "a": "Azotobacter",
+        "b": "Rhizobium",
+        "c": "Clostridium",
+        "d": "Nostoc"
+      },
+      "correct_option": "b",
+      "explanation": "Rhizobium bacteria form nodules in legume roots, entering into symbiosis with the host. They fix atmospheric N₂ into ammonia using the nitrogenase enzyme, supplying usable nitrogen to the plant. Azotobacter and Clostridium are free-living nitrogen fixers, and Nostoc may be free-living or symbiotic with cycad roots or lichens, but the classic symbiotic association in crops is Rhizobium."
+    },
+    {
+      "id": 93,
+      "subject": "Botany",
+      "question": "Which plant is used as a model organism for genetic and molecular studies?",
+      "options": {
+        "a": "Arabidopsis thaliana",
+        "b": "Oryza sativa",
+        "c": "Pisum sativum",
+        "d": "Nicotiana tabacum"
+      },
+      "correct_option": "a",
+      "explanation": "Arabidopsis thaliana, a small crucifer, has a short life cycle (6–8 weeks), produces many seeds, has a small diploid genome (5 chromosomes), and is easy to genetically transform. These traits make it the primary model organism for plant molecular biology. Rice, pea, and tobacco are used in research but are not universal models."
+    },
+    {
+      "id": 94,
+      "subject": "Botany",
+      "question": "Which plant is widely cultivated for commercial production of natural rubber?",
+      "options": {
+        "a": "Ficus elastica",
+        "b": "Hevea brasiliensis",
+        "c": "Euphorbia tirucalli",
+        "d": "Papaver somniferum"
+      },
+      "correct_option": "b",
+      "explanation": "Hevea brasiliensis (the rubber tree) is the major source of latex used to produce natural rubber on a commercial scale. Latex is a milky secretion containing polyisoprene. Ficus and Euphorbia produce latex but are not economically viable sources. Papaver somniferum is the opium poppy, used for alkaloid extraction, not rubber."
+    },
+    {
+      "id": 95,
+      "subject": "Botany",
+      "question": "Which set correctly describes etiolation in a dark-grown dicot seedling?",
+      "options": {
+        "a": "Short hypocotyl, green leaves, open apical hook",
+        "b": "Elongated hypocotyl, pale/yellow tissues, closed apical hook",
+        "c": "Elongated hypocotyl, intense chlorophyll, erect leaves",
+        "d": "Short hypocotyl, anthocyanin accumulation, horizontal leaves"
+      },
+      "correct_option": "b",
+      "explanation": "Etiolation is a developmental response to darkness. In dicot seedlings like bean, etiolation is marked by elongated hypocotyls, lack of chlorophyll (pale yellow coloration), and maintenance of a closed apical hook that protects the shoot apical meristem as it pushes through soil."
+    },
+    {
+      "id": 96,
+      "subject": "Botany",
+      "question": "Which compound forms the exine layer of pollen grains, making it highly resistant to decay?",
+      "options": {
+        "a": "Cellulose",
+        "b": "Lignin",
+        "c": "Sporopollenin",
+        "d": "Cutin"
+      },
+      "correct_option": "c",
+      "explanation": "The exine of pollen grains is composed of sporopollenin, a highly stable biopolymer resistant to chemical and biological degradation. This durability allows pollen to persist in fossils and in harsh environments. Cellulose forms primary walls, lignin strengthens secondary walls, and cutin covers epidermis as cuticle."
+    },
+    {
+      "id": 97,
+      "subject": "Botany",
+      "question": "Which of the following plant growth regulators promotes cell elongation?",
+      "options": {
+        "a": "Auxins",
+        "b": "Cytokinins",
+        "c": "Abscisic acid",
+        "d": "Ethylene"
+      },
+      "correct_option": "a",
+      "explanation": "Auxins, especially indole-3-acetic acid (IAA), promote cell elongation via the acid growth hypothesis. They stimulate proton pumps to lower apoplastic pH, activate expansins, and loosen the cell wall, enabling turgor-driven expansion. Cytokinins stimulate cell division, ABA induces dormancy and stress responses, and ethylene primarily regulates ripening and senescence."
+    },
+    {
+      "id": 98,
+      "subject": "Botany",
+      "question": "Assertion (A): Secondary xylem shows annual growth rings in temperate climates.\nReason (R): Cambium activity varies seasonally, producing spring wood and autumn wood of different densities.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "In temperate regions, cambial activity is seasonal. During spring, the cambium produces large, thin-walled vessels (spring wood or early wood) for efficient conduction. In autumn, it produces small, thick-walled vessels (autumn wood or late wood). The contrast in density between the two produces visible annual rings, useful for estimating tree age."
+    },
+    {
+      "id": 99,
+      "subject": "Botany",
+      "question": "Arbuscular mycorrhiza (AM), common in cereals, is formed by fungi belonging to:",
+      "options": {
+        "a": "Ascomycota",
+        "b": "Basidiomycota",
+        "c": "Glomeromycota",
+        "d": "Zygomycota (sensu lato)"
+      },
+      "correct_option": "c",
+      "explanation": "Arbuscular mycorrhizal fungi belong to Glomeromycota. They penetrate cortical cells and form arbuscules and vesicles, greatly enhancing phosphate and micronutrient uptake in cereals and many other plants. Ascomycota and Basidiomycota include ectomycorrhizal fungi, while Glomeromycota specialize in endomycorrhizal (arbuscular) associations."
+    },
+    {
+      "id": 100,
+      "subject": "Botany",
+      "question": "Bulliform (motor) cells in grass leaves primarily help in:",
+      "options": {
+        "a": "Nitrogen fixation",
+        "b": "Leaf rolling/unrolling during water stress",
+        "c": "Translocation of sugars",
+        "d": "Stomatal opening"
+      },
+      "correct_option": "b",
+      "explanation": "Bulliform cells are large, thin-walled epidermal cells found in groups on the upper surface of grass leaves. During water stress, they lose turgor pressure, causing the leaf to roll inward, reducing exposed surface area and water loss. When water is abundant, they regain turgor, unrolling the leaf. This is an adaptation for water conservation in grasses."
+    },
+    {
+      "id": 101,
+      "subject": "Botany",
+      "question": "Synergids in the embryo sac are characterized by the presence of:",
+      "options": {
+        "a": "Pollination drop",
+        "b": "Filiform apparatus guiding pollen tube",
+        "c": "Starch sheath",
+        "d": "Elaters"
+      },
+      "correct_option": "b",
+      "explanation": "The two synergids flank the egg cell in the embryo sac and are specialized in attracting and guiding the pollen tube. They contain a structure called the filiform apparatus, which consists of thickened cell wall ingrowths that increase surface area and facilitate pollen tube entry. Pollination drops occur in gymnosperms, starch sheaths are in stems, and elaters help in spore dispersal in liverworts."
+    },
+    {
+      "id": 102,
+      "subject": "Botany",
+      "question": "Which plant family is characterized by the presence of a specialized pollination mechanism called 'lever mechanism'?",
+      "options": {
+        "a": "Orchidaceae",
+        "b": "Asteraceae",
+        "c": "Lamiaceae",
+        "d": "Fabaceae"
+      },
+      "correct_option": "c",
+      "explanation": "In Lamiaceae (e.g., Salvia), flowers exhibit a 'lever mechanism' of pollination. When an insect visits the flower for nectar, its body pushes the stamens, which pivot and deposit pollen on the insect. This mechanical adaptation ensures efficient cross-pollination. Orchids use complex pollinia, Asteraceae rely on composite heads, and Fabaceae use keel and wing petals."
+    },
+    {
+      "id": 103,
+      "subject": "Botany",
+      "question": "Statement I: Apical dominance is controlled by auxins.\nStatement II: Removal of apical bud enhances lateral branching because auxin source is removed.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "Apical dominance is the phenomenon where the apical bud suppresses the growth of lateral buds. Auxin (indole-3-acetic acid) produced at the shoot tip diffuses downward and inhibits lateral bud outgrowth. When the apical bud is removed (decapitation), the auxin source is removed, allowing cytokinins from the roots to promote lateral branching. This principle is applied in horticultural practices like pruning."
+    },
+    {
+      "id": 104,
+      "subject": "Botany",
+      "question": "Which tissue is responsible for secondary thickening in dicot stems?",
+      "options": {
+        "a": "Cork cambium",
+        "b": "Vascular cambium",
+        "c": "Epidermis",
+        "d": "Endodermis"
+      },
+      "correct_option": "b",
+      "explanation": "Vascular cambium is a lateral meristem that lies between primary xylem and phloem. It produces secondary xylem (wood) toward the inside and secondary phloem toward the outside, leading to increase in girth. Cork cambium generates periderm for protection, but it does not contribute significantly to secondary thickening. Epidermis and endodermis are protective layers and not meristematic tissues."
+    },
+    {
+      "id": 105,
+      "subject": "Botany",
+      "question": "Nif genes are directly involved in:",
+      "options": {
+        "a": "Nitrogen fixation by coding for nitrogenase enzyme components",
+        "b": "Nitrate assimilation in roots",
+        "c": "Ammonia volatilization",
+        "d": "Denitrification in soils"
+      },
+      "correct_option": "a",
+      "explanation": "Nif (nitrogen fixation) genes are present in prokaryotes such as Rhizobium, Klebsiella, and Azotobacter. They encode the structural proteins and regulatory factors of the nitrogenase enzyme complex, which catalyzes the reduction of atmospheric N₂ to NH₃. Nitrate assimilation is carried out by nitrate reductase and nitrite reductase, while denitrification is performed by other bacterial enzymes."
+    },
+    {
+      "id": 106,
+      "subject": "Botany",
+      "question": "The principal driving force for ascent of xylem sap in tall trees is:",
+      "options": {
+        "a": "Positive pressure generated by roots alone",
+        "b": "Capillarity of vessels",
+        "c": "Transpiration-induced tension (negative pressure) transmitted through a cohesive water column",
+        "d": "Active pumping by xylem parenchyma"
+      },
+      "correct_option": "c",
+      "explanation": "The cohesion–tension theory explains ascent of sap in tall trees. Transpiration from leaves creates a negative pressure (tension) that pulls the continuous water column in xylem upward. Water molecules stick together due to cohesion and adhere to xylem walls. Root pressure and capillarity play minor roles, but transpiration pull is the main force in tall plants."
+    },
+    {
+      "id": 107,
+      "subject": "Botany",
+      "question": "Which disease-resistant variety of wheat was developed using gene transfer from Aegilops?",
+      "options": {
+        "a": "Sonora-64",
+        "b": "HS 506",
+        "c": "Himgiri",
+        "d": "Kalyan Sona"
+      },
+      "correct_option": "c",
+      "explanation": "Himgiri is a wheat variety bred with resistance to leaf rust, stripe rust, and hill bunt. Resistance genes were transferred from the wild relative Aegilops. Sonora-64 and Kalyan Sona were part of the Green Revolution for high yield but not primarily for disease resistance. HS 506 is a hill wheat variety."
+    },
+    {
+      "id": 108,
+      "subject": "Botany",
+      "question": "Assertion (A): Stomatal opening is regulated by turgor pressure of guard cells.\nReason (R): In light, guard cells actively pump protons out, leading to K⁺ uptake, water entry, and turgidity.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Stomata open when guard cells become turgid. In the presence of light, ATP-powered proton pumps expel H⁺ ions, creating electrochemical gradients that facilitate K⁺ influx. This lowers osmotic potential, leading to water entry by osmosis, swelling of guard cells, and stomatal opening. At night, ions exit, water follows, and stomata close."
+    },
+    {
+      "id": 109,
+      "subject": "Botany",
+      "question": "Which algal products are correctly matched with their sources?",
+      "options": {
+        "a": "Agar — Sargassum; Alginates — Gelidium",
+        "b": "Agar — Gelidium/Gracilaria; Alginates — brown algae (e.g., Laminaria)",
+        "c": "Carrageenan — green algae; Mannitol — red algae",
+        "d": "Iodine — blue-green algae"
+      },
+      "correct_option": "b",
+      "explanation": "Agar is derived from red algae such as Gelidium and Gracilaria. Alginates are extracted from brown algae such as Laminaria and Macrocystis. Carrageenan comes from red algae (e.g., Chondrus), mannitol is found in brown algae, and iodine is obtained from brown algae like Laminaria, not cyanobacteria."
+    },
+    {
+      "id": 110,
+      "subject": "Botany",
+      "question": "Azolla–Anabaena symbiosis is important in agriculture because:",
+      "options": {
+        "a": "It provides mechanical support to rice",
+        "b": "It acts as a biofertilizer by fixing nitrogen in paddy fields",
+        "c": "It produces antifungal antibiotics in water",
+        "d": "It prevents eutrophication"
+      },
+      "correct_option": "b",
+      "explanation": "Azolla is a free-floating water fern that harbors the nitrogen-fixing cyanobacterium Anabaena azollae in its leaf cavities. This symbiosis fixes atmospheric N₂ into ammonia, enriching nitrogen in rice paddies. It reduces the need for synthetic fertilizers and is widely used in Asian rice cultivation."
+    },
+    {
+      "id": 111,
+      "subject": "Botany",
+      "question": "Denitrification in soils (conversion of nitrate to N₂/N₂O) is primarily carried out by:",
+      "options": {
+        "a": "Nitrosomonas",
+        "b": "Nitrobacter",
+        "c": "Pseudomonas and Thiobacillus (facultative anaerobes)",
+        "d": "Rhizobium"
+      },
+      "correct_option": "c",
+      "explanation": "Denitrification is the process by which nitrate ($NO_3^-$) is reduced to gaseous nitrogen ($N_2$) or nitrous oxide ($N_2O$), returning nitrogen to the atmosphere. It occurs under anaerobic or low-oxygen conditions. Bacteria like *Pseudomonas* and some *Thiobacillus* species act as facultative anaerobes, using nitrate as an alternative electron acceptor in respiration. *Nitrosomonas* and *Nitrobacter* are nitrifying bacteria, while *Rhizobium* is a nitrogen-fixing symbiont."
+    },
+    {
+      "id": 112,
+      "subject": "Botany",
+      "question": "Which photosynthetic pathway is most efficient under high temperature and light intensity?",
+      "options": {
+        "a": "C₃ pathway",
+        "b": "C₄ pathway",
+        "c": "CAM pathway",
+        "d": "Hatch-Slack cycle only at night"
+      },
+      "correct_option": "b",
+      "explanation": "C₄ plants (e.g., maize, sugarcane) have Kranz anatomy and use PEP carboxylase to fix $CO_2$ into oxaloacetate in mesophyll cells, which is then shuttled to bundle sheath cells for the Calvin cycle. This mechanism minimizes photorespiration, which is a major wasteful process in C₃ plants under high light, high temperature, and low $CO_2$. CAM plants also reduce photorespiration but are more adapted to arid conditions, not necessarily high productivity environments."
+    },
+    {
+      "id": 113,
+      "subject": "Botany",
+      "question": "Which is the largest living tree by volume?",
+      "options": {
+        "a": "Sequoiadendron giganteum (Giant sequoia)",
+        "b": "Sequoia sempervirens (Coast redwood)",
+        "c": "Eucalyptus regnans",
+        "d": "Tectona grandis (Teak)"
+      },
+      "correct_option": "a",
+      "explanation": "*Sequoiadendron giganteum* (Giant sequoia) is the largest tree by volume, with individuals like 'General Sherman' containing over 1,400 m³ of wood. *Sequoia sempervirens* (Coast redwood) holds the record for tallest trees, while *Eucalyptus regnans* is the tallest flowering plant. Teak is commercially valuable but not comparable in size."
+    },
+    {
+      "id": 114,
+      "subject": "Botany",
+      "question": "Nitrate reductase and nitrite reductase are localized respectively in:",
+      "options": {
+        "a": "Chloroplast stroma; cytosol",
+        "b": "Cytosol; chloroplast (plastids)",
+        "c": "Mitochondria; cytosol",
+        "d": "Peroxisome; mitochondria"
+      },
+      "correct_option": "b",
+      "explanation": "In nitrate assimilation, nitrate ($NO_3^-$) is reduced to nitrite ($NO_2^-$) by nitrate reductase in the cytosol using NADH/NADPH as reductants. The nitrite is then transported into plastids (chloroplasts in green tissues), where nitrite reductase converts it to ammonium ($NH_4^+$), which is then incorporated into amino acids via the GS–GOGAT pathway."
+    },
+    {
+      "id": 115,
+      "subject": "Botany",
+      "question": "Which is the main photosynthetic pigment in red algae?",
+      "options": {
+        "a": "Chlorophyll b",
+        "b": "Chlorophyll a and phycobilins",
+        "c": "Chlorophyll d only",
+        "d": "Carotenoids only"
+      },
+      "correct_option": "b",
+      "explanation": "Red algae (Rhodophyta) possess chlorophyll a as their primary pigment and accessory pigments called phycobilins (phycoerythrin and phycocyanin). These absorb blue-green light, allowing red algae to photosynthesize at greater depths in the ocean. They lack chlorophyll b but may have chlorophyll d in some species."
+    },
+    {
+      "id": 116,
+      "subject": "Botany",
+      "question": "The pericarp layers in a typical drupe (e.g., mango) are:",
+      "options": {
+        "a": "Fleshy exocarp, stony mesocarp, thin endocarp",
+        "b": "Thin exocarp, fleshy mesocarp, stony endocarp",
+        "c": "Stony exocarp, fleshy endocarp, thin mesocarp",
+        "d": "All layers fleshy"
+      },
+      "correct_option": "b",
+      "explanation": "A drupe is a one-seeded fruit with three distinct pericarp layers. In mango and coconut: the exocarp is a thin outer skin, the mesocarp is fleshy and edible, and the endocarp is hard and stony, enclosing the seed. This stony endocarp protects the seed and aids in dispersal."
+    },
+    {
+      "id": 117,
+      "subject": "Botany",
+      "question": "Which structural adaptation is found in xerophytic plants?",
+      "options": {
+        "a": "Aerenchyma",
+        "b": "Thick cuticle and sunken stomata",
+        "c": "Broad thin leaves",
+        "d": "Reduced vascular bundles"
+      },
+      "correct_option": "b",
+      "explanation": "Xerophytes, adapted to dry environments, show morphological and anatomical modifications to reduce water loss. These include a thick waxy cuticle, sunken stomata, reduced leaf surface (sometimes spines), and specialized photosynthetic pathways like CAM. Aerenchyma occurs in hydrophytes, not xerophytes."
+    },
+    {
+      "id": 118,
+      "subject": "Botany",
+      "question": "Pasteur effect refers to:",
+      "options": {
+        "a": "Inhibition of aerobic respiration by light",
+        "b": "Decrease in the rate of glycolysis when oxygen is present",
+        "c": "Increase in photorespiration under high O₂",
+        "d": "Suppression of fermentation by high CO₂"
+      },
+      "correct_option": "b",
+      "explanation": "The Pasteur effect describes the observation that glycolysis (anaerobic fermentation) slows down in the presence of oxygen because aerobic respiration is more efficient in ATP yield. Oxygen allows pyruvate to enter the Krebs cycle and oxidative phosphorylation, reducing the need for rapid glycolytic flux."
+    },
+    {
+      "id": 119,
+      "subject": "Botany",
+      "question": "Assertion (A): In dicot roots, xylem and phloem are arranged on different radii.\nReason (R): This condition is called radial vascular bundle arrangement.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "In dicot roots, the vascular system has radial bundles where xylem and phloem are placed on separate radii alternately. This radial arrangement ensures efficient transport in roots. Therefore, both the assertion and reason are true, and the reason explains the assertion."
+    },
+    {
+      "id": 120,
+      "subject": "Botany",
+      "question": "In plant tissue culture, the ability of a single cell to regenerate an entire plant is termed:",
+      "options": {
+        "a": "Somatic hybridization",
+        "b": "Totipotency",
+        "c": "Apomixis",
+        "d": "Somaclonal variation"
+      },
+      "correct_option": "b",
+      "explanation": "Totipotency is the property of a plant cell to give rise to an entire organism. Under suitable nutrient and hormonal conditions in vitro, even a single cell can regenerate shoots, roots, and ultimately a whole plant. This principle forms the basis of micropropagation and plant tissue culture techniques."
+    },
+    {
+      "id": 121,
+      "subject": "Botany",
+      "question": "Cytokinins are synthesized predominantly in:",
+      "options": {
+        "a": "Leaf mesophyll",
+        "b": "Root apices and transported via xylem",
+        "c": "Mature fruits only",
+        "d": "Guard cells"
+      },
+      "correct_option": "b",
+      "explanation": "Cytokinins such as zeatin are synthesized mainly in the meristematic regions of root apices. From there, they are transported upward through the xylem sap to the shoots. Cytokinins promote cell division, delay leaf senescence, and interact with auxins to regulate organogenesis. While developing fruits can also synthesize cytokinins, the primary site is the root tip."
+    },
+    {
+      "id": 122,
+      "subject": "Botany",
+      "question": "Which one of the following statements is true for tracheids?",
+      "options": {
+        "a": "They are living cells with nucleus",
+        "b": "They are dead cells with lignified walls",
+        "c": "They lack pits and thickening",
+        "d": "They occur only in angiosperms"
+      },
+      "correct_option": "b",
+      "explanation": "Tracheids are elongated cells of the xylem that lack protoplasm at maturity and have thick, lignified secondary walls. They conduct water through bordered pits and provide mechanical support. Unlike vessels, which are mainly found in angiosperms, tracheids occur in all vascular plants, including pteridophytes and gymnosperms, making them a more primitive water-conducting element."
+    },
+    {
+      "id": 123,
+      "subject": "Botany",
+      "question": "Statement I: Phytochrome is a pigment that perceives red and far-red light.\nStatement II: It regulates photoperiodic responses like flowering and seed germination.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "Phytochrome is a photoreceptor protein present in plants that exists in two interconvertible forms: Pr (absorbs red light at 660 nm) and Pfr (absorbs far-red light at 730 nm). The Pr form is converted to Pfr in red light, and Pfr is biologically active, regulating responses such as photoperiodic flowering, seed germination, shade avoidance, and circadian rhythms."
+    },
+    {
+      "id": 124,
+      "subject": "Botany",
+      "question": "Which fungal group characteristically exhibits a prolonged dikaryotic (n + n) phase and forms clamp connections?",
+      "options": {
+        "a": "Zygomycota",
+        "b": "Basidiomycota",
+        "c": "Ascomycota",
+        "d": "Glomeromycota"
+      },
+      "correct_option": "b",
+      "explanation": "Basidiomycota (club fungi) such as mushrooms and rusts exhibit an extended dikaryotic phase, where two haploid nuclei coexist in each cell before karyogamy. Many basidiomycetes develop clamp connections, which are small hyphal outgrowths that ensure each new cell receives one nucleus from each parent strain, maintaining the dikaryotic condition during cell division."
+    },
+    {
+      "id": 125,
+      "subject": "Botany",
+      "question": "Which of the following organisms is used in commercial production of citric acid?",
+      "options": {
+        "a": "Penicillium notatum",
+        "b": "Aspergillus niger",
+        "c": "Saccharomyces cerevisiae",
+        "d": "Rhizopus stolonifer"
+      },
+      "correct_option": "b",
+      "explanation": "*Aspergillus niger* is the industrially used fungus for large-scale citric acid production. It ferments carbohydrates such as molasses or sugarcane juice. The citric acid produced is widely used in food, pharmaceuticals, and as a chelating agent. *Penicillium notatum* produces penicillin, *Saccharomyces cerevisiae* ferments alcohol, and *Rhizopus stolonifer* is used in organic acid production but not predominantly citric acid."
+    },
+    {
+      "id": 126,
+      "subject": "Botany",
+      "question": "During microsporogenesis, separation of the four microspores from the tetrad is brought about by which tapetal enzyme that digests the callose wall?",
+      "options": {
+        "a": "Invertase",
+        "b": "Callase",
+        "c": "Pectinase",
+        "d": "Cellulase"
+      },
+      "correct_option": "b",
+      "explanation": "After meiosis in microsporocytes, the four haploid microspores are temporarily surrounded by a callose wall. The tapetal cells secrete the enzyme callase, which hydrolyzes callose (a β-1,3-glucan), thereby releasing the individual microspores from the tetrad. This is a crucial step in successful pollen development."
+    },
+    {
+      "id": 127,
+      "subject": "Botany",
+      "question": "Which of the following is used for micropropagation of banana?",
+      "options": {
+        "a": "Leaf explant",
+        "b": "Shoot tip culture",
+        "c": "Endosperm culture",
+        "d": "Callus from pollen"
+      },
+      "correct_option": "b",
+      "explanation": "Bananas are sterile and propagated vegetatively. In tissue culture, shoot tip culture is widely used to rapidly multiply banana plants. The shoot tip contains meristematic tissue capable of totipotency, allowing the regeneration of complete, disease-free plants. This method is commercially significant for large-scale banana cultivation."
+    },
+    {
+      "id": 128,
+      "subject": "Botany",
+      "question": "Which anther wall layer develops hygroscopic fibrous thickenings that aid in anther dehiscence?",
+      "options": {
+        "a": "Epidermis",
+        "b": "Endothecium",
+        "c": "Middle layers",
+        "d": "Tapetum"
+      },
+      "correct_option": "b",
+      "explanation": "The endothecium is the subepidermal layer of the anther wall. It develops characteristic fibrous or helical thickenings made of cellulose and lignin. These thickenings respond to drying conditions, creating mechanical tension. As water evaporates, the differential contraction of tissues causes the anther to split open along lines of weakness, releasing pollen grains. Thus, endothecium plays a crucial role in anther dehiscence."
+    },
+    {
+      "id": 129,
+      "subject": "Botany",
+      "question": "Which pair is correctly matched with its type of inflorescence?",
+      "options": {
+        "a": "Sunflower — Raceme",
+        "b": "Gulmohar (Delonix) — Spike",
+        "c": "Wheat — Spadix",
+        "d": "Sunflower — Capitulum"
+      },
+      "correct_option": "d",
+      "explanation": "Sunflower (family Asteraceae) exhibits a capitulum (head) type of inflorescence. Many sessile florets are closely packed on a flat receptacle, surrounded by an involucre of bracts. The outer florets are usually ray florets (sterile or female) and the central ones are disc florets (bisexual). This arrangement mimics a single large flower, aiding in pollination. Raceme, spike, and spadix belong to other plant families."
+    },
+    {
+      "id": 130,
+      "subject": "Botany",
+      "question": "Which plant growth regulator is commonly used to induce bolting in rosette plants such as beet and cabbage?",
+      "options": {
+        "a": "Auxin (IAA)",
+        "b": "Gibberellin (GA₃)",
+        "c": "Abscisic acid (ABA)",
+        "d": "Ethylene"
+      },
+      "correct_option": "b",
+      "explanation": "Gibberellins are plant hormones that promote stem elongation and flowering. In rosette plants like beet, cabbage, and lettuce, leaves form a compact arrangement near the ground. Application of gibberellic acid (GA₃) overcomes this rosette habit, inducing rapid stem elongation (bolting) and transition to flowering. Auxins mainly regulate apical dominance, ethylene induces ripening, and ABA promotes dormancy."
+    },
+    {
+      "id": 131,
+      "subject": "Botany",
+      "question": "Which statement about plasmodesmata is correct?",
+      "options": {
+        "a": "They are interruptions in the cuticle allowing apoplastic flow",
+        "b": "They are cytoplasmic channels connecting adjacent cells, enabling symplastic transport",
+        "c": "They are thickenings of the endodermis that block solute movement",
+        "d": "They are pits in xylem vessels for water movement only"
+      },
+      "correct_option": "b",
+      "explanation": "Plasmodesmata are microscopic cytoplasmic channels that traverse plant cell walls. They connect the cytoplasm of neighboring cells, allowing the movement of ions, metabolites, hormones, and even signaling molecules. Transport through plasmodesmata occurs via the symplastic pathway, which is distinct from apoplastic transport (through cell walls and intercellular spaces). They are critical for intercellular communication and coordination of developmental processes."
+    },
+    {
+      "id": 132,
+      "subject": "Botany",
+      "question": "Compared to the C₃ pathway, how many additional ATP molecules are required per CO₂ fixed in the C₄ pathway (for the CO₂-concentrating shuttle)?",
+      "options": {
+        "a": "0 ATP",
+        "b": "1 ATP",
+        "c": "2 ATP",
+        "d": "3 ATP"
+      },
+      "correct_option": "c",
+      "explanation": "In the C₄ pathway, atmospheric CO₂ is initially fixed in mesophyll cells by phosphoenolpyruvate (PEP) carboxylase, forming oxaloacetate, which is converted to malate/aspartate and transported to bundle sheath cells. To regenerate PEP from pyruvate, the enzyme pyruvate phosphate dikinase consumes 2 ATP per CO₂ fixed. Thus, the C₄ cycle requires 5 ATP + 2 NADPH per CO₂, compared to 3 ATP + 2 NADPH in the C₃ cycle. The extra ATP cost reduces photorespiration losses under high light and temperature."
+    },
+    {
+      "id": 133,
+      "subject": "Botany",
+      "question": "The central metal ion in the porphyrin ring of chlorophyll a is:",
+      "options": {
+        "a": "Iron",
+        "b": "Magnesium",
+        "c": "Manganese",
+        "d": "Copper"
+      },
+      "correct_option": "b",
+      "explanation": "Chlorophyll a is a porphyrin-based pigment essential for photosynthesis. At the center of its porphyrin ring lies a magnesium (Mg²⁺) ion, coordinated with nitrogen atoms of the tetrapyrrole structure. This magnesium ion plays a critical role in absorbing light energy, particularly in the red and blue regions of the spectrum, and transferring excitation energy to the reaction centers. Iron is central in heme, manganese in the oxygen-evolving complex, and copper in plastocyanin."
+    },
+    {
+      "id": 134,
+      "subject": "Botany",
+      "question": "Which technique is routinely used to produce haploid plants for rapid homozygosity in breeding programs?",
+      "options": {
+        "a": "Somatic hybridization (protoplast fusion)",
+        "b": "Anther/microspore culture",
+        "c": "Embryo rescue",
+        "d": "Meristem tip culture"
+      },
+      "correct_option": "b",
+      "explanation": "Anther or microspore culture involves culturing immature pollen grains (microspores) in vitro, where they are induced to develop into haploid embryos. These haploid plants can be treated with colchicine to double their chromosome number, producing completely homozygous doubled haploids (DH). This technique accelerates plant breeding programs by bypassing multiple generations of inbreeding. Somatic hybridization, embryo rescue, and meristem tip culture have other applications but do not specifically produce haploids."
+    },
+    {
+      "id": 135,
+      "subject": "Botany",
+      "question": "Which aquatic plant is called 'Terror of Bengal' due to its rapid vegetative propagation?",
+      "options": {
+        "a": "Eichhornia crassipes (Water hyacinth)",
+        "b": "Hydrilla verticillata",
+        "c": "Pistia stratiotes",
+        "d": "Nymphaea nouchali"
+      },
+      "correct_option": "a",
+      "explanation": "Eichhornia crassipes, commonly called water hyacinth, is a free-floating invasive aquatic weed. It reproduces rapidly by vegetative offsets, forming dense mats that clog waterways, deplete oxygen, reduce biodiversity, and interfere with irrigation and navigation. Due to its uncontrollable spread in Bengal's water bodies, it earned the name 'Terror of Bengal'. Other aquatic plants like Hydrilla and Pistia also spread fast but are less problematic."
+    },
+    {
+      "id": 136,
+      "subject": "Zoology",
+      "question": "Which maternal–fetal incompatibility can cause hemolytic disease of the newborn?",
+      "options": {
+        "a": "ABO incompatibility (mother O+, baby A+)",
+        "b": "Rh incompatibility (mother Rh−, baby Rh+)",
+        "c": "Same Rh type (both Rh+)",
+        "d": "Same ABO type (both O+)"
+      },
+      "correct_option": "b",
+      "explanation": "Hemolytic disease of the newborn (erythroblastosis fetalis) is caused mainly by Rh incompatibility. When an Rh$^-$ mother carries an Rh$^+$ fetus, small amounts of fetal RBCs can enter maternal circulation. The mother's immune system produces anti-D antibodies (IgG type). In subsequent Rh$^+$ pregnancies, these IgG antibodies cross the placenta and destroy fetal red blood cells, leading to hemolysis, anemia, jaundice, and in severe cases hydrops fetalis. ABO incompatibility is usually less severe because anti-A and anti-B are mostly IgM and do not cross the placenta efficiently."
+    },
+    {
+      "id": 137,
+      "subject": "Zoology",
+      "question": "Which lung volume or capacity equals tidal volume (TV) plus inspiratory reserve volume (IRV)?",
+      "options": {
+        "a": "Vital capacity",
+        "b": "Inspiratory capacity",
+        "c": "Functional residual capacity",
+        "d": "Total lung capacity"
+      },
+      "correct_option": "b",
+      "explanation": "Tidal volume (TV) is the air exchanged in normal quiet breathing (≈500 mL). Inspiratory reserve volume (IRV) is the additional volume that can be forcibly inhaled beyond TV (≈2500–3000 mL). Their sum is inspiratory capacity (IC): $$IC = TV + IRV.$$ Vital capacity (VC) is IRV + TV + expiratory reserve volume (ERV), functional residual capacity (FRC) is ERV + residual volume (RV), and total lung capacity (TLC) = VC + RV."
+    },
+    {
+      "id": 138,
+      "subject": "Zoology",
+      "question": "Which effect is produced by parasympathetic stimulation of the heart?",
+      "options": {
+        "a": "Increases heart rate and contractility",
+        "b": "Decreases heart rate via vagus nerve",
+        "c": "Increases AV conduction velocity",
+        "d": "Triggers ventricular ectopic beats"
+      },
+      "correct_option": "b",
+      "explanation": "Parasympathetic fibers to the heart are carried mainly by the vagus nerve. Stimulation increases K$^+$ efflux and decreases inward 'funny current' ($I_f$) in sinoatrial (SA) nodal cells. This slows the rate of depolarization, reducing heart rate (negative chronotropy) and also decreases AV nodal conduction (negative dromotropy). Sympathetic stimulation has the opposite effect, increasing heart rate and contractility."
+    },
+    {
+      "id": 139,
+      "subject": "Zoology",
+      "question": "In humans, the majority of carbon dioxide is transported in blood as:",
+      "options": {
+        "a": "Dissolved CO₂ in plasma",
+        "b": "Carbaminohemoglobin",
+        "c": "Bicarbonate ions (HCO₃⁻)",
+        "d": "Carbonic acid (H₂CO₃)"
+      },
+      "correct_option": "c",
+      "explanation": "Carbon dioxide transport occurs mainly in three forms: (i) dissolved CO₂ in plasma (≈5–10%), (ii) carbamino compounds bound to hemoglobin (≈20–30%), and (iii) bicarbonate ions (≈60–70%). In RBCs, CO₂ combines with water under the action of carbonic anhydrase to form H₂CO₃, which dissociates into HCO₃⁻ and H⁺. The HCO₃⁻ diffuses into plasma in exchange for Cl⁻ (chloride shift), making bicarbonate the predominant form of CO₂ transport."
+    },
+    {
+      "id": 140,
+      "subject": "Zoology",
+      "question": "Which hormone is primarily responsible for maintaining the corpus luteum in early pregnancy?",
+      "options": {
+        "a": "LH",
+        "b": "FSH",
+        "c": "hCG",
+        "d": "Progesterone"
+      },
+      "correct_option": "c",
+      "explanation": "Human chorionic gonadotropin (hCG) is secreted by the syncytiotrophoblast of the embryo shortly after implantation. It mimics luteinizing hormone (LH) and rescues the corpus luteum from regression. The corpus luteum continues secreting progesterone, which maintains the uterine endometrium and prevents menstruation. After the first trimester, the placenta itself becomes the major source of progesterone and estrogen."
+    },
+    {
+      "id": 141,
+      "subject": "Zoology",
+      "question": "Which of the following is an example of codominance in humans?",
+      "options": {
+        "a": "Sickle-cell anemia",
+        "b": "AB blood group",
+        "c": "Colour blindness",
+        "d": "Hemophilia"
+      },
+      "correct_option": "b",
+      "explanation": "In the ABO blood group system, allele $I^A$ codes for A antigen and $I^B$ codes for B antigen. When both are present ($I^A I^B$ genotype), both antigens are expressed equally on RBCs, giving the AB blood group. This is a classical case of codominance. Sickle-cell anemia shows incomplete dominance, while color blindness and hemophilia are X-linked recessive traits."
+    },
+    {
+      "id": 142,
+      "subject": "Zoology",
+      "question": "Sickle-cell disease results from which specific molecular change in hemoglobin?",
+      "options": {
+        "a": "Deletion of the α-globin gene",
+        "b": "Substitution of valine for glutamic acid at position 6 of β-globin",
+        "c": "Insertion causing frameshift in β-globin",
+        "d": "Conversion of HbA to HbF postnatally"
+      },
+      "correct_option": "b",
+      "explanation": "Sickle-cell anemia is caused by a point mutation in the β-globin gene of hemoglobin. The codon GAG (glutamic acid) is changed to GTG (valine) at the 6th position. The substitution of a polar glutamic acid with a nonpolar valine makes hemoglobin S (HbS) prone to polymerization when deoxygenated. This distorts RBCs into a sickle shape, causing hemolysis, anemia, and vaso-occlusive crises."
+    },
+    {
+      "id": 143,
+      "subject": "Zoology",
+      "question": "Which immune cells are primarily responsible for antibody production?",
+      "options": {
+        "a": "T-lymphocytes",
+        "b": "B-lymphocytes",
+        "c": "Monocytes",
+        "d": "Natural killer cells"
+      },
+      "correct_option": "b",
+      "explanation": "B-lymphocytes are central to humoral immunity. Upon encountering an antigen, they can differentiate into plasma cells, which secrete large quantities of antibodies (immunoglobulins). Some B-cells become memory B-cells, providing long-term immunity. T-lymphocytes mediate cell-mediated immunity, NK cells kill infected or tumor cells directly, and monocytes differentiate into macrophages for phagocytosis."
+    },
+    {
+      "id": 144,
+      "subject": "Zoology",
+      "question": "In a standard ECG, the QRS complex corresponds to:",
+      "options": {
+        "a": "Atrial depolarization",
+        "b": "Ventricular depolarization",
+        "c": "Ventricular repolarization",
+        "d": "AV nodal delay"
+      },
+      "correct_option": "b",
+      "explanation": "The electrocardiogram (ECG) records electrical activity of the heart. The P wave corresponds to atrial depolarization. The QRS complex represents ventricular depolarization and is usually the largest deflection due to the large muscle mass of ventricles. The T wave represents ventricular repolarization. The PR segment indicates AV nodal delay."
+    },
+    {
+      "id": 145,
+      "subject": "Zoology",
+      "question": "Which of the following organisms is a diploblastic animal?",
+      "options": {
+        "a": "Ascaris",
+        "b": "Hydra",
+        "c": "Earthworm",
+        "d": "Leech"
+      },
+      "correct_option": "b",
+      "explanation": "Diploblastic animals develop from two germ layers: ectoderm and endoderm, with a non-cellular mesoglea in between. Hydra, belonging to phylum Cnidaria, is an example of a diploblastic animal. In contrast, triploblastic animals like Ascaris (nematode), earthworm (annelid), and leech (annelid) have three germ layers: ectoderm, mesoderm, and endoderm."
+    },
+    {
+      "id": 146,
+      "subject": "Zoology",
+      "question": "Assertion (A): Genetic drift has a greater effect in small populations.\nReason (R): Random changes in allele frequencies are more significant when the number of individuals is small.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Genetic drift refers to random fluctuations in allele frequencies due to chance events, such as random sampling of gametes or sudden mortality. In large populations, these effects are buffered because of higher genetic diversity and large sample size. However, in small populations, even a single reproductive event can drastically alter allele frequencies, leading to fixation or loss of alleles over a few generations. Therefore, drift reduces genetic variation and can strongly affect evolutionary outcomes in small populations."
+    },
+    {
+      "id": 147,
+      "subject": "Zoology",
+      "question": "Which hormone primarily stimulates erythropoiesis in response to hypoxia?",
+      "options": {
+        "a": "Thyroxine",
+        "b": "Erythropoietin",
+        "c": "Cortisol",
+        "d": "Aldosterone"
+      },
+      "correct_option": "b",
+      "explanation": "Erythropoietin (EPO) is a glycoprotein hormone secreted mainly by peritubular interstitial fibroblast-like cells of the kidney. When tissue oxygen levels drop (hypoxia), these cells sense the change via hypoxia-inducible factors (HIF). EPO then stimulates red bone marrow to increase production of red blood cells (erythropoiesis), thereby improving oxygen transport capacity of blood. Thyroxine, cortisol, and aldosterone have different regulatory roles but do not directly stimulate RBC production."
+    },
+    {
+      "id": 148,
+      "subject": "Zoology",
+      "question": "Which fetal shunt connects the pulmonary artery to the descending aorta, bypassing the lungs?",
+      "options": {
+        "a": "Foramen ovale",
+        "b": "Ductus arteriosus",
+        "c": "Ductus venosus",
+        "d": "Ligamentum teres"
+      },
+      "correct_option": "b",
+      "explanation": "In fetal circulation, the lungs are nonfunctional and pulmonary resistance is high. The ductus arteriosus provides a direct connection from the pulmonary artery to the descending aorta, allowing most blood to bypass the lungs. The foramen ovale shunts blood from the right atrium to the left atrium. The ductus venosus carries oxygenated blood from the umbilical vein to the inferior vena cava, bypassing the liver. After birth, the ductus arteriosus closes and becomes the ligamentum arteriosum."
+    },
+    {
+      "id": 149,
+      "subject": "Zoology",
+      "question": "Which of the following vitamins is a fat-soluble vitamin?",
+      "options": {
+        "a": "Vitamin C",
+        "b": "Vitamin B₁₂",
+        "c": "Vitamin K",
+        "d": "Vitamin B₆"
+      },
+      "correct_option": "c",
+      "explanation": "Vitamins are categorized based on solubility. Fat-soluble vitamins include A, D, E, and K. They are absorbed along with dietary fats, stored in the liver and adipose tissue, and deficiencies develop slowly. Vitamin K plays an essential role in synthesis of clotting factors. In contrast, vitamin C and B-complex vitamins are water-soluble, excreted in urine readily, and require continuous dietary supply."
+    },
+    {
+      "id": 150,
+      "subject": "Zoology",
+      "question": "Assertion (A): Synapsis occurs during zygotene stage of prophase I in meiosis.\nReason (R): Homologous chromosomes pair through synaptonemal complex formation at this stage.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "During prophase I of meiosis, homologous chromosomes undergo a series of events: leptotene (chromosome condensation), zygotene (synapsis), pachytene (crossing over), diplotene (chiasmata visible), and diakinesis (final condensation). In the zygotene stage, homologous chromosomes align and pair along their length, mediated by the synaptonemal complex. This close pairing is essential for recombination in the pachytene stage, ensuring genetic variability."
+    },
+    {
+      "id": 151,
+      "subject": "Zoology",
+      "question": "Which pair represents analogous (not homologous) structures?",
+      "options": {
+        "a": "Wings of a bat and wings of a butterfly",
+        "b": "Forelimb of a whale and forelimb of a horse",
+        "c": "Humerus of human and humerus of cat",
+        "d": "Wings of a bat and wings of a bird"
+      },
+      "correct_option": "a",
+      "explanation": "Analogous structures perform similar functions but have different evolutionary origins. Bat wings are modifications of the forelimb skeleton (mammalian origin), whereas butterfly wings are membranous outgrowths of the exoskeleton (arthropod origin). Thus, they are analogous. Homologous structures, in contrast, have a common ancestry but may serve different functions, such as whale and horse forelimbs, or human and cat humerus bones."
+    },
+    {
+      "id": 152,
+      "subject": "Zoology",
+      "question": "Statement I: Nephridia are excretory organs of earthworm.\nStatement II: They help in osmoregulation in addition to excretion of nitrogenous waste.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "Earthworms possess segmentally arranged nephridia (septal, integumentary, and pharyngeal types). These tubular structures open either into the coelom or onto the body surface. They excrete nitrogenous wastes such as urea and ammonia and also regulate water and salt balance. Hence, nephridia serve both excretion and osmoregulation functions, making both statements correct."
+    },
+    {
+      "id": 153,
+      "subject": "Zoology",
+      "question": "Which hormone regulates calcium levels by increasing blood calcium concentration?",
+      "options": {
+        "a": "Calcitonin",
+        "b": "Parathyroid hormone",
+        "c": "Aldosterone",
+        "d": "Insulin"
+      },
+      "correct_option": "b",
+      "explanation": "Parathyroid hormone (PTH), secreted by parathyroid glands, increases blood Ca²⁺ levels by stimulating osteoclast activity (bone resorption), enhancing renal tubular reabsorption of calcium, and promoting formation of calcitriol (active vitamin D₃), which increases intestinal absorption of Ca²⁺. Calcitonin, secreted by thyroid C-cells, decreases blood calcium. Aldosterone regulates sodium and potassium balance, and insulin controls glucose metabolism."
+    },
+    {
+      "id": 154,
+      "subject": "Zoology",
+      "question": "Assertion (A): In cockroach, the circulatory system is open type.\nReason (R): Haemolymph directly bathes organs instead of flowing through closed blood vessels.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Cockroaches, like other arthropods, have an open circulatory system. The dorsal tubular heart pumps haemolymph into body sinuses (haemocoel). Unlike closed systems (e.g., vertebrates), blood is not confined to vessels but flows freely around organs, ensuring nutrient and hormone distribution. Oxygen transport is not its main role since insects rely on the tracheal system for respiration."
+    },
+    {
+      "id": 155,
+      "subject": "Zoology",
+      "question": "Which of the following diseases is caused by Plasmodium falciparum?",
+      "options": {
+        "a": "Kala-azar",
+        "b": "Filariasis",
+        "c": "Malignant malaria",
+        "d": "Sleeping sickness"
+      },
+      "correct_option": "c",
+      "explanation": "Plasmodium falciparum is the most virulent species of Plasmodium, responsible for malignant tertian malaria. It is characterized by severe fever cycles, cerebral malaria, anemia, and high mortality if untreated. Kala-azar is caused by Leishmania donovani, filariasis by Wuchereria bancrofti and Brugia malayi, and sleeping sickness by Trypanosoma brucei transmitted by tsetse flies."
+    },
+    {
+      "id": 156,
+      "subject": "Zoology",
+      "question": "Assertion (A): DNA replication is semiconservative.\nReason (R): Each daughter DNA molecule contains one parental and one newly synthesized strand.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Meselson and Stahl’s classic experiment using ¹⁵N-labeled E. coli DNA demonstrated semiconservative replication. After one round in ¹⁴N medium, DNA showed intermediate density (one old strand, one new strand). After two rounds, half of the molecules were hybrid and half were light, proving that each daughter DNA molecule retains one parental strand and synthesizes one new strand."
+    },
+    {
+      "id": 157,
+      "subject": "Zoology",
+      "question": "Which organelle is called the 'suicidal bag' of the cell?",
+      "options": {
+        "a": "Peroxisome",
+        "b": "Lysosome",
+        "c": "Golgi apparatus",
+        "d": "Mitochondrion"
+      },
+      "correct_option": "b",
+      "explanation": "Lysosomes are membrane-bound vesicles containing hydrolytic enzymes (lipases, nucleases, proteases, glycosidases). They digest worn-out organelles, macromolecules, and pathogens. During injury or autolysis, lysosomes rupture and release these enzymes into the cytoplasm, causing self-digestion of the cell, hence the term 'suicidal bag'."
+    },
+    {
+      "id": 158,
+      "subject": "Zoology",
+      "question": "Statement I: Adaptive radiation refers to the evolution of diverse species from a common ancestor.\nStatement II: Darwin’s finches are a classic example of adaptive radiation.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "Adaptive radiation occurs when a common ancestral species diversifies rapidly into multiple species, each adapted to different ecological niches. Darwin’s finches in the Galápagos Islands originated from a single ancestral finch and evolved diverse beak shapes to exploit different food sources, illustrating adaptive radiation and natural selection."
+    },
+    {
+      "id": 159,
+      "subject": "Zoology",
+      "question": "Which part of the brain controls voluntary motor activities?",
+      "options": {
+        "a": "Cerebellum",
+        "b": "Medulla oblongata",
+        "c": "Cerebrum",
+        "d": "Pons"
+      },
+      "correct_option": "c",
+      "explanation": "The cerebrum, particularly the motor cortex in the frontal lobe, controls voluntary movements such as walking, writing, or speaking. The cerebellum coordinates balance and precision, the medulla oblongata controls involuntary reflexes (respiration, heartbeat), and the pons relays information between cerebrum and cerebellum."
+    },
+    {
+      "id": 160,
+      "subject": "Zoology",
+      "question": "Assertion (A): Test cross is used to determine the genotype of an individual with dominant phenotype.\nReason (R): In a test cross, the individual is crossed with a homozygous recessive parent to analyze offspring ratios.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "When an organism with a dominant phenotype is crossed with a homozygous recessive individual, the offspring ratios reveal the genotype of the dominant parent. If the parent is homozygous dominant, all offspring will show the dominant trait. If heterozygous, the offspring will segregate in a 1:1 ratio of dominant to recessive phenotype, confirming the principle of test cross."
+    },
+    {
+      "id": 161,
+      "subject": "Zoology",
+      "question": "Which type of muscle is non-striated, involuntary, and uninucleated?",
+      "options": {
+        "a": "Cardiac muscle",
+        "b": "Smooth muscle",
+        "c": "Skeletal muscle",
+        "d": "Voluntary muscle"
+      },
+      "correct_option": "b",
+      "explanation": "Smooth muscles are spindle-shaped, uninucleated, and lack striations under a microscope. They are involuntary and controlled by the autonomic nervous system. They line visceral organs such as the intestine, stomach, and blood vessels. Cardiac muscles are striated and involuntary with intercalated discs, while skeletal muscles are striated, multinucleated, and voluntary."
+    },
+    {
+      "id": 162,
+      "subject": "Zoology",
+      "question": "Ascariasis in humans is most commonly transmitted by:",
+      "options": {
+        "a": "Skin penetration by larvae from soil",
+        "b": "Ingestion of embryonated eggs in contaminated food or water",
+        "c": "Bite of female Anopheles mosquito",
+        "d": "Transplacental migration of larvae"
+      },
+      "correct_option": "b",
+      "explanation": "Ascariasis, caused by the roundworm Ascaris lumbricoides, spreads via ingestion of embryonated eggs present in contaminated food, vegetables, or water. After ingestion, larvae hatch in the intestine, migrate through the lungs, and return to the intestine to mature into adult worms. It is a classic fecal–oral parasitic infection. Skin penetration is typical of hookworms, and mosquito bite transmission applies to malaria."
+    },
+    {
+      "id": 163,
+      "subject": "Zoology",
+      "question": "Which protein is responsible for oxygen transport in vertebrates?",
+      "options": {
+        "a": "Hemoglobin",
+        "b": "Myoglobin",
+        "c": "Hemocyanin",
+        "d": "Fibrinogen"
+      },
+      "correct_option": "a",
+      "explanation": "Hemoglobin, an iron-containing heme protein in red blood cells, binds oxygen in the lungs and releases it in tissues. Each hemoglobin molecule can carry four O₂ molecules. Myoglobin, present in muscles, stores oxygen. Hemocyanin (copper-based) is found in arthropods and mollusks. Fibrinogen is a plasma protein involved in blood clotting, not oxygen transport."
+    },
+    {
+      "id": 164,
+      "subject": "Zoology",
+      "question": "Assertion (A): In humans, sex is determined by the presence of Y chromosome.\nReason (R): The SRY gene on Y chromosome triggers testis formation and male differentiation.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Human sex determination follows the XX–XY system. The presence of a Y chromosome is crucial, specifically the SRY (Sex-determining Region Y) gene. This gene encodes a transcription factor that initiates differentiation of bipotential gonads into testes. Testes then produce testosterone and anti-Müllerian hormone, directing male development. In the absence of Y and SRY, the embryo develops as female by default."
+    },
+    {
+      "id": 165,
+      "subject": "Zoology",
+      "question": "Which part of the human eye regulates the amount of light entering?",
+      "options": {
+        "a": "Retina",
+        "b": "Lens",
+        "c": "Iris",
+        "d": "Cornea"
+      },
+      "correct_option": "c",
+      "explanation": "The iris, a pigmented muscular structure, surrounds the pupil and regulates its diameter. In bright light, circular muscles contract, causing pupil constriction; in dim light, radial muscles contract, dilating the pupil. This ensures optimal light entry onto the retina. The lens adjusts focal length, cornea refracts light, and the retina detects and processes visual signals."
+    },
+    {
+      "id": 166,
+      "subject": "Zoology",
+      "question": "Which statement correctly describes the Haldane effect?",
+      "options": {
+        "a": "Acidosis shifts the O₂ curve to the right",
+        "b": "Oxygenation of blood increases CO₂ carrying capacity",
+        "c": "Deoxygenation of hemoglobin enhances CO₂ uptake in tissues",
+        "d": "High temperature decreases CO₂ carriage by blood"
+      },
+      "correct_option": "c",
+      "explanation": "The Haldane effect states that deoxygenated hemoglobin has a greater capacity to bind CO₂ (as carbaminohemoglobin) and H⁺. In peripheral tissues, where O₂ is released, hemoglobin binds more CO₂, facilitating CO₂ transport. In the lungs, O₂ binding reduces hemoglobin's affinity for CO₂, promoting CO₂ release and exhalation."
+    },
+    {
+      "id": 167,
+      "subject": "Zoology",
+      "question": "Which of the following organisms is correctly matched with its excretory organ?",
+      "options": {
+        "a": "Cockroach – Malpighian tubules",
+        "b": "Earthworm – Flame cells",
+        "c": "Planaria – Nephridia",
+        "d": "Frog – Green glands"
+      },
+      "correct_option": "a",
+      "explanation": "Cockroaches excrete nitrogenous wastes via Malpighian tubules, which remove uric acid from hemolymph into the gut. Earthworms use nephridia for excretion. Planaria (flatworms) use flame cells (protonephridia). Crustaceans such as prawns use green glands for excretion."
+    },
+    {
+      "id": 168,
+      "subject": "Zoology",
+      "question": "What is the chloride shift (Hamburger phenomenon)?",
+      "options": {
+        "a": "Movement of Cl⁻ into RBCs as HCO₃⁻ leaves in tissues",
+        "b": "Movement of Cl⁻ out of RBCs as HCO₃⁻ enters in tissues",
+        "c": "Na⁺/Cl⁻ exchange to maintain membrane potential in neurons",
+        "d": "Active transport of Cl⁻ in the kidney proximal tubule"
+      },
+      "correct_option": "a",
+      "explanation": "In systemic tissues, CO₂ diffuses into RBCs and is converted by carbonic anhydrase into H₂CO₃, which dissociates into H⁺ and HCO₃⁻. As HCO₃⁻ exits RBCs into plasma, Cl⁻ ions enter the RBCs via the band-3 exchanger to maintain electrical neutrality. In the lungs, the process reverses, allowing CO₂ release."
+    },
+    {
+      "id": 169,
+      "subject": "Zoology",
+      "question": "Copper-T (Cu-T) is an example of which contraceptive method?",
+      "options": {
+        "a": "Oral hormonal contraceptive",
+        "b": "Barrier method",
+        "c": "Intrauterine device that impairs sperm and implantation",
+        "d": "Periodic abstinence"
+      },
+      "correct_option": "c",
+      "explanation": "The Copper-T is an intrauterine device (IUD). Copper ions released from the device are toxic to sperm, reducing motility and viability. The device also induces a local inflammatory reaction in the endometrium, making implantation difficult. Hence, it acts both as a spermicidal agent and an implantation inhibitor."
+    },
+    {
+      "id": 170,
+      "subject": "Zoology",
+      "question": "Which antigen-presenting cell (APC) is most efficient at priming naïve T cells?",
+      "options": {
+        "a": "Neutrophil",
+        "b": "Dendritic cell",
+        "c": "Basophil",
+        "d": "NK cell"
+      },
+      "correct_option": "b",
+      "explanation": "Dendritic cells are the most potent professional antigen-presenting cells. They capture antigens in peripheral tissues, process them, and migrate to lymph nodes. There they present antigens on MHC molecules along with costimulatory signals to naïve T cells, initiating adaptive immune responses."
+    },
+    {
+      "id": 171,
+      "subject": "Zoology",
+      "question": "Which statement about thyroid hormone action is correct?",
+      "options": {
+        "a": "Acts via cell-surface GPCRs only",
+        "b": "Binds cytosolic receptors like steroid hormones",
+        "c": "Binds nuclear receptors to regulate gene transcription",
+        "d": "Blocks mitochondrial oxidative phosphorylation"
+      },
+      "correct_option": "c",
+      "explanation": "Thyroid hormones (T₃ and T₄) enter cells via transporters. T₄ is converted to T₃, the active form, which binds to nuclear thyroid hormone receptors. These receptors act as transcription factors regulating genes that control metabolism, growth, and development. Thus, thyroid hormones act at the nuclear level."
+    },
+    {
+      "id": 172,
+      "subject": "Zoology",
+      "question": "Statement I: The corpus luteum forms after ovulation.\nStatement II: It secretes progesterone to maintain endometrium for possible implantation.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "After ovulation, the ruptured Graafian follicle transforms into the corpus luteum under the influence of LH. The corpus luteum secretes progesterone and estrogen. Progesterone maintains the endometrial lining, making it receptive for embryo implantation. If fertilization fails, the corpus luteum degenerates into corpus albicans."
+    },
+    {
+      "id": 173,
+      "subject": "Zoology",
+      "question": "Which part of the digestive system secretes intrinsic factor necessary for vitamin B₁₂ absorption?",
+      "options": {
+        "a": "Pancreas",
+        "b": "Liver",
+        "c": "Stomach",
+        "d": "Small intestine"
+      },
+      "correct_option": "c",
+      "explanation": "Intrinsic factor is a glycoprotein secreted by the parietal cells of the gastric glands in the stomach, along with hydrochloric acid. It binds vitamin B₁₂ and facilitates its absorption in the ileum. Lack of intrinsic factor leads to vitamin B₁₂ deficiency and pernicious anemia."
+    },
+    {
+      "id": 174,
+      "subject": "Zoology",
+      "question": "Assertion (A): Rod cells are responsible for night vision.\nReason (R): They contain the light-sensitive pigment rhodopsin, which is highly sensitive to dim light.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Rod cells contain the pigment rhodopsin (visual purple), which is highly sensitive to low light conditions, enabling scotopic (night) vision. However, rods do not mediate color vision. Cone cells, with iodopsins, function in bright light and allow color perception. Vitamin A deficiency reduces rhodopsin levels, leading to night blindness."
+    },
+    {
+      "id": 175,
+      "subject": "Zoology",
+      "question": "Which among the following is the causative agent of tuberculosis?",
+      "options": {
+        "a": "Mycobacterium tuberculosis",
+        "b": "Mycobacterium leprae",
+        "c": "Corynebacterium diphtheriae",
+        "d": "Streptococcus pneumoniae"
+      },
+      "correct_option": "a",
+      "explanation": "Tuberculosis (TB) is caused by the bacterium Mycobacterium tuberculosis, an acid-fast bacillus transmitted via airborne droplets. It primarily infects the lungs but can also spread to bones, kidneys, and other organs. Mycobacterium leprae causes leprosy, Corynebacterium diphtheriae causes diphtheria, and Streptococcus pneumoniae causes pneumonia."
+    },
+    {
+      "id": 176,
+      "subject": "Zoology",
+      "question": "Statement I: Genetic code is degenerate.\nStatement II: More than one codon may code for the same amino acid.",
+      "options": {
+        "a": "Both statements are correct",
+        "b": "Only I is correct",
+        "c": "Only II is correct",
+        "d": "Both are false"
+      },
+      "correct_option": "a",
+      "explanation": "The genetic code is described as degenerate because multiple codons can specify the same amino acid. For example, leucine is coded by six codons (UUA, UUG, CUU, CUC, CUA, CUG). This redundancy minimizes the effects of point mutations, since a change in the third base (wobble position) often does not alter the amino acid incorporated. This ensures robustness in protein synthesis and evolutionary flexibility."
+    },
+    {
+      "id": 177,
+      "subject": "Zoology",
+      "question": "Which of the following best describes thyroid hormone receptors?",
+      "options": {
+        "a": "Ligand-gated ion channels in the plasma membrane",
+        "b": "Cytoplasmic receptors that activate second messengers",
+        "c": "Nuclear receptors that modulate transcription",
+        "d": "Enzyme-linked receptors with intrinsic tyrosine kinase"
+      },
+      "correct_option": "c",
+      "explanation": "Thyroid hormones (T₃ and T₄) are lipid-soluble and cross cell membranes. T₄ is often converted to the more active T₃ inside target cells. T₃ binds to nuclear thyroid receptors, which act as transcription factors. These receptors interact with thyroid response elements (TREs) on DNA, regulating the transcription of genes involved in metabolism, growth, and development. Thus, thyroid hormones act via nuclear receptors to modulate gene expression."
+    },
+    {
+      "id": 178,
+      "subject": "Zoology",
+      "question": "Assertion (A): Genetic engineering uses restriction endonucleases.\nReason (R): These enzymes cut DNA at specific recognition sequences, allowing insertion of foreign genes.",
+      "options": {
+        "a": "Both A and R are true and R explains A",
+        "b": "Both A and R are true but R does not explain A",
+        "c": "A is true but R is false",
+        "d": "A is false but R is true"
+      },
+      "correct_option": "a",
+      "explanation": "Restriction endonucleases (restriction enzymes) are molecular scissors that recognize specific palindromic DNA sequences (usually 4–8 base pairs) and cut at precise sites. For example, EcoRI recognizes GAATTC and cleaves between G and A. These predictable cuts generate sticky or blunt ends, which can be joined to foreign DNA fragments using DNA ligase. This principle underlies recombinant DNA technology, where genes of interest are inserted into vectors such as plasmids."
+    },
+    {
+      "id": 179,
+      "subject": "Zoology",
+      "question": "Which of the following is an example of a connecting link between annelids and arthropods?",
+      "options": {
+        "a": "Peripatus",
+        "b": "Balanoglossus",
+        "c": "Limulus",
+        "d": "Neopilina"
+      },
+      "correct_option": "a",
+      "explanation": "Peripatus (velvet worm) is a living fossil belonging to phylum Onychophora and shows features of both annelids and arthropods. Annelid-like traits include a soft, segmented body and nephridia, while arthropod-like features include tracheal respiration, antennae, and clawed appendages. This combination makes it an evolutionary connecting link and important evidence for the relationship between annelids and arthropods."
+    },
+    {
+      "id": 180,
+      "subject": "Zoology",
+      "question": "The water vascular system of echinoderms primarily functions in:",
+      "options": {
+        "a": "Excretion only",
+        "b": "Locomotion, feeding, and respiration",
+        "c": "Hormone transport",
+        "d": "Gas exchange only through gills"
+      },
+      "correct_option": "b",
+      "explanation": "Echinoderms such as starfish possess a water vascular system, a hydraulic system unique to this phylum. Seawater enters through the madreporite and circulates through canals, filling tube feet. The hydraulic pressure in tube feet allows locomotion, clinging to surfaces, and handling prey. Tube feet also facilitate respiration and minor excretion by diffusion across thin membranes. Thus, the system integrates locomotion, feeding, and respiration."
+    }
+  ]
+}
