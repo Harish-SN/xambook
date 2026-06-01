@@ -191,7 +191,6 @@ export default function Home() {
           )}
         </div>
 
-        <FreeTestPopup />
       </section>
 
       {/* Premium CTA */}
