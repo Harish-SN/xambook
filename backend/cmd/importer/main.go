@@ -70,15 +70,11 @@ func main() {
 		if err != nil {
 			return err
 		}
-
 		for _, q := range file.Questions {
-
 			optionsJSON, err := json.Marshal(q.Options)
-
 			if err != nil {
 				return err
 			}
-
 			_, err = db.Exec(`
 				INSERT INTO questions (
 					subject,
@@ -106,18 +102,14 @@ func main() {
 				q.CorrectOption,
 				q.Explanation,
 			)
-
 			if err != nil {
 				return err
 			}
 		}
-
 		return nil
 	})
-
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	log.Println("Import completed successfully")
 }
