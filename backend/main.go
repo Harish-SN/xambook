@@ -7,6 +7,7 @@ import (
 
 	"github.com/Harish-SN/xambook-backend/db"
 	"github.com/Harish-SN/xambook-backend/handlers"
+	"github.com/Harish-SN/xambook-backend/internal/storage"
 	"github.com/Harish-SN/xambook-backend/internal/telemetry"
 
 	"github.com/gin-gonic/gin"
@@ -25,6 +26,12 @@ func main() {
 
 	db.Connect()
 
+	err := storage.InitMinio()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	r := gin.Default()
 
 	r.Use(otelgin.Middleware("xambook-backend"))
@@ -35,6 +42,7 @@ func main() {
 			"https://xambook.com":        true,
 			"https://www.xambook.com":    true,
 			"https://argocd.xambook.com": true,
+			"https://minio.xambook.com":  true,
 			"http://localhost:5173":      true,
 		}
 
@@ -64,7 +72,11 @@ func main() {
 
 	api := r.Group("/api")
 	{
-		api.GET("/user/me", handlers.GetMe)
+		api.POST("/admin/upload-image",
+			handlers.UploadImage)
+
+		api.GET("/user/me",
+			handlers.GetMe)
 
 		api.GET("/tests/:subject/:testNumber/questions",
 			handlers.GetQuestions)

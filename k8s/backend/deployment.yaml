@@ -42,6 +42,15 @@ spec:
             value: your_key
           - name: RAZORPAY_KEY_SECRET
             value: your_secret
+
+          - name: PORT
+            value: "8080"
+          - name: MINIO_ENDPOINT
+            value: minio.xambook.com
+          - name: MINIO_ACCESS_KEY
+            value: admin
+          - name: MINIO_SECRET_KEY
+            value: CHANGE_THIS_PASSWORD
           resources:
             requests:
               cpu: "100m"
