@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: importer
-          image: harishsudalaimani/xambook-importer:48d20aa79cba55ce4d4152c86af31e412d091815
+          image: harishsudalaimani/xambook-importer:9f22156ce8518bf1f50eeab70f790abf9b1f3840
 
           env:
             - name: POSTGRES_URL
