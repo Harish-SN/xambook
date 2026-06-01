@@ -26,9 +26,7 @@ func main() {
 
 	db.Connect()
 
-	err := storage.InitMinio()
-
-	if err != nil {
+	if err := storage.InitMinio(); err != nil {
 		log.Fatal(err)
 	}
 
@@ -36,33 +34,7 @@ func main() {
 
 	r.Use(otelgin.Middleware("xambook-backend"))
 
-	// CORS Middleware
-	r.Use(func(c *gin.Context) {
-		allowedOrigins := map[string]bool{
-			"https://xambook.com":        true,
-			"https://www.xambook.com":    true,
-			"https://argocd.xambook.com": true,
-			"https://minio.xambook.com":  true,
-			"http://localhost:5173":      true,
-		}
-
-		origin := c.Request.Header.Get("Origin")
-
-		if allowedOrigins[origin] {
-			c.Header("Access-Control-Allow-Origin", origin)
-		}
-
-		c.Header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
-		c.Header("Access-Control-Allow-Headers", "Authorization, Content-Type")
-		c.Header("Access-Control-Allow-Credentials", "true")
-
-		if c.Request.Method == "OPTIONS" {
-			c.AbortWithStatus(204)
-			return
-		}
-
-		c.Next()
-	})
+	r.Use(corsMiddleware())
 
 	r.GET("/health", func(c *gin.Context) {
 		c.JSON(200, gin.H{
@@ -102,5 +74,37 @@ func main() {
 
 	log.Printf("Server running on port %s", port)
 
-	r.Run(":" + port)
+	if err := r.Run(":" + port); err != nil {
+		log.Fatal(err)
+	}
+}
+
+func corsMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+
+		allowedOrigins := map[string]bool{
+			"https://xambook.com":        true,
+			"https://www.xambook.com":    true,
+			"https://argocd.xambook.com": true,
+			"https://minio.xambook.com":  true,
+			"http://localhost:5173":      true,
+		}
+
+		origin := c.Request.Header.Get("Origin")
+
+		if allowedOrigins[origin] {
+			c.Header("Access-Control-Allow-Origin", origin)
+		}
+
+		c.Header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+		c.Header("Access-Control-Allow-Headers", "Authorization, Content-Type")
+		c.Header("Access-Control-Allow-Credentials", "true")
+
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(204)
+			return
+		}
+
+		c.Next()
+	}
 }
