@@ -1,11 +1,13 @@
 package main
 
 import (
-	"database/sql"
 	"encoding/json"
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
+
+	"xambook/db"
 
 	_ "github.com/lib/pq"
 )
@@ -17,99 +19,93 @@ type QuestionFile struct {
 }
 
 type Question struct {
-	Chapter       string            `json:"chapter"`
-	Topic         string            `json:"topic"`
-	Difficulty    string            `json:"difficulty"`
-	Question      string            `json:"question"`
-	ImageURL      string            `json:"image_url"`
-	Options       map[string]string `json:"options"`
-	CorrectOption string            `json:"correct_option"`
-	Explanation   string            `json:"explanation"`
+	ID       int    `json:"id"`
+	Subject  string `json:"subject"`
+	Question string `json:"question"`
+
+	Options struct {
+		A string `json:"a"`
+		B string `json:"b"`
+		C string `json:"c"`
+		D string `json:"d"`
+	} `json:"options"`
+
+	CorrectOption string `json:"correct_option"`
+	Explanation   string `json:"explanation"`
+
+	ImageURL string `json:"image_url"`
 }
 
 func main() {
-
-	dbURL := os.Getenv("POSTGRES_URL")
-
-	if dbURL == "" {
-		dbURL = "postgres://postgres:postgres123@localhost:5432/xambook?sslmode=disable"
-	}
-
-	db, err := sql.Open("postgres", dbURL)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	defer db.Close()
+	db.Connect()
 
 	root := "./questions"
 
-	err = filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
-
+	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
 
-		if filepath.Ext(path) != ".json" {
+		if info.IsDir() {
+			return nil
+		}
+
+		if !strings.HasSuffix(path, ".json") {
 			return nil
 		}
 
 		log.Println("Importing:", path)
 
-		data, err := os.ReadFile(path)
-
+		fileBytes, err := os.ReadFile(path)
 		if err != nil {
 			return err
 		}
 
 		var file QuestionFile
 
-		err = json.Unmarshal(data, &file)
-
-		if err != nil {
+		if err := json.Unmarshal(fileBytes, &file); err != nil {
 			return err
 		}
+
 		for _, q := range file.Questions {
-			optionsJSON, err := json.Marshal(q.Options)
-			if err != nil {
-				return err
-			}
-			_, err = db.Exec(`
+			_, err := db.DB.Exec(`
 				INSERT INTO questions (
 					subject,
 					test_number,
-					chapter,
-					topic,
-					difficulty,
-					question,
-					image_url,
-					options,
+					text,
+					option_a,
+					option_b,
+					option_c,
+					option_d,
 					correct_option,
-					explanation
+					explanation,
+					image_url
 				)
 				VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
-				ON CONFLICT DO NOTHING
 			`,
-				file.Subject,
+				q.Subject,
 				file.TestNumber,
-				q.Chapter,
-				q.Topic,
-				q.Difficulty,
 				q.Question,
-				q.ImageURL,
-				optionsJSON,
-				q.CorrectOption,
+				q.Options.A,
+				q.Options.B,
+				q.Options.C,
+				q.Options.D,
+				strings.ToLower(q.CorrectOption),
 				q.Explanation,
+				q.ImageURL,
 			)
+
 			if err != nil {
-				return err
+				log.Fatal(err)
 			}
 		}
+
 		return nil
 	})
+
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	log.Println("Import completed successfully")
 }
