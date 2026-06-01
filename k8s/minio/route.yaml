@@ -20,5 +20,5 @@ spec:
             value: /
 
       backendRefs:
-        - name: minio-console
-          port: 9001
+        - name: minio
+          port: 9000
