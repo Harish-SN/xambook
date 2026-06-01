@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: xambook-backend
   namespace: default
@@ -19,42 +20,54 @@ spec:
     spec:
       containers:
         - name: backend
-          image: harishsudalaimani/xambook-backend:16c169c97b1e28dba8470fbcb712d57469749596
+          image: harishsudalaimani/xambook-backend:fbba3e18c1dabe9c8569854f57a77833b9a3d75c
+
           imagePullPolicy: Always
+
           ports:
             - containerPort: 8080
+
           livenessProbe:
             httpGet:
               path: /health
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 10
+
           readinessProbe:
             httpGet:
               path: /health
               port: 8080
             initialDelaySeconds: 5
             periodSeconds: 5
-          env:
-          - name: POSTGRES_URL
-            value: postgres://postgres:postgres123@postgres:5432/xambook?sslmode=disable
-          - name: RAZORPAY_KEY_ID
-            value: your_key
-          - name: RAZORPAY_KEY_SECRET
-            value: your_secret
 
-          - name: PORT
-            value: "8080"
-          - name: MINIO_ENDPOINT
-            value: minio.xambook.com
-          - name: MINIO_ACCESS_KEY
-            value: admin
-          - name: MINIO_SECRET_KEY
-            value: CHANGE_THIS_PASSWORD
+          env:
+            - name: POSTGRES_URL
+              value: postgres://postgres:postgres123@postgres:5432/xambook?sslmode=disable
+
+            - name: RAZORPAY_KEY_ID
+              value: your_key
+
+            - name: RAZORPAY_KEY_SECRET
+              value: your_secret
+
+            - name: PORT
+              value: "8080"
+
+            - name: MINIO_ENDPOINT
+              value: minio.storage.svc.cluster.local:9000
+
+            - name: MINIO_ACCESS_KEY
+              value: admin
+
+            - name: MINIO_SECRET_KEY
+              value: CHANGE_THIS_PASSWORD
+
           resources:
             requests:
               cpu: "100m"
               memory: "128Mi"
+
             limits:
               cpu: "500m"
               memory: "512Mi"
