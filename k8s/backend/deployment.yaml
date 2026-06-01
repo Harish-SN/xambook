@@ -46,10 +46,10 @@ spec:
               value: postgres://postgres:postgres123@postgres:5432/xambook?sslmode=disable
 
             - name: RAZORPAY_KEY_ID
-              value: your_key
+              value: rzp_test_SwNN6dlfoqgV8s
 
             - name: RAZORPAY_KEY_SECRET
-              value: your_secret
+              value: wS4ATd4qWtkRDhqUp5RHf86v
 
             - name: PORT
               value: "8080"
