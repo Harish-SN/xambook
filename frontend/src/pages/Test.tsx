@@ -1,7 +1,13 @@
+// src/pages/Test.tsx
+
 import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
+
 import Navbar from '../components/Navbar'
+import MathText from '../components/MathText'
+
 import Result, { type Question } from './Result'
+
 import '../styles/Test.css'
 
 const OPTION_KEYS = ['a', 'b', 'c', 'd'] as const
@@ -15,17 +21,37 @@ export default function Test() {
   const selectedTest = 1
 
   const [questions, setQuestions] = useState<Question[]>([])
-  const [answers, setAnswers] = useState<Record<number, string>>({})
-  const [visited, setVisited] = useState<Set<number>>(new Set())
+
+  const [answers, setAnswers] = useState<
+    Record<number, string>
+  >({})
+
+  const [visited, setVisited] = useState<
+    Set<number>
+  >(new Set())
+
   const [current, setCurrent] = useState(0)
+
   const [timeLeft, setTimeLeft] = useState(0)
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
+
+  const [submitted, setSubmitted] =
+    useState(false)
+
+  const [loading, setLoading] =
+    useState(false)
+
   const [ready, setReady] = useState(false)
-  const [paused, setPaused] = useState(false)
+
+  const [paused, setPaused] =
+    useState(false)
+
   const [dark, setDark] = useState(false)
 
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const timerRef =
+    useRef<ReturnType<typeof setInterval> | null>(
+      null
+    )
+
   const savedRef = useRef(false)
 
   const apiSubject = isFree
@@ -33,19 +59,24 @@ export default function Test() {
     : isMock
     ? 'Full Test'
     : subject
-    ? subject.charAt(0).toUpperCase() + subject.slice(1)
+    ? subject.charAt(0).toUpperCase() +
+      subject.slice(1)
     : ''
 
   const isFullTest = isMock || isFree
 
   const totalMins = isFullTest ? 180 : 60
-  const totalMarks = isFullTest ? 720 : 180
+
+  // Dynamic total marks
+  const totalMarks = questions.length * 4
 
   // ---------------- FETCH QUESTIONS ----------------
+
   useEffect(() => {
     let active = true
 
     setLoading(true)
+
     setReady(false)
 
     savedRef.current = false
@@ -57,7 +88,9 @@ export default function Test() {
     )
       .then(async r => {
         if (!r.ok) {
-          throw new Error('Failed to fetch questions')
+          throw new Error(
+            'Failed to fetch questions'
+          )
         }
 
         return r.json()
@@ -66,32 +99,61 @@ export default function Test() {
       .then((data: any) => {
         if (!active) return
 
-        const rawQuestions = Array.isArray(data.questions)
+        const rawQuestions = Array.isArray(
+          data.questions
+        )
           ? data.questions
           : []
 
-        const qs: Question[] = rawQuestions.map((q: any) => ({
-          id: q.id,
+        const qs: Question[] = rawQuestions.map(
+          (q: any) => ({
+            id: q.id,
 
-          question: q.question || q.text || '',
+            question:
+              q.question || q.text || '',
 
-          options: {
-            a: q.options?.a || q.option_a || '',
-            b: q.options?.b || q.option_b || '',
-            c: q.options?.c || q.option_c || '',
-            d: q.options?.d || q.option_d || '',
-          },
+            options: {
+              a:
+                q.options?.a ||
+                q.option_a ||
+                '',
 
-          correct_option: q.correct_option || '',
+              b:
+                q.options?.b ||
+                q.option_b ||
+                '',
 
-          explanation: q.explanation || '',
+              c:
+                q.options?.c ||
+                q.option_c ||
+                '',
 
-          image_url: q.image_url || '',
-        }))
+              d:
+                q.options?.d ||
+                q.option_d ||
+                '',
+            },
+
+            correct_option:
+              q.correct_option || '',
+
+            explanation:
+              q.explanation || '',
+
+            image_url:
+              q.image_url || '',
+          })
+        )
+
+        console.log(
+          'Questions loaded:',
+          qs.length
+        )
 
         setQuestions(qs)
 
         setAnswers({})
+
         setVisited(new Set())
 
         setCurrent(0)
@@ -99,13 +161,17 @@ export default function Test() {
         setTimeLeft(totalMins * 60)
 
         setSubmitted(false)
+
         setPaused(false)
 
         setReady(true)
       })
 
       .catch(err => {
-        console.error('Question fetch failed:', err)
+        console.error(
+          'Question fetch failed:',
+          err
+        )
 
         if (!active) return
 
@@ -124,6 +190,7 @@ export default function Test() {
   }, [apiSubject])
 
   // ---------------- TIMER ----------------
+
   useEffect(() => {
     if (!ready || submitted || paused) return
 
@@ -143,12 +210,19 @@ export default function Test() {
       })
     }, 1000)
 
-    return () => clearInterval(timerRef.current!)
+    return () =>
+      clearInterval(timerRef.current!)
   }, [ready, submitted, paused])
 
   // ---------------- SAVE ATTEMPT ----------------
+
   useEffect(() => {
-    if (!submitted || questions.length === 0 || savedRef.current) return
+    if (
+      !submitted ||
+      questions.length === 0 ||
+      savedRef.current
+    )
+      return
 
     savedRef.current = true
 
@@ -158,23 +232,29 @@ export default function Test() {
   function formatTime(secs: number) {
     const h = Math.floor(secs / 3600)
 
-    const m = Math.floor((secs % 3600) / 60)
+    const m = Math.floor(
+      (secs % 3600) / 60
+    )
 
     const s = secs % 60
 
     if (h > 0) {
-      return `${h}:${String(m).padStart(2, '0')}:${String(
-        s
-      ).padStart(2, '0')}`
+      return `${h}:${String(m).padStart(
+        2,
+        '0'
+      )}:${String(s).padStart(2, '0')}`
     }
 
-    return `${String(m).padStart(2, '0')}:${String(s).padStart(
+    return `${String(m).padStart(
       2,
       '0'
-    )}`
+    )}:${String(s).padStart(2, '0')}`
   }
 
-  function selectAnswer(qIndex: number, option: string) {
+  function selectAnswer(
+    qIndex: number,
+    option: string
+  ) {
     setAnswers(a => ({
       ...a,
       [qIndex]: option,
@@ -190,9 +270,11 @@ export default function Test() {
   }
 
   function getPaletteStatus(idx: number) {
-    if (answers[idx] !== undefined) return 'answered'
+    if (answers[idx] !== undefined)
+      return 'answered'
 
-    if (visited.has(idx)) return 'skipped'
+    if (visited.has(idx))
+      return 'skipped'
 
     return 'unattempted'
   }
@@ -210,45 +292,60 @@ export default function Test() {
       answers[i] !== correctOf(q)
   ).length
 
-  const skipped = questions.length - correct - wrong
+  const skipped =
+    questions.length - correct - wrong
 
   const marks = correct * 4 - wrong
 
   const percentage =
-    questions.length > 0
-      ? Math.round((marks / totalMarks) * 100)
+    totalMarks > 0
+      ? Math.round(
+          (marks / totalMarks) * 100
+        )
       : 0
 
   const isLowTime = timeLeft <= 300
 
-  const theme = dark ? 'testDark' : 'testLight'
+  const theme = dark
+    ? 'testDark'
+    : 'testLight'
 
   async function saveAttempt() {
     try {
-      await fetch('https://api.xambook.com/api/attempts', {
-        method: 'POST',
+      await fetch(
+        'https://api.xambook.com/api/attempts',
+        {
+          method: 'POST',
 
-        headers: {
-          'Content-Type': 'application/json',
-        },
+          headers: {
+            'Content-Type':
+              'application/json',
+          },
 
-        body: JSON.stringify({
-          subject: apiSubject,
+          body: JSON.stringify({
+            subject: apiSubject,
 
-          test_number: selectedTest,
+            test_number: selectedTest,
 
-          score: percentage,
+            score: percentage,
 
-          marks,
-          total_marks: totalMarks,
+            marks,
 
-          correct,
-          wrong,
-          skipped,
-        }),
-      })
+            total_marks: totalMarks,
+
+            correct,
+
+            wrong,
+
+            skipped,
+          }),
+        }
+      )
     } catch (err) {
-      console.error('Failed to save attempt:', err)
+      console.error(
+        'Failed to save attempt:',
+        err
+      )
     }
   }
 
@@ -259,6 +356,7 @@ export default function Test() {
   }
 
   // ---------------- LOADING ----------------
+
   if (loading) {
     return (
       <div className={`testPage ${theme}`}>
@@ -272,6 +370,7 @@ export default function Test() {
   }
 
   // ---------------- NO QUESTIONS ----------------
+
   if (!loading && questions.length === 0) {
     return (
       <div className={`testPage ${theme}`}>
@@ -285,6 +384,7 @@ export default function Test() {
   }
 
   // ---------------- RESULT PAGE ----------------
+
   if (submitted && questions.length > 0) {
     return (
       <Result
@@ -305,48 +405,30 @@ export default function Test() {
 
   const q = questions[current]
 
-  const answered = Object.keys(answers).length
+  const answered =
+    Object.keys(answers).length
 
   return (
     <div className={`testPage ${theme}`}>
       <Navbar />
 
-      {paused && (
-        <div className="testPausedOverlay">
-          <div className="testPausedBox">
-            <div className="testPausedIcon">⏸</div>
-
-            <h2 className="testPausedTitle">
-              Test Paused
-            </h2>
-
-            <p className="testPausedSub">
-              Your timer is paused.
-            </p>
-
-            <button
-              className="testPausedResumeBtn"
-              onClick={() => setPaused(false)}
-            >
-              ▶ Resume Test
-            </button>
-          </div>
-        </div>
-      )}
-
       <div className="testLayout">
         <main className="testContent">
           <div className="testProgressHeader">
             <p className="testProgressCourse">
-              {apiSubject} · Test {selectedTest}
+              {apiSubject} · Test{' '}
+              {selectedTest}
             </p>
 
             <div className="testProgressMeta">
               <span>
-                Q {current + 1} of {questions.length}
+                Q {current + 1} of{' '}
+                {questions.length}
               </span>
 
-              <span>{answered} answered</span>
+              <span>
+                {answered} answered
+              </span>
             </div>
 
             <div className="testProgressBar">
@@ -354,7 +436,8 @@ export default function Test() {
                 className="testProgressFill"
                 style={{
                   width: `${
-                    ((current + 1) / questions.length) *
+                    ((current + 1) /
+                      questions.length) *
                     100
                   }%`,
                 }}
@@ -370,7 +453,9 @@ export default function Test() {
                 </p>
 
                 <p className="testQuestionText">
-                  {q.question}
+                  <MathText
+                    text={q.question}
+                  />
                 </p>
 
                 {q.image_url && (
@@ -397,7 +482,10 @@ export default function Test() {
                       }`}
                       onClick={() =>
                         !paused &&
-                        selectAnswer(current, key)
+                        selectAnswer(
+                          current,
+                          key
+                        )
                       }
                     >
                       <span
@@ -410,7 +498,9 @@ export default function Test() {
                         {key.toUpperCase()}
                       </span>
 
-                      {q.options[key]}
+                      <MathText
+                        text={q.options[key]}
+                      />
                     </button>
                   )
                 })}
@@ -422,22 +512,34 @@ export default function Test() {
             <button
               className="testPrevBtn"
               onClick={() =>
-                goTo(Math.max(0, current - 1))
+                goTo(
+                  Math.max(
+                    0,
+                    current - 1
+                  )
+                )
               }
-              disabled={current === 0 || paused}
+              disabled={
+                current === 0 || paused
+              }
             >
               ← Prev
             </button>
 
-            {current < questions.length - 1 ? (
-              <button
-                className="testNextBtn"
-                onClick={() => goTo(current + 1)}
-                disabled={paused}
-              >
-                Next →
-              </button>
-            ) : (
+            <div className="testNavRight">
+              {current <
+                questions.length - 1 && (
+                <button
+                  className="testNextBtn"
+                  onClick={() =>
+                    goTo(current + 1)
+                  }
+                  disabled={paused}
+                >
+                  Next →
+                </button>
+              )}
+
               <button
                 className="testSubmitBtn"
                 onClick={handleSubmit}
@@ -445,14 +547,16 @@ export default function Test() {
               >
                 Submit Test ✓
               </button>
-            )}
+            </div>
           </div>
         </main>
 
         <aside className="testSidebar">
           <div
             className={`testTimer ${
-              isLowTime ? 'testTimer--low' : ''
+              isLowTime
+                ? 'testTimer--low'
+                : ''
             }`}
           >
             <p className="testTimerLabel">
@@ -469,9 +573,13 @@ export default function Test() {
                   ? 'testPauseBtn--paused'
                   : ''
               }`}
-              onClick={() => setPaused(!paused)}
+              onClick={() =>
+                setPaused(!paused)
+              }
             >
-              {paused ? '▶ Resume' : '⏸ Pause'}
+              {paused
+                ? '▶ Resume'
+                : '⏸ Pause'}
             </button>
           </div>
 
@@ -484,26 +592,10 @@ export default function Test() {
               : '🌙 Dark Mode'}
           </button>
 
-          <div className="testLegend">
-            <div className="testLegendItem">
-              <span className="testLegendDot testLegendDot--answered" />
-              <span>Answered</span>
-            </div>
-
-            <div className="testLegendItem">
-              <span className="testLegendDot testLegendDot--skipped" />
-              <span>Skipped</span>
-            </div>
-
-            <div className="testLegendItem">
-              <span className="testLegendDot testLegendDot--unattempted" />
-              <span>Unattempted</span>
-            </div>
-          </div>
-
           <div className="testPalette">
             {questions.map((_, idx) => {
-              const status = getPaletteStatus(idx)
+              const status =
+                getPaletteStatus(idx)
 
               return (
                 <button
@@ -521,14 +613,6 @@ export default function Test() {
               )
             })}
           </div>
-
-          <button
-            className="testSidebarSubmit"
-            onClick={handleSubmit}
-            disabled={paused}
-          >
-            Submit Test ✓
-          </button>
         </aside>
       </div>
     </div>

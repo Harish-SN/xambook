@@ -1109,6 +1109,18 @@
   background: #3730a3;
 }
 
+.testNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.testNavRight {
+  display: flex;
+  gap: 12px;
+}
+
 @media (max-width: 768px) {
   .testLayout {
     flex-direction: column;
