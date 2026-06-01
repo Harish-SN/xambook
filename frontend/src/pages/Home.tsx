@@ -132,6 +132,16 @@ export default function Home() {
     }
   }
 
+  function handleFreeTestClick(
+    e: React.MouseEvent
+  ) {
+    if (!isLoggedIn) {
+      e.preventDefault()
+
+      login()
+    }
+  }
+
   return (
     <div className="homePage">
       <Navbar />
@@ -165,6 +175,15 @@ export default function Home() {
             Explore Test Series →
           </Link>
 
+          {/* FREE TEST BUTTON */}
+          <Link
+            to="/test/free"
+            className="homeBtnFree"
+            onClick={handleFreeTestClick}
+          >
+            🎯 Free NEET Mock Test
+          </Link>
+
           {!isLoggedIn ? (
             <>
               <button
@@ -190,7 +209,6 @@ export default function Home() {
             </Link>
           )}
         </div>
-
       </section>
 
       {/* Premium CTA */}

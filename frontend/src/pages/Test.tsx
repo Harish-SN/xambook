@@ -20,7 +20,9 @@ export default function Test() {
 
   const selectedTest = 1
 
-  const [questions, setQuestions] = useState<Question[]>([])
+  const [questions, setQuestions] = useState<
+    Question[]
+  >([])
 
   const [answers, setAnswers] = useState<
     Record<number, string>
@@ -30,9 +32,11 @@ export default function Test() {
     Set<number>
   >(new Set())
 
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] =
+    useState(0)
 
-  const [timeLeft, setTimeLeft] = useState(0)
+  const [timeLeft, setTimeLeft] =
+    useState(0)
 
   const [submitted, setSubmitted] =
     useState(false)
@@ -40,17 +44,23 @@ export default function Test() {
   const [loading, setLoading] =
     useState(false)
 
-  const [ready, setReady] = useState(false)
+  const [ready, setReady] =
+    useState(false)
+
+  // NEW
+  const [started, setStarted] =
+    useState(false)
 
   const [paused, setPaused] =
     useState(false)
 
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] =
+    useState(false)
 
   const timerRef =
-    useRef<ReturnType<typeof setInterval> | null>(
-      null
-    )
+    useRef<ReturnType<
+      typeof setInterval
+    > | null>(null)
 
   const savedRef = useRef(false)
 
@@ -65,10 +75,12 @@ export default function Test() {
 
   const isFullTest = isMock || isFree
 
-  const totalMins = isFullTest ? 180 : 60
+  const totalMins = isFullTest
+    ? 180
+    : 60
 
-  // Dynamic total marks
-  const totalMarks = questions.length * 4
+  const totalMarks =
+    questions.length * 4
 
   // ---------------- FETCH QUESTIONS ----------------
 
@@ -105,12 +117,14 @@ export default function Test() {
           ? data.questions
           : []
 
-        const qs: Question[] = rawQuestions.map(
-          (q: any) => ({
+        const qs: Question[] =
+          rawQuestions.map((q: any) => ({
             id: q.id,
 
             question:
-              q.question || q.text || '',
+              q.question ||
+              q.text ||
+              '',
 
             options: {
               a:
@@ -142,8 +156,7 @@ export default function Test() {
 
             image_url:
               q.image_url || '',
-          })
-        )
+          }))
 
         console.log(
           'Questions loaded:',
@@ -163,6 +176,8 @@ export default function Test() {
         setSubmitted(false)
 
         setPaused(false)
+
+        setStarted(false)
 
         setReady(true)
       })
@@ -192,14 +207,22 @@ export default function Test() {
   // ---------------- TIMER ----------------
 
   useEffect(() => {
-    if (!ready || submitted || paused) return
+    if (
+      !ready ||
+      !started ||
+      submitted ||
+      paused
+    )
+      return
 
     clearInterval(timerRef.current!)
 
     timerRef.current = setInterval(() => {
       setTimeLeft(t => {
         if (t <= 1) {
-          clearInterval(timerRef.current!)
+          clearInterval(
+            timerRef.current!
+          )
 
           setSubmitted(true)
 
@@ -212,7 +235,12 @@ export default function Test() {
 
     return () =>
       clearInterval(timerRef.current!)
-  }, [ready, submitted, paused])
+  }, [
+    ready,
+    started,
+    submitted,
+    paused,
+  ])
 
   // ---------------- SAVE ATTEMPT ----------------
 
@@ -280,10 +308,13 @@ export default function Test() {
   }
 
   const correctOf = (q: Question) =>
-    (q.correct_option || '').toLowerCase()
+    (
+      q.correct_option || ''
+    ).toLowerCase()
 
   const correct = questions.filter(
-    (q, i) => answers[i] === correctOf(q)
+    (q, i) =>
+      answers[i] === correctOf(q)
   ).length
 
   const wrong = questions.filter(
@@ -293,7 +324,9 @@ export default function Test() {
   ).length
 
   const skipped =
-    questions.length - correct - wrong
+    questions.length -
+    correct -
+    wrong
 
   const marks = correct * 4 - wrong
 
@@ -304,7 +337,8 @@ export default function Test() {
         )
       : 0
 
-  const isLowTime = timeLeft <= 300
+  const isLowTime =
+    timeLeft <= 300
 
   const theme = dark
     ? 'testDark'
@@ -325,13 +359,15 @@ export default function Test() {
           body: JSON.stringify({
             subject: apiSubject,
 
-            test_number: selectedTest,
+            test_number:
+              selectedTest,
 
             score: percentage,
 
             marks,
 
-            total_marks: totalMarks,
+            total_marks:
+              totalMarks,
 
             correct,
 
@@ -355,6 +391,10 @@ export default function Test() {
     setSubmitted(true)
   }
 
+  function startTest() {
+    setStarted(true)
+  }
+
   // ---------------- LOADING ----------------
 
   if (loading) {
@@ -371,7 +411,10 @@ export default function Test() {
 
   // ---------------- NO QUESTIONS ----------------
 
-  if (!loading && questions.length === 0) {
+  if (
+    !loading &&
+    questions.length === 0
+  ) {
     return (
       <div className={`testPage ${theme}`}>
         <Navbar />
@@ -383,9 +426,110 @@ export default function Test() {
     )
   }
 
+  // ---------------- START POPUP ----------------
+
+  if (
+    ready &&
+    !started &&
+    !submitted &&
+    questions.length > 0
+  ) {
+    return (
+      <div className={`testPage ${theme}`}>
+        <Navbar />
+
+        <div className="testInstructionsOverlay">
+          <div className="testInstructionsModal">
+            <div className="testInstructionsBadge">
+              FREE NEET MOCK TEST
+            </div>
+
+            <h2 className="testInstructionsTitle">
+              {apiSubject}
+            </h2>
+
+            <p className="testInstructionsSub">
+              Read the exam instructions
+              carefully before starting.
+            </p>
+
+            <div className="testInstructionsGrid">
+              <div className="testInstructionsCard">
+                <h3>Questions</h3>
+
+                <p>
+                  {questions.length}
+                </p>
+              </div>
+
+              <div className="testInstructionsCard">
+                <h3>Duration</h3>
+
+                <p>
+                  {totalMins} mins
+                </p>
+              </div>
+
+              <div className="testInstructionsCard">
+                <h3>Total Marks</h3>
+
+                <p>{totalMarks}</p>
+              </div>
+            </div>
+
+            <div className="testInstructionsRules">
+              <p>
+                ✅ Correct answer = +4
+                marks
+              </p>
+
+              <p>
+                ❌ Wrong answer = −1
+                mark
+              </p>
+
+              <p>
+                ➖ Unanswered = 0
+                marks
+              </p>
+            </div>
+
+            <div className="testInstructionsSubjects">
+              <p>
+                Physics — 45 Questions
+              </p>
+
+              <p>
+                Chemistry — 45 Questions
+              </p>
+
+              <p>
+                Botany — 45 Questions
+              </p>
+
+              <p>
+                Zoology — 45 Questions
+              </p>
+            </div>
+
+            <button
+              className="testInstructionsBtn"
+              onClick={startTest}
+            >
+              Start Test →
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   // ---------------- RESULT PAGE ----------------
 
-  if (submitted && questions.length > 0) {
+  if (
+    submitted &&
+    questions.length > 0
+  ) {
     return (
       <Result
         questions={questions}
@@ -470,7 +614,8 @@ export default function Test() {
               <div className="testOptions">
                 {OPTION_KEYS.map(key => {
                   const selected =
-                    answers[current] === key
+                    answers[current] ===
+                    key
 
                   return (
                     <button
@@ -499,7 +644,9 @@ export default function Test() {
                       </span>
 
                       <MathText
-                        text={q.options[key]}
+                        text={
+                          q.options[key]
+                        }
                       />
                     </button>
                   )
@@ -520,7 +667,8 @@ export default function Test() {
                 )
               }
               disabled={
-                current === 0 || paused
+                current === 0 ||
+                paused
               }
             >
               ← Prev
@@ -528,7 +676,8 @@ export default function Test() {
 
             <div className="testNavRight">
               {current <
-                questions.length - 1 && (
+                questions.length -
+                  1 && (
                 <button
                   className="testNextBtn"
                   onClick={() =>
@@ -585,7 +734,9 @@ export default function Test() {
 
           <button
             className="testThemeBtn"
-            onClick={() => setDark(!dark)}
+            onClick={() =>
+              setDark(!dark)
+            }
           >
             {dark
               ? '☀️ Light Mode'
@@ -605,7 +756,9 @@ export default function Test() {
                       ? 'testPaletteBtn--current'
                       : ''
                   }`}
-                  onClick={() => goTo(idx)}
+                  onClick={() =>
+                    goTo(idx)
+                  }
                   disabled={paused}
                 >
                   {idx + 1}
