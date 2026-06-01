@@ -28,9 +28,11 @@ export function AuthProvider({
   const [authenticated, setAuthenticated] =
     useState(false)
 
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] =
+    useState<any>(null)
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] =
+    useState(true)
 
   useEffect(() => {
     let refreshInterval: ReturnType<
@@ -47,6 +49,15 @@ export function AuthProvider({
         setAuthenticated(auth)
 
         if (auth) {
+
+          // SAVE TOKEN
+          if (keycloak.token) {
+            localStorage.setItem(
+              'kc_token',
+              keycloak.token
+            )
+          }
+
           setUser(keycloak.tokenParsed)
 
           // AUTO TOKEN REFRESH
@@ -54,6 +65,15 @@ export function AuthProvider({
             keycloak
               .updateToken(60)
               .then(refreshed => {
+
+                // UPDATE TOKEN
+                if (keycloak.token) {
+                  localStorage.setItem(
+                    'kc_token',
+                    keycloak.token
+                  )
+                }
+
                 if (refreshed) {
                   console.log(
                     'Token refreshed'
@@ -76,23 +96,42 @@ export function AuthProvider({
         }
 
         keycloak.onAuthSuccess = () => {
+
           setAuthenticated(true)
+
+          // SAVE TOKEN
+          if (keycloak.token) {
+            localStorage.setItem(
+              'kc_token',
+              keycloak.token
+            )
+          }
 
           setUser(keycloak.tokenParsed)
         }
 
         keycloak.onAuthLogout = () => {
+
           setAuthenticated(false)
 
           setUser(null)
+
+          localStorage.removeItem(
+            'kc_token'
+          )
         }
+
       } catch (err) {
+
         console.error(
           'Keycloak init failed',
           err
         )
+
       } finally {
+
         setLoading(false)
+
       }
     }
 
@@ -107,19 +146,27 @@ export function AuthProvider({
 
   function login() {
     keycloak.login({
-      redirectUri: window.location.origin,
+      redirectUri:
+        window.location.origin,
     })
   }
 
   function signup() {
     keycloak.register({
-      redirectUri: window.location.origin,
+      redirectUri:
+        window.location.origin,
     })
   }
 
   function logout() {
+
+    localStorage.removeItem(
+      'kc_token'
+    )
+
     keycloak.logout({
-      redirectUri: window.location.origin,
+      redirectUri:
+        window.location.origin,
     })
   }
 

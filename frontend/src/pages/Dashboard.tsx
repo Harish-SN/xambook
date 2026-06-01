@@ -1,7 +1,15 @@
-import { useEffect, useState } from 'react'
+import {
+  useEffect,
+  useState,
+} from 'react'
+
 import { Link } from 'react-router-dom'
+
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+
+import { useAuth } from '../context/AuthContext'
+
 import '../styles/Dashboard.css'
 
 interface User {
@@ -26,81 +34,251 @@ interface Attempt {
 }
 
 export default function Dashboard() {
-  const [user, setUser] = useState<User | null>(null)
-  const [attempts, setAttempts] = useState<Attempt[]>([])
-  const [loading, setLoading] = useState(true)
+
+  const {
+    authenticated,
+    loading: authLoading,
+    login,
+  } = useAuth()
+
+  const [user, setUser] =
+    useState<User | null>(null)
+
+  const [attempts, setAttempts] =
+    useState<Attempt[]>([])
+
+  const [loading, setLoading] =
+    useState(true)
 
   useEffect(() => {
-    Promise.all([
-      fetch('https://api.xambook.com/api/user/me').then(r => r.json()),
-      fetch('https://api.xambook.com/api/attempts/me').then(r => r.json()),
-    ])
-      .then(([userData, attemptsData]) => {
-        setUser(userData)
-        setAttempts(attemptsData.attempts || attemptsData || [])
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error(err)
-        setLoading(false)
-      })
-  }, [])
 
-  if (loading) {
+    async function loadDashboard() {
+
+      try {
+
+        const token =
+          localStorage.getItem(
+            'kc_token'
+          )
+
+        if (!token) {
+          setLoading(false)
+          return
+        }
+
+        const headers: HeadersInit = {
+          Authorization: `Bearer ${token}`,
+          'Content-Type':
+            'application/json',
+        }
+
+        const [
+          userRes,
+          attemptsRes,
+        ] = await Promise.all([
+          fetch(
+            'https://api.xambook.com/api/user/me',
+            {
+              headers,
+            }
+          ),
+
+          fetch(
+            'https://api.xambook.com/api/attempts/me',
+            {
+              headers,
+            }
+          ),
+        ])
+
+        // TOKEN INVALID
+        if (
+          userRes.status === 401
+        ) {
+
+          localStorage.removeItem(
+            'kc_token'
+          )
+
+          setUser(null)
+          setAttempts([])
+
+          setLoading(false)
+
+          return
+        }
+
+        if (!userRes.ok) {
+          throw new Error(
+            'Failed to load user'
+          )
+        }
+
+        const userData =
+          await userRes.json()
+
+        const attemptsData =
+          await attemptsRes.json()
+
+        setUser(userData)
+
+        setAttempts(
+          attemptsData.attempts ||
+            []
+        )
+
+      } catch (err) {
+
+        console.error(err)
+
+      } finally {
+
+        setLoading(false)
+
+      }
+    }
+
+    if (
+      authenticated &&
+      !authLoading
+    ) {
+      loadDashboard()
+    }
+
+    if (
+      !authenticated &&
+      !authLoading
+    ) {
+      setLoading(false)
+    }
+
+  }, [
+    authenticated,
+    authLoading,
+  ])
+
+  // WAIT FOR AUTH
+  if (authLoading || loading) {
+
     return (
       <div className="dashPage">
+
         <Navbar />
-        <div className="dashLoading">Loading...</div>
+
+        <div className="dashLoading">
+          Loading dashboard...
+        </div>
+
+        <Footer />
+
       </div>
     )
   }
 
-  const avgMarks = attempts.length
-    ? Math.round(
-        attempts.reduce((a, b) => a + b.marks, 0) / attempts.length
-      )
-    : null
+  // NOT LOGGED IN
+  if (!authenticated) {
 
-  const bestAttempt = attempts.length
-    ? attempts.reduce((best, a) =>
-        a.marks > best.marks ? a : best
-      )
-    : null
+    return (
+      <div className="dashPage">
+
+        <Navbar />
+
+        <main className="dashMain">
+
+          <div className="dashEmpty">
+
+            <p className="dashEmptyText">
+              Please login to access
+              your dashboard.
+            </p>
+
+            <button
+              onClick={() => login()}
+              className="dashEmptyBtn"
+            >
+              Login →
+            </button>
+
+          </div>
+
+        </main>
+
+        <Footer />
+
+      </div>
+    )
+  }
+
+  const avgMarks =
+    attempts.length > 0
+      ? Math.round(
+          attempts.reduce(
+            (a, b) =>
+              a + b.marks,
+            0
+          ) / attempts.length
+        )
+      : null
+
+  const bestAttempt =
+    attempts.length > 0
+      ? attempts.reduce(
+          (best, a) =>
+            a.marks > best.marks
+              ? a
+              : best
+        )
+      : null
 
   return (
     <div className="dashPage">
+
       <Navbar />
 
       <main className="dashMain">
 
+        {/* WELCOME */}
         <div className="dashWelcome">
+
           <div>
+
             <h1 className="dashWelcomeTitle">
-              Welcome back, {user?.name} 👋
+              Welcome back,
+              {' '}
+              {user?.name ||
+                'Student'} 👋
             </h1>
 
             <p className="dashWelcomeSub">
               {user?.email}
             </p>
+
           </div>
 
           {user?.is_premium ? (
+
             <div className="dashPremiumBadge">
               ⚡ Premium Active
             </div>
+
           ) : (
+
             <Link
               to="/payment"
               className="dashBuyBtn"
             >
               Buy Premium — ₹99
             </Link>
+
           )}
+
         </div>
 
+        {/* STATS */}
         <div className="dashStatsGrid">
 
           <div className="dashStatCard">
+
             <p className="dashStatValue">
               {attempts.length}
             </p>
@@ -108,19 +286,25 @@ export default function Dashboard() {
             <p className="dashStatLabel">
               Tests Taken
             </p>
+
           </div>
 
           <div className="dashStatCard">
+
             <p className="dashStatValue">
-              {avgMarks !== null ? avgMarks : 'N/A'}
+              {avgMarks !== null
+                ? avgMarks
+                : 'N/A'}
             </p>
 
             <p className="dashStatLabel">
               Avg Marks
             </p>
+
           </div>
 
           <div className="dashStatCard">
+
             <p className="dashStatValue">
               {bestAttempt
                 ? `${bestAttempt.marks}/${bestAttempt.total_marks}`
@@ -130,30 +314,39 @@ export default function Dashboard() {
             <p className="dashStatLabel">
               Best Score
             </p>
+
           </div>
 
           <div className="dashStatCard">
+
             <p className="dashStatValue">
-              {user?.is_premium ? 'Premium' : 'Free'}
+              {user?.is_premium
+                ? 'Premium'
+                : 'Free'}
             </p>
 
             <p className="dashStatLabel">
               Status
             </p>
+
           </div>
 
         </div>
 
+        {/* ATTEMPTS */}
         <div className="dashSection">
+
           <h2 className="dashSectionTitle">
             Test History
           </h2>
 
           {attempts.length === 0 ? (
+
             <div className="dashEmpty">
 
               <p className="dashEmptyText">
-                You haven't taken any tests yet.
+                You haven't taken any
+                tests yet.
               </p>
 
               <Link
@@ -164,10 +357,13 @@ export default function Dashboard() {
               </Link>
 
             </div>
+
           ) : (
+
             <div className="dashAttemptList">
 
-              {attempts.map((a) => (
+              {attempts.map(a => (
+
                 <div
                   key={a.id}
                   className="dashAttemptCard"
@@ -176,11 +372,17 @@ export default function Dashboard() {
                   <div className="dashAttemptLeft">
 
                     <p className="dashAttemptSubject">
-                      {a.subject} · Test {a.test_number}
+                      {a.subject}
+                      {' · '}
+                      Test
+                      {' '}
+                      {a.test_number}
                     </p>
 
                     <p className="dashAttemptDate">
-                      {new Date(a.attempted_at).toLocaleDateString(
+                      {new Date(
+                        a.attempted_at
+                      ).toLocaleDateString(
                         'en-IN',
                         {
                           day: 'numeric',
@@ -219,7 +421,9 @@ export default function Dashboard() {
                             : 'dashAttemptMarks--low'
                         }`}
                       >
-                        {a.marks} / {a.total_marks}
+                        {a.marks}
+                        {' / '}
+                        {a.total_marks}
                       </div>
 
                       <div className="dashAttemptPct">
@@ -231,12 +435,16 @@ export default function Dashboard() {
                   </div>
 
                 </div>
+
               ))}
 
             </div>
+
           )}
+
         </div>
 
+        {/* QUICK LINKS */}
         <div className="dashSection">
 
           <h2 className="dashSectionTitle">
@@ -249,42 +457,64 @@ export default function Dashboard() {
               to="/courses"
               className="dashLinkCard"
             >
-              <span className="dashLinkIcon">📋</span>
+
+              <span className="dashLinkIcon">
+                📋
+              </span>
+
               <span className="dashLinkLabel">
                 Test Series
               </span>
+
             </Link>
 
             <Link
               to="/test/free-test"
               className="dashLinkCard"
             >
-              <span className="dashLinkIcon">🎯</span>
+
+              <span className="dashLinkIcon">
+                🎯
+              </span>
+
               <span className="dashLinkLabel">
                 Free Test
               </span>
+
             </Link>
 
             <Link
               to="/about"
               className="dashLinkCard"
             >
-              <span className="dashLinkIcon">ℹ️</span>
+
+              <span className="dashLinkIcon">
+                ℹ️
+              </span>
+
               <span className="dashLinkLabel">
                 About
               </span>
+
             </Link>
 
             {!user?.is_premium && (
+
               <Link
                 to="/payment"
                 className="dashLinkCard dashLinkCard--premium"
               >
-                <span className="dashLinkIcon">⚡</span>
+
+                <span className="dashLinkIcon">
+                  ⚡
+                </span>
+
                 <span className="dashLinkLabel">
                   Go Premium
                 </span>
+
               </Link>
+
             )}
 
           </div>
@@ -294,6 +524,7 @@ export default function Dashboard() {
       </main>
 
       <Footer />
+
     </div>
   )
 }

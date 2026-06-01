@@ -15,13 +15,24 @@ import (
 )
 
 func CreateOrder(c *gin.Context) {
-	keyID := os.Getenv("RAZORPAY_KEY_ID")
-	keySecret := os.Getenv("RAZORPAY_KEY_SECRET")
+
+	keyID := os.Getenv(
+		"RAZORPAY_KEY_ID",
+	)
+
+	keySecret := os.Getenv(
+		"RAZORPAY_KEY_SECRET",
+	)
 
 	if keyID == "" || keySecret == "" {
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"error": "razorpay env missing",
-		})
+
+		c.JSON(
+			http.StatusInternalServerError,
+			gin.H{
+				"error": "razorpay env missing",
+			},
+		)
+
 		return
 	}
 
@@ -36,12 +47,20 @@ func CreateOrder(c *gin.Context) {
 		"receipt":  "xambook_premium",
 	}
 
-	order, err := client.Order.Create(data, nil)
+	order, err := client.Order.Create(
+		data,
+		nil,
+	)
 
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"error": err.Error(),
-		})
+
+		c.JSON(
+			http.StatusInternalServerError,
+			gin.H{
+				"error": err.Error(),
+			},
+		)
+
 		return
 	}
 
@@ -49,24 +68,35 @@ func CreateOrder(c *gin.Context) {
 }
 
 func VerifyPayment(c *gin.Context) {
+
 	var body struct {
-		RazorpayOrderID   string `json:"razorpay_order_id"`
+		RazorpayOrderID string `json:"razorpay_order_id"`
+
 		RazorpayPaymentID string `json:"razorpay_payment_id"`
+
 		RazorpaySignature string `json:"razorpay_signature"`
 	}
 
 	if err := c.ShouldBindJSON(&body); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "invalid data",
-		})
+
+		c.JSON(
+			http.StatusBadRequest,
+			gin.H{
+				"error": "invalid data",
+			},
+		)
+
 		return
 	}
 
-	secret := os.Getenv("RAZORPAY_KEY_SECRET")
+	secret := os.Getenv(
+		"RAZORPAY_KEY_SECRET",
+	)
 
-	message := body.RazorpayOrderID +
-		"|" +
-		body.RazorpayPaymentID
+	message :=
+		body.RazorpayOrderID +
+			"|" +
+			body.RazorpayPaymentID
 
 	mac := hmac.New(
 		sha256.New,
@@ -80,24 +110,73 @@ func VerifyPayment(c *gin.Context) {
 	)
 
 	if expectedSig != body.RazorpaySignature {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "invalid payment signature",
-		})
+
+		c.JSON(
+			http.StatusBadRequest,
+			gin.H{
+				"error": "invalid payment signature",
+			},
+		)
+
 		return
 	}
 
+	// REAL authenticated Keycloak user
 	keycloakID := c.GetString(
 		middleware.CtxKeycloakID,
 	)
 
+	email := c.GetString(
+		middleware.CtxEmail,
+	)
+
+	name := c.GetString(
+		middleware.CtxName,
+	)
+
 	if keycloakID == "" {
-		c.JSON(http.StatusUnauthorized, gin.H{
-			"error": "unauthorized",
-		})
+
+		c.JSON(
+			http.StatusUnauthorized,
+			gin.H{
+				"error": "unauthorized",
+			},
+		)
+
 		return
 	}
 
+	// Ensure user exists
 	_, err := db.DB.Exec(`
+		INSERT INTO users (
+			keycloak_id,
+			email,
+			name,
+			is_premium
+		)
+		VALUES ($1, $2, $3, false)
+		ON CONFLICT (keycloak_id)
+		DO NOTHING
+	`,
+		keycloakID,
+		email,
+		name,
+	)
+
+	if err != nil {
+
+		c.JSON(
+			http.StatusInternalServerError,
+			gin.H{
+				"error": "failed to create user",
+			},
+		)
+
+		return
+	}
+
+	// Activate premium
+	_, err = db.DB.Exec(`
 		UPDATE users
 		SET
 			is_premium = true,
@@ -106,9 +185,14 @@ func VerifyPayment(c *gin.Context) {
 	`, keycloakID)
 
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"error": "failed to update user",
-		})
+
+		c.JSON(
+			http.StatusInternalServerError,
+			gin.H{
+				"error": "failed to update user",
+			},
+		)
+
 		return
 	}
 

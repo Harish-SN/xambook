@@ -9,6 +9,7 @@ import (
 	"github.com/Harish-SN/xambook-backend/handlers"
 	"github.com/Harish-SN/xambook-backend/internal/storage"
 	"github.com/Harish-SN/xambook-backend/internal/telemetry"
+	"github.com/Harish-SN/xambook-backend/middleware"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -68,20 +69,21 @@ func main() {
 		})
 	})
 
+	// Keycloak auth middleware
+	authMiddleware, err := middleware.NewKeycloakAuth(
+		"https://auth.xambook.com/realms/xambook",
+	)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	// API routes
 	api := r.Group("/api")
 	{
-		// Admin
-		api.POST(
-			"/admin/upload-image",
-			handlers.UploadImage,
-		)
-
-		// User
-		api.GET(
-			"/user/me",
-			handlers.GetMe,
-		)
+		// =========================================
+		// PUBLIC ROUTES
+		// =========================================
 
 		// Tests
 		api.GET(
@@ -89,27 +91,49 @@ func main() {
 			handlers.GetQuestions,
 		)
 
-		// Attempts
-		api.POST(
-			"/attempts",
-			handlers.SaveAttempt,
-		)
-
-		api.GET(
-			"/attempts/me",
-			handlers.GetMyAttempts,
-		)
-
-		// Payments
+		// Payment create order
 		api.POST(
 			"/payment/create-order",
 			handlers.CreateOrder,
 		)
 
-		api.POST(
-			"/payment/verify",
-			handlers.VerifyPayment,
-		)
+		// =========================================
+		// PROTECTED ROUTES
+		// =========================================
+
+		protected := api.Group("/")
+		protected.Use(authMiddleware)
+
+		{
+			// Admin
+			protected.POST(
+				"/admin/upload-image",
+				handlers.UploadImage,
+			)
+
+			// User
+			protected.GET(
+				"/user/me",
+				handlers.GetMe,
+			)
+
+			// Attempts
+			protected.POST(
+				"/attempts",
+				handlers.SaveAttempt,
+			)
+
+			protected.GET(
+				"/attempts/me",
+				handlers.GetMyAttempts,
+			)
+
+			// Payments
+			protected.POST(
+				"/payment/verify",
+				handlers.VerifyPayment,
+			)
+		}
 	}
 
 	// Port
