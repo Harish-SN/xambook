@@ -7,6 +7,7 @@ import (
 
 	"github.com/Harish-SN/xambook-backend/db"
 	"github.com/Harish-SN/xambook-backend/models"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -27,10 +28,10 @@ type QuestionsAPIResponse struct {
 
 func GetQuestions(c *gin.Context) {
 	subject := c.Param("subject")
-	testNumberStr := c.Param("test")
+
+	testNumberStr := c.Param("testNumber")
 
 	testNumber, err := strconv.Atoi(testNumberStr)
-
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": "invalid test number",
