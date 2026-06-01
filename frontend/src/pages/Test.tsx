@@ -1,21 +1,11 @@
+// src/pages/Test.tsx
+
 import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import MathText from '../components/MathText'
+import Result, { type Question } from './Result'
 import '../styles/Test.css'
-
-interface Question {
-  id: number
-  question: string
-  options: {
-    a: string
-    b: string
-    c: string
-    d: string
-  }
-  correct_option: string
-  explanation: string
-  image_url: string | null
-}
 
 const OPTION_KEYS = ['a', 'b', 'c', 'd'] as const
 
@@ -33,28 +23,35 @@ export default function Test() {
   const [current, setCurrent] = useState(0)
   const [timeLeft, setTimeLeft] = useState(0)
   const [submitted, setSubmitted] = useState(false)
+  const [keyReady, setKeyReady] = useState(false)
   const [loading, setLoading] = useState(false)
   const [ready, setReady] = useState(false)
   const [paused, setPaused] = useState(false)
   const [dark, setDark] = useState(false)
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const savedRef = useRef(false)
 
   const apiSubject = isFree
     ? 'Free Test'
     : isMock
     ? 'Full Test'
     : subject
-      ? subject.charAt(0).toUpperCase() + subject.slice(1)
-      : ''
+    ? subject.charAt(0).toUpperCase() + subject.slice(1)
+    : ''
 
   const isFullTest = isMock || isFree
   const totalMins = isFullTest ? 180 : 60
   const totalMarks = isFullTest ? 720 : 180
 
+  // --- Fetch questions ----------------------------------------------------
   useEffect(() => {
+    let active = true
+
     setLoading(true)
     setReady(false)
+    setKeyReady(false)
+    savedRef.current = false
 
     fetch(
       `https://api.xambook.com/api/tests/${encodeURIComponent(
@@ -69,9 +66,16 @@ export default function Test() {
         return r.json()
       })
       .then(data => {
+        if (!active) return
+
         const qs = Array.isArray(data.questions)
           ? data.questions
+          : Array.isArray(data)
+          ? data
           : []
+
+        // Helpful while debugging: see exactly what the API returns.
+        console.log('FIRST Q FROM API:', qs[0])
 
         setQuestions(qs)
         setAnswers({})
@@ -84,13 +88,21 @@ export default function Test() {
       })
       .catch(err => {
         console.error('Question fetch failed:', err)
+
+        if (!active) return
+
         setQuestions([])
       })
       .finally(() => {
-        setLoading(false)
+        if (active) setLoading(false)
       })
+
+    return () => {
+      active = false
+    }
   }, [apiSubject])
 
+  // --- Countdown timer ----------------------------------------------------
   useEffect(() => {
     if (!ready || submitted || paused) return
 
@@ -110,6 +122,74 @@ export default function Test() {
 
     return () => clearInterval(timerRef.current!)
   }, [ready, submitted, paused])
+
+  // --- On submit: make sure we have the answer key + explanations ---------
+  useEffect(() => {
+    if (!submitted || questions.length === 0) return
+
+    let active = true
+
+    // Case A: /questions already includes the answers. Use them as-is.
+    if (questions[0].correct_option) {
+      setKeyReady(true)
+      return
+    }
+
+    // Case B: answers were stripped from /questions. Fetch them now.
+    fetch(
+      `https://api.xambook.com/api/tests/${encodeURIComponent(
+        apiSubject
+      )}/${selectedTest}/answers`
+    )
+      .then(r => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then(data => {
+        if (!active) return
+
+        // Expecting: [{ id, correct_option, explanation }, ...]
+        const key = Array.isArray(data.answers)
+          ? data.answers
+          : Array.isArray(data)
+          ? data
+          : []
+
+        const byId = new Map(key.map((a: any) => [a.id, a]))
+
+        setQuestions(prev =>
+          prev.map(q => {
+            const a = byId.get(q.id)
+            return a
+              ? {
+                  ...q,
+                  correct_option: a.correct_option ?? q.correct_option,
+                  explanation: a.explanation ?? q.explanation,
+                }
+              : q
+          })
+        )
+
+        setKeyReady(true)
+      })
+      .catch(err => {
+        console.error('Answer key fetch failed:', err)
+        // Fall back: still show the result with whatever data we have.
+        if (active) setKeyReady(true)
+      })
+
+    return () => {
+      active = false
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [submitted])
+
+  // --- Save attempt once, AFTER the answer key is ready (correct score) ---
+  useEffect(() => {
+    if (!submitted || !keyReady || questions.length === 0 || savedRef.current)
+      return
+
+    savedRef.current = true
+    saveAttempt()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [submitted, keyReady])
 
   function formatTime(secs: number) {
     const h = Math.floor(secs / 3600)
@@ -146,14 +226,17 @@ export default function Test() {
     return 'unattempted'
   }
 
+  const correctOf = (q: Question) =>
+    (q.correct_option || '').toLowerCase()
+
   const correct = questions.filter(
-    (q, i) => answers[i] === q.correct_option
+    (q, i) => answers[i] === correctOf(q)
   ).length
 
   const wrong = questions.filter(
     (q, i) =>
       answers[i] !== undefined &&
-      answers[i] !== q.correct_option
+      answers[i] !== correctOf(q)
   ).length
 
   const skipped = questions.length - correct - wrong
@@ -176,25 +259,26 @@ export default function Test() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          // Matches the `attempts` table schema exactly. Your table has NO
+          // `marks` / `total_marks` columns, so sending them was making the
+          // insert fail (that's why no rows were saved). user_id is resolved
+          // server-side from the auth token (it's a FK to users.id).
           subject: apiSubject,
           test_number: selectedTest,
           score: percentage,
-          marks,
-          total_marks: totalMarks,
           correct,
           wrong,
           skipped,
         }),
       })
     } catch (err) {
-      console.error(err)
+      console.error('Failed to save attempt:', err)
     }
   }
 
   function handleSubmit() {
     clearInterval(timerRef.current!)
     setSubmitted(true)
-    saveAttempt()
   }
 
   if (loading) {
@@ -210,61 +294,36 @@ export default function Test() {
     return (
       <div className={`testPage ${theme}`}>
         <Navbar />
-
-        <div className="testLoading">
-          No questions found.
-        </div>
+        <div className="testLoading">No questions found.</div>
       </div>
     )
   }
 
   if (submitted && questions.length > 0) {
+    // Wait for the answer key so the score + explanations are correct.
+    if (!keyReady) {
+      return (
+        <div className={`testPage ${theme}`}>
+          <Navbar />
+          <div className="testLoading">Calculating results...</div>
+        </div>
+      )
+    }
+
     return (
-      <div className={`testPage ${theme}`}>
-        <Navbar />
-
-        <main className="testResultPage">
-          <div className="testResultCard">
-            <div className="testResultEmoji">
-              {marks >= totalMarks * 0.6 ? '🎉' : '📚'}
-            </div>
-
-            <h1 className="testResultTitle">
-              Test Complete!
-            </h1>
-
-            <p className="testResultSub">
-              {apiSubject} · Test {selectedTest}
-            </p>
-
-            <div className="testResultMarks">
-              {marks} / {totalMarks}
-            </div>
-
-            <div className="testResultStatsRow">
-              <div className="testResultStat">
-                <span>{correct}</span>
-                <p>Correct</p>
-              </div>
-
-              <div className="testResultStat">
-                <span>{wrong}</span>
-                <p>Wrong</p>
-              </div>
-
-              <div className="testResultStat">
-                <span>{skipped}</span>
-                <p>Skipped</p>
-              </div>
-
-              <div className="testResultStat">
-                <span>{percentage}%</span>
-                <p>Score</p>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
+      <Result
+        questions={questions}
+        answers={answers}
+        apiSubject={apiSubject}
+        selectedTest={selectedTest}
+        marks={marks}
+        totalMarks={totalMarks}
+        correct={correct}
+        wrong={wrong}
+        skipped={skipped}
+        percentage={percentage}
+        theme={theme}
+      />
     )
   }
 
@@ -274,29 +333,6 @@ export default function Test() {
   return (
     <div className={`testPage ${theme}`}>
       <Navbar />
-
-      {paused && (
-        <div className="testPausedOverlay">
-          <div className="testPausedBox">
-            <div className="testPausedIcon">⏸</div>
-
-            <h2 className="testPausedTitle">
-              Test Paused
-            </h2>
-
-            <p className="testPausedSub">
-              Your timer is paused.
-            </p>
-
-            <button
-              className="testPausedResumeBtn"
-              onClick={() => setPaused(false)}
-            >
-              ▶ Resume Test
-            </button>
-          </div>
-        </div>
-      )}
 
       <div className="testLayout">
         <main className="testContent">
@@ -317,9 +353,7 @@ export default function Test() {
               <div
                 className="testProgressFill"
                 style={{
-                  width: `${
-                    ((current + 1) / questions.length) * 100
-                  }%`,
+                  width: `${((current + 1) / questions.length) * 100}%`,
                 }}
               />
             </div>
@@ -328,12 +362,10 @@ export default function Test() {
           {q && (
             <>
               <div className="testQuestionCard">
-                <p className="testQuestionNum">
-                  Q{current + 1}
-                </p>
+                <p className="testQuestionNum">Q{current + 1}</p>
 
                 <p className="testQuestionText">
-                  {q.question}
+                  <MathText text={q.question} />
                 </p>
 
                 {q.image_url && (
@@ -347,20 +379,17 @@ export default function Test() {
 
               <div className="testOptions">
                 {OPTION_KEYS.map(key => {
-                  const selected =
-                    answers[current] === key
+                  const selected = answers[current] === key
 
                   return (
                     <button
+                      type="button"
                       key={key}
                       className={`testOption ${
-                        selected
-                          ? 'testOption--selected'
-                          : ''
+                        selected ? 'testOption--selected' : ''
                       }`}
                       onClick={() =>
-                        !paused &&
-                        selectAnswer(current, key)
+                        !paused && selectAnswer(current, key)
                       }
                     >
                       <span
@@ -373,7 +402,7 @@ export default function Test() {
                         {key.toUpperCase()}
                       </span>
 
-                      {q.options[key]}
+                      <MathText text={q.options[key]} />
                     </button>
                   )
                 })}
@@ -383,6 +412,7 @@ export default function Test() {
 
           <div className="testNav">
             <button
+              type="button"
               className="testPrevBtn"
               onClick={() =>
                 goTo(Math.max(0, current - 1))
@@ -394,6 +424,7 @@ export default function Test() {
 
             {current < questions.length - 1 ? (
               <button
+                type="button"
                 className="testNextBtn"
                 onClick={() => goTo(current + 1)}
               >
@@ -401,6 +432,7 @@ export default function Test() {
               </button>
             ) : (
               <button
+                type="button"
                 className="testSubmitBtn"
                 onClick={handleSubmit}
               >
@@ -416,15 +448,14 @@ export default function Test() {
               isLowTime ? 'testTimer--low' : ''
             }`}
           >
-            <p className="testTimerLabel">
-              Time Left
-            </p>
+            <p className="testTimerLabel">Time Left</p>
 
             <p className="testTimerValue">
               {formatTime(timeLeft)}
             </p>
 
             <button
+              type="button"
               className={`testPauseBtn ${
                 paused
                   ? 'testPauseBtn--paused'
@@ -437,6 +468,7 @@ export default function Test() {
           </div>
 
           <button
+            type="button"
             className="testThemeBtn"
             onClick={() => setDark(!dark)}
           >
@@ -468,6 +500,7 @@ export default function Test() {
 
               return (
                 <button
+                  type="button"
                   key={idx}
                   className={`testPaletteBtn testPaletteBtn--${status} ${
                     idx === current
@@ -481,7 +514,9 @@ export default function Test() {
               )
             })}
           </div>
+
           <button
+            type="button"
             className="testSidebarSubmit"
             onClick={handleSubmit}
           >
