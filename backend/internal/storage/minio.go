@@ -20,8 +20,13 @@ func InitMinio() error {
 	secretKey := os.Getenv("MINIO_SECRET_KEY")
 
 	client, err := minio.New(endpoint, &minio.Options{
-		Creds:  credentials.NewStaticV4(accessKey, secretKey, ""),
-		Secure: true,
+		Creds: credentials.NewStaticV4(
+			accessKey,
+			secretKey,
+			"",
+		),
+
+		Secure: false,
 	})
 
 	if err != nil {
@@ -30,10 +35,36 @@ func InitMinio() error {
 
 	MinioClient = client
 
+	exists, err := client.BucketExists(
+		context.Background(),
+		BucketName,
+	)
+
+	if err != nil {
+		return err
+	}
+
+	if !exists {
+		err = client.MakeBucket(
+			context.Background(),
+			BucketName,
+			minio.MakeBucketOptions{},
+		)
+
+		if err != nil {
+			return err
+		}
+	}
+
 	return nil
 }
 
-func UploadFile(file multipart.File, fileSize int64, contentType string) (string, error) {
+func UploadFile(
+	file multipart.File,
+	fileSize int64,
+	contentType string,
+) (string, error) {
+
 	objectName := "questions/" + uuid.New().String()
 
 	_, err := MinioClient.PutObject(
@@ -51,7 +82,10 @@ func UploadFile(file multipart.File, fileSize int64, contentType string) (string
 		return "", err
 	}
 
-	url := "https://minio.xambook.com/" + BucketName + "/" + objectName
+	url := "https://minio.xambook.com/" +
+		BucketName +
+		"/" +
+		objectName
 
 	return url, nil
 }
