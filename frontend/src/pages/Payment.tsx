@@ -22,6 +22,10 @@ export default function Payment() {
     setLoading(true)
 
     try {
+      console.log(
+        'Creating Razorpay order...'
+      )
+
       const res = await fetch(
         'https://api.xambook.com/api/payment/create-order',
         {
@@ -34,13 +38,29 @@ export default function Payment() {
         }
       )
 
+      console.log('Response:', res)
+
       if (!res.ok) {
+        const text = await res.text()
+
+        console.error(text)
+
         throw new Error(
           'Failed to create order'
         )
       }
 
       const order = await res.json()
+
+      console.log('Order:', order)
+
+      if (!window.Razorpay) {
+        alert(
+          'Razorpay SDK failed to load.'
+        )
+
+        return
+      }
 
       const options = {
         key: 'rzp_test_Z9d2hQVn9DTVer',
@@ -54,14 +74,16 @@ export default function Payment() {
         description:
           'Premium Access — ₹99 Lifetime Plan',
 
-        image:
-          'https://xambook.com/logo.png',
-
         order_id: order.id,
 
         handler: async function (
           response: any
         ) {
+          console.log(
+            'Payment success:',
+            response
+          )
+
           try {
             const verify =
               await fetch(
@@ -89,7 +111,7 @@ export default function Payment() {
 
             if (verify.ok) {
               alert(
-                '🎉 Payment successful! Premium activated.'
+                '🎉 Payment successful!'
               )
 
               navigate('/dashboard')
@@ -102,41 +124,14 @@ export default function Payment() {
             console.error(err)
 
             alert(
-              'Payment verification failed.'
+              'Verification failed.'
             )
           }
-        },
-
-        prefill: {
-          name: '',
-
-          email: '',
-        },
-
-        notes: {
-          product:
-            'XamBook Premium',
-
-          price: '99 INR',
         },
 
         theme: {
           color: '#4f46e5',
         },
-
-        modal: {
-          ondismiss: function () {
-            setLoading(false)
-          },
-        },
-      }
-
-      if (!window.Razorpay) {
-        alert(
-          'Razorpay SDK failed to load.'
-        )
-
-        return
       }
 
       const rzp =
@@ -147,7 +142,7 @@ export default function Payment() {
       console.error(err)
 
       alert(
-        'Something went wrong. Please try again.'
+        'Payment failed. Check console.'
       )
     } finally {
       setLoading(false)
@@ -160,84 +155,13 @@ export default function Payment() {
 
       <main className="payMain">
         <div className="payCard">
-          <div className="payHeader">
-            <div className="payBadge">
-              ⚡ ONE-TIME PAYMENT
-            </div>
+          <h1 className="payTitle">
+            Go Premium
+          </h1>
 
-            <h1 className="payTitle">
-              Go Premium
-            </h1>
-
-            <p className="paySub">
-              Full access to all NEET
-              tests. One payment.
-              Lifetime access.
-            </p>
-          </div>
-
-          <div className="payPriceBox">
-            <div className="payPriceRow">
-              <span className="payPrice">
-                ₹99
-              </span>
-
-              <span className="payPriceNote">
-                one-time payment
-              </span>
-            </div>
-
-            <p className="payLifetime">
-              ♾️ Lifetime Premium Access
-            </p>
-          </div>
-
-          <div className="payPerks">
-            {[
-              {
-                icon: '📋',
-                text: '20+ NEET tests',
-              },
-
-              {
-                icon: '🧬',
-                text: 'Botany, Zoology, Physics & Chemistry',
-              },
-
-              {
-                icon: '📊',
-                text: 'Instant score & performance analysis',
-              },
-
-              {
-                icon: '🔁',
-                text: 'Unlimited retries',
-              },
-
-              {
-                icon: '📱',
-                text: 'Mobile & desktop support',
-              },
-
-              {
-                icon: '♾️',
-                text: 'Lifetime access — no subscriptions',
-              },
-            ].map((p) => (
-              <div
-                key={p.text}
-                className="payPerk"
-              >
-                <span className="payPerkIcon">
-                  {p.icon}
-                </span>
-
-                <span className="payPerkText">
-                  {p.text}
-                </span>
-              </div>
-            ))}
-          </div>
+          <p className="paySub">
+            Lifetime access for ₹99
+          </p>
 
           <button
             className="payBtn"
@@ -246,17 +170,8 @@ export default function Payment() {
           >
             {loading
               ? 'Processing...'
-              : 'Pay ₹99 & Unlock Premium'}
+              : 'Pay ₹99'}
           </button>
-
-          <p className="payNote">
-            Secure payment via Razorpay
-          </p>
-
-          <p className="payNoteSmall">
-            Supports UPI, Cards,
-            Netbanking & Wallets
-          </p>
         </div>
       </main>
 
