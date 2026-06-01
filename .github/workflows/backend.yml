@@ -6,7 +6,6 @@ on:
     paths:
       - 'backend/**'
       - 'k8s/backend/**'
-      - 'k8s/importer/**'
 
 permissions:
   contents: write
@@ -21,6 +20,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Go
         uses: actions/setup-go@v5
@@ -71,19 +72,15 @@ jobs:
 
           sed -i -E "s|image: .*/xambook-backend:.*|image: ${IMG}:${{ github.sha }}|" k8s/backend/deployment.yaml
 
-      # Update importer job
-      - name: Bump importer image tag
-        run: |
-          IMG="${{ secrets.DOCKER_USERNAME }}/xambook-importer"
-
-          sed -i -E "s|image: .*/xambook-importer:.*|image: ${IMG}:${{ github.sha }}|" k8s/importer/import-job.yaml
-
       - name: Commit updated manifests
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if ! git diff --quiet; then
-            git commit -am "ci: deploy ${{ github.sha }} [skip ci]"
-            git push
-          fi
+          git add .
+
+          git commit -m "ci: deploy ${{ github.sha }} [skip ci]" || echo "No changes to commit"
+
+          git pull --rebase origin main
+
+          git push origin main
