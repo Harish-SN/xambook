@@ -32,13 +32,18 @@ export default function Dashboard() {
 
   useEffect(() => {
     Promise.all([
-      fetch('http://localhost:8080/api/user/me').then(r => r.json()),
-      fetch('http://localhost:8080/api/attempts/me').then(r => r.json()),
-    ]).then(([userData, attemptsData]) => {
-      setUser(userData)
-      setAttempts(attemptsData || [])
-      setLoading(false)
-    })
+      fetch('https://api.xambook.com/api/user/me').then(r => r.json()),
+      fetch('https://api.xambook.com/api/attempts/me').then(r => r.json()),
+    ])
+      .then(([userData, attemptsData]) => {
+        setUser(userData)
+        setAttempts(attemptsData.attempts || attemptsData || [])
+        setLoading(false)
+      })
+      .catch(err => {
+        console.error(err)
+        setLoading(false)
+      })
   }, [])
 
   if (loading) {
@@ -51,11 +56,15 @@ export default function Dashboard() {
   }
 
   const avgMarks = attempts.length
-    ? Math.round(attempts.reduce((a, b) => a + b.marks, 0) / attempts.length)
+    ? Math.round(
+        attempts.reduce((a, b) => a + b.marks, 0) / attempts.length
+      )
     : null
 
   const bestAttempt = attempts.length
-    ? attempts.reduce((best, a) => a.marks > best.marks ? a : best)
+    ? attempts.reduce((best, a) =>
+        a.marks > best.marks ? a : best
+      )
     : null
 
   return (
@@ -64,111 +73,226 @@ export default function Dashboard() {
 
       <main className="dashMain">
 
-        {/* Welcome */}
         <div className="dashWelcome">
           <div>
-            <h1 className="dashWelcomeTitle">Welcome back, {user?.name} 👋</h1>
-            <p className="dashWelcomeSub">{user?.email}</p>
+            <h1 className="dashWelcomeTitle">
+              Welcome back, {user?.name} 👋
+            </h1>
+
+            <p className="dashWelcomeSub">
+              {user?.email}
+            </p>
           </div>
+
           {user?.is_premium ? (
-            <div className="dashPremiumBadge">⚡ Premium Active</div>
+            <div className="dashPremiumBadge">
+              ⚡ Premium Active
+            </div>
           ) : (
-            <Link to="/payment" className="dashBuyBtn">Buy Premium — ₹99</Link>
+            <Link
+              to="/payment"
+              className="dashBuyBtn"
+            >
+              Buy Premium — ₹99
+            </Link>
           )}
         </div>
 
-        {/* Stats */}
         <div className="dashStatsGrid">
+
           <div className="dashStatCard">
-            <p className="dashStatValue">{attempts.length}</p>
-            <p className="dashStatLabel">Tests Taken</p>
+            <p className="dashStatValue">
+              {attempts.length}
+            </p>
+
+            <p className="dashStatLabel">
+              Tests Taken
+            </p>
           </div>
+
           <div className="dashStatCard">
             <p className="dashStatValue">
               {avgMarks !== null ? avgMarks : 'N/A'}
             </p>
-            <p className="dashStatLabel">Avg Marks</p>
+
+            <p className="dashStatLabel">
+              Avg Marks
+            </p>
           </div>
+
           <div className="dashStatCard">
             <p className="dashStatValue">
-              {bestAttempt ? `${bestAttempt.marks}/${bestAttempt.total_marks}` : 'N/A'}
+              {bestAttempt
+                ? `${bestAttempt.marks}/${bestAttempt.total_marks}`
+                : 'N/A'}
             </p>
-            <p className="dashStatLabel">Best Score</p>
+
+            <p className="dashStatLabel">
+              Best Score
+            </p>
           </div>
+
           <div className="dashStatCard">
-            <p className="dashStatValue">{user?.is_premium ? 'Premium' : 'Free'}</p>
-            <p className="dashStatLabel">Status</p>
+            <p className="dashStatValue">
+              {user?.is_premium ? 'Premium' : 'Free'}
+            </p>
+
+            <p className="dashStatLabel">
+              Status
+            </p>
           </div>
+
         </div>
 
-        {/* Attempts */}
         <div className="dashSection">
-          <h2 className="dashSectionTitle">Test History</h2>
+          <h2 className="dashSectionTitle">
+            Test History
+          </h2>
 
           {attempts.length === 0 ? (
             <div className="dashEmpty">
-              <p className="dashEmptyText">You haven't taken any tests yet.</p>
-              <Link to="/courses" className="dashEmptyBtn">Browse Tests →</Link>
+
+              <p className="dashEmptyText">
+                You haven't taken any tests yet.
+              </p>
+
+              <Link
+                to="/courses"
+                className="dashEmptyBtn"
+              >
+                Browse Tests →
+              </Link>
+
             </div>
           ) : (
             <div className="dashAttemptList">
+
               {attempts.map((a) => (
-                <div key={a.id} className="dashAttemptCard">
+                <div
+                  key={a.id}
+                  className="dashAttemptCard"
+                >
+
                   <div className="dashAttemptLeft">
+
                     <p className="dashAttemptSubject">
-                      {a.subject.charAt(0).toUpperCase() + a.subject.slice(1)} · Test {a.test_number}
+                      {a.subject} · Test {a.test_number}
                     </p>
+
                     <p className="dashAttemptDate">
-                      {new Date(a.attempted_at).toLocaleDateString('en-IN', {
-                        day: 'numeric', month: 'short', year: 'numeric'
-                      })}
+                      {new Date(a.attempted_at).toLocaleDateString(
+                        'en-IN',
+                        {
+                          day: 'numeric',
+                          month: 'short',
+                          year: 'numeric',
+                        }
+                      )}
                     </p>
+
                   </div>
+
                   <div className="dashAttemptRight">
+
                     <div className="dashAttemptStats">
-                      <span className="dashAttemptCorrect">✅ {a.correct}</span>
-                      <span className="dashAttemptWrong">❌ {a.wrong}</span>
-                      <span className="dashAttemptSkipped">⏭ {a.skipped}</span>
+
+                      <span className="dashAttemptCorrect">
+                        ✅ {a.correct}
+                      </span>
+
+                      <span className="dashAttemptWrong">
+                        ❌ {a.wrong}
+                      </span>
+
+                      <span className="dashAttemptSkipped">
+                        ⏭ {a.skipped}
+                      </span>
+
                     </div>
+
                     <div className="dashAttemptScoreBox">
-                      <div className={`dashAttemptMarks ${a.marks >= 0 ? 'dashAttemptMarks--good' : 'dashAttemptMarks--low'}`}>
+
+                      <div
+                        className={`dashAttemptMarks ${
+                          a.marks >= 0
+                            ? 'dashAttemptMarks--good'
+                            : 'dashAttemptMarks--low'
+                        }`}
+                      >
                         {a.marks} / {a.total_marks}
                       </div>
-                      <div className="dashAttemptPct">{a.score}%</div>
+
+                      <div className="dashAttemptPct">
+                        {a.score}%
+                      </div>
+
                     </div>
+
                   </div>
+
                 </div>
               ))}
+
             </div>
           )}
         </div>
 
-        {/* Quick links */}
         <div className="dashSection">
-          <h2 className="dashSectionTitle">Quick Links</h2>
+
+          <h2 className="dashSectionTitle">
+            Quick Links
+          </h2>
+
           <div className="dashLinksGrid">
-            <Link to="/courses" className="dashLinkCard">
+
+            <Link
+              to="/courses"
+              className="dashLinkCard"
+            >
               <span className="dashLinkIcon">📋</span>
-              <span className="dashLinkLabel">Test Series</span>
+              <span className="dashLinkLabel">
+                Test Series
+              </span>
             </Link>
-            <Link to="/test/free" className="dashLinkCard">
+
+            <Link
+              to="/test/free-test"
+              className="dashLinkCard"
+            >
               <span className="dashLinkIcon">🎯</span>
-              <span className="dashLinkLabel">Free Test</span>
+              <span className="dashLinkLabel">
+                Free Test
+              </span>
             </Link>
-            <Link to="/about" className="dashLinkCard">
+
+            <Link
+              to="/about"
+              className="dashLinkCard"
+            >
               <span className="dashLinkIcon">ℹ️</span>
-              <span className="dashLinkLabel">About</span>
+              <span className="dashLinkLabel">
+                About
+              </span>
             </Link>
+
             {!user?.is_premium && (
-              <Link to="/payment" className="dashLinkCard dashLinkCard--premium">
+              <Link
+                to="/payment"
+                className="dashLinkCard dashLinkCard--premium"
+              >
                 <span className="dashLinkIcon">⚡</span>
-                <span className="dashLinkLabel">Go Premium</span>
+                <span className="dashLinkLabel">
+                  Go Premium
+                </span>
               </Link>
             )}
+
           </div>
+
         </div>
 
       </main>
+
       <Footer />
     </div>
   )

@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/Harish-SN/xambook-backend/db"
 	"github.com/gin-gonic/gin"
 	razorpay "github.com/razorpay/razorpay-go"
-	"github.com/Harish-SN/xambook-backend/db"
 )
 
 func CreateOrder(c *gin.Context) {
