@@ -179,3 +179,101 @@
   color: #4f46e5;
   border-color: #c7d2fe;
 }
+
+.coursesPremiumOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1.5rem;
+}
+
+.coursesPremiumModal {
+  width: 100%;
+  max-width: 430px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  text-align: center;
+  animation: premiumPop 0.2s ease;
+}
+
+@keyframes premiumPop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.coursesPremiumIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.coursesPremiumTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.coursesPremiumText {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
+
+.coursesPremiumFeatures {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: left;
+  margin-bottom: 1.75rem;
+}
+
+.coursesPremiumFeatures p {
+  margin: 0.55rem 0;
+  color: #334155;
+  font-size: 14px;
+}
+
+.coursesPremiumBtns {
+  display: flex;
+  gap: 12px;
+}
+
+.coursesPremiumCancel {
+  flex: 1;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #475569;
+  border-radius: 12px;
+  padding: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.coursesPremiumBuy {
+  flex: 1;
+  border: none;
+  background: #4f46e5;
+  color: #fff;
+  border-radius: 12px;
+  padding: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.coursesPremiumBuy:hover {
+  background: #4338ca;
+}
