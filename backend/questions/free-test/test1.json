@@ -45,6 +45,7 @@
       "id": 4,
       "subject": "Physics",
       "question": "A $2\\,\\mu$F capacitor is charged to $100$ V. It is then connected across an uncharged $3\\,\\mu$F capacitor. What is the common potential after connection?",
+      "image_file": "4.png",
       "options": {
         "a": "$40$ V",
         "b": "$60$ V",
@@ -72,6 +73,7 @@
       "id": 6,
       "subject": "Physics",
       "question": "A coil of 100 turns and area $0.01\\,\\text{m}^2$ is placed perpendicular to a magnetic field decreasing uniformly from $0.5\\,\\text{T}$ to zero in $0.1\\,\\text{s}$. Find the induced emf.",
+      "image_file": "4.png",
       "options": {
         "a": "$2.5$ V",
         "b": "$5.0$ V",
@@ -112,6 +114,7 @@
       "id": 9,
       "subject": "Physics",
       "question": "A current of $2$ A flows through a $10\\,\\Omega$ resistor for $2$ minutes. How much heat is produced?",
+      "image_file": "9.png",
       "options": {
         "a": "$2.4 \\times 10^3$ J",
         "b": "$4.8 \\times 10^3$ J",
@@ -139,6 +142,7 @@
       "id": 11,
       "subject": "Physics",
       "question": "Water flows through a horizontal pipe with cross-sectional areas $A_1=10\\,\\text{cm}^2$ and $A_2=5\\,\\text{cm}^2$. If velocity at $A_1$ is $2\\,\\text{m/s}$, find the pressure difference $P_1 - P_2$. (Density of water $=1000\\,\\text{kg/m}^3$)",
+      "image_file": "11.png",
       "options": {
         "a": "$2000$ Pa",
         "b": "$4000$ Pa",
@@ -166,6 +170,7 @@
       "id": 13,
       "subject": "Physics",
       "question": "A satellite orbits Earth just above the surface. If $g = 9.8\\,\\text{m/s}^2$ and Earth’s radius $R = 6400\\,\\text{km}$, find its orbital velocity.",
+      "image_file": "13.png",
       "options": {
         "a": "$7.9$ km/s",
         "b": "$5.6$ km/s",
@@ -180,6 +185,7 @@
       "id": 14,
       "subject": "Physics",
       "question": "Two resistors $6\\,\\Omega$ and $3\\,\\Omega$ are connected in parallel across a $6$ V battery. Find the current through the battery.",
+      "image_file": "14.png",
       "options": {
         "a": "$1$ A",
         "b": "$2$ A",
@@ -220,6 +226,7 @@
       "id": 17,
       "subject": "Physics",
       "question": "Unpolarized light of intensity $I_0$ passes through two ideal polarizers. The angle between their transmission axes is $60^\\circ$. The transmitted intensity is:",
+      "image_file": "17.png",
       "options": {
         "a": "$\\dfrac{I_0}{2}$",
         "b": "$\\dfrac{I_0}{4}$",
@@ -260,6 +267,7 @@
       "id": 20,
       "subject": "Physics",
       "question": "A projectile is fired with velocity $20\\,\\text{m/s}$ at an angle of $30^\\circ$ with the horizontal. What is its maximum height? (Take $g = 10\\,\\text{m/s}^2$)",
+      "image_file": "20.png",
       "options": {
         "a": "$5$ m",
         "b": "$10$ m",
@@ -274,6 +282,7 @@
       "id": 21,
       "subject": "Physics",
       "question": "One mole of an ideal gas at $300\\,\\text{K}$ undergoes a reversible isothermal expansion in which its volume doubles. The work done by the gas is (R = $8.314\\,\\text{J mol}^{-1}\\,\\text{K}^{-1}$):",
+      "image_file": "21.png",
       "options": {
         "a": "$0.69$ kJ",
         "b": "$1.73$ kJ",
@@ -301,6 +310,7 @@
       "id": 23,
       "subject": "Physics",
       "question": "Two thin lenses of focal lengths $+10\\,\\text{cm}$ and $+20\\,\\text{cm}$ are placed coaxially in contact. The equivalent focal length is:",
+      "image_file": "23.png",
       "options": {
         "a": "$+30\\,\\text{cm}$",
         "b": "$+6.7\\,\\text{cm}$",
@@ -354,6 +364,7 @@
       "id": 27,
       "subject": "Physics",
       "question": "A conducting rod of length $\\ell = 0.50\\,\\text{m}$ moves with speed $v = 4.0\\,\\text{m/s}$ perpendicular to a uniform magnetic field $B = 0.60\\,\\text{T}$. The induced emf between its ends is:",
+      "image_file": "27.png",
       "options": {
         "a": "$0.60\\,\\text{V}$",
         "b": "$1.20\\,\\text{V}$",
@@ -498,6 +509,7 @@
       "id": 38,
       "subject": "Physics",
       "question": "A particle in SHM of amplitude $A$ has displacement $x = A/2$. What fraction of the total mechanical energy is kinetic at that instant?",
+      "image_file": "38.png",
       "options": {
         "a": "$\\tfrac{1}{4}$",
         "b": "$\\tfrac{1}{2}$",

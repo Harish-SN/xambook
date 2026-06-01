@@ -7,6 +7,8 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/Harish-SN/xambook-backend/internal/storage"
+
 	_ "github.com/lib/pq"
 )
 
@@ -21,7 +23,7 @@ type Question struct {
 	Topic         string            `json:"topic"`
 	Difficulty    string            `json:"difficulty"`
 	Question      string            `json:"question"`
-	ImageURL      string            `json:"image_url"`
+	ImageFile     string            `json:"image_file"`
 	Options       map[string]string `json:"options"`
 	CorrectOption string            `json:"correct_option"`
 	Explanation   string            `json:"explanation"`
@@ -42,6 +44,12 @@ func main() {
 	}
 
 	defer db.Close()
+
+	err = storage.InitMinio()
+
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	root := "./questions"
 
@@ -73,6 +81,45 @@ func main() {
 
 		for _, q := range file.Questions {
 
+			imageURL := ""
+
+			if q.ImageFile != "" {
+
+				imagePath := filepath.Join(
+					filepath.Dir(path),
+					q.ImageFile,
+				)
+
+				imageFile, err := os.Open(imagePath)
+
+				if err != nil {
+					return err
+				}
+
+				fileInfo, err := imageFile.Stat()
+
+				if err != nil {
+					imageFile.Close()
+					return err
+				}
+
+				contentType := "image/png"
+
+				uploadedURL, err := storage.UploadFile(
+					imageFile,
+					fileInfo.Size(),
+					contentType,
+				)
+
+				imageFile.Close()
+
+				if err != nil {
+					return err
+				}
+
+				imageURL = uploadedURL
+			}
+
 			optionsJSON, err := json.Marshal(q.Options)
 
 			if err != nil {
@@ -101,7 +148,7 @@ func main() {
 				q.Topic,
 				q.Difficulty,
 				q.Question,
-				q.ImageURL,
+				imageURL,
 				optionsJSON,
 				q.CorrectOption,
 				q.Explanation,

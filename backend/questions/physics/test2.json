@@ -17,6 +17,7 @@
     {
       "id": 2,
       "question": "A particle moves in a circle of radius $0.5\\,\\text{m}$ with angular speed $12\\,\\text{rad s}^{-1}$. The centripetal acceleration is:",
+      "image_file": "2.png",
       "options": {
         "a": "$36\\,\\text{m s}^{-2}$",
         "b": "$48\\,\\text{m s}^{-2}$",

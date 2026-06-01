@@ -29,6 +29,7 @@
     {
       "id": 3,
       "question": "A car starting from rest accelerates uniformly at $2\\,\\text{m s}^{-2}$ for $5\\,\\text{s}$. The distance covered is:",
+      "image_file": "3.png",
       "options": {
         "a": "$10\\,\\text{m}$",
         "b": "$20\\,\\text{m}$",
@@ -42,6 +43,7 @@
     {
       "id": 4,
       "question": "A ball is projected vertically upward with speed $20\\,\\text{m s}^{-1}$. Take $g = 9.8\\,\\text{m s}^{-2}$. Maximum height reached is:",
+      "image_file": "4.png",
       "options": {
         "a": "$10.2\\,\\text{m}$",
         "b": "$15.3\\,\\text{m}$",
@@ -54,6 +56,7 @@
     {
       "id": 5,
       "question": "A projectile is fired with speed $10\\,\\text{m s}^{-1}$ at $45^{\\circ}$ on level ground ($g = 10\\,\\text{m s}^{-2}$). Its range is:",
+      "image_file": "5.png",
       "options": {
         "a": "$5\\,\\text{m}$",
         "b": "$10\\,\\text{m}$",
@@ -126,6 +129,7 @@
     {
       "id": 11,
       "question": "A $1\\,\\text{kg}$ mass attached to a light horizontal spring ($k = 4\\,\\text{N m}^{-1}$) performs small oscillations on a smooth surface. The time period of oscillation is:",
+      "image_file": "11.png",
       "options": {
         "a": "$2\\,\\text{s}$",
         "b": "$3.14\\,\\text{s}$",
@@ -211,6 +215,7 @@
     {
       "id": 18,
       "question": "A body moves in a horizontal circle of radius $2.0\\,\\text{m}$ with speed $5.0\\,\\text{m s}^{-1}$. Its centripetal acceleration is:",
+      "image_file": "18.png",
       "options": {
         "a": "$2.5\\,\\text{m s}^{-2}$",
         "b": "$5.0\\,\\text{m s}^{-2}$",
@@ -296,6 +301,7 @@
     {
       "id": 25,
       "question": "A light ray in air (n₁ = 1.00) is incident on glass (n₂ = 1.50) at 30°. The angle of refraction is:",
+      "image_file": "25.png",
       "options": {
         "a": "15°",
         "b": "19.5°",
@@ -381,6 +387,7 @@
     {
       "id": 32,
       "question": "Two blocks of masses 3 kg and 2 kg move toward each other with speeds 4 m/s and 1 m/s respectively. They collide head-on and stick. The speed of the combined mass is (take 3 kg direction positive):",
+      "image_file": "32.png",
       "options": {
         "a": "2.0 m/s",
         "b": "2.2 m/s",

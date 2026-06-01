@@ -245,6 +245,7 @@
     {
       "id": 21,
       "question": "An electromagnetic wave in vacuum has electric field amplitude $E_0 = 120\\,\\text{V m}^{-1}$. Find the magnetic field amplitude $B_0$.",
+      "image_file": "21.png",
       "options": {
         "a": "$2.0 \\times 10^{-7}\\,\\text{T}$",
         "b": "$4.0 \\times 10^{-7}\\,\\text{T}$",
@@ -281,6 +282,7 @@
     {
       "id": 24,
       "question": "A diffraction grating with 5000 slits is used in the second order ($m=2$) at $\\lambda=600$ nm. What is the minimum resolvable wavelength difference $\\Delta\\lambda$?",
+      "image_file": "24.png",
       "options": {
         "a": "0.03 nm",
         "b": "0.06 nm",
@@ -365,6 +367,7 @@
     {
       "id": 31,
       "question": "A solid cylinder of radius 0.2 m rolls down an incline of height 1.8 m without slipping. Find its speed at bottom. (g = 10 m/s²).",
+      "image_file": "31.png",
       "options": {
         "a": "4.0 m/s",
         "b": "5.0 m/s",
@@ -377,6 +380,7 @@
     {
       "id": 32,
       "question": "A particle moves with position $\\vec r(t) = A\\cos(\\omega t)\\,\\hat i + 2A\\sin(\\omega t)\\,\\hat j$. Which statement is correct?",
+      "image_file": "32.png",
       "options": {
         "a": "Circle radius A with speed Aω",
         "b": "Circle radius 2A with speed 2Aω",
@@ -389,6 +393,7 @@
     {
       "id": 33,
       "question": "Blocks 3 kg (on table) and 1 kg (hanging) are connected by a string over a pulley. Friction coefficient $\\mu_k=0.20$. Take g = 10 m/s$^2$. Find acceleration and tension.",
+      "image_file": "33.png",
       "options": {
         "a": "a = 0.5 m/s², T = 8.5 N",
         "b": "a = 1.0 m/s², T = 8.0 N",
@@ -413,6 +418,7 @@
     {
       "id": 35,
       "question": "A mass–spring system oscillates with amplitude A and angular frequency $\\omega$. At $x=A/2$, the speed is?",
+      "image_file": "35.png",
       "options": {
         "a": "$A\\omega/2$",
         "b": "$(\\sqrt{3}/2)A\\omega$",

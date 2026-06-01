@@ -365,6 +365,7 @@
     {
       "id": 31,
       "question": "A small bead of mass $m$ can slide without friction on a fixed circular wire of radius $R$ placed in a vertical plane. The bead is released from rest at the top. Find the speed of the bead and the normal reaction of the wire when the bead is at an angle $\\theta$ from the top.",
+      "image_file": "31.png",
       "options": {
         "a": "$v=\\sqrt{2gR(1-\\cos\\theta)},\\ N=mg(3\\cos\\theta-2)$",
         "b": "$v=\\sqrt{2gR(1-\\cos\\theta)},\\ N=mg(3\\cos\\theta-2)+m(2gR(1-\\cos\\theta))/R$",
