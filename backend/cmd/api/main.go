@@ -78,16 +78,20 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// API routes
+	// =========================================
+	// API ROUTES
+	// =========================================
+
 	api := r.Group("/api")
+
 	{
 		// =========================================
 		// PUBLIC ROUTES
 		// =========================================
 
-		// Tests
+		// FREE TEST ONLY
 		api.GET(
-			"/tests/:subject/:testNumber/questions",
+			"/tests/free/:testNumber/questions",
 			handlers.GetQuestions,
 		)
 
@@ -98,19 +102,13 @@ func main() {
 		)
 
 		// =========================================
-		// PROTECTED ROUTES
+		// AUTH ROUTES
 		// =========================================
 
 		protected := api.Group("/")
 		protected.Use(authMiddleware)
 
 		{
-			// Admin
-			protected.POST(
-				"/admin/upload-image",
-				handlers.UploadImage,
-			)
-
 			// User
 			protected.GET(
 				"/user/me",
@@ -127,6 +125,31 @@ func main() {
 				"/attempts/me",
 				handlers.GetMyAttempts,
 			)
+
+			// Admin
+			protected.POST(
+				"/admin/upload-image",
+				handlers.UploadImage,
+			)
+		}
+
+		// =========================================
+		// PREMIUM TEST ROUTES
+		// =========================================
+
+		premium := api.Group("/tests")
+
+		premium.Use(authMiddleware)
+
+		premium.Use(
+			middleware.PremiumMiddleware(),
+		)
+
+		{
+			premium.GET(
+				"/:subject/:testNumber/questions",
+				handlers.GetQuestions,
+			)
 		}
 
 		// =========================================
@@ -134,6 +157,7 @@ func main() {
 		// =========================================
 
 		payment := api.Group("/payment")
+
 		payment.Use(authMiddleware)
 
 		{
@@ -149,7 +173,10 @@ func main() {
 		}
 	}
 
-	// Port
+	// =========================================
+	// PORT
+	// =========================================
+
 	port := os.Getenv("PORT")
 
 	if port == "" {
@@ -167,6 +194,7 @@ func main() {
 }
 
 func corsMiddleware() gin.HandlerFunc {
+
 	return func(c *gin.Context) {
 
 		allowedOrigins := map[string]bool{
@@ -180,6 +208,7 @@ func corsMiddleware() gin.HandlerFunc {
 		origin := c.Request.Header.Get("Origin")
 
 		if allowedOrigins[origin] {
+
 			c.Header(
 				"Access-Control-Allow-Origin",
 				origin,
@@ -202,6 +231,7 @@ func corsMiddleware() gin.HandlerFunc {
 		)
 
 		if c.Request.Method == "OPTIONS" {
+
 			c.AbortWithStatus(204)
 			return
 		}
