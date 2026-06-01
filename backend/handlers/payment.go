@@ -1,3 +1,5 @@
+// handlers/payment.go
+
 package handlers
 
 import (
@@ -14,11 +16,35 @@ import (
 	razorpay "github.com/razorpay/razorpay-go"
 )
 
+func GetPaymentConfig(c *gin.Context) {
+
+	keyID := os.Getenv(
+		"RAZORPAY_KEY_ID",
+	)
+
+	if keyID == "" {
+
+		c.JSON(
+			http.StatusInternalServerError,
+			gin.H{
+				"error": "razorpay key missing",
+			},
+		)
+
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"key": keyID,
+	})
+}
+
 func CreateOrder(c *gin.Context) {
 
 	keyID := os.Getenv(
 		"RAZORPAY_KEY_ID",
 	)
+
 	keySecret := os.Getenv(
 		"RAZORPAY_KEY_SECRET",
 	)
@@ -120,7 +146,6 @@ func VerifyPayment(c *gin.Context) {
 		return
 	}
 
-	// REAL authenticated Keycloak user
 	keycloakID := c.GetString(
 		middleware.CtxKeycloakID,
 	)
@@ -145,7 +170,6 @@ func VerifyPayment(c *gin.Context) {
 		return
 	}
 
-	// Ensure user exists
 	_, err := db.DB.Exec(`
 		INSERT INTO users (
 			keycloak_id,
@@ -174,7 +198,6 @@ func VerifyPayment(c *gin.Context) {
 		return
 	}
 
-	// Activate premium
 	_, err = db.DB.Exec(`
 		UPDATE users
 		SET

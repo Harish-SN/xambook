@@ -1,8 +1,12 @@
+// src/pages/Payment.tsx
+
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+
+import keycloak from '../lib/keycloak'
 
 import '../styles/Payment.css'
 
@@ -19,12 +23,46 @@ export default function Payment() {
     useState(false)
 
   async function handlePayment() {
+
     setLoading(true)
 
     try {
-      console.log(
-        'Creating Razorpay order...'
+
+      const token = keycloak.token
+
+      if (!token) {
+
+        alert('Please login first')
+
+        return
+      }
+
+      // =====================================
+      // GET RAZORPAY CONFIG
+      // =====================================
+
+      const configRes = await fetch(
+        'https://api.xambook.com/api/payment/config',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       )
+
+      if (!configRes.ok) {
+
+        throw new Error(
+          'Failed to load payment config'
+        )
+      }
+
+      const config =
+        await configRes.json()
+
+      // =====================================
+      // CREATE ORDER
+      // =====================================
 
       const res = await fetch(
         'https://api.xambook.com/api/payment/create-order',
@@ -34,13 +72,15 @@ export default function Payment() {
           headers: {
             'Content-Type':
               'application/json',
+
+            Authorization:
+              `Bearer ${token}`,
           },
         }
       )
 
-      console.log('Response:', res)
-
       if (!res.ok) {
+
         const text = await res.text()
 
         console.error(text)
@@ -52,9 +92,12 @@ export default function Payment() {
 
       const order = await res.json()
 
-      console.log('Order:', order)
+      // =====================================
+      // CHECK SDK
+      // =====================================
 
       if (!window.Razorpay) {
+
         alert(
           'Razorpay SDK failed to load.'
         )
@@ -62,8 +105,13 @@ export default function Payment() {
         return
       }
 
+      // =====================================
+      // RAZORPAY OPTIONS
+      // =====================================
+
       const options = {
-        key: 'rzp_test_SwNN6dlfoqgV8s',
+
+        key: config.key,
 
         amount: order.amount,
 
@@ -79,12 +127,9 @@ export default function Payment() {
         handler: async function (
           response: any
         ) {
-          console.log(
-            'Payment success:',
-            response
-          )
 
           try {
+
             const verify =
               await fetch(
                 'https://api.xambook.com/api/payment/verify',
@@ -94,9 +139,13 @@ export default function Payment() {
                   headers: {
                     'Content-Type':
                       'application/json',
+
+                    Authorization:
+                      `Bearer ${token}`,
                   },
 
                   body: JSON.stringify({
+
                     razorpay_order_id:
                       response.razorpay_order_id,
 
@@ -110,17 +159,27 @@ export default function Payment() {
               )
 
             if (verify.ok) {
+
               alert(
                 '🎉 Payment successful!'
               )
 
               navigate('/dashboard')
+
             } else {
+
+              const err =
+                await verify.text()
+
+              console.error(err)
+
               alert(
                 'Payment verification failed.'
               )
             }
+
           } catch (err) {
+
             console.error(err)
 
             alert(
@@ -129,32 +188,45 @@ export default function Payment() {
           }
         },
 
+        prefill: {},
+
         theme: {
           color: '#4f46e5',
         },
       }
 
+      // =====================================
+      // OPEN RAZORPAY
+      // =====================================
+
       const rzp =
         new window.Razorpay(options)
 
       rzp.open()
+
     } catch (err) {
+
       console.error(err)
 
       alert(
         'Payment failed. Check console.'
       )
+
     } finally {
+
       setLoading(false)
     }
   }
 
   return (
     <div className="payPage">
+
       <Navbar />
 
       <main className="payMain">
+
         <div className="payCard">
+
           <h1 className="payTitle">
             Go Premium
           </h1>
@@ -168,14 +240,19 @@ export default function Payment() {
             onClick={handlePayment}
             disabled={loading}
           >
-            {loading
-              ? 'Processing...'
-              : 'Pay ₹99'}
+            {
+              loading
+                ? 'Processing...'
+                : 'Pay ₹99'
+            }
           </button>
+
         </div>
+
       </main>
 
       <Footer />
+
     </div>
   )
 }

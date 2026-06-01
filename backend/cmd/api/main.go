@@ -91,10 +91,10 @@ func main() {
 			handlers.GetQuestions,
 		)
 
-		// Payment create order
-		api.POST(
-			"/payment/create-order",
-			handlers.CreateOrder,
+		// Public payment config
+		api.GET(
+			"/payment/config",
+			handlers.GetPaymentConfig,
 		)
 
 		// =========================================
@@ -127,10 +127,23 @@ func main() {
 				"/attempts/me",
 				handlers.GetMyAttempts,
 			)
+		}
 
-			// Payments
-			protected.POST(
-				"/payment/verify",
+		// =========================================
+		// PAYMENT ROUTES
+		// =========================================
+
+		payment := api.Group("/payment")
+		payment.Use(authMiddleware)
+
+		{
+			payment.POST(
+				"/create-order",
+				handlers.CreateOrder,
+			)
+
+			payment.POST(
+				"/verify",
 				handlers.VerifyPayment,
 			)
 		}
