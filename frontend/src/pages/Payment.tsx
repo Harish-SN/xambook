@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+
 import '../styles/Payment.css'
 
 declare global {
@@ -13,7 +15,8 @@ declare global {
 export default function Payment() {
   const navigate = useNavigate()
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] =
+    useState(false)
 
   async function handlePayment() {
     setLoading(true)
@@ -23,49 +26,66 @@ export default function Payment() {
         'https://api.xambook.com/api/payment/create-order',
         {
           method: 'POST',
+
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type':
+              'application/json',
           },
         }
       )
 
+      if (!res.ok) {
+        throw new Error(
+          'Failed to create order'
+        )
+      }
+
       const order = await res.json()
 
       const options = {
-        key: 'rzp_test_xxxx',
+        key: 'rzp_test_Z9d2hQVn9DTVer',
 
         amount: order.amount,
+
         currency: order.currency,
 
         name: 'XamBook',
 
-        description: 'Premium Access — ₹99 Lifetime Plan',
+        description:
+          'Premium Access — ₹99 Lifetime Plan',
+
+        image:
+          'https://xambook.com/logo.png',
 
         order_id: order.id,
 
-        handler: async function (response: any) {
+        handler: async function (
+          response: any
+        ) {
           try {
-            const verify = await fetch(
-              'https://api.xambook.com/api/payment/verify',
-              {
-                method: 'POST',
+            const verify =
+              await fetch(
+                'https://api.xambook.com/api/payment/verify',
+                {
+                  method: 'POST',
 
-                headers: {
-                  'Content-Type': 'application/json',
-                },
+                  headers: {
+                    'Content-Type':
+                      'application/json',
+                  },
 
-                body: JSON.stringify({
-                  razorpay_order_id:
-                    response.razorpay_order_id,
+                  body: JSON.stringify({
+                    razorpay_order_id:
+                      response.razorpay_order_id,
 
-                  razorpay_payment_id:
-                    response.razorpay_payment_id,
+                    razorpay_payment_id:
+                      response.razorpay_payment_id,
 
-                  razorpay_signature:
-                    response.razorpay_signature,
-                }),
-              }
-            )
+                    razorpay_signature:
+                      response.razorpay_signature,
+                  }),
+                }
+              )
 
             if (verify.ok) {
               alert(
@@ -75,25 +95,28 @@ export default function Payment() {
               navigate('/dashboard')
             } else {
               alert(
-                'Payment verification failed. Please contact support.'
+                'Payment verification failed.'
               )
             }
           } catch (err) {
             console.error(err)
 
             alert(
-              'Payment verification failed. Please contact support.'
+              'Payment verification failed.'
             )
           }
         },
 
         prefill: {
           name: '',
+
           email: '',
         },
 
         notes: {
-          product: 'XamBook Premium',
+          product:
+            'XamBook Premium',
+
           price: '99 INR',
         },
 
@@ -108,13 +131,24 @@ export default function Payment() {
         },
       }
 
-      const rzp = new window.Razorpay(options)
+      if (!window.Razorpay) {
+        alert(
+          'Razorpay SDK failed to load.'
+        )
+
+        return
+      }
+
+      const rzp =
+        new window.Razorpay(options)
 
       rzp.open()
     } catch (err) {
       console.error(err)
 
-      alert('Something went wrong. Please try again.')
+      alert(
+        'Something went wrong. Please try again.'
+      )
     } finally {
       setLoading(false)
     }
@@ -125,11 +159,8 @@ export default function Payment() {
       <Navbar />
 
       <main className="payMain">
-
         <div className="payCard">
-
           <div className="payHeader">
-
             <div className="payBadge">
               ⚡ ONE-TIME PAYMENT
             </div>
@@ -139,16 +170,14 @@ export default function Payment() {
             </h1>
 
             <p className="paySub">
-              Full access to all NEET tests.
-              One payment. Lifetime access.
+              Full access to all NEET
+              tests. One payment.
+              Lifetime access.
             </p>
-
           </div>
 
           <div className="payPriceBox">
-
             <div className="payPriceRow">
-
               <span className="payPrice">
                 ₹99
               </span>
@@ -156,38 +185,40 @@ export default function Payment() {
               <span className="payPriceNote">
                 one-time payment
               </span>
-
             </div>
 
             <p className="payLifetime">
               ♾️ Lifetime Premium Access
             </p>
-
           </div>
 
           <div className="payPerks">
-
             {[
               {
                 icon: '📋',
                 text: '20+ NEET tests',
               },
+
               {
                 icon: '🧬',
                 text: 'Botany, Zoology, Physics & Chemistry',
               },
+
               {
                 icon: '📊',
                 text: 'Instant score & performance analysis',
               },
+
               {
                 icon: '🔁',
                 text: 'Unlimited retries',
               },
+
               {
                 icon: '📱',
                 text: 'Mobile & desktop support',
               },
+
               {
                 icon: '♾️',
                 text: 'Lifetime access — no subscriptions',
@@ -197,7 +228,6 @@ export default function Payment() {
                 key={p.text}
                 className="payPerk"
               >
-
                 <span className="payPerkIcon">
                   {p.icon}
                 </span>
@@ -205,10 +235,8 @@ export default function Payment() {
                 <span className="payPerkText">
                   {p.text}
                 </span>
-
               </div>
             ))}
-
           </div>
 
           <button
@@ -226,11 +254,10 @@ export default function Payment() {
           </p>
 
           <p className="payNoteSmall">
-            Supports UPI, Cards, Netbanking & Wallets
+            Supports UPI, Cards,
+            Netbanking & Wallets
           </p>
-
         </div>
-
       </main>
 
       <Footer />
