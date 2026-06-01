@@ -45,8 +45,8 @@ export default function Test() {
     : isMock
     ? 'Full Test'
     : subject
-        ? subject.charAt(0).toUpperCase() + subject.slice(1)
-        : ''
+      ? subject.charAt(0).toUpperCase() + subject.slice(1)
+      : ''
 
   const isFullTest = isMock || isFree
   const totalMins = isFullTest ? 180 : 60
@@ -61,9 +61,17 @@ export default function Test() {
         apiSubject
       )}/${selectedTest}/questions`
     )
-      .then(r => r.json())
+      .then(async r => {
+        if (!r.ok) {
+          throw new Error('Failed to fetch questions')
+        }
+
+        return r.json()
+      })
       .then(data => {
-        const qs = data.questions || []
+        const qs = Array.isArray(data.questions)
+          ? data.questions
+          : []
 
         setQuestions(qs)
         setAnswers({})
@@ -74,10 +82,14 @@ export default function Test() {
         setPaused(false)
         setReady(true)
       })
+      .catch(err => {
+        console.error('Question fetch failed:', err)
+        setQuestions([])
+      })
       .finally(() => {
         setLoading(false)
       })
-  }, [])
+  }, [apiSubject])
 
   useEffect(() => {
     if (!ready || submitted || paused) return
@@ -194,6 +206,18 @@ export default function Test() {
     )
   }
 
+  if (!loading && questions.length === 0) {
+    return (
+      <div className={`testPage ${theme}`}>
+        <Navbar />
+
+        <div className="testLoading">
+          No questions found.
+        </div>
+      </div>
+    )
+  }
+
   if (submitted && questions.length > 0) {
     return (
       <div className={`testPage ${theme}`}>
@@ -250,6 +274,29 @@ export default function Test() {
   return (
     <div className={`testPage ${theme}`}>
       <Navbar />
+
+      {paused && (
+        <div className="testPausedOverlay">
+          <div className="testPausedBox">
+            <div className="testPausedIcon">⏸</div>
+
+            <h2 className="testPausedTitle">
+              Test Paused
+            </h2>
+
+            <p className="testPausedSub">
+              Your timer is paused.
+            </p>
+
+            <button
+              className="testPausedResumeBtn"
+              onClick={() => setPaused(false)}
+            >
+              ▶ Resume Test
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="testLayout">
         <main className="testContent">
