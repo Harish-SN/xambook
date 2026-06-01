@@ -38,7 +38,7 @@ func main() {
 
 	defer db.Close()
 
-	root := "./neet"
+	root := "./data/neet"
 
 	err = filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 
