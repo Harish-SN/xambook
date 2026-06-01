@@ -1,0 +1,19 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: minio-console-route
+  namespace: storage
+spec:
+  parentRefs:
+    - name: shared-gateway
+      namespace: default
+  hostnames:
+    - console.xambook.com
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: minio-console
+          port: 9001
