@@ -10,7 +10,10 @@ spec:
         - name: importer
           image: harishsudalaimani/xambook-importer:1a0286ecb153e6755ef192b8b945bb62d42ef59d
           env:
-            - name: POSTGRES_URL
-              value: postgres://postgres:postgres123@postgres:5432/xambook?sslmode=disable
+          - name: POSTGRES_URL
+            valueFrom:
+              secretKeyRef:
+                name: postgres-secret
+                key: POSTGRES_URL
       restartPolicy: Never
   backoffLimit: 1

@@ -43,7 +43,10 @@ spec:
 
           env:
             - name: POSTGRES_URL
-              value: postgres://postgres:postgres123@postgres:5432/xambook?sslmode=disable
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_URL
 
             - name: RAZORPAY_KEY_ID
               valueFrom:
@@ -60,14 +63,11 @@ spec:
             - name: PORT
               value: "8080"
 
-            - name: MINIO_ENDPOINT
-              value: minio.storage.svc.cluster.local:9000
-
-            - name: MINIO_ACCESS_KEY
-              value: admin
-
             - name: MINIO_SECRET_KEY
-              value: CHANGE_THIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: minio-secret
+                  key: MINIO_SECRET_KEY
 
           resources:
             requests:

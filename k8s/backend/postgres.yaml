@@ -17,12 +17,11 @@ spec:
         - name: postgres
           image: postgres:17
           env:
-            - name: POSTGRES_DB
-              value: xambook
-            - name: POSTGRES_USER
-              value: postgres
             - name: POSTGRES_PASSWORD
-              value: postgres123
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
           ports:
             - containerPort: 5432
           volumeMounts:
