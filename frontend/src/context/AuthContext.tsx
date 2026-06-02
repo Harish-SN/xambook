@@ -58,7 +58,10 @@ export function AuthProvider({
       try {
         const auth = await keycloak.init({
           onLoad: 'check-sso',
+          silentCheckSsoRedirectUri:
+            window.location.origin + '/silent-check-sso.html',
           pkceMethod: 'S256',
+          checkLoginIframe: false,
         })
 
         setAuthenticated(auth)
