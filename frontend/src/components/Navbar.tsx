@@ -26,13 +26,12 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-      <Link
-        to="/"
-        className="navbar__logo"
-      >
-        <div className="navbar__logoIcon">
-          X
-        </div>
+      <Link to="/" className="navbar__logo">
+        <img
+          src="/logo.png"
+          alt="XamBook"
+          className="navbar__logoImg"
+        />
 
         <span className="navbar__logoText">
           XamBook
