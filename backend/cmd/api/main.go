@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/Harish-SN/xambook-backend/db"
 	"github.com/Harish-SN/xambook-backend/handlers"
@@ -39,16 +40,25 @@ func main() {
 		os.Getenv("RAZORPAY_KEY_SECRET") != "",
 	)
 
-	// Telemetry
-	shutdown := telemetry.InitTracer()
-	defer shutdown(context.Background())
+	devMode := os.Getenv("DEV_MODE") == "true"
 
-	// Database
-	db.Connect()
+	if devMode {
+		log.Println("DEV_MODE enabled: skipping telemetry & MinIO, auth bypassed, database optional")
 
-	// MinIO
-	if err := storage.InitMinio(); err != nil {
-		log.Fatal(err)
+		// Best-effort DB; question handlers fall back to bundled JSON files.
+		db.TryConnect()
+	} else {
+		// Telemetry
+		shutdown := telemetry.InitTracer()
+		defer shutdown(context.Background())
+
+		// Database
+		db.Connect()
+
+		// MinIO
+		if err := storage.InitMinio(); err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	// Gin
@@ -69,13 +79,23 @@ func main() {
 		})
 	})
 
-	// Keycloak auth middleware
-	authMiddleware, err := middleware.NewKeycloakAuth(
-		"https://auth.xambook.com/realms/xambook",
-	)
+	// Auth middleware: real Keycloak in prod, a no-op dev user in DEV_MODE.
+	var authMiddleware gin.HandlerFunc
 
-	if err != nil {
-		log.Fatal(err)
+	if devMode {
+		authMiddleware = middleware.DevAuth()
+	} else {
+		issuer := os.Getenv("KEYCLOAK_ISSUER")
+		if issuer == "" {
+			issuer = "https://auth.xambook.com/realms/xambook"
+		}
+
+		var aerr error
+		authMiddleware, aerr = middleware.NewKeycloakAuth(issuer)
+
+		if aerr != nil {
+			log.Fatal(aerr)
+		}
 	}
 
 	// =========================================
@@ -203,6 +223,17 @@ func corsMiddleware() gin.HandlerFunc {
 			"https://argocd.xambook.com": true,
 			"https://minio.xambook.com":  true,
 			"http://localhost:5173":      true,
+		}
+
+		// Extra origins for local/Docker dev, comma-separated.
+		// e.g. CORS_EXTRA_ORIGINS=http://localhost:8088,http://localhost:3000
+		if extra := os.Getenv("CORS_EXTRA_ORIGINS"); extra != "" {
+			for _, o := range strings.Split(extra, ",") {
+				o = strings.TrimSpace(o)
+				if o != "" {
+					allowedOrigins[o] = true
+				}
+			}
 		}
 
 		origin := c.Request.Header.Get("Origin")

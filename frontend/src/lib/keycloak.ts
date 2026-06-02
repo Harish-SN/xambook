@@ -1,9 +1,15 @@
 import Keycloak from 'keycloak-js'
 
+import {
+  KEYCLOAK_URL,
+  KEYCLOAK_REALM,
+  KEYCLOAK_CLIENT,
+} from './config'
+
 const keycloak = new Keycloak({
-  url: 'https://auth.xambook.com',
-  realm: 'xambook',
-  clientId: 'xambook-frontend',
+  url: KEYCLOAK_URL,
+  realm: KEYCLOAK_REALM,
+  clientId: KEYCLOAK_CLIENT,
 })
 
 export default keycloak

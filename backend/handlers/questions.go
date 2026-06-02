@@ -1,7 +1,11 @@
 package handlers
 
 import (
+	"database/sql"
+	"encoding/json"
 	"net/http"
+	"os"
+	"path/filepath"
 	"strconv"
 	"strings"
 
@@ -48,6 +52,37 @@ func GetQuestions(c *gin.Context) {
 
 	normalizedSubject := normalizeSubject(subject)
 
+	var response []QuestionResponse
+
+	// 1) Try the database first (production path).
+	if db.DB != nil {
+		response, err = loadQuestionsFromDB(normalizedSubject, testNumber)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{
+				"error": err.Error(),
+			})
+			return
+		}
+	}
+
+	// 2) Fall back to the bundled JSON files when the DB is absent or empty.
+	//    This guarantees questions render in local dev with no infra.
+	if len(response) == 0 {
+		fromFile, ferr := loadQuestionsFromJSON(normalizedSubject, testNumber)
+		if ferr == nil && len(fromFile) > 0 {
+			response = fromFile
+		}
+	}
+
+	c.JSON(http.StatusOK, QuestionsAPIResponse{
+		TestNumber: testNumber,
+		Subject:    normalizedSubject,
+		Questions:  response,
+	})
+}
+
+func loadQuestionsFromDB(normalizedSubject string, testNumber int) ([]QuestionResponse, error) {
+
 	rows, err := db.DB.Query(`
 		SELECT
 			id,
@@ -68,10 +103,7 @@ func GetQuestions(c *gin.Context) {
 	`, normalizedSubject, testNumber)
 
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"error": err.Error(),
-		})
-		return
+		return nil, err
 	}
 
 	defer rows.Close()
@@ -81,6 +113,7 @@ func GetQuestions(c *gin.Context) {
 	for rows.Next() {
 
 		var q models.Question
+		var correctRaw sql.NullString
 
 		err := rows.Scan(
 			&q.ID,
@@ -91,23 +124,20 @@ func GetQuestions(c *gin.Context) {
 			&q.OptionB,
 			&q.OptionC,
 			&q.OptionD,
-			&q.CorrectOption,
+			&correctRaw,
 			&q.Explanation,
 			&q.ImageURL,
 		)
 
 		if err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{
-				"error": err.Error(),
-			})
-			return
+			return nil, err
 		}
 
 		response = append(response, QuestionResponse{
 			ID:            q.ID,
 			Question:      q.Text,
 			ImageURL:      deref(q.ImageURL),
-			CorrectOption: convertCorrectOption(q.CorrectOption),
+			CorrectOption: normalizeCorrectOption(correctRaw.String),
 			Explanation:   q.Explanation,
 
 			Options: map[string]string{
@@ -119,29 +149,88 @@ func GetQuestions(c *gin.Context) {
 		})
 	}
 
-	c.JSON(http.StatusOK, QuestionsAPIResponse{
-		TestNumber: testNumber,
-		Subject:    normalizedSubject,
-		Questions:  response,
-	})
+	return response, nil
 }
 
-func convertCorrectOption(option int) string {
+// jsonQuestionFile mirrors the on-disk question file format.
+type jsonQuestionFile struct {
+	TestNumber int `json:"test_number"`
+	Subject    string `json:"subject"`
+	Questions  []struct {
+		ID            int               `json:"id"`
+		Question      string            `json:"question"`
+		Options       map[string]string `json:"options"`
+		CorrectOption string            `json:"correct_option"`
+		Explanation   string            `json:"explanation"`
+		ImageURL      string            `json:"image_url"`
+	} `json:"questions"`
+}
 
-	switch option {
+func loadQuestionsFromJSON(normalizedSubject string, testNumber int) ([]QuestionResponse, error) {
 
-	case 0:
+	dir := subjectToDir(normalizedSubject)
+	if dir == "" {
+		return nil, nil
+	}
+
+	root := os.Getenv("QUESTIONS_DIR")
+	if root == "" {
+		root = "./questions"
+	}
+
+	path := filepath.Join(root, dir, "test"+strconv.Itoa(testNumber)+".json")
+
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+
+	var file jsonQuestionFile
+	if err := json.Unmarshal(data, &file); err != nil {
+		return nil, err
+	}
+
+	var response []QuestionResponse
+
+	for i, q := range file.Questions {
+		id := q.ID
+		if id == 0 {
+			id = i + 1
+		}
+
+		response = append(response, QuestionResponse{
+			ID:            id,
+			Question:      q.Question,
+			ImageURL:      q.ImageURL,
+			CorrectOption: normalizeCorrectOption(q.CorrectOption),
+			Explanation:   q.Explanation,
+			Options: map[string]string{
+				"a": q.Options["a"],
+				"b": q.Options["b"],
+				"c": q.Options["c"],
+				"d": q.Options["d"],
+			},
+		})
+	}
+
+	return response, nil
+}
+
+// normalizeCorrectOption accepts either a letter ("a".."d") or a numeric
+// index ("0".."3") and always returns the lowercase letter form.
+func normalizeCorrectOption(option string) string {
+
+	s := strings.ToLower(strings.TrimSpace(option))
+
+	switch s {
+	case "a", "0":
 		return "a"
-
-	case 1:
+	case "b", "1":
 		return "b"
-
-	case 2:
+	case "c", "2":
 		return "c"
-
-	case 3:
+	case "d", "3":
 		return "d"
-
 	default:
 		return ""
 	}
@@ -182,5 +271,33 @@ func normalizeSubject(subject string) string {
 
 	default:
 		return subject
+	}
+}
+
+// subjectToDir maps the normalized subject name to its question directory.
+func subjectToDir(normalizedSubject string) string {
+
+	switch strings.ToLower(strings.TrimSpace(normalizedSubject)) {
+
+	case "free test":
+		return "free-test"
+
+	case "full test":
+		return "full-test"
+
+	case "physics":
+		return "physics"
+
+	case "chemistry":
+		return "chemistry"
+
+	case "botany":
+		return "botany"
+
+	case "zoology":
+		return "zoology"
+
+	default:
+		return ""
 	}
 }

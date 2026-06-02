@@ -8,9 +8,32 @@ import MathText from '../components/MathText'
 
 import Result, { type Question } from './Result'
 
+import { API_URL, AUTH_DISABLED } from '../lib/config'
+
 import '../styles/Test.css'
 
 const OPTION_KEYS = ['a', 'b', 'c', 'd'] as const
+
+// Build request headers, attaching the Keycloak bearer token when we have
+// one. Without this, the auth-protected (premium) endpoints return 401 and
+// the page shows "No questions found".
+function authHeaders(json = false): Record<string, string> {
+  const headers: Record<string, string> = {}
+
+  if (json) {
+    headers['Content-Type'] = 'application/json'
+  }
+
+  if (!AUTH_DISABLED) {
+    const token = localStorage.getItem('kc_token')
+
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`
+    }
+  }
+
+  return headers
+}
 
 export default function Test() {
   const { subject } = useParams()
@@ -89,12 +112,14 @@ export default function Test() {
 
     savedRef.current = false
 
-    // FIXED: correct endpoint
+    // Free test is public; premium subjects require the bearer token.
     const endpoint = isFree
-      ? `https://api.xambook.com/api/tests/free/${selectedTest}/questions`
-      : `https://api.xambook.com/api/premium-tests/${subject}/${selectedTest}/questions`
+      ? `${API_URL}/api/tests/free/${selectedTest}/questions`
+      : `${API_URL}/api/premium-tests/${subject}/${selectedTest}/questions`
 
-    fetch(endpoint)
+    fetch(endpoint, {
+      headers: authHeaders(),
+    })
       .then(async r => {
         if (!r.ok) {
           throw new Error(
@@ -343,14 +368,11 @@ export default function Test() {
   async function saveAttempt() {
     try {
       await fetch(
-        'https://api.xambook.com/api/attempts',
+        `${API_URL}/api/attempts`,
         {
           method: 'POST',
 
-          headers: {
-            'Content-Type':
-              'application/json',
-          },
+          headers: authHeaders(true),
 
           body: JSON.stringify({
             subject: apiSubject,

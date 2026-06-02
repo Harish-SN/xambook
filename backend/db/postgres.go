@@ -23,6 +23,36 @@ func Connect() {
 	createTables()
 }
 
+// TryConnect attempts a connection but never exits the process. It is used
+// in DEV_MODE so the API can boot with no database; question handlers then
+// fall back to reading the bundled JSON files. Returns true on success.
+func TryConnect() bool {
+	url := os.Getenv("POSTGRES_URL")
+	if url == "" {
+		log.Println("DEV_MODE: POSTGRES_URL not set, running without a database")
+		DB = nil
+		return false
+	}
+
+	conn, err := sql.Open("postgres", url)
+	if err != nil {
+		log.Println("DEV_MODE: could not open database, falling back to JSON files:", err)
+		DB = nil
+		return false
+	}
+
+	if err = conn.Ping(); err != nil {
+		log.Println("DEV_MODE: database not reachable, falling back to JSON files:", err)
+		DB = nil
+		return false
+	}
+
+	DB = conn
+	log.Println("Connected to PostgreSQL")
+	createTables()
+	return true
+}
+
 func createTables() {
 	queries := []string{
 		`

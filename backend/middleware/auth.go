@@ -81,3 +81,14 @@ func bearerToken(header string) string {
 	}
 	return ""
 }
+
+// DevAuth is used only in DEV_MODE. It injects a fixed local user so that
+// auth-protected routes work without a running Keycloak server.
+func DevAuth() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Set(CtxKeycloakID, "dev-user")
+		c.Set(CtxEmail, "dev@localhost")
+		c.Set(CtxName, "Local Dev")
+		c.Next()
+	}
+}

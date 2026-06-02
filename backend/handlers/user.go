@@ -32,6 +32,19 @@ func GetMe(c *gin.Context) {
 		return
 	}
 
+	// Local dev with no database: return a premium dev user so premium
+	// features are usable without infra.
+	if db.DB == nil {
+		c.JSON(http.StatusOK, models.User{
+			ID:         "00000000-0000-0000-0000-000000000000",
+			KeycloakID: keycloakID,
+			Email:      email,
+			Name:       name,
+			IsPremium:  true,
+		})
+		return
+	}
+
 	var user models.User
 
 	err := db.DB.QueryRow(`

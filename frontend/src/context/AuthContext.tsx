@@ -7,6 +7,8 @@ import {
 
 import keycloak from '../lib/keycloak'
 
+import { AUTH_DISABLED } from '../lib/config'
+
 type AuthContextType = {
   authenticated: boolean
   user: any
@@ -40,6 +42,19 @@ export function AuthProvider({
     >
 
     async function init() {
+      // Local dev: skip Keycloak entirely and assume a logged-in user.
+      // Pair with DEV_MODE=true on the backend.
+      if (AUTH_DISABLED) {
+        setAuthenticated(true)
+        setUser({
+          name: 'Local Dev',
+          email: 'dev@localhost',
+          preferred_username: 'dev',
+        })
+        setLoading(false)
+        return
+      }
+
       try {
         const auth = await keycloak.init({
           onLoad: 'check-sso',

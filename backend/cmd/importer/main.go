@@ -38,6 +38,33 @@ func main() {
 
 	defer db.Close()
 
+	// Ensure the table exists (the API also creates it, but the importer
+	// may run first in a fresh environment).
+	_, err = db.Exec(`
+		CREATE TABLE IF NOT EXISTS questions (
+			id SERIAL PRIMARY KEY,
+			subject VARCHAR NOT NULL,
+			test_number INT NOT NULL,
+			text TEXT NOT NULL,
+			option_a TEXT NOT NULL,
+			option_b TEXT NOT NULL,
+			option_c TEXT NOT NULL,
+			option_d TEXT NOT NULL,
+			correct_option VARCHAR NOT NULL,
+			explanation TEXT NOT NULL,
+			image_url VARCHAR
+		)
+	`)
+	if err != nil {
+		log.Fatal("failed to ensure questions table:", err)
+	}
+
+	// Idempotent reseed: clear existing questions so re-running the
+	// importer doesn't create duplicates.
+	if _, err = db.Exec(`DELETE FROM questions`); err != nil {
+		log.Fatal("failed to clear questions:", err)
+	}
+
 	root := "./questions"
 
 	err = filepath.Walk(root, func(path string, info os.FileInfo, err error) error {

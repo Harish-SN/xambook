@@ -8,6 +8,8 @@ import Footer from '../components/Footer'
 
 import keycloak from '../lib/keycloak'
 
+import { API_URL } from '../lib/config'
+
 import '../styles/Payment.css'
 
 declare global {
@@ -42,7 +44,7 @@ export default function Payment() {
       // =====================================
 
       const configRes = await fetch(
-        'https://api.xambook.com/api/payment/config',
+        `${API_URL}/api/payment/config`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -65,7 +67,7 @@ export default function Payment() {
       // =====================================
 
       const res = await fetch(
-        'https://api.xambook.com/api/payment/create-order',
+        `${API_URL}/api/payment/create-order`,
         {
           method: 'POST',
 
@@ -132,7 +134,7 @@ export default function Payment() {
 
             const verify =
               await fetch(
-                'https://api.xambook.com/api/payment/verify',
+                `${API_URL}/api/payment/verify`,
                 {
                   method: 'POST',
 

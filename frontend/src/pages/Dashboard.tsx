@@ -10,6 +10,8 @@ import Footer from '../components/Footer'
 
 import { useAuth } from '../context/AuthContext'
 
+import { API_URL, AUTH_DISABLED } from '../lib/config'
+
 import '../styles/Dashboard.css'
 
 interface User {
@@ -61,15 +63,19 @@ export default function Dashboard() {
             'kc_token'
           )
 
-        if (!token) {
+        // In dev (auth disabled) there is no token and none is needed.
+        if (!token && !AUTH_DISABLED) {
           setLoading(false)
           return
         }
 
-        const headers: HeadersInit = {
-          Authorization: `Bearer ${token}`,
+        const headers: Record<string, string> = {
           'Content-Type':
             'application/json',
+        }
+
+        if (token) {
+          headers['Authorization'] = `Bearer ${token}`
         }
 
         const [
@@ -77,14 +83,14 @@ export default function Dashboard() {
           attemptsRes,
         ] = await Promise.all([
           fetch(
-            'https://api.xambook.com/api/user/me',
+            `${API_URL}/api/user/me`,
             {
               headers,
             }
           ),
 
           fetch(
-            'https://api.xambook.com/api/attempts/me',
+            `${API_URL}/api/attempts/me`,
             {
               headers,
             }

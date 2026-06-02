@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"net/http"
+	"os"
 
 	"github.com/Harish-SN/xambook-backend/db"
 
@@ -11,6 +12,12 @@ import (
 func PremiumMiddleware() gin.HandlerFunc {
 
 	return func(c *gin.Context) {
+
+		// Local dev / no database: everyone is treated as premium.
+		if os.Getenv("DEV_MODE") == "true" || db.DB == nil {
+			c.Next()
+			return
+		}
 
 		keycloakID := c.GetString(
 			CtxKeycloakID,

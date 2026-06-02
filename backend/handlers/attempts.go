@@ -31,6 +31,15 @@ func SaveAttempt(c *gin.Context) {
 		middleware.CtxKeycloakID,
 	)
 
+	// Local dev with no database: acknowledge without persisting.
+	if db.DB == nil {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "attempt accepted (dev mode, not persisted)",
+			"id":      0,
+		})
+		return
+	}
+
 	email := c.GetString(
 		middleware.CtxEmail,
 	)
@@ -173,6 +182,14 @@ func GetMyAttempts(c *gin.Context) {
 			},
 		)
 
+		return
+	}
+
+	// Local dev with no database: no saved attempts.
+	if db.DB == nil {
+		c.JSON(http.StatusOK, gin.H{
+			"attempts": []models.Attempt{},
+		})
 		return
 	}
 
