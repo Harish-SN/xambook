@@ -35,6 +35,23 @@ spec:
                   name: keycloak-secret
                   key: KC_BOOTSTRAP_ADMIN_PASSWORD
 
+            # ---- Persistent database (Postgres) ----
+            - name: KC_DB
+              value: postgres
+
+            - name: KC_DB_URL
+              value: jdbc:postgresql://postgres.default.svc.cluster.local:5432/keycloak
+
+            - name: KC_DB_USERNAME
+              value: postgres
+
+            - name: KC_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
+            # ----------------------------------------
+
             - name: KC_PROXY
               value: edge
 
@@ -62,14 +79,14 @@ spec:
             httpGet:
               path: /
               port: 8080
-            initialDelaySeconds: 30
+            initialDelaySeconds: 60
             periodSeconds: 10
 
           livenessProbe:
             httpGet:
               path: /
               port: 8080
-            initialDelaySeconds: 60
+            initialDelaySeconds: 90
             periodSeconds: 20
 
 ---
