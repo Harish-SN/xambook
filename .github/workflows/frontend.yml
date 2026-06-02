@@ -32,10 +32,6 @@ jobs:
         working-directory: frontend
         run: npm ci
 
-      - name: Set environment variables
-        run: |
-          echo "VITE_API_URL=https://api.xambook.com" >> $GITHUB_ENV
-
       - name: Build frontend
         working-directory: frontend
         run: npm run build
@@ -51,6 +47,12 @@ jobs:
         with:
           context: ./frontend
           push: true
+          build-args: |
+            VITE_API_URL=https://api.xambook.com
+            VITE_AUTH_DISABLED=false
+            VITE_KEYCLOAK_URL=https://auth.xambook.com
+            VITE_KEYCLOAK_REALM=xambook
+            VITE_KEYCLOAK_CLIENT=xambook-frontend
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/xambook-frontend:${{ github.sha }}
 
