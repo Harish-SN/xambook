@@ -27,6 +27,7 @@ export function AuthProvider({
 }: {
   children: React.ReactNode
 }) {
+
   const [authenticated, setAuthenticated] =
     useState(false)
 
@@ -37,54 +38,70 @@ export function AuthProvider({
     useState(true)
 
   useEffect(() => {
+
     let refreshInterval: ReturnType<
       typeof setInterval
     >
 
     async function init() {
-      // Local dev: skip Keycloak entirely and assume a logged-in user.
-      // Pair with DEV_MODE=true on the backend.
+
+      // ===== LOCAL DEV MODE =====
       if (AUTH_DISABLED) {
+
         setAuthenticated(true)
+
         setUser({
           name: 'Local Dev',
           email: 'dev@localhost',
           preferred_username: 'dev',
         })
+
         setLoading(false)
+
         return
       }
 
       try {
+
+        // ===== KEYCLOAK INIT =====
         const auth = await keycloak.init({
           onLoad: 'check-sso',
           pkceMethod: 'S256',
 
+          // IMPORTANT:
+          // Prevent iframe / CSP issues in production
           checkLoginIframe: false,
         })
 
         setAuthenticated(auth)
 
+        // ===== USER LOGGED IN =====
         if (auth) {
 
           // SAVE TOKEN
           if (keycloak.token) {
+
             localStorage.setItem(
               'kc_token',
               keycloak.token
             )
           }
 
-          setUser(keycloak.tokenParsed)
+          setUser(
+            keycloak.tokenParsed
+          )
 
-          // AUTO TOKEN REFRESH
+          // ===== AUTO TOKEN REFRESH =====
           refreshInterval = setInterval(() => {
+
             keycloak
               .updateToken(60)
+
               .then(refreshed => {
 
-                // UPDATE TOKEN
+                // UPDATE SAVED TOKEN
                 if (keycloak.token) {
+
                   localStorage.setItem(
                     'kc_token',
                     keycloak.token
@@ -92,6 +109,7 @@ export function AuthProvider({
                 }
 
                 if (refreshed) {
+
                   console.log(
                     'Token refreshed'
                   )
@@ -101,7 +119,9 @@ export function AuthProvider({
                   )
                 }
               })
+
               .catch(err => {
+
                 console.error(
                   'Token refresh failed',
                   err
@@ -109,24 +129,29 @@ export function AuthProvider({
 
                 logout()
               })
+
           }, 30000)
         }
 
+        // ===== LOGIN SUCCESS =====
         keycloak.onAuthSuccess = () => {
 
           setAuthenticated(true)
 
-          // SAVE TOKEN
           if (keycloak.token) {
+
             localStorage.setItem(
               'kc_token',
               keycloak.token
             )
           }
 
-          setUser(keycloak.tokenParsed)
+          setUser(
+            keycloak.tokenParsed
+          )
         }
 
+        // ===== LOGOUT =====
         keycloak.onAuthLogout = () => {
 
           setAuthenticated(false)
@@ -145,36 +170,50 @@ export function AuthProvider({
           err
         )
 
+        setAuthenticated(false)
+
+        setUser(null)
+
       } finally {
 
         setLoading(false)
-
       }
     }
 
     init()
 
+    // ===== CLEANUP =====
     return () => {
+
       if (refreshInterval) {
-        clearInterval(refreshInterval)
+
+        clearInterval(
+          refreshInterval
+        )
       }
     }
+
   }, [])
 
+  // ===== LOGIN =====
   function login() {
+
     keycloak.login({
       redirectUri:
-        window.location.origin,
+        window.location.origin + '/',
     })
   }
 
+  // ===== SIGNUP =====
   function signup() {
+
     keycloak.register({
       redirectUri:
-        window.location.origin,
+        window.location.origin + '/',
     })
   }
 
+  // ===== LOGOUT =====
   function logout() {
 
     localStorage.removeItem(
@@ -183,7 +222,7 @@ export function AuthProvider({
 
     keycloak.logout({
       redirectUri:
-        window.location.origin,
+        window.location.origin + '/',
     })
   }
 
@@ -203,6 +242,7 @@ export function AuthProvider({
   )
 }
 
+// ===== CUSTOM HOOK =====
 export function useAuth() {
   return useContext(AuthContext)
 }
