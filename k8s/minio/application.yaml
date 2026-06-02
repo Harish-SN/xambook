@@ -17,8 +17,7 @@ spec:
       values: |
         mode: standalone
 
-        rootUser: admin
-        rootPassword: CHANGE_THIS_PASSWORD
+        existingSecret: minio-creds
 
         persistence:
           enabled: false
